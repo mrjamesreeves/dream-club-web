@@ -157,17 +157,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 0;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
   padding: 0 40px;
 }
 
 .collage-container {
-  flex-shrink: 0;
+  flex: 1;
+  max-width: 500px;
 }
 
 .collage-img {
-  width: 340px;
-  height: 420px;
+  width: 100%;
+  height: auto;
   border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
   object-fit: cover;
   opacity: 0;
@@ -177,12 +181,13 @@ body {
 .collage-img.loaded { opacity: 1; }
 
 .dream-container {
-  max-width: 400px;
+  flex: 1;
+  max-width: 700px;
 }
 
 .dream-img {
-  max-width: 100%;
-  max-height: 300px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
   opacity: 0;
   transition: opacity 0.6s ease;
@@ -512,15 +517,12 @@ body {
   }
   .content {
     flex-direction: column;
-    gap: 40px;
-    padding: 0;
+    gap: 24px;
+    padding: 0 24px;
     align-items: center;
   }
-  .collage-img {
-    width: 260px;
-    height: 320px;
-  }
-  .dream-container { max-width: 300px; }
+  .collage-container { max-width: 340px; }
+  .dream-container { max-width: 400px; }
 }
 
 @media (max-width: 768px) {
@@ -585,19 +587,13 @@ body {
   .content {
     flex: none;
     flex-direction: column;
-    gap: 32px;
-    padding: 0;
+    gap: 20px;
+    padding: 0 16px;
     align-items: center;
   }
 
-  .collage-img {
-    width: 220px;
-    height: 280px;
-  }
-
-  .dream-container {
-    max-width: 280px;
-  }
+  .collage-container { max-width: 280px; }
+  .dream-container { max-width: 320px; }
 
   .pagination {
     align-self: center;
@@ -644,14 +640,8 @@ body {
     padding: 130px 16px 20px;
   }
 
-  .collage-img {
-    width: 180px;
-    height: 230px;
-  }
-
-  .dream-container {
-    max-width: 240px;
-  }
+  .collage-container { max-width: 220px; }
+  .dream-container { max-width: 280px; }
 
   .section.active {
     padding: 100px 1rem 40px;
