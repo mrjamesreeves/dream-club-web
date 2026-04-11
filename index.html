@@ -422,32 +422,247 @@ body {
   margin-bottom: 0;
 }
 
+/* --- Hamburger button --- */
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  pointer-events: auto;
+  z-index: 200;
+  position: fixed;
+  top: 28px;
+  right: 24px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: #979797;
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+
+.hamburger.open .hamburger-line {
+  background: #fff;
+}
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* --- Mobile nav overlay --- */
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+.mobile-nav-overlay.open {
+  display: flex;
+}
+
+.mobile-nav-overlay a {
+  text-decoration: none;
+  color: #979797;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.mobile-nav-overlay a:hover,
+.mobile-nav-overlay a.active { color: #fff; }
+
+.mobile-nav-overlay .nav-num {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #ababab;
+  opacity: 0.5;
+}
+
+.mobile-nav-overlay a.active .nav-num { color: #fff; opacity: 0.7; }
+
 /* --- Responsive --- */
 
 @media (max-width: 900px) {
-  .page { padding: 24px; }
-  .header { flex-direction: column; gap: 24px; }
-  .nav { gap: 20px; }
+  .page {
+    padding: 24px;
+    padding-top: 160px;
+  }
   .content {
     flex-direction: column;
     gap: 40px;
     padding: 0;
+    align-items: center;
   }
   .collage-img {
-    width: 240px;
-    height: 300px;
+    width: 260px;
+    height: 320px;
   }
-  .dream-container { max-width: 280px; }
+  .dream-container { max-width: 300px; }
 }
 
-@media (max-width: 540px) {
-  .page { padding: 20px; }
-  .nav { gap: 14px; }
-  .nav-label { font-size: 0.9rem; }
-  .header-title { font-size: 1.6rem; }
+@media (max-width: 768px) {
+  /* Header: stack moon above title */
+  .header {
+    padding: 20px 24px 16px 24px;
+    background: linear-gradient(to bottom, #000 80%, transparent);
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .moon-wrapper {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .moon-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .moon-meta {
+    position: static;
+    transform: none;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+    display: none;
+  }
+
+  /* Hide desktop nav, show hamburger */
+  .nav { display: none; }
+  .hamburger { display: block; }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  /* Page layout */
+  .page {
+    position: fixed;
+    inset: 0;
+    padding: 140px 24px 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .content {
+    flex: none;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0;
+    align-items: center;
+  }
+
+  .collage-img {
+    width: 220px;
+    height: 280px;
+  }
+
+  .dream-container {
+    max-width: 280px;
+  }
+
+  .pagination {
+    align-self: center;
+    margin-top: 8px;
+  }
+
+  /* Sections */
+  .section.active {
+    padding: 140px 1.2rem 60px;
+  }
+
+  .section-inner {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .theory-essay-title-link {
+    font-size: 2rem;
+  }
+
+  .theory-essay-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    padding: 20px 16px 0 16px;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .moon-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .page {
+    padding: 130px 16px 20px;
+  }
+
   .collage-img {
     width: 180px;
-    height: 220px;
+    height: 230px;
+  }
+
+  .dream-container {
+    max-width: 240px;
+  }
+
+  .section.active {
+    padding: 100px 1rem 40px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .theory-essay-title-link {
+    font-size: 1.7rem;
   }
 }
   </style>
@@ -474,7 +689,21 @@ body {
       <a href="#answers" data-section="answers"><span class="nav-num">03</span><span class="nav-label">Answers</span></a>
       <a href="#join" data-section="join"><span class="nav-num">04</span><span class="nav-label">Join</span></a>
     </nav>
+
+    <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <a href="#catalogue" data-section="catalogue"><span class="nav-num">01</span> Catalogue</a>
+    <a href="#theory" data-section="theory"><span class="nav-num">02</span> Theory</a>
+    <a href="#answers" data-section="answers"><span class="nav-num">03</span> Answers</a>
+    <a href="#join" data-section="join"><span class="nav-num">04</span> Join</a>
+  </div>
 
   <div class="page" id="home">
     <!-- Content -->
@@ -870,6 +1099,51 @@ document.querySelectorAll('.section-back').forEach(btn => {
     }
   });
 });
+
+// --- Mobile hamburger nav ---
+
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileNav = document.getElementById('mobile-nav');
+
+hamburgerBtn.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+
+// Mobile nav links
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const sectionId = link.getAttribute('data-section');
+    const section = document.getElementById(`section-${sectionId}`);
+    const isActive = link.classList.contains('active');
+
+    closeAllSections();
+    // Also clear mobile nav active states
+    mobileNav.querySelectorAll('a.active').forEach(a => a.classList.remove('active'));
+
+    if (!isActive) {
+      section.classList.add('active');
+      link.classList.add('active');
+      // Sync desktop nav active state
+      document.querySelector(`.nav a[data-section="${sectionId}"]`).classList.add('active');
+      section.scrollTop = 0;
+    }
+
+    // Close mobile menu
+    hamburgerBtn.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
+
+// Sync mobile nav when desktop nav is used
+const origCloseAll = closeAllSections;
+closeAllSections = function() {
+  origCloseAll();
+  mobileNav.querySelectorAll('a.active').forEach(a => a.classList.remove('active'));
+  hamburgerBtn.classList.remove('open');
+  mobileNav.classList.remove('open');
+};
   </script>
 </body>
 </html>
