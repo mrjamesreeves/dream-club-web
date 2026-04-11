@@ -820,14 +820,15 @@ function getMoonPhase() {
 
   let name;
   const normalized = phase / lunarCycle;
-  if (normalized < 0.0625) name = 'New Moon';
-  else if (normalized < 0.1875) name = 'Waxing Crescent';
-  else if (normalized < 0.3125) name = 'First Quarter';
-  else if (normalized < 0.4375) name = 'Waxing Gibbous';
-  else if (normalized < 0.5625) name = 'Full Moon';
-  else if (normalized < 0.6875) name = 'Waning Gibbous';
-  else if (normalized < 0.8125) name = 'Last Quarter';
-  else if (normalized < 0.9375) name = 'Waning Crescent';
+  // ±1 day windows for primary phases, matching popular astronomy sites
+  if (normalized < 0.034) name = 'New Moon';
+  else if (normalized < 0.216) name = 'Waxing Crescent';
+  else if (normalized < 0.284) name = 'First Quarter';
+  else if (normalized < 0.466) name = 'Waxing Gibbous';
+  else if (normalized < 0.534) name = 'Full Moon';
+  else if (normalized < 0.716) name = 'Waning Gibbous';
+  else if (normalized < 0.784) name = 'Last Quarter';
+  else if (normalized < 0.966) name = 'Waning Crescent';
   else name = 'New Moon';
 
   return { name, illumination, normalized, dayOfCycle: Math.floor(phase) };
