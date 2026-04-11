@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Source Sans 3', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+}
+
+/* --- Layout --- */
+
+.page {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px 40px 80px;
+  padding-top: 160px;
+}
+
+/* --- Header --- */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 40px 48px 0 80px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.header * {
+  pointer-events: auto;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-brand {
+  flex-shrink: 0;
+}
+
+.moon-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px; /* match moon-img width */
+}
+
+.moon-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.moon-meta {
+  margin-top: 8px;
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.moon-phase-name,
+.moon-stats {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: 1.89px;
+  text-transform: uppercase;
+  color: #979797;
+  line-height: 1.6;
+}
+
+.moon-stats {
+  color: #B79A71;
+}
+
+/* --- Nav --- */
+
+.nav {
+  display: flex;
+  gap: 32px;
+  align-items: baseline;
+  padding-top: 16px;
+  flex-shrink: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #979797;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.nav a:hover { color: #fff; }
+.nav a.active { color: #fff; }
+.nav a.active .nav-num { color: #fff; opacity: 0.7; }
+
+.nav-num {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: #ababab;
+  opacity: 0.5;
+}
+
+.nav-label {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: inherit;
+}
+
+/* --- Main content --- */
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 0 40px;
+}
+
+.collage-container {
+  flex-shrink: 0;
+}
+
+.collage-img {
+  width: 340px;
+  height: 420px;
+  border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.collage-img.loaded { opacity: 1; }
+
+.dream-container {
+  max-width: 400px;
+}
+
+.dream-img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.dream-img.loaded { opacity: 1; }
+
+/* --- Pagination --- */
+
+.pagination {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  align-self: flex-start;
+}
+
+.pagination-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #121212;
+  border-radius: 24px;
+  padding: 10px 20px;
+}
+
+.page-btn {
+  background: none;
+  border: none;
+  color: #979797;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.page-btn:hover { color: #fff; }
+
+.page-count {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #979797;
+}
+
+.page-current {
+  color: #fff;
+}
+
+/* --- Moon image --- */
+
+.moon-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- Sections --- */
+
+.section {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  z-index: 50;
+  overflow-y: auto;
+}
+
+.section.active {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 200px 2rem 80px;
+}
+
+.section-inner {
+  max-width: 520px;
+  width: 100%;
+  padding: 2rem;
+}
+
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 2.8rem;
+  color: #f5f2ed;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.section-subtitle {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #807a72;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3.5rem;
+}
+
+.section-divider {
+  width: 40px;
+  height: 1px;
+  background: #3a3530;
+  margin-bottom: 2.5rem;
+}
+
+.section-body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #e8e4df;
+}
+
+/* --- Theory TOC & Essay --- */
+
+.theory-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.theory-toc-list li {
+  border-bottom: 1px solid #1e1c19;
+}
+
+.theory-toc-list li:first-child {
+  border-top: 1px solid #1e1c19;
+}
+
+.theory-toc-link {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.theory-toc-link:hover {
+  opacity: 0.7;
+}
+
+.theory-toc-num {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #504a42;
+  flex-shrink: 0;
+  width: 22px;
+}
+
+.theory-toc-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: #e8e4df;
+  line-height: 1.35;
+}
+
+.theory-essay-view {
+  display: none;
+}
+
+.theory-essay-view.active {
+  display: block;
+}
+
+.theory-toc-view.hidden {
+  display: none;
+}
+
+.theory-essay-title-link {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 2.8rem;
+  color: #f5f2ed;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.theory-essay-title-link:hover { opacity: 0.6; }
+
+.theory-essay-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #f5f2ed;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.theory-essay-num {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #504a42;
+  letter-spacing: 0.06em;
+  margin-bottom: 2rem;
+}
+
+.theory-essay-author {
+  color: #807a72;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.theory-essay-author:hover { color: #f5f2ed; }
+
+.theory-essay-body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #e8e4df;
+}
+
+.theory-essay-body p {
+  margin-bottom: 1.4em;
+}
+
+.theory-essay-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+  .page { padding: 24px; }
+  .header { flex-direction: column; gap: 24px; }
+  .nav { gap: 20px; }
+  .content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
+  }
+  .collage-img {
+    width: 240px;
+    height: 300px;
+  }
+  .dream-container { max-width: 280px; }
+}
+
+@media (max-width: 540px) {
+  .page { padding: 20px; }
+  .nav { gap: 14px; }
+  .nav-label { font-size: 0.9rem; }
+  .header-title { font-size: 1.6rem; }
+  .collage-img {
+    width: 180px;
+    height: 220px;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Header (persistent across all views) -->
+  <header class="header">
+    <div class="header-brand">
+      <a href="#home" class="header-left" id="header-home-link" style="text-decoration:none;">
+        <div class="moon-wrapper">
+          <img id="moon-img" class="moon-img" alt="Moon phase">
+          <div class="moon-meta">
+            <div class="moon-phase-name" id="moon-phase-name"></div>
+            <div class="moon-stats" id="moon-stats"></div>
+          </div>
+        </div>
+        <span class="header-title">Dream Club</span>
+      </a>
+    </div>
+
+    <nav class="nav">
+      <a href="#catalogue" data-section="catalogue"><span class="nav-num">01</span><span class="nav-label">Catalogue</span></a>
+      <a href="#theory" data-section="theory"><span class="nav-num">02</span><span class="nav-label">Theory</span></a>
+      <a href="#answers" data-section="answers"><span class="nav-num">03</span><span class="nav-label">Answers</span></a>
+      <a href="#join" data-section="join"><span class="nav-num">04</span><span class="nav-label">Join</span></a>
+    </nav>
+  </header>
+
+  <div class="page" id="home">
+    <!-- Content -->
+    <div class="content">
+      <div class="collage-container">
+        <img id="collage" class="collage-img" alt="Dream collage">
+      </div>
+      <div class="dream-container">
+        <img id="dream" class="dream-img" alt="Handwritten dream">
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <div class="pagination-pill">
+        <button class="page-btn" id="btn-prev">&lsaquo;</button>
+        <span class="page-count"><span class="page-current" id="page-current">01</span> / <span id="page-total">01</span></span>
+        <button class="page-btn" id="btn-next">&rsaquo;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Catalogue -->
+  <div class="section" id="section-catalogue">
+    <div class="section-inner">
+      <h2 class="section-title">Catalogue</h2>
+      <p class="section-subtitle">Dream Collection</p>
+      <div class="section-divider"></div>
+      <p class="section-body">A collection of dreams from the community. Coming soon.</p>
+    </div>
+  </div>
+
+  <!-- Section: Theory -->
+  <div class="section" id="section-theory">
+    <div class="section-inner">
+      <!-- TOC View -->
+      <div class="theory-toc-view" id="theory-toc">
+        <h2 class="section-title">Theory</h2>
+        <ul class="theory-toc-list">
+          <li><a class="theory-toc-link" data-essay="0"><span class="theory-toc-num">01</span><span class="theory-toc-title">The Twice-Negated Blackness</span></a></li>
+          <li><a class="theory-toc-link" data-essay="1"><span class="theory-toc-num">02</span><span class="theory-toc-title">The Paradox of the Heap</span></a></li>
+          <li><a class="theory-toc-link" data-essay="2"><span class="theory-toc-num">03</span><span class="theory-toc-title">The Love of the Quest</span></a></li>
+          <li><a class="theory-toc-link" data-essay="3"><span class="theory-toc-num">04</span><span class="theory-toc-title">The Incontinence of the Void</span></a></li>
+          <li><a class="theory-toc-link" data-essay="4"><span class="theory-toc-num">05</span><span class="theory-toc-title">The Absent Phallus</span></a></li>
+          <li><a class="theory-toc-link" data-essay="5"><span class="theory-toc-num">06</span><span class="theory-toc-title">Dreams Are Trash</span></a></li>
+          <li><a class="theory-toc-link" data-essay="6"><span class="theory-toc-num">07</span><span class="theory-toc-title">The Little Man Inside the Brain</span></a></li>
+          <li><a class="theory-toc-link" data-essay="7"><span class="theory-toc-num">08</span><span class="theory-toc-title">The Controlled Hallucination</span></a></li>
+          <li><a class="theory-toc-link" data-essay="8"><span class="theory-toc-num">09</span><span class="theory-toc-title">The Last Bastion of Mystery</span></a></li>
+          <li><a class="theory-toc-link" data-essay="9"><span class="theory-toc-num">10</span><span class="theory-toc-title">The Horror of Irreducible Ambiguity</span></a></li>
+          <li><a class="theory-toc-link" data-essay="10"><span class="theory-toc-num">11</span><span class="theory-toc-title">The Lure of Beauty</span></a></li>
+          <li><a class="theory-toc-link" data-essay="11"><span class="theory-toc-num">12</span><span class="theory-toc-title">The Stories That Tell Us</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Essay View -->
+      <div class="theory-essay-view" id="theory-essay">
+        <a class="theory-essay-title-link" id="theory-essay-back">Theory</a>
+        <div class="section-divider"></div>
+        <h3 class="theory-essay-title" id="theory-essay-title"></h3>
+        <div class="theory-essay-num"><span id="theory-essay-num"></span> · <a href="https://www.martinessig.com" target="_blank" class="theory-essay-author">Martin Essig</a></div>
+        <div class="section-divider"></div>
+        <div class="theory-essay-body" id="theory-essay-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Answers -->
+  <div class="section" id="section-answers">
+    <div class="section-inner">
+      <h2 class="section-title">Answers</h2>
+      <p class="section-subtitle">Questions</p>
+      <div class="section-divider"></div>
+      <p class="section-body">Your questions about Dream Club, answered. Coming soon.</p>
+    </div>
+  </div>
+
+  <!-- Section: Join -->
+  <div class="section" id="section-join">
+    <div class="section-inner">
+      <h2 class="section-title">Join</h2>
+      <p class="section-subtitle">Waitlist</p>
+      <div class="section-divider"></div>
+      <p class="section-body">Dream Club is currently in private beta. Leave your email to join the waitlist.</p>
+      <div style="margin-top: 2rem; display: flex; gap: 0.8rem;">
+        <input type="email" placeholder="your@email.com" style="
+          font-family: 'Source Sans 3', sans-serif;
+          font-weight: 300;
+          font-size: 0.95rem;
+          color: #fff;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #333;
+          outline: none;
+          padding: 0.5rem 0;
+          width: 280px;
+        ">
+        <button style="
+          font-family: 'Source Sans 3', sans-serif;
+          font-weight: 500;
+          font-size: 0.75rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #000;
+          background: #B79A71;
+          border: none;
+          padding: 0.6rem 1.4rem;
+          cursor: pointer;
+        ">Request</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+// --- Moon phase calculation ---
+
+function getMoonPhase() {
+  const now = new Date();
+  // Known new moon: January 6, 2000 18:14 UTC
+  const knownNew = new Date(Date.UTC(2000, 0, 6, 18, 14, 0));
+  const lunarCycle = 29.53058867;
+  const daysSince = (now - knownNew) / (1000 * 60 * 60 * 24);
+  const phase = ((daysSince % lunarCycle) + lunarCycle) % lunarCycle;
+  const illumination = 0.5 * (1 - Math.cos(2 * Math.PI * phase / lunarCycle));
+
+  let name;
+  const normalized = phase / lunarCycle;
+  if (normalized < 0.0625) name = 'New Moon';
+  else if (normalized < 0.1875) name = 'Waxing Crescent';
+  else if (normalized < 0.3125) name = 'First Quarter';
+  else if (normalized < 0.4375) name = 'Waxing Gibbous';
+  else if (normalized < 0.5625) name = 'Full Moon';
+  else if (normalized < 0.6875) name = 'Waning Gibbous';
+  else if (normalized < 0.8125) name = 'Last Quarter';
+  else if (normalized < 0.9375) name = 'Waning Crescent';
+  else name = 'New Moon';
+
+  return { name, illumination, normalized, dayOfCycle: Math.floor(phase) };
+}
+
+// Map phase names to NASA image filenames
+const moonImages = {
+  'New Moon': 'new.webp',
+  'Waxing Crescent': 'waxing-crescent.jpg',
+  'First Quarter': 'first-quarter.jpg',
+  'Waxing Gibbous': 'waxing-gibbous.jpg',
+  'Full Moon': 'full.webp',
+  'Waning Gibbous': 'waning-gibbous.jpg.webp',
+  'Last Quarter': 'third-quarter.jpg.webp',
+  'Waning Crescent': 'waning-crescent.jpg.webp',
+};
+
+// --- Dream pairs ---
+
+const collages = ['col-01.webp', 'col-02.webp', 'col-03.webp', 'col-04.webp', 'col-05.webp'];
+const dreams = ['million-faces.webp', 'town.webp', 'large-womanwebp', 'eyes.webp', 'theory-1.webp'];
+
+// Build all possible combos (every collage × every dream)
+function buildCombos() {
+  const combos = [];
+  for (const collage of collages) {
+    for (const dream of dreams) {
+      combos.push({ collage, dream });
+    }
+  }
+  // Shuffle
+  for (let i = combos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [combos[i], combos[j]] = [combos[j], combos[i]];
+  }
+  return combos;
+}
+
+let pairs = buildCombos();
+let currentIndex = 0;
+
+function showPair(index) {
+  const pair = pairs[index];
+  const collageEl = document.getElementById('collage');
+  const dreamEl = document.getElementById('dream');
+
+  // Fade out
+  collageEl.classList.remove('loaded');
+  dreamEl.classList.remove('loaded');
+
+  setTimeout(() => {
+    collageEl.src = `img/collages/${pair.collage}`;
+    dreamEl.src = `img/dreams/${pair.dream}`;
+
+    collageEl.onload = () => collageEl.classList.add('loaded');
+    dreamEl.onload = () => dreamEl.classList.add('loaded');
+
+    // If already cached
+    if (collageEl.complete) collageEl.classList.add('loaded');
+    if (dreamEl.complete) dreamEl.classList.add('loaded');
+  }, 200);
+
+  const displayIndex = (index % dreams.length) + 1;
+  document.getElementById('page-current').textContent = String(displayIndex).padStart(2, '0');
+  document.getElementById('page-total').textContent = String(dreams.length).padStart(2, '0');
+}
+
+function next() {
+  currentIndex = (currentIndex + 1) % pairs.length;
+  showPair(currentIndex);
+}
+
+function prev() {
+  currentIndex = (currentIndex - 1 + pairs.length) % pairs.length;
+  showPair(currentIndex);
+}
+
+// --- Navigation ---
+
+document.getElementById('btn-next').addEventListener('click', next);
+document.getElementById('btn-prev').addEventListener('click', prev);
+
+// Keyboard nav
+document.addEventListener('keydown', (e) => {
+  if (document.querySelector('.section.active')) return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+
+// Click on content area to advance
+document.querySelector('.content').addEventListener('click', next);
+
+// Section navigation
+function closeAllSections() {
+  document.querySelectorAll('.section.active').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav a.active').forEach(a => a.classList.remove('active'));
+}
+
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const sectionId = link.getAttribute('data-section');
+    const section = document.getElementById(`section-${sectionId}`);
+    const isActive = link.classList.contains('active');
+
+    closeAllSections();
+
+    if (!isActive) {
+      section.classList.add('active');
+      link.classList.add('active');
+      section.scrollTop = 0;
+    }
+  });
+});
+
+// Logo click = go home
+document.getElementById('header-home-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  closeAllSections();
+});
+
+// --- Init ---
+
+const moon = getMoonPhase();
+document.getElementById('moon-phase-name').textContent = moon.name;
+
+const now = new Date();
+// Dream Club epoch: April 6, 2026
+const epoch = new Date(2026, 3, 6); // month is 0-indexed
+const daysSinceEpoch = Math.floor((now - epoch) / 86400000);
+const weekNum = Math.floor(daysSinceEpoch / 7) + 1;
+const dayNum = daysSinceEpoch;
+document.getElementById('moon-stats').textContent = `Week ${weekNum} · Day ${dayNum} · 4 Dreamers`;
+
+document.getElementById('moon-img').src = `img/moons/${moonImages[moon.name]}`;
+
+showPair(currentIndex);
+
+// --- Theory section essays ---
+
+const theoryEssays = [
+  {
+    title: 'The Twice-Negated Blackness',
+    num: '01',
+    body: `<p>There are textures and complex subtilties in sound that unfold dimensions of the body that were folded when the body became an extended thing. When bodily intensities become "res extensa," some of their aspects must hold their breath, sometimes until the end. But the cartel's other bodies were breathing again. "Die before you die," the mystics say. These hidden machinic assemblages are comprised of dark materials, which alchemists call the twice negated blackness of the "Nigredo," which is the "super-saturated" darkness that Pseudo-Dionysus saw when he was granted the "Beatific Vision."</p>
+<p>Revelation makes the invisible visible without reducing it to the merely visible, which is something like how the failure of thinking presents what can't be thought as excessive intuition, which is sometimes called "noetic." The voice from elsewhere demands submission, but this submission is to indetermination, rather than to anything programmatic. Fidelity to the event binds one to the freedom of its irreducible ambiguity. But freedom is only sought until it's given, and then its acrophobia inevitably causes one to flee to more solid ground. To be free is an almost impossible slog, as the Existentialists taught. Freedom is too much to give and too much to receive, which is Lacan's definition of love as "Giving what you don't have to someone who doesn't want it."</p>
+<p>Vague objects are usually explained by the famous "Sorites Paradox," in which there is either a vagueness about language, or about reality itself in terms of the distinctions between categories. The Sorites Paradox concerns the category boundary between a heap and not-a-heap. At what point does a heap of grain become not a heap if grains are slowly removed from it?</p>`
+  },
+  {
+    title: 'The Paradox of the Heap',
+    num: '02',
+    body: `<p>But this paradox applies to any vaguery, such as when does a man become bald, or when does a child become an adult, or, in a particularly famous one, when does Theseus's ship becomes a different ship if each plank of it is replaced one at a time? This paradox of determination has stubbornly plagued the sciences since at least when Aristotle began dividing the Universe into discreet identities and categories according to their essential qualities. Scientific knowledge requires discontinuous thresholds for things to have distinct identities.</p>
+<p>There are those in the sciences that think that "natural kinds" are categories that are in nature, like distinct "species," for example. And then there are those who think that natural kinds are projections of perception and of language into reality and not in reality itself because reality is continuous rather than discreet. And then there are those who believe that the vagaries of language reflect the ambiguity of being itself.</p>
+<p>Dreams come both before and after the determinate rehearsals for the practical matters of economic life because they are indeterminate play, like that of James P. Carse's "Infinite Games," which do not have an end, except for the continuation of games. Play, like dreams, may be reduced to scenario rehearsal, and the beauty, sublimity, and horror that they ingress into the world may in the end be about survival and reproduction as the modern material reduction of the sciences holds. But this reduction must disavow what those who dream and play know they are for, namely: the useless, and sometimes destructive, waste of the merely aesthetic.</p>`
+  },
+  {
+    title: 'The Love of the Quest',
+    num: '03',
+    body: `<p>The anthropologist holds that Homo Economicus grounds Mircea Eliade's Homo Religiosus because the religious longing for the sacred is reducible to the profane necessity of the economically transactable, but it is the other way around because sacred dreams precede the dreamer just as the love of story precedes the telling, and love itself precedes the being of whatever there is, which is what Homo Religiosus knows when it knows that we journey for the love of the quest and not for any other boon at its end.</p>
+<p>The what-its-like-ness of first-person experience is why we live it, and even more outrageously it is why there is something rather than nothing. The dialectic of something and nothing that is the Universe makes for better stories than the non-event of absolute nothing, which is being all crammed together into one impossible nonlocality, sometimes called "the singularity" in contemporary parlance, or what Hegel called "Being-in-itself." The singularity is everything that there is crowded into one place, a place where there can be no movement or relation and no anecdotes. It was love expressed as the desire for stories that became the space-energy of the big bang venturing forth all the particles of the Universe into whatever crazy scenarios they might get themselves into, or the love of telling stories bursting into billions upon billions of anecdotes, which is what Hegel called "Being-for-itself."</p>
+<p>They took their boons if they could get them, but in their release from desire, they did not find satisfaction as much as a "little death," which is the enjoyment beyond satisfaction that the French call "jouissance." They would rise again from this dying, which is the boredom that the French call "ennui," but it was harder and harder to forget how they were let down by their desires in the aftermaths of their satisfaction, which is the pretermission that the French call "secondaire naivete."</p>`
+  },
+  {
+    title: 'The Incontinence of the Void',
+    num: '04',
+    body: `<p>With these three concepts the French reduce all of being's multitudinous strivings to their pointless ground in nothing, which the Greeks call "khaos," and is the dark ground from which the mystics watch all of being continually emerge from the "incontinence of the void," as Samuel Beckett so aptly put it.</p>
+<p>Famously, Beckett wrote in his second language, which was French, and then translated his French writing back into English to simplify his prose, which is how he rendered the common French phrase "l'appel du vide," normally translated as the "call of the void," into the somewhat elaborated notion of the void's evacuation of itself from itself, which is the incontinent void that Slavoj Zizek thought of as "less than nothing." The void's call is to void itself of itself as the excrement of creation. Ishmael thought of the biblical phrase "Deep calls to Deep" in this manner as the self-emptying of nothing from nothing because what he thought he heard was the Deep urging itself out of the depths of its nothingness into being, which is how Hegel thought of being's relation to nonbeing as an internal relation to itself. Its call, or its voice, seemed to arrive from elsewhere. The voice was disembodied, but resonant in particular, material conditions. This herald augured a great fall, as the Frenchmen Paul Vallery conveyed when he wrote that "being is a blemish on the perfection of nonbeing," but this accidental becoming was a fall for the sake of knowing as the writers of Gensis understood.</p>
+<p>The Biblical authors knew that the desire that drove becoming was for knowing what shouldn't be known because a tree of knowledge set in a perfect Garden couldn't be left alone. Knowing had to be a transgression for the being for whom being is a question because being's care for itself had to be motivated by the coincidence of lack and desire. Being's care desires to know what withdraws from the light of its understanding, which is both the ground and the limit of its being and its care.</p>`
+  },
+  {
+    title: 'The Absent Phallus',
+    num: '05',
+    body: `<p>"Religion" had been the "re-binding" of praxis before it had become the profession of intellectual propositions. Faith had been a performance of the body and not the recitation of creeds. The cartel read about secret and anathematized orders who had tried to bring vital "liturgy," which translated from the Greek was "the work of the people," back into religious observance, but it now appeared to Julien that the mistake of each had been the phallic structure of their praxis, which penetrated their inner sanctums with penis-like intentions. The holy of holies wasn't an intentional presence, but the unintentional presence of the absent phallus, which in Ancient Near-Eastern temples was represented as an empty throne or altar, or the bull without a rider (unjustly mocked in the golden calf incident at Mount Sinai), or the giant footprints found leading to the doorways of Canaanite temple ruins. Each represented the divine's presence as an absence.</p>
+<p>On December 27, 167 BC, when Antiochus Epiphanes entered the Holy of Holies in the Temple of Jerusalem, he was shocked to find that there was nothing in there. And so, he placed a statue of the Ancient Greek god of the Phallus, "Zeus," in there, and then he cooked some pork and ate it to make his sacrilege compete. But after all that satisfying desecration, he was dissatisfied. The temple priests called the event, "the Abomination of Desolation," and the Greek general would have killed for something as glorious as all that. Antiochus Epiphanes had come into the temple looking for the satisfaction that the Jews were keeping to themselves but found only the presence of a profoundly dissatisfying absence. The ancient Israelite priests had had it right and Antiochus had had it wrong. Penetration is an empty desperation, and feminine jouissance is an impenetrable mystery of endlessly deferred incompletion.</p>`
+  },
+  {
+    title: 'Dreams Are Trash',
+    num: '06',
+    body: `<p>Dreams are trash. The material reduction reduced dreams to random synapse firings and a brain adapted to pattern recognition even when there was none. Dreams are about nothing, which makes dream interpretation something like sifting through trash and telling a story about it. The impulse to narrativize about refuse is not compelled by the biological waste productions themselves, but by Homo Narratiosus whose love of story can be reduced, for a while, to Homo Economicus's "love" of the patterns and codes necessary to transact with the world. Scientists used to not be sure what dreams were for because they were sure that a brain was for reducing uncertainty, and dreams didn't seem to have a clear role in that. Most evolutionary biologists now theorized that dreams are reviews of past experiences to prepare and rehearse for possible new ones, and many neuroscientists who used to teach that dreams weren't for anything, now seem to agree with this practicing-possible-scenarios view of dreams because they have seen a pattern in what they used to think were meaningless electrochemical "brainstorms." The patterns that they recognize accord with the now familiar neuroscientific story of "correspondences," the areas of the brain that "light up" with activity are the same as those when the waking brain is taking in sensory data and making up a story.</p>
+<p>Somnologists place dreams squarely in the wheelhouse of Homo Economicus because dreams are preparations for worldly transactions. It is unsurprising that Homo Narratiosus is ultimately economic in nature because this discovery accords with the scientific consensus that human beings are complex prediction machines. Dreams are like the narratives of waking life because they are yet another form of information processing. Sleep's general, biological function is processing biochemical "waste" for more optimal brain functioning, and dreams process the psychological waste that is somehow epiphenomenal to those biochemicals. Thanks to science, sleep is no longer an unfortunate but necessary waste of time but has become yet another way to optimize human productivity.</p>`
+  },
+  {
+    title: 'The Little Man Inside the Brain',
+    num: '07',
+    body: `<p>Dreams make clear the problem of what is called the "little man inside the brain," or the "Homunculus." Who are dreams for? They must be for the brain, since "ultimately" that's all there is, and the visible brain is not a self because the self isn't visible. The mind is an emergent phenomenon, sometimes called "epiphenomenal," of integrating various systems of information processes generated by the brain. The self emerges as the illusion of a homunculus at the immaterial, because nonlocal, point of active integration of passive information called the "Default Mode Network." Neuroscientists must speak of the various systems of the brain as if they were little selves out of convention and convenience, but if there were any self somehow housed in the brain, it wouldn't be one of those systems, but the integration of the systems in the Default Mode Network. So, dreams replay, or "re-construct," in accord with more recent understandings of memories, the Default Mode Network's interactions with the brain's various systems, including systems of perception, affect, and language.</p>
+<p>At no point does the apparition of the homunculus-self of the Default Mode Network directly touch the outside world, which has always been a problem for radical Empiricism. So, dreams are like waking life in that the Default Mode Network is still integrating information, but it is the sensory information of the day as it was narrativized, or encoded with language, by the Default Mode Network at the time. So, what accounts for the strange forms that dream narratives take as opposed to the story telling of the day? The narrator has changed. If the narrator is the homunculus-self, then at least one of the censors that makes up its daytime formulation has stayed asleep, in particular, the one concerned with the "reality principle" of "consensus reality," the one that oversees repressing contradiction. Since there is no longer any direct reality to push back on dreams, they go where they want, which is why Sigmund Freud used them to learn about desire itself.</p>`
+  },
+  {
+    title: 'The Controlled Hallucination',
+    num: '08',
+    body: `<p>This difference between the daytime narrator and the nighttime one is an indication of the disunity within the self that is the basic contradiction that Freud and Jacques Lacan saw as the origin of the unconscious. What is repressed as the unconscious is the lack of a unified self, which is the contradiction of the self that has led many religious thinkers to the conclusion that there is no self, which is not the same as the materialist's route to the same conclusion. The materialist denies a self because it can't be empirically observed, even though they begrudgingly acknowledge that it is a useful, even necessary, illusion of the first-person. But it is also the lack of a unified self that allows for an "outside" of the determinations of the Default Mode Network. However deterministic neuroscientists are about the phantom self of the Default Mode Network, they generally agree that it is possible to step outside of it at times to intervene in it, which is what is happening in dreams when their narrator is asleep to the reality principle. The daytime self becomes the object of the nighttime self, and the difference is not their desire but their different relations to that desire outlined by Freud as the lack of the daytime censor of the reality principle.</p>
+<p>The Default Mode Network produces the illusion of a self for itself. But there is a classical phenomenological problem here of how an object can produce the subject, even, and especially, if subjectivity is an illusion. If subjectivity really is "nothing but" an object after the material reduction, how come the first person can't be "cleared up" in the way that other illusions are, which is by the reduction to underlying, observable principles? And even more curious, how come the third-person must be generated from the first when the third's primacy is the absolute bedrock of scientific inquiry? Not a single piece of neuroscientific data was collected without the frame of the "empirical" evidence of first-person experience, which is the frame of the first-person on the third, or on so called "objective" reality. This has led to the problem in the history of philosophy that subjects seem to generate objects and not the other way around, which was the meaning behind GWF Hegel's strange statement that "subjectivity is a bone."</p>
+<p>Waking life is a dream like any other dream because it is a "controlled hallucination" in the words of Anil Seth, or an adaptive "interface," like a "computer desktop," in the words of Donald Hoffman. But what is this dream for? For Seth the question was answered by the recursive tautology of dreamer, in the biological, material register, dreaming a dream, in subjective, immaterial register, something like Zhuangzi's dreamer dreaming that he was a butterfly getting lost in the recursivity of his dream. The problem for Seth, a Neuroscientist, is that endlessly recursive tautologies are not scientific, especially since this tautology crosses the first-person / third-person barrier without any explanation as to how electrochemical interactions become experience.</p>`
+  },
+  {
+    title: 'The Last Bastion of Mystery',
+    num: '09',
+    body: `<p>Sleep has been somewhat difficult for the material reduction because it has been unclear what material function it served. The biological processes of regeneration that sleep performed were always obvious because of the deleterious effects of sleep deprivation. So, observing the buildup of harmful "waste" products of the chemistry of waking life and their subsequent reduction after a good night sleep was easy once looking at a sleeping and then a waking brain became more accessible. However, the purpose of having dreams on top of those chemical processes was more of a stubborn mystery. Nowadays, the point of dreams is to review, consolidate, and remember lessons from the day, that will be useful for future prediction processes.</p>
+<p>However, there is an irreducible remainder of weirdness and the uncanny about dreams that may allow them to remain ambiguous indefinitely, for those who find dreams to be one of the last bastions of mystery. Dreams were once capable of producing the sort of mythology that sent one beyond this world of instrumentalization and uncertainty reduction and into the sacred world of the unknown and the unknowable. If Freud was right about the Death Drive, then Homo Narratiosus's desire for a good story may rival its desire for predictability. It is pointless to play the game of trying to find in dreams a uselessness beyond the material reduction because evolutionary psychology is a story that can't and shouldn't be denied. However, it is worthwhile to see in Homo Religiosus's desire for the transcendent, something irreducible to the imminent, natural world that somehow produced it.</p>
+<p>Many religiously inclined folks, especially in the meaning crisis community, have had to find a sort of synthesis between natural selection and transcendence that is sometimes called "imminent transcendence" because they have found that Fundamentalism, Originalism, and Literalism cannot return them to the primary naivete of "primitive" belief. But they have also found that "Scientism" is leading to the unbearable nihilism of meaninglessness. Perhaps, physicist Steven Weinberg put it best when he famously said, "The more comprehensible the universe becomes, the more pointless it seems." And perhaps, another benefit to LLMs is that they do not dream. The aboutness of dreams may be about the consolidation and processing of information, and the rehearsal of possible future scenarios, which are the functions that LLMs are programed to perform.</p>`
+  },
+  {
+    title: 'The Horror of Irreducible Ambiguity',
+    num: '10',
+    body: `<p>But there is also something else that dreams seem to be about as well, especially in the dreams commonly called "nightmares." Nightmares are not about correct predictions or any other form of self-mastery. They are about the intractable contradictions that cannot be uttered within hearing distance of the egoic economic transactions of the day. The subject of nightmares does not transact in economic value, but in the irreducible ambiguity that destroys economies. The subject of nightmares directly "enjoys," in the Lacanian sense of excessive enjoyment, or of "jouissance," the horror of the lack of self-mastery, which is to enjoy the lack of transactable value of the non-transactable self, which is the enjoyment more typically associate with the Freudian Death Drive.</p>
+<p>There was an often-expressed sentiment in the 90's by the lovers of exotic piercings and excessive tattoos that went, "I'm reclaiming my body from corporate America." The joke now is that capital has done what it always has and includes these "exotic excesses" as a part of its "apparatus of capture." However, the original intention of "reclaiming" a body from economic transactability expresses the intention for an irreducible ambiguity beyond Homo Economicus's intentions.</p>
+<p>We may dream of monsters to learn from them, but not the lessons of prediction processors. Prediction machines do not need monsters to teach them anything about reducing uncertainty. Nightmares are not primarily practice for the commercial successes of the waking world. They may be left over fears from a more primal time, as many Evolutionary Biologist say, but then they are also about a more primal need for stories as well. And even though Homo Economicus has learned to make an industry of the monstrous, that is not what nightmares are for. Nightmares are not for Homo Economicus because they are not about reducing the ambiguity of monsters to their transactable value. Nightmares are about the horror of irreducible ambiguity. They are truly an encounter with the "face of the other," as Emmanuel Levinas might have put it. And as Levinas taught, the "otherness" of the other is the invaluable irreducibility of the other to transactable value.</p>
+<p>Nightmares present their subjects with the inherent contradictions of desire that undermine the determinate intentions of prediction machines. Homo Sapiens are monsters to themselves because they are other to themselves and as such, divided against their own ends always "passing over" into opposition against themselves, which is the creative destruction that Hegel outlined as being passing over into its own nonbeing as the process of becoming. Prediction machines intend beneficial ends, but Homo Narratiosus abhors ends and turns each gesture at an end into the beginning of a new chapter, which is the unending story of what Zizek called the "monstrosity of the undead drive," which is so monstrous to the ego's necessary sense of solidity and competency that it must mostly hide in the Freudian unconscious until night. This story lover in us will gleefully undermine the economic ends of prosperity in favor of the awe of the awful because this horror avoids not only the simplistic end of a boring story, but it avoids ending the story altogether. If the "steady state" of the Pleasure Principle's homeostasis is the proper end of economics, then the end of Homo Narratiosus is to undermine ends. The monstrosity of the undead drive is that while Homo Economicus's drive is for uncertainty reduction in the mode of a prediction machine, Homo Narratiosus drives uncertainty according to the narratological investments of nonbeing in the story of becoming.</p>`
+  },
+  {
+    title: 'The Lure of Beauty',
+    num: '11',
+    body: `<p>Whatever pattern finding intention binds the algorithms of disembodied prediction machines together, it isn't intentional in the sense of chosen by the algorithms themselves. And it isn't like human intention because human, intentional aboutness includes the intention of Homo Narratiosus, which is bound by beauty, wonder, and awe. Our thrall to aesthetic values also may not entirely be chosen, as in some idiotic notion of libertarian freedom, but there are at least some degrees of freedom in aesthetics that make them more like the "lures" of AN Whitehead's "Process Philosophy" than the determinations of the modern sciences. The lure of beauty may feel ineluctable at times, but it must keep within it the actual possibility of refusal; otherwise, it's determinate nature will undermine the "could have been otherwise" essence of the phenomena of beauty. All aesthetic phenomena are like this because it is the actual possibility of what isn't that founds the realized appearance of what is. At least for enlanguaged being, this is how the negativity of Derridean Differance requires degrees of freedom. Whatever is necessarily beautiful, or couldn't have been different, according to discoverable material causes, is not beautiful.</p>
+<p>Derrida's famous flip of the primacy of text over speech can be understood in light of this "could have been different" of Differance. Derridean textuality is the possibility space that presents via absence, which was an unconscious reformulation of Hegel's classic assertation that being is constituted by its own nonbeing. In the same way, Homo Narratiosus's love of stories may have preceded its stories as the strange loop of the phenomenological intention emerging from the ground of love of experience for experience's sake. Or, as the student of Derrida, the Catholic Phenomenologist Jean Luc Marion put it, "God is proceeded by His Love," because He appears as the gift of appearance itself, which is the recursion of the phenomenological intention appearing for itself as experience qua experience. This recursive loop might be put in specifically narratological terms as the ground of stories, which is the love of story appearing to itself as the experience of story. Whatever appears is grounded in awareness, which is the love of appearances that precedes whatever appears. Perhaps, in some Nick Landian "Hyperstitional" way, the evolutionary story of the struggle to survive was only a pretext for the experience of it, and predictive processes were implanted by this love of experience to further the story.</p>`
+  },
+  {
+    title: 'The Stories That Tell Us',
+    num: '12',
+    body: `<p>Dreams are particularly extravagant expression of this love of story. These stories have intentions of their own and insist on being told even when we are trying to get some rest. Dreams may be the stories that can no longer be repressed, as Freud would have it, but they are also the stories that tell us who we are beyond the ego that presents itself as if it were the entirety of ourselves when we are awake. The ego rejects the "otherness" that appears in dreams as outside of itself, or "other" than itself, because this nightmarish otherness does not accord with the ego's intentions for itself, or of what is commonly called our "self-image." Dreams are the stories that tell us rather than the stories that we tell about ourselves when we are in the ego's reduced self. The material reduction reduces us to prediction machines, so that our daytime stories are about efficacious, economic transactions, but the horror of the night reveals the destroyer of these waking ambitions.</p>
+<p>This half-serious conjecture about story's having their own intentions is only to show that there is some other, heretofore, unknown self at work in the process of evolution by natural selection where stories are concerned, and one place this "other" self's intention is revealed is in dreams. The daytime storyteller is the infamous ego, but who's spinning the yarn when the ego is asleep? Well, it must be ourselves of course, but dreams teach us, like any true teacher, how little we know about ourselves, particularly about the wider self that emerges whenever the ego cannot reduce the world to material benefit. There is a mysterious intention within us that used to be less hidden. In the foregrounding of the evolutionarily advantageous, the actual possibility of aesthetic value withdraws.</p>
+<p>Beauty, wonder, and awe may be reducible to their material causality when they are advantageous, but Homo Narratiosus's love of story isn't always gainful because it isn't always about remuneration. The narratological love of experience is the extravagant beyond of the profit motive and of the sensible reduction of uncertainty by prediction machines. Homo Sapien's narratological intentions come before its commercial ones, and even before the biological commerce of its body, which is homeostasis within a boundary. But why bother with the extravagant expenditures of a high above equilibrium steady state? Nothing in the material world could intend for such a thing by accident, unless there was a more primary intention of matter-energy to make gratuitous appearances of itself to itself. The body's biological commerce is bound to the narratological intention of a whole, but this whole isn't unified by the intentions of survival and reproduction alone. If natural selection was the only selector for biological bodies, then it would have produced much easier to maintain organisms, like amoebae or whatever, and it hasn't yet been establish how "blind" principles "selected" for even the most basic life beyond description of its incomprehensibly vast probabilities. The fact of extremely complex, exceedingly difficult to maintain, fearfully high above equilibrium organisms who love to tell stories and make pointless art make one wonder if there wasn't a value within the original intention of the whole for aesthetics from the beginning.</p>`
+  }
+];
+
+// Theory TOC navigation
+const theoryToc = document.getElementById('theory-toc');
+const theoryEssayView = document.getElementById('theory-essay');
+const theoryEssayTitle = document.getElementById('theory-essay-title');
+const theoryEssayNum = document.getElementById('theory-essay-num');
+const theoryEssayBody = document.getElementById('theory-essay-body');
+const theoryEssayBack = document.getElementById('theory-essay-back');
+const theorySection = document.getElementById('section-theory');
+
+document.querySelectorAll('.theory-toc-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const idx = parseInt(link.getAttribute('data-essay'));
+    const essay = theoryEssays[idx];
+    theoryEssayTitle.textContent = essay.title;
+    theoryEssayNum.textContent = 'Essay ' + essay.num;
+    theoryEssayBody.innerHTML = essay.body;
+    theoryToc.classList.add('hidden');
+    theoryEssayView.classList.add('active');
+    theorySection.scrollTop = 0;
+  });
+});
+
+theoryEssayBack.addEventListener('click', () => {
+  theoryEssayView.classList.remove('active');
+  theoryToc.classList.remove('hidden');
+  theorySection.scrollTop = 0;
+});
+
+// Reset theory view when section is closed
+document.querySelectorAll('.section-back').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.closest('#section-theory')) {
+      theoryEssayView.classList.remove('active');
+      theoryToc.classList.remove('hidden');
+    }
+  });
+});
+  </script>
+</body>
+</html>
