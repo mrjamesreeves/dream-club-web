@@ -3,6 +3,10 @@
     {
       "source": "/.well-known/apple-app-site-association",
       "destination": "/aasa.json"
+    },
+    {
+      "source": "/app/join/:code",
+      "destination": "/app/join.html"
     }
   ],
   "headers": [

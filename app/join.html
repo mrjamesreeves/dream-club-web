@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join a Dream Club — Dream Club</title>
+  <meta name="description" content="You've been invited to join a Dream Club circle.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #000;
+      --fg: #fff;
+      --dim: rgba(255,255,255,0.55);
+      --dimmer: rgba(255,255,255,0.35);
+      --hairline: rgba(255,255,255,0.15);
+      --gold: #B79A71;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      line-height: 1.5;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 480px;
+      text-align: left;
+    }
+
+    .brand {
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+
+    .lede {
+      font-size: 16px;
+      color: var(--dim);
+      margin-bottom: 32px;
+      max-width: 40ch;
+    }
+
+    .code-block {
+      border: 1px solid var(--hairline);
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin-bottom: 32px;
+    }
+
+    .code-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .code {
+      font-family: 'Source Sans 3', monospace;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--fg);
+      word-break: break-all;
+    }
+
+    .cta {
+      display: block;
+      background: var(--fg);
+      color: var(--bg);
+      text-decoration: none;
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      padding: 16px 20px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      transition: opacity 0.15s;
+    }
+    .cta:hover { opacity: 0.85; }
+
+    .cta.secondary {
+      background: transparent;
+      color: var(--fg);
+      border: 1px solid var(--hairline);
+    }
+
+    .footnote {
+      font-size: 12px;
+      color: var(--dimmer);
+      margin-top: 28px;
+      line-height: 1.6;
+    }
+
+    .footnote a {
+      color: var(--dim);
+      text-decoration: none;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .footnote a:hover { color: var(--fg); }
+
+    .divider {
+      width: 32px;
+      height: 1px;
+      background: var(--hairline);
+      margin: 28px 0;
+    }
+
+    /* Give the header a tiny bit of breathing room on tall screens */
+    @media (min-height: 720px) {
+      body { align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">Dream Club</div>
+    <h1>You've been invited to a circle.</h1>
+    <p class="lede">
+      Dream Club is a quiet space to share your dreams with people you know.
+      Open the app to accept and join the circle.
+    </p>
+
+    <div class="code-block">
+      <div class="code-label">Invite code</div>
+      <div class="code" id="invite-code">…</div>
+    </div>
+
+    <a class="cta" id="open-app-btn" href="#">Open in Dream Club</a>
+    <a class="cta secondary" href="mailto:mr.james.reeves@gmail.com?subject=Dream%20Club%20TestFlight%20invite">
+      Don't have the app? Request access
+    </a>
+
+    <div class="divider"></div>
+
+    <p class="footnote">
+      Dream Club is currently in private beta on iOS via TestFlight.
+      Public App Store release is coming soon. If someone shared this
+      link with you and you don't have the app yet, message them or
+      the address above and they can send you a TestFlight invite.
+    </p>
+  </main>
+
+  <script>
+    // Pull the invite code out of the URL: /app/join/<code>
+    // Falls back gracefully if the URL is malformed or the code is missing.
+    (function () {
+      var parts = location.pathname.split('/').filter(Boolean);
+      var code = parts.length >= 3 ? parts[parts.length - 1] : '';
+      var el = document.getElementById('invite-code');
+      if (code && /^[A-Za-z0-9_-]+$/.test(code)) {
+        el.textContent = code;
+      } else {
+        el.textContent = 'Missing — this link may be expired.';
+        el.style.color = 'rgba(255,255,255,0.4)';
+      }
+
+      // The "Open in Dream Club" button re-navigates to the same universal
+      // link. If the app is installed, iOS will intercept before Safari
+      // reloads — the user lands inside Dream Club. If not, Safari just
+      // reloads this page, which is a harmless no-op.
+      var btn = document.getElementById('open-app-btn');
+      btn.href = location.pathname + location.search;
+    })();
+  </script>
+</body>
+</html>
