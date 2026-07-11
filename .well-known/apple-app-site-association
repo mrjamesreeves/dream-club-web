@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["6Y8YKTPYQ8.com.midnightradio.Dream-Club"],
+        "components": [
+          {
+            "/": "/app/join/*",
+            "comment": "Circle join links open the Dream Club iOS app"
+          }
+        ]
+      }
+    ]
+  }
+}
