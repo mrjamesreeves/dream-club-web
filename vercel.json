@@ -1,5 +1,17 @@
 {
+  "rewrites": [
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "destination": "/aasa.json"
+    }
+  ],
   "headers": [
+    {
+      "source": "/aasa.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    },
     {
       "source": "/.well-known/apple-app-site-association",
       "headers": [
