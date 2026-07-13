@@ -7,6 +7,10 @@
     {
       "source": "/app/join/:code",
       "destination": "/app/join.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
     }
   ],
   "headers": [
