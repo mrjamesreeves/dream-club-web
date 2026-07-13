@@ -143,6 +143,23 @@ body {
   opacity: 0.5;
 }
 
+/* "Get the App" CTA — sits at the end of the nav cluster. Overrides the
+   plain nav-link styling; opens the Join section (swap to the App Store
+   URL at launch). */
+.nav a.header-download {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  background: #B79A71;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  transition: opacity 0.2s ease;
+}
+.nav a.header-download:hover { color: #000; opacity: 0.85; }
+
 .nav-label {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
@@ -674,10 +691,10 @@ body {
     </div>
 
     <nav class="nav">
-      <a href="#catalogue" data-section="catalogue"><span class="nav-num">01</span><span class="nav-label">Catalogue</span></a>
-      <a href="#theory" data-section="theory"><span class="nav-num">02</span><span class="nav-label">Theory</span></a>
-      <a href="#answers" data-section="answers"><span class="nav-num">03</span><span class="nav-label">Answers</span></a>
-      <a href="#join" data-section="join"><span class="nav-num">04</span><span class="nav-label">Join</span></a>
+      <a href="#join" data-section="join"><span class="nav-label">Join</span></a>
+      <a href="#theory" data-section="theory"><span class="nav-label">Theory</span></a>
+      <a href="#catalogue" data-section="catalogue"><span class="nav-label">Catalogue</span></a>
+      <a href="#join" id="header-download-btn" class="header-download">Get the App</a>
     </nav>
 
     <button class="hamburger" id="hamburger-btn" aria-label="Menu">
@@ -689,10 +706,9 @@ body {
 
   <!-- Mobile nav overlay -->
   <div class="mobile-nav-overlay" id="mobile-nav">
-    <a href="#catalogue" data-section="catalogue"><span class="nav-num">01</span> Catalogue</a>
-    <a href="#theory" data-section="theory"><span class="nav-num">02</span> Theory</a>
-    <a href="#answers" data-section="answers"><span class="nav-num">03</span> Answers</a>
-    <a href="#join" data-section="join"><span class="nav-num">04</span> Join</a>
+    <a href="#join" data-section="join">Join</a>
+    <a href="#theory" data-section="theory">Theory</a>
+    <a href="#catalogue" data-section="catalogue">Catalogue</a>
   </div>
 
   <div class="page" id="home">
@@ -760,37 +776,28 @@ body {
     </div>
   </div>
 
-  <!-- Section: Answers -->
-  <div class="section" id="section-answers">
-    <div class="section-inner">
-      <h2 class="section-title">Answers</h2>
-      <p class="section-subtitle">Questions</p>
-      <div class="section-divider"></div>
-      <p class="section-body">Your questions about Dream Club, answered. Coming soon.</p>
-    </div>
-  </div>
-
   <!-- Section: Join -->
   <div class="section" id="section-join">
     <div class="section-inner">
       <h2 class="section-title">Join</h2>
-      <p class="section-subtitle">Waitlist</p>
+      <p class="section-subtitle">The App</p>
       <div class="section-divider"></div>
-      <p class="section-body">Dream Club is currently in private beta. Leave your email to join the waitlist.</p>
-      <div style="margin-top: 2rem; display: flex; gap: 0.8rem;">
-        <input type="email" placeholder="your@email.com" style="
-          font-family: 'Source Sans 3', sans-serif;
-          font-weight: 300;
-          font-size: 0.95rem;
-          color: #fff;
-          background: transparent;
-          border: none;
-          border-bottom: 1px solid #333;
-          outline: none;
-          padding: 0.5rem 0;
-          width: 280px;
-        ">
-        <button style="
+      <p class="section-body">
+        Dream Club is a dream journal for iPhone. Log your dreams in the
+        hazy minutes after waking — by voice or by hand — and read them
+        again through Jungian, Lacanian, and Deleuzian lenses. Watch
+        your recurring symbols accumulate. Share dreams with a small
+        circle of people you trust, and get word when your dreams
+        cross — the same fire, the same staircase, the same week.
+      </p>
+      <p class="section-body">
+        Your journal stays on your device and in your own iCloud.
+        Sharing is always by choice, dream by dream.
+      </p>
+      <div style="margin-top: 2rem;">
+        <!-- LAUNCH TODO: swap the href below for the App Store URL -->
+        <a href="mailto:mr.james.reeves@gmail.com?subject=Dream%20Club%20beta%20access" style="
+          display: inline-block;
           font-family: 'Source Sans 3', sans-serif;
           font-weight: 500;
           font-size: 0.75rem;
@@ -798,11 +805,21 @@ body {
           text-transform: uppercase;
           color: #000;
           background: #B79A71;
-          border: none;
-          padding: 0.6rem 1.4rem;
-          cursor: pointer;
-        ">Request</button>
+          text-decoration: none;
+          padding: 0.7rem 1.6rem;
+          border-radius: 999px;
+        ">Get the App</a>
+        <p class="section-body" style="margin-top: 1rem; font-size: 0.85rem; color: #807a72;">
+          Currently in private beta — the button sends us a note and
+          we'll get you an invite. App Store release coming soon.
+        </p>
       </div>
+      <div class="section-divider" style="margin-top: 2.5rem;"></div>
+      <p class="section-body" style="font-size: 0.9rem;">
+        <a href="/privacy" style="color: #fff; border-bottom: 1px solid #333; text-decoration: none;">Privacy policy</a>
+        — the short version: your dreams stay on your device and in your
+        own iCloud. No ads, no trackers, never sold.
+      </p>
     </div>
   </div>
 
@@ -927,7 +944,7 @@ function closeAllSections() {
   document.querySelectorAll('.nav a.active').forEach(a => a.classList.remove('active'));
 }
 
-document.querySelectorAll('.nav a').forEach(link => {
+document.querySelectorAll('.nav a[data-section]').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const sectionId = link.getAttribute('data-section');
@@ -942,6 +959,16 @@ document.querySelectorAll('.nav a').forEach(link => {
       section.scrollTop = 0;
     }
   });
+});
+
+// "Get the App" always opens the Join section (never toggles closed).
+document.getElementById('header-download-btn')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  closeAllSections();
+  const joinSection = document.getElementById('section-join');
+  joinSection.classList.add('active');
+  document.querySelector('.nav a[data-section="join"]')?.classList.add('active');
+  joinSection.scrollTop = 0;
 });
 
 // Logo click = go home
