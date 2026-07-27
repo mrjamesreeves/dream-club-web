@@ -49,7 +49,9 @@
     /* ---------- Shared bits ---------- */
 
     .wrap {
-      max-width: var(--measure);
+      /* The padding is only a phone-edge gutter — the +48 keeps it
+         from eating into the 600px text measure (border-box). */
+      max-width: calc(var(--measure) + 48px);
       margin: 0 auto;
       /* Longhand: a `padding` shorthand here outranks the element
          selector on <section> and would flatten its vertical rhythm. */
@@ -158,8 +160,8 @@
 
     .gallery {
       background: #333;
-      margin-top: 96px;
-      padding: 27px 0 69px;
+      margin: 96px 0 20px;
+      padding: 30px 0;
     }
 
     .shots {
@@ -169,7 +171,10 @@
       gap: 21px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding: 0 max(24px, calc(50vw - 320px));
+      /* Flat gutter: the rail rests with the first shot near the left
+         edge instead of centring it. Unreachable centre-snap positions
+         clamp to the scroll bounds, so the ends stay put. */
+      padding: 0 24px;
       scrollbar-width: none;
     }
     .shots::-webkit-scrollbar { display: none; }
@@ -189,7 +194,7 @@
 
     .shot figcaption {
       font-style: italic;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.4;
       color: var(--dim);
       margin-top: 8px;
@@ -220,18 +225,18 @@
     /* ---------- Prose ---------- */
 
     .prose { padding-top: 50px; }
-    .prose p { font-size: 20px; line-height: 1.5; margin-bottom: 10px; }
+    .prose p { font-size: 18px; line-height: 1.5; margin-bottom: 10px; }
     .prose h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
       font-weight: 600;
-      font-size: 30px;
+      font-size: 28px;
       line-height: 1.4;
       color: var(--accent);
-      margin: 32px 0 10px;
+      margin: 50px 0 4px;
     }
     .prose ul {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.5;
       margin: 0 0 10px;
       padding-left: 1.4em;
@@ -290,7 +295,6 @@
       </figure>
       <figure class="shot phone">
         <img src="img/product/dc2.webp" alt="Dream Club on iPhone: the journal" loading="lazy">
-        <figcaption>A pocket archive of dreams</figcaption>
       </figure>
       <figure class="shot desktop">
         <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: writing a dream" loading="lazy">
@@ -302,11 +306,10 @@
       </figure>
       <figure class="shot phone">
         <img src="img/product/dc3.webp" alt="Dream Club on iPhone: a dream" loading="lazy">
-        <figcaption>Every dream in its place</figcaption>
       </figure>
       <figure class="shot phone">
         <img src="img/product/dc4.webp" alt="Dream Club on iPhone: an analysis" loading="lazy">
-        <figcaption>Three lenses for a second reading</figcaption>
+        <figcaption>Three lenses for analysis</figcaption>
       </figure>
       <figure class="shot desktop">
         <img src="img/product/dcmac3.webp" alt="Dream Club on Mac: reading an analysis" loading="lazy">
@@ -351,7 +354,7 @@
     <p>Every analyzed dream's symbols&mdash;fire, staircases, teeth&mdash;to a growing inventory of your recurring motifs. Your mythology will surface.</p>
 
     <h2>Club</h2>
-    <p>Dreams need to be told. Create a private, invite-only group of up to twelve people you know and share a dream when you choose to. When your dream and a friend's dream share the symbols, Dream Club delivers a synchronicity alert.</p>
+    <p>Dreams need to be told. Create a private, invite-only group of up to twelve people you know and share a dream when you choose to. When your dream and a friend's dream share a symbol, Dream Club delivers a synchronicity alert.</p>
 
     <h2>Private by Design</h2>
     <p>No ads. No trackers. No feeds or strangers. Your journal never touches our servers unless you request an analysis (processed, never stored) or share a dream with your circle of friends.</p>
