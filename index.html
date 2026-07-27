@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="img/icon.png">
 
   <meta property="og:title" content="Dream Club">
-  <meta property="og:description" content="A private dream journal for iPhone and Mac.">
+  <meta property="og:description" content="A dignified home for your dreams.">
   <meta property="og:image" content="https://thedream.club/img/product/dcmac1.webp">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedream.club">
@@ -17,17 +17,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: linear-gradient(180deg, #000 0%, #222 100%);
-      --panel: #000;
       --accent: #8AB7C8;
-      --body: #cecece;
-      --dim: #646464;
-      --rule: rgba(138, 183, 200, 0.5);
-      --measure: 620px;
+      --body: #ccc;
+      --dim: #999;
+      --measure: 600px;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,8 +40,8 @@
       background: var(--bg);
       color: var(--body);
       font-family: 'IBM Plex Sans', -apple-system, sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
+      font-weight: 400;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -59,28 +57,14 @@
       padding-right: 24px;
     }
 
-    .label {
-      font-size: 9px;
-      letter-spacing: 1.9px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--dim);
-    }
-
+    /* The Figma hairline: 250 × 1, full accent. */
     .rule {
-      width: 50px;
-      height: 0.5px;
-      background: var(--rule);
+      width: 250px;
+      max-width: 100%;
+      height: 1px;
+      background: var(--accent);
       border: 0;
-      margin: 0 0 30px;
     }
-
-    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; }
-
-    section { padding: 90px 0; }
-    section + section { padding-top: 0; }
-
-    p + p { margin-top: 1.1em; }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -88,60 +72,104 @@
     /* ---------- Hero ---------- */
 
     .hero {
-      padding: 120px 0 60px;
+      padding: 43px 24px 0;
       text-align: center;
     }
 
-    .hero img.mark {
-      width: 76px; height: 76px;
-      border-radius: 17px;
-      margin-bottom: 26px;
+    .hero .moon {
+      width: 150px;
+      height: 143px;
+      object-fit: cover;
+      margin: 0 auto 5px;
+      display: block;
     }
 
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 1.89px;
+      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.4;
+      color: #979797;
+    }
+    .eyebrow .accent { color: var(--accent); }
+
     .hero h1 {
-      font-size: clamp(2.6rem, 7vw, 4rem);
-      line-height: 1.05;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 7vw, 50px);
+      line-height: 1.3;
       color: #fff;
-      margin-bottom: 14px;
+      margin-top: 31px;
     }
 
     .hero .lede {
-      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      font-family: 'IBM Plex Serif', Georgia, serif;
+      font-size: 20px;
       color: var(--body);
-      max-width: 30ch;
-      margin: 0 auto 34px;
+      margin: 0 auto;
+      max-width: var(--measure);
     }
 
     .cta {
       display: inline-block;
-      font-size: 9px;
-      letter-spacing: 1.9px;
-      text-transform: uppercase;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.14px;
       color: #000;
       background: var(--accent);
-      padding: 13px 26px;
-      border-radius: 999px;
+      padding: 8px 32px;
+      border-radius: 10px;
+      margin-top: 18px;
       transition: opacity 0.2s ease;
     }
     .cta:hover { opacity: 0.85; text-decoration: none; }
 
     .hero .fineprint {
-      margin-top: 16px;
-      font-size: 0.85rem;
-      color: var(--dim);
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--accent);
+      max-width: 292px;
+      margin: 17px auto 0;
     }
+
+    /* ---------- Feature quad ---------- */
+
+    .quad {
+      max-width: 1159px; /* 4 × 250 + 3 × 53 */
+      margin: 0 auto;
+      padding: 96px 24px 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 53px;
+    }
+    .quad div {
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--body);
+      border-top: 1px solid var(--accent);
+      padding-top: 10px;
+    }
+    @media (max-width: 1100px) { .quad { grid-template-columns: repeat(2, 1fr); max-width: 640px; } }
+    @media (max-width: 560px)  { .quad { grid-template-columns: 1fr; max-width: 400px; } }
 
     /* ---------- Gallery ---------- */
 
-    .gallery { padding: 40px 0 40px; background: #333; }
+    .gallery {
+      background: #333;
+      margin-top: 96px;
+      padding: 27px 0 69px;
+    }
 
     .shots {
+      --shot-h: 400px;
       display: flex;
-      gap: 22px;
+      align-items: flex-start;
+      gap: 21px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding: 0 max(24px, calc(50vw - var(--measure) / 2));
+      padding: 0 max(24px, calc(50vw - 320px));
       scrollbar-width: none;
     }
     .shots::-webkit-scrollbar { display: none; }
@@ -149,186 +177,197 @@
     .shot {
       flex: 0 0 auto;
       scroll-snap-align: center;
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,0.07);
     }
-    .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .shot.desktop { width: min(860px, 86vw); aspect-ratio: 16 / 10; }
-    .shot.phone { width: min(272px, 46vw); aspect-ratio: 1242 / 2688; }
+    .shot img {
+      display: block;
+      height: var(--shot-h);
+      width: auto;
+      object-fit: cover;
+    }
+    .shot.desktop img { aspect-ratio: 16 / 10; }
+    .shot.phone img   { aspect-ratio: 1242 / 2688; }
 
+    .shot figcaption {
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--dim);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 700px) { .shots { --shot-h: 320px; } }
+
+    /* Below the band, on the page background — per the mockup the
+       arrows ride just under the #333 edge. */
     .gallery-controls {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-top: 26px;
+      gap: 40px;
+      margin-top: 10px;
     }
     .gallery-controls button {
       background: none;
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--accent);
-      width: 34px; height: 34px;
-      border-radius: 999px;
+      border: 0;
+      padding: 6px;
       cursor: pointer;
-      font-size: 13px;
-      line-height: 1;
-      transition: border-color 0.2s ease;
+      line-height: 0;
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
     }
-    .gallery-controls button:hover { border-color: var(--accent); }
+    .gallery-controls button:hover { opacity: 1; }
+    .gallery-controls svg { display: block; }
 
     /* ---------- Prose ---------- */
 
+    .prose { padding-top: 50px; }
+    .prose p { font-size: 20px; line-height: 1.5; margin-bottom: 10px; }
     .prose h2 {
-      font-size: clamp(1.6rem, 4vw, 2.1rem);
-      color: #fff;
-      margin-bottom: 18px;
-      line-height: 1.15;
-    }
-    .prose .label { display: block; margin-bottom: 10px; }
-
-    /* ---------- Pillars ---------- */
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 40px;
-    }
-    .pillar h3 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      font-size: 1.5rem;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 1.4;
       color: var(--accent);
-      margin-bottom: 10px;
+      margin: 32px 0 10px;
     }
-    .pillar p { font-size: 0.95rem; }
+    .prose ul {
+      font-size: 20px;
+      line-height: 1.5;
+      margin: 0 0 10px;
+      padding-left: 1.4em;
+    }
+    .prose li b { font-weight: 600; }
 
-    /* ---------- Feature list ---------- */
+    /* ---------- Changelog ---------- */
 
-    .features {
-      list-style: none;
-      /* Column flow, not grid: grid rows align, which leaves holes
-         when items wrap to different heights. */
-      columns: 2;
-      column-gap: 40px;
-      font-size: 0.95rem;
-    }
-    .features li {
-      padding-left: 18px;
-      margin-bottom: 12px;
-      position: relative;
-      color: var(--body);
-      break-inside: avoid;
-    }
-    @media (max-width: 560px) { .features { columns: 1; } }
-    .features li::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 0.72em;
-      width: 6px; height: 0.5px;
-      background: var(--accent);
-    }
+    .changelog { padding-top: 60px; }
+    .changelog .rule { margin-bottom: 59px; }
 
     /* ---------- Footer ---------- */
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 40px 0 70px;
-      font-size: 0.85rem;
+      padding: 100px 0 70px;
+      font-size: 14px;
       color: var(--dim);
     }
     footer .links { margin-top: 10px; display: flex; gap: 20px; flex-wrap: wrap; }
 
     @media (max-width: 600px) {
-      section { padding: 64px 0; }
-      .hero { padding-top: 80px; }
+      .prose p, .prose ul { font-size: 18px; }
+      .quad { padding-top: 64px; }
+      .gallery { margin-top: 64px; }
     }
   </style>
 </head>
 <body>
 
   <!-- ---------------- Hero ---------------- -->
-  <header class="hero wrap">
-    <img class="mark" src="img/icon.png" alt="Dream Club">
+  <header class="hero">
+    <img class="moon" id="moon-img" src="img/moons/waxing-gibbous.jpg" alt="">
+    <p class="eyebrow" id="moon-name">Waxing Gibbous</p>
+    <p class="eyebrow accent" id="moon-meta">Week 31 &bull; Day 1</p>
     <h1>Dream Club</h1>
     <p class="lede">A dignified home for your dreams.</p>
-    <a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a>
-    <p class="fineprint">No ads or subscriptions. Ever.</p>
+    <div><a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a></div>
+    <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
   </header>
 
+  <!-- ---------------- Feature quad ---------------- -->
+  <section class="quad" aria-label="Highlights">
+    <div>Designed for easily logging your dreams while half-awake via text or voice.</div>
+    <div>Understand your dreams through three analytic lenses: Jungian, Lacanian, and Deleuzian.</div>
+    <div>Share specific dreams with a small circle of friends and receive synchronicity alerts.</div>
+    <div>No ads. No subscriptions. No user account required. Your dreams stay on your device.</div>
+  </section>
+
   <!-- ---------------- Gallery ---------------- -->
+  <!-- Captions beyond the three from the mockup are drafts — edit at will. -->
   <section class="gallery" aria-label="Screenshots">
     <div class="shots" id="shots">
-      <figure class="shot desktop"><img src="img/product/dcmac1.webp" alt="Dream Club on Mac: the journal list beside a dream with a photograph" loading="lazy"></figure>
-      <figure class="shot phone"><img src="img/product/dc1.webp" alt="Dream Club on iPhone" loading="lazy"></figure>
-      <figure class="shot phone"><img src="img/product/dc2.webp" alt="Dream Club on iPhone: dreams by month" loading="lazy"></figure>
-      <figure class="shot desktop"><img src="img/product/dcmac2.webp" alt="Dream Club on Mac: symbols and themes" loading="lazy"></figure>
-      <figure class="shot phone"><img src="img/product/dc3.webp" alt="Dream Club on iPhone: a dream" loading="lazy"></figure>
-      <figure class="shot phone"><img src="img/product/dc4.webp" alt="Dream Club on iPhone: an analysis" loading="lazy"></figure>
-      <figure class="shot desktop"><img src="img/product/dcmac3.webp" alt="Dream Club on Mac: reading an analysis" loading="lazy"></figure>
-      <figure class="shot phone"><img src="img/product/dc5.webp" alt="Dream Club on iPhone: symbols and themes" loading="lazy"></figure>
-    </div>
-    <div class="gallery-controls">
-      <button type="button" id="prev" aria-label="Previous screenshot">&larr;</button>
-      <button type="button" id="next" aria-label="Next screenshot">&rarr;</button>
+      <figure class="shot phone">
+        <img src="img/product/dc1.webp" alt="Dream Club on iPhone" loading="lazy">
+        <figcaption>The moon greets you at the door</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc2.webp" alt="Dream Club on iPhone: the journal" loading="lazy">
+        <figcaption>A pocket archive of dreams</figcaption>
+      </figure>
+      <figure class="shot desktop">
+        <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: writing a dream" loading="lazy">
+        <figcaption>A mellow writing experience with option to add an image</figcaption>
+      </figure>
+      <figure class="shot desktop">
+        <img src="img/product/dcmac2.webp" alt="Dream Club on Mac: symbols and themes" loading="lazy">
+        <figcaption>Build a personal codex of symbols and themes</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc3.webp" alt="Dream Club on iPhone: a dream" loading="lazy">
+        <figcaption>Every dream in its place</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc4.webp" alt="Dream Club on iPhone: an analysis" loading="lazy">
+        <figcaption>Three lenses for a second reading</figcaption>
+      </figure>
+      <figure class="shot desktop">
+        <img src="img/product/dcmac3.webp" alt="Dream Club on Mac: reading an analysis" loading="lazy">
+        <figcaption>A proper desk for rereading</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc5.webp" alt="Dream Club on iPhone: themes" loading="lazy">
+        <figcaption>Your mythology will surface</figcaption>
+      </figure>
     </div>
   </section>
+  <div class="gallery-controls">
+      <button type="button" id="prev" aria-label="Previous screenshot">
+        <svg width="31" height="20" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M29.4175 9.91091H1M10.3391 1L1 9.91091L10.3391 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button type="button" id="next" aria-label="Next screenshot">
+        <svg width="31" height="20" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.0825 9.91091H29.5M20.1609 1L29.5 9.91091L20.1609 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+  </div>
 
-  <!-- ---------------- Why ---------------- -->
+  <!-- ---------------- Prose ---------------- -->
   <section class="prose wrap">
-    <span class="label">Why</span>
-    <hr class="rule">
-    <h2>A dream lasts about ninety seconds after you open your eyes.</h2>
-    <p>Dream Club is built for those ninety seconds. Open it half-asleep, type or talk until you run out, and put the phone down. Everything else — the title, the symbols, any interpretation — waits until you're awake enough to care.</p>
-    <p>The Mac app is the other half of the ritual: a proper desk for rereading, editing, and watching your own motifs pile up over months.</p>
-  </section>
+    <p>Dreams dissolve fast. Dream Club is built for the hazy minutes after waking: a hushed room where you can set down a dream before it evaporates and return to it later with questions.</p>
 
-  <!-- ---------------- Pillars ---------------- -->
-  <section class="wrap">
-    <span class="label">What it does</span>
-    <hr class="rule">
-    <div class="pillars">
-      <div class="pillar">
-        <h3>Capture</h3>
-        <p>Type it or speak it, in the dark, with one hand. Voice notes are transcribed on your device. Nothing is asked of you but the dream itself.</p>
-      </div>
-      <div class="pillar">
-        <h3>Reflect</h3>
-        <p>When you want a second reading, ask for one: Jungian, Lacanian, or Deleuzian. Never automatic, never unbidden. A mirror, not a fortune teller.</p>
-      </div>
-      <div class="pillar">
-        <h3>Share</h3>
-        <p>Invite up to twelve people you actually know. When your dream and a friend's share a symbol in the same week, you'll a synchronicity alert.</p>
-      </div>
-    </div>
-  </section>
+    <h2>Journal</h2>
+    <p>An archive of your dreaming life. Every dream you log stays on your device and in your own iCloud&mdash;synced across your devices, safe through reinstalls, readable by nobody but you unless you choose to share it.</p>
 
-  <!-- ---------------- Features ---------------- -->
-  <section class="wrap">
-    <span class="label">Details</span>
-    <hr class="rule">
-    <ul class="features">
-      <li>iPhone, iPad, and Mac — one free download</li>
-      <li>Syncs through your own iCloud, not our servers</li>
-      <li>Voice capture with on-device transcription</li>
-      <li>Three analytical lenses, only when asked</li>
-      <li>Symbols and themes that accumulate into an inventory</li>
-      <li>Private circles of up to twelve people</li>
-      <li>Alerts when a symbol crosses between dreams</li>
-      <li>Attach a photograph to any dream</li>
-      <li>Full-text search across everything you've written</li>
-      <li>Editable dates for transcribing old paper journals</li>
-      <li>Dreams are numbered, oldest to newest</li>
-      <li>Sign in with Apple, or don't sign in at all</li>
+    <h2>Analysis</h2>
+    <p>Analyze your dream through three distinct lenses:</p>
+    <ul>
+      <li><b>Jungian:</b> archetypes, the shadow, the collective unconscious.</li>
+      <li><b>Lacanian:</b> desire, language, what resists saying.</li>
+      <li><b>Deleuzian:</b> flows, thresholds, becoming.</li>
     </ul>
+    <p>Each analysis offers a question to carry into the day.</p>
+
+    <h2>Themes</h2>
+    <p>Every analyzed dream's symbols&mdash;fire, staircases, teeth&mdash;to a growing inventory of your recurring motifs. Your mythology will surface.</p>
+
+    <h2>Club</h2>
+    <p>Dreams need to be told. Create a private, invite-only group of up to twelve people you know and share a dream when you choose to. When your dream and a friend's dream share the symbols, Dream Club delivers a synchronicity alert.</p>
+
+    <h2>Private by Design</h2>
+    <p>No ads. No trackers. No feeds or strangers. Your journal never touches our servers unless you request an analysis (processed, never stored) or share a dream with your circle of friends.</p>
+    <p>Signing in with your Apple ID is optional: the journal and the analysis work without an account. <a href="/privacy">Read our privacy policy &rarr;</a></p>
   </section>
 
-  <!-- ---------------- Privacy ---------------- -->
-  <section class="prose wrap">
-    <span class="label">Privacy</span>
+  <!-- ---------------- Changelog ---------------- -->
+  <section class="changelog wrap prose">
     <hr class="rule">
-    <h2>Your journal is nobody else's business.</h2>
-    <p>Dreams live on your device and in your own iCloud. Nothing leaves unless you deliberately share a single dream with your circle — and you can unshare it just as easily. There is no public feed, no discovery, no strangers.</p>
-    <p>No ads, no trackers, no analytics, nothing to sell. Signing in is optional: the journal and the analysis work without an account. <a href="/privacy">Read the privacy policy &rarr;</a></p>
+    <h2>Version 2.2 &bull; July 27, 2026</h2>
+    <ul>
+      <li>Design improvements and a more mellow writing situation.</li>
+      <li>Bugs fixed and ghosts exorcised.</li>
+      <li>Nicer display of symbols and themes.</li>
+      <li>This is the water, this is the well.</li>
+    </ul>
   </section>
 
   <!-- ---------------- Footer ---------------- -->
@@ -342,6 +381,45 @@
   </footer>
 
   <script>
+    // Tonight's moon, computed client-side. Same eight buckets the app
+    // uses; images are the NASA set from the original site.
+    (function () {
+      const SYNODIC = 29.53058867;
+      const REF_NEW_MOON = Date.UTC(2000, 0, 6, 18, 14); // known new moon
+      // ±1-day windows for the primary phases — the original site's
+      // boundaries, tuned to match popular astronomy sites.
+      const PHASES = [
+        [0.034, 'New Moon',        'new.webp'],
+        [0.216, 'Waxing Crescent', 'waxing-crescent.jpg'],
+        [0.284, 'First Quarter',   'first-quarter.jpg'],
+        [0.466, 'Waxing Gibbous',  'waxing-gibbous.jpg'],
+        [0.534, 'Full Moon',       'full.webp'],
+        [0.716, 'Waning Gibbous',  'waning-gibbous.jpg.webp'],
+        [0.784, 'Last Quarter',    'third-quarter.jpg.webp'],
+        [0.966, 'Waning Crescent', 'waning-crescent.jpg.webp'],
+        [1.001, 'New Moon',        'new.webp'],
+      ];
+
+      const now = new Date();
+      const age = (((now - REF_NEW_MOON) / 86400000) % SYNODIC + SYNODIC) % SYNODIC;
+      const normalized = age / SYNODIC;
+      const [, name, file] = PHASES.find(([limit]) => normalized < limit);
+
+      // ISO week + weekday (Mon = 1), matching the mockup's numbering.
+      const t = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+      const dayNum = (t.getUTCDay() + 6) % 7;
+      t.setUTCDate(t.getUTCDate() - dayNum + 3);
+      const firstThursday = t.getTime();
+      t.setUTCMonth(0, 1);
+      if (t.getUTCDay() !== 4) t.setUTCMonth(0, 1 + ((4 - t.getUTCDay()) + 7) % 7);
+      const week = 1 + Math.round((firstThursday - t.getTime()) / 604800000);
+
+      document.getElementById('moon-img').src = 'img/moons/' + file;
+      document.getElementById('moon-name').textContent = name;
+      document.getElementById('moon-meta').textContent =
+        'Week ' + week + ' • Day ' + (dayNum + 1);
+    })();
+
     // Screenshot rail. Buttons step card-to-card by scrolling exactly
     // the distance needed to centre the next card — measured with
     // rects, since offsetLeft is relative to the nearest positioned
