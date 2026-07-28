@@ -79,8 +79,8 @@
     }
 
     .hero .moon {
-      width: 150px;
-      height: 143px;
+      width: 100px;
+      height: auto;
       object-fit: cover;
       margin: 0 auto 5px;
       display: block;
@@ -127,7 +127,7 @@
     }
     .cta:hover { opacity: 0.85; text-decoration: none; }
 
-    .hero .fineprint {
+    .hero .fineprint, .float-cta .fineprint {
       font-style: italic;
       font-size: 14px;
       line-height: 1.4;
@@ -135,6 +135,30 @@
       max-width: 292px;
       margin: 17px auto 0;
     }
+
+    /* ---------- Floating download (wide screens) ---------- */
+
+    .float-cta {
+      position: fixed;
+      top: 90px;
+      right: 40px;
+      width: 292px;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      z-index: 10;
+    }
+    .float-cta.visible {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+    .float-cta .cta { margin-top: 0; }
+    .float-cta .fineprint { margin: 12px 0 0; }
+    /* Only when there's clear air beside the 600px column. */
+    @media (max-width: 1359px) { .float-cta { display: none; } }
 
     /* ---------- Feature quad ---------- */
 
@@ -159,7 +183,7 @@
     /* ---------- Gallery ---------- */
 
     .gallery {
-      background: #333;
+      background: #222;
       margin: 96px 0 20px;
       padding: 30px 0;
     }
@@ -168,7 +192,7 @@
       --shot-h: 400px;
       display: flex;
       align-items: flex-start;
-      gap: 21px;
+      gap: 12px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       /* Flat gutter: the rail rests with the first shot near the left
@@ -183,11 +207,15 @@
       flex: 0 0 auto;
       scroll-snap-align: center;
     }
+    /* Double breath where the platforms change. */
+    .shot.phone + .shot.desktop,
+    .shot.desktop + .shot.phone { margin-left: 12px; }
     .shot img {
       display: block;
       height: var(--shot-h);
       width: auto;
       object-fit: cover;
+      border-radius: 12px;
     }
     .shot.desktop img { aspect-ratio: 16 / 10; }
     .shot.phone img   { aspect-ratio: 1242 / 2688; }
@@ -273,9 +301,61 @@
     <p class="eyebrow accent" id="moon-meta">Week 31 &bull; Day 1</p>
     <h1>Dream Club</h1>
     <p class="lede">A dignified home for your dreams.</p>
-    <div><a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a></div>
+    <div id="hero-cta"><a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a></div>
     <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
   </header>
+
+  <!-- Fixed download rail: fades in once the hero's button scrolls away. -->
+  <aside class="float-cta" id="float-cta" aria-hidden="true">
+    <a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a>
+    <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
+  </aside>
+
+
+  <!-- ---------------- Gallery ---------------- -->
+  <!-- Captions beyond the three from the mockup are drafts — edit at will. -->
+  <section class="gallery" aria-label="Screenshots">
+    <div class="shots" id="shots">
+      <figure class="shot phone">
+        <img src="img/product/dc1.webp" alt="Dream Club on iPhone" loading="lazy">
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc2.webp" alt="Dream Club on iPhone: the journal" loading="lazy">
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc3.webp" alt="Dream Club on iPhone: a dream" loading="lazy">
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc4.webp" alt="Dream Club on iPhone: an analysis" loading="lazy">
+      </figure>
+      <figure class="shot phone">
+        <img src="img/product/dc5.webp" alt="Dream Club on iPhone: themes" loading="lazy">
+      </figure>      <figure class="shot desktop">
+        <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: writing a dream" loading="lazy">
+      </figure>
+      <figure class="shot desktop">
+        <img src="img/product/dcmac2.webp" alt="Dream Club on Mac: symbols and themes" loading="lazy">
+      </figure>
+      <figure class="shot desktop">
+        <img src="img/product/dcmac3.webp" alt="Dream Club on Mac: reading an analysis" loading="lazy">
+      </figure>
+    </div>
+  </section>
+  <div class="gallery-controls">
+      <button type="button" id="prev" aria-label="Previous screenshot">
+        <svg width="21" height="10" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M29.4175 9.91091H1M10.3391 1L1 9.91091L10.3391 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button type="button" id="next" aria-label="Next screenshot">
+        <svg width="21" height="10" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.0825 9.91091H29.5M20.1609 1L29.5 9.91091L20.1609 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+  </div>
+
+
+
 
   <!-- ---------------- Feature quad ---------------- -->
   <section class="quad" aria-label="Highlights">
@@ -284,55 +364,6 @@
     <div>Share specific dreams with a small circle of friends and receive synchronicity alerts.</div>
     <div>No ads. No subscriptions. No user account required. Your dreams stay on your device.</div>
   </section>
-
-  <!-- ---------------- Gallery ---------------- -->
-  <!-- Captions beyond the three from the mockup are drafts — edit at will. -->
-  <section class="gallery" aria-label="Screenshots">
-    <div class="shots" id="shots">
-      <figure class="shot phone">
-        <img src="img/product/dc1.webp" alt="Dream Club on iPhone" loading="lazy">
-        <figcaption>The moon greets you at the door</figcaption>
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc2.webp" alt="Dream Club on iPhone: the journal" loading="lazy">
-      </figure>
-      <figure class="shot desktop">
-        <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: writing a dream" loading="lazy">
-        <figcaption>A mellow writing experience with option to add an image</figcaption>
-      </figure>
-      <figure class="shot desktop">
-        <img src="img/product/dcmac2.webp" alt="Dream Club on Mac: symbols and themes" loading="lazy">
-        <figcaption>Build a personal codex of symbols and themes</figcaption>
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc3.webp" alt="Dream Club on iPhone: a dream" loading="lazy">
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc4.webp" alt="Dream Club on iPhone: an analysis" loading="lazy">
-        <figcaption>Three lenses for analysis</figcaption>
-      </figure>
-      <figure class="shot desktop">
-        <img src="img/product/dcmac3.webp" alt="Dream Club on Mac: reading an analysis" loading="lazy">
-        <figcaption>A proper desk for rereading</figcaption>
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc5.webp" alt="Dream Club on iPhone: themes" loading="lazy">
-        <figcaption>Your mythology will surface</figcaption>
-      </figure>
-    </div>
-  </section>
-  <div class="gallery-controls">
-      <button type="button" id="prev" aria-label="Previous screenshot">
-        <svg width="31" height="20" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M29.4175 9.91091H1M10.3391 1L1 9.91091L10.3391 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <button type="button" id="next" aria-label="Next screenshot">
-        <svg width="31" height="20" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.0825 9.91091H29.5M20.1609 1L29.5 9.91091L20.1609 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-  </div>
 
   <!-- ---------------- Prose ---------------- -->
   <section class="prose wrap">
@@ -421,6 +452,19 @@
       document.getElementById('moon-name').textContent = name;
       document.getElementById('moon-meta').textContent =
         'Week ' + week + ' • Day ' + (dayNum + 1);
+    })();
+
+    // The floating download rail appears once the hero's own button
+    // has scrolled out of view — never two visible at once.
+    (function () {
+      const heroCTA = document.getElementById('hero-cta');
+      const float = document.getElementById('float-cta');
+      if (!heroCTA || !float || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(([entry]) => {
+        const away = !entry.isIntersecting;
+        float.classList.toggle('visible', away);
+        float.setAttribute('aria-hidden', String(!away));
+      }).observe(heroCTA);
     })();
 
     // Screenshot rail. Buttons step card-to-card by scrolling exactly
