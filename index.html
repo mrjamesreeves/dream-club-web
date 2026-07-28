@@ -171,39 +171,36 @@
       padding: 27px 0 26px;
     }
 
+    /* Four comps in a static row: 90% of the browser, centred,
+       capped at 1600. Widths scale in the comp's proportions
+       (phone 203u, mac 702u, gap 7u, platform seam 37u of 1362u). */
     .shots {
-      --shot-h: 439px;
+      width: 90%;
+      max-width: 1600px;
+      margin: 0 auto;
       display: flex;
       align-items: flex-start;
-      gap: 7px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      /* Flat gutter: the rail rests with the first shot near the left
-         edge instead of centring it. Unreachable centre-snap positions
-         clamp to the scroll bounds, so the ends stay put. */
-      padding: 0 37px;
-      scrollbar-width: none;
+      gap: 0.51%;
     }
-    .shots::-webkit-scrollbar { display: none; }
-
-    .shot {
-      flex: 0 0 auto;
-      scroll-snap-align: center;
-    }
+    .shot { min-width: 0; }
+    .shot.phone   { flex: 203 203 0; }
+    .shot.desktop { flex: 702 702 0; }
     /* Double breath where the platforms change. */
     .shot.phone + .shot.desktop,
-    .shot.desktop + .shot.phone { margin-left: 37px; }
+    .shot.desktop + .shot.phone { margin-left: 2.72%; }
     .shot img {
       display: block;
-      height: var(--shot-h);
-      width: auto;
-      object-fit: cover;
+      width: 100%;
+      height: auto;
       border-radius: 10px;
     }
-    .shot.desktop img { aspect-ratio: 16 / 10; }
-    .shot.phone img   { aspect-ratio: 1242 / 2688; }
 
-    @media (max-width: 700px) { .shots { --shot-h: 320px; padding: 0 24px; } }
+    /* Small screens: phones three-up, the Mac full width below. */
+    @media (max-width: 700px) {
+      .shots { flex-wrap: wrap; gap: 6px; }
+      .shot.phone { flex: 1 1 30%; }
+      .shot.desktop { flex: 1 1 100%; margin-left: 0; margin-top: 6px; }
+    }
 
     /* ---------- Callouts ---------- */
 
@@ -212,14 +209,16 @@
        The margins replicate the card geometry at full width; below
        1440 the rail can scroll, so alignment is moot and they wrap. */
     .callouts {
-      max-width: 1440px;
+      width: 90%;
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 0 37px;
-      display: flex;
+      display: grid;
+      /* Column starts mirror the card edges in the same 1362u system:
+         phone, phone, phone->mac seam, mac left half, mac right half. */
+      grid-template-columns: 15.42% 15.42% 18.13% 23.2% auto;
     }
     .callout {
-      flex: 0 0 auto;
-      width: 180px;
+      max-width: 180px;
       font-size: 14px;
       line-height: 1.4;
       color: var(--accent);
@@ -232,13 +231,8 @@
       background: var(--teal);
       margin-bottom: 9px;
     }
-    .callout + .callout { margin-left: 33px; }
-    .callout:nth-child(3) { margin-left: 29px; }
-    .callout:nth-child(4) { margin-left: 67px; }
-    .callout:nth-child(5) { margin-left: 134px; }
-    @media (max-width: 1439px) {
-      .callouts { flex-wrap: wrap; gap: 30px 40px; max-width: 700px; padding: 0 24px; }
-      .callout + .callout, .callout:nth-child(n) { margin-left: 0; }
+    @media (max-width: 1100px) {
+      .callouts { display: flex; flex-wrap: wrap; gap: 30px 40px; width: auto; max-width: 700px; padding: 0 24px; }
     }
 
     /* ---------- Prose ---------- */
