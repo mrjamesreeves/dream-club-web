@@ -127,7 +127,7 @@
     }
     .cta:hover { opacity: 0.85; text-decoration: none; }
 
-    .hero .fineprint, .float-cta .fineprint {
+    .hero .fineprint, .float-cta .fineprint, .bottom-cta .fineprint {
       font-style: italic;
       font-size: 14px;
       line-height: 1.4;
@@ -271,6 +271,17 @@
     }
     .prose li b { font-weight: 600; }
 
+    /* ---------- Bottom download (narrow screens) ---------- */
+
+    /* The floating rail's counterpart: where the sidebar has no room
+       (<1360px), the invitation reappears at the end of the read. */
+    .bottom-cta {
+      text-align: center;
+      padding: 90px 24px 0;
+    }
+    .bottom-cta .fineprint { margin: 14px auto 0; }
+    @media (min-width: 1360px) { .bottom-cta { display: none; } }
+
     /* ---------- Changelog ---------- */
 
     .changelog { padding-top: 60px; }
@@ -402,6 +413,12 @@
       <li>Nicer display of symbols and themes.</li>
       <li>This is the water, this is the well.</li>
     </ul>
+  </section>
+
+  <!-- ---------------- Bottom download ---------------- -->
+  <section class="bottom-cta">
+    <a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a>
+    <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
   </section>
 
   <!-- ---------------- Footer ---------------- -->
