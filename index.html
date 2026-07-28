@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Dream Club">
   <meta property="og:description" content="A dignified home for your dreams.">
-  <meta property="og:image" content="https://thedream.club/img/product/dcmac1.webp">
+  <meta property="og:image" content="https://thedream.club/img/product/card-mac.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedream.club">
   <meta name="twitter:card" content="summary_large_image">
@@ -24,6 +24,7 @@
     :root {
       --bg: linear-gradient(180deg, #000 0%, #222 100%);
       --accent: #8AB7C8;
+      --teal: #446B7A;
       --body: #ccc;
       --dim: #999;
       --measure: 600px;
@@ -60,12 +61,11 @@
       padding-right: 24px;
     }
 
-    /* The Figma hairline: 250 × 1, full accent. */
+    /* The Figma hairline: 50 × 2, deep teal. */
     .rule {
-      width: 250px;
-      max-width: 100%;
-      height: 1px;
-      background: var(--accent);
+      width: 50px;
+      height: 2px;
+      background: var(--teal);
       border: 0;
     }
 
@@ -140,14 +140,14 @@
     /* ---------- Sticky download rail (wide screens) ---------- */
 
     /* The rail spans prose + changelog; the unit enters in flow
-       aligned with the Journal heading (100px = the prose section's
-       50px padding + the first h2's 50px margin), pins at 90px from
-       the top while that span scrolls, and releases at the end of the
-       changelog — it never floats over the gallery or the footer. */
-    .rail-container { position: relative; }
+       aligned with the intro paragraph (50px = the prose section's
+       padding), pins at 90px from the top while that span scrolls,
+       and releases at the end of the changelog — it never floats
+       over the gallery or the footer. */
+    .rail-container { position: relative; margin-top: 60px; }
     .rail-slot {
       position: absolute;
-      top: 100px;
+      top: 50px;
       bottom: 0;
       right: 40px;
       width: 292px;
@@ -159,49 +159,29 @@
       pointer-events: auto;
     }
     .float-cta .cta { margin-top: 0; }
-    .float-cta .fineprint { margin: 12px 0 0; }
+    .float-cta .fineprint { margin: 12px 0 0; font-size: 12px; max-width: 245px; }
     /* Only when there's clear air beside the 600px column. */
     @media (max-width: 1359px) { .rail-slot { display: none; } }
-
-    /* ---------- Feature quad ---------- */
-
-    .quad {
-      max-width: 1159px; /* 4 × 250 + 3 × 53 */
-      margin: 0 auto;
-      padding: 96px 24px 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px 53px;
-    }
-    .quad div {
-      font-size: 16px;
-      line-height: 1.4;
-      color: var(--body);
-      border-top: 1px solid var(--accent);
-      padding-top: 10px;
-    }
-    @media (max-width: 1100px) { .quad { grid-template-columns: repeat(2, 1fr); max-width: 640px; } }
-    @media (max-width: 560px)  { .quad { grid-template-columns: 1fr; max-width: 400px; } }
 
     /* ---------- Gallery ---------- */
 
     .gallery {
-      background: linear-gradient(180deg, #111 0%, #222 100%);
-      margin: 70px 0 20px;
-      padding: 30px 0;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--teal) 100%);
+      margin: 58px 0 0;
+      padding: 27px 0 26px;
     }
 
     .shots {
-      --shot-h: 450px;
+      --shot-h: 439px;
       display: flex;
       align-items: flex-start;
-      gap: 15px;
+      gap: 7px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       /* Flat gutter: the rail rests with the first shot near the left
          edge instead of centring it. Unreachable centre-snap positions
          clamp to the scroll bounds, so the ends stay put. */
-      padding: 0 24px;
+      padding: 0 37px;
       scrollbar-width: none;
     }
     .shots::-webkit-scrollbar { display: none; }
@@ -212,63 +192,72 @@
     }
     /* Double breath where the platforms change. */
     .shot.phone + .shot.desktop,
-    .shot.desktop + .shot.phone { margin-left: 20px; }
+    .shot.desktop + .shot.phone { margin-left: 37px; }
     .shot img {
       display: block;
       height: var(--shot-h);
       width: auto;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 10px;
     }
     .shot.desktop img { aspect-ratio: 16 / 10; }
     .shot.phone img   { aspect-ratio: 1242 / 2688; }
 
-    .shot figcaption {
-      font-style: italic;
-      font-size: 13px;
-      line-height: 1.4;
-      color: var(--dim);
-      margin-top: 8px;
-    }
+    @media (max-width: 700px) { .shots { --shot-h: 320px; padding: 0 24px; } }
 
-    @media (max-width: 700px) { .shots { --shot-h: 320px; } }
+    /* ---------- Callouts ---------- */
 
-    /* Below the band, on the page background — per the mockup the
-       arrows ride just under the #333 edge. */
-    .gallery-controls {
+    /* Five notes hanging from the band on 50px teal ticks, each tick
+       on its card's left edge (the 5th under the Mac card's midpoint).
+       The margins replicate the card geometry at full width; below
+       1440 the rail can scroll, so alignment is moot and they wrap. */
+    .callouts {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 37px;
       display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 10px;
     }
-    .gallery-controls button {
-      background: none;
-      border: 0;
-      padding: 6px;
-      cursor: pointer;
-      line-height: 0;
-      opacity: 0.9;
-      transition: opacity 0.2s ease;
+    .callout {
+      flex: 0 0 auto;
+      width: 180px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--accent);
     }
-    .gallery-controls button:hover { opacity: 1; }
-    .gallery-controls svg { display: block; }
+    .callout::before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 50px;
+      background: var(--teal);
+      margin-bottom: 9px;
+    }
+    .callout + .callout { margin-left: 33px; }
+    .callout:nth-child(3) { margin-left: 29px; }
+    .callout:nth-child(4) { margin-left: 67px; }
+    .callout:nth-child(5) { margin-left: 134px; }
+    @media (max-width: 1439px) {
+      .callouts { flex-wrap: wrap; gap: 30px 40px; max-width: 700px; padding: 0 24px; }
+      .callout + .callout, .callout:nth-child(n) { margin-left: 0; }
+    }
 
     /* ---------- Prose ---------- */
 
     .prose { padding-top: 50px; }
-    .prose p { font-size: 18px; line-height: 1.5; margin-bottom: 10px; }
+    .prose p { font-size: 18px; line-height: 1.5; margin-bottom: 6px; }
+    .prose .intro { font-size: 22px; }
     .prose h2 {
       font-family: "playfair-display", Georgia, serif;
       font-weight: 400;
-      font-size: 28px;
+      font-size: 30px;
       line-height: 1.4;
       color: var(--accent);
-      margin: 50px 0 4px;
+      margin: 50px 0 6px;
     }
     .prose ul {
       font-size: 18px;
       line-height: 1.5;
-      margin: 0 0 10px;
+      margin: 0 0 6px;
       padding-left: 1.4em;
     }
     .prose li b { font-weight: 600; }
@@ -299,9 +288,8 @@
     footer .links { margin-top: 10px; display: flex; gap: 20px; flex-wrap: wrap; }
 
     @media (max-width: 600px) {
-      .prose p, .prose ul { font-size: 18px; }
-      .quad { padding-top: 64px; }
-      .gallery { margin-top: 64px; }
+      .prose .intro { font-size: 20px; }
+      .gallery { margin-top: 48px; }
     }
   </style>
 </head>
@@ -320,56 +308,33 @@
 
 
   <!-- ---------------- Gallery ---------------- -->
-  <!-- Captions beyond the three from the mockup are drafts — edit at will. -->
+  <!-- Cards are rendered straight from the Figma comps (frame 136:132).
+       Currently 1x placeholders — export dc1/dc2/dc3/dcmac1 @2x from
+       Figma over these filenames for retina. -->
   <section class="gallery" aria-label="Screenshots">
     <div class="shots" id="shots">
       <figure class="shot phone">
-        <img src="img/product/dc1.webp" alt="Dream Club on iPhone" loading="lazy">
+        <img src="img/product/card-dc1.png" alt="Dream Club on iPhone: the journal" loading="lazy">
       </figure>
       <figure class="shot phone">
-        <img src="img/product/dc2.webp" alt="Dream Club on iPhone: the journal" loading="lazy">
+        <img src="img/product/card-dc2.png" alt="Dream Club on iPhone: symbols and themes" loading="lazy">
       </figure>
       <figure class="shot phone">
-        <img src="img/product/dc3.webp" alt="Dream Club on iPhone: a dream" loading="lazy">
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc4.webp" alt="Dream Club on iPhone: an analysis" loading="lazy">
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc5.webp" alt="Dream Club on iPhone: themes" loading="lazy">
-      </figure>      <figure class="shot desktop">
-        <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: writing a dream" loading="lazy">
+        <img src="img/product/card-dc3.png" alt="Dream Club on iPhone: a Jungian analysis" loading="lazy">
       </figure>
       <figure class="shot desktop">
-        <img src="img/product/dcmac2.webp" alt="Dream Club on Mac: symbols and themes" loading="lazy">
-      </figure>
-      <figure class="shot desktop">
-        <img src="img/product/dcmac3.webp" alt="Dream Club on Mac: reading an analysis" loading="lazy">
+        <img src="img/product/card-mac.png" alt="Dream Club on Mac: reading a dream" loading="lazy">
       </figure>
     </div>
   </section>
-  <div class="gallery-controls">
-      <button type="button" id="prev" aria-label="Previous screenshot">
-        <svg width="21" height="10" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M29.4175 9.91091H1M10.3391 1L1 9.91091L10.3391 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <button type="button" id="next" aria-label="Next screenshot">
-        <svg width="21" height="10" viewBox="0 0 30.5 19.82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.0825 9.91091H29.5M20.1609 1L29.5 9.91091L20.1609 18.8218" stroke="#8AB7C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-  </div>
 
-
-
-
-  <!-- ---------------- Feature quad ---------------- -->
-  <section class="quad" aria-label="Highlights">
-    <div>Designed for easily logging your dreams while half-awake via text or voice.</div>
-    <div>Understand your dreams through three analytic lenses: Jungian, Lacanian, and Deleuzian.</div>
-    <div>Share specific dreams with a small circle of friends and receive synchronicity alerts.</div>
-    <div>No ads. No subscriptions. No user account required. Your dreams stay on your device.</div>
+  <!-- ---------------- Callouts ---------------- -->
+  <section class="callouts" aria-label="Highlights">
+    <p class="callout">Log your dreams while half-awake via text or voice.</p>
+    <p class="callout">Share a dream with a circle of friends and receive synchronicity alerts.</p>
+    <p class="callout">Analyze your dreams through three lenses: Jungian, Lacanian, and Deleuzian.</p>
+    <p class="callout">A companion desktop app for organizing, searching, and editing.</p>
+    <p class="callout">No ads. No subscriptions. No account required. Your dreams stay on your device.</p>
   </section>
 
   <!-- ---------------- Prose + sticky download rail ---------------- -->
@@ -381,24 +346,25 @@
     </aside>
   </div>
   <section class="prose wrap">
+    <p class="intro">Here in the Middle West of the United States, we meet with friends every month to discuss our dreams and enjoy a break from the twenty-first century. This ritual has led us to reappreciate these strange movies in our heads when we&rsquo;re free from ego and intention. So we built Dream Club to make it easier to collect, analyze, and share our dreams.</p>
 
     <h2>Journal</h2>
-    <p>An archive of your dreaming life. Every dream you log stays on your device and in your own iCloud&mdash;synced across your devices, safe through reinstalls, readable by nobody but you unless you choose to share it.</p>
+    <p>An archive of your dreaming life. Every dream stays on your device and in your own iCloud&mdash;synced across your devices, safe through reinstalls, readable only by you unless you choose to share it.</p>
 
     <h2>Analysis</h2>
-    <p>Analyze your dream through three distinct lenses:</p>
+    <p>Get a different perspective on your dreams by running them through three analytical lenses:</p>
     <ul>
       <li><b>Jungian:</b> archetypes, the shadow, the collective unconscious.</li>
       <li><b>Lacanian:</b> desire, language, what resists saying.</li>
       <li><b>Deleuzian:</b> flows, thresholds, becoming.</li>
     </ul>
-    <p>Each analysis offers a question to carry into the day.</p>
+    <p>Each analysis concludes with a question to carry into the day.</p>
 
     <h2>Themes</h2>
-    <p>Every analyzed dream's symbols&mdash;fire, staircases, teeth&mdash;to a growing inventory of your recurring motifs. Your mythology will surface.</p>
+    <p>Every analyzed dream's key images&mdash;fire, staircases, teeth&mdash;become part of a personal codex of symbols and themes. A mythology will surface.</p>
 
     <h2>Club</h2>
-    <p>Dreams need to be told. Create a private, invite-only group of up to twelve people you know and share a dream when you choose to. When your dream and a friend's dream share a symbol, Dream Club delivers a synchronicity alert.</p>
+    <p>Totally optional: Create a private, invite-only group of up to twelve people you know and share a dream. If a friend's dream shares the same symbols, Dream Club delivers a synchronicity alert.</p>
 
     <h2>Private by Design</h2>
     <p>No ads. No trackers. No feeds or strangers. Your journal never touches our servers unless you request an analysis (processed, never stored) or share a dream with your circle of friends.</p>
@@ -475,46 +441,6 @@
         'Week ' + week + ' • Day ' + (dayNum + 1);
     })();
 
-    // Screenshot rail. Buttons step card-to-card by scrolling exactly
-    // the distance needed to centre the next card — measured with
-    // rects, since offsetLeft is relative to the nearest positioned
-    // ancestor rather than the scroll container. Landing precisely on
-    // a snap point also keeps mandatory scroll-snap from yanking back.
-    (function () {
-      const rail = document.getElementById('shots');
-      if (!rail) return;
-      const cards = Array.from(rail.querySelectorAll('.shot'));
-      if (!cards.length) return;
-
-      const offsetToCentre = (card) => {
-        const railBox = rail.getBoundingClientRect();
-        const cardBox = card.getBoundingClientRect();
-        return (cardBox.left + cardBox.width / 2) - (railBox.left + railBox.width / 2);
-      };
-
-      const currentIndex = () => {
-        let best = 0, bestDistance = Infinity;
-        cards.forEach((card, i) => {
-          const distance = Math.abs(offsetToCentre(card));
-          if (distance < bestDistance) { bestDistance = distance; best = i; }
-        });
-        return best;
-      };
-
-      const go = (delta) => {
-        const i = Math.min(cards.length - 1, Math.max(0, currentIndex() + delta));
-        rail.scrollBy({ left: offsetToCentre(cards[i]), behavior: 'smooth' });
-      };
-
-      document.getElementById('prev').addEventListener('click', () => go(-1));
-      document.getElementById('next').addEventListener('click', () => go(1));
-
-      rail.tabIndex = 0;
-      rail.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
-        if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
-      });
-    })();
   </script>
 </body>
 </html>
