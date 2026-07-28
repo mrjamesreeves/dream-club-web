@@ -137,29 +137,31 @@
       margin: 17px auto 0;
     }
 
-    /* ---------- Floating download (wide screens) ---------- */
+    /* ---------- Sticky download rail (wide screens) ---------- */
 
-    .float-cta {
-      position: fixed;
-      top: 90px;
+    /* The rail spans prose + changelog; the unit enters in flow
+       aligned with the Journal heading (100px = the prose section's
+       50px padding + the first h2's 50px margin), pins at 90px from
+       the top while that span scrolls, and releases at the end of the
+       changelog — it never floats over the gallery or the footer. */
+    .rail-container { position: relative; }
+    .rail-slot {
+      position: absolute;
+      top: 100px;
+      bottom: 0;
       right: 40px;
       width: 292px;
-      text-align: left;
-      opacity: 0;
-      transform: translateY(-8px);
       pointer-events: none;
-      transition: opacity 0.45s ease, transform 0.45s ease;
-      z-index: 10;
     }
-    .float-cta.visible {
-      opacity: 1;
-      transform: none;
+    .float-cta {
+      position: sticky;
+      top: 90px;
       pointer-events: auto;
     }
     .float-cta .cta { margin-top: 0; }
     .float-cta .fineprint { margin: 12px 0 0; }
     /* Only when there's clear air beside the 600px column. */
-    @media (max-width: 1359px) { .float-cta { display: none; } }
+    @media (max-width: 1359px) { .rail-slot { display: none; } }
 
     /* ---------- Feature quad ---------- */
 
@@ -316,12 +318,6 @@
     <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
   </header>
 
-  <!-- Fixed download rail: fades in once the hero's button scrolls away. -->
-  <aside class="float-cta" id="float-cta" aria-hidden="true">
-    <a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a>
-    <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
-  </aside>
-
 
   <!-- ---------------- Gallery ---------------- -->
   <!-- Captions beyond the three from the mockup are drafts — edit at will. -->
@@ -376,9 +372,15 @@
     <div>No ads. No subscriptions. No user account required. Your dreams stay on your device.</div>
   </section>
 
-  <!-- ---------------- Prose ---------------- -->
+  <!-- ---------------- Prose + sticky download rail ---------------- -->
+  <div class="rail-container">
+  <div class="rail-slot">
+    <aside class="float-cta">
+      <a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a>
+      <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
+    </aside>
+  </div>
   <section class="prose wrap">
-    <p>Dreams dissolve fast. Dream Club is built for the hazy minutes after waking: a hushed room where you can set down a dream before it evaporates and return to it later with questions.</p>
 
     <h2>Journal</h2>
     <p>An archive of your dreaming life. Every dream you log stays on your device and in your own iCloud&mdash;synced across your devices, safe through reinstalls, readable by nobody but you unless you choose to share it.</p>
@@ -414,6 +416,8 @@
       <li>This is the water, this is the well.</li>
     </ul>
   </section>
+
+  </div>
 
   <!-- ---------------- Bottom download ---------------- -->
   <section class="bottom-cta">
@@ -469,19 +473,6 @@
       document.getElementById('moon-name').textContent = name;
       document.getElementById('moon-meta').textContent =
         'Week ' + week + ' • Day ' + (dayNum + 1);
-    })();
-
-    // The floating download rail appears once the hero's own button
-    // has scrolled out of view — never two visible at once.
-    (function () {
-      const heroCTA = document.getElementById('hero-cta');
-      const float = document.getElementById('float-cta');
-      if (!heroCTA || !float || !('IntersectionObserver' in window)) return;
-      new IntersectionObserver(([entry]) => {
-        const away = !entry.isIntersecting;
-        float.classList.toggle('visible', away);
-        float.setAttribute('aria-hidden', String(!away));
-      }).observe(heroCTA);
     })();
 
     // Screenshot rail. Buttons step card-to-card by scrolling exactly
