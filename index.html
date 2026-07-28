@@ -186,16 +186,16 @@
     /* ---------- Gallery ---------- */
 
     .gallery {
-      background: #222;
-      margin: 96px 0 20px;
+      background: linear-gradient(180deg, #111 0%, #222 100%);
+      margin: 70px 0 20px;
       padding: 30px 0;
     }
 
     .shots {
-      --shot-h: 400px;
+      --shot-h: 450px;
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 15px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       /* Flat gutter: the rail rests with the first shot near the left
@@ -212,7 +212,7 @@
     }
     /* Double breath where the platforms change. */
     .shot.phone + .shot.desktop,
-    .shot.desktop + .shot.phone { margin-left: 12px; }
+    .shot.desktop + .shot.phone { margin-left: 20px; }
     .shot img {
       display: block;
       height: var(--shot-h);
