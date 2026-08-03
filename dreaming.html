@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Dreaming — what the world dreams about</title>
-  <meta name="description" content="Anonymous symbol counts from Dream Club journals around the world. No dreams, no names — just the words that keep appearing.">
+  <title>The Dream Index: What the World Is Dreaming About</title>
+  <meta name="description" content="Symbols from Dream Club journals around the world.">
   <link rel="icon" href="img/icon.png">
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
@@ -148,12 +148,12 @@
 
   <header>
     <p class="eyebrow"><a href="/" style="color: inherit">Dream Club</a></p>
-    <h1>The Dreaming</h1>
-    <p class="lede">The symbols surfacing in Dream Club journals around the world — counted anonymously, never the dreams themselves.</p>
+    <h1>The Dream Index</h1>
+    <p class="lede">The symbols surfacing in Dream Club journals around the world.</p>
   </header>
 
   <nav class="windows wrap" aria-label="Time window">
-    <button type="button" data-days="30" aria-pressed="true">This month</button>
+    <button type="button" data-days="season" aria-pressed="true" id="season-button">Summer 2026</button>
     <button type="button" data-days="" aria-pressed="false">All time</button>
   </nav>
 
@@ -176,6 +176,30 @@
 
     const COUNTRY_NAMES = new Intl.DisplayNames(["en"], { type: "region" });
 
+    // Meteorological seasons, northern hemisphere. The button shows the
+    // current season and queries the days since it began — label and
+    // window stay truthful without anyone editing this file in September.
+    function currentSeason() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth(); // 0-based
+      const starts = [
+        { name: "Winter", month: 11 },
+        { name: "Spring", month: 2 },
+        { name: "Summer", month: 5 },
+        { name: "Autumn", month: 8 },
+      ];
+      let name, start;
+      if (month === 11) { name = "Winter"; start = new Date(year, 11, 1); }
+      else if (month >= 8) { name = "Autumn"; start = new Date(year, 8, 1); }
+      else if (month >= 5) { name = "Summer"; start = new Date(year, 5, 1); }
+      else if (month >= 2) { name = "Spring"; start = new Date(year, 2, 1); }
+      else { name = "Winter"; start = new Date(year - 1, 11, 1); }
+      const label = `${name} ${month === 0 || month === 1 ? year - 1 + "–" + String(year).slice(2) : year}`;
+      const days = Math.max(1, Math.ceil((now - start) / 86400000));
+      return { label, days };
+    }
+
     async function rpc(fn, args) {
       const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
         method: "POST",
@@ -191,6 +215,7 @@
     }
 
     async function render(days) {
+      if (days === "season") days = String(currentSeason().days);
       const list = document.getElementById("list");
       const regions = document.getElementById("regions");
       const windowDays = days === "" ? null : Number(days);
@@ -259,7 +284,8 @@
       });
     });
 
-    render("30");
+    document.getElementById("season-button").textContent = currentSeason().label;
+    render("season");
   </script>
 </body>
 </html>
