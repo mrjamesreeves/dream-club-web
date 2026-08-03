@@ -36,4 +36,26 @@
   if (img) img.src = '/img/moons/' + file;
   if (nameEl) nameEl.textContent = name;
   if (metaEl) metaEl.textContent = 'Week ' + week + ' • Day ' + (dayNum + 1);
+
+  // The mockup's third clause: how many dreamers are in the club.
+  // Shown once the count clears 10 so launch week keeps its dignity.
+  if (metaEl) {
+    fetch('https://opkalkbjecbnnavxnmdb.supabase.co/rest/v1/rpc/dreamer_stats', {
+      method: 'POST',
+      headers: {
+        apikey: 'sb_publishable_2cxTEoh2ZkVcMSb0e9JIDg_CK05bW4f',
+        authorization: 'Bearer sb_publishable_2cxTEoh2ZkVcMSb0e9JIDg_CK05bW4f',
+        'content-type': 'application/json',
+      },
+      body: '{}',
+    })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((rows) => {
+        const total = rows && rows[0] && Number(rows[0].total);
+        if (total >= 10) {
+          metaEl.textContent += ' • ' + total.toLocaleString() + ' Dreamers';
+        }
+      })
+      .catch(() => {});
+  }
 })();
