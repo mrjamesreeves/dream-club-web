@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dreaming — what the world dreams about</title>
+  <meta name="description" content="Anonymous symbol counts from Dream Club journals around the world. No dreams, no names — just the words that keep appearing.">
+  <link rel="icon" href="img/icon.png">
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+
+  <style>
+    :root {
+      --bg: linear-gradient(180deg, #000 0%, #222 100%);
+      --accent: #8AB7C8;
+      --teal: #7098A7;
+      --body: #ccc;
+      --dim: #999;
+      --measure: 600px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--body);
+      font-family: "ibm-plex-sans", -apple-system, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: calc(var(--measure) + 48px);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    header { text-align: center; padding: 64px 24px 0; }
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 1.89px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #979797;
+    }
+    h1 {
+      font-family: "playfair-display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 6vw, 44px);
+      color: #fff;
+      margin-top: 10px;
+    }
+    .lede {
+      font-family: "ibm-plex-serif", Georgia, serif;
+      font-size: 17px;
+      color: var(--dim);
+      max-width: 34em;
+      margin: 10px auto 0;
+    }
+
+    .windows {
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      margin: 36px 0 8px;
+    }
+    .windows button {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 9px;
+      letter-spacing: 1.89px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--dim);
+      padding: 6px 2px;
+      border-bottom: 1px solid transparent;
+    }
+    .windows button[aria-pressed="true"] {
+      color: #fff;
+      border-bottom-color: var(--accent);
+    }
+
+    .list { padding: 40px 0 20px; }
+    .row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 7px 0;
+    }
+    .row .name {
+      font-family: "playfair-display", Georgia, serif;
+      font-size: 20px;
+      color: var(--body);
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+    .row:nth-child(1) .name, .row:nth-child(2) .name, .row:nth-child(3) .name { color: #fff; }
+    .row .leader {
+      flex: 1;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.25);
+      transform: translateY(-4px);
+    }
+    .row .count {
+      font-family: "playfair-display", Georgia, serif;
+      font-size: 18px;
+      color: var(--dim);
+    }
+
+    .filling {
+      text-align: center;
+      font-family: "ibm-plex-serif", Georgia, serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--dim);
+      padding: 70px 0;
+    }
+
+    .regions { padding: 30px 0 0; }
+    .regions h2 {
+      font-family: "playfair-display", Georgia, serif;
+      font-weight: 400;
+      font-size: 26px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .region { margin-top: 26px; }
+    .region h3 {
+      font-size: 9px;
+      letter-spacing: 1.89px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    footer {
+      padding: 80px 24px 60px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--dim);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="eyebrow"><a href="/" style="color: inherit">Dream Club</a></p>
+    <h1>The Dreaming</h1>
+    <p class="lede">The symbols surfacing in Dream Club journals around the world — counted anonymously, never the dreams themselves.</p>
+  </header>
+
+  <nav class="windows wrap" aria-label="Time window">
+    <button type="button" data-days="30" aria-pressed="true">This month</button>
+    <button type="button" data-days="" aria-pressed="false">All time</button>
+  </nav>
+
+  <main class="wrap">
+    <div class="list" id="list" aria-live="polite"></div>
+    <section class="regions" id="regions" hidden>
+      <h2>By country</h2>
+      <div id="region-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    No dreams, no names, no accounts — only single words, counted.
+    <a href="/privacy">How this works &rarr;</a>
+  </footer>
+
+  <script>
+    const SUPABASE_URL = "https://opkalkbjecbnnavxnmdb.supabase.co";
+    const KEY = "sb_publishable_2cxTEoh2ZkVcMSb0e9JIDg_CK05bW4f";
+
+    const COUNTRY_NAMES = new Intl.DisplayNames(["en"], { type: "region" });
+
+    async function rpc(fn, args) {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
+        method: "POST",
+        headers: {
+          apikey: KEY,
+          authorization: `Bearer ${KEY}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(args),
+      });
+      if (!response.ok) throw new Error(`${fn} ${response.status}`);
+      return response.json();
+    }
+
+    async function render(days) {
+      const list = document.getElementById("list");
+      const regions = document.getElementById("regions");
+      const windowDays = days === "" ? null : Number(days);
+      try {
+        const [top, byCountry] = await Promise.all([
+          rpc("symbol_stats", { window_days: windowDays, max_rows: 25 }),
+          rpc("symbol_stats_by_country", { window_days: windowDays }),
+        ]);
+
+        if (!top.length) {
+          list.innerHTML = `<p class="filling">The well is still filling. Symbols appear here as dreamers analyze their dreams.</p>`;
+          regions.hidden = true;
+          return;
+        }
+
+        list.innerHTML = top
+          .map(
+            (row) => `<div class="row"><span class="name">${escapeHTML(row.symbol)}</span><span class="leader"></span><span class="count">${row.occurrences}</span></div>`
+          )
+          .join("");
+
+        const grouped = {};
+        for (const row of byCountry) {
+          (grouped[row.country] ??= []).push(row);
+        }
+        const countries = Object.keys(grouped).sort();
+        if (countries.length) {
+          document.getElementById("region-list").innerHTML = countries
+            .map((code) => {
+              const name = safeCountryName(code);
+              const rows = grouped[code]
+                .slice(0, 5)
+                .map(
+                  (row) => `<div class="row"><span class="name">${escapeHTML(row.symbol)}</span><span class="leader"></span><span class="count">${row.occurrences}</span></div>`
+                )
+                .join("");
+              return `<div class="region"><h3>${name}</h3>${rows}</div>`;
+            })
+            .join("");
+          regions.hidden = false;
+        } else {
+          regions.hidden = true;
+        }
+      } catch {
+        list.innerHTML = `<p class="filling">The well is still filling. Symbols appear here as dreamers analyze their dreams.</p>`;
+        regions.hidden = true;
+      }
+    }
+
+    function safeCountryName(code) {
+      try { return COUNTRY_NAMES.of(code) || code; } catch { return code; }
+    }
+
+    function escapeHTML(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    document.querySelectorAll(".windows button").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".windows button").forEach((other) => {
+          other.setAttribute("aria-pressed", String(other === button));
+        });
+        render(button.dataset.days);
+      });
+    });
+
+    render("30");
+  </script>
+</body>
+</html>
