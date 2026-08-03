@@ -15,6 +15,10 @@
     {
       "source": "/dream-index",
       "destination": "/dream-index.html"
+    },
+    {
+      "source": "/s/:slug",
+      "destination": "/symbol-share.html"
     }
   ],
   "headers": [
