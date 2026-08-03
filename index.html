@@ -128,6 +128,27 @@
     }
     .cta:hover { opacity: 0.85; text-decoration: none; }
 
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cta-secondary {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.14px;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 7px 22px;
+      border-radius: 999px;
+      margin-top: 18px;
+      transition: opacity 0.2s ease;
+    }
+    .cta-secondary:hover { opacity: 0.85; text-decoration: none; }
+
     .hero .fineprint, .float-cta .fineprint, .bottom-cta .fineprint {
       font-style: italic;
       font-size: 14px;
@@ -302,12 +323,17 @@
 
   <!-- ---------------- Hero ---------------- -->
   <header class="hero">
-    <img class="moon" id="moon-img" src="img/moons/waxing-gibbous.jpg" alt="">
-    <p class="eyebrow" id="moon-name">Waxing Gibbous</p>
-    <p class="eyebrow accent" id="moon-meta">Week 31 &bull; Day 1</p>
+    <a href="/" aria-label="Dream Club home" style="text-decoration: none">
+      <img class="moon" id="moon-img" src="img/moons/waxing-gibbous.jpg" alt="">
+      <p class="eyebrow" id="moon-name">Waxing Gibbous</p>
+      <p class="eyebrow accent" id="moon-meta">Week 31 &bull; Day 1</p>
+    </a>
     <h1>Dream Club</h1>
     <p class="lede">A dignified home for your dreams.</p>
-    <div id="hero-cta"><a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a></div>
+    <div id="hero-cta" class="cta-row">
+      <a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a>
+      <a class="cta-secondary" href="/dream-index">The Dream Index</a>
+    </div>
     <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
   </header>
 
@@ -349,7 +375,7 @@
     </aside>
   </div>
   <section class="prose wrap">
-    <p class="intro">Here in the Middle West of the United States, we meet with friends every month to discuss our dreams and enjoy a break from the twenty-first century. This ritual has led us to reappreciate these strange movies in our heads when we&rsquo;re free from ego and intention. So we built Dream Club to make it easier to collect, analyze, and share our dreams.</p>
+    <p class="intro">Here in the Middle West of the United States, we meet with friends every month to discuss our dreams. This ritual has led us to reappreciate these strange movies in our heads when we&rsquo;re free from ego and intention. So we built Dream Club to make it easier to collect, analyze, and share our dreams.</p>
 
     <h2>Journal</h2>
     <p>An archive of your dreaming life. Every dream stays on your device and in your own iCloud&mdash;synced across your devices, safe through reinstalls, readable only by you unless you choose to share it.</p>
@@ -404,46 +430,8 @@
     </div>
   </footer>
 
+  <script src="/js/moon.js"></script>
   <script>
-    // Tonight's moon, computed client-side. Same eight buckets the app
-    // uses; images are the NASA set from the original site.
-    (function () {
-      const SYNODIC = 29.53058867;
-      const REF_NEW_MOON = Date.UTC(2000, 0, 6, 18, 14); // known new moon
-      // ±1-day windows for the primary phases — the original site's
-      // boundaries, tuned to match popular astronomy sites.
-      const PHASES = [
-        [0.034, 'New Moon',        'new.webp'],
-        [0.216, 'Waxing Crescent', 'waxing-crescent.jpg'],
-        [0.284, 'First Quarter',   'first-quarter.jpg'],
-        [0.466, 'Waxing Gibbous',  'waxing-gibbous.jpg'],
-        [0.534, 'Full Moon',       'full.webp'],
-        [0.716, 'Waning Gibbous',  'waning-gibbous.jpg.webp'],
-        [0.784, 'Last Quarter',    'third-quarter.jpg.webp'],
-        [0.966, 'Waning Crescent', 'waning-crescent.jpg.webp'],
-        [1.001, 'New Moon',        'new.webp'],
-      ];
-
-      const now = new Date();
-      const age = (((now - REF_NEW_MOON) / 86400000) % SYNODIC + SYNODIC) % SYNODIC;
-      const normalized = age / SYNODIC;
-      const [, name, file] = PHASES.find(([limit]) => normalized < limit);
-
-      // ISO week + weekday (Mon = 1), matching the mockup's numbering.
-      const t = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
-      const dayNum = (t.getUTCDay() + 6) % 7;
-      t.setUTCDate(t.getUTCDate() - dayNum + 3);
-      const firstThursday = t.getTime();
-      t.setUTCMonth(0, 1);
-      if (t.getUTCDay() !== 4) t.setUTCMonth(0, 1 + ((4 - t.getUTCDay()) + 7) % 7);
-      const week = 1 + Math.round((firstThursday - t.getTime()) / 604800000);
-
-      document.getElementById('moon-img').src = 'img/moons/' + file;
-      document.getElementById('moon-name').textContent = name;
-      document.getElementById('moon-meta').textContent =
-        'Week ' + week + ' • Day ' + (dayNum + 1);
-    })();
-
   </script>
 </body>
 </html>

@@ -13,8 +13,8 @@
       "destination": "/privacy.html"
     },
     {
-      "source": "/dreaming",
-      "destination": "/dreaming.html"
+      "source": "/dream-index",
+      "destination": "/dream-index.html"
     }
   ],
   "headers": [
@@ -35,6 +35,13 @@
           "value": "application/json"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/dreaming",
+      "destination": "/dream-index",
+      "permanent": true
     }
   ]
 }
