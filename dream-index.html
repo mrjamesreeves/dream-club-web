@@ -185,6 +185,10 @@
       <h2 class="section-title">By Country</h2>
       <div id="region-list"></div>
     </section>
+    <section class="regions" id="states" hidden>
+      <h2 class="section-title">By State</h2>
+      <div id="state-list"></div>
+    </section>
   </main>
 
   <footer>
@@ -231,6 +235,14 @@
       return response.json();
     }
 
+    // ISO 3166-2 US codes -> names; other countries show "Code, Country".
+    const US_STATES = { AL:"Alabama", AK:"Alaska", AZ:"Arizona", AR:"Arkansas", CA:"California", CO:"Colorado", CT:"Connecticut", DE:"Delaware", FL:"Florida", GA:"Georgia", HI:"Hawaii", ID:"Idaho", IL:"Illinois", IN:"Indiana", IA:"Iowa", KS:"Kansas", KY:"Kentucky", LA:"Louisiana", ME:"Maine", MD:"Maryland", MA:"Massachusetts", MI:"Michigan", MN:"Minnesota", MS:"Mississippi", MO:"Missouri", MT:"Montana", NE:"Nebraska", NV:"Nevada", NH:"New Hampshire", NJ:"New Jersey", NM:"New Mexico", NY:"New York", NC:"North Carolina", ND:"North Dakota", OH:"Ohio", OK:"Oklahoma", OR:"Oregon", PA:"Pennsylvania", RI:"Rhode Island", SC:"South Carolina", SD:"South Dakota", TN:"Tennessee", TX:"Texas", UT:"Utah", VT:"Vermont", VA:"Virginia", WA:"Washington", WV:"West Virginia", WI:"Wisconsin", WY:"Wyoming", DC:"Washington, D.C." };
+
+    function regionLabel(country, region) {
+      if (country === "US" && US_STATES[region]) return US_STATES[region];
+      return `${region}, ${safeCountryName(country)}`;
+    }
+
     function rowHTML(row, index) {
       return `<div class="row"><span class="rank">${index + 1}</span><span class="name">${escapeHTML(row.symbol)}</span><span class="leader"></span><span class="count">${row.occurrences}</span></div>`;
     }
@@ -241,15 +253,18 @@
       const globalTitle = document.getElementById("global-title");
       const bounds = { from_ts: windowSpec.from ?? null, to_ts: windowSpec.to ?? null };
       try {
-        const [top, byCountry] = await Promise.all([
+        const [top, byCountry, byRegion] = await Promise.all([
           rpc("symbol_stats", { ...bounds, max_rows: 10 }),
           rpc("symbol_stats_by_country", { ...bounds, max_rows_per_country: 10 }),
+          rpc("symbol_stats_by_region", { ...bounds, max_rows_per_region: 10 }),
         ]);
 
+        const states = document.getElementById("states");
         if (!top.length) {
           globalTitle.hidden = true;
           list.innerHTML = `<p class="filling">The well is still filling. Symbols appear here as dreamers analyze their dreams.</p>`;
           regions.hidden = true;
+          states.hidden = true;
           return;
         }
 
@@ -270,10 +285,31 @@
         } else {
           regions.hidden = true;
         }
+
+        const stateGroups = {};
+        for (const row of byRegion) {
+          (stateGroups[`${row.country}/${row.region}`] ??= []).push(row);
+        }
+        const stateKeys = Object.keys(stateGroups).sort((a, b) =>
+          regionLabel(...a.split("/")).localeCompare(regionLabel(...b.split("/")))
+        );
+        if (stateKeys.length) {
+          document.getElementById("state-list").innerHTML = stateKeys
+            .map((key) => {
+              const [country, region] = key.split("/");
+              const rows = stateGroups[key].slice(0, 10).map((row, index) => rowHTML(row, index)).join("");
+              return `<div class="region"><h3>${escapeHTML(regionLabel(country, region))}</h3>${rows}</div>`;
+            })
+            .join("");
+          states.hidden = false;
+        } else {
+          states.hidden = true;
+        }
       } catch {
         globalTitle.hidden = true;
         list.innerHTML = `<p class="filling">The well is still filling. Symbols appear here as dreamers analyze their dreams.</p>`;
         regions.hidden = true;
+        document.getElementById("states").hidden = true;
       }
     }
 
