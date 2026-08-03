@@ -99,6 +99,13 @@
       gap: 10px;
       padding: 7px 0;
     }
+    .row .rank {
+      font-family: "playfair-display", Georgia, serif;
+      font-size: 15px;
+      color: var(--dim);
+      width: 26px;
+      flex: 0 0 auto;
+    }
     .row .name {
       font-family: "playfair-display", Georgia, serif;
       font-size: 20px;
@@ -225,8 +232,8 @@
       return response.json();
     }
 
-    function rowHTML(row) {
-      return `<div class="row"><span class="name">${escapeHTML(row.symbol)}</span><span class="leader"></span><span class="count">${row.occurrences}</span></div>`;
+    function rowHTML(row, index) {
+      return `<div class="row"><span class="rank">${index + 1}</span><span class="name">${escapeHTML(row.symbol)}</span><span class="leader"></span><span class="count">${row.occurrences}</span></div>`;
     }
 
     async function render(windowSpec) {
@@ -248,7 +255,7 @@
         }
 
         globalTitle.hidden = false;
-        list.innerHTML = top.map(rowHTML).join("");
+        list.innerHTML = top.map((row, index) => rowHTML(row, index)).join("");
 
         const grouped = {};
         for (const row of byCountry) (grouped[row.country] ??= []).push(row);
@@ -256,7 +263,7 @@
         if (countries.length) {
           document.getElementById("region-list").innerHTML = countries
             .map((code) => {
-              const rows = grouped[code].slice(0, 10).map(rowHTML).join("");
+              const rows = grouped[code].slice(0, 10).map((row, index) => rowHTML(row, index)).join("");
               return `<div class="region"><h3>${safeCountryName(code)}</h3>${rows}</div>`;
             })
             .join("");
