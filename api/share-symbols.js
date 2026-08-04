@@ -28,7 +28,26 @@ export default async function handler(req, res) {
   const title = typeof req.body?.title === "string" ? req.body.title.slice(0, 60) : null;
   const payload = { symbols, title, v: 1 };
 
-  // Slug from the top three symbols, Spite-style; random suffix on collision.
+  // Repeat sharer: the app holds a slug + manage token, so refresh the
+  // page in place — one permanent URL per dreamer. Falls through to
+  // create when the page is gone (taken down, or token mismatch).
+  const { slug: existingSlug, manageToken: existingToken } = req.body ?? {};
+  if (typeof existingSlug === "string" && typeof existingToken === "string") {
+    const response = await rpc("symbol_share_update", {
+      p_slug: existingSlug,
+      p_token: existingToken,
+      p_payload: payload,
+    });
+    if (response.ok && (await response.json()) === true) {
+      return res.status(200).json({
+        url: `https://thedream.club/s/${existingSlug}`,
+        manageToken: existingToken,
+      });
+    }
+  }
+
+  // First share: slug from the top three symbols, Spite-style; random
+  // suffix on collision. Minted once, permanent after.
   const base = symbols.slice(0, 3).map((e) => e.symbol).join("-")
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40) || randomChars(7);
