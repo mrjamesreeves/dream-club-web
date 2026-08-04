@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dream Club: A Dreamer's Symbols</title>
-  <meta name="description" content="The symbols surfacing in one dreamer's journal.">
+  <title>Dream Symbols</title>
+  <meta name="description" content="Top symbols from a Dream Club journal.">
   <link rel="icon" href="/img/icon.png">
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
@@ -62,7 +62,7 @@
       margin: 10px auto 0;
     }
 
-    main { padding-top: 34px; }
+    main { padding-top: 34px; padding-bottom: 90px; }
     .list { padding: 0 0 20px; }
     .row {
       display: flex;
@@ -144,8 +144,7 @@
       <p class="eyebrow" id="moon-name">Waxing Gibbous</p>
       <p class="eyebrow accent" id="moon-meta">Week 31 &bull; Day 3</p>
     </a>
-    <h1 id="title">A dreamer's symbols</h1>
-    <p class="lede" id="lede">The symbols surfacing in one Dream Club journal.</p>
+    <h1 id="title">Dream Symbols</h1>
   </header>
 
   <main class="wrap">
@@ -154,13 +153,9 @@
     </div>
     <div class="cta" id="cta" hidden>
       <p>Every dream carries symbols. Start counting yours.</p>
-      <a href="/">Get Dream Club</a>
+      <a href="/">Join Dream Club</a>
     </div>
   </main>
-
-  <footer>
-    Shared from a private journal &mdash; symbols only, never the dreams. <a href="/privacy">How this works &rarr;</a>
-  </footer>
 
   <script>
     const SUPABASE_URL = "https://opkalkbjecbnnavxnmdb.supabase.co";
@@ -199,7 +194,10 @@
         const symbols = Array.isArray(payload?.symbols) ? payload.symbols : [];
         if (!symbols.length) throw new Error("empty");
 
-        if (payload.title) document.getElementById("title").textContent = payload.title;
+        if (payload.title) {
+          document.getElementById("title").textContent = payload.title;
+          document.title = payload.title;
+        }
         list.replaceChildren(
           ...symbols.slice(0, 10).map((entry, index) =>
             row(index + 1, entry.symbol, entry.count))
@@ -207,7 +205,6 @@
         document.getElementById("cta").hidden = false;
       } catch {
         list.innerHTML = `<p class="filling">This page has drifted off. The dreamer may have taken it down.</p>`;
-        document.getElementById("lede").textContent = "";
       }
     }
 
