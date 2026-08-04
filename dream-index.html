@@ -247,6 +247,10 @@
       return `<div class="row"><span class="rank">${index + 1}</span><span class="name">${escapeHTML(row.symbol)}</span><span class="leader"></span><span class="count">${row.occurrences}</span></div>`;
     }
 
+    // Belt and braces with the ingestion blocklist: names never chart.
+    const BLOCKED_SYMBOLS = new Set(["james"]);
+    const allowed = (rows) => rows.filter((row) => !BLOCKED_SYMBOLS.has(row.symbol));
+
     async function render(windowSpec) {
       const list = document.getElementById("list");
       const regions = document.getElementById("regions");
@@ -254,9 +258,9 @@
       const bounds = { from_ts: windowSpec.from ?? null, to_ts: windowSpec.to ?? null };
       try {
         const [top, byCountry, byRegion] = await Promise.all([
-          rpc("symbol_stats", { ...bounds, max_rows: 10 }),
-          rpc("symbol_stats_by_country", { ...bounds, max_rows_per_country: 10 }),
-          rpc("symbol_stats_by_region", { ...bounds, max_rows_per_region: 10 }),
+          rpc("symbol_stats", { ...bounds, max_rows: 11 }).then(allowed).then((rows) => rows.slice(0, 10)),
+          rpc("symbol_stats_by_country", { ...bounds, max_rows_per_country: 11 }).then(allowed),
+          rpc("symbol_stats_by_region", { ...bounds, max_rows_per_region: 11 }).then(allowed),
         ]);
 
         const states = document.getElementById("states");

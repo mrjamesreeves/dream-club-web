@@ -18,11 +18,17 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "POST only" });
   }
 
+  // Words that never enter the well (people's names tagged in
+  // dreams — a name in a public chart is the leak the Index must
+  // never spring).
+  const BLOCKED = new Set(["james"]);
+
   const symbols = Array.isArray(req.body?.symbols) ? req.body.symbols : [];
   const cleaned = symbols
     .filter((s) => typeof s === "string")
     .map((s) => s.trim().toLowerCase())
     .filter((s) => s.length >= 1 && s.length <= 40)
+    .filter((s) => !BLOCKED.has(s))
     .slice(0, 50); // backfills send batches; still bounded
 
   if (cleaned.length === 0) {
