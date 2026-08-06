@@ -21,23 +21,24 @@
   const normalized = age / SYNODIC;
   const [, name, file] = PHASES.find(([limit]) => normalized < limit);
 
-  // ISO week + weekday (Mon = 1).
-  const t = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
-  const dayNum = (t.getUTCDay() + 6) % 7;
-  t.setUTCDate(t.getUTCDate() - dayNum + 3);
-  const firstThursday = t.getTime();
-  t.setUTCMonth(0, 1);
-  if (t.getUTCDay() !== 4) t.setUTCMonth(0, 1 + ((4 - t.getUTCDay()) + 7) % 7);
-  const week = 1 + Math.round((firstThursday - t.getTime()) / 604800000);
+  // Meteorological season, matching the Dream Index nav labels.
+  function seasonLabel(d) {
+    const m = d.getMonth(), y = d.getFullYear();
+    if (m >= 2 && m <= 4) return 'Spring ' + y;
+    if (m >= 5 && m <= 7) return 'Summer ' + y;
+    if (m >= 8 && m <= 10) return 'Autumn ' + y;
+    const start = m === 11 ? y : y - 1;
+    return 'Winter ' + start + '\u2013' + String(start + 1).slice(2);
+  }
 
   const img = document.getElementById('moon-img');
   const nameEl = document.getElementById('moon-name');
   const metaEl = document.getElementById('moon-meta');
   if (img) img.src = '/img/moons/' + file;
   if (nameEl) nameEl.textContent = name;
-  if (metaEl) metaEl.textContent = 'Week ' + week + ' • Day ' + (dayNum + 1);
+  if (metaEl) metaEl.innerHTML = '&nbsp;';
 
-  // The mockup's third clause: how many dreamers are in the club.
+  // How many dreamers are in the club, stamped with the season.
   // Shown once the count clears 10 so launch week keeps its dignity.
   if (metaEl) {
     fetch('https://opkalkbjecbnnavxnmdb.supabase.co/rest/v1/rpc/dreamer_stats', {
@@ -53,7 +54,8 @@
       .then((rows) => {
         const total = rows && rows[0] && Number(rows[0].total);
         if (total >= 10) {
-          metaEl.textContent += ' • ' + total.toLocaleString() + ' Dreamers';
+          metaEl.textContent =
+            total.toLocaleString() + ' Dreamers as of ' + seasonLabel(now) + '.';
         }
       })
       .catch(() => {});
