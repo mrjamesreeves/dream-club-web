@@ -36,10 +36,10 @@
   const metaEl = document.getElementById('moon-meta');
   if (img) img.src = '/img/moons/' + file;
   if (nameEl) nameEl.textContent = name;
-  if (metaEl) metaEl.innerHTML = '&nbsp;';
+  if (metaEl) metaEl.textContent = seasonLabel(now);
 
-  // How many dreamers are in the club, stamped with the season.
-  // Shown once the count clears 10 so launch week keeps its dignity.
+  // The club headcount joins the season stamp once it clears 10,
+  // so launch week keeps its dignity.
   if (metaEl) {
     fetch('https://opkalkbjecbnnavxnmdb.supabase.co/rest/v1/rpc/dreamer_stats', {
       method: 'POST',
@@ -55,7 +55,7 @@
         const total = rows && rows[0] && Number(rows[0].total);
         if (total >= 10) {
           metaEl.textContent =
-            total.toLocaleString() + ' Dreamers as of ' + seasonLabel(now) + '.';
+            seasonLabel(now) + ' \u2022 ' + total.toLocaleString() + ' Dreamers';
         }
       })
       .catch(() => {});
