@@ -99,6 +99,16 @@
       color: var(--dim);
     }
 
+    .group-label {
+      font-size: 11px;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--dim);
+      padding: 34px 0 10px;
+    }
+    .group-label:first-child { padding-top: 6px; }
+
     .filling {
       text-align: center;
       font-family: "ibm-plex-serif", Georgia, serif;
@@ -194,10 +204,35 @@
           document.getElementById("title").textContent = payload.title;
           document.title = payload.title;
         }
-        list.replaceChildren(
-          ...symbols.slice(0, 10).map((entry, index) =>
-            row(index + 1, entry.symbol, entry.count))
-        );
+        const top = symbols.slice(0, 10);
+        const categorized = top.filter((e) =>
+          ["places", "people", "things", "ideas"].includes(e.category));
+
+        if (categorized.length >= top.length / 2) {
+          // The codex view: symbols grouped into their four rooms,
+          // uncategorized stragglers under "etc."
+          const order = ["places", "people", "things", "ideas", "etc"];
+          const groups = new Map(order.map((k) => [k, []]));
+          for (const entry of top) {
+            groups.get(entry.category && groups.has(entry.category) ? entry.category : "etc").push(entry);
+          }
+          const nodes = [];
+          for (const key of order) {
+            const members = groups.get(key);
+            if (!members.length) continue;
+            const label = document.createElement("p");
+            label.className = "group-label";
+            label.textContent = key;
+            nodes.push(label);
+            for (const entry of members) nodes.push(row("", entry.symbol, entry.count));
+          }
+          list.replaceChildren(...nodes);
+        } else {
+          // Young journal or pre-codex share: the classic ranked list.
+          list.replaceChildren(
+            ...top.map((entry, index) => row(index + 1, entry.symbol, entry.count))
+          );
+        }
         document.getElementById("cta").hidden = false;
       } catch {
         list.innerHTML = `<p class="filling">This page has drifted off. The dreamer may have taken it down.</p>`;

@@ -1,5 +1,7 @@
 // Publish a dreamer's top symbols as a page at /s/<slug>.
-// Body: { symbols: [{ symbol, count }], title? }  ->  { url, manageToken }
+// Body: { symbols: [{ symbol, count, category? }], title? } -> { url, manageToken }
+// category, when present, is one of the codex's four rooms and the
+// page groups by it.
 // DELETE with { slug, manageToken } takes a page down.
 
 const SUPABASE_URL = "https://opkalkbjecbnnavxnmdb.supabase.co";
@@ -15,18 +17,20 @@ export default async function handler(req, res) {
   }
 
   const raw = Array.isArray(req.body?.symbols) ? req.body.symbols : [];
+  const CATEGORIES = ["places", "people", "things", "ideas"];
   const symbols = raw
     .filter((e) => e && typeof e.symbol === "string")
     .map((e) => ({
       symbol: e.symbol.trim().toLowerCase().slice(0, 40),
       count: Math.max(1, Math.min(100000, Number(e.count) || 1)),
+      ...(CATEGORIES.includes(e.category) ? { category: e.category } : {}),
     }))
     .filter((e) => e.symbol.length > 0)
     .slice(0, 10);
   if (!symbols.length) return res.status(400).json({ error: "symbols required" });
 
   const title = typeof req.body?.title === "string" ? req.body.title.slice(0, 60) : null;
-  const payload = { symbols, title, v: 1 };
+  const payload = { symbols, title, v: 2 };
 
   // Repeat sharer: the app holds a slug + manage token, so refresh the
   // page in place — one permanent URL per dreamer. Falls through to
