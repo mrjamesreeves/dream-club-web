@@ -10,16 +10,21 @@
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap">
 
   <style>
     :root {
       --bg: linear-gradient(180deg, #000 0%, #222 100%);
-      --accent: #8AB7C8;
-      --teal: #7098A7;
+      /* The app's Dreams tints: bright for titles/active, muted for meta. */
+      --accent: #BDC8D2;
+      --muted: #586772;
       --body: #ccc;
       --dim: #999;
       --card: #131313;
       --land: #3B3B3B;
+      --sans: "Source Sans 3", "ibm-plex-sans", -apple-system, sans-serif;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -56,20 +61,23 @@
       letter-spacing: 1.89px;
       text-transform: uppercase;
       font-weight: 500;
-      color: #979797;
+      color: var(--muted);
       padding-bottom: 5px;
     }
     h1 {
-      font-family: "playfair-display", Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(2.2rem, 6vw, 44px);
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(22px, 5vw, 32px);
+      letter-spacing: 0.26em;
+      text-indent: 0.26em;
+      text-transform: uppercase;
       color: #fff;
-      margin-top: 10px;
+      margin-top: 14px;
     }
     .lede {
       font-family: "ibm-plex-serif", Georgia, serif;
       font-size: 17px;
-      color: var(--dim);
+      color: var(--accent);
       max-width: 34em;
       margin: 10px auto 0;
     }
@@ -83,17 +91,17 @@
       background: none;
       border: 0;
       cursor: pointer;
-      font-family: inherit;
-      font-size: 9px;
-      letter-spacing: 1.89px;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       font-weight: 500;
-      color: var(--dim);
+      color: var(--muted);
       padding: 6px 2px;
       border-bottom: 1px solid transparent;
     }
     .windows button[aria-pressed="true"] {
-      color: #fff;
+      color: var(--accent);
       border-bottom-color: var(--accent);
     }
 
@@ -109,9 +117,11 @@
       .hero-grid { grid-template-columns: 1fr; gap: 30px; }
     }
     .section-title {
-      font-family: "playfair-display", Georgia, serif;
-      font-weight: 400;
-      font-size: 26px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 3.2px;
+      text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 10px;
     }
@@ -123,17 +133,19 @@
       padding: 6px 0;
     }
     .row .rank {
-      font-family: "playfair-display", Georgia, serif;
-      font-size: 14px;
-      color: var(--dim);
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--muted);
       width: 22px;
       flex: 0 0 auto;
     }
     .row .name {
-      font-family: "playfair-display", Georgia, serif;
-      font-size: 20px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 2.25px;
+      text-transform: uppercase;
       color: var(--body);
-      text-transform: capitalize;
       white-space: nowrap;
     }
     .list .row:nth-child(1) .name, .list .row:nth-child(2) .name, .list .row:nth-child(3) .name { color: #fff; }
@@ -143,9 +155,9 @@
       transform: translateY(-4px);
     }
     .row .count {
-      font-family: "playfair-display", Georgia, serif;
-      font-size: 17px;
-      color: var(--dim);
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--muted);
     }
 
     /* ---------------- Map ---------------- */
@@ -161,7 +173,7 @@
       cursor: pointer;
       transition: fill 0.15s ease;
     }
-    #dream-map path.active:hover { fill: #A9CFDD; }
+    #dream-map path.active:hover { fill: #D6DEE5; }
     #dream-map circle.map-dot {
       fill: #0E0E0E;
       stroke: rgba(255, 255, 255, 0.35);
@@ -172,7 +184,7 @@
     #map-pop {
       position: absolute;
       background: #161616;
-      border: 1px solid rgba(138, 183, 200, 0.4);
+      border: 1px solid rgba(189, 200, 210, 0.4);
       border-radius: 8px;
       padding: 9px 14px 10px;
       pointer-events: none;
@@ -181,8 +193,11 @@
       z-index: 5;
     }
     #map-pop .pop-name {
-      font-family: "playfair-display", Georgia, serif;
-      font-size: 15px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
       color: #fff;
     }
     #map-pop .pop-count {
@@ -200,7 +215,7 @@
       letter-spacing: 1.89px;
       text-transform: uppercase;
       font-weight: 500;
-      color: #979797;
+      color: var(--muted);
       margin: 52px 0 14px;
     }
     .card-row {
@@ -222,12 +237,14 @@
     }
     .card.lit {
       background: #1C1C1C;
-      border-color: rgba(138, 183, 200, 0.55);
+      border-color: rgba(189, 200, 210, 0.55);
     }
     .card h3 {
-      font-family: "playfair-display", Georgia, serif;
-      font-weight: 400;
-      font-size: 22px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 8px;
       white-space: nowrap;
