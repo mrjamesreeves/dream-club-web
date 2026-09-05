@@ -251,7 +251,15 @@
       max-width: min(92%, 1500px);
       margin: 58px auto 0;
       padding: 34px 40px 36px;
-      background: rgba(255, 255, 255, 0.1);
+      /* White glass up top articulates the shots; the card dissolves
+         into page black at the foot so the captions pop. The blur
+         rides the whole card regardless of the fill. */
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(0, 0, 0, 0.35) 55%,
+        rgba(0, 0, 0, 0.9) 100%
+      );
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
       border-radius: 20px;
