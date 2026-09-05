@@ -17,18 +17,27 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Adobe Fonts kit nbb6llm: IBM Plex Sans 400/500/600 + italic,
-       IBM Plex Serif 400, Playfair Display 400 + italics. -->
+       IBM Plex Serif 400 (Playfair is still in the kit but retired
+       from the page — the 5.0 system is Source Sans + Plex Serif). -->
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+  <!-- Source Sans 3 (the app's sans) from Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap">
 
   <style>
     :root {
-      --bg: linear-gradient(180deg, #000 0%, #222 100%);
-      --accent: #8AB7C8;
-      --teal: #7098A7;
+      /* The app's Dreams palette (AppSection): bright for titles and
+         links, muted for the informational register. The old #8AB7C8
+         blue is retired. */
+      --bright: #BDC8D2;
+      --muted: #586772;
       --body: #ccc;
       --dim: #999;
       --measure: 600px;
+      --serif: "ibm-plex-serif", Georgia, serif;
+      --sans: "Source Sans 3", "ibm-plex-sans", -apple-system, sans-serif;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,13 +49,28 @@
     }
 
     body {
-      background: var(--bg);
+      background: #000;
       color: var(--body);
       font-family: "ibm-plex-sans", -apple-system, sans-serif;
       font-weight: 400;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+    }
+
+    /* ---------- Fixed background art ---------- */
+
+    /* A fixed layer rather than background-attachment: fixed, which
+       iOS Safari ignores. The near-square export covers portrait
+       phones and wide desktops alike. */
+    .bg-art {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: #000 url("img/bg-1440.webp") center top / cover no-repeat;
+    }
+    @media (min-width: 1100px) {
+      .bg-art { background-image: url("img/bg-2560.webp"); }
     }
 
     /* ---------- Shared bits ---------- */
@@ -62,15 +86,15 @@
       padding-right: 24px;
     }
 
-    /* The Figma hairline: 50 × 2, deep teal. */
+    /* The hairline: 50 × 2, now in the muted slate. */
     .rule {
       width: 50px;
       height: 2px;
-      background: var(--teal);
+      background: var(--muted);
       border: 0;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    a { color: var(--bright); text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
     /* ---------- Hero ---------- */
@@ -86,6 +110,7 @@
       object-fit: cover;
       margin: 0 auto 5px;
       display: block;
+      border-radius: 50%;
     }
 
     .eyebrow {
@@ -94,37 +119,47 @@
       text-transform: uppercase;
       font-weight: 500;
       line-height: 1.4;
-      color: #979797;
+      color: var(--muted);
       padding-bottom: 5px;
     }
-    .eyebrow .accent { color: var(--accent); }
+    .eyebrow.accent { color: var(--bright); }
 
     .hero h1 {
-      font-family: "playfair-display", Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(2.4rem, 7vw, 50px);
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(28px, 6.5vw, 40px);
+      letter-spacing: 0.3em;
+      /* The tracking trails the last letter; the indent recenters. */
+      text-indent: 0.3em;
+      text-transform: uppercase;
       line-height: 1.3;
       color: #fff;
       margin-top: 31px;
     }
 
     .hero .lede {
-      font-family: "ibm-plex-serif", Georgia, serif;
+      font-family: var(--serif);
       font-size: 20px;
-      color: var(--body);
-      margin: 0 auto;
+      color: var(--bright);
+      margin: 4px auto 0;
       max-width: var(--measure);
     }
 
+    /* The comp's white pill: 33px tall, r10, Plex Sans semibold. */
     .cta {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 212px;
+      height: 33px;
+      font-family: "ibm-plex-sans", -apple-system, sans-serif;
       font-size: 14px;
       font-weight: 600;
       letter-spacing: -0.14px;
       color: #000;
-      background: var(--accent);
-      padding: 8px 32px;
-      border-radius: 999px;
+      background: #fff;
+      padding: 0 24px;
+      border-radius: 10px;
       margin-top: 18px;
       transition: opacity 0.2s ease;
     }
@@ -138,26 +173,31 @@
       flex-wrap: wrap;
     }
     .cta-secondary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 33px;
+      font-family: "ibm-plex-sans", -apple-system, sans-serif;
       font-size: 14px;
       font-weight: 600;
       letter-spacing: -0.14px;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 7px 22px;
-      border-radius: 999px;
+      color: var(--bright);
+      border: 1px solid var(--bright);
+      padding: 0 22px;
+      border-radius: 10px;
       margin-top: 18px;
       transition: opacity 0.2s ease;
     }
     .cta-secondary:hover { opacity: 0.85; text-decoration: none; }
 
     .hero .fineprint, .float-cta .fineprint, .bottom-cta .fineprint {
-      font-style: italic;
-      font-size: 14px;
-      line-height: 1.4;
-      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--bright);
       max-width: 292px;
-      margin: 17px auto 0;
+      margin: 15px auto 0;
+      opacity: 0.85;
     }
 
     /* ---------- Sticky download rail (wide screens) ---------- */
@@ -166,123 +206,106 @@
        aligned with the intro paragraph (50px = the prose section's
        padding), pins at 90px from the top while that span scrolls,
        and releases at the end of the changelog — it never floats
-       over the gallery or the footer. */
+       over the slider or the footer. */
     .rail-container { position: relative; margin-top: 60px; }
     .rail-slot {
       position: absolute;
       top: 50px;
       bottom: 0;
       right: 40px;
-      width: 292px;
+      width: 312px;
       pointer-events: none;
     }
     .float-cta {
       position: sticky;
       top: 90px;
       pointer-events: auto;
+      /* The comp's glass panel over the fixed art. */
+      background: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 20px;
+      padding: 26px 24px 24px;
+      text-align: center;
     }
     .float-cta .cta { margin-top: 0; }
-    .float-cta .fineprint { margin: 12px 0 0; font-size: 12px; max-width: 245px; }
-    /* Only when there's clear air beside the 600px column. */
-    @media (max-width: 1359px) { .rail-slot { display: none; } }
-
-    /* ---------- Gallery ---------- */
-
-    .gallery {
-      background: linear-gradient(180deg, var(--accent) 0%, var(--teal) 100%);
-      margin: 58px 0 0;
-      padding: 27px 0 26px;
+    .float-cta .fineprint { margin: 12px auto 0; font-size: 13px; max-width: 245px; }
+    .float-cta .blurb {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--bright);
+      margin: 14px auto 0;
+      max-width: 245px;
     }
+    /* Only when there's clear air beside the 600px column. */
+    @media (max-width: 1419px) { .rail-slot { display: none; } }
 
-    /* Four comps in a static row: 90% of the browser, centred,
-       capped at 1600. Widths scale in the comp's proportions
-       (phone 203u, mac 702u, gap 7u, platform seam 37u of 1362u). */
+    /* ---------- Slider ---------- */
+
+    /* A horizontal scroll-snap strip on a glass band: three phone
+       panels and the Mac. Only the band is glass — the shots sit
+       opaque on top. */
+    .gallery {
+      margin-top: 58px;
+      padding: 34px 0 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
     .shots {
-      width: 90%;
-      max-width: 1600px;
-      margin: 0 auto;
       display: flex;
       align-items: flex-start;
-      gap: 0.51%;
+      gap: 28px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      /* Center the full strip when it fits; gutter-pad when it scrolls. */
+      padding: 0 max(24px, calc((100vw - 1765px) / 2));
+      scrollbar-width: none;
     }
-    .shot { min-width: 0; }
-    .shot.phone   { flex: 203 203 0; }
-    .shot.desktop { flex: 702 702 0; }
-    /* Double breath where the platforms change. */
-    .shot.phone + .shot.desktop,
-    .shot.desktop + .shot.phone { margin-left: 2.72%; }
+    .shots::-webkit-scrollbar { display: none; }
+    .shot {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      margin: 0;
+    }
     .shot img {
       display: block;
-      width: 100%;
       height: auto;
       border-radius: 10px;
     }
-
-    /* Small screens: phones three-up, the Mac full width below. */
-    @media (max-width: 700px) {
-      .shots { flex-wrap: wrap; gap: 6px; }
-      .shot.phone { flex: 1 1 30%; }
-      .shot.desktop { flex: 1 1 100%; margin-left: 0; margin-top: 6px; }
-    }
-
-    /* ---------- Callouts ---------- */
-
-    /* Five notes hanging from the band on 50px teal ticks, each tick
-       on its card's left edge (the 5th under the Mac card's midpoint).
-       The margins replicate the card geometry at full width; below
-       1440 the rail can scroll, so alignment is moot and they wrap. */
-    .callouts {
-      width: 90%;
-      max-width: 1600px;
-      margin: 0 auto;
-      display: grid;
-      /* Column starts mirror the card edges in the same 1362u system:
-         phone, phone, phone->mac seam, mac left half, mac right half. */
-      grid-template-columns: 15.42% 15.42% 18.13% 23.2% auto;
-    }
-    .callout {
-      max-width: 180px;
-      font-size: 14px;
-      line-height: 1.4;
-      color: var(--accent);
-    }
-    .callout::before {
-      content: "";
-      display: block;
-      width: 2px;
-      height: 50px;
-      background: var(--teal);
-      margin-bottom: 9px;
-    }
-    @media (max-width: 1100px) {
-      /* Two-up grid; the ticks turn horizontal, quad-style. */
-      .callouts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px 36px;
-        width: auto;
-        max-width: 640px;
-        padding: 0 24px;
-        margin-top: 44px;
-      }
-      .callout { max-width: none; }
-      .callout::before { width: 44px; height: 2px; }
+    .shot.phone img { width: min(312px, 78vw); }
+    .shot.desktop img { width: min(829px, 92vw); }
+    .shot figcaption {
+      font-family: var(--serif);
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--bright);
+      max-width: 292px;
+      margin-top: 4px;
     }
 
     /* ---------- Prose ---------- */
 
     .prose { padding-top: 50px; }
-    .prose p { font-size: 18px; line-height: 1.5; margin-bottom: 6px; }
+    .prose p {
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
     .prose .intro { font-size: 22px; }
     .prose h2 {
-      font-family: "playfair-display", Georgia, serif;
-      font-weight: 400;
-      font-size: 30px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 4.8px;
+      text-transform: uppercase;
       line-height: 1.4;
-      color: var(--accent);
-      margin: 50px 0 6px;
+      color: var(--bright);
+      margin: 50px 0 8px;
     }
     .prose ul {
+      font-family: var(--serif);
       font-size: 18px;
       line-height: 1.5;
       margin: 0 0 6px;
@@ -292,19 +315,20 @@
 
     /* ---------- Bottom download (narrow screens) ---------- */
 
-    /* The floating rail's counterpart: where the sidebar has no room
-       (<1360px), the invitation reappears at the end of the read. */
+    /* The floating rail's counterpart: where the sidebar has no room,
+       the invitation reappears at the end of the read. */
     .bottom-cta {
       text-align: center;
       padding: 90px 24px 0;
     }
     .bottom-cta .fineprint { margin: 14px auto 0; }
-    @media (min-width: 1360px) { .bottom-cta { display: none; } }
+    @media (min-width: 1420px) { .bottom-cta { display: none; } }
 
     /* ---------- Changelog ---------- */
 
     .changelog { padding-top: 60px; }
     .changelog .rule { margin-bottom: 59px; }
+    .changelog ul { font-size: 20px; }
 
     /* ---------- Footer ---------- */
 
@@ -318,10 +342,13 @@
     @media (max-width: 600px) {
       .prose .intro { font-size: 20px; }
       .gallery { margin-top: 48px; }
+      .shots { gap: 20px; }
     }
   </style>
 </head>
 <body>
+
+  <div class="bg-art" aria-hidden="true"></div>
 
   <!-- ---------------- Hero ---------------- -->
   <header class="hero">
@@ -340,32 +367,27 @@
   </header>
 
 
-  <!-- ---------------- Gallery ---------------- -->
-  <!-- James's exported comps: full-res webp, corners rounded in CSS. -->
+  <!-- ---------------- Slider ---------------- -->
+  <!-- James's exported comps: full-res webp, corners + foot fades in CSS. -->
   <section class="gallery" aria-label="Screenshots">
     <div class="shots" id="shots">
       <figure class="shot phone">
         <img src="img/product/dc1.webp" alt="Dream Club on iPhone: the journal" loading="lazy">
+        <figcaption>Log your dreams while half-awake via text or voice.</figcaption>
       </figure>
       <figure class="shot phone">
-        <img src="img/product/dc2.webp" alt="Dream Club on iPhone: symbols and themes" loading="lazy">
+        <img src="img/product/dc2.webp" alt="Dream Club on iPhone: a Deleuzian analysis" loading="lazy">
+        <figcaption>Analyze your dreams through three lenses: Jungian, Lacanian, and Deleuzian.</figcaption>
       </figure>
       <figure class="shot phone">
-        <img src="img/product/dc3.webp" alt="Dream Club on iPhone: a Jungian analysis" loading="lazy">
+        <img src="img/product/dc3.webp" alt="Dream Club on iPhone: symbols and themes" loading="lazy">
+        <figcaption>Every dream&rsquo;s key images become part of a personal codex of symbols.</figcaption>
       </figure>
       <figure class="shot desktop">
         <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: reading a dream" loading="lazy">
+        <figcaption>A companion desktop app for organizing, searching, and editing.</figcaption>
       </figure>
     </div>
-  </section>
-
-  <!-- ---------------- Callouts ---------------- -->
-  <section class="callouts" aria-label="Highlights">
-    <p class="callout">Log your dreams while half-awake via text or voice.</p>
-    <p class="callout">Share a dream with a circle of friends and receive synchronicity alerts.</p>
-    <p class="callout">Analyze your dreams through three lenses: Jungian, Lacanian, and Deleuzian.</p>
-    <p class="callout">A companion desktop app for organizing, searching, and editing.</p>
-    <p class="callout">No ads. No subscriptions. No account required. Your dreams stay on your device.</p>
   </section>
 
   <!-- ---------------- Prose + sticky download rail ---------------- -->
@@ -374,6 +396,7 @@
     <aside class="float-cta">
       <a class="cta" href="https://apps.apple.com/app/id6761313631">Download for iPhone &amp; Mac</a>
       <p class="fineprint">Free for 30 days, then $10 to unlock it forever on all devices with ongoing updates.</p>
+      <p class="blurb">No ads. No subscriptions. No account required. Your dreams stay on your device.</p>
     </aside>
   </div>
   <section class="prose wrap">
@@ -433,8 +456,6 @@
   </footer>
 
   <script src="/js/moon.js"></script>
-  <script>
-  </script>
   <!-- analytics: page views + referrers only, no cookies -->
   <script defer src="https://numbers.jamesreeves.co/numbers.js" data-site="dream"></script>
   <noscript><img src="https://numbers.jamesreeves.co/count.php?s=dream" alt="" width="1" height="1" style="position:absolute"></noscript>
