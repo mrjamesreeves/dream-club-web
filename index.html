@@ -242,46 +242,58 @@
 
     /* ---------- Slider ---------- */
 
-    /* A horizontal scroll-snap strip on a glass band: three phone
-       panels and the Mac. Only the band is glass — the shots sit
-       opaque on top. */
+    /* One glass card holding the phone and the Mac, captions in a
+       row of four columns beneath. Only the card is glass — the
+       shots sit opaque on top, bottoms cut flush (no bottom radius),
+       emerging from the panel rather than floating in it. */
     .gallery {
-      margin-top: 58px;
-      padding: 34px 0 30px;
+      width: fit-content;
+      max-width: min(92%, 1500px);
+      margin: 58px auto 0;
+      padding: 34px 40px 36px;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
+      border-radius: 20px;
     }
     .shots {
       display: flex;
       align-items: flex-start;
       gap: 28px;
       overflow-x: auto;
-      scroll-snap-type: x proximity;
-      /* Center the full strip when it fits; gutter-pad when it scrolls. */
-      padding: 0 max(24px, calc((100vw - 1765px) / 2));
       scrollbar-width: none;
     }
     .shots::-webkit-scrollbar { display: none; }
     .shot {
       flex: 0 0 auto;
-      scroll-snap-align: center;
       margin: 0;
     }
     .shot img {
       display: block;
       height: auto;
-      border-radius: 10px;
+      border-radius: 10px 10px 0 0;
     }
     .shot.phone img { width: min(312px, 78vw); }
-    .shot.desktop img { width: min(829px, 92vw); }
-    .shot figcaption {
-      font-family: var(--serif);
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--bright);
-      max-width: 260px;
-      margin-top: 15px;
+    .shot.desktop img { width: min(676px, 92vw); }
+    /* Four fixed text columns; the gaps take up the slack. */
+    .captions {
+      display: grid;
+      grid-template-columns: repeat(4, 180px);
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .captions p {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--body);
+    }
+    @media (max-width: 900px) {
+      .captions { grid-template-columns: repeat(2, minmax(150px, 180px)); }
+    }
+    @media (max-width: 420px) {
+      .captions { grid-template-columns: 1fr; }
     }
 
     /* ---------- Prose ---------- */
@@ -367,26 +379,22 @@
   </header>
 
 
-  <!-- ---------------- Slider ---------------- -->
-  <!-- James's exported comps: full-res webp, corners + foot fades in CSS. -->
+  <!-- ---------------- Gallery ---------------- -->
+  <!-- James's exported comps: full-res webp, corners in CSS. -->
   <section class="gallery" aria-label="Screenshots">
     <div class="shots" id="shots">
       <figure class="shot phone">
-        <img src="img/product/dc1.webp" alt="Dream Club on iPhone: the journal" loading="lazy">
-        <figcaption>Log your dreams while half-awake via text or voice.</figcaption>
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc2.webp" alt="Dream Club on iPhone: a Deleuzian analysis" loading="lazy">
-        <figcaption>Analyze your dreams through three lenses: Jungian, Lacanian, and Deleuzian.</figcaption>
-      </figure>
-      <figure class="shot phone">
-        <img src="img/product/dc3.webp" alt="Dream Club on iPhone: symbols and themes" loading="lazy">
-        <figcaption>Every dream&rsquo;s key images become part of a personal codex of symbols.</figcaption>
+        <img src="img/product/dc1.webp" alt="Dream Club on iPhone: the symbol codex" loading="lazy">
       </figure>
       <figure class="shot desktop">
-        <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: reading a dream" loading="lazy">
-        <figcaption>A companion desktop app for organizing, searching, and editing.</figcaption>
+        <img src="img/product/dcmac1.webp" alt="Dream Club on Mac: the journal and a symbol reading" loading="lazy">
       </figure>
+    </div>
+    <div class="captions">
+      <p>Log your dreams while half-awake via text or voice.</p>
+      <p>Build a codex of the places, people, and ideas you visit while asleep.</p>
+      <p>Analyze your dreams through three lenses: Jungian, Lacanian, and Deleuzian.</p>
+      <p>A handsome companion desktop app for organizing, searching, and editing.</p>
     </div>
   </section>
 
