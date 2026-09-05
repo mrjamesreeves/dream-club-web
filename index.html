@@ -268,13 +268,17 @@
       flex: 0 0 auto;
       margin: 0;
     }
+    /* Both exports are 912px tall — one shared height (their @2x
+       size) keeps the pair flush whatever their crops. */
     .shot img {
       display: block;
-      height: auto;
+      height: 456px;
+      width: auto;
       border-radius: 10px 10px 0 0;
     }
-    .shot.phone img { width: min(312px, 78vw); }
-    .shot.desktop img { width: min(676px, 92vw); }
+    @media (max-width: 700px) {
+      .shot img { height: 340px; }
+    }
     /* Four fixed text columns; the gaps take up the slack. */
     .captions {
       display: grid;
