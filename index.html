@@ -202,11 +202,11 @@
 
     /* ---------- Sticky download rail (wide screens) ---------- */
 
-    /* The rail spans prose + changelog; the unit enters in flow
-       aligned with the intro paragraph (50px = the prose section's
-       padding), pins at 90px from the top while that span scrolls,
-       and releases at the end of the changelog — it never floats
-       over the slider or the footer. */
+    /* The rail spans the prose; the unit enters in flow aligned with
+       the intro paragraph (50px = the prose section's padding), pins
+       at 90px from the top while that span scrolls, and releases at
+       the end of the prose — it never floats over the slider or the
+       footer. */
     .rail-container { position: relative; margin-top: 60px; }
     .rail-slot {
       position: absolute;
@@ -348,12 +348,6 @@
     .bottom-cta .fineprint { margin: 14px auto 0; }
     @media (min-width: 1420px) { .bottom-cta { display: none; } }
 
-    /* ---------- Changelog ---------- */
-
-    .changelog { padding-top: 60px; }
-    .changelog .rule { margin-bottom: 59px; }
-    .changelog ul { font-size: 16px; }
-
     /* ---------- Footer ---------- */
 
     footer {
@@ -443,18 +437,6 @@
     <h2>Private by Design</h2>
     <p>No ads. No trackers. No feeds or strangers. Your journal never touches our servers unless you request an analysis (sent anonymously, never stored) or share a dream with your circle of friends.</p>
     <p>Signing in with your Apple ID is optional: the journal and the analysis work without an account. <a href="/privacy">Read our privacy policy &rarr;</a></p>
-  </section>
-
-  <!-- ---------------- Changelog ---------------- -->
-  <section class="changelog wrap prose">
-    <hr class="rule">
-    <h2>Version 2.2 &bull; July 27, 2026</h2>
-    <ul>
-      <li>Design improvements and a more mellow writing situation.</li>
-      <li>Bugs fixed and ghosts exorcised.</li>
-      <li>Nicer display of symbols and themes.</li>
-      <li>This is the water, this is the well.</li>
-    </ul>
   </section>
 
   </div>
