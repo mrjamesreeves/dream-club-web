@@ -182,12 +182,18 @@
         el.style.color = 'rgba(255,255,255,0.4)';
       }
 
-      // The "Open in Dream Club" button re-navigates to the same universal
-      // link. If the app is installed, iOS will intercept before Safari
-      // reloads — the user lands inside Dream Club. If not, Safari just
-      // reloads this page, which is a harmless no-op.
+      // The "Open in Dream Club" button uses the dreamclub:// scheme —
+      // unlike re-navigating to the universal link (which Safari never
+      // hands to the app from within the page), a custom scheme always
+      // prompts the OS to open the app when it's installed. Without the
+      // app the OS shows a harmless "invalid address" note, and the
+      // App Store button below covers that case.
       var btn = document.getElementById('open-app-btn');
-      btn.href = location.pathname + location.search;
+      if (code && /^[A-Za-z0-9_-]+$/.test(code)) {
+        btn.href = 'dreamclub://join/' + code;
+      } else {
+        btn.style.display = 'none';
+      }
     })();
   </script>
   <!-- analytics: page views + referrers only, no cookies -->
