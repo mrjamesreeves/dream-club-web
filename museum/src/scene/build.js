@@ -1,16 +1,17 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=33de1a2';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=33de1a2';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=33de1a2';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=33de1a2';
-import { mulberry } from '../engine/textures.js?v=33de1a2';
-import { AmbientParticles } from '../engine/particles.js?v=33de1a2';
-import { makeSignTexture } from '../engine/signs.js?v=33de1a2';
-import { PropMethods } from './props.js?v=33de1a2';
-import { buildShapes } from '../engine/shapes.js?v=33de1a2';
-import { mergeStatic } from '../engine/merge.js?v=33de1a2';
-import { voiceFor } from '../engine/voice.js?v=33de1a2';
+import * as THREE from '../../vendor/three.module.js?v=436ab43';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=436ab43';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=436ab43';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=436ab43';
+import { mulberry } from '../engine/textures.js?v=436ab43';
+import { AmbientParticles } from '../engine/particles.js?v=436ab43';
+import { makeSignTexture } from '../engine/signs.js?v=436ab43';
+import { PropMethods } from './props.js?v=436ab43';
+import { buildShapes } from '../engine/shapes.js?v=436ab43';
+import { mergeStatic } from '../engine/merge.js?v=436ab43';
+import { bakeWorldUV } from '../engine/pbr.js?v=436ab43';
+import { voiceFor } from '../engine/voice.js?v=436ab43';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';
@@ -18,6 +19,9 @@ const DIRS = { '+x': [1, 0], '-x': [-1, 0], '+z': [0, 1], '-z': [0, -1] };
 
 export class SceneBuilder {
   constructor(ctx) {
+    this.pbr = !!ctx.pbr;
+    this.pbrPoint = (ctx.pbr && ctx.pbr.point) || 30;
+    this.pbrTex = new Map();
     this.ctx = ctx; // { env, T, audio }
     this.group = new THREE.Group();
     this.colliders = [];
@@ -39,7 +43,22 @@ export class SceneBuilder {
   mat(opts) {
     const { T, env } = this.ctx;
     const map = T[opts.tex] || T.concrete;
+    if (this.pbr) return this.pbrMat(map, opts);
     return createPS1Material(env, { map, texScale: opts.texScale ?? 2, worldUV: opts.worldUV !== false, color: opts.color, unlit: opts.unlit, ...opts.extra });
+  }
+
+  // Standard materials for a scene rendered physically. Textures are cloned
+  // as sRGB so the PS1 scenes keep their raw copies.
+  pbrMat(map, opts) {
+    let tex = this.pbrTex.get(map);
+    if (!tex) { tex = map.clone(); tex.colorSpace = THREE.SRGBColorSpace; tex.needsUpdate = true; this.pbrTex.set(map, tex); }
+    const x = opts.extra || {};
+    const common = { map: tex, color: opts.color || '#ffffff', vertexColors: true, fog: true };
+    if (x.transparent) common.transparent = true;
+    if (x.alphaTest) common.alphaTest = x.alphaTest;
+    if (x.side) common.side = x.side;
+    if (opts.unlit) return new THREE.MeshBasicMaterial(common);
+    return new THREE.MeshStandardMaterial({ ...common, roughness: opts.roughness ?? 0.9, metalness: 0 });
   }
 
   // Materials for plain boxes and planes are shared by look and by area, so
@@ -67,8 +86,10 @@ export class SceneBuilder {
     const [w, h, d] = o.size;
     const segs = (len) => Math.max(1, Math.min(96, Math.ceil(len / (o.seg || 2))));
     const geo = setVertexShade(new THREE.BoxGeometry(w, h, d, segs(w), segs(h), segs(d)), o.shade ?? 1);
+    if (this.pbr) bakeWorldUV(geo, o.pos, o.texScale ?? 2);
     const mesh = new THREE.Mesh(geo, this.sharedMat(o));
     mesh.position.fromArray(o.pos);
+    if (this.pbr) { mesh.castShadow = true; mesh.receiveShadow = true; }
     if (o.rot) mesh.rotation.set(...o.rot.map(THREE.MathUtils.degToRad));
     mesh.userData.surface = o.surface || 'concrete';
     this.group.add(mesh);
@@ -88,8 +109,10 @@ export class SceneBuilder {
     const segs = (len) => Math.max(1, Math.min(160, Math.ceil(len / (o.seg || 2))));
     const geo = setVertexShade(new THREE.PlaneGeometry(w, d, segs(w), segs(d)), o.shade ?? 1);
     geo.rotateX(-Math.PI / 2);
+    if (this.pbr) bakeWorldUV(geo, o.pos, o.texScale ?? 2);
     const mesh = new THREE.Mesh(geo, o.unique ? this.mat(o) : this.sharedMat(o));
     mesh.position.fromArray(o.pos);
+    if (this.pbr) mesh.receiveShadow = true;
     mesh.userData.surface = o.surface || 'concrete';
     if (o.unique) this.addStatic(mesh, mesh.position); else this.group.add(mesh);
     if (o.walkable !== false) this.walkables.push(mesh);
@@ -173,6 +196,11 @@ export class SceneBuilder {
     l.owner = o.owner || (this.building && this.building.id) || null;
     this.ctx.env.pointLights.push(l);
     this.lights.push(l);
+    if (this.pbr && !l.off) {
+      const pl = new THREE.PointLight(o.color || '#e0a050', (o.intensity ?? 1) * this.pbrPoint, (o.range ?? 8) * 1.3, 2);
+      pl.position.fromArray(o.pos);
+      this.group.add(pl);
+    }
     if (o.glow) this.addHalo(o.glowPos || o.pos, o.glowColor || o.color || '#e0a050', o.glowSize ?? 1.4, l, o.glowStrength ?? 0.45);
     return l;
   }
@@ -489,7 +517,11 @@ export class SceneBuilder {
     const { env } = this.ctx;
     const [w, h] = o.size || [3, 0.8];
     const tex = makeSignTexture(o.parts || [{ text: o.text || 'OPEN', font: 'sans', color: '#ff4060' }], { dead: (o.dead || o.faded) && !o.intact, faded: o.faded, width: o.hires ? 1024 : 256, height: o.hires ? 256 : 64 });
-    const mat = createPS1Material(env, { map: tex, unlit: true, worldUV: false, texScale: 1, alphaTest: 0.5, transparent: true, depthWrite: false, color: o.faded ? (o.fadeColor || '#8a867e') : '#ffffff' });
+    if (this.pbr) { tex.colorSpace = THREE.SRGBColorSpace; tex.needsUpdate = true; }
+    const mat = this.pbr
+      ? (o.faded ? new THREE.MeshStandardMaterial({ map: tex, transparent: true, alphaTest: 0.5, depthWrite: false, fog: true, color: o.fadeColor || '#8a867e', roughness: 1, metalness: 0 })
+               : new THREE.MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.5, depthWrite: false, fog: true, color: '#ffffff' }))
+      : createPS1Material(env, { map: tex, unlit: true, worldUV: false, texScale: 1, alphaTest: 0.5, transparent: true, depthWrite: false, color: o.faded ? (o.fadeColor || '#8a867e') : '#ffffff' });
     const geo = setVertexShade(new THREE.PlaneGeometry(w, h), 1);
     const mesh = new THREE.Mesh(geo, mat);
     mesh.position.fromArray(o.pos);
@@ -509,7 +541,7 @@ export class SceneBuilder {
       const hex = '#' + c.getHexString();
       const f = new THREE.Vector3(0, 0, 1).applyAxisAngle(new THREE.Vector3(0, 1, 0), mesh.rotation.y);
       const l = this.addLight({ pos: [o.pos[0] + f.x * 1.2, o.pos[1] - 0.3, o.pos[2] + f.z * 1.2], color: hex, intensity: o.intensity ?? 0.9, range: o.range ?? 7, flicker: o.flicker ? 'neonBad' : 'neon' });
-      l.emissive.push({ material: mat, base: new THREE.Color(1, 1, 1) });
+      if (mat.uniforms) l.emissive.push({ material: mat, base: new THREE.Color(1, 1, 1) });
       this.addHalo([o.pos[0] + f.x * 0.15, o.pos[1], o.pos[2] + f.z * 0.15], hex, Math.max(w, h) * 1.2, l, 0.4);
     }
     return mesh;
@@ -736,11 +768,12 @@ export class SceneBuilder {
     // Static objects get their nearest lights once.
     for (const s of this.staticMaterials) {
       const mats = Array.isArray(s.material) ? s.material : [s.material];
-      for (const m of mats) assignLights(this.ctx.env, m, s.position);
+      for (const m of mats) if (m.uniforms) assignLights(this.ctx.env, m, s.position);
     }
     // Lights are known now, so meshes lit alike can be merged. The sky and
     // particles are added after this, so they stay separate.
     for (const c of this.group.children.slice(skyFrom)) { keepTree(c); c.traverse((x) => { x.userData.noOcclude = true; }); }
+    if (this.pbr) this.group.traverse((c) => keep.add(c));
     this.mergeStats = mergeStatic(this.group, (m) => keep.has(m), this.ctx.env.pointLights);
     const where = new Map();
     for (const s of this.staticMaterials) for (const m of [].concat(s.material)) if (!where.has(m)) where.set(m, s.position);

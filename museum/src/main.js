@@ -1,19 +1,20 @@
-import * as THREE from '../vendor/three.module.js?v=33de1a2';
-import { createTextures } from './engine/textures.js?v=33de1a2';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=33de1a2';
-import { PostPass } from './engine/post.js?v=33de1a2';
-import { DreamAudio } from './engine/audio.js?v=33de1a2';
-import { Player } from './engine/player.js?v=33de1a2';
-import { Dialog } from './engine/dialog.js?v=33de1a2';
-import { Inventory } from './engine/inventory.js?v=33de1a2';
-import { SceneBuilder } from './scene/build.js?v=33de1a2';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=33de1a2';
-import { Events } from './scene/events.js?v=33de1a2';
-import { disposeTree } from './engine/merge.js?v=33de1a2';
-import { assembleMuseum } from './museum.js?v=33de1a2';
-import { checkPaths } from './engine/pathcheck.js?v=33de1a2';
-import { Portrait } from './engine/portrait.js?v=33de1a2';
-import { Voice, voiceFor } from './engine/voice.js?v=33de1a2';
+import * as THREE from '../vendor/three.module.js?v=436ab43';
+import { createTextures } from './engine/textures.js?v=436ab43';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=436ab43';
+import { PostPass } from './engine/post.js?v=436ab43';
+import { DreamAudio } from './engine/audio.js?v=436ab43';
+import { Player } from './engine/player.js?v=436ab43';
+import { Dialog } from './engine/dialog.js?v=436ab43';
+import { Inventory } from './engine/inventory.js?v=436ab43';
+import { SceneBuilder } from './scene/build.js?v=436ab43';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=436ab43';
+import { Events } from './scene/events.js?v=436ab43';
+import { disposeTree } from './engine/merge.js?v=436ab43';
+import { assembleMuseum } from './museum.js?v=436ab43';
+import { PBR } from './engine/pbr.js?v=436ab43';
+import { checkPaths } from './engine/pathcheck.js?v=436ab43';
+import { Portrait } from './engine/portrait.js?v=436ab43';
+import { Voice, voiceFor } from './engine/voice.js?v=436ab43';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -74,6 +75,7 @@ class Game {
     this.dialog.voiceOf = (who) => { const e = this.entities.get(who); if (!e) return null; return this.voiceStyle ? { ...e.voice, style: this.voiceStyle } : e.voice; };
     this.player = new Player(this.camera, this.canvas);
     this.post = new PostPass(this.renderer, { height: 216 });
+    this.pbr = new PBR(this.renderer, this.scene, this.camera);
     this.inventory = new Inventory(this.T, this.env.uResolution);
     this.portraitView = new Portrait();
     if (('ontouchstart' in window) || navigator.maxTouchPoints > 0) document.body.classList.add('touch');
@@ -166,6 +168,7 @@ class Game {
   resize() {
     const w = window.innerWidth, h = window.innerHeight;
     this.post.resize(w, h);
+    this.pbr.resize(w, h);
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
     this.env.uResolution.value.set(this.post.width, this.post.heightPx);
@@ -327,7 +330,7 @@ class Game {
       this.world = null;
     }
     this.env.pointLights.length = 0;
-    const builder = new SceneBuilder({ env: this.env, T: this.T, audio: this.audio });
+    const builder = new SceneBuilder({ env: this.env, T: this.T, audio: this.audio, pbr: def.render && def.render.pbr });
     builder.build(def);
     this.world = builder;
     this.syncVoiceSwitch();
@@ -347,6 +350,7 @@ class Game {
     if (def.player && def.player.seat) this.player.seat(def.player.pos, def.player.yaw ?? 0, def.player.seat.range ?? 180, def.player.seat.eye ?? 1.15);
     else this.player.stand();
     this.scene.add(builder.group);
+    if (def.render && def.render.pbr) this.pbr.configure(def); else this.pbr.clear();
     this.entities = builder.entities;
     this.names = { you: '', ...builder.names, ...(def.names || {}) };
     this.player.colliders = builder.colliders;
@@ -1230,7 +1234,8 @@ class Game {
     const inv = this.started && !this.hub && !(this.def && this.def.noInventory);
     if (!this.contextLost && this.world) { this.inventory.shown = inv; this.updatePortrait(dt); }
     if (this.world && !this.contextLost) this.renderMirrors();
-    this.post.render(this.scene, this.camera, this.time, inv ? this.inventory : null, this.world && !this.contextLost ? this.portrait : null);
+    if (this.pbr.on) this.pbr.render();
+    else this.post.render(this.scene, this.camera, this.time, inv ? this.inventory : null, this.world && !this.contextLost ? this.portrait : null);
     requestAnimationFrame(() => this.loop());
   }
 }

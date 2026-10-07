@@ -4,8 +4,8 @@
 //   { shape: 'box', size: [w, h, d] } | { shape: 'cyl', size: [rTop, rBottom, h, sides] }
 //   { shape: 'sphere', size: [r, w, h] } | { shape: 'plane', size: [w, h] } | { shape: 'torus', size: [r, tube] }
 //   plus pos [x, y, z], rot [deg, deg, deg], tex, color, unlit
-import * as THREE from '../../vendor/three.module.js?v=33de1a2';
-import { setVertexShade } from './ps1material.js?v=33de1a2';
+import * as THREE from '../../vendor/three.module.js?v=436ab43';
+import { setVertexShade } from './ps1material.js?v=436ab43';
 
 export const ITEM_MODELS = {
   menu: [

@@ -6,7 +6,22 @@
   "height": 1080,
   "quantize": false,
   "grain": 0.01,
-  "vignette": 0.45
+  "vignette": 0.45,
+  "pbr": {
+   "exposure": 1.0,
+   "sun": 2.8,
+   "sunColor": "#fff6ea",
+   "hemi": 1.3,
+   "skyColor": "#e9edf1",
+   "groundColor": "#7a7a76",
+   "ambient": 0.3,
+   "point": 7,
+   "bloom": {
+    "strength": 0.12,
+    "radius": 0.6,
+    "threshold": 1.0
+   }
+  }
  },
  "environment": {
   "fogColor": "#c6c6c3",
@@ -1881,7 +1896,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -1961,7 +1976,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -2071,7 +2086,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -2127,7 +2142,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2164,7 +2179,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2201,7 +2216,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2238,7 +2253,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2275,7 +2290,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2312,7 +2327,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2349,7 +2364,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2386,7 +2401,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2423,7 +2438,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2460,7 +2475,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2497,7 +2512,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2534,7 +2549,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2571,7 +2586,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2608,7 +2623,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2645,7 +2660,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2682,7 +2697,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2719,7 +2734,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -2772,7 +2787,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -2848,7 +2863,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -2958,7 +2973,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -3052,7 +3067,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -3146,7 +3161,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -3240,7 +3255,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -3334,7 +3349,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -3390,7 +3405,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3427,7 +3442,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3464,7 +3479,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3501,7 +3516,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3538,7 +3553,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3575,7 +3590,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3612,7 +3627,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3649,7 +3664,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3686,7 +3701,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3723,7 +3738,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3760,7 +3775,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3797,7 +3812,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3834,7 +3849,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3871,7 +3886,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3908,7 +3923,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3945,7 +3960,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -3982,7 +3997,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -4035,7 +4050,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4111,7 +4126,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4217,7 +4232,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4311,7 +4326,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4405,7 +4420,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4499,7 +4514,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4593,7 +4608,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4687,7 +4702,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -4743,7 +4758,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -4780,7 +4795,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -4817,7 +4832,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -4854,7 +4869,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -4891,7 +4906,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -4928,7 +4943,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -4965,7 +4980,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5002,7 +5017,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5039,7 +5054,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5076,7 +5091,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5113,7 +5128,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5150,7 +5165,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5187,7 +5202,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5224,7 +5239,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5261,7 +5276,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5298,7 +5313,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5335,7 +5350,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5371,7 +5386,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -5435,7 +5450,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -5529,7 +5544,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -5623,7 +5638,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -5717,7 +5732,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#2e3032",
+   "fadeColor": "#111213",
    "backing": false,
    "parts": [
     {
@@ -5773,7 +5788,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5810,7 +5825,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5847,7 +5862,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5884,7 +5899,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5921,7 +5936,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5958,7 +5973,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -5995,7 +6010,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6032,7 +6047,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6069,7 +6084,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6106,7 +6121,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6143,7 +6158,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6180,7 +6195,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6217,7 +6232,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6254,7 +6269,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6291,7 +6306,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6328,7 +6343,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
@@ -6365,7 +6380,7 @@
    "faded": true,
    "intact": true,
    "hires": true,
-   "fadeColor": "#55585c",
+   "fadeColor": "#2a2c2e",
    "backing": false,
    "parts": [
     {
