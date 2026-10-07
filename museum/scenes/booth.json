@@ -1,0 +1,5171 @@
+{
+ "title": "THE VACATED BOOTH",
+ "hint": "e to talk or look",
+ "hintTouch": "tap people and things",
+ "render": {
+  "height": 216
+ },
+ "environment": {
+  "fogColor": "#160f0c",
+  "ambient": "#1e1612",
+  "skyColor": "#2c221c",
+  "sunDir": [
+   0.2,
+   0.9,
+   0.3
+  ],
+  "sunColor": "#2a221c",
+  "fogNear": 3,
+  "fogFar": 30,
+  "fogHeight": 0.5,
+  "fogHeightRange": 4,
+  "fogHeightStrength": 0.1
+ },
+ "sky": {
+  "top": "#0a0a0c",
+  "horizon": "#1a1310",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 260,
+   "alpha": 0.45,
+   "color": "#c8b090",
+   "box": [
+    14,
+    5,
+    14
+   ]
+  },
+  "floaters": {
+   "count": 8,
+   "box": [
+    20,
+    4,
+    14
+   ],
+   "speed": 0.3
+  }
+ },
+ "player": {
+  "pos": [
+   0,
+   0,
+   6.2
+  ],
+  "yaw": 0,
+  "pitch": 0,
+  "speed": 1.9
+ },
+ "ambience": [
+  {
+   "sound": "murmur",
+   "box": [
+    -11,
+    -7,
+    11,
+    7
+   ],
+   "range": 6,
+   "gain": 0.8
+  },
+  {
+   "sound": "clink",
+   "box": [
+    -11,
+    -7,
+    11,
+    7
+   ],
+   "range": 4
+  },
+  {
+   "sound": "music",
+   "style": "lounge",
+   "box": [
+    -11,
+    -7,
+    11,
+    7
+   ],
+   "range": 6,
+   "gain": 0.6
+  },
+  {
+   "sound": "music",
+   "style": "lounge",
+   "pos": [
+    -9.0,
+    5.3
+   ],
+   "range": 12,
+   "gain": 1.0
+  },
+  {
+   "sound": "hum",
+   "box": [
+    -11,
+    -7,
+    11,
+    7
+   ],
+   "range": 2,
+   "gain": 0.4
+  },
+  {
+   "sound": "traffic",
+   "pos": [
+    0,
+    14
+   ],
+   "range": 9,
+   "gain": 0.7
+  }
+ ],
+ "indoor": [
+  [
+   -11,
+   -7,
+   11,
+   7
+  ]
+ ],
+ "items": {
+  "menu": {
+   "name": "the menu",
+   "model": "menu",
+   "examine": [
+    "The menu. Everything on it is served for one."
+   ],
+   "uses": [
+    {
+     "when": {
+      "near": {
+       "id": "waiter",
+       "radius": 3
+      }
+     },
+     "do": [
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "What would you recommend?"
+        },
+        {
+         "who": "waiter",
+         "text": "The lamb, sir. It's off. Everything's off tonight."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "useText": [
+    "The prices are in a currency I don't recognise.",
+    "Under desserts, in pencil: don't."
+   ]
+  },
+  "photo": {
+   "name": "the photograph",
+   "model": "photo",
+   "examine": [
+    "A photograph of all of us, at this table.",
+    "I'm not in it. Someone has drawn me in, in biro."
+   ],
+   "useText": [
+    "I put it face down. Then face up again."
+   ]
+  },
+  "book": {
+   "name": "the reservation book",
+   "model": "book",
+   "examine": "The reservation book. Every name in it is mine, in different handwriting.",
+   "uses": [
+    {
+     "when": {
+      "near": {
+       "id": "host",
+       "radius": 3
+      }
+     },
+     "consume": true,
+     "do": [
+      {
+       "say": [
+        {
+         "who": "host",
+         "text": "Ah. Thank you, sir. Everyone... yes. We have you down for everyone."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "useText": [
+    "Tonight's page: one name, and a line drawn through every other."
+   ]
+  },
+  "water": {
+   "name": "the water",
+   "model": "water",
+   "examine": "Water. Just water.",
+   "uses": [
+    {
+     "when": {},
+     "consume": true,
+     "do": [
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "I drink it. Water. Just water."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "needle": {
+   "name": "the needle",
+   "model": "needle",
+   "examine": [
+    "Her needle. Very thin. Hardly there.",
+    "The tip is dark."
+   ],
+   "uses": [
+    {
+     "when": {
+      "flag": "medicsHere",
+      "not": "told",
+      "near": {
+       "id": "medic1",
+       "radius": 3.2
+      }
+     },
+     "consume": true,
+     "do": [
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "Look. This. It was in her hand."
+        },
+        {
+         "who": "medic1",
+         "text": "...A needle."
+        },
+        {
+         "who": "medic1",
+         "text": "Check his throat."
+        },
+        {
+         "who": "medic2",
+         "text": "There. There it is."
+        },
+        {
+         "who": "medic1",
+         "text": "Thank you. You've been a great help."
+        }
+       ]
+      },
+      {
+       "set": "told"
+      },
+      {
+       "hide": "oldman"
+      },
+      {
+       "sfx": "confirm"
+      },
+      {
+       "behavior": {
+        "id": "medic1",
+        "name": "walkTo",
+        "path": [
+         [
+          2.4,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "medic2",
+        "name": "walkTo",
+        "path": [
+         [
+          3.0,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "waiter",
+        "name": "patrol",
+        "route": [
+         [
+          7.4,
+          4.8,
+          90,
+          3
+         ],
+         [
+          5.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          -2.4,
+          0,
+          2
+         ],
+         [
+          4.8,
+          -2.4,
+          0,
+          2
+         ]
+        ],
+        "carry": true,
+        "speed": 1.0
+       }
+      },
+      {
+       "wait": 2.5
+      },
+      {
+       "set": "carried"
+      },
+      {
+       "light": {
+        "id": "coupleLight",
+        "intensity": 2.0
+       }
+      },
+      {
+       "hint": "the booth is free"
+      }
+     ]
+    },
+    {
+     "when": {
+      "flag": "medicsHere",
+      "not": "told",
+      "near": {
+       "id": "medic2",
+       "radius": 3.2
+      }
+     },
+     "consume": true,
+     "do": [
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "Look. This. It was in her hand."
+        },
+        {
+         "who": "medic1",
+         "text": "...A needle."
+        },
+        {
+         "who": "medic1",
+         "text": "Check his throat."
+        },
+        {
+         "who": "medic2",
+         "text": "There. There it is."
+        },
+        {
+         "who": "medic1",
+         "text": "Thank you. You've been a great help."
+        }
+       ]
+      },
+      {
+       "set": "told"
+      },
+      {
+       "hide": "oldman"
+      },
+      {
+       "sfx": "confirm"
+      },
+      {
+       "behavior": {
+        "id": "medic1",
+        "name": "walkTo",
+        "path": [
+         [
+          2.4,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "medic2",
+        "name": "walkTo",
+        "path": [
+         [
+          3.0,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "waiter",
+        "name": "patrol",
+        "route": [
+         [
+          7.4,
+          4.8,
+          90,
+          3
+         ],
+         [
+          5.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          -2.4,
+          0,
+          2
+         ],
+         [
+          4.8,
+          -2.4,
+          0,
+          2
+         ]
+        ],
+        "carry": true,
+        "speed": 1.0
+       }
+      },
+      {
+       "wait": 2.5
+      },
+      {
+       "set": "carried"
+      },
+      {
+       "light": {
+        "id": "coupleLight",
+        "intensity": 2.0
+       }
+      },
+      {
+       "hint": "the booth is free"
+      }
+     ]
+    }
+   ],
+   "useText": [
+    "I hold it up to the light. Someone should see this."
+   ]
+  }
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    22,
+    14
+   ],
+   "tex": "carpet",
+   "texScale": 2,
+   "surface": "carpet"
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0.02,
+    4.6
+   ],
+   "size": [
+    1.6,
+    4.8
+   ],
+   "tex": "vinyl",
+   "texScale": 1,
+   "surface": "carpet"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.45,
+    0
+   ],
+   "size": [
+    22.6,
+    0.1,
+    14.6
+   ],
+   "tex": "ceiling",
+   "texScale": 2,
+   "walkable": false,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.7,
+    -7.15
+   ],
+   "size": [
+    22.6,
+    3.4,
+    0.3
+   ],
+   "tex": "wallpaper",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    -5.9,
+    1.7,
+    7.15
+   ],
+   "size": [
+    10.2,
+    3.4,
+    0.3
+   ],
+   "tex": "wallpaper",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    5.9,
+    1.7,
+    7.15
+   ],
+   "size": [
+    10.2,
+    3.4,
+    0.3
+   ],
+   "tex": "wallpaper",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.95,
+    7.15
+   ],
+   "size": [
+    1.6,
+    0.9,
+    0.3
+   ],
+   "tex": "wallpaper",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.15,
+    1.7,
+    0
+   ],
+   "size": [
+    0.3,
+    3.4,
+    14.6
+   ],
+   "tex": "wallpaper",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    11.15,
+    1.7,
+    0
+   ],
+   "size": [
+    0.3,
+    3.4,
+    14.6
+   ],
+   "tex": "wallpaper",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.5,
+    -6.97
+   ],
+   "size": [
+    22,
+    1,
+    0.06
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.97,
+    0.5,
+    0
+   ],
+   "size": [
+    0.06,
+    1,
+    14
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.97,
+    0.5,
+    0
+   ],
+   "size": [
+    0.06,
+    1,
+    14
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -5.9,
+    0.5,
+    6.97
+   ],
+   "size": [
+    10.2,
+    1,
+    0.06
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    5.9,
+    0.5,
+    6.97
+   ],
+   "size": [
+    10.2,
+    1,
+    0.06
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.6,
+    -6.96
+   ],
+   "size": [
+    22,
+    0.05,
+    0.04
+   ],
+   "tex": "gold",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.96,
+    2.6,
+    0
+   ],
+   "size": [
+    0.04,
+    0.05,
+    14
+   ],
+   "tex": "gold",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.96,
+    2.6,
+    0
+   ],
+   "size": [
+    0.04,
+    0.05,
+    14
+   ],
+   "tex": "gold",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.9,
+    1.25,
+    7.15
+   ],
+   "size": [
+    0.12,
+    2.5,
+    0.36
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.9,
+    1.25,
+    7.15
+   ],
+   "size": [
+    0.12,
+    2.5,
+    0.36
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -1.45,
+    1.65,
+    6.9
+   ],
+   "yaw": 180,
+   "size": [
+    0.9,
+    3.3
+   ],
+   "color": "#5a0e18",
+   "folds": 6
+  },
+  {
+   "type": "drape",
+   "pos": [
+    1.45,
+    1.65,
+    6.9
+   ],
+   "yaw": 180,
+   "size": [
+    0.9,
+    3.3
+   ],
+   "color": "#5a0e18",
+   "folds": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    -0.05,
+    11
+   ],
+   "size": [
+    6,
+    0.1,
+    8
+   ],
+   "tex": "pavement",
+   "texScale": 2,
+   "surface": "concrete"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.7,
+    15.15
+   ],
+   "size": [
+    6.3,
+    3.4,
+    0.3
+   ],
+   "tex": "black",
+   "shade": 0.3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.15,
+    1.7,
+    11
+   ],
+   "size": [
+    0.3,
+    3.4,
+    8
+   ],
+   "tex": "black",
+   "shade": 0.3
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.15,
+    1.7,
+    11
+   ],
+   "size": [
+    0.3,
+    3.4,
+    8
+   ],
+   "tex": "black",
+   "shade": 0.3
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.45,
+    11
+   ],
+   "size": [
+    6.3,
+    0.1,
+    8
+   ],
+   "tex": "black",
+   "shade": 0.3,
+   "walkable": false,
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    2.8,
+    9.5
+   ],
+   "color": "#7f90b8",
+   "intensity": 0.25,
+   "range": 4,
+   "flicker": "sodium"
+  },
+  {
+   "type": "spot",
+   "pos": [
+    0,
+    0,
+    10
+   ],
+   "examineAt": [
+    0,
+    1.5,
+    11
+   ],
+   "examineRadius": 1.6,
+   "examineRange": 9,
+   "name": "the night",
+   "examine": [
+    "The street. Wet, though it hasn't rained.",
+    "She went that way."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.93,
+    1.7,
+    -3.6
+   ],
+   "size": [
+    0.04,
+    1.6,
+    1.4
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#1c2238",
+   "texScale": 0.5,
+   "collide": false,
+   "walkable": false,
+   "name": "the window",
+   "examine": "Outside, the city. Every window in it is a restaurant."
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -10.87,
+    1.75,
+    -4.55
+   ],
+   "yaw": 90,
+   "size": [
+    0.6,
+    3.2
+   ],
+   "color": "#5a0e18",
+   "folds": 4
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -10.87,
+    1.75,
+    -2.6500000000000004
+   ],
+   "yaw": 90,
+   "size": [
+    0.6,
+    3.2
+   ],
+   "color": "#5a0e18",
+   "folds": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.93,
+    1.7,
+    4.8
+   ],
+   "size": [
+    0.04,
+    1.6,
+    1.4
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#1c2238",
+   "texScale": 0.5,
+   "collide": false,
+   "walkable": false,
+   "name": "the window",
+   "examine": "Outside, the city. Every window in it is a restaurant."
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -10.87,
+    1.75,
+    3.8499999999999996
+   ],
+   "yaw": 90,
+   "size": [
+    0.6,
+    3.2
+   ],
+   "color": "#5a0e18",
+   "folds": 4
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -10.87,
+    1.75,
+    5.75
+   ],
+   "yaw": 90,
+   "size": [
+    0.6,
+    3.2
+   ],
+   "color": "#5a0e18",
+   "folds": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.93,
+    1.7,
+    -4.6
+   ],
+   "size": [
+    0.04,
+    1.6,
+    1.4
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#1c2238",
+   "texScale": 0.5,
+   "collide": false,
+   "walkable": false,
+   "name": "the window",
+   "examine": "Outside, the city. Every window in it is a restaurant."
+  },
+  {
+   "type": "drape",
+   "pos": [
+    10.87,
+    1.75,
+    -5.55
+   ],
+   "yaw": -90,
+   "size": [
+    0.6,
+    3.2
+   ],
+   "color": "#5a0e18",
+   "folds": 4
+  },
+  {
+   "type": "drape",
+   "pos": [
+    10.87,
+    1.75,
+    -3.6499999999999995
+   ],
+   "yaw": -90,
+   "size": [
+    0.6,
+    3.2
+   ],
+   "color": "#5a0e18",
+   "folds": 4
+  },
+  {
+   "type": "chandelier",
+   "id": "chandW",
+   "pos": [
+    -5.5,
+    3.4,
+    0.5
+   ],
+   "intensity": 0.75,
+   "range": 8,
+   "examine": "Crystal. Every drop holds a small copy of the room, and in each one I'm still waiting.",
+   "name": "the chandelier",
+   "examineAt": [
+    -5.5,
+    2.7,
+    0.5
+   ],
+   "examineRadius": 0.7,
+   "examineRange": 4
+  },
+  {
+   "type": "chandelier",
+   "id": "chandMid",
+   "pos": [
+    0,
+    3.4,
+    1.0
+   ],
+   "intensity": 0.75,
+   "range": 8,
+   "examine": "Crystal. Every drop holds a small copy of the room, and in each one I'm still waiting.",
+   "name": "the chandelier",
+   "examineAt": [
+    0,
+    2.7,
+    1.0
+   ],
+   "examineRadius": 0.7,
+   "examineRange": 4
+  },
+  {
+   "type": "chandelier",
+   "id": "chandE",
+   "pos": [
+    5.5,
+    3.4,
+    0.5
+   ],
+   "intensity": 0.75,
+   "range": 8,
+   "examine": "Crystal. Every drop holds a small copy of the room, and in each one I'm still waiting.",
+   "name": "the chandelier",
+   "examineAt": [
+    5.5,
+    2.7,
+    0.5
+   ],
+   "examineRadius": 0.7,
+   "examineRange": 4
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    -5.0,
+    2.2,
+    -6.85
+   ],
+   "size": [
+    0.18,
+    0.26,
+    0.18
+   ],
+   "tex": "lamp",
+   "color": "#ffcf90",
+   "intensity": 0.35,
+   "range": 3,
+   "glowSize": 0.9
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    0.0,
+    2.2,
+    -6.85
+   ],
+   "size": [
+    0.18,
+    0.26,
+    0.18
+   ],
+   "tex": "lamp",
+   "color": "#ffcf90",
+   "intensity": 0.35,
+   "range": 3,
+   "glowSize": 0.9
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    5.0,
+    2.2,
+    -6.85
+   ],
+   "size": [
+    0.18,
+    0.26,
+    0.18
+   ],
+   "tex": "lamp",
+   "color": "#ffcf90",
+   "intensity": 0.35,
+   "range": 3,
+   "glowSize": 0.9
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    -10.85,
+    2.2,
+    0.8
+   ],
+   "size": [
+    0.18,
+    0.26,
+    0.18
+   ],
+   "tex": "lamp",
+   "color": "#ffcf90",
+   "intensity": 0.35,
+   "range": 3,
+   "glowSize": 0.9
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    10.85,
+    2.2,
+    -5.6
+   ],
+   "size": [
+    0.18,
+    0.26,
+    0.18
+   ],
+   "tex": "lamp",
+   "color": "#ffcf90",
+   "intensity": 0.35,
+   "range": 3,
+   "glowSize": 0.9
+  },
+  {
+   "type": "light",
+   "id": "coupleLight",
+   "pos": [
+    2.5,
+    3.0,
+    -5.4
+   ],
+   "color": "#ffd8a0",
+   "intensity": 1.25,
+   "range": 4.6,
+   "flicker": "soft",
+   "glow": true,
+   "glowPos": [
+    2.5,
+    3.1,
+    -5.4
+   ],
+   "glowSize": 1.4
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.5,
+    3.18,
+    -5.4
+   ],
+   "size": [
+    0.4,
+    0.12,
+    0.4
+   ],
+   "tex": "gold",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "booth",
+   "pos": [
+    -7.5,
+    0,
+    -5.6
+   ],
+   "yaw": 0,
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.4
+  },
+  {
+   "type": "booth",
+   "pos": [
+    -2.5,
+    0,
+    -5.6
+   ],
+   "yaw": 0,
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.4
+  },
+  {
+   "type": "booth",
+   "pos": [
+    2.5,
+    0,
+    -5.6
+   ],
+   "yaw": 0,
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.9,
+   "id": "coupleBooth",
+   "examine": [
+    "Their booth. Deep red, and the leather still warm.",
+    "Big enough for everyone."
+   ],
+   "name": "the booth"
+  },
+  {
+   "type": "booth",
+   "pos": [
+    7.5,
+    0,
+    -5.6
+   ],
+   "yaw": 0,
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.4
+  },
+  {
+   "type": "booth",
+   "pos": [
+    -9.6,
+    0,
+    -1.0
+   ],
+   "yaw": 90,
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.4
+  },
+  {
+   "type": "booth",
+   "pos": [
+    -9.6,
+    0,
+    2.6
+   ],
+   "yaw": 90,
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.4
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -7.5,
+    2.15,
+    -6.96
+   ],
+   "size": [
+    0.7,
+    0.9
+   ],
+   "art": "photo",
+   "frameTex": "gold",
+   "name": "the portrait",
+   "examine": "My mother, before she was anyone's mother."
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -2.5,
+    2.15,
+    -6.96
+   ],
+   "size": [
+    0.9,
+    0.7
+   ],
+   "art": "photo",
+   "frameTex": "gold",
+   "name": "the portrait",
+   "examine": "A wedding. I know everyone in it. None of them are smiling."
+  },
+  {
+   "type": "panel",
+   "pos": [
+    2.5,
+    2.15,
+    -6.96
+   ],
+   "size": [
+    1.0,
+    1.2
+   ],
+   "art": "photo",
+   "frameTex": "gold",
+   "name": "the portrait",
+   "examine": "Him. In the same brown suit. The painting is older than he is."
+  },
+  {
+   "type": "panel",
+   "pos": [
+    7.5,
+    2.15,
+    -6.96
+   ],
+   "size": [
+    0.7,
+    0.9
+   ],
+   "art": "photo",
+   "frameTex": "gold",
+   "name": "the portrait",
+   "examine": "A man who taught me to swim. Or to drink. I forget which."
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -10.96,
+    2.0,
+    -0.6000000000000001
+   ],
+   "yaw": 90,
+   "size": [
+    1.4,
+    1.0
+   ],
+   "art": "venice",
+   "frameTex": "gold",
+   "name": "the painting",
+   "examine": "A canal. The water in it is flowing upstream."
+  },
+  {
+   "type": "table",
+   "pos": [
+    0,
+    0,
+    0.8
+   ],
+   "size": [
+    3.6,
+    1.0
+   ],
+   "cloth": true,
+   "name": "the long table",
+   "examine": [
+    "One table, set for everyone.",
+    "Friends and family. Past and present. Dead and alive."
+   ],
+   "examineRadius": 0.9
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -1.35,
+    0,
+    0.05
+   ],
+   "yaw": 0,
+   "examine": "This one is for my father.",
+   "name": "the chair"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -1.35,
+    0.755,
+    0.52
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -1.1700000000000002,
+    0.755,
+    0.5800000000000001
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -1.35,
+    0,
+    1.55
+   ],
+   "yaw": 180,
+   "examine": "This one is for someone I haven't met yet.",
+   "name": "the chair"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -1.35,
+    0.755,
+    1.08
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -1.1700000000000002,
+    0.755,
+    1.02
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -0.45,
+    0,
+    0.05
+   ],
+   "yaw": 0,
+   "examine": "This one is for me. It's the only one that's been pulled out.",
+   "name": "the chair"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.45,
+    0.755,
+    0.52
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.27,
+    0.755,
+    0.5800000000000001
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -0.45,
+    0,
+    1.55
+   ],
+   "yaw": 180,
+   "examine": "This one is for my sponsor.",
+   "name": "the chair"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.45,
+    0.755,
+    1.08
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.27,
+    0.755,
+    1.02
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    0.45,
+    0,
+    0.05
+   ],
+   "yaw": 0
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.45,
+    0.755,
+    0.52
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.63,
+    0.755,
+    0.5800000000000001
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    0.45,
+    0,
+    1.55
+   ],
+   "yaw": 180
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.45,
+    0.755,
+    1.08
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.63,
+    0.755,
+    1.02
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    1.35,
+    0,
+    0.05
+   ],
+   "yaw": 0
+  },
+  {
+   "type": "food",
+   "pos": [
+    1.35,
+    0.755,
+    0.52
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    1.53,
+    0.755,
+    0.5800000000000001
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    1.35,
+    0,
+    1.55
+   ],
+   "yaw": 180
+  },
+  {
+   "type": "food",
+   "pos": [
+    1.35,
+    0.755,
+    1.08
+   ],
+   "kind": "plate",
+   "color": "#ece8e0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    1.53,
+    0.755,
+    1.02
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    0,
+    0,
+    0.8
+   ],
+   "color": "#f0c080"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -1.0,
+    0.755,
+    0.8
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    1.0,
+    0.755,
+    0.8
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.45,
+    0.755,
+    0.8
+   ],
+   "kind": "vase"
+  },
+  {
+   "type": "item",
+   "id": "reservedCard",
+   "item": "card",
+   "pickup": false,
+   "pos": [
+    -0.45,
+    0.755,
+    0.8
+   ],
+   "name": "the card",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.14,
+      0.08,
+      0.006
+     ],
+     "color": "#f2ece0",
+     "pos": [
+      0,
+      0.04,
+      0
+     ],
+     "rot": [
+      -15,
+      0,
+      0
+     ]
+    }
+   ],
+   "examine": "RESERVED. For: everyone."
+  },
+  {
+   "type": "item",
+   "id": "menuItem",
+   "item": "menu",
+   "pos": [
+    -1.35,
+    0.76,
+    0.6
+   ],
+   "yaw": 5
+  },
+  {
+   "type": "item",
+   "id": "photoItem",
+   "item": "photo",
+   "pos": [
+    1.35,
+    0.76,
+    1.0
+   ],
+   "yaw": -20
+  },
+  {
+   "type": "table",
+   "pos": [
+    -4.5,
+    0,
+    0.5
+   ],
+   "size": [
+    1.2,
+    0.9
+   ],
+   "pedestal": true,
+   "cloth": true
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -5.35,
+    0,
+    0.5
+   ],
+   "yaw": 90
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -3.65,
+    0,
+    0.5
+   ],
+   "yaw": 270
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.5,
+    0.755,
+    0.5
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.2,
+    0.755,
+    0.3
+   ],
+   "kind": "vase"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.8,
+    0.755,
+    0.6
+   ],
+   "kind": "plate",
+   "color": "#a85a3a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.2,
+    0.755,
+    0.7
+   ],
+   "kind": "plate",
+   "color": "#d8c070"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.6,
+    0.755,
+    0.2
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.4,
+    0.755,
+    0.8200000000000001
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "table",
+   "pos": [
+    4.5,
+    0,
+    0.5
+   ],
+   "size": [
+    1.2,
+    0.9
+   ],
+   "pedestal": true,
+   "cloth": true
+  },
+  {
+   "type": "chair",
+   "pos": [
+    3.65,
+    0,
+    0.5
+   ],
+   "yaw": 90
+  },
+  {
+   "type": "chair",
+   "pos": [
+    5.35,
+    0,
+    0.5
+   ],
+   "yaw": 270
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.5,
+    0.755,
+    0.5
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.8,
+    0.755,
+    0.3
+   ],
+   "kind": "vase"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.2,
+    0.755,
+    0.6
+   ],
+   "kind": "plate",
+   "color": "#a85a3a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.8,
+    0.755,
+    0.7
+   ],
+   "kind": "plate",
+   "color": "#d8c070"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.4,
+    0.755,
+    0.2
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.6,
+    0.755,
+    0.8200000000000001
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "table",
+   "pos": [
+    -4.5,
+    0,
+    3.8
+   ],
+   "size": [
+    1.2,
+    0.9
+   ],
+   "pedestal": true,
+   "cloth": true
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -5.35,
+    0,
+    3.8
+   ],
+   "yaw": 90
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -3.65,
+    0,
+    3.8
+   ],
+   "yaw": 270
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.5,
+    0.755,
+    3.8
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.2,
+    0.755,
+    3.5999999999999996
+   ],
+   "kind": "vase"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.8,
+    0.755,
+    3.9
+   ],
+   "kind": "plate",
+   "color": "#a85a3a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.2,
+    0.755,
+    4.0
+   ],
+   "kind": "plate",
+   "color": "#d8c070"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.6,
+    0.755,
+    3.5
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -4.4,
+    0.755,
+    4.12
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "table",
+   "pos": [
+    4.5,
+    0,
+    3.8
+   ],
+   "size": [
+    1.2,
+    0.9
+   ],
+   "pedestal": true,
+   "cloth": true
+  },
+  {
+   "type": "chair",
+   "pos": [
+    3.65,
+    0,
+    3.8
+   ],
+   "yaw": 90
+  },
+  {
+   "type": "chair",
+   "pos": [
+    5.35,
+    0,
+    3.8
+   ],
+   "yaw": 270
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.5,
+    0.755,
+    3.8
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.8,
+    0.755,
+    3.5999999999999996
+   ],
+   "kind": "vase"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.2,
+    0.755,
+    3.9
+   ],
+   "kind": "plate",
+   "color": "#a85a3a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.8,
+    0.755,
+    4.0
+   ],
+   "kind": "plate",
+   "color": "#d8c070"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.4,
+    0.755,
+    3.5
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.6,
+    0.755,
+    4.12
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -8.0,
+    0.755,
+    -5.6
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -7.1,
+    0.755,
+    -5.6
+   ],
+   "kind": "plate",
+   "color": "#b06040"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -7.5,
+    0.755,
+    -5.45
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -3.0,
+    0.755,
+    -5.6
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -2.1,
+    0.755,
+    -5.6
+   ],
+   "kind": "plate",
+   "color": "#b06040"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -2.5,
+    0.755,
+    -5.45
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    7.0,
+    0.755,
+    -5.6
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    7.9,
+    0.755,
+    -5.6
+   ],
+   "kind": "plate",
+   "color": "#b06040"
+  },
+  {
+   "type": "food",
+   "pos": [
+    7.5,
+    0.755,
+    -5.45
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -9.6,
+    0.755,
+    -1.3
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -9.6,
+    0.755,
+    -0.7
+   ],
+   "kind": "plate",
+   "color": "#c08048"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -9.6,
+    0.755,
+    2.3000000000000003
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -9.6,
+    0.755,
+    2.9
+   ],
+   "kind": "plate",
+   "color": "#c08048"
+  },
+  {
+   "type": "food",
+   "pos": [
+    2.1,
+    0.755,
+    -5.6
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    2.9,
+    0.755,
+    -5.55
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    2.5,
+    0.755,
+    -5.4
+   ],
+   "kind": "plate",
+   "color": "#9a5a3a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    2.5,
+    0.755,
+    -5.8
+   ],
+   "kind": "vase",
+   "color": "#e0e8f0"
+  },
+  {
+   "type": "piano",
+   "id": "piano",
+   "pos": [
+    -9.0,
+    0,
+    5.3
+   ],
+   "yaw": 90,
+   "name": "the piano",
+   "examine": "A grand piano. Someone is always playing it. I don't know the song but I know the words."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.2,
+    0.52,
+    5.95
+   ],
+   "size": [
+    1.8,
+    1.04,
+    0.4
+   ],
+   "tex": "woodDark",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.2,
+    1.06,
+    5.95
+   ],
+   "size": [
+    1.9,
+    0.04,
+    0.5
+   ],
+   "tex": "wood",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.2,
+    2.2,
+    6.9
+   ],
+   "size": [
+    2.2,
+    0.04,
+    0.04
+   ],
+   "tex": "metal",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -5.15,
+    1.65,
+    6.82
+   ],
+   "size": [
+    0.28,
+    1.1,
+    0.14
+   ],
+   "color": "#2a2a30",
+   "tex": "cloth",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.83,
+    1.65,
+    6.82
+   ],
+   "size": [
+    0.28,
+    1.1,
+    0.14
+   ],
+   "color": "#5a4a3a",
+   "tex": "cloth",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.510000000000001,
+    1.65,
+    6.82
+   ],
+   "size": [
+    0.28,
+    1.1,
+    0.14
+   ],
+   "color": "#3a4a5a",
+   "tex": "cloth",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.19,
+    1.65,
+    6.82
+   ],
+   "size": [
+    0.28,
+    1.1,
+    0.14
+   ],
+   "color": "#6a1a20",
+   "tex": "cloth",
+   "collide": false,
+   "walkable": false,
+   "name": "the coats",
+   "examine": "Coats. One of them is mine. I didn't bring a coat."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.87,
+    1.65,
+    6.82
+   ],
+   "size": [
+    0.28,
+    1.1,
+    0.14
+   ],
+   "color": "#2a3a2a",
+   "tex": "cloth",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.5500000000000003,
+    1.65,
+    6.82
+   ],
+   "size": [
+    0.28,
+    1.1,
+    0.14
+   ],
+   "color": "#4a4040",
+   "tex": "cloth",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.2300000000000004,
+    1.65,
+    6.82
+   ],
+   "size": [
+    0.28,
+    1.1,
+    0.14
+   ],
+   "color": "#1a1a1a",
+   "tex": "cloth",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.94,
+    1.05,
+    4.98
+   ],
+   "size": [
+    0.06,
+    2.1,
+    0.8
+   ],
+   "tex": "woodDark",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.94,
+    1.05,
+    5.82
+   ],
+   "size": [
+    0.06,
+    2.1,
+    0.8
+   ],
+   "tex": "woodDark",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.9,
+    1.5,
+    5.4
+   ],
+   "size": [
+    0.02,
+    0.3,
+    0.3
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#806040",
+   "collide": false,
+   "walkable": false,
+   "name": "the kitchen door",
+   "examine": [
+    "The kitchen. Not my place.",
+    "Somebody in there is singing the song the piano is playing."
+   ],
+   "examineRadius": 0.9
+  },
+  {
+   "type": "light",
+   "pos": [
+    10.5,
+    2.2,
+    5.4
+   ],
+   "color": "#ff9860",
+   "intensity": 0.25,
+   "range": 2.5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "plant",
+   "pos": [
+    -10.4,
+    0,
+    -6.4
+   ],
+   "kind": "leafy",
+   "size": 1.4,
+   "potColor": "#7a5a3a"
+  },
+  {
+   "type": "plant",
+   "pos": [
+    10.4,
+    0,
+    -6.4
+   ],
+   "kind": "leafy",
+   "size": 1.4,
+   "potColor": "#7a5a3a"
+  },
+  {
+   "type": "plant",
+   "pos": [
+    10.4,
+    0,
+    6.4
+   ],
+   "kind": "leafy",
+   "size": 1.4,
+   "potColor": "#7a5a3a"
+  },
+  {
+   "type": "box",
+   "pos": [
+    9.3,
+    0.55,
+    1
+   ],
+   "size": [
+    0.9,
+    1.1,
+    7
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "walkable": false,
+   "name": "the bar",
+   "examine": [
+    "The bar. Every bottle is lit from below, like something holy.",
+    "I'm not drinking."
+   ],
+   "examineAt": [
+    9.3,
+    1.1,
+    1
+   ],
+   "examineRadius": 1.0
+  },
+  {
+   "type": "box",
+   "pos": [
+    9.3,
+    1.12,
+    1
+   ],
+   "size": [
+    1.0,
+    0.04,
+    7.1
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "walkable": false,
+   "collide": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    10.94,
+    1.9,
+    1
+   ],
+   "yaw": -90,
+   "size": [
+    5.4,
+    1.2
+   ],
+   "art": "mirror",
+   "frameTex": "gold",
+   "name": "the mirror",
+   "examine": "In the mirror, the restaurant is full. Every seat at my table is taken."
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.75,
+    1.32,
+    1
+   ],
+   "size": [
+    0.35,
+    0.04,
+    6.2
+   ],
+   "tex": "wood",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    -1.8
+   ],
+   "kind": "bottle",
+   "color": "#3a2410"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    -1.1800000000000002
+   ],
+   "kind": "bottle",
+   "color": "#1e4a2a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    -0.56
+   ],
+   "kind": "bottle",
+   "color": "#5a1a1a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    0.05999999999999983
+   ],
+   "kind": "bottle",
+   "color": "#b8c8c0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    0.6799999999999999
+   ],
+   "kind": "bottle",
+   "color": "#6a4a10"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    1.3
+   ],
+   "kind": "bottle",
+   "color": "#3a2410"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    1.9199999999999997
+   ],
+   "kind": "bottle",
+   "color": "#1e4a2a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    2.54
+   ],
+   "kind": "bottle",
+   "color": "#5a1a1a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    3.16
+   ],
+   "kind": "bottle",
+   "color": "#b8c8c0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.35,
+    3.7800000000000002
+   ],
+   "kind": "bottle",
+   "color": "#6a4a10"
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.75,
+    1.92,
+    1
+   ],
+   "size": [
+    0.35,
+    0.04,
+    6.2
+   ],
+   "tex": "wood",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    -1.8
+   ],
+   "kind": "bottle",
+   "color": "#3a2410"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    -1.1800000000000002
+   ],
+   "kind": "bottle",
+   "color": "#1e4a2a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    -0.56
+   ],
+   "kind": "bottle",
+   "color": "#5a1a1a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    0.05999999999999983
+   ],
+   "kind": "bottle",
+   "color": "#b8c8c0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    0.6799999999999999
+   ],
+   "kind": "bottle",
+   "color": "#6a4a10"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    1.3
+   ],
+   "kind": "bottle",
+   "color": "#3a2410"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    1.9199999999999997
+   ],
+   "kind": "bottle",
+   "color": "#1e4a2a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    2.54
+   ],
+   "kind": "bottle",
+   "color": "#5a1a1a"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    3.16
+   ],
+   "kind": "bottle",
+   "color": "#b8c8c0"
+  },
+  {
+   "type": "food",
+   "pos": [
+    10.75,
+    1.95,
+    3.7800000000000002
+   ],
+   "kind": "bottle",
+   "color": "#6a4a10"
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    9.3,
+    2.6,
+    -1.4
+   ],
+   "size": [
+    0.2,
+    0.26,
+    0.2
+   ],
+   "tex": "lamp",
+   "color": "#ffc070",
+   "intensity": 0.45,
+   "range": 3.5,
+   "glowSize": 1.0
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    9.3,
+    2.6,
+    1.0
+   ],
+   "size": [
+    0.2,
+    0.26,
+    0.2
+   ],
+   "tex": "lamp",
+   "color": "#ffc070",
+   "intensity": 0.45,
+   "range": 3.5,
+   "glowSize": 1.0
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    9.3,
+    2.6,
+    3.4
+   ],
+   "size": [
+    0.2,
+    0.26,
+    0.2
+   ],
+   "tex": "lamp",
+   "color": "#ffc070",
+   "intensity": 0.45,
+   "range": 3.5,
+   "glowSize": 1.0
+  },
+  {
+   "type": "food",
+   "pos": [
+    9.2,
+    1.14,
+    -0.6
+   ],
+   "kind": "whisky"
+  },
+  {
+   "type": "spot",
+   "id": "whisky",
+   "pos": [
+    9.2,
+    1.14,
+    -0.6
+   ],
+   "examineAt": [
+    9.2,
+    1.2,
+    -0.6
+   ],
+   "examineRadius": 0.18,
+   "name": "the whisky",
+   "examine": [
+    "Someone's left a whisky.",
+    "I don't touch it. I watch the ice instead."
+   ]
+  },
+  {
+   "type": "food",
+   "pos": [
+    9.1,
+    1.14,
+    2.2
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "food",
+   "pos": [
+    9.4,
+    1.14,
+    3.0
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    8.35,
+    0,
+    -1.0
+   ],
+   "radius": 0.18,
+   "height": 0.74,
+   "tex": "vinyl",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    8.35,
+    0,
+    0.5
+   ],
+   "radius": 0.18,
+   "height": 0.74,
+   "tex": "vinyl",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    8.35,
+    0,
+    2.0
+   ],
+   "radius": 0.18,
+   "height": 0.74,
+   "tex": "vinyl",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    8.35,
+    0,
+    3.5
+   ],
+   "radius": 0.18,
+   "height": 0.74,
+   "tex": "vinyl",
+   "sides": 8
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.9,
+    0.55,
+    4.6
+   ],
+   "size": [
+    0.6,
+    1.1,
+    0.4
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.9,
+    1.12,
+    4.6
+   ],
+   "size": [
+    0.7,
+    0.04,
+    0.5
+   ],
+   "tex": "wood",
+   "texScale": 1,
+   "walkable": false,
+   "collide": false
+  },
+  {
+   "type": "item",
+   "id": "bookItem",
+   "item": "book",
+   "pos": [
+    1.9,
+    1.14,
+    4.6
+   ],
+   "yaw": 180
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1.5,
+    0
+   ],
+   "size": [
+    22,
+    3,
+    14
+   ],
+   "count": 20,
+   "scale": [
+    4,
+    8
+   ],
+   "alpha": 0.04,
+   "color": "#4a3a30",
+   "seed": 5
+  },
+  {
+   "type": "item",
+   "id": "needleItem",
+   "item": "needle",
+   "pos": [
+    4.15,
+    0.0,
+    -4.5
+   ],
+   "yaw": 40,
+   "hidden": true
+  },
+  {
+   "type": "character",
+   "id": "host",
+   "name": "the host",
+   "look": {
+    "skin": "skin",
+    "face": "faceHost",
+    "hair": "hairDark",
+    "top": "black",
+    "bottom": "black"
+   },
+   "pos": [
+    1.9,
+    0,
+    4.0
+   ],
+   "yaw": 0,
+   "talkRadius": 3.2,
+   "behavior": {
+    "name": "stand",
+    "yaw": 0
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "carried"
+     },
+     "lines": [
+      {
+       "who": "you",
+       "text": "Could I have the booth?"
+      },
+      {
+       "who": "host",
+       "text": "...Of course, sir. It's yours."
+      }
+     ],
+     "set": "booth"
+    },
+    {
+     "if": {
+      "flag": "dead"
+     },
+     "lines": [
+      {
+       "who": "host",
+       "text": "Please. Bear with us a moment, sir."
+      }
+     ]
+    },
+    {
+     "if": {
+      "not": "askedHost"
+     },
+     "lines": [
+      {
+       "who": "host",
+       "text": "Good evening. How many?"
+      },
+      {
+       "who": "you",
+       "text": "Everyone."
+      },
+      {
+       "who": "host",
+       "text": "I'm afraid there's only the one table left, sir. The booths are all taken."
+      },
+      {
+       "who": "you",
+       "text": "I'll wait."
+      }
+     ],
+     "set": "askedHost"
+    },
+    {
+     "variants": [
+      [
+       "The table is yours whenever you like, sir."
+      ],
+      [
+       "Your party called. They're on their way. All of them."
+      ],
+      [
+       "We've laid a place for everyone. We always do."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "oldman",
+   "name": "the old man",
+   "look": {
+    "skin": "skin",
+    "face": "faceDignified",
+    "hair": "hairWhite",
+    "top": "brownSuit",
+    "bottom": "brownSuit"
+   },
+   "pos": [
+    2.5,
+    0,
+    -6.55
+   ],
+   "yaw": 0,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "sit",
+    "yaw": 0,
+    "facePlayer": false,
+    "lookAt": [
+     2.5,
+     -4.65
+    ],
+    "lean": 0.22
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "dead"
+     },
+     "variants": [
+      [
+       "Do you mind? We're talking."
+      ],
+      [
+       "She's upset. It's nothing. It's April."
+      ],
+      [
+       "Young man. Have you ever been forgiven for something you didn't do?"
+      ]
+     ]
+    },
+    {
+     "lines": [
+      {
+       "who": "you",
+       "text": "He isn't breathing."
+      },
+      {
+       "who": "you",
+       "text": "There's a small red mark on his throat."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "singer",
+   "name": "the woman",
+   "look": {
+    "skin": "skinPale",
+    "face": "faceSinger",
+    "hair": "hairBlack",
+    "top": "floral",
+    "bottom": "floral",
+    "skirt": true,
+    "hairStyle": "up",
+    "prop": "needle"
+   },
+   "pos": [
+    2.5,
+    0,
+    -4.65
+   ],
+   "yaw": 180,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "sit",
+    "yaw": 180,
+    "facePlayer": false,
+    "lookAt": [
+     2.5,
+     -6.55
+    ],
+    "lean": 0.1
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Mind your own table."
+      ],
+      [
+       "Do you like the song? I used to sing it. On the radio, in Kowloon."
+      ],
+      [
+       "He thinks I don't remember April."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "waiter",
+   "name": "the waiter",
+   "look": {
+    "skin": "skin",
+    "face": "faceWaiter",
+    "hair": "hairBlack",
+    "top": "shirtWhite",
+    "bottom": "black",
+    "prop": "tray"
+   },
+   "pos": [
+    7.4,
+    0,
+    4.8
+   ],
+   "yaw": 270,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      7.4,
+      4.8,
+      90,
+      3
+     ],
+     [
+      5.6,
+      2.6,
+      180,
+      3
+     ],
+     [
+      -2.6,
+      2.6,
+      180,
+      3
+     ],
+     [
+      -2.6,
+      -2.4,
+      0,
+      2
+     ],
+     [
+      4.8,
+      -2.4,
+      0,
+      2
+     ]
+    ],
+    "carry": true,
+    "speed": 1.0
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "dead",
+      "not": "told"
+     },
+     "lines": [
+      {
+       "who": "waiter",
+       "text": "Sir, please. The paramedics are here."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "waiter",
+        "text": "Can I get you anything while you wait?"
+       },
+       {
+        "who": "you",
+        "text": "Water. Just water."
+       }
+      ],
+      [
+       {
+        "who": "waiter",
+        "text": "The kitchen recommends the fish. The fish recommends the lamb."
+       }
+      ],
+      [
+       {
+        "who": "waiter",
+        "text": "Your guests? Of course. We'll send them straight through."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "waiter2",
+   "name": "the waitress",
+   "look": {
+    "skin": "skinPale",
+    "face": "faceHost",
+    "hair": "hairBrown",
+    "hairStyle": "up",
+    "top": "black",
+    "bottom": "black",
+    "skirt": true,
+    "prop": "tray"
+   },
+   "pos": [
+    -6.4,
+    0,
+    2.2
+   ],
+   "yaw": 90,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      -6.4,
+      2.2,
+      90,
+      3
+     ],
+     [
+      -2.4,
+      2.6,
+      180,
+      2
+     ],
+     [
+      -2.6,
+      -2.4,
+      0,
+      2
+     ],
+     [
+      -6.6,
+      -2.4,
+      0,
+      3
+     ]
+    ],
+    "carry": true,
+    "speed": 0.9
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Don't mind the couple in the booth. They're here every night. Same argument."
+      ],
+      [
+       "We close when the last guest arrives. Nobody's ever been the last guest."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "pianist",
+   "name": "the pianist",
+   "look": {
+    "skin": "skinDeep",
+    "skinColor": "#7a4e34",
+    "face": {
+     "skin": "#7a4e34",
+     "hair": "#cfc9bf",
+     "age": 0.75,
+     "seed": 41,
+     "browWeight": 0.6,
+     "browArch": 0.4,
+     "mood": "flat"
+    },
+    "hair": "hairWhite",
+    "top": "suit",
+    "bottom": "suit"
+   },
+   "pos": [
+    -8.0,
+    0,
+    5.3
+   ],
+   "yaw": 270,
+   "talkRadius": 2.8,
+   "behavior": {
+    "name": "play",
+    "yaw": 270,
+    "seatHeight": 0.5,
+    "facePlayer": false
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Requests? I only know the one."
+      ],
+      [
+       "Your friends called ahead. They're running late. All of them."
+      ],
+      [
+       "I played at your christening. You don't remember. You were very small and very drunk."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "bartender",
+   "name": "the bartender",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#161214",
+     "age": 0.4,
+     "seed": 57,
+     "stubble": true,
+     "browWeight": 0.8,
+     "browArch": 0.2,
+     "mood": "flat"
+    },
+    "hair": "hairBlack",
+    "top": "shirtWhite",
+    "bottom": "black"
+   },
+   "pos": [
+    10.25,
+    0,
+    0.6
+   ],
+   "yaw": 270,
+   "talkRadius": 3.4,
+   "behavior": {
+    "name": "stand",
+    "yaw": 270
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "gotWater"
+     },
+     "lines": [
+      {
+       "who": "bartender",
+       "text": "The usual?"
+      },
+      {
+       "who": "you",
+       "text": "Water. Just water."
+      },
+      {
+       "who": "bartender",
+       "text": "...Water it is."
+      }
+     ],
+     "set": "gotWater",
+     "then": [
+      {
+       "give": "water"
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       "Still on the water? Good for you."
+      ],
+      [
+       "I keep a bottle back for you. Just in case. You never ask for it."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "coatcheck",
+   "name": "the coat check girl",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#4a3222",
+     "age": 0.15,
+     "seed": 77,
+     "lipstick": "#c04050",
+     "browArch": 0.7,
+     "browWeight": 0.4,
+     "mood": "flat"
+    },
+    "hair": "hairBrown",
+    "hairStyle": "bob",
+    "top": "dress",
+    "bottom": "dress",
+    "skirt": true
+   },
+   "pos": [
+    -4.2,
+    0,
+    6.55
+   ],
+   "yaw": 180,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "stand",
+    "yaw": 180
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Your coat's already here. It came in before you did."
+      ],
+      [
+       "Ticket number one. It's always number one."
+      ],
+      [
+       "Everyone you're waiting for has left their coat. Look."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "p1",
+   "name": "a man at the bar",
+   "look": {
+    "skin": "skin",
+    "face": "faceYoungMan",
+    "top": "coat",
+    "bottom": "trousers",
+    "hair": "hairBrown"
+   },
+   "pos": [
+    8.35,
+    0,
+    0.5
+   ],
+   "yaw": 90,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "dine",
+    "yaw": 90,
+    "seatHeight": 0.74,
+    "period": 8
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "I'm meeting someone. I've been meeting them for years."
+      ],
+      [
+       "Don't sit there. That's taken. By you, later."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "p2",
+   "name": "a woman at the bar",
+   "look": {
+    "skin": "skinPale",
+    "face": "faceGrin",
+    "top": "dress",
+    "bottom": "dress",
+    "skirt": true,
+    "hairStyle": "long",
+    "hair": "hairBlack"
+   },
+   "pos": [
+    8.35,
+    0,
+    3.5
+   ],
+   "yaw": 90,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "dine",
+    "yaw": 90,
+    "seatHeight": 0.74,
+    "period": 8
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Are you the one who doesn't drink? They talk about you."
+      ],
+      [
+       "One more and then I'll go. One more and then."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "medic1",
+   "name": "the paramedic",
+   "hidden": true,
+   "look": {
+    "skin": "skin",
+    "face": "faceParamedic",
+    "hair": "hairDark",
+    "top": "paramedic",
+    "bottom": "paramedic",
+    "cap": true
+   },
+   "pos": [
+    1.2,
+    0,
+    9.5
+   ],
+   "yaw": 0,
+   "talkRadius": 3.4,
+   "behavior": {
+    "name": "none"
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "medicsHere",
+      "not": "told"
+     },
+     "lines": [
+      {
+       "who": "medic1",
+       "text": "Heart attack, probably. It happens, at his age."
+      },
+      {
+       "who": "you",
+       "text": "No."
+      },
+      {
+       "who": "you",
+       "text": "Check for an entry wound in his throat. He was poisoned."
+      },
+      {
+       "who": "medic1",
+       "text": "..."
+      },
+      {
+       "who": "medic1",
+       "text": "There. There it is."
+      },
+      {
+       "who": "medic1",
+       "text": "Thank you. Thank you for your help."
+      }
+     ],
+     "then": [
+      {
+       "set": "told"
+      },
+      {
+       "hide": "oldman"
+      },
+      {
+       "sfx": "confirm"
+      },
+      {
+       "behavior": {
+        "id": "medic1",
+        "name": "walkTo",
+        "path": [
+         [
+          2.4,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "medic2",
+        "name": "walkTo",
+        "path": [
+         [
+          3.0,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "waiter",
+        "name": "patrol",
+        "route": [
+         [
+          7.4,
+          4.8,
+          90,
+          3
+         ],
+         [
+          5.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          -2.4,
+          0,
+          2
+         ],
+         [
+          4.8,
+          -2.4,
+          0,
+          2
+         ]
+        ],
+        "carry": true,
+        "speed": 1.0
+       }
+      },
+      {
+       "wait": 2.5
+      },
+      {
+       "set": "carried"
+      },
+      {
+       "light": {
+        "id": "coupleLight",
+        "intensity": 2.0
+       }
+      },
+      {
+       "hint": "the booth is free"
+      }
+     ]
+    },
+    {
+     "lines": [
+      {
+       "who": "medic1",
+       "text": "We've got him. Thank you, sir."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "medic2",
+   "name": "the paramedic",
+   "hidden": true,
+   "look": {
+    "skin": "skin",
+    "face": "faceParamedic",
+    "hair": "hairDark",
+    "top": "paramedic",
+    "bottom": "paramedic",
+    "cap": true
+   },
+   "pos": [
+    3.5,
+    0,
+    9.5
+   ],
+   "yaw": 0,
+   "talkRadius": 3.4,
+   "behavior": {
+    "name": "none"
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "medicsHere",
+      "not": "told"
+     },
+     "lines": [
+      {
+       "who": "medic2",
+       "text": "Heart attack, probably. It happens, at his age."
+      },
+      {
+       "who": "you",
+       "text": "No."
+      },
+      {
+       "who": "you",
+       "text": "Check for an entry wound in his throat. He was poisoned."
+      },
+      {
+       "who": "medic2",
+       "text": "..."
+      },
+      {
+       "who": "medic2",
+       "text": "There. There it is."
+      },
+      {
+       "who": "medic2",
+       "text": "Thank you. Thank you for your help."
+      }
+     ],
+     "then": [
+      {
+       "set": "told"
+      },
+      {
+       "hide": "oldman"
+      },
+      {
+       "sfx": "confirm"
+      },
+      {
+       "behavior": {
+        "id": "medic1",
+        "name": "walkTo",
+        "path": [
+         [
+          2.4,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "medic2",
+        "name": "walkTo",
+        "path": [
+         [
+          3.0,
+          -1.2
+         ],
+         [
+          2.4,
+          2.6
+         ],
+         [
+          0.4,
+          4.4
+         ],
+         [
+          0,
+          9.8
+         ]
+        ],
+        "speed": 1.4,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "waiter",
+        "name": "patrol",
+        "route": [
+         [
+          7.4,
+          4.8,
+          90,
+          3
+         ],
+         [
+          5.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          2.6,
+          180,
+          3
+         ],
+         [
+          -2.6,
+          -2.4,
+          0,
+          2
+         ],
+         [
+          4.8,
+          -2.4,
+          0,
+          2
+         ]
+        ],
+        "carry": true,
+        "speed": 1.0
+       }
+      },
+      {
+       "wait": 2.5
+      },
+      {
+       "set": "carried"
+      },
+      {
+       "light": {
+        "id": "coupleLight",
+        "intensity": 2.0
+       }
+      },
+      {
+       "hint": "the booth is free"
+      }
+     ]
+    },
+    {
+     "lines": [
+      {
+       "who": "medic2",
+       "text": "We've got him. Thank you, sir."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d1",
+   "name": "a diner",
+   "look": {
+    "skin": "skin",
+    "face": "faceYoungMan",
+    "top": "suit",
+    "bottom": "suit",
+    "hair": "hairBrown"
+   },
+   "pos": [
+    -5.35,
+    0,
+    0.5
+   ],
+   "yaw": 90,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 90,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "We're celebrating. We don't know what yet."
+      ],
+      [
+       "The soup tastes like my grandmother's. She couldn't cook."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d2",
+   "name": "a diner",
+   "look": {
+    "skin": "skinPale",
+    "face": "faceHost",
+    "top": "dress",
+    "bottom": "dress",
+    "skirt": true,
+    "hairStyle": "bob",
+    "hair": "hairBlack"
+   },
+   "pos": [
+    -3.65,
+    0,
+    0.5
+   ],
+   "yaw": 270,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 270,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Isn't she that singer? From the radio?"
+      ],
+      [
+       "He orders the same thing every night. She never eats."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d3",
+   "name": "a diner",
+   "look": {
+    "skin": "skin",
+    "face": "faceWaiter",
+    "top": "tweed",
+    "bottom": "trousers",
+    "hair": "hairGrey",
+    "hairStyle": "bald"
+   },
+   "pos": [
+    5.35,
+    0,
+    3.8
+   ],
+   "yaw": 270,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 270,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Forty years I've eaten here. The booths were always taken."
+      ],
+      [
+       "You look like someone who's waiting for someone."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d4",
+   "name": "a diner",
+   "look": {
+    "skin": "skin",
+    "face": "faceInventor",
+    "top": "shirt",
+    "bottom": "trousers",
+    "hair": "hairBrown"
+   },
+   "pos": [
+    3.65,
+    0,
+    3.8
+   ],
+   "yaw": 90,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 90,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Don't stare at them. It only makes it worse."
+      ],
+      [
+       "Is that your table? The long one? Lucky."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d5",
+   "name": "a diner",
+   "look": {
+    "skin": "skin",
+    "face": "faceHost",
+    "top": "coat",
+    "bottom": "trousers",
+    "hair": "hairDark"
+   },
+   "pos": [
+    -10.55,
+    0,
+    -1.0
+   ],
+   "yaw": 90,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 90,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Booth's taken, friend."
+      ],
+      [
+       "Wait long enough and one comes free. That's how it works."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d6",
+   "name": "a diner",
+   "look": {
+    "skin": "skinPale",
+    "face": "faceGrin",
+    "top": "shirt",
+    "bottom": "trousers",
+    "hair": "hairGrey",
+    "skirt": true
+   },
+   "pos": [
+    -10.55,
+    0,
+    2.6
+   ],
+   "yaw": 90,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 90,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "The pianist only knows one song. Isn't it lovely?"
+      ],
+      [
+       "My husband's late too. He died in 1971."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d7",
+   "name": "a diner",
+   "look": {
+    "skin": "skinTan",
+    "face": "faceParamedic",
+    "top": "brownSuit",
+    "bottom": "brownSuit",
+    "hair": "hairBlack"
+   },
+   "pos": [
+    -7.5,
+    0,
+    -6.5
+   ],
+   "yaw": 0,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 0,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "We've been here since lunch. Which lunch, I couldn't say."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d8",
+   "name": "a diner",
+   "look": {
+    "skin": "skinPale",
+    "face": "faceHost",
+    "top": "floral",
+    "bottom": "floral",
+    "skirt": true,
+    "hairStyle": "long",
+    "hair": "hairBrown"
+   },
+   "pos": [
+    -7.5,
+    0,
+    -4.7
+   ],
+   "yaw": 180,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 180,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Lovely, isn't it? Nobody ever leaves."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d9",
+   "name": "a diner",
+   "look": {
+    "skin": "skinDeep",
+    "face": "faceWaiter",
+    "top": "suit",
+    "bottom": "suit",
+    "hair": "hairBlack",
+    "hat": true
+   },
+   "pos": [
+    7.5,
+    0,
+    -6.5
+   ],
+   "yaw": 0,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 0,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "Mind the couple. Eighth night running."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "d10",
+   "name": "a diner",
+   "look": {
+    "skin": "skin",
+    "face": "faceDignified",
+    "top": "tweed",
+    "bottom": "trousers",
+    "hair": "hairWhite"
+   },
+   "pos": [
+    -2.5,
+    0,
+    -4.7
+   ],
+   "yaw": 180,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "dine",
+    "yaw": 180,
+    "seatHeight": 0.46,
+    "period": 7
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       "My wife says I drink too much. She's been dead for years. She still says it."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "intro",
+   "when": {
+    "start": true
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I'm waiting for everyone. Friends and family. Past and present. Dead and alive."
+      },
+      {
+       "who": "you",
+       "text": "I was hoping to get a booth."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "watch",
+   "when": {
+    "look": {
+     "target": "oldman",
+     "within": 3.6,
+     "angle": 14
+    },
+    "not": "watched"
+   },
+   "do": [
+    {
+     "set": "watched"
+    },
+    {
+     "say": [
+      {
+       "who": "oldman",
+       "text": "I did tell you. I told you in April."
+      },
+      {
+       "who": "singer",
+       "text": "You told me nothing."
+      },
+      {
+       "who": "oldman",
+       "text": "You never listen. You never have."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "watchNear",
+   "when": {
+    "enter": {
+     "pos": [
+      2.5,
+      -5.6
+     ],
+     "radius": 2.3
+    },
+    "not": "watched"
+   },
+   "do": [
+    {
+     "set": "watched"
+    },
+    {
+     "say": [
+      {
+       "who": "oldman",
+       "text": "I did tell you. I told you in April."
+      },
+      {
+       "who": "singer",
+       "text": "You told me nothing."
+      },
+      {
+       "who": "oldman",
+       "text": "You never listen. You never have."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "attack",
+   "when": {
+    "since": {
+     "flag": "watched",
+     "seconds": 5
+    },
+    "not": "attacked"
+   },
+   "do": [
+    {
+     "set": "attacked"
+    },
+    {
+     "focus": {
+      "id": "singer",
+      "speed": 3
+     }
+    },
+    {
+     "behavior": {
+      "id": "singer",
+      "name": "walkTo",
+      "target": [
+       2.5,
+       -5.12
+      ],
+      "speed": 0.55,
+      "then": {
+       "name": "stand",
+       "yaw": 180,
+       "noticeRadius": 0
+      },
+      "yaw": 180
+     }
+    },
+    {
+     "behavior": {
+      "id": "oldman",
+      "name": "sit",
+      "yaw": 0,
+      "facePlayer": false,
+      "lookAt": [
+       2.5,
+       -5.12
+      ],
+      "lean": 0.3
+     }
+    },
+    {
+     "wait": 1.0
+    },
+    {
+     "behavior": {
+      "id": "singer",
+      "name": "reach",
+      "yaw": 180,
+      "target": {
+       "id": "oldman"
+      },
+      "lean": 0.7
+     }
+    },
+    {
+     "wait": 0.6
+    },
+    {
+     "flash": 0.6
+    },
+    {
+     "sfx": "stab"
+    },
+    {
+     "behavior": {
+      "id": "oldman",
+      "name": "slump",
+      "dir": -1,
+      "rate": 1.4
+     }
+    },
+    {
+     "wait": 1.0
+    },
+    {
+     "behavior": {
+      "id": "singer",
+      "name": "walkTo",
+      "path": [
+       [
+        3.95,
+        -5.12
+       ],
+       [
+        4.4,
+        -3.3
+       ],
+       [
+        2.4,
+        2.6
+       ],
+       [
+        0.4,
+        4.4
+       ],
+       [
+        0,
+        9.8
+       ]
+      ],
+      "speed": 3.2,
+      "then": "hide"
+     }
+    },
+    {
+     "wait": 0.5
+    },
+    {
+     "show": "needleItem"
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "A needle. Into his throat."
+      }
+     ]
+    },
+    {
+     "release": true
+    },
+    {
+     "wait": 1.5
+    },
+    {
+     "set": "dead"
+    }
+   ]
+  },
+  {
+   "id": "medics",
+   "when": {
+    "since": {
+     "flag": "dead",
+     "seconds": 3
+    },
+    "not": "medicsCalled"
+   },
+   "do": [
+    {
+     "set": "medicsCalled"
+    },
+    {
+     "behavior": {
+      "id": "waiter",
+      "name": "walkTo",
+      "path": [
+       [
+        4.8,
+        -2.4
+       ],
+       [
+        4.6,
+        -3.6
+       ]
+      ],
+      "speed": 1.5,
+      "then": "stand",
+      "yaw": 270
+     }
+    },
+    {
+     "wait": 2.5
+    },
+    {
+     "show": "medic1"
+    },
+    {
+     "show": "medic2"
+    },
+    {
+     "focus": {
+      "id": "medic1",
+      "seconds": 3
+     }
+    },
+    {
+     "behavior": {
+      "id": "medic1",
+      "name": "walkTo",
+      "path": [
+       [
+        0.4,
+        4.4
+       ],
+       [
+        2.4,
+        2.6
+       ],
+       [
+        2.4,
+        -1.2
+       ],
+       [
+        1.2,
+        -3.4
+       ]
+      ],
+      "speed": 1.8,
+      "then": "stand",
+      "yaw": 90
+     }
+    },
+    {
+     "behavior": {
+      "id": "medic2",
+      "name": "walkTo",
+      "path": [
+       [
+        0.4,
+        4.4
+       ],
+       [
+        2.6,
+        2.6
+       ],
+       [
+        3.0,
+        -1.2
+       ],
+       [
+        3.6,
+        -3.1
+       ]
+      ],
+      "speed": 1.8,
+      "then": "stand",
+      "yaw": 180
+     }
+    },
+    {
+     "wait": 5
+    },
+    {
+     "set": "medicsHere"
+    }
+   ]
+  },
+  {
+   "id": "medicNear1",
+   "when": {
+    "flag": "medicsHere",
+    "enter": {
+     "pos": [
+      1.2,
+      -3.4
+     ],
+     "radius": 1.6
+    },
+    "not": "told"
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "medic1",
+       "text": "Heart attack, probably. It happens, at his age."
+      },
+      {
+       "who": "you",
+       "text": "No."
+      },
+      {
+       "who": "you",
+       "text": "Check for an entry wound in his throat. He was poisoned."
+      },
+      {
+       "who": "medic1",
+       "text": "..."
+      },
+      {
+       "who": "medic1",
+       "text": "There. There it is."
+      },
+      {
+       "who": "medic1",
+       "text": "Thank you. Thank you for your help."
+      }
+     ]
+    },
+    {
+     "set": "told"
+    },
+    {
+     "hide": "oldman"
+    },
+    {
+     "sfx": "confirm"
+    },
+    {
+     "behavior": {
+      "id": "medic1",
+      "name": "walkTo",
+      "path": [
+       [
+        2.4,
+        -1.2
+       ],
+       [
+        2.4,
+        2.6
+       ],
+       [
+        0.4,
+        4.4
+       ],
+       [
+        0,
+        9.8
+       ]
+      ],
+      "speed": 1.4,
+      "then": "hide"
+     }
+    },
+    {
+     "behavior": {
+      "id": "medic2",
+      "name": "walkTo",
+      "path": [
+       [
+        3.0,
+        -1.2
+       ],
+       [
+        2.4,
+        2.6
+       ],
+       [
+        0.4,
+        4.4
+       ],
+       [
+        0,
+        9.8
+       ]
+      ],
+      "speed": 1.4,
+      "then": "hide"
+     }
+    },
+    {
+     "behavior": {
+      "id": "waiter",
+      "name": "patrol",
+      "route": [
+       [
+        7.4,
+        4.8,
+        90,
+        3
+       ],
+       [
+        5.6,
+        2.6,
+        180,
+        3
+       ],
+       [
+        -2.6,
+        2.6,
+        180,
+        3
+       ],
+       [
+        -2.6,
+        -2.4,
+        0,
+        2
+       ],
+       [
+        4.8,
+        -2.4,
+        0,
+        2
+       ]
+      ],
+      "carry": true,
+      "speed": 1.0
+     }
+    },
+    {
+     "wait": 2.5
+    },
+    {
+     "set": "carried"
+    },
+    {
+     "light": {
+      "id": "coupleLight",
+      "intensity": 2.0
+     }
+    },
+    {
+     "hint": "the booth is free"
+    }
+   ]
+  },
+  {
+   "id": "medicNear2",
+   "when": {
+    "flag": "medicsHere",
+    "enter": {
+     "pos": [
+      3.6,
+      -3.1
+     ],
+     "radius": 1.6
+    },
+    "not": "told"
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "medic1",
+       "text": "Heart attack, probably. It happens, at his age."
+      },
+      {
+       "who": "you",
+       "text": "No."
+      },
+      {
+       "who": "you",
+       "text": "Check for an entry wound in his throat. He was poisoned."
+      },
+      {
+       "who": "medic1",
+       "text": "..."
+      },
+      {
+       "who": "medic1",
+       "text": "There. There it is."
+      },
+      {
+       "who": "medic1",
+       "text": "Thank you. Thank you for your help."
+      }
+     ]
+    },
+    {
+     "set": "told"
+    },
+    {
+     "hide": "oldman"
+    },
+    {
+     "sfx": "confirm"
+    },
+    {
+     "behavior": {
+      "id": "medic1",
+      "name": "walkTo",
+      "path": [
+       [
+        2.4,
+        -1.2
+       ],
+       [
+        2.4,
+        2.6
+       ],
+       [
+        0.4,
+        4.4
+       ],
+       [
+        0,
+        9.8
+       ]
+      ],
+      "speed": 1.4,
+      "then": "hide"
+     }
+    },
+    {
+     "behavior": {
+      "id": "medic2",
+      "name": "walkTo",
+      "path": [
+       [
+        3.0,
+        -1.2
+       ],
+       [
+        2.4,
+        2.6
+       ],
+       [
+        0.4,
+        4.4
+       ],
+       [
+        0,
+        9.8
+       ]
+      ],
+      "speed": 1.4,
+      "then": "hide"
+     }
+    },
+    {
+     "behavior": {
+      "id": "waiter",
+      "name": "patrol",
+      "route": [
+       [
+        7.4,
+        4.8,
+        90,
+        3
+       ],
+       [
+        5.6,
+        2.6,
+        180,
+        3
+       ],
+       [
+        -2.6,
+        2.6,
+        180,
+        3
+       ],
+       [
+        -2.6,
+        -2.4,
+        0,
+        2
+       ],
+       [
+        4.8,
+        -2.4,
+        0,
+        2
+       ]
+      ],
+      "carry": true,
+      "speed": 1.0
+     }
+    },
+    {
+     "wait": 2.5
+    },
+    {
+     "set": "carried"
+    },
+    {
+     "light": {
+      "id": "coupleLight",
+      "intensity": 2.0
+     }
+    },
+    {
+     "hint": "the booth is free"
+    }
+   ]
+  },
+  {
+   "id": "ending",
+   "when": {
+    "flag": "carried",
+    "enter": {
+     "pos": [
+      2.5,
+      -5.4
+     ],
+     "radius": 1.7
+    }
+   },
+   "do": [
+    {
+     "ending": {
+      "seconds": 10
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I won't tell them about this when they arrive."
+      },
+      {
+       "who": "you",
+       "text": "They might think I started drinking again."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

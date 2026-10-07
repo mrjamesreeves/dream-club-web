@@ -17,10 +17,13 @@
 set -euo pipefail
 
 WEB="$(cd "$(dirname "$0")/.." && pwd)"
+# Defaults are Olly's repo and branch into play/. sync-museum.sh sets
+# these to James's fork and its museum branch into museum/.
 SRC="${DREAMGAME_SRC:-$HOME/Dev/dreamgame}"
-REPO="https://github.com/ollyf/dreamgame.git"
+REPO="${DREAMGAME_REPO:-https://github.com/ollyf/dreamgame.git}"
 BRANCH="${DREAMGAME_BRANCH:-ps1-dream-engine}"
-OUT="$WEB/play"
+OUT="$WEB/${DREAMGAME_OUT:-play}"
+LABEL="$(basename "$OUT")"
 MODE="${1:-push}"
 
 if [ ! -d "$SRC/.git" ]; then
@@ -58,22 +61,22 @@ print('manifest:', len(items), 'dreams')
 PY
 
 if [ "$MODE" = "--build" ]; then
-  echo "built play/ at $STAMP (nothing committed)"
+  echo "built $LABEL/ at $STAMP (nothing committed)"
   exit 0
 fi
 
 cd "$WEB"
-git add play
+git add "$LABEL"
 if git diff --cached --quiet; then
-  echo "play/ is already at $STAMP"
+  echo "$LABEL/ is already at $STAMP"
   exit 0
 fi
-git commit --quiet -m "Game: sync to dreamgame $STAMP
+git commit --quiet -m "Game: sync $LABEL/ to $STAMP ($BRANCH)
 
-https://github.com/ollyf/dreamgame/commit/$FULL"
-echo "committed play/ at $STAMP"
+${REPO%.git}/commit/$FULL"
+echo "committed $LABEL/ at $STAMP"
 
 if [ "$MODE" != "--no-push" ]; then
   git push --quiet
-  echo "pushed; Vercel is deploying thedream.club/play/"
+  echo "pushed; Vercel is deploying thedream.club/$LABEL/"
 fi

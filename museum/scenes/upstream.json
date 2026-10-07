@@ -1,0 +1,2563 @@
+{
+ "title": "UPSTREAM AGAINST CURRENT",
+ "hint": "e to talk",
+ "hintTouch": "tap to talk",
+ "render": {
+  "height": 216
+ },
+ "environment": {
+  "fogColor": "#4f6268",
+  "ambient": "#171f23",
+  "skyColor": "#2a383e",
+  "sunDir": [
+   0.45,
+   0.5,
+   0.35
+  ],
+  "sunColor": "#7c949c",
+  "fogNear": 5,
+  "fogFar": 80,
+  "fogHeight": 1.2,
+  "fogHeightRange": 5,
+  "fogHeightStrength": 0.45,
+  "jitter": 1
+ },
+ "sky": {
+  "top": "#1f3038",
+  "moonSize": 7,
+  "stars": 30
+ },
+ "particles": {
+  "dust": {
+   "count": 420,
+   "alpha": 0.5
+  },
+  "floaters": {
+   "count": 40
+  }
+ },
+ "player": {
+  "pos": [
+   -3.2,
+   11,
+   -26.2
+  ],
+  "yaw": 0,
+  "pitch": -12,
+  "speed": 2.1
+ },
+ "ambience": [
+  {
+   "sound": "ocean",
+   "line": [
+    [
+     -200,
+     -68
+    ],
+    [
+     200,
+     -68
+    ]
+   ],
+   "range": 50,
+   "base": 0.15
+  },
+  {
+   "sound": "stream",
+   "line": [
+    [
+     -130,
+     -31.5
+    ],
+    [
+     130,
+     -31.5
+    ]
+   ],
+   "range": 14
+  },
+  {
+   "sound": "wind",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 1000,
+   "base": 0.6
+  }
+ ],
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    260,
+    60
+   ],
+   "tex": "concrete",
+   "texScale": 4
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    -36
+   ],
+   "size": [
+    260,
+    4
+   ],
+   "tex": "pavement",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.05,
+    -29.75
+   ],
+   "size": [
+    260,
+    0.1,
+    0.5
+   ],
+   "tex": "concrete",
+   "texScale": 1,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.05,
+    -33.75
+   ],
+   "size": [
+    260,
+    0.1,
+    0.5
+   ],
+   "tex": "concrete",
+   "texScale": 1,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    -0.35,
+    -30.3
+   ],
+   "size": [
+    260,
+    0.3,
+    0.6
+   ],
+   "tex": "dark",
+   "shade": 0.5,
+   "surface": "water",
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    -0.35,
+    -32.7
+   ],
+   "size": [
+    260,
+    0.3,
+    0.6
+   ],
+   "tex": "dark",
+   "shade": 0.5,
+   "surface": "water",
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    -0.6,
+    -31.5
+   ],
+   "size": [
+    260,
+    0.4,
+    3
+   ],
+   "tex": "dark",
+   "shade": 0.5,
+   "collide": false,
+   "surface": "water"
+  },
+  {
+   "type": "water",
+   "pos": [
+    0,
+    -0.3,
+    -31.5
+   ],
+   "size": [
+    260,
+    3
+   ],
+   "flow": [
+    -0.3,
+    0
+   ],
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -69,
+    3,
+    -40
+   ],
+   "size": [
+    122,
+    6,
+    4
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    65,
+    3,
+    -40
+   ],
+   "size": [
+    130,
+    6,
+    4
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    4.3,
+    -40
+   ],
+   "size": [
+    8,
+    3.4,
+    4
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    1.3,
+    -41.5
+   ],
+   "size": [
+    8,
+    2.6,
+    1
+   ],
+   "tex": "wall",
+   "shade": 0.1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.9,
+    1.3,
+    -39.5
+   ],
+   "size": [
+    0.2,
+    2.6,
+    3
+   ],
+   "tex": "wall",
+   "shade": 0.08,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.1,
+    1.3,
+    -39.5
+   ],
+   "size": [
+    0.2,
+    2.6,
+    3
+   ],
+   "tex": "wall",
+   "shade": 0.08,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    -0.1,
+    -39.5
+   ],
+   "size": [
+    8,
+    0.2,
+    3
+   ],
+   "tex": "dark",
+   "shade": 0.15,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    6.3,
+    -38.3
+   ],
+   "size": [
+    260,
+    0.6,
+    0.6
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.2,
+    -37.8
+   ],
+   "size": [
+    260,
+    0.26,
+    0.26
+   ],
+   "tex": "metal",
+   "texScale": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -4.5,
+    1.6,
+    -37.4
+   ],
+   "color": "#8fa6ae",
+   "intensity": 1.0,
+   "range": 6,
+   "id": "recessLight"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.6,
+    -37.8
+   ],
+   "size": [
+    260,
+    0.22,
+    0.22
+   ],
+   "tex": "metal",
+   "texScale": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -60,
+    8.5,
+    -40
+   ],
+   "size": [
+    5,
+    5,
+    5
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    50,
+    9,
+    -40
+   ],
+   "size": [
+    5,
+    6,
+    5
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    110,
+    9.5,
+    -40
+   ],
+   "size": [
+    6,
+    7,
+    6
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    -0.55,
+    -57
+   ],
+   "size": [
+    260,
+    1.0,
+    30
+   ],
+   "tex": "sand",
+   "texScale": 3,
+   "surface": "sand",
+   "collide": false
+  },
+  {
+   "type": "water",
+   "pos": [
+    0,
+    -0.45,
+    -165
+   ],
+   "size": [
+    420,
+    200
+   ],
+   "flow": [
+    0,
+    0.12
+   ],
+   "texScale": 6,
+   "seg": 20
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    5.5,
+    -25
+   ],
+   "size": [
+    6,
+    11,
+    6
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -6.85,
+    12.5,
+    -25
+   ],
+   "size": [
+    0.3,
+    3,
+    6
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    12.5,
+    -22.15
+   ],
+   "size": [
+    6,
+    3,
+    0.3
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.15,
+    11.4,
+    -25.75
+   ],
+   "size": [
+    0.3,
+    0.8,
+    4.5
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.15,
+    13.6,
+    -22.75
+   ],
+   "size": [
+    0.3,
+    0.8,
+    1.5
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    11.4,
+    -27.85
+   ],
+   "size": [
+    6,
+    0.8,
+    0.3
+   ],
+   "tex": "wall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -6.85,
+    12.5,
+    -27.85
+   ],
+   "size": [
+    0.3,
+    3,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 0.6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.15,
+    12.5,
+    -27.85
+   ],
+   "size": [
+    0.3,
+    3,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 0.6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    14.15,
+    -25
+   ],
+   "size": [
+    6.6,
+    0.3,
+    6.6
+   ],
+   "tex": "concrete",
+   "texScale": 2
+  },
+  {
+   "type": "light",
+   "pos": [
+    -4,
+    13.7,
+    -25
+   ],
+   "color": "#e0a050",
+   "intensity": 1.0,
+   "range": 6.5,
+   "glow": true,
+   "flicker": "sodium",
+   "glowPos": [
+    -4,
+    13.85,
+    -25
+   ],
+   "glowSize": 1.0
+  },
+  {
+   "type": "stairs",
+   "pos": [
+    -0.25,
+    0,
+    -36.7
+   ],
+   "dir": "+z",
+   "steps": 44,
+   "rise": 0.25,
+   "run": 0.3,
+   "width": 1.5,
+   "tex": "concrete",
+   "solid": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.25,
+    10.85,
+    -22
+   ],
+   "size": [
+    1.5,
+    0.3,
+    3
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "table",
+   "pos": [
+    -6.0,
+    11,
+    -24.0
+   ],
+   "size": [
+    0.8,
+    1.6
+   ],
+   "tex": "woodDark",
+   "examine": "A desk. Scratched initials. Mine are there. I don't remember carving them.",
+   "name": "the desk"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -5.2,
+    11,
+    -24.3
+   ],
+   "yaw": 270,
+   "examine": "His chair. Still warm.",
+   "name": "the chair"
+  },
+  {
+   "type": "item",
+   "id": "logbookItem",
+   "item": "logbook",
+   "pos": [
+    -6.0,
+    11.76,
+    -24.2
+   ],
+   "yaw": 10
+  },
+  {
+   "type": "item",
+   "id": "binocularsItem",
+   "item": "binoculars",
+   "pos": [
+    -6.12,
+    11.76,
+    -23.75
+   ],
+   "yaw": 70
+  },
+  {
+   "type": "item",
+   "id": "radio",
+   "item": "radio",
+   "pickup": false,
+   "pos": [
+    -6.15,
+    11.76,
+    -24.62
+   ],
+   "yaw": 90,
+   "name": "the radio",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.32,
+      0.18,
+      0.14
+     ],
+     "tex": "wood",
+     "pos": [
+      0,
+      0.09,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.14,
+      0.1,
+      0.01
+     ],
+     "tex": "grille",
+     "pos": [
+      -0.06,
+      0.1,
+      0.071
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.025,
+      0.025,
+      0.02,
+      8
+     ],
+     "color": "#d8d0c0",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.09,
+      0.1,
+      0.075
+     ]
+    }
+   ],
+   "examine": [
+    "A radio, tuned between stations.",
+    "Between the static, very faintly, someone counting upstream."
+   ]
+  },
+  {
+   "type": "item",
+   "id": "thermos",
+   "item": "thermos",
+   "pickup": false,
+   "pos": [
+    -5.85,
+    11.76,
+    -23.4
+   ],
+   "name": "the thermos",
+   "model": [
+    {
+     "shape": "cyl",
+     "size": [
+      0.045,
+      0.045,
+      0.24,
+      8
+     ],
+     "color": "#3a6a4a",
+     "pos": [
+      0,
+      0.12,
+      0
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.035,
+      0.035,
+      0.05,
+      8
+     ],
+     "color": "#c8c8c0",
+     "pos": [
+      0.12,
+      0.025,
+      0.02
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.035,
+      0.035,
+      0.05,
+      8
+     ],
+     "color": "#c8c8c0",
+     "pos": [
+      0.12,
+      0.025,
+      -0.08
+     ]
+    }
+   ],
+   "examine": "Tea. Two cups. Still warm."
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -4.0,
+    12.3,
+    -22.32
+   ],
+   "yaw": 180,
+   "size": [
+    1.6,
+    1.0
+   ],
+   "art": "map",
+   "name": "the map",
+   "examine": [
+    "A map of the perimeter. The wall, the walkway, the stream.",
+    "Arrows along the stream, all pointing the wrong way."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    13.9,
+    -25
+   ],
+   "size": [
+    0.12,
+    0.12,
+    0.12
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "collide": false,
+   "walkable": false,
+   "texScale": 0.2,
+   "name": "the bulb",
+   "examine": "The bulb hums the same note as the sea."
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.0,
+    0.22,
+    -37.55
+   ],
+   "size": [
+    1.8,
+    0.44,
+    0.5
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "name": "the bench",
+   "examine": "A bench facing the stream. Nobody sits facing the wall."
+  },
+  {
+   "type": "item",
+   "id": "lifebuoy",
+   "item": "lifebuoy",
+   "pickup": false,
+   "pos": [
+    7.5,
+    1.6,
+    -37.9
+   ],
+   "name": "the lifebuoy",
+   "model": [
+    {
+     "shape": "torus",
+     "size": [
+      0.3,
+      0.07,
+      4,
+      12
+     ],
+     "color": "#e8e4dc"
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.1,
+      0.16,
+      0.16
+     ],
+     "color": "#c02828",
+     "pos": [
+      0.3,
+      0,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.1,
+      0.16,
+      0.16
+     ],
+     "color": "#c02828",
+     "pos": [
+      -0.3,
+      0,
+      0
+     ]
+    }
+   ],
+   "examine": "A lifebuoy. The rope has been cut."
+  },
+  {
+   "type": "panel",
+   "pos": [
+    9.5,
+    1.7,
+    -37.93
+   ],
+   "size": [
+    0.7,
+    0.7
+   ],
+   "art": "noswim",
+   "frameTex": "metal",
+   "name": "the sign",
+   "examine": "NO SWIMMING UPSTREAM. Someone has scratched out the NO.",
+   "id": "noswim"
+  },
+  {
+   "type": "box",
+   "pos": [
+    5.5,
+    0.01,
+    -35.4
+   ],
+   "size": [
+    0.8,
+    0.02,
+    0.5
+   ],
+   "tex": "metal",
+   "texScale": 0.3,
+   "collide": false,
+   "name": "the drain",
+   "examine": "A drain. I can hear the sea in it. Closer than the sea."
+  },
+  {
+   "type": "item",
+   "id": "polishItem",
+   "item": "polish",
+   "pos": [
+    4.6,
+    0.0,
+    -36.7
+   ],
+   "yaw": 30
+  },
+  {
+   "type": "spot",
+   "pos": [
+    8,
+    0,
+    -31.5
+   ],
+   "examineAt": [
+    8,
+    -0.2,
+    -31.5
+   ],
+   "examineRadius": 1.5,
+   "examineRange": 6,
+   "name": "the stream",
+   "examine": [
+    "The water is flowing upstream.",
+    "A leaf goes past, the wrong way, taking its time."
+   ]
+  },
+  {
+   "type": "spot",
+   "pos": [
+    -4,
+    0,
+    -38.5
+   ],
+   "examineAt": [
+    -4,
+    1.3,
+    -38.6
+   ],
+   "examineRadius": 1.6,
+   "examineRange": 9,
+   "name": "the dark",
+   "examine": "Too dark to see what's under there."
+  },
+  {
+   "type": "spot",
+   "pos": [
+    0,
+    0,
+    -60
+   ],
+   "examineAt": [
+    0,
+    0.5,
+    -78
+   ],
+   "examineRadius": 7,
+   "examineRange": 75,
+   "name": "the sea",
+   "examine": [
+    "The beach, and the ocean beyond it.",
+    "I can't get there from here. Not yet."
+   ],
+   "examineTrack": "x",
+   "examineTrackRange": [
+    -120,
+    120
+   ]
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    -0.8,
+    13.0,
+    -22.75
+   ],
+   "size": [
+    0.16,
+    0.2,
+    0.16
+   ],
+   "tex": "lamp",
+   "color": "#e0a050",
+   "intensity": 0.8,
+   "range": 5,
+   "flicker": "sodium",
+   "glowSize": 1.0
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.89,
+    13.41,
+    -22.75
+   ],
+   "size": [
+    0.22,
+    0.03,
+    0.03
+   ],
+   "tex": "metal",
+   "collide": false,
+   "walkable": false,
+   "texScale": 0.3
+  },
+  {
+   "type": "railing",
+   "from": [
+    0.55,
+    11,
+    -23.5
+   ],
+   "to": [
+    0.55,
+    11,
+    -20.5
+   ],
+   "height": 1.0,
+   "spacing": 1.5,
+   "collide": true
+  },
+  {
+   "type": "railing",
+   "from": [
+    -1.0,
+    0,
+    -36.2
+   ],
+   "to": [
+    -1.0,
+    11,
+    -23.5
+   ],
+   "height": 1.0,
+   "spacing": 1.5,
+   "collide": true
+  },
+  {
+   "type": "railing",
+   "from": [
+    0.5,
+    0,
+    -36.2
+   ],
+   "to": [
+    0.5,
+    11,
+    -23.5
+   ],
+   "height": 1.0,
+   "spacing": 1.5,
+   "collide": true
+  },
+  {
+   "type": "railing",
+   "from": [
+    -1.0,
+    11,
+    -20.5
+   ],
+   "to": [
+    0.5,
+    11,
+    -20.5
+   ],
+   "height": 1.0,
+   "spacing": 1.5,
+   "collide": true
+  },
+  {
+   "type": "railing",
+   "from": [
+    -1.0,
+    11,
+    -22.0
+   ],
+   "to": [
+    -1.0,
+    11,
+    -20.5
+   ],
+   "height": 1.0,
+   "spacing": 1.5,
+   "collide": true
+  },
+  {
+   "type": "collider",
+   "pos": [
+    0,
+    1.0,
+    -29.45
+   ],
+   "size": [
+    260,
+    2,
+    0.1
+   ]
+  },
+  {
+   "type": "collider",
+   "pos": [
+    0,
+    1.0,
+    -34.05
+   ],
+   "size": [
+    260,
+    2,
+    0.1
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.25,
+    4.0,
+    -27.0
+   ],
+   "size": [
+    0.3,
+    8.0,
+    0.3
+   ],
+   "tex": "concrete",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.25,
+    0.85,
+    -34.5
+   ],
+   "size": [
+    0.3,
+    1.7,
+    0.3
+   ],
+   "tex": "concrete",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.25,
+    4.85,
+    -25.0
+   ],
+   "size": [
+    0.3,
+    9.7,
+    0.3
+   ],
+   "tex": "concrete",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    -56,
+    0,
+    -35.0
+   ],
+   "intensity": 0.45,
+   "range": 7
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    -34,
+    0,
+    -35.0
+   ],
+   "intensity": 0.45,
+   "range": 7
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    -14,
+    0,
+    -35.0
+   ],
+   "intensity": 1.35,
+   "range": 10,
+   "examine": "The lamp buzzes. Moths circle it, but there are no moths.",
+   "name": "the lamp"
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    4,
+    0,
+    -35.0
+   ],
+   "intensity": 1.35,
+   "range": 10,
+   "examine": "The lamp buzzes. Moths circle it, but there are no moths.",
+   "name": "the lamp",
+   "id": "lamp"
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    24,
+    0,
+    -35.0
+   ],
+   "intensity": 1.35,
+   "range": 10,
+   "examine": "The lamp buzzes. Moths circle it, but there are no moths.",
+   "name": "the lamp"
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    46,
+    0,
+    -35.0
+   ],
+   "intensity": 0.45,
+   "range": 7
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    68,
+    0,
+    -35.0
+   ],
+   "intensity": 0.45,
+   "range": 7
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    -16,
+    0,
+    -12
+   ],
+   "color": "#d08a40",
+   "range": 10,
+   "intensity": 1.35,
+   "examine": "The lamp buzzes. Moths circle it, but there are no moths.",
+   "name": "the lamp"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    5,
+    -12
+   ],
+   "size": [
+    14,
+    10,
+    18
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -48,
+    7,
+    2
+   ],
+   "size": [
+    12,
+    14,
+    16
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    12,
+    4,
+    -10
+   ],
+   "size": [
+    10,
+    8,
+    12
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    11,
+    -16
+   ],
+   "size": [
+    6,
+    22,
+    6
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    58,
+    13,
+    -8
+   ],
+   "size": [
+    8,
+    26,
+    10
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -72,
+    10,
+    -14
+   ],
+   "size": [
+    7,
+    20,
+    7
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    88,
+    6,
+    -12
+   ],
+   "size": [
+    16,
+    12,
+    14
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -96,
+    8,
+    0
+   ],
+   "size": [
+    20,
+    16,
+    20
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    40,
+    3,
+    6
+   ],
+   "size": [
+    30,
+    6,
+    14
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    9,
+    14
+   ],
+   "size": [
+    24,
+    18,
+    10
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    2.5,
+    -6
+   ],
+   "size": [
+    6,
+    5,
+    6
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    120,
+    14,
+    10
+   ],
+   "size": [
+    12,
+    28,
+    30
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -130,
+    12,
+    8
+   ],
+   "size": [
+    14,
+    24,
+    26
+   ],
+   "tex": "wall",
+   "texScale": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10,
+    4.0,
+    -4
+   ],
+   "size": [
+    2,
+    0.3,
+    20
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10,
+    2,
+    2
+   ],
+   "size": [
+    0.6,
+    4,
+    0.6
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10,
+    2,
+    -10
+   ],
+   "size": [
+    0.6,
+    4,
+    0.6
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    20,
+    3.0,
+    -22
+   ],
+   "size": [
+    16,
+    0.3,
+    2
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    1.5,
+    -22
+   ],
+   "size": [
+    0.6,
+    3,
+    0.6
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    26,
+    1.5,
+    -22
+   ],
+   "size": [
+    0.6,
+    3,
+    0.6
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    0.7,
+    -34.5
+   ],
+   "size": [
+    200,
+    1.6,
+    12
+   ],
+   "count": 70,
+   "scale": [
+    3,
+    7
+   ],
+   "alpha": 0.11,
+   "seed": 1
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    0.6,
+    -56
+   ],
+   "size": [
+    220,
+    2.5,
+    24
+   ],
+   "count": 50,
+   "scale": [
+    5,
+    11
+   ],
+   "alpha": 0.14,
+   "seed": 2
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1.2,
+    -8
+   ],
+   "size": [
+    220,
+    3,
+    40
+   ],
+   "count": 60,
+   "scale": [
+    4,
+    9
+   ],
+   "alpha": 0.1,
+   "seed": 3
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    6,
+    -30
+   ],
+   "size": [
+    200,
+    6,
+    40
+   ],
+   "count": 30,
+   "scale": [
+    8,
+    14
+   ],
+   "alpha": 0.06,
+   "seed": 4
+  },
+  {
+   "type": "character",
+   "id": "man",
+   "name": "the older man",
+   "model": "humanoid",
+   "look": {
+    "skin": "skin",
+    "face": "faceOld",
+    "hair": "hairGrey",
+    "top": "coat",
+    "bottom": "trousers",
+    "hat": true
+   },
+   "pos": [
+    -6.1,
+    11,
+    -26.9
+   ],
+   "yaw": 180,
+   "talkRadius": 3.6,
+   "behavior": {
+    "name": "idle",
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "talked1"
+     },
+     "lines": [
+      {
+       "who": "man",
+       "text": "Down there. That's where we go next."
+      },
+      {
+       "who": "man",
+       "text": "Upstream."
+      },
+      {
+       "who": "man",
+       "text": "Good thing the water's flowing upstream."
+      },
+      {
+       "who": "you",
+       "text": "Is that possible?"
+      }
+     ],
+     "set": "talked1",
+     "then": [
+      {
+       "hint": "look down at the walkway"
+      }
+     ]
+    },
+    {
+     "if": {
+      "flag": "sawArm",
+      "not": "hasDevice"
+     },
+     "lines": [
+      {
+       "who": "you",
+       "text": "Is it moving?"
+      },
+      {
+       "who": "man",
+       "text": "..."
+      },
+      {
+       "who": "man",
+       "text": "Listen."
+      },
+      {
+       "who": "you",
+       "text": "He hands me a device. A padded circle at one end."
+      }
+     ],
+     "set": "hasDevice",
+     "then": [
+      {
+       "give": "listener"
+      }
+     ]
+    },
+    {
+     "if": {
+      "flag": "hasDevice",
+      "not": "listened"
+     },
+     "lines": [
+      {
+       "who": "man",
+       "text": "Listen."
+      }
+     ]
+    },
+    {
+     "if": {
+      "flag": "emerged"
+     },
+     "lines": [
+      {
+       "who": "man",
+       "text": "Hm?"
+      }
+     ]
+    },
+    {
+     "if": {
+      "flag": "heard"
+     },
+     "lines": [
+      {
+       "who": "man",
+       "text": "Down. Come on."
+      }
+     ],
+     "then": [
+      {
+       "behavior": {
+        "id": "man",
+        "name": "follow",
+        "distance": 3.0,
+        "speed": 1.8
+       }
+      },
+      {
+       "hint": "take the stairs down"
+      }
+     ]
+    },
+    {
+     "if": {
+      "not": "sawArm"
+     },
+     "lines": [
+      {
+       "who": "man",
+       "text": "Look. Down there, by the wall."
+      }
+     ],
+     "then": [
+      {
+       "hint": "look down at the walkway"
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       "Upstream."
+      ],
+      [
+       "You've always asked too many questions. I like that."
+      ],
+      [
+       "We'll be there before the tide turns. It turns upstream too."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "creature",
+   "id": "arm",
+   "model": "arm",
+   "pos": [
+    -4.8,
+    0,
+    -37.55
+   ],
+   "yaw": 0,
+   "scale": 1.8,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "name": "the arm",
+   "examine": [
+    "A woman's arm. Red fingernails.",
+    "The rest of her is in the dark."
+   ]
+  },
+  {
+   "type": "creature",
+   "id": "amalgam",
+   "model": "amalgam",
+   "pos": [
+    -4.5,
+    0,
+    -39.6
+   ],
+   "yaw": 0,
+   "scale": 1.25,
+   "hidden": true,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "name": "the thing",
+   "examine": [
+    "Two legs. Something of a torso. An arm where the head should be.",
+    "It isn't anyone."
+   ]
+  },
+  {
+   "type": "character",
+   "id": "woman",
+   "name": "the woman",
+   "model": "humanoid",
+   "hidden": true,
+   "look": {
+    "skin": "skinPale",
+    "face": "faceGrin",
+    "hair": "hairDark",
+    "top": "dress",
+    "bottom": "dress",
+    "skirt": true,
+    "hairStyle": "long"
+   },
+   "pos": [
+    -2,
+    0,
+    -40.3
+   ],
+   "yaw": 0,
+   "talkRadius": 3.6,
+   "behavior": {
+    "name": "none"
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "coupleOut"
+     },
+     "lines": [
+      {
+       "who": "woman",
+       "text": "Not yet."
+      }
+     ]
+    },
+    {
+     "lines": [
+      {
+       "who": "woman",
+       "text": "Hello!! Hi!"
+      },
+      {
+       "who": "woman",
+       "text": "We've been waiting for you."
+      },
+      {
+       "who": "man2",
+       "text": "It's just through here."
+      },
+      {
+       "who": "woman",
+       "text": "Come on."
+      },
+      {
+       "who": "you",
+       "text": "This is probably a trap."
+      }
+     ],
+     "set": "trap",
+     "ending": {
+      "seconds": 10
+     }
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "man2",
+   "name": "the young man",
+   "model": "humanoid",
+   "hidden": true,
+   "look": {
+    "skin": "skin",
+    "face": "faceYoungMan",
+    "hair": "hairDark",
+    "top": "suit",
+    "bottom": "suit"
+   },
+   "pos": [
+    -6,
+    0,
+    -40.3
+   ],
+   "yaw": 0,
+   "talkRadius": 3.6,
+   "behavior": {
+    "name": "none"
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "coupleOut"
+     },
+     "lines": [
+      {
+       "who": "man2",
+       "text": "Not yet."
+      }
+     ]
+    },
+    {
+     "lines": [
+      {
+       "who": "man2",
+       "text": "You made it."
+      },
+      {
+       "who": "man2",
+       "text": "She's been so excited."
+      },
+      {
+       "who": "woman",
+       "text": "Come on!"
+      },
+      {
+       "who": "you",
+       "text": "This is probably a trap."
+      }
+     ],
+     "set": "trap",
+     "ending": {
+      "seconds": 10
+     }
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4,
+    13.9,
+    -25
+   ],
+   "size": [
+    0.12,
+    0.12,
+    0.12
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "collide": false,
+   "walkable": false,
+   "texScale": 0.2
+  }
+ ],
+ "events": [
+  {
+   "id": "leaveRoom",
+   "when": {
+    "enter": {
+     "pos": [
+      -0.25,
+      -22
+     ],
+     "radius": 1.8
+    }
+   },
+   "do": [
+    {
+     "behavior": {
+      "id": "man",
+      "name": "follow",
+      "distance": 3.0,
+      "speed": 1.8
+     }
+    }
+   ]
+  },
+  {
+   "id": "seeArmTower",
+   "when": {
+    "look": {
+     "target": "arm",
+     "within": 34,
+     "angle": 7
+    },
+    "not": [
+     "sawArm",
+     "emerged"
+    ]
+   },
+   "do": [
+    {
+     "set": "sawArm"
+    },
+    {
+     "focus": {
+      "id": "arm",
+      "seconds": 3,
+      "speed": 3
+     }
+    },
+    {
+     "behavior": {
+      "id": "arm",
+      "name": "stir"
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I have the feeling it's aware of us."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "seeArmGround",
+   "when": {
+    "look": {
+     "target": "arm",
+     "within": 10,
+     "angle": 14
+    },
+    "not": [
+     "sawArm",
+     "emerged"
+    ]
+   },
+   "do": [
+    {
+     "set": "sawArm"
+    },
+    {
+     "behavior": {
+      "id": "arm",
+      "name": "stir"
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I have the feeling it's aware of us."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "armMoving",
+   "when": {
+    "since": {
+     "flag": "sawArm",
+     "seconds": 5
+    },
+    "look": {
+     "target": "arm",
+     "within": 34,
+     "angle": 10
+    },
+    "not": [
+     "armMoved",
+     "hasDevice",
+     "emerged"
+    ]
+   },
+   "do": [
+    {
+     "set": "armMoved"
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "It moved. I'm sure of it."
+      },
+      {
+       "who": "you",
+       "text": "He doesn't seem worried."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "listened",
+   "when": {
+    "listened": true,
+    "not": "heard"
+   },
+   "do": [
+    {
+     "set": "heard"
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "Just the noise of the ocean. The expanse ahead."
+      },
+      {
+       "who": "you",
+       "text": "Why don't we use binoculars?"
+      }
+     ]
+    },
+    {
+     "say": [
+      {
+       "who": "man",
+       "text": "Down. Come on."
+      }
+     ]
+    },
+    {
+     "behavior": {
+      "id": "man",
+      "name": "follow",
+      "distance": 3.0,
+      "speed": 1.8
+     }
+    }
+   ]
+  },
+  {
+   "id": "emerge",
+   "when": {
+    "enter": {
+     "pos": [
+      -4,
+      -36
+     ],
+     "radius": 6,
+     "maxY": 1.0
+    },
+    "not": "emerged"
+   },
+   "do": [
+    {
+     "set": "emerged"
+    },
+    {
+     "light": {
+      "id": "recessLight",
+      "intensity": 1.6
+     }
+    },
+    {
+     "sfx": "scrape"
+    },
+    {
+     "hide": "arm"
+    },
+    {
+     "show": "amalgam"
+    },
+    {
+     "focus": {
+      "id": "amalgam",
+      "seconds": 6,
+      "speed": 3
+     }
+    },
+    {
+     "behavior": {
+      "id": "amalgam",
+      "name": "crawl",
+      "target": [
+       -4.5,
+       -33.6
+      ],
+      "speed": 2.2,
+      "period": 1.6
+     }
+    },
+    {
+     "wait": 3.0
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "There is no woman."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "couple",
+   "when": {
+    "since": {
+     "flag": "emerged",
+     "seconds": 8
+    },
+    "enter": {
+     "pos": [
+      -6,
+      -36
+     ],
+     "radius": 14,
+     "maxY": 1.0
+    },
+    "not": "coupleOut"
+   },
+   "do": [
+    {
+     "set": "coupleOut"
+    },
+    {
+     "show": "woman"
+    },
+    {
+     "focus": {
+      "id": "woman",
+      "seconds": 4,
+      "speed": 2.5
+     }
+    },
+    {
+     "show": "man2"
+    },
+    {
+     "behavior": {
+      "id": "woman",
+      "name": "walkTo",
+      "target": [
+       -2.4,
+       -36.5
+      ],
+      "speed": 1.1,
+      "then": "wave"
+     }
+    },
+    {
+     "behavior": {
+      "id": "man2",
+      "name": "walkTo",
+      "target": [
+       -5.6,
+       -36.2
+      ],
+      "speed": 1.0,
+      "then": "wave"
+     }
+    },
+    {
+     "wait": 4
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "She's smiling too much."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "approachCouple",
+   "when": {
+    "flag": "coupleOut",
+    "enter": {
+     "pos": [
+      -4,
+      -36.3
+     ],
+     "radius": 2.6,
+     "maxY": 1.0
+    }
+   },
+   "do": [
+    {
+     "ending": {
+      "seconds": 10
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "woman",
+       "text": "Hello!! Hi!"
+      },
+      {
+       "who": "woman",
+       "text": "We've been waiting for you."
+      },
+      {
+       "who": "man2",
+       "text": "It's just through here."
+      },
+      {
+       "who": "woman",
+       "text": "Come on."
+      },
+      {
+       "who": "you",
+       "text": "This is probably a trap."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "indoor": [
+  [
+   -6.85,
+   -27.85,
+   -1.15,
+   -22.15,
+   10
+  ]
+ ],
+ "items": {
+  "logbook": {
+   "name": "the logbook",
+   "model": "book",
+   "examine": "Every entry is the same. Water flowing upstream. All quiet.",
+   "uses": [
+    {
+     "when": {
+      "near": {
+       "id": "man",
+       "radius": 3
+      }
+     },
+     "do": [
+      {
+       "say": [
+        {
+         "who": "man",
+         "text": "Write what you see. Not what you hear."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "useText": [
+    "I add a line. My handwriting looks like his."
+   ]
+  },
+  "binoculars": {
+   "name": "the binoculars",
+   "model": "binoculars",
+   "examine": "Binoculars. The lenses have been painted over. Black.",
+   "useText": [
+    "I hold them up. Black. Just black.",
+    "So that's why we don't use binoculars."
+   ]
+  },
+  "polish": {
+   "name": "the nail polish",
+   "model": "polish",
+   "examine": "Nail polish. The same red. It's still wet.",
+   "uses": [
+    {
+     "when": {
+      "near": {
+       "id": "amalgam",
+       "radius": 4
+      },
+      "flag": "emerged"
+     },
+     "do": [
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "I hold it out. It doesn't want it back."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "when": {
+      "near": {
+       "id": "arm",
+       "radius": 6
+      }
+     },
+     "do": [
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "The fingers twitch toward it. Then stop."
+        }
+       ]
+      },
+      {
+       "behavior": {
+        "id": "arm",
+        "name": "stir"
+       }
+      }
+     ]
+    },
+    {
+     "when": {
+      "near": {
+       "id": "woman",
+       "radius": 3
+      },
+      "flag": "coupleOut"
+     },
+     "do": [
+      {
+       "say": [
+        {
+         "who": "woman",
+         "text": "Oh! That's mine. Keep it. Come on."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "useText": [
+    "I unscrew the lid. It smells of pear drops and something underneath."
+   ]
+  },
+  "radio": {
+   "name": "the radio",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.32,
+      0.18,
+      0.14
+     ],
+     "tex": "wood"
+    }
+   ]
+  },
+  "thermos": {
+   "name": "the thermos",
+   "model": [
+    {
+     "shape": "cyl",
+     "size": [
+      0.045,
+      0.045,
+      0.24,
+      8
+     ],
+     "color": "#3a6a4a"
+    }
+   ]
+  },
+  "lifebuoy": {
+   "name": "the lifebuoy",
+   "model": [
+    {
+     "shape": "torus",
+     "size": [
+      0.3,
+      0.07,
+      4,
+      12
+     ],
+     "color": "#e8e4dc"
+    }
+   ]
+  }
+ },
+ "unreachable": [
+  "lamp@-16,0,-12"
+ ]
+}

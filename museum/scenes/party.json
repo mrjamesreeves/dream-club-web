@@ -1,0 +1,3972 @@
+{
+ "title": "HORROR LADY PARTY",
+ "hint": "e to talk",
+ "hintTouch": "tap people",
+ "render": {
+  "height": 216
+ },
+ "environment": {
+  "fogColor": "#2a2024",
+  "ambient": "#2a2226",
+  "skyColor": "#30282c",
+  "sunDir": [
+   0.1,
+   0.8,
+   0.2
+  ],
+  "sunColor": "#5a4a48",
+  "fogNear": 6,
+  "fogFar": 40,
+  "fogHeight": 0.5,
+  "fogHeightRange": 3,
+  "fogHeightStrength": 0.1
+ },
+ "sky": {
+  "top": "#0a0808",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 260,
+   "alpha": 0.35
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "player": {
+  "pos": [
+   1.2,
+   0,
+   4.6
+  ],
+  "yaw": 180,
+  "pitch": 0,
+  "speed": 2.0
+ },
+ "ambience": [
+  {
+   "sound": "murmur",
+   "box": [
+    -12,
+    -8,
+    12,
+    8
+   ],
+   "range": 6,
+   "gain": 0.9
+  },
+  {
+   "sound": "clink",
+   "box": [
+    -12,
+    -8,
+    12,
+    8
+   ],
+   "range": 5,
+   "gain": 0.6
+  },
+  {
+   "sound": "music",
+   "style": "party",
+   "box": [
+    -12,
+    -8,
+    12,
+    8
+   ],
+   "range": 8,
+   "gain": 0.8
+  },
+  {
+   "sound": "music",
+   "style": "party",
+   "box": [
+    -4,
+    -16,
+    4,
+    -8
+   ],
+   "range": 4,
+   "gain": 0.3
+  }
+ ],
+ "indoor": [
+  [
+   -12.2,
+   -16.2,
+   12.2,
+   8.2
+  ]
+ ],
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    24,
+    16
+   ],
+   "tex": "parquet",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.55,
+    0
+   ],
+   "size": [
+    24.4,
+    0.1,
+    16.4
+   ],
+   "tex": "ceiling",
+   "texScale": 3,
+   "shade": 0.7,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.4,
+    2.25,
+    8.2
+   ],
+   "size": [
+    21.6,
+    4.5,
+    0.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.8,
+    2.25,
+    8.2
+   ],
+   "size": [
+    2.8,
+    4.5,
+    0.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.0,
+    3.6,
+    8.2
+   ],
+   "size": [
+    2.8,
+    1.8,
+    0.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    -8.0,
+    1.3,
+    8.3
+   ],
+   "size": [
+    2.8,
+    2.6,
+    0.2
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9.1,
+    1.35,
+    8.55
+   ],
+   "size": [
+    0.9,
+    2.6,
+    0.06
+   ],
+   "tex": "mahogany",
+   "rot": [
+    0,
+    -70,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -6.9,
+    1.35,
+    8.55
+   ],
+   "size": [
+    0.9,
+    2.6,
+    0.06
+   ],
+   "tex": "mahogany",
+   "rot": [
+    0,
+    70,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -8.0,
+    0.005,
+    10.5
+   ],
+   "size": [
+    3,
+    5
+   ],
+   "tex": "checker",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9.6,
+    1.5,
+    10.5
+   ],
+   "size": [
+    0.3,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -6.4,
+    1.5,
+    10.5
+   ],
+   "size": [
+    0.3,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.0,
+    3.05,
+    10.5
+   ],
+   "size": [
+    3.4,
+    0.1,
+    5
+   ],
+   "tex": "ceiling",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.0,
+    1.5,
+    13.0
+   ],
+   "size": [
+    3.4,
+    3,
+    0.3
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    -8.0,
+    2.9,
+    10.5
+   ],
+   "color": "#f0e0b0",
+   "intensity": 0.7,
+   "range": 5,
+   "flicker": "soft"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -12.2,
+    2.25,
+    0
+   ],
+   "size": [
+    0.4,
+    4.5,
+    16.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    12.2,
+    2.25,
+    0
+   ],
+   "size": [
+    0.4,
+    4.5,
+    16.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.4,
+    2.25,
+    -8.2
+   ],
+   "size": [
+    9.6,
+    4.5,
+    0.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    2.25,
+    -8.2
+   ],
+   "size": [
+    9.6,
+    4.5,
+    0.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.75,
+    -8.2
+   ],
+   "size": [
+    5.2,
+    1.5,
+    0.4
+   ],
+   "tex": "partyWall",
+   "texScale": 2,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "arch",
+   "pos": [
+    0,
+    0,
+    -8.2
+   ],
+   "width": 5.2,
+   "height": 3.0,
+   "tex": "cream",
+   "trim": true,
+   "collide": false,
+   "thickness": 0.2
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.01,
+    -3
+   ],
+   "size": [
+    3.2,
+    0.02,
+    11
+   ],
+   "tex": "carpet",
+   "color": "#8a2030",
+   "texScale": 1,
+   "collide": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -6,
+    0,
+    -4
+   ],
+   "radius": 0.35,
+   "height": 4.5,
+   "tex": "cream",
+   "sides": 10,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -6,
+    0,
+    4
+   ],
+   "radius": 0.35,
+   "height": 4.5,
+   "tex": "cream",
+   "sides": 10,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    6,
+    0,
+    -4
+   ],
+   "radius": 0.35,
+   "height": 4.5,
+   "tex": "cream",
+   "sides": 10,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    6,
+    0,
+    4
+   ],
+   "radius": 0.35,
+   "height": 4.5,
+   "tex": "cream",
+   "sides": 10,
+   "collide": true
+  },
+  {
+   "type": "chandelier",
+   "id": "chand-6",
+   "pos": [
+    -6,
+    4.4,
+    0
+   ],
+   "radius": 0.7,
+   "intensity": 0.55,
+   "range": 9
+  },
+  {
+   "type": "chandelier",
+   "id": "chand0",
+   "pos": [
+    0,
+    4.4,
+    0
+   ],
+   "radius": 0.7,
+   "intensity": 0.55,
+   "range": 9
+  },
+  {
+   "type": "chandelier",
+   "id": "chand6",
+   "pos": [
+    6,
+    4.4,
+    0
+   ],
+   "radius": 0.7,
+   "intensity": 0.55,
+   "range": 9
+  },
+  {
+   "type": "stringLights",
+   "from": [
+    -11.5,
+    4.1,
+    -6
+   ],
+   "to": [
+    11.5,
+    4.1,
+    -6
+   ],
+   "count": 22,
+   "color": "#ffd890",
+   "sag": 0.35
+  },
+  {
+   "type": "stringLights",
+   "from": [
+    -11.5,
+    4.1,
+    6
+   ],
+   "to": [
+    11.5,
+    4.1,
+    6
+   ],
+   "count": 22,
+   "color": "#ffd890",
+   "sag": 0.35
+  },
+  {
+   "type": "bunting",
+   "from": [
+    -6,
+    4.0,
+    -7.5
+   ],
+   "to": [
+    -6,
+    4.0,
+    7.5
+   ],
+   "count": 16,
+   "sag": 0.4
+  },
+  {
+   "type": "bunting",
+   "from": [
+    6,
+    4.0,
+    -7.5
+   ],
+   "to": [
+    6,
+    4.0,
+    7.5
+   ],
+   "count": 16,
+   "sag": 0.4
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -3.2,
+    0,
+    6.1
+   ],
+   "radius": 0.17,
+   "height": 0.72,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -1.6,
+    0,
+    6.1
+   ],
+   "radius": 0.17,
+   "height": 0.72,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0.0,
+    0,
+    6.1
+   ],
+   "radius": 0.17,
+   "height": 0.72,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    1.6000000000000005,
+    0,
+    6.1
+   ],
+   "radius": 0.17,
+   "height": 0.72,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.2,
+    0,
+    6.1
+   ],
+   "radius": 0.17,
+   "height": 0.72,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -3.2,
+    0.72,
+    6.1
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -1.6,
+    0.72,
+    6.1
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0.0,
+    0.72,
+    6.1
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    1.6000000000000005,
+    0.72,
+    6.1
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.2,
+    0.72,
+    6.1
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "table",
+   "pos": [
+    -7.5,
+    0,
+    -6.6
+   ],
+   "size": [
+    3.2,
+    0.9
+   ],
+   "tex": "woodDark",
+   "cloth": "#f4ecdc"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -8.9,
+    0.76,
+    -6.8
+   ],
+   "kind": "cake"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -8.5,
+    0.76,
+    -6.3999999999999995
+   ],
+   "kind": "plate"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -8.1,
+    0.76,
+    -6.8
+   ],
+   "kind": "sandwich"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -7.7,
+    0.76,
+    -6.3999999999999995
+   ],
+   "kind": "plate"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -7.300000000000001,
+    0.76,
+    -6.8
+   ],
+   "kind": "pastrami"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -6.9,
+    0.76,
+    -6.3999999999999995
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -6.5,
+    0.76,
+    -6.8
+   ],
+   "kind": "bottle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -6.1,
+    0.76,
+    -6.3999999999999995
+   ],
+   "kind": "cake"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.5,
+    0.8,
+    -7.9
+   ],
+   "size": [
+    3.2,
+    0.05,
+    0.3
+   ],
+   "tex": "woodDark",
+   "collide": false,
+   "walkable": false,
+   "name": "the buffet",
+   "examine": "Everything on it is untouched. Everyone's full."
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.5,
+    0.28,
+    -6.2
+   ],
+   "size": [
+    2.4,
+    0.56,
+    0.9
+   ],
+   "tex": "velvet",
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.5,
+    0.75,
+    -6.6000000000000005
+   ],
+   "size": [
+    2.4,
+    0.5,
+    0.14
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    0.62,
+    -6.2
+   ],
+   "size": [
+    0.2,
+    0.3,
+    0.9
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    9.6,
+    0.62,
+    -6.2
+   ],
+   "size": [
+    0.2,
+    0.3,
+    0.9
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.5,
+    0.28,
+    6.0
+   ],
+   "size": [
+    2.4,
+    0.56,
+    0.9
+   ],
+   "tex": "velvet",
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.5,
+    0.75,
+    6.4
+   ],
+   "size": [
+    2.4,
+    0.5,
+    0.14
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9.6,
+    0.62,
+    6.0
+   ],
+   "size": [
+    0.2,
+    0.3,
+    0.9
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.4,
+    0.62,
+    6.0
+   ],
+   "size": [
+    0.2,
+    0.3,
+    0.9
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    9.2,
+    0.45,
+    3.0
+   ],
+   "size": [
+    0.7,
+    0.9,
+    0.5
+   ],
+   "tex": "chrome",
+   "walkable": false,
+   "name": "the trolley",
+   "examine": "A drinks trolley. Every bottle's the same bottle."
+  },
+  {
+   "type": "food",
+   "pos": [
+    8.95,
+    0.92,
+    2.85
+   ],
+   "kind": "bottle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    9.35,
+    0.92,
+    2.85
+   ],
+   "kind": "bottle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    8.95,
+    0.92,
+    3.15
+   ],
+   "kind": "bottle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    9.35,
+    0.92,
+    3.15
+   ],
+   "kind": "bottle"
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -3.5,
+    2.4,
+    7.95
+   ],
+   "size": [
+    0.9,
+    0.7
+   ],
+   "art": "photo",
+   "frameTex": "gold"
+  },
+  {
+   "type": "panel",
+   "pos": [
+    3.5,
+    2.4,
+    7.95
+   ],
+   "size": [
+    0.9,
+    0.7
+   ],
+   "art": "photo",
+   "frameTex": "gold"
+  },
+  {
+   "type": "panel",
+   "pos": [
+    6.5,
+    2.4,
+    7.95
+   ],
+   "size": [
+    0.9,
+    0.7
+   ],
+   "art": "paris",
+   "frameTex": "gold"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.75,
+    1.4,
+    -2.0
+   ],
+   "size": [
+    0.5,
+    2.8,
+    2.4
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.5,
+    0.6,
+    -2.0
+   ],
+   "size": [
+    0.3,
+    0.26,
+    2.2
+   ],
+   "tex": "lacquer",
+   "color": "#6a4a3a",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.5,
+    1.3,
+    -2.0
+   ],
+   "size": [
+    0.3,
+    0.26,
+    2.2
+   ],
+   "tex": "lacquer",
+   "color": "#6a4a3a",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.5,
+    2.0,
+    -2.0
+   ],
+   "size": [
+    0.3,
+    0.26,
+    2.2
+   ],
+   "tex": "lacquer",
+   "color": "#6a4a3a",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0.012,
+    -1.5
+   ],
+   "size": [
+    6,
+    7
+   ],
+   "tex": "carpet",
+   "color": "#2a3a5a",
+   "texScale": 1.5
+  },
+  {
+   "type": "plant",
+   "pos": [
+    11,
+    0,
+    -7
+   ],
+   "kind": "leafy",
+   "potColor": "#303030"
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -12.0,
+    2.2,
+    -5
+   ],
+   "yaw": 90,
+   "size": [
+    1.2,
+    1.6
+   ],
+   "art": "mirror",
+   "frameTex": "gold"
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    -11.6,
+    3.0,
+    -2.5
+   ],
+   "size": [
+    0.26,
+    0.4,
+    0.26
+   ],
+   "tex": "brassLantern",
+   "color": "#ffd090",
+   "intensity": 0.3,
+   "range": 3.5
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -12.0,
+    2.2,
+    0
+   ],
+   "yaw": 90,
+   "size": [
+    1.2,
+    1.6
+   ],
+   "art": "photo",
+   "frameTex": "gold"
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    -11.6,
+    3.0,
+    2.5
+   ],
+   "size": [
+    0.26,
+    0.4,
+    0.26
+   ],
+   "tex": "brassLantern",
+   "color": "#ffd090",
+   "intensity": 0.3,
+   "range": 3.5
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -12.0,
+    2.2,
+    5
+   ],
+   "yaw": 90,
+   "size": [
+    1.2,
+    1.6
+   ],
+   "art": "mirror",
+   "frameTex": "gold"
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    -11.6,
+    3.0,
+    7.5
+   ],
+   "size": [
+    0.26,
+    0.4,
+    0.26
+   ],
+   "tex": "brassLantern",
+   "color": "#ffd090",
+   "intensity": 0.3,
+   "range": 3.5
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -11.9,
+    2.3,
+    7.0
+   ],
+   "yaw": 90,
+   "size": [
+    2.2,
+    4.2
+   ],
+   "tex": "velvet"
+  },
+  {
+   "type": "panel",
+   "pos": [
+    12.0,
+    2.2,
+    -5
+   ],
+   "yaw": -90,
+   "size": [
+    1.2,
+    1.6
+   ],
+   "art": "photo",
+   "frameTex": "gold"
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    11.6,
+    3.0,
+    -2.5
+   ],
+   "size": [
+    0.26,
+    0.4,
+    0.26
+   ],
+   "tex": "brassLantern",
+   "color": "#ffd090",
+   "intensity": 0.3,
+   "range": 3.5
+  },
+  {
+   "type": "panel",
+   "pos": [
+    12.0,
+    2.2,
+    0
+   ],
+   "yaw": -90,
+   "size": [
+    1.2,
+    1.6
+   ],
+   "art": "photo",
+   "frameTex": "gold"
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    11.6,
+    3.0,
+    2.5
+   ],
+   "size": [
+    0.26,
+    0.4,
+    0.26
+   ],
+   "tex": "brassLantern",
+   "color": "#ffd090",
+   "intensity": 0.3,
+   "range": 3.5
+  },
+  {
+   "type": "panel",
+   "pos": [
+    12.0,
+    2.2,
+    5
+   ],
+   "yaw": -90,
+   "size": [
+    1.2,
+    1.6
+   ],
+   "art": "mirror",
+   "frameTex": "gold"
+  },
+  {
+   "type": "lantern",
+   "pos": [
+    11.6,
+    3.0,
+    7.5
+   ],
+   "size": [
+    0.26,
+    0.4,
+    0.26
+   ],
+   "tex": "brassLantern",
+   "color": "#ffd090",
+   "intensity": 0.3,
+   "range": 3.5
+  },
+  {
+   "type": "drape",
+   "pos": [
+    11.9,
+    2.3,
+    7.0
+   ],
+   "yaw": -90,
+   "size": [
+    2.2,
+    4.2
+   ],
+   "tex": "velvet"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.55,
+    7.0
+   ],
+   "size": [
+    8,
+    1.1,
+    0.7
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "bar",
+   "pos": [
+    0,
+    1.12,
+    7.0
+   ],
+   "size": [
+    8.2,
+    0.05,
+    0.8
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "walkable": false,
+   "collide": false,
+   "name": "the bar",
+   "examine": [
+    "Every glass is full. Nobody's pouring."
+   ]
+  },
+  {
+   "type": "food",
+   "pos": [
+    -3.6,
+    1.145,
+    7.8
+   ],
+   "kind": "bottle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -2.8,
+    1.145,
+    7.8
+   ],
+   "kind": "whisky"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -2.0,
+    1.145,
+    7.8
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -1.1999999999999997,
+    1.145,
+    7.8
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.3999999999999999,
+    1.145,
+    7.8
+   ],
+   "kind": "bottle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.3999999999999999,
+    1.145,
+    7.8
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    1.2000000000000006,
+    1.145,
+    7.8
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "food",
+   "pos": [
+    2.0000000000000004,
+    1.145,
+    7.8
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "food",
+   "pos": [
+    2.8000000000000003,
+    1.145,
+    7.8
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "food",
+   "pos": [
+    3.6,
+    1.145,
+    7.8
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "panel",
+   "pos": [
+    0,
+    2.4,
+    7.95
+   ],
+   "size": [
+    3.2,
+    1.4
+   ],
+   "art": "mirror",
+   "frameTex": "gold"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    2.2,
+    6.6
+   ],
+   "color": "#ffd8a0",
+   "intensity": 0.8,
+   "range": 7,
+   "flicker": "candle"
+  },
+  {
+   "type": "plant",
+   "pos": [
+    -9,
+    0,
+    6.8
+   ],
+   "kind": "leafy",
+   "potColor": "#303030"
+  },
+  {
+   "type": "plant",
+   "pos": [
+    9,
+    0,
+    6.8
+   ],
+   "kind": "leafy",
+   "potColor": "#303030"
+  },
+  {
+   "type": "piano",
+   "pos": [
+    -9.5,
+    0,
+    -5.5
+   ],
+   "yaw": 60
+  },
+  {
+   "type": "roundTable",
+   "pos": [
+    -9,
+    0,
+    1
+   ],
+   "radius": 0.45,
+   "cloth": "#f0e8d8"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -9,
+    0.79,
+    1
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -8.8,
+    0.79,
+    0.9
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "roundTable",
+   "pos": [
+    9,
+    0,
+    -1
+   ],
+   "radius": 0.45,
+   "cloth": "#f0e8d8"
+  },
+  {
+   "type": "food",
+   "pos": [
+    9,
+    0.79,
+    -1
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    9.2,
+    0.79,
+    -1.1
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "roundTable",
+   "pos": [
+    -3,
+    0,
+    5
+   ],
+   "radius": 0.45,
+   "cloth": "#f0e8d8"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -3,
+    0.79,
+    5
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -2.8,
+    0.79,
+    4.9
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "roundTable",
+   "pos": [
+    4,
+    0,
+    4
+   ],
+   "radius": 0.45,
+   "cloth": "#f0e8d8"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4,
+    0.79,
+    4
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "food",
+   "pos": [
+    4.2,
+    0.79,
+    3.9
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "jukebox",
+   "id": "gramophone",
+   "pos": [
+    10.6,
+    0,
+    6.2
+   ],
+   "yaw": 210,
+   "name": "the gramophone",
+   "examine": [
+    "One record. It's been the one record all night."
+   ]
+  },
+  {
+   "type": "box",
+   "id": "coats",
+   "pos": [
+    11.5,
+    0.9,
+    -7.5
+   ],
+   "size": [
+    1.0,
+    1.8,
+    0.6
+   ],
+   "tex": "coat",
+   "texScale": 1,
+   "name": "the coats",
+   "examine": "Everyone's coat. Mine's at the bottom."
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    -12
+   ],
+   "size": [
+    8,
+    8
+   ],
+   "tex": "carpet",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.05,
+    -12
+   ],
+   "size": [
+    8.4,
+    0.1,
+    8.4
+   ],
+   "tex": "ceiling",
+   "texScale": 2,
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.5,
+    -16.2
+   ],
+   "size": [
+    8.4,
+    3,
+    0.4
+   ],
+   "tex": "wallpaper",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.2,
+    1.5,
+    -12
+   ],
+   "size": [
+    0.4,
+    3,
+    8.4
+   ],
+   "tex": "wallpaper",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    4.2,
+    1.5,
+    -12
+   ],
+   "size": [
+    0.4,
+    3,
+    8.4
+   ],
+   "tex": "wallpaper",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.5,
+    0.3,
+    -14.5
+   ],
+   "size": [
+    2.6,
+    0.6,
+    0.9
+   ],
+   "tex": "velvet",
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.5,
+    0.8,
+    -14.9
+   ],
+   "size": [
+    2.6,
+    0.5,
+    0.15
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    2.2,
+    0,
+    -14.6
+   ],
+   "color": "#ff8060",
+   "intensity": 0.7,
+   "range": 5
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.2,
+    0.35,
+    -14.6
+   ],
+   "size": [
+    0.5,
+    0.7,
+    0.5
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "panel",
+   "id": "painting",
+   "pos": [
+    0,
+    1.8,
+    -16.0
+   ],
+   "size": [
+    1.6,
+    1.1
+   ],
+   "art": "venice",
+   "frameTex": "gold",
+   "name": "the painting",
+   "examine": "A painting of a city on water. Someone's added a small spaceman."
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    2.6,
+    -12
+   ],
+   "color": "#c04040",
+   "intensity": 0.5,
+   "range": 6,
+   "flicker": "neonBad"
+  },
+  {
+   "type": "guide",
+   "id": "spotGreeter",
+   "pos": [
+    1.6,
+    3.6,
+    6.0
+   ],
+   "intensity": 1.5,
+   "range": 4.5,
+   "shaft": true
+  },
+  {
+   "type": "guide",
+   "id": "spotMessenger",
+   "pos": [
+    -4,
+    3.8,
+    -3
+   ],
+   "intensity": 1.6,
+   "range": 5,
+   "shaft": true
+  },
+  {
+   "type": "guide",
+   "id": "spotBack",
+   "pos": [
+    0,
+    2.8,
+    -8.0
+   ],
+   "color": "#ff9070",
+   "intensity": 1.8,
+   "range": 6,
+   "shaft": {
+    "radius": 1.6,
+    "strength": 0.07
+   },
+   "off": true
+  },
+  {
+   "type": "guide",
+   "id": "spotBowie",
+   "pos": [
+    -1.2,
+    2.7,
+    -13.8
+   ],
+   "intensity": 1.8,
+   "range": 5,
+   "shaft": true,
+   "off": true
+  },
+  {
+   "type": "guide",
+   "id": "spotAnnie",
+   "pos": [
+    -3.5,
+    3.8,
+    5.2
+   ],
+   "intensity": 1.7,
+   "range": 5,
+   "shaft": true,
+   "off": true
+  },
+  {
+   "type": "guide",
+   "id": "spotRing",
+   "pos": [
+    10.6,
+    3.8,
+    -2.4
+   ],
+   "color": "#b0c8ff",
+   "intensity": 1.8,
+   "range": 6,
+   "shaft": true,
+   "off": true
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1.5,
+    0
+   ],
+   "size": [
+    24,
+    3,
+    16
+   ],
+   "count": 24,
+   "scale": [
+    4,
+    8
+   ],
+   "alpha": 0.05,
+   "color": "#5a4a40",
+   "seed": 7
+  },
+  {
+   "type": "character",
+   "id": "guest0",
+   "name": "a guest",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#9a948a",
+     "age": 0.62,
+     "seed": 95,
+     "browWeight": 0.7,
+     "browArch": 0.13,
+     "mood": "flat",
+     "stubble": true
+    },
+    "hair": "hairGrey",
+    "top": "floral",
+    "bottom": "suit",
+    "hairStyle": "short",
+    "prop": "glass",
+    "drink": "#6a1a2a"
+   },
+   "pos": [
+    7.6,
+    0,
+    -1.7
+   ],
+   "yaw": 135,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest0",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest0",
+        "text": "Lovely floor. I keep looking at it."
+       }
+      ],
+      [
+       {
+        "who": "guest0",
+        "text": "Have you met everyone? You will."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest1",
+   "name": "a guest",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#cfc9bf",
+     "age": 0.7,
+     "seed": 915,
+     "browWeight": 0.76,
+     "browArch": 0.51,
+     "mood": "stern"
+    },
+    "hair": "hairWhite",
+    "top": "black",
+    "bottom": "suit",
+    "hairStyle": "bob",
+    "prop": "glass",
+    "drink": "#e0c070"
+   },
+   "pos": [
+    5.4,
+    0,
+    -2.1
+   ],
+   "yaw": 214,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest1",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest1",
+        "text": "I've had three of these and they're all the same drink."
+       }
+      ],
+      [
+       {
+        "who": "guest1",
+        "text": "Someone said you'd come. I didn't believe them."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest2",
+   "name": "a guest",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#cfc9bf",
+     "age": 0.78,
+     "seed": 346,
+     "browWeight": 0.63,
+     "browArch": 0.88,
+     "mood": "sad",
+     "lipstick": "#c04050"
+    },
+    "hair": "hairWhite",
+    "top": "suit",
+    "bottom": "suit",
+    "hairStyle": "up",
+    "skirt": true,
+    "prop": "glass",
+    "drink": "#6a1a2a"
+   },
+   "pos": [
+    -9.4,
+    0,
+    2.7
+   ],
+   "yaw": 321,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest2",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest2",
+        "text": "I've had three of these and they're all the same drink."
+       }
+      ],
+      [
+       {
+        "who": "guest2",
+        "text": "Have you met everyone? You will."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest3",
+   "name": "a guest",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#161214",
+     "age": 0.54,
+     "seed": 646,
+     "browWeight": 0.73,
+     "browArch": 0.54,
+     "mood": "flat",
+     "stubble": true
+    },
+    "hair": "hairBlack",
+    "top": "lacquer",
+    "bottom": "black",
+    "hairStyle": "short",
+    "prop": "glass",
+    "drink": "#e0c070"
+   },
+   "pos": [
+    7.9,
+    0,
+    5.5
+   ],
+   "yaw": 193,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest3",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest3",
+        "text": "Lovely floor. I keep looking at it."
+       }
+      ],
+      [
+       {
+        "who": "guest3",
+        "text": "Have you met everyone? You will."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest4",
+   "name": "a guest",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#cfc9bf",
+     "age": 0.68,
+     "seed": 650,
+     "browWeight": 0.55,
+     "browArch": 0.11,
+     "mood": "flat"
+    },
+    "hair": "hairWhite",
+    "top": "black",
+    "bottom": "trousers",
+    "hairStyle": "short",
+    "prop": "glass",
+    "drink": "#6a1a2a"
+   },
+   "pos": [
+    -9.8,
+    0,
+    -0.8
+   ],
+   "yaw": 221,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest4",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest4",
+        "text": "Have you met everyone? You will."
+       }
+      ],
+      [
+       {
+        "who": "guest4",
+        "text": "Someone said you'd come. I didn't believe them."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest5",
+   "name": "a guest",
+   "look": {
+    "skin": "skinDeep",
+    "skinColor": "#7a4e34",
+    "face": {
+     "skin": "#7a4e34",
+     "hair": "#161214",
+     "age": 0.02,
+     "seed": 484,
+     "browWeight": 0.32,
+     "browArch": 0.56,
+     "mood": "sad",
+     "lipstick": "#8a2a3a"
+    },
+    "hair": "hairBlack",
+    "top": "black",
+    "bottom": "black",
+    "hairStyle": "bob",
+    "skirt": true,
+    "prop": "glass",
+    "drink": "#c8d8e0"
+   },
+   "pos": [
+    -2.5,
+    0,
+    0.3
+   ],
+   "yaw": 347,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest5",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest5",
+        "text": "I came with someone. I can't remember who."
+       }
+      ],
+      [
+       {
+        "who": "guest5",
+        "text": "I've had three of these and they're all the same drink."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest6",
+   "name": "a guest",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#cfc9bf",
+     "age": 0.64,
+     "seed": 150,
+     "browWeight": 0.85,
+     "browArch": 0.77,
+     "mood": "flat"
+    },
+    "hair": "hairWhite",
+    "top": "floral",
+    "bottom": "black",
+    "hairStyle": "short",
+    "prop": "glass",
+    "drink": "#c8d8e0"
+   },
+   "pos": [
+    3.4,
+    0,
+    2.6
+   ],
+   "yaw": 273,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest6",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest6",
+        "text": "I've had three of these and they're all the same drink."
+       }
+      ],
+      [
+       {
+        "who": "guest6",
+        "text": "Someone said you'd come. I didn't believe them."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest7",
+   "name": "a guest",
+   "look": {
+    "skin": "skinDeep",
+    "skinColor": "#7a4e34",
+    "face": {
+     "skin": "#7a4e34",
+     "hair": "#4a3222",
+     "age": 0.37,
+     "seed": 685,
+     "browWeight": 0.31,
+     "browArch": 0.45,
+     "mood": "sad",
+     "lipstick": "#a02838"
+    },
+    "hair": "hairBrown",
+    "top": "dress",
+    "bottom": "suit",
+    "hairStyle": "bob",
+    "prop": "glass",
+    "drink": "#c8d8e0"
+   },
+   "pos": [
+    -7.6,
+    0,
+    -4.1
+   ],
+   "yaw": 263,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest7",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest7",
+        "text": "Someone said you'd come. I didn't believe them."
+       }
+      ],
+      [
+       {
+        "who": "guest7",
+        "text": "I came with someone. I can't remember who."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest8",
+   "name": "a guest",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#4a3222",
+     "age": 0.19,
+     "seed": 279,
+     "browWeight": 0.86,
+     "browArch": 0.24,
+     "mood": "flat",
+     "lipstick": "#a02838"
+    },
+    "hair": "hairBrown",
+    "top": "lacquer",
+    "bottom": "trousers",
+    "hairStyle": "long",
+    "prop": "glass",
+    "drink": "#c8d8e0"
+   },
+   "pos": [
+    -3.1,
+    0,
+    -4.8
+   ],
+   "yaw": 8,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest8",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest8",
+        "text": "Annie's here. Did you know Annie's here?"
+       }
+      ],
+      [
+       {
+        "who": "guest8",
+        "text": "They say he's in the back room. Him. You know."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest9",
+   "name": "a guest",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#4a3222",
+     "age": 0.29,
+     "seed": 912,
+     "browWeight": 0.79,
+     "browArch": 0.53,
+     "mood": "sad",
+     "lipstick": "#c04050"
+    },
+    "hair": "hairBrown",
+    "top": "suit",
+    "bottom": "black",
+    "hairStyle": "up",
+    "prop": "glass",
+    "drink": "#e0c070"
+   },
+   "pos": [
+    5.3,
+    0,
+    -5.0
+   ],
+   "yaw": 295,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest9",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest9",
+        "text": "Lovely floor. I keep looking at it."
+       }
+      ],
+      [
+       {
+        "who": "guest9",
+        "text": "I've had three of these and they're all the same drink."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest10",
+   "name": "a guest",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#2a221e",
+     "age": 0.52,
+     "seed": 810,
+     "browWeight": 0.66,
+     "browArch": 0.97,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "suit",
+    "bottom": "suit",
+    "hairStyle": "short",
+    "prop": "glass",
+    "drink": "#c8d8e0"
+   },
+   "pos": [
+    -2.1,
+    0,
+    -3.4
+   ],
+   "yaw": 26,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest10",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest10",
+        "text": "I've had three of these and they're all the same drink."
+       }
+      ],
+      [
+       {
+        "who": "guest10",
+        "text": "Lovely floor. I keep looking at it."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest11",
+   "name": "a guest",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#161214",
+     "age": 0.3,
+     "seed": 772,
+     "browWeight": 0.42,
+     "browArch": 1.0,
+     "mood": "sad"
+    },
+    "hair": "hairBlack",
+    "top": "suit",
+    "bottom": "black",
+    "hairStyle": "bob",
+    "prop": "glass",
+    "drink": "#e0c070"
+   },
+   "pos": [
+    -2.8,
+    0,
+    1.7
+   ],
+   "yaw": 89,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest11",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest11",
+        "text": "Someone said you'd come. I didn't believe them."
+       }
+      ],
+      [
+       {
+        "who": "guest11",
+        "text": "It's a good party. Nobody's left yet."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest12",
+   "name": "a guest",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#4a3222",
+     "age": 0.43,
+     "seed": 967,
+     "browWeight": 0.53,
+     "browArch": 0.59,
+     "mood": "flat",
+     "lipstick": "#8a2a3a"
+    },
+    "hair": "hairBrown",
+    "top": "black",
+    "bottom": "black",
+    "hairStyle": "long",
+    "prop": "glass",
+    "drink": "#6a1a2a"
+   },
+   "pos": [
+    -2.6,
+    0,
+    4.6
+   ],
+   "yaw": 136,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest12",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest12",
+        "text": "Lovely floor. I keep looking at it."
+       }
+      ],
+      [
+       {
+        "who": "guest12",
+        "text": "Are you the one she wants to talk to?"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "guest13",
+   "name": "a guest",
+   "look": {
+    "skin": "skinDeep",
+    "skinColor": "#7a4e34",
+    "face": {
+     "skin": "#7a4e34",
+     "hair": "#161214",
+     "age": 0.43,
+     "seed": 50,
+     "browWeight": 0.41,
+     "browArch": 0.02,
+     "mood": "sad"
+    },
+    "hair": "hairBlack",
+    "top": "floral",
+    "bottom": "floral",
+    "hairStyle": "long",
+    "skirt": true,
+    "prop": "glass",
+    "drink": "#c8d8e0"
+   },
+   "pos": [
+    1.4,
+    0,
+    -3.1
+   ],
+   "yaw": 277,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.8
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver"
+     },
+     "lines": [
+      {
+       "who": "guest13",
+       "text": "Time to go. Good night."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "guest13",
+        "text": "I came with someone. I can't remember who."
+       }
+      ],
+      [
+       {
+        "who": "guest13",
+        "text": "I've had three of these and they're all the same drink."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "greeter",
+   "name": "the host",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#2a221e",
+     "age": 0.5,
+     "seed": 613,
+     "browWeight": 0.82,
+     "browArch": 0.46,
+     "mood": "stern"
+    },
+    "hair": "hairDark",
+    "top": "suit",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    1.6,
+    0,
+    6.0
+   ],
+   "yaw": 180,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "idle",
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "greeter",
+        "text": "You made it. Drinks are at the back. Everything's at the back."
+       }
+      ],
+      [
+       {
+        "who": "greeter",
+        "text": "Mingle. That's all anyone's doing."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "messenger",
+   "name": "a man in a white jacket",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#161214",
+     "age": 0.3,
+     "seed": 748,
+     "browWeight": 0.53,
+     "browArch": 0.69,
+     "mood": "flat"
+    },
+    "hair": "hairBlack",
+    "top": "shirtWhite",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    -4,
+    0,
+    -3
+   ],
+   "yaw": 90,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "mingle",
+    "wander": 0.5
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "invited"
+     },
+     "lines": [
+      {
+       "who": "messenger",
+       "text": "There you are."
+      },
+      {
+       "who": "messenger",
+       "text": "David Bowie wants to meet you."
+      },
+      {
+       "who": "messenger",
+       "text": "He's in the back room."
+      }
+     ],
+     "set": "invited",
+     "then": [
+      {
+       "show": "bowie"
+      },
+      {
+       "light": {
+        "id": "spotGreeter",
+        "intensity": 0
+       }
+      },
+      {
+       "light": {
+        "id": "spotMessenger",
+        "intensity": 0
+       }
+      },
+      {
+       "light": {
+        "id": "spotBack",
+        "intensity": 1.8
+       }
+      },
+      {
+       "light": {
+        "id": "spotBowie",
+        "intensity": 1.8
+       }
+      },
+      {
+       "rim": {
+        "id": "messenger",
+        "k": 0
+       }
+      },
+      {
+       "rim": {
+        "id": "bowie",
+        "k": 0.6
+       }
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "messenger",
+        "text": "He's still back there. He doesn't come out."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "ring",
+   "name": "the woman on the floor",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#d8d4cc",
+    "face": {
+     "skin": "#d8d4cc",
+     "hair": "#0a0a0c",
+     "age": 0.3,
+     "seed": 666,
+     "browWeight": 0.2,
+     "browArch": 0.1,
+     "mood": "sad",
+     "tired": true
+    },
+    "hair": "hairBlack",
+    "hairStyle": "veil",
+    "top": "wetDress",
+    "bottom": "wetDress",
+    "skirt": true,
+    "prop": "giftbox"
+   },
+   "pos": [
+    2,
+    0,
+    -1
+   ],
+   "yaw": 0,
+   "talkRadius": 2.4,
+   "behavior": {
+    "name": "creep",
+    "route": [
+     [
+      2,
+      -1,
+      0,
+      4
+     ],
+     [
+      -2,
+      1.5,
+      90,
+      5
+     ],
+     [
+      1,
+      3.5,
+      180,
+      4
+     ],
+     [
+      4,
+      1,
+      270,
+      5
+     ]
+    ],
+    "speed": 0.35
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "partyOver",
+      "not": "apology"
+     },
+     "lines": [
+      {
+       "who": "ring",
+       "text": "I had a gift for you."
+      },
+      {
+       "who": "ring",
+       "text": "But you ignored me. So now I'm not giving it."
+      },
+      {
+       "who": "you",
+       "text": "I'm sorry."
+      },
+      {
+       "who": "you",
+       "text": "That's fair."
+      },
+      {
+       "who": "you",
+       "text": "I wonder what it was."
+      }
+     ],
+     "set": "apology",
+     "then": [
+      {
+       "ending": {
+        "seconds": 9
+       }
+      }
+     ]
+    },
+    {
+     "if": {
+      "not": "metWoman"
+     },
+     "lines": [
+      {
+       "who": "you",
+       "text": "I bend down."
+      },
+      {
+       "who": "you",
+       "text": "Hi. I'm... hello."
+      },
+      {
+       "who": "ring",
+       "text": "You spoke to me."
+      },
+      {
+       "who": "ring",
+       "text": "I have something for you."
+      },
+      {
+       "who": "ring",
+       "text": "Find me later."
+      }
+     ],
+     "set": "metWoman"
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "ring",
+        "text": "Later."
+       }
+      ],
+      [
+       {
+        "who": "ring",
+        "text": "Find me later. I'll be on the floor."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "bowie",
+   "name": "David Bowie",
+   "hidden": true,
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#e0d0c8",
+    "face": {
+     "skin": "#e0d0c8",
+     "hair": "#d0a040",
+     "age": 0.45,
+     "seed": 1947,
+     "browWeight": 0.4,
+     "browArch": 0.9,
+     "mood": "flat",
+     "eyes": "#4a6a90"
+    },
+    "hair": "hairBrown",
+    "hairStyle": "short",
+    "top": "lacquer",
+    "bottom": "black",
+    "prop": "glass",
+    "drink": "#e0c070"
+   },
+   "pos": [
+    -1.2,
+    0,
+    -13.8
+   ],
+   "yaw": 20,
+   "talkRadius": 3.2,
+   "behavior": {
+    "name": "idle",
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "metBowie"
+     },
+     "lines": [
+      {
+       "who": "bowie",
+       "text": "So you're the one."
+      },
+      {
+       "who": "you",
+       "text": "Am I?"
+      },
+      {
+       "who": "bowie",
+       "text": "Everyone's someone at a party. Tonight it's you."
+      },
+      {
+       "who": "bowie",
+       "text": "Go on. There's someone out there who's been waiting longer than me."
+      }
+     ],
+     "set": "metBowie",
+     "then": [
+      {
+       "show": "annie"
+      },
+      {
+       "light": {
+        "id": "spotBack",
+        "intensity": 0
+       }
+      },
+      {
+       "light": {
+        "id": "spotBowie",
+        "intensity": 0.5
+       }
+      },
+      {
+       "light": {
+        "id": "spotAnnie",
+        "intensity": 1.7
+       }
+      },
+      {
+       "rim": {
+        "id": "bowie",
+        "k": 0
+       }
+      },
+      {
+       "rim": {
+        "id": "annie",
+        "k": 0.6
+       }
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "bowie",
+        "text": "I'll be here. I'm always in the back room."
+       }
+      ],
+      [
+       {
+        "who": "bowie",
+        "text": "Don't keep her waiting."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "annie",
+   "name": "Annie",
+   "hidden": true,
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#161214",
+     "age": 0.42,
+     "seed": 749,
+     "browWeight": 0.73,
+     "browArch": 0.11,
+     "mood": "flat",
+     "lipstick": "#c04050"
+    },
+    "hair": "hairBlack",
+    "top": "dress",
+    "bottom": "dress",
+    "hairStyle": "bob",
+    "skirt": true
+   },
+   "pos": [
+    -3.5,
+    0,
+    5.2
+   ],
+   "yaw": 180,
+   "talkRadius": 3.2,
+   "behavior": {
+    "name": "idle",
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "metAnnie"
+     },
+     "lines": [
+      {
+       "who": "you",
+       "text": "Annie?"
+      },
+      {
+       "who": "annie",
+       "text": "I know! I know."
+      },
+      {
+       "who": "annie",
+       "text": "Twenty years. And here you are."
+      },
+      {
+       "who": "you",
+       "text": "We did this last week. In real life."
+      },
+      {
+       "who": "annie",
+       "text": "I know. Isn't it good?"
+      }
+     ],
+     "set": "metAnnie",
+     "then": [
+      {
+       "set": "partyOver"
+      },
+      {
+       "ambience": {
+        "music": 0.25,
+        "murmur": 0.15,
+        "clink": 0
+       }
+      },
+      {
+       "light": {
+        "id": "chand-6",
+        "intensity": 0.3
+       }
+      },
+      {
+       "light": {
+        "id": "chand0",
+        "intensity": 0.3
+       }
+      },
+      {
+       "light": {
+        "id": "chand6",
+        "intensity": 0.3
+       }
+      },
+      {
+       "light": {
+        "id": "spotAnnie",
+        "intensity": 0
+       }
+      },
+      {
+       "light": {
+        "id": "spotRing",
+        "intensity": 1.6
+       }
+      },
+      {
+       "rim": {
+        "id": "annie",
+        "k": 0
+       }
+      },
+      {
+       "rim": {
+        "id": "ring",
+        "k": 0.7,
+        "color": "#b0c8ff"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest0",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.398375549953311,
+          4.916056710165931
+         ],
+         [
+          -8.06001881931182,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.142823419013531,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest1",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.003828373487861,
+          4.664769539223915
+         ],
+         [
+          -8.362703142944278,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.1099088792977585,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest2",
+        "name": "walkTo",
+        "path": [
+         [
+          -7.683371978372727,
+          5.426893901312586
+         ],
+         [
+          -7.728289340769904,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.0211011216039618,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest3",
+        "name": "walkTo",
+        "path": [
+         [
+          -7.561192108306924,
+          4.96739154476029
+         ],
+         [
+          -8.174042376710114,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 0.9368634912467837,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest4",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.068745100979257,
+          5.0449613597795615
+         ],
+         [
+          -8.176560504392537,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 0.9781195298454362,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest5",
+        "name": "walkTo",
+        "path": [
+         [
+          -7.470931438307763,
+          4.567774918939829
+         ],
+         [
+          -7.648486194655996,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.0625651830368295,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest6",
+        "name": "walkTo",
+        "path": [
+         [
+          -7.650178651971616,
+          4.610948048980176
+         ],
+         [
+          -7.943993887706642,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.2046784897270455,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest7",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.076785926366227,
+          4.856466242327151
+         ],
+         [
+          -8.005424951704976,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 0.9777839658546761,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest8",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.346043935624266,
+          4.741311527582985
+         ],
+         [
+          -8.36995467397881,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.2640096521621191,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest9",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.511872094240928,
+          5.4271381201286815
+         ],
+         [
+          -8.391235092805486,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.1624853799400308,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest10",
+        "name": "walkTo",
+        "path": [
+         [
+          -7.943686842650623,
+          4.541841700111867
+         ],
+         [
+          -7.646826581677606,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.192307704349631,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest11",
+        "name": "walkTo",
+        "path": [
+         [
+          -7.545042563799948,
+          4.935663839420865
+         ],
+         [
+          -8.166893464760971,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 0.9743711808448572,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest12",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.464736608124841,
+          5.170949851297062
+         ],
+         [
+          -7.742562566251671,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 0.9848044440612054,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "guest13",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.568840449315337,
+          4.861532813206888
+         ],
+         [
+          -8.277700260484842,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 0.989973591012622,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "messenger",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.333540375436366,
+          5.162421412170343
+         ],
+         [
+          -8.052317432220736,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 1.124194187489027,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "greeter",
+        "name": "walkTo",
+        "path": [
+         [
+          -8.131895812656863,
+          5.483670837462946
+         ],
+         [
+          -8.00245329816079,
+          8.4
+         ],
+         [
+          -8.0,
+          12.5
+         ]
+        ],
+        "speed": 0.917037842532354,
+        "then": "hide"
+       }
+      },
+      {
+       "behavior": {
+        "id": "ring",
+        "name": "walkTo",
+        "path": [
+         [
+          10.6,
+          -2.4
+         ]
+        ],
+        "speed": 2.0,
+        "then": {
+         "name": "stand",
+         "yaw": 270,
+         "noticeRadius": 30
+        }
+       }
+      },
+      {
+       "wait": 1.5
+      },
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "The party's over. Everyone's going."
+        }
+       ]
+      },
+      {
+       "wait": 2.0
+      },
+      {
+       "focus": {
+        "id": "ring",
+        "seconds": 4,
+        "speed": 2.5
+       }
+      },
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "Across the room, she's watching me."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "annie",
+        "text": "Call me. I mean it this time."
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "intro",
+   "when": {
+    "start": true
+   },
+   "do": [
+    {
+     "rim": {
+      "id": [
+       "greeter",
+       "messenger"
+      ],
+      "k": 0.55
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "greeter",
+       "text": "You made it."
+      },
+      {
+       "who": "you",
+       "text": "A party. Everyone standing, everyone talking."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "messengerNear",
+   "when": {
+    "near": {
+     "id": "messenger",
+     "radius": 2.2
+    },
+    "not": "invited"
+   },
+   "do": [
+    {
+     "behavior": {
+      "id": "messenger",
+      "name": "approach",
+      "distance": 1.4,
+      "speed": 1.2,
+      "then": "idle"
+     }
+    },
+    {
+     "focus": {
+      "id": "messenger",
+      "seconds": 6
+     }
+    },
+    {
+     "wait": 1.2
+    },
+    {
+     "say": [
+      {
+       "who": "messenger",
+       "text": "There you are."
+      },
+      {
+       "who": "messenger",
+       "text": "David Bowie wants to meet you."
+      },
+      {
+       "who": "messenger",
+       "text": "He's in the back room."
+      }
+     ]
+    },
+    {
+     "set": "invited"
+    },
+    {
+     "show": "bowie"
+    },
+    {
+     "light": {
+      "id": "spotGreeter",
+      "intensity": 0
+     }
+    },
+    {
+     "light": {
+      "id": "spotMessenger",
+      "intensity": 0
+     }
+    },
+    {
+     "light": {
+      "id": "spotBack",
+      "intensity": 1.8
+     }
+    },
+    {
+     "light": {
+      "id": "spotBowie",
+      "intensity": 1.8
+     }
+    },
+    {
+     "rim": {
+      "id": "messenger",
+      "k": 0
+     }
+    },
+    {
+     "rim": {
+      "id": "bowie",
+      "k": 0.6
+     }
+    }
+   ]
+  },
+  {
+   "id": "annieNear",
+   "when": {
+    "flag": "metBowie",
+    "near": {
+     "id": "annie",
+     "radius": 2.6
+    },
+    "not": "metAnnie"
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "annie",
+       "text": "It's you! It's really you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stinkEye",
+   "when": {
+    "flag": "partyOver",
+    "arrived": "ring",
+    "look": {
+     "target": "ring",
+     "within": 16,
+     "angle": 12
+    },
+    "not": "stared"
+   },
+   "do": [
+    {
+     "set": "stared"
+    },
+    {
+     "behavior": {
+      "id": "ring",
+      "name": "stand",
+      "yaw": 270,
+      "noticeRadius": 30
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "She's looking at me."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

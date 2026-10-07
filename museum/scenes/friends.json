@@ -1,0 +1,11372 @@
+{
+ "title": "ONE OF MY FRIENDS WHO I HAVEN'T SEEN SINCE COLLEGE",
+ "hint": "e to talk",
+ "hintTouch": "tap to talk",
+ "render": {
+  "height": 216
+ },
+ "environment": {
+  "fogColor": "#6a5a66",
+  "ambient": "#3a3440",
+  "skyColor": "#5a4c5a",
+  "sunDir": [
+   0.7,
+   0.18,
+   -0.4
+  ],
+  "sunColor": "#c08a6a",
+  "fogNear": 12,
+  "fogFar": 150,
+  "fogHeight": 0.5,
+  "fogHeightRange": 4,
+  "fogHeightStrength": 0.2
+ },
+ "sky": {
+  "top": "#2a2438",
+  "horizon": "#c88a72",
+  "moonSize": 5,
+  "stars": 25,
+  "moonDir": [
+   -0.5,
+   0.5,
+   -0.6
+  ]
+ },
+ "particles": {
+  "dust": {
+   "count": 200,
+   "alpha": 0.3
+  },
+  "floaters": {
+   "count": 10
+  }
+ },
+ "player": {
+  "pos": [
+   0,
+   0,
+   0.45
+  ],
+  "yaw": 0,
+  "pitch": 0,
+  "speed": 2.0,
+  "seat": {
+   "range": 165,
+   "eye": 1.2
+  }
+ },
+ "ride": {
+  "axis": "z",
+  "length": 320,
+  "far": 24,
+  "speed": 16,
+  "rate": 0.5
+ },
+ "ambience": [
+  {
+   "sound": "wind",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 40,
+   "base": 0.3
+  },
+  {
+   "sound": "wind",
+   "pos": [
+    500,
+    -10
+   ],
+   "range": 60,
+   "base": 0.0,
+   "gain": 0.5
+  },
+  {
+   "sound": "murmur",
+   "pos": [
+    500,
+    -16
+   ],
+   "range": 20,
+   "gain": 0.4
+  },
+  {
+   "sound": "music",
+   "style": "radio",
+   "pos": [
+    500.5,
+    1.4
+   ],
+   "range": 7,
+   "gain": 0.35
+  }
+ ],
+ "indoor": [
+  [
+   -2,
+   -2,
+   2,
+   2
+  ]
+ ],
+ "items": {
+  "wheel": {
+   "name": "the wheel"
+  },
+  "mirror": {
+   "name": "the mirror"
+  },
+  "radio": {
+   "name": "the radio"
+  },
+  "buckle": {
+   "name": "the seat belt"
+  },
+  "airfresh": {
+   "name": "the air freshener"
+  },
+  "traffic": {
+   "name": "a car"
+  },
+  "parkedcar": {
+   "name": "a car"
+  },
+  "oncoming": {
+   "name": "a car"
+  },
+  "thecar": {
+   "name": "the car"
+  },
+  "post": {
+   "name": "the lamp post"
+  }
+ },
+ "objects": [
+  {
+   "type": "box",
+   "pos": [
+    0,
+    -0.06,
+    -0.3
+   ],
+   "size": [
+    1.86,
+    0.12,
+    3.1
+   ],
+   "tex": "carpet",
+   "color": "#3a2e2a",
+   "texScale": 1,
+   "collide": true,
+   "walkable": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.64,
+    -0.3
+   ],
+   "size": [
+    1.86,
+    0.06,
+    2.9
+   ],
+   "tex": "cloth",
+   "color": "#8a8278",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    1.5,
+    0.1
+   ],
+   "color": "#ffd8a0",
+   "intensity": 0.35,
+   "range": 2.6,
+   "flicker": "dying"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.61,
+    0.15
+   ],
+   "size": [
+    0.16,
+    0.02,
+    0.08
+   ],
+   "tex": "lamp",
+   "color": "#a08868",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "unlit": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.23,
+    0.62
+   ],
+   "size": [
+    1.72,
+    0.46,
+    0.55
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.78,
+    0.94
+   ],
+   "size": [
+    1.72,
+    0.66,
+    0.12
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.85,
+    1.2
+   ],
+   "size": [
+    1.72,
+    0.06,
+    0.4
+   ],
+   "tex": "plastic",
+   "color": "#2a2628",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.42,
+    0.23,
+    -0.95
+   ],
+   "size": [
+    0.6,
+    0.46,
+    0.55
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.42,
+    0.69,
+    -0.48
+   ],
+   "size": [
+    0.6,
+    0.48,
+    0.12
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.42,
+    1.1,
+    -0.48
+   ],
+   "size": [
+    0.24,
+    0.15,
+    0.09
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.49,
+    0.97,
+    -0.48
+   ],
+   "size": [
+    0.02,
+    0.12,
+    0.02
+   ],
+   "tex": "chrome",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.35,
+    0.97,
+    -0.48
+   ],
+   "size": [
+    0.02,
+    0.12,
+    0.02
+   ],
+   "tex": "chrome",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.42,
+    0.23,
+    -0.95
+   ],
+   "size": [
+    0.6,
+    0.46,
+    0.55
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.42,
+    0.69,
+    -0.48
+   ],
+   "size": [
+    0.6,
+    0.48,
+    0.12
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.42,
+    1.1,
+    -0.48
+   ],
+   "size": [
+    0.24,
+    0.15,
+    0.09
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.35,
+    0.97,
+    -0.48
+   ],
+   "size": [
+    0.02,
+    0.12,
+    0.02
+   ],
+   "tex": "chrome",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.49,
+    0.97,
+    -0.48
+   ],
+   "size": [
+    0.02,
+    0.12,
+    0.02
+   ],
+   "tex": "chrome",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.32,
+    -0.9
+   ],
+   "size": [
+    0.24,
+    0.3,
+    0.7
+   ],
+   "tex": "plastic",
+   "color": "#2a2628",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.72,
+    -1.6
+   ],
+   "size": [
+    1.82,
+    0.3,
+    0.55
+   ],
+   "tex": "plastic",
+   "color": "#2e2a2c",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.88,
+    -1.75
+   ],
+   "size": [
+    1.82,
+    0.04,
+    0.3
+   ],
+   "tex": "plastic",
+   "color": "#1e1c1e",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.42,
+    0.9,
+    -1.4
+   ],
+   "size": [
+    0.44,
+    0.12,
+    0.06
+   ],
+   "tex": "lamp",
+   "color": "#80c0a0",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "unlit": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.45,
+    0.65,
+    -1.34
+   ],
+   "size": [
+    0.4,
+    0.14,
+    0.02
+   ],
+   "tex": "plastic",
+   "color": "#3a3436",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "item",
+   "id": "wheel",
+   "item": "wheel",
+   "pickup": false,
+   "pos": [
+    -0.42,
+    0.98,
+    -1.22
+   ],
+   "name": "the wheel",
+   "model": [
+    {
+     "shape": "torus",
+     "size": [
+      0.19,
+      0.022,
+      4,
+      10
+     ],
+     "color": "#2a2a2c",
+     "rot": [
+      -25,
+      0,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.03,
+      0.03
+     ],
+     "color": "#2a2a2c",
+     "rot": [
+      -25,
+      0,
+      0
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.03,
+      0.03,
+      0.3,
+      6
+     ],
+     "color": "#2a2a2c",
+     "rot": [
+      -115,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      -0.08,
+      -0.14
+     ]
+    }
+   ],
+   "examine": [
+    "His hands are on it. Loosely.",
+    "The way you hold something you've held for years."
+   ]
+  },
+  {
+   "type": "item",
+   "id": "mirror",
+   "item": "mirror",
+   "pickup": false,
+   "pos": [
+    0,
+    1.42,
+    -1.62
+   ],
+   "name": "the mirror",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.26,
+      0.08,
+      0.02
+     ],
+     "tex": "chrome"
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.22,
+      0.06,
+      0.01
+     ],
+     "color": "#aab8c0",
+     "unlit": true,
+     "pos": [
+      0,
+      0,
+      0.012
+     ]
+    }
+   ],
+   "examine": [
+    "In the mirror, the back seat is empty.",
+    "I look away."
+   ]
+  },
+  {
+   "type": "item",
+   "id": "radio",
+   "item": "radio",
+   "pickup": false,
+   "pos": [
+    0,
+    0.8,
+    -1.33
+   ],
+   "name": "the radio",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.2,
+      0.08,
+      0.04
+     ],
+     "tex": "plastic"
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.14,
+      0.02,
+      0.01
+     ],
+     "color": "#50e070",
+     "unlit": true,
+     "pos": [
+      0,
+      0.01,
+      0.024
+     ]
+    }
+   ],
+   "examine": [
+    "The radio's on. It's playing the same song the record store would have."
+   ]
+  },
+  {
+   "type": "item",
+   "id": "buckle",
+   "item": "buckle",
+   "pickup": false,
+   "pos": [
+    0.3,
+    0.47,
+    0.5
+   ],
+   "name": "the seat belt",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.06,
+      0.04,
+      0.1
+     ],
+     "tex": "metal",
+     "rot": [
+      0,
+      0,
+      20
+     ]
+    }
+   ],
+   "examine": [
+    "A buckle. Nothing to put in it.",
+    "I'm not wearing a belt. There isn't one."
+   ]
+  },
+  {
+   "type": "item",
+   "id": "airfresh",
+   "item": "airfresh",
+   "pickup": false,
+   "pos": [
+    0,
+    1.3,
+    -1.62
+   ],
+   "name": "the air freshener",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.004,
+      0.14,
+      0.004
+     ],
+     "color": "#202020",
+     "pos": [
+      0,
+      0.07,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.08,
+      0.1,
+      0.006
+     ],
+     "color": "#40a050"
+    }
+   ],
+   "examine": [
+    "A cardboard tree. It smelled of pine once. Now it smells of him."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.93,
+    0.36,
+    -0.3
+   ],
+   "size": [
+    0.08,
+    0.72,
+    3.1
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.92,
+    0.74,
+    -0.3
+   ],
+   "size": [
+    0.1,
+    0.04,
+    3.1
+   ],
+   "tex": "chrome",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.88,
+    0.5,
+    -0.3
+   ],
+   "size": [
+    0.02,
+    0.2,
+    2.4
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.92,
+    1.18,
+    -1.72
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.08
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.92,
+    1.18,
+    -0.3
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.1
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.92,
+    1.18,
+    1.05
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.3
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.92,
+    1.61,
+    -0.3
+   ],
+   "size": [
+    0.08,
+    0.08,
+    3.1
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.93,
+    0.36,
+    -0.3
+   ],
+   "size": [
+    0.08,
+    0.72,
+    3.1
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.92,
+    0.74,
+    -0.3
+   ],
+   "size": [
+    0.1,
+    0.04,
+    3.1
+   ],
+   "tex": "chrome",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.88,
+    0.5,
+    -0.3
+   ],
+   "size": [
+    0.02,
+    0.2,
+    2.4
+   ],
+   "tex": "velvet",
+   "color": "#7a5242",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.92,
+    1.18,
+    -1.72
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.08
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.92,
+    1.18,
+    -0.3
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.1
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.92,
+    1.18,
+    1.05
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.3
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.92,
+    1.61,
+    -0.3
+   ],
+   "size": [
+    0.08,
+    0.08,
+    3.1
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.58,
+    -1.78
+   ],
+   "size": [
+    1.86,
+    0.1,
+    0.06
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.98,
+    1.26
+   ],
+   "size": [
+    1.86,
+    0.2,
+    0.06
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.58,
+    1.24
+   ],
+   "size": [
+    1.86,
+    0.1,
+    0.06
+   ],
+   "tex": "vinyl",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.3,
+    -1.86
+   ],
+   "size": [
+    1.86,
+    0.6,
+    0.06
+   ],
+   "tex": "plastic",
+   "color": "#1e1c1e",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.8,
+    -2.6
+   ],
+   "size": [
+    1.8,
+    0.1,
+    1.5
+   ],
+   "tex": "plastic",
+   "color": "#6a2a24",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.84,
+    -3.3
+   ],
+   "size": [
+    0.3,
+    0.05,
+    0.06
+   ],
+   "tex": "chrome",
+   "color": "#3a3438",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    0.7,
+    -7
+   ],
+   "color": "#fff0c0",
+   "intensity": 1.3,
+   "range": 16,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    0.9,
+    -1.4
+   ],
+   "color": "#60ff90",
+   "intensity": 0.18,
+   "range": 1.4,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "character",
+   "id": "dad",
+   "name": "his father",
+   "look": {
+    "skin": "skin",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#9a948a",
+     "age": 0.8,
+     "seed": 12,
+     "browWeight": 0.7,
+     "browArch": 0.3,
+     "mood": "flat"
+    },
+    "hair": "hairGrey",
+    "top": "tweed",
+    "bottom": "trousers",
+    "glasses": true
+   },
+   "pos": [
+    -0.42,
+    0,
+    -0.75
+   ],
+   "yaw": 180,
+   "talkRadius": 1.8,
+   "behavior": {
+    "name": "sit",
+    "yaw": 180,
+    "facePlayer": false,
+    "seatHeight": 0.44
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "campus"
+     },
+     "variants": [
+      [
+       {
+        "who": "dad",
+        "text": "Ha ha! Oh, it's good to see you, son. It's been too long, far too long.",
+        "garbled": true
+       }
+      ],
+      [
+       {
+        "who": "dad",
+        "text": "We'll get there. We always get there, don't we?",
+        "garbled": true
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "dad",
+        "text": "Look after each other. That's all it is.",
+        "garbled": true
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "deadbro",
+   "name": "his brother",
+   "look": {
+    "skin": "skinPale",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#2a221e",
+     "age": 0.22,
+     "seed": 31,
+     "browWeight": 0.5,
+     "browArch": 0.4,
+     "mood": "sad"
+    },
+    "hair": "hairDark",
+    "top": "shirt",
+    "bottom": "trousers"
+   },
+   "pos": [
+    0.42,
+    0,
+    -0.75
+   ],
+   "yaw": 180,
+   "talkRadius": 1.8,
+   "behavior": {
+    "name": "sit",
+    "yaw": 180,
+    "facePlayer": false,
+    "seatHeight": 0.44
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "campus"
+     },
+     "variants": [
+      [
+       {
+        "who": "deadbro",
+        "text": "Don't distract him."
+       }
+      ],
+      [
+       {
+        "who": "deadbro",
+        "text": "I always sit up front now."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "deadbro",
+        "text": "Chicago. Tonight."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend",
+   "name": "my friend",
+   "look": {
+    "skin": "skin",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.35,
+     "seed": 8,
+     "browWeight": 0.6,
+     "browArch": 0.5,
+     "stubble": true,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "coat",
+    "bottom": "trousers"
+   },
+   "pos": [
+    -0.6,
+    0,
+    0.5
+   ],
+   "yaw": 180,
+   "talkRadius": 1.6,
+   "behavior": {
+    "name": "sit",
+    "yaw": 180,
+    "seatHeight": 0.44,
+    "facePlayer": false
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "campus"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend",
+        "text": "It's a good record store. If we get there."
+       }
+      ],
+      [
+       {
+        "who": "friend",
+        "text": "He's always driven like this."
+       },
+       {
+        "who": "friend",
+        "text": "Even now."
+       }
+      ],
+      [
+       {
+        "who": "friend",
+        "text": "You still don't wear a belt?"
+       },
+       {
+        "who": "you",
+        "text": "There isn't one."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "friend",
+        "text": "We're not staying in Ohio."
+       },
+       {
+        "who": "friend",
+        "text": "We're going back to Chicago tonight."
+       }
+      ],
+      [
+       {
+        "who": "friend",
+        "text": "Good to see you, man. Really."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "kid",
+   "name": "his little brother",
+   "scale": 0.82,
+   "look": {
+    "skin": "skin",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.05,
+     "seed": 19,
+     "browWeight": 0.4,
+     "browArch": 0.6,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "shirtWhite",
+    "bottom": "trousers",
+    "cap": true,
+    "capTex": "paramedic"
+   },
+   "pos": [
+    0.62,
+    0,
+    0.5
+   ],
+   "yaw": 180,
+   "talkRadius": 1.6,
+   "behavior": {
+    "name": "sit",
+    "yaw": 180,
+    "seatHeight": 0.44,
+    "facePlayer": false
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "campus"
+     },
+     "variants": [
+      [
+       {
+        "who": "kid",
+        "text": "Are we there?"
+       }
+      ],
+      [
+       {
+        "who": "kid",
+        "text": "I'm not scared."
+       },
+       {
+        "who": "kid",
+        "text": "Are you?"
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "kid",
+        "text": "I'm going to sit in the front on the way back."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -1.6,
+    -0.36,
+    -140
+   ],
+   "size": [
+    11,
+    340
+   ],
+   "tex": "asphalt",
+   "texScale": 4,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 4
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -9.1,
+    -0.37,
+    -140
+   ],
+   "size": [
+    4,
+    340
+   ],
+   "tex": "sand",
+   "texScale": 3,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 4
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -53.6,
+    -0.4,
+    -140
+   ],
+   "size": [
+    92,
+    340
+   ],
+   "tex": "field",
+   "texScale": 10,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 8
+  },
+  {
+   "type": "plane",
+   "pos": [
+    5.9,
+    -0.37,
+    -140
+   ],
+   "size": [
+    4,
+    340
+   ],
+   "tex": "sand",
+   "texScale": 3,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 4
+  },
+  {
+   "type": "plane",
+   "pos": [
+    50.4,
+    -0.4,
+    -140
+   ],
+   "size": [
+    92,
+    340
+   ],
+   "tex": "field",
+   "texScale": 10,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 8
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    20
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    20
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    4
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    4
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -12
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -12
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -28
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -28
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -44
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -44
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -60
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -60
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -76
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -76
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -92
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -92
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -108
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -108
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -124
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -124
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -140
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -140
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -156
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -156
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -172
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -172
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -188
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -188
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -204
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -204
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -220
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -220
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -236
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -236
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -252
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -252
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    3.6,
+    -268
+   ],
+   "size": [
+    0.22,
+    8,
+    0.22
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.4,
+    7.0,
+    -268
+   ],
+   "size": [
+    2.0,
+    0.12,
+    0.12
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.6,
+    6.9,
+    -284
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.2,
+    6.9,
+    -284
+   ],
+   "size": [
+    0.03,
+    0.03,
+    32
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    16,
+    4.2,
+    -40
+   ],
+   "size": [
+    10,
+    0.4,
+    7
+   ],
+   "tex": "plastic",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#d8d0c0"
+  },
+  {
+   "type": "box",
+   "pos": [
+    16,
+    3.95,
+    -40
+   ],
+   "size": [
+    9.6,
+    0.1,
+    6.6
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#f8f0d8"
+  },
+  {
+   "type": "box",
+   "pos": [
+    13,
+    1.95,
+    -40
+   ],
+   "size": [
+    0.4,
+    4,
+    0.4
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    19,
+    1.95,
+    -40
+   ],
+   "size": [
+    0.4,
+    4,
+    0.4
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    14.5,
+    0.4,
+    -40
+   ],
+   "size": [
+    0.5,
+    1.6,
+    0.4
+   ],
+   "tex": "plastic",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#b02020"
+  },
+  {
+   "type": "box",
+   "pos": [
+    17.5,
+    0.4,
+    -40
+   ],
+   "size": [
+    0.5,
+    1.6,
+    0.4
+   ],
+   "tex": "plastic",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#b02020"
+  },
+  {
+   "type": "box",
+   "pos": [
+    24,
+    1.4,
+    -42
+   ],
+   "size": [
+    6,
+    3.6,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    21.05,
+    1.3,
+    -42
+   ],
+   "size": [
+    0.08,
+    1.6,
+    3.6
+   ],
+   "tex": "cityLights",
+   "texScale": 0.6,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#f0e0b0"
+  },
+  {
+   "type": "box",
+   "pos": [
+    11,
+    3.5,
+    -34
+   ],
+   "size": [
+    0.3,
+    7,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    11,
+    6.6,
+    -33.85
+   ],
+   "size": [
+    3.6,
+    1.2
+   ],
+   "yaw": 0,
+   "parts": [
+    {
+     "text": "GAS ",
+     "font": "black",
+     "color": "#ff4030"
+    },
+    {
+     "text": "1.19",
+     "font": "mono",
+     "color": "#fff0a0"
+    }
+   ],
+   "intensity": 0,
+   "range": 1,
+   "scroll": true,
+   "id": "gasSign",
+   "name": "the gas station",
+   "examine": "GAS 1.19. Nobody's paid that since he was alive."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20,
+    1.6,
+    -100
+   ],
+   "size": [
+    14,
+    3.2,
+    6
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20,
+    3.3,
+    -100
+   ],
+   "size": [
+    14.4,
+    0.3,
+    6.4
+   ],
+   "tex": "chrome",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -12.95,
+    1.7,
+    -100
+   ],
+   "size": [
+    0.08,
+    1.2,
+    12
+   ],
+   "tex": "cityLights",
+   "texScale": 0.5,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffe8c0"
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -12.9,
+    4.4,
+    -100
+   ],
+   "size": [
+    6,
+    1.4
+   ],
+   "yaw": 90,
+   "parts": [
+    {
+     "text": "DINER",
+     "font": "script",
+     "color": "#ff60c0"
+    }
+   ],
+   "intensity": 0,
+   "range": 1,
+   "scroll": true,
+   "name": "the diner",
+   "examine": "A diner, lit up. We had pie there once, the four of us. Five."
+  },
+  {
+   "type": "item",
+   "item": "parkedcar",
+   "pickup": false,
+   "pos": [
+    -10.5,
+    -0.4,
+    -96
+   ],
+   "yaw": 90,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#5a6a7a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#5a6a7a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    }
+   ],
+   "scroll": true,
+   "name": "a car",
+   "examine": "Parked outside the diner."
+  },
+  {
+   "type": "item",
+   "item": "parkedcar",
+   "pickup": false,
+   "pos": [
+    -10.5,
+    -0.4,
+    -104
+   ],
+   "yaw": 90,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#5a6a7a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#5a6a7a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    }
+   ],
+   "scroll": true,
+   "name": "a car",
+   "examine": "Parked outside the diner."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -15,
+    1.5,
+    -20
+   ],
+   "size": [
+    6,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#9a8a70"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -15,
+    3.6,
+    -20
+   ],
+   "size": [
+    6.4,
+    0.3,
+    5.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -15,
+    4.1,
+    -20
+   ],
+   "size": [
+    5.4,
+    0.8,
+    4.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.97,
+    1.7,
+    -21.2
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.97,
+    1.7,
+    -18.8
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.97,
+    0.9,
+    -20
+   ],
+   "size": [
+    0.06,
+    1.8,
+    0.7
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    1.5,
+    -75
+   ],
+   "size": [
+    6,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#7a8a9a"
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    3.6,
+    -75
+   ],
+   "size": [
+    6.4,
+    0.3,
+    5.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    4.1,
+    -75
+   ],
+   "size": [
+    5.4,
+    0.8,
+    4.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.97,
+    1.7,
+    -76.2
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.97,
+    1.7,
+    -73.8
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.97,
+    0.9,
+    -75
+   ],
+   "size": [
+    0.06,
+    1.8,
+    0.7
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -17,
+    1.5,
+    -135
+   ],
+   "size": [
+    6,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#8a6a5a"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -17,
+    3.6,
+    -135
+   ],
+   "size": [
+    6.4,
+    0.3,
+    5.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -17,
+    4.1,
+    -135
+   ],
+   "size": [
+    5.4,
+    0.8,
+    4.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -13.97,
+    1.7,
+    -136.2
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -13.97,
+    1.7,
+    -133.8
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -13.97,
+    0.9,
+    -135
+   ],
+   "size": [
+    0.06,
+    1.8,
+    0.7
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    15,
+    1.5,
+    -125
+   ],
+   "size": [
+    6,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#a09080"
+  },
+  {
+   "type": "box",
+   "pos": [
+    15,
+    3.6,
+    -125
+   ],
+   "size": [
+    6.4,
+    0.3,
+    5.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    15,
+    4.1,
+    -125
+   ],
+   "size": [
+    5.4,
+    0.8,
+    4.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    11.97,
+    1.7,
+    -126.2
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    11.97,
+    1.7,
+    -123.8
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    11.97,
+    0.9,
+    -125
+   ],
+   "size": [
+    0.06,
+    1.8,
+    0.7
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -14,
+    1.5,
+    -235
+   ],
+   "size": [
+    6,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#7a7a6a"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -14,
+    3.6,
+    -235
+   ],
+   "size": [
+    6.4,
+    0.3,
+    5.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -14,
+    4.1,
+    -235
+   ],
+   "size": [
+    5.4,
+    0.8,
+    4.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.97,
+    1.7,
+    -236.2
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.97,
+    1.7,
+    -233.8
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.97,
+    0.9,
+    -235
+   ],
+   "size": [
+    0.06,
+    1.8,
+    0.7
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    16,
+    1.5,
+    -280
+   ],
+   "size": [
+    6,
+    3,
+    5
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#8a7060"
+  },
+  {
+   "type": "box",
+   "pos": [
+    16,
+    3.6,
+    -280
+   ],
+   "size": [
+    6.4,
+    0.3,
+    5.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    16,
+    4.1,
+    -280
+   ],
+   "size": [
+    5.4,
+    0.8,
+    4.4
+   ],
+   "tex": "woodDark",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    12.97,
+    1.7,
+    -281.2
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    12.97,
+    1.7,
+    -278.8
+   ],
+   "size": [
+    0.06,
+    0.9,
+    0.8
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd890"
+  },
+  {
+   "type": "box",
+   "pos": [
+    12.97,
+    0.9,
+    -280
+   ],
+   "size": [
+    0.06,
+    1.8,
+    0.7
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    22,
+    3,
+    -165
+   ],
+   "size": [
+    8,
+    6,
+    12
+   ],
+   "tex": "plaster",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#e8e4dc"
+  },
+  {
+   "type": "box",
+   "pos": [
+    22,
+    6.6,
+    -165
+   ],
+   "size": [
+    8.4,
+    1.2,
+    12.4
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    22,
+    8.5,
+    -159
+   ],
+   "size": [
+    2.2,
+    5,
+    2.2
+   ],
+   "tex": "plaster",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#e8e4dc"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    22,
+    11,
+    -159
+   ],
+   "radius": 1.3,
+   "radiusTop": 0.02,
+   "height": 4,
+   "tex": "woodDark",
+   "sides": 4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    17.95,
+    3.5,
+    -165
+   ],
+   "size": [
+    0.08,
+    1.6,
+    1.6
+   ],
+   "tex": "lamp",
+   "texScale": 0.3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#d080ff"
+  },
+  {
+   "type": "sign",
+   "pos": [
+    12,
+    1.6,
+    -152
+   ],
+   "size": [
+    4.4,
+    1.3
+   ],
+   "yaw": -90,
+   "parts": [
+    {
+     "text": "SUNDAY: ",
+     "font": "mono",
+     "color": "#202020"
+    },
+    {
+     "text": "ON SIN",
+     "font": "black",
+     "color": "#202020"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#e8e4d8",
+   "scroll": true,
+   "name": "the church",
+   "examine": [
+    "SUNDAY: ON SIN.",
+    "Moral turpitude. The church brought morality to Europe. I want to tell him."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    12,
+    1.6,
+    -152.05
+   ],
+   "size": [
+    0.2,
+    1.6,
+    4.8
+   ],
+   "tex": "white",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#3a3a3a"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -36.2,
+    5,
+    -207.2
+   ],
+   "size": [
+    0.3,
+    10,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -31.8,
+    5,
+    -207.2
+   ],
+   "size": [
+    0.3,
+    10,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -36.2,
+    5,
+    -202.8
+   ],
+   "size": [
+    0.3,
+    10,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -31.8,
+    5,
+    -202.8
+   ],
+   "size": [
+    0.3,
+    10,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -34,
+    10,
+    -205
+   ],
+   "radius": 4,
+   "height": 4.5,
+   "tex": "steel",
+   "sides": 10,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -34,
+    14.5,
+    -205
+   ],
+   "radius": 4.2,
+   "radiusTop": 0.3,
+   "height": 1.8,
+   "tex": "steel",
+   "sides": 10,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -29.9,
+    12.2,
+    -205
+   ],
+   "size": [
+    6,
+    1.6
+   ],
+   "yaw": 90,
+   "parts": [
+    {
+     "text": "OHIO",
+     "font": "black",
+     "color": "#202428"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#d8dcd8",
+   "scroll": true,
+   "name": "the water tower",
+   "examine": "OHIO. In case I forget where I am."
+  },
+  {
+   "type": "box",
+   "pos": [
+    12.4,
+    3,
+    -217
+   ],
+   "size": [
+    0.25,
+    6,
+    0.25
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    12.4,
+    3,
+    -213
+   ],
+   "size": [
+    0.25,
+    6,
+    0.25
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    12.2,
+    5.6,
+    -215
+   ],
+   "size": [
+    0.2,
+    2.6,
+    7.2
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#202020"
+  },
+  {
+   "type": "sign",
+   "pos": [
+    12,
+    5.6,
+    -215
+   ],
+   "size": [
+    6.6,
+    2.2
+   ],
+   "yaw": -90,
+   "parts": [
+    {
+     "text": "RECORDS ",
+     "font": "black",
+     "color": "#ffd060"
+    },
+    {
+     "text": "2 MI",
+     "font": "mono",
+     "color": "#ff6040"
+    }
+   ],
+   "intensity": 0,
+   "range": 1,
+   "scroll": true,
+   "backing": false,
+   "name": "the billboard",
+   "examine": "RECORDS. 2 MI. It's said 2 MI for a while now."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -12.4,
+    3,
+    -57
+   ],
+   "size": [
+    0.25,
+    6,
+    0.25
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -12.4,
+    3,
+    -53
+   ],
+   "size": [
+    0.25,
+    6,
+    0.25
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -12.2,
+    5.6,
+    -55
+   ],
+   "size": [
+    0.2,
+    2.6,
+    7.2
+   ],
+   "tex": "black",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "color": "#202020"
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -12,
+    5.6,
+    -55
+   ],
+   "size": [
+    6.6,
+    2.2
+   ],
+   "yaw": 90,
+   "parts": [
+    {
+     "text": "CHICAGO ",
+     "font": "serif",
+     "color": "#f0f0e8"
+    },
+    {
+     "text": "340",
+     "font": "black",
+     "color": "#ff8040"
+    }
+   ],
+   "intensity": 0,
+   "range": 1,
+   "scroll": true,
+   "backing": false,
+   "name": "the billboard",
+   "examine": "CHICAGO 340. The other way."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    1.4,
+    -265
+   ],
+   "size": [
+    16,
+    2.8,
+    5
+   ],
+   "tex": "plasterWarm",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.95,
+    1.2,
+    -271.0
+   ],
+   "size": [
+    0.08,
+    1.0,
+    0.9
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#403830"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.95,
+    1.2,
+    -268.6
+   ],
+   "size": [
+    0.08,
+    1.0,
+    0.9
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd0a0"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.95,
+    1.2,
+    -266.2
+   ],
+   "size": [
+    0.08,
+    1.0,
+    0.9
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#403830"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.95,
+    1.2,
+    -263.8
+   ],
+   "size": [
+    0.08,
+    1.0,
+    0.9
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd0a0"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.95,
+    1.2,
+    -261.4
+   ],
+   "size": [
+    0.08,
+    1.0,
+    0.9
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#403830"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.95,
+    1.2,
+    -259.0
+   ],
+   "size": [
+    0.08,
+    1.0,
+    0.9
+   ],
+   "tex": "lamp",
+   "texScale": 0.4,
+   "scroll": true,
+   "collide": false,
+   "walkable": false,
+   "unlit": true,
+   "color": "#ffd0a0"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9,
+    3.5,
+    -258
+   ],
+   "size": [
+    0.3,
+    7,
+    0.3
+   ],
+   "tex": "metal",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -8.9,
+    6.4,
+    -258
+   ],
+   "size": [
+    4,
+    1.2
+   ],
+   "yaw": 90,
+   "parts": [
+    {
+     "text": "MOTEL",
+     "font": "script",
+     "color": "#40e0ff"
+    }
+   ],
+   "intensity": 0,
+   "range": 1,
+   "scroll": true,
+   "name": "the motel",
+   "examine": "MOTEL. VACANCY. The V is out."
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -8.9,
+    5.3,
+    -258
+   ],
+   "size": [
+    3,
+    0.7
+   ],
+   "yaw": 90,
+   "parts": [
+    {
+     "text": "ACANCY",
+     "font": "sans",
+     "color": "#ff3030"
+    }
+   ],
+   "flicker": true,
+   "intensity": 0,
+   "range": 1,
+   "scroll": true,
+   "backing": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    31.812952028461105,
+    -0.4,
+    -115.731481361438
+   ],
+   "kind": "pine",
+   "size": 1.1416119754511382,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    -27.38591913155426,
+    -0.4,
+    -77.66179091715156
+   ],
+   "kind": "round",
+   "size": 0.9410213015750275,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    27.43126679721739,
+    -0.4,
+    -149.3882267208562
+   ],
+   "kind": "round",
+   "size": 1.3318974596600457,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    18.7153934174209,
+    -0.4,
+    -230.1506941111317
+   ],
+   "kind": "bare",
+   "size": 1.5573706072155882,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    -14.42173387187785,
+    -0.4,
+    -182.51038589250663
+   ],
+   "kind": "round",
+   "size": 1.0430013907181541,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    30.76749642497863,
+    -0.4,
+    -85.93710925034728
+   ],
+   "kind": "bare",
+   "size": 0.8315029964603182,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    -36.43912596818132,
+    -0.4,
+    -108.48123096421463
+   ],
+   "kind": "pine",
+   "size": 0.9170383530297292,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    10.529565250252464,
+    -0.4,
+    -224.07719909659536
+   ],
+   "kind": "round",
+   "size": 1.4388755800876778,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    31.355846883279064,
+    -0.4,
+    -221.35354212183944
+   ],
+   "kind": "bare",
+   "size": 1.1325626957970374,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    -33.45102090279582,
+    -0.4,
+    -135.6810131801562
+   ],
+   "kind": "pine",
+   "size": 1.009935342782033,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    27.17763859831186,
+    -0.4,
+    -130.78320024850453
+   ],
+   "kind": "bare",
+   "size": 1.3546270648960215,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    16.627208436198536,
+    -0.4,
+    -296.47108278135346
+   ],
+   "kind": "round",
+   "size": 1.0008318543049468,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    26.216550124108412,
+    -0.4,
+    10.331700849442278
+   ],
+   "kind": "bare",
+   "size": 1.695198932662295,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    -15.499498756114546,
+    -0.4,
+    -99.13694754476151
+   ],
+   "kind": "bare",
+   "size": 0.9011066388655518,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    35.3718815629489,
+    -0.4,
+    -56.614414707963476
+   ],
+   "kind": "round",
+   "size": 1.4082803767977583,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "tree",
+   "pos": [
+    -36.84528094160305,
+    -0.4,
+    -136.66250258085626
+   ],
+   "kind": "round",
+   "size": 1.3576733692324674,
+   "scroll": true,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    6.2,
+    -300
+   ],
+   "size": [
+    34,
+    1.2,
+    4
+   ],
+   "tex": "concrete",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9.1,
+    2.9,
+    -300
+   ],
+   "size": [
+    1.2,
+    5.8,
+    3.6
+   ],
+   "tex": "concrete",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    5.9,
+    2.9,
+    -300
+   ],
+   "size": [
+    1.2,
+    5.8,
+    3.6
+   ],
+   "tex": "concrete",
+   "texScale": 2,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "item",
+   "item": "traffic",
+   "pickup": false,
+   "pos": [
+    -4.6,
+    -0.4,
+    -60
+   ],
+   "yaw": 180,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#c8c0a0",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#c8c0a0",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      2.12
+     ]
+    }
+   ],
+   "scroll": 2.1,
+   "name": "a car",
+   "examine": "Going the other way. Towards Chicago, maybe."
+  },
+  {
+   "type": "item",
+   "item": "traffic",
+   "pickup": false,
+   "pos": [
+    -4.6,
+    -0.4,
+    -170
+   ],
+   "yaw": 180,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#40506a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#40506a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      2.12
+     ]
+    }
+   ],
+   "scroll": 2.1,
+   "name": "a car",
+   "examine": "Going the other way. Towards Chicago, maybe."
+  },
+  {
+   "type": "item",
+   "item": "traffic",
+   "pickup": false,
+   "pos": [
+    -4.6,
+    -0.4,
+    -260
+   ],
+   "yaw": 180,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#7a2a2a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#7a2a2a",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      2.12
+     ]
+    }
+   ],
+   "scroll": 2.1,
+   "name": "a car",
+   "examine": "Going the other way. Towards Chicago, maybe."
+  },
+  {
+   "type": "item",
+   "item": "parkedcar",
+   "pickup": false,
+   "pos": [
+    5.4,
+    -0.4,
+    -30
+   ],
+   "yaw": 0,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#3a3a44",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#3a3a44",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    }
+   ],
+   "scroll": true,
+   "name": "a car",
+   "examine": "A car on the hard shoulder. Nobody in it."
+  },
+  {
+   "type": "item",
+   "item": "parkedcar",
+   "pickup": false,
+   "pos": [
+    5.4,
+    -0.4,
+    -190
+   ],
+   "yaw": 0,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#3a3a44",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#3a3a44",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    }
+   ],
+   "scroll": true,
+   "name": "a car",
+   "examine": "A car on the hard shoulder. Nobody in it."
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    0.6,
+    -80
+   ],
+   "size": [
+    80,
+    2,
+    200
+   ],
+   "count": 26,
+   "scale": [
+    6,
+    12
+   ],
+   "alpha": 0.05,
+   "seed": 4
+  },
+  {
+   "type": "item",
+   "id": "post",
+   "item": "post",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    3.0,
+    -0.4,
+    -70
+   ],
+   "name": "the lamp post",
+   "model": [
+    {
+     "shape": "cyl",
+     "size": [
+      0.07,
+      0.09,
+      4.2,
+      6
+     ],
+     "tex": "metal",
+     "pos": [
+      0,
+      2.1,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.36,
+      0.2,
+      0.36
+     ],
+     "tex": "lamp",
+     "unlit": true,
+     "color": "#f0b060",
+     "pos": [
+      0,
+      4.2,
+      0
+     ]
+    }
+   ],
+   "examine": "A lamp post."
+  },
+  {
+   "type": "item",
+   "id": "car1",
+   "item": "oncoming",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    -3.4,
+    -0.4,
+    -90
+   ],
+   "yaw": 180,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#c8c0a0",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#c8c0a0",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      2.12
+     ]
+    }
+   ],
+   "name": "a car",
+   "examine": "Too close."
+  },
+  {
+   "type": "item",
+   "id": "car2",
+   "item": "oncoming",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    -3.4,
+    -0.4,
+    -90
+   ],
+   "yaw": 180,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#8a2020",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#8a2020",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      2.12
+     ]
+    }
+   ],
+   "name": "a car",
+   "examine": "Too close."
+  },
+  {
+   "type": "item",
+   "id": "car3",
+   "item": "oncoming",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    -3.4,
+    -0.4,
+    -90
+   ],
+   "yaw": 180,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#3050a0",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#3050a0",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      2.12
+     ]
+    }
+   ],
+   "name": "a car",
+   "examine": "Too close."
+  },
+  {
+   "type": "plane",
+   "pos": [
+    500,
+    0,
+    -10
+   ],
+   "size": [
+    90,
+    90
+   ],
+   "tex": "grass",
+   "texScale": 3,
+   "surface": "sand"
+  },
+  {
+   "type": "plane",
+   "pos": [
+    500,
+    0.005,
+    -14
+   ],
+   "size": [
+    3,
+    60
+   ],
+   "tex": "pavement",
+   "texScale": 1.5
+  },
+  {
+   "type": "plane",
+   "pos": [
+    488,
+    0.005,
+    -18
+   ],
+   "size": [
+    30,
+    3
+   ],
+   "tex": "pavement",
+   "texScale": 1.5
+  },
+  {
+   "type": "plane",
+   "pos": [
+    501,
+    0.004,
+    14
+   ],
+   "size": [
+    40,
+    7
+   ],
+   "tex": "asphalt",
+   "texScale": 3
+  },
+  {
+   "type": "item",
+   "id": "thecar",
+   "item": "thecar",
+   "pickup": false,
+   "pos": [
+    500.5,
+    0,
+    1.4
+   ],
+   "yaw": 25,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      1.8,
+      0.55,
+      4.2
+     ],
+     "color": "#6a2a24",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.55,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.5,
+      0.5,
+      2.1
+     ],
+     "color": "#6a2a24",
+     "tex": "plastic",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.52,
+      0.3,
+      1.8
+     ],
+     "color": "#1a2028",
+     "pos": [
+      0,
+      1.05,
+      0.1
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      -0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      -1.3860000000000001
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.32,
+      0.32,
+      0.22,
+      8
+     ],
+     "color": "#141416",
+     "rot": [
+      0,
+      0,
+      90
+     ],
+     "pos": [
+      0.86,
+      0.32,
+      1.3860000000000001
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.7,
+      0.5,
+      0.9
+     ],
+     "color": "#6a2a24",
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.75,
+      -1.65
+     ],
+     "rot": [
+      -38,
+      0,
+      4
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      1.6,
+      0.4,
+      0.5
+     ],
+     "color": "#2a1a18",
+     "pos": [
+      0,
+      0.45,
+      -2.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#fff4c0",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.16,
+      0.06
+     ],
+     "color": "#404040",
+     "pos": [
+      -0.6,
+      0.6,
+      -2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.12,
+      0.06
+     ],
+     "color": "#ff3030",
+     "unlit": true,
+     "pos": [
+      -0.6,
+      0.6,
+      2.12
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.06,
+      0.7,
+      1.2
+     ],
+     "color": "#6a2a24",
+     "tex": "plastic",
+     "pos": [
+      -1.35,
+      0.55,
+      0.5
+     ],
+     "rot": [
+      0,
+      62,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.06,
+      0.4,
+      1.0
+     ],
+     "color": "#1a2028",
+     "pos": [
+      -1.35,
+      1.05,
+      0.5
+     ],
+     "rot": [
+      0,
+      62,
+      0
+     ]
+    }
+   ],
+   "name": "the car",
+   "examineAt": [
+    500.5,
+    0.8,
+    1.4
+   ],
+   "examineRadius": 1.6,
+   "examineRange": 6,
+   "examine": [
+    "Stopped. Half on the grass.",
+    "The engine's ticking as it cools. The radio's still on."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.7,
+    1.4,
+    -1.1
+   ],
+   "size": [
+    0.14,
+    2.8,
+    0.14
+   ],
+   "tex": "metal",
+   "rot": [
+    -24,
+    0,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.7,
+    2.75,
+    -1.75
+   ],
+   "size": [
+    0.36,
+    0.2,
+    0.36
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#302820",
+   "rot": [
+    -24,
+    0,
+    0
+   ],
+   "collide": false,
+   "walkable": false,
+   "name": "the lamp post",
+   "examine": "The lamp post. Bent over the bonnet like it's reading the engine."
+  },
+  {
+   "type": "light",
+   "pos": [
+    501.4,
+    0.6,
+    -2.0
+   ],
+   "color": "#fff0c0",
+   "intensity": 0.9,
+   "range": 10,
+   "flicker": "dying"
+  },
+  {
+   "type": "light",
+   "pos": [
+    500.5,
+    1.4,
+    1.4
+   ],
+   "color": "#ffd8a0",
+   "intensity": 0.3,
+   "range": 2.4,
+   "flicker": "dying"
+  },
+  {
+   "type": "mist",
+   "pos": [
+    500.2,
+    1.2,
+    -0.6
+   ],
+   "size": [
+    1.2,
+    1.0,
+    1.2
+   ],
+   "count": 6,
+   "scale": [
+    0.8,
+    1.8
+   ],
+   "alpha": 0.16,
+   "color": "#cfd4d8",
+   "seed": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    502.0,
+    0.01,
+    5.0
+   ],
+   "size": [
+    0.22,
+    0.01,
+    3.4
+   ],
+   "tex": "dark",
+   "rot": [
+    0,
+    25,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    503.79999999999995,
+    0.01,
+    5.0
+   ],
+   "size": [
+    0.22,
+    0.01,
+    3.4
+   ],
+   "tex": "dark",
+   "rot": [
+    0,
+    25,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    503.0,
+    0.01,
+    7.6
+   ],
+   "size": [
+    0.22,
+    0.01,
+    3.4
+   ],
+   "tex": "dark",
+   "rot": [
+    0,
+    22,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    504.79999999999995,
+    0.01,
+    7.6
+   ],
+   "size": [
+    0.22,
+    0.01,
+    3.4
+   ],
+   "tex": "dark",
+   "rot": [
+    0,
+    22,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    504.20000000000005,
+    0.01,
+    10.8
+   ],
+   "size": [
+    0.22,
+    0.01,
+    3.4
+   ],
+   "tex": "dark",
+   "rot": [
+    0,
+    18,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    506.0,
+    0.01,
+    10.8
+   ],
+   "size": [
+    0.22,
+    0.01,
+    3.4
+   ],
+   "tex": "dark",
+   "rot": [
+    0,
+    18,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    506.5,
+    0.45,
+    10.5
+   ],
+   "size": [
+    0.08,
+    0.9,
+    0.08
+   ],
+   "tex": "white",
+   "color": "#d8d4c8",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    507.4,
+    0.15,
+    10.3
+   ],
+   "size": [
+    0.08,
+    0.9,
+    0.08
+   ],
+   "tex": "white",
+   "color": "#d8d4c8",
+   "rot": [
+    0,
+    0,
+    70
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    508.5,
+    0.45,
+    10.1
+   ],
+   "size": [
+    0.08,
+    0.9,
+    0.08
+   ],
+   "tex": "white",
+   "color": "#d8d4c8",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    505.5,
+    0.15,
+    10.6
+   ],
+   "size": [
+    0.08,
+    0.9,
+    0.08
+   ],
+   "tex": "white",
+   "color": "#d8d4c8",
+   "rot": [
+    0,
+    0,
+    -55
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    507.6,
+    0.75,
+    10.4
+   ],
+   "size": [
+    2.6,
+    0.06,
+    0.06
+   ],
+   "tex": "white",
+   "color": "#d8d4c8",
+   "rot": [
+    0,
+    0,
+    14
+   ],
+   "collide": false,
+   "walkable": false,
+   "name": "the fence",
+   "examine": "A fence. We came through it. It hasn't noticed yet."
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.6,
+    0.015,
+    -0.4
+   ],
+   "size": [
+    0.08,
+    0.02,
+    0.06
+   ],
+   "tex": "white",
+   "color": "#c8d8e0",
+   "rot": [
+    0,
+    30,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.1,
+    0.015,
+    0.1
+   ],
+   "size": [
+    0.08,
+    0.02,
+    0.06
+   ],
+   "tex": "white",
+   "color": "#c8d8e0",
+   "rot": [
+    0,
+    17,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    500.2,
+    0.015,
+    -1.2
+   ],
+   "size": [
+    0.08,
+    0.02,
+    0.06
+   ],
+   "tex": "white",
+   "color": "#c8d8e0",
+   "rot": [
+    0,
+    60,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    498.6,
+    0.015,
+    -0.5
+   ],
+   "size": [
+    0.08,
+    0.02,
+    0.06
+   ],
+   "tex": "white",
+   "color": "#c8d8e0",
+   "rot": [
+    0,
+    79,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    501.0,
+    0.015,
+    -1.6
+   ],
+   "size": [
+    0.08,
+    0.02,
+    0.06
+   ],
+   "tex": "white",
+   "color": "#c8d8e0",
+   "rot": [
+    0,
+    46,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    496.8,
+    0,
+    2.6
+   ],
+   "radius": 0.3,
+   "height": 0.04,
+   "tex": "chrome",
+   "sides": 10,
+   "collide": false,
+   "name": "a hubcap",
+   "examine": "A hubcap, face down in the grass. The car's still got four."
+  },
+  {
+   "type": "item",
+   "id": "airfresh2",
+   "item": "airfresh",
+   "pickup": false,
+   "pos": [
+    497.9,
+    0.02,
+    0.6
+   ],
+   "yaw": 40,
+   "name": "the air freshener",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.004,
+      0.14,
+      0.004
+     ],
+     "color": "#202020",
+     "pos": [
+      0,
+      0.07,
+      0
+     ],
+     "rot": [
+      90,
+      0,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.08,
+      0.1,
+      0.006
+     ],
+     "color": "#40a050",
+     "rot": [
+      90,
+      0,
+      0
+     ]
+    }
+   ],
+   "examine": "The cardboard tree. It came out through the windscreen before I did."
+  },
+  {
+   "type": "sign",
+   "pos": [
+    495.5,
+    2.2,
+    -3.0
+   ],
+   "size": [
+    1.8,
+    0.5
+   ],
+   "yaw": 150,
+   "parts": [
+    {
+     "text": "CAMPUS DR",
+     "font": "sans",
+     "color": "#204030"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#e8ead8",
+   "name": "the street sign",
+   "examine": "CAMPUS DR. The post is bent. So was the last one."
+  },
+  {
+   "type": "box",
+   "pos": [
+    495.5,
+    1.0,
+    -3.0
+   ],
+   "size": [
+    0.08,
+    2.0,
+    0.08
+   ],
+   "tex": "metal",
+   "rot": [
+    0,
+    0,
+    12
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    470,
+    4.5,
+    -30
+   ],
+   "size": [
+    18,
+    9,
+    10
+   ],
+   "tex": "brick",
+   "color": "#7a4a3a",
+   "texScale": 3
+  },
+  {
+   "type": "window",
+   "pos": [
+    463.3,
+    1.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    463.3,
+    1.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    465.90000000000003,
+    1.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    465.90000000000003,
+    1.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    468.5,
+    1.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    468.5,
+    1.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    471.1,
+    1.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    471.1,
+    1.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    473.7,
+    1.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    473.7,
+    1.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    476.3,
+    1.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    476.3,
+    1.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    463.3,
+    4.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    463.3,
+    4.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    465.90000000000003,
+    4.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    465.90000000000003,
+    4.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    468.5,
+    4.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    468.5,
+    4.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    471.1,
+    4.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    471.1,
+    4.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    473.7,
+    4.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    473.7,
+    4.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    476.3,
+    4.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    476.3,
+    4.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    463.3,
+    7.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    463.3,
+    7.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    465.90000000000003,
+    7.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    465.90000000000003,
+    7.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    468.5,
+    7.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    468.5,
+    7.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    471.1,
+    7.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    471.1,
+    7.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    473.7,
+    7.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    473.7,
+    7.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    476.3,
+    7.8,
+    -24.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    476.3,
+    7.8,
+    -25.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    528,
+    3.5,
+    -34
+   ],
+   "size": [
+    14,
+    7,
+    12
+   ],
+   "tex": "brick",
+   "color": "#7a4a3a",
+   "texScale": 3
+  },
+  {
+   "type": "window",
+   "pos": [
+    523.3,
+    1.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    523.3,
+    1.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    525.9,
+    1.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    525.9,
+    1.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    528.5,
+    1.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    528.5,
+    1.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    531.0999999999999,
+    1.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    531.0999999999999,
+    1.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    523.3,
+    4.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    523.3,
+    4.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    525.9,
+    4.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    525.9,
+    4.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    528.5,
+    4.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    528.5,
+    4.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    531.0999999999999,
+    4.8,
+    -27.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    531.0999999999999,
+    4.8,
+    -28.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    502,
+    6.0,
+    -52
+   ],
+   "size": [
+    30,
+    12,
+    8
+   ],
+   "tex": "brick",
+   "color": "#7a4a3a",
+   "texScale": 3
+  },
+  {
+   "type": "window",
+   "pos": [
+    489.3,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    489.3,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    491.90000000000003,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    491.90000000000003,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    494.5,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    494.5,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    497.1,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    497.1,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    499.7,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.7,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    502.3,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    502.3,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    504.90000000000003,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    504.90000000000003,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    507.5,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    507.5,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    510.1,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    510.1,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    512.7,
+    1.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    512.7,
+    1.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    489.3,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    489.3,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    491.90000000000003,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    491.90000000000003,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    494.5,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    494.5,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    497.1,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    497.1,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    499.7,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.7,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    502.3,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    502.3,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    504.90000000000003,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    504.90000000000003,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    507.5,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    507.5,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    510.1,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    510.1,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    512.7,
+    4.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    512.7,
+    4.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    489.3,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    489.3,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    491.90000000000003,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    491.90000000000003,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    494.5,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    494.5,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    497.1,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    497.1,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    499.7,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.7,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    502.3,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    502.3,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    504.90000000000003,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    504.90000000000003,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    507.5,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    507.5,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    510.1,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    510.1,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    512.7,
+    7.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    512.7,
+    7.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    489.3,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    489.3,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    491.90000000000003,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    491.90000000000003,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    494.5,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    494.5,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    497.1,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    497.1,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    499.7,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    499.7,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    502.3,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    502.3,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    504.90000000000003,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    504.90000000000003,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    507.5,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    507.5,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    510.1,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    510.1,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    512.7,
+    10.8,
+    -47.95
+   ],
+   "size": [
+    1.2,
+    1.4
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    2
+   ],
+   "frame": "metal",
+   "inside": 1,
+   "collide": false,
+   "frameWidth": 0.06,
+   "glassColor": "#8a9aa0",
+   "opacity": 0.25
+  },
+  {
+   "type": "box",
+   "pos": [
+    512.7,
+    10.8,
+    -48.3
+   ],
+   "size": [
+    1.1,
+    1.3,
+    0.5
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#16181c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    497,
+    0,
+    -8
+   ],
+   "color": "#e0c890",
+   "intensity": 1.0
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    503,
+    0,
+    -20
+   ],
+   "color": "#e0c890",
+   "intensity": 1.0
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    488,
+    0,
+    -17
+   ],
+   "color": "#e0c890",
+   "intensity": 1.0
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    514,
+    0,
+    -30
+   ],
+   "color": "#e0c890",
+   "intensity": 1.0
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    472,
+    0,
+    -17
+   ],
+   "color": "#e0c890",
+   "intensity": 1.0
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    509,
+    0,
+    8
+   ],
+   "color": "#e0c890",
+   "intensity": 1.0
+  },
+  {
+   "type": "tree",
+   "pos": [
+    482,
+    0,
+    -5
+   ],
+   "kind": "round",
+   "size": 1.4
+  },
+  {
+   "type": "tree",
+   "pos": [
+    520,
+    0,
+    -8
+   ],
+   "kind": "round",
+   "size": 1.4
+  },
+  {
+   "type": "tree",
+   "pos": [
+    510,
+    0,
+    -40
+   ],
+   "kind": "round",
+   "size": 1.4
+  },
+  {
+   "type": "tree",
+   "pos": [
+    464,
+    0,
+    -40
+   ],
+   "kind": "round",
+   "size": 1.4
+  },
+  {
+   "type": "tree",
+   "pos": [
+    530,
+    0,
+    6
+   ],
+   "kind": "round",
+   "size": 1.4
+  },
+  {
+   "type": "tree",
+   "pos": [
+    492,
+    0,
+    6
+   ],
+   "kind": "round",
+   "size": 1.4
+  },
+  {
+   "type": "box",
+   "id": "bench",
+   "pos": [
+    508,
+    0.25,
+    -12
+   ],
+   "size": [
+    1.8,
+    0.5,
+    0.5
+   ],
+   "tex": "woodDark",
+   "collide": false,
+   "name": "a bench",
+   "examine": "A bench. A plaque on it with no name."
+  },
+  {
+   "type": "panel",
+   "id": "campusMap",
+   "pos": [
+    497.9,
+    1.6,
+    -9.8
+   ],
+   "size": [
+    1.2,
+    0.9
+   ],
+   "art": "directory",
+   "frameTex": "metal",
+   "name": "the map",
+   "examine": [
+    "A map of the campus. The record store isn't on it.",
+    "YOU ARE HERE. Then, smaller: FOR NOW."
+   ]
+  },
+  {
+   "type": "mist",
+   "pos": [
+    500,
+    0.8,
+    -15
+   ],
+   "size": [
+    80,
+    2,
+    70
+   ],
+   "count": 36,
+   "scale": [
+    5,
+    10
+   ],
+   "alpha": 0.08,
+   "seed": 6
+  },
+  {
+   "type": "character",
+   "id": "dad2",
+   "name": "his father",
+   "look": {
+    "skin": "skin",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#9a948a",
+     "age": 0.8,
+     "seed": 12,
+     "browWeight": 0.7,
+     "browArch": 0.3,
+     "mood": "flat"
+    },
+    "hair": "hairGrey",
+    "top": "tweed",
+    "bottom": "trousers",
+    "glasses": true
+   },
+   "scale": null,
+   "hidden": true,
+   "pos": [
+    499.1,
+    0,
+    -2.6
+   ],
+   "yaw": 150,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "stand",
+    "yaw": 150,
+    "gesture": "handsOnHips",
+    "gazeSide": -1
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "dad",
+        "text": "Look after each other. That's all it is.",
+        "garbled": true
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend2",
+   "name": "my friend",
+   "look": {
+    "skin": "skin",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.35,
+     "seed": 8,
+     "browWeight": 0.6,
+     "browArch": 0.5,
+     "stubble": true,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "coat",
+    "bottom": "trousers"
+   },
+   "scale": null,
+   "hidden": true,
+   "pos": [
+    497.6,
+    0,
+    3.4
+   ],
+   "yaw": 300,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "stand",
+    "yaw": 300,
+    "gesture": "fidget",
+    "gazeSide": -1
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "friend",
+        "text": "We're not staying in Ohio."
+       },
+       {
+        "who": "friend",
+        "text": "We're going back to Chicago tonight."
+       }
+      ],
+      [
+       {
+        "who": "friend",
+        "text": "Good to see you, man. Really."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "kid2",
+   "name": "his little brother",
+   "look": {
+    "skin": "skin",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.05,
+     "seed": 19,
+     "browWeight": 0.4,
+     "browArch": 0.6,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "shirtWhite",
+    "bottom": "trousers",
+    "cap": true,
+    "capTex": "paramedic"
+   },
+   "scale": 0.82,
+   "hidden": true,
+   "pos": [
+    502.6,
+    0,
+    3.6
+   ],
+   "yaw": 230,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "stand",
+    "yaw": 230,
+    "gesture": "armsCrossed",
+    "gazeSide": -1
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "kid",
+        "text": "I'm going to sit in the front on the way back."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "deadbro2",
+   "name": "his brother",
+   "look": {
+    "skin": "skinPale",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#2a221e",
+     "age": 0.22,
+     "seed": 31,
+     "browWeight": 0.5,
+     "browArch": 0.4,
+     "mood": "sad"
+    },
+    "hair": "hairDark",
+    "top": "shirt",
+    "bottom": "trousers"
+   },
+   "scale": null,
+   "hidden": true,
+   "pos": [
+    503.6,
+    0,
+    -1.2
+   ],
+   "yaw": 120,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "stand",
+    "yaw": 120,
+    "gesture": "gaze",
+    "gazeSide": -1
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "deadbro",
+        "text": "Chicago. Tonight."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "student0",
+   "name": "a student",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#4a3222",
+     "age": 0.15,
+     "seed": 413,
+     "browWeight": 0.38,
+     "browArch": 0.92,
+     "mood": "flat"
+    },
+    "hair": "hairBrown",
+    "top": "coat",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    486.1,
+    0,
+    -17.3
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      486.1,
+      -17.3,
+      6,
+      1.5
+     ],
+     [
+      501.0,
+      -14.4,
+      43,
+      1.5
+     ],
+     [
+      489.6,
+      -13.6,
+      141,
+      1.5
+     ]
+    ],
+    "speed": 0.9,
+    "pause": 1.5
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "student0",
+        "text": "Class was cancelled. Everyone's just walking."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "student1",
+   "name": "a student",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#161214",
+     "age": 0.15,
+     "seed": 280,
+     "browWeight": 0.83,
+     "browArch": 0.83,
+     "mood": "flat"
+    },
+    "hair": "hairBlack",
+    "top": "shirt",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    494.9,
+    0,
+    -27.6
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      494.9,
+      -27.6,
+      6,
+      1.5
+     ],
+     [
+      508.9,
+      -8.5,
+      27,
+      1.5
+     ],
+     [
+      508.3,
+      -11.5,
+      202,
+      1.5
+     ]
+    ],
+    "speed": 0.9,
+    "pause": 1.5
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "student1",
+        "text": "Don't go near the dog."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "student2",
+   "name": "a student",
+   "look": {
+    "skin": "skinDeep",
+    "skinColor": "#7a4e34",
+    "face": {
+     "skin": "#7a4e34",
+     "hair": "#161214",
+     "age": 0.15,
+     "seed": 493,
+     "browWeight": 0.57,
+     "browArch": 0.8,
+     "mood": "flat"
+    },
+    "hair": "hairBlack",
+    "top": "tweed",
+    "bottom": "trousers",
+    "hairStyle": "short"
+   },
+   "pos": [
+    507.5,
+    0,
+    -12.9
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      507.5,
+      -12.9,
+      176,
+      1.5
+     ],
+     [
+      512.5,
+      -22.4,
+      102,
+      1.5
+     ],
+     [
+      494.0,
+      -35.4,
+      107,
+      1.5
+     ]
+    ],
+    "speed": 0.9,
+    "pause": 1.5
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "student2",
+        "text": "Are you with them? They said they're leaving."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "student3",
+   "name": "a student",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#4a3222",
+     "age": 0.15,
+     "seed": 177,
+     "browWeight": 0.76,
+     "browArch": 0.21,
+     "mood": "flat"
+    },
+    "hair": "hairBrown",
+    "top": "tweed",
+    "bottom": "black",
+    "hairStyle": "bob"
+   },
+   "pos": [
+    507.7,
+    0,
+    -18.3
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      507.7,
+      -18.3,
+      194,
+      1.5
+     ],
+     [
+      496.2,
+      -20.7,
+      253,
+      1.5
+     ],
+     [
+      494.6,
+      -37.9,
+      35,
+      1.5
+     ]
+    ],
+    "speed": 0.9,
+    "pause": 1.5
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "student3",
+        "text": "Class was cancelled. Everyone's just walking."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "student4",
+   "name": "a student",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#161214",
+     "age": 0.15,
+     "seed": 167,
+     "browWeight": 0.56,
+     "browArch": 0.06,
+     "mood": "flat",
+     "lipstick": "#c04050"
+    },
+    "hair": "hairBlack",
+    "top": "coat",
+    "bottom": "coat",
+    "hairStyle": "long",
+    "skirt": true
+   },
+   "pos": [
+    494.2,
+    0,
+    -27.6
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      494.2,
+      -27.6,
+      61,
+      1.5
+     ],
+     [
+      507.2,
+      -18.2,
+      287,
+      1.5
+     ],
+     [
+      504.7,
+      -36.3,
+      172,
+      1.5
+     ]
+    ],
+    "speed": 0.9,
+    "pause": 1.5
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "student4",
+        "text": "Class was cancelled. Everyone's just walking."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "student5",
+   "name": "a student",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.15,
+     "seed": 619,
+     "browWeight": 0.77,
+     "browArch": 0.63,
+     "mood": "stern"
+    },
+    "hair": "hairDark",
+    "top": "coat",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    504.3,
+    0,
+    -11.4
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      504.3,
+      -11.4,
+      175,
+      1.5
+     ],
+     [
+      501.1,
+      -21.5,
+      16,
+      1.5
+     ],
+     [
+      510.2,
+      -29.1,
+      141,
+      1.5
+     ]
+    ],
+    "speed": 0.9,
+    "pause": 1.5
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "student5",
+        "text": "Are you with them? They said they're leaving."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "student6",
+   "name": "a student",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#161214",
+     "age": 0.15,
+     "seed": 827,
+     "browWeight": 0.79,
+     "browArch": 0.54,
+     "mood": "flat"
+    },
+    "hair": "hairBlack",
+    "top": "corduroy",
+    "bottom": "corduroy",
+    "hairStyle": "up",
+    "skirt": true
+   },
+   "pos": [
+    502.5,
+    0,
+    -28.2
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      502.5,
+      -28.2,
+      189,
+      1.5
+     ],
+     [
+      511.9,
+      -37.5,
+      331,
+      1.5
+     ],
+     [
+      500.9,
+      -11.4,
+      75,
+      1.5
+     ]
+    ],
+    "speed": 0.9,
+    "pause": 1.5
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "student6",
+        "text": "The record store closed. Years ago."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "creature",
+   "id": "dog",
+   "model": "dog",
+   "look": {
+    "muzzle": true
+   },
+   "scale": 1.7,
+   "hidden": true,
+   "pos": [
+    466,
+    0,
+    -22
+   ],
+   "yaw": 90,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "name": "the dog",
+   "examine": [
+    "Its muzzle's broken. It's hanging off.",
+    "It isn't looking at anyone. It's just running."
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "intro",
+   "when": {
+    "start": true
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "One of my friends. I haven't seen him since college."
+      },
+      {
+       "who": "you",
+       "text": "He's come to visit me in Ohio."
+      },
+      {
+       "who": "you",
+       "text": "His father's driving. His father's been dead for years."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lookDad",
+   "when": {
+    "look": {
+     "target": "dad",
+     "within": 3,
+     "angle": 22
+    },
+    "not": "dadTurned"
+   },
+   "do": [
+    {
+     "set": "dadTurned"
+    },
+    {
+     "behavior": {
+      "id": "dad",
+      "name": "sit",
+      "yaw": 180,
+      "facePlayer": false,
+      "seatHeight": 0.44,
+      "turn": true
+     }
+    },
+    {
+     "wait": 0.6
+    },
+    {
+     "say": [
+      {
+       "text": "\u00abHa ha!\u00bb Well now, look at you. Look at the pair of you, grown men.",
+       "garbled": true,
+       "who": "dad"
+      },
+      {
+       "text": "You remember the house on Kedzie? Of course you do. \u00abHa ha ha.\u00bb",
+       "garbled": true,
+       "who": "dad"
+      }
+     ]
+    },
+    {
+     "show": "car1"
+    },
+    {
+     "tween": {
+      "id": "car1",
+      "path": [
+       [
+        -3.4,
+        -0.4,
+        -170
+       ],
+       [
+        -3.2,
+        -0.4,
+        -60
+       ],
+       [
+        -2.4,
+        -0.4,
+        -16
+       ],
+       [
+        -2.3,
+        -0.4,
+        -4
+       ],
+       [
+        -2.6,
+        -0.4,
+        18
+       ]
+      ],
+      "seconds": 5.4,
+      "then": "hide"
+     }
+    },
+    {
+     "focus": {
+      "object": "car1",
+      "seconds": 4.9,
+      "speed": 4
+     }
+    },
+    {
+     "wait": 2.0
+    },
+    {
+     "sfx": "horn"
+    },
+    {
+     "react": {
+      "id": [
+       "friend",
+       "kid",
+       "deadbro"
+      ],
+      "gesture": "brace",
+      "seconds": 4
+     }
+    },
+    {
+     "wait": 1.9
+    },
+    {
+     "swerve": {
+      "amount": 1.0,
+      "seconds": 1.3
+     }
+    },
+    {
+     "wait": 0.5
+    },
+    {
+     "sfx": "carPass"
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "say": [
+      {
+       "who": "friend",
+       "text": "Dad. The road."
+      },
+      {
+       "who": "you",
+       "text": "I can't understand a word he's saying."
+      },
+      {
+       "who": "you",
+       "text": "If I don't look at him, maybe he'll watch the road."
+      }
+     ]
+    },
+    {
+     "behavior": {
+      "id": "dad",
+      "name": "sit",
+      "yaw": 180,
+      "facePlayer": false,
+      "seatHeight": 0.44
+     }
+    }
+   ]
+  },
+  {
+   "id": "lookDad2",
+   "when": {
+    "look": {
+     "target": "dad",
+     "within": 3,
+     "angle": 22
+    },
+    "since": {
+     "flag": "dadTurned",
+     "seconds": 8
+    },
+    "not": "turpitude"
+   },
+   "do": [
+    {
+     "set": "turpitude"
+    },
+    {
+     "behavior": {
+      "id": "dad",
+      "name": "sit",
+      "yaw": 180,
+      "facePlayer": false,
+      "seatHeight": 0.44,
+      "turn": true
+     }
+    },
+    {
+     "wait": 0.5
+    },
+    {
+     "say": [
+      {
+       "text": "The thing about people now, you see, is the \u00abmoral turpitude\u00bb of it all. The \u00abmoral turpitude\u00bb.",
+       "garbled": true,
+       "who": "dad"
+      },
+      {
+       "who": "you",
+       "text": "Moral turpitude."
+      },
+      {
+       "who": "you",
+       "text": "If the church did one thing, it brought some basic morality to some pretty backward Europeans."
+      },
+      {
+       "who": "you",
+       "text": "There was a lot of moral turpitude in the Middle Ages. I've read the Canterbury Tales. I know."
+      },
+      {
+       "who": "you",
+       "text": "I want to tell him that."
+      }
+     ]
+    },
+    {
+     "show": "car2"
+    },
+    {
+     "tween": {
+      "id": "car2",
+      "path": [
+       [
+        3.4,
+        -0.4,
+        -170
+       ],
+       [
+        3.2,
+        -0.4,
+        -60
+       ],
+       [
+        2.4,
+        -0.4,
+        -16
+       ],
+       [
+        2.3,
+        -0.4,
+        -4
+       ],
+       [
+        2.6,
+        -0.4,
+        18
+       ]
+      ],
+      "seconds": 5.4,
+      "then": "hide"
+     }
+    },
+    {
+     "focus": {
+      "object": "car2",
+      "seconds": 4.9,
+      "speed": 4
+     }
+    },
+    {
+     "wait": 2.0
+    },
+    {
+     "sfx": "horn"
+    },
+    {
+     "react": {
+      "id": [
+       "friend",
+       "kid",
+       "deadbro"
+      ],
+      "gesture": "brace",
+      "seconds": 4
+     }
+    },
+    {
+     "wait": 1.9
+    },
+    {
+     "swerve": {
+      "amount": -1.3,
+      "seconds": 1.3
+     }
+    },
+    {
+     "wait": 0.5
+    },
+    {
+     "sfx": "carPass"
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "say": [
+      {
+       "who": "kid",
+       "text": "Dad!"
+      },
+      {
+       "text": "\u00abHa ha ha!\u00bb",
+       "garbled": true,
+       "who": "dad"
+      }
+     ]
+    },
+    {
+     "behavior": {
+      "id": "dad",
+      "name": "sit",
+      "yaw": 180,
+      "facePlayer": false,
+      "seatHeight": 0.44
+     }
+    },
+    {
+     "wait": 1.0
+    },
+    {
+     "show": "car3"
+    },
+    {
+     "tween": {
+      "id": "car3",
+      "path": [
+       [
+        -0.9,
+        -0.4,
+        -190
+       ],
+       [
+        -0.6,
+        -0.4,
+        -70
+       ],
+       [
+        -0.3,
+        -0.4,
+        -16
+       ]
+      ],
+      "seconds": 5.2
+     }
+    },
+    {
+     "focus": {
+      "object": "car3",
+      "seconds": 5.6,
+      "speed": 4
+     }
+    },
+    {
+     "wait": 1.6
+    },
+    {
+     "sfx": "horn"
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "sfx": "horn"
+    },
+    {
+     "react": {
+      "id": [
+       "friend",
+       "kid",
+       "deadbro"
+      ],
+      "gesture": "brace",
+      "seconds": 9
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "kid",
+       "text": "Dad!"
+      },
+      {
+       "who": "friend",
+       "text": "DAD."
+      }
+     ]
+    },
+    {
+     "swerve": {
+      "amount": 1.6,
+      "seconds": 2.0
+     }
+    },
+    {
+     "sfx": "screech"
+    },
+    {
+     "tween": {
+      "id": "car3",
+      "path": [
+       [
+        -0.3,
+        -0.4,
+        -16
+       ],
+       [
+        -2.6,
+        -0.4,
+        -2
+       ],
+       [
+        -3.4,
+        -0.4,
+        20
+       ]
+      ],
+      "seconds": 0.8,
+      "from": "here",
+      "then": "hide"
+     }
+    },
+    {
+     "sfx": "carPass"
+    },
+    {
+     "ride": {
+      "speed": 9,
+      "rate": 1.2
+     }
+    },
+    {
+     "wait": 0.5
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "He's left the road."
+      }
+     ]
+    },
+    {
+     "show": "post"
+    },
+    {
+     "tween": {
+      "id": "post",
+      "path": [
+       [
+        3.0,
+        -0.4,
+        -70
+       ],
+       [
+        1.6,
+        -0.4,
+        -30
+       ],
+       [
+        0.3,
+        -0.4,
+        -2.4
+       ]
+      ],
+      "seconds": 2.2,
+      "ease": "in"
+     }
+    },
+    {
+     "focus": {
+      "object": "post",
+      "seconds": 2.4,
+      "speed": 5
+     }
+    },
+    {
+     "sfx": "thud",
+     "intensity": 0.5
+    },
+    {
+     "swerve": {
+      "amount": -0.7,
+      "seconds": 0.8,
+      "sound": false
+     }
+    },
+    {
+     "wait": 1.2
+    },
+    {
+     "ride": {
+      "speed": 4,
+      "rate": 2.5
+     }
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "sfx": "thud"
+    },
+    {
+     "sfx": "crackle"
+    },
+    {
+     "ride": 0
+    },
+    {
+     "flash": 0.3
+    },
+    {
+     "wait": 0.9
+    },
+    {
+     "teleport": {
+      "pos": [
+       497.2,
+       0,
+       2.2
+      ],
+      "yaw": -62,
+      "flash": 2.4
+     }
+    },
+    {
+     "stand": true
+    },
+    {
+     "set": "campus"
+    },
+    {
+     "hide": "dad"
+    },
+    {
+     "hide": "friend"
+    },
+    {
+     "hide": "kid"
+    },
+    {
+     "hide": "deadbro"
+    },
+    {
+     "hide": "post"
+    },
+    {
+     "show": "dad2"
+    },
+    {
+     "show": "friend2"
+    },
+    {
+     "show": "kid2"
+    },
+    {
+     "show": "deadbro2"
+    },
+    {
+     "ambience": {
+      "wind": 1
+     }
+    },
+    {
+     "wait": 2.0
+    },
+    {
+     "focus": {
+      "object": "thecar",
+      "seconds": 2.6,
+      "speed": 2
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "We came through the fence."
+      },
+      {
+       "who": "you",
+       "text": "The lamp post stopped us."
+      }
+     ]
+    },
+    {
+     "focus": {
+      "id": "friend2",
+      "seconds": 7
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "friend2",
+       "text": "We're not staying in Ohio."
+      },
+      {
+       "who": "kid2",
+       "text": "We're going back to Chicago."
+      },
+      {
+       "who": "friend2",
+       "text": "Tonight."
+      }
+     ]
+    },
+    {
+     "release": true
+    }
+   ]
+  },
+  {
+   "id": "talkTurn",
+   "when": {
+    "flag": "talked:friend",
+    "not": [
+     "dadTurned",
+     "campus"
+    ]
+   },
+   "do": [
+    {
+     "set": "dadTurned"
+    },
+    {
+     "behavior": {
+      "id": "dad",
+      "name": "sit",
+      "yaw": 180,
+      "facePlayer": false,
+      "seatHeight": 0.44,
+      "turn": true
+     }
+    },
+    {
+     "wait": 0.5
+    },
+    {
+     "say": [
+      {
+       "text": "You boys talking about me? \u00abHa ha.\u00bb",
+       "garbled": true,
+       "who": "dad"
+      }
+     ]
+    },
+    {
+     "show": "car1"
+    },
+    {
+     "tween": {
+      "id": "car1",
+      "path": [
+       [
+        -3.4,
+        -0.4,
+        -170
+       ],
+       [
+        -3.2,
+        -0.4,
+        -60
+       ],
+       [
+        -2.4,
+        -0.4,
+        -16
+       ],
+       [
+        -2.3,
+        -0.4,
+        -4
+       ],
+       [
+        -2.6,
+        -0.4,
+        18
+       ]
+      ],
+      "seconds": 5.4,
+      "then": "hide"
+     }
+    },
+    {
+     "focus": {
+      "object": "car1",
+      "seconds": 4.9,
+      "speed": 4
+     }
+    },
+    {
+     "wait": 2.0
+    },
+    {
+     "sfx": "horn"
+    },
+    {
+     "react": {
+      "id": [
+       "friend",
+       "kid",
+       "deadbro"
+      ],
+      "gesture": "brace",
+      "seconds": 4
+     }
+    },
+    {
+     "wait": 1.9
+    },
+    {
+     "swerve": {
+      "amount": 0.9,
+      "seconds": 1.3
+     }
+    },
+    {
+     "wait": 0.5
+    },
+    {
+     "sfx": "carPass"
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "say": [
+      {
+       "who": "friend",
+       "text": "Dad."
+      }
+     ]
+    },
+    {
+     "behavior": {
+      "id": "dad",
+      "name": "sit",
+      "yaw": 180,
+      "facePlayer": false,
+      "seatHeight": 0.44
+     }
+    }
+   ]
+  },
+  {
+   "id": "dogRun",
+   "when": {
+    "flag": "campus",
+    "enter": {
+     "pos": [
+      500,
+      -16
+     ],
+     "radius": 9
+    },
+    "not": "dogRan"
+   },
+   "do": [
+    {
+     "set": "dogRan"
+    },
+    {
+     "show": "dog"
+    },
+    {
+     "sfx": "bark"
+    },
+    {
+     "focus": {
+      "id": "dog",
+      "seconds": 3.5,
+      "speed": 4
+     }
+    },
+    {
+     "behavior": {
+      "id": "dog",
+      "name": "walkTo",
+      "path": [
+       [
+        486,
+        -17
+       ],
+       [
+        498,
+        -15
+       ],
+       [
+        506,
+        -19
+       ],
+       [
+        524,
+        -26
+       ],
+       [
+        540,
+        -30
+       ]
+      ],
+      "speed": 7.5,
+      "then": "hide"
+     }
+    },
+    {
+     "wait": 1.2
+    },
+    {
+     "sfx": "growl"
+    },
+    {
+     "wait": 1.3
+    },
+    {
+     "sfx": "bark"
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "Nobody's with it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kiss",
+   "when": {
+    "flag": "campus",
+    "near": {
+     "id": "dad2",
+     "radius": 2.6
+    },
+    "not": "kissed"
+   },
+   "do": [
+    {
+     "set": "kissed"
+    },
+    {
+     "focus": {
+      "id": "dad2"
+     }
+    },
+    {
+     "behavior": {
+      "id": "dad2",
+      "name": "approach",
+      "distance": 0.9,
+      "speed": 1.0,
+      "then": "stand"
+     }
+    },
+    {
+     "wait": 1.6
+    },
+    {
+     "say": [
+      {
+       "text": "You look after yourself, son. You hear me? \u00abHa.\u00bb",
+       "garbled": true,
+       "who": "dad2"
+      }
+     ]
+    },
+    {
+     "sfx": "kiss"
+    },
+    {
+     "swerve": {
+      "amount": 0.25,
+      "seconds": 0.8,
+      "sound": false
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "He kisses me on the forehead."
+      }
+     ]
+    },
+    {
+     "behavior": {
+      "id": "dad2",
+      "name": "walkTo",
+      "path": [
+       [
+        494,
+        -4
+       ],
+       [
+        484,
+        -12
+       ],
+       [
+        470,
+        -24
+       ]
+      ],
+      "speed": 1.1,
+      "then": "hide"
+     }
+    },
+    {
+     "wait": 2.5
+    },
+    {
+     "release": true
+    },
+    {
+     "ending": {
+      "seconds": 12
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "In real life, his son was killed in a carjacking."
+      },
+      {
+       "who": "you",
+       "text": "He died of sadness a year later."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
