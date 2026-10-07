@@ -11,7 +11,7 @@
 // Rotation conventions (see characters.js): shoulder.x negative raises the
 // arm forward; shoulder.z positive on the left arm (negative on the right)
 // swings it out to the side; elbow.x negative bends the forearm up.
-import * as THREE from '../../vendor/three.module.js?v=a57a173';
+import * as THREE from '../../vendor/three.module.js?v=6782550';
 
 const L = THREE.MathUtils.lerp;
 const clamp = THREE.MathUtils.clamp;

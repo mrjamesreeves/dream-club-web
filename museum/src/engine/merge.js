@@ -1,6 +1,6 @@
 // Combines many small static meshes that share a material into one mesh, so
 // a furnished room is a few dozen draw calls instead of a few thousand.
-import * as THREE from '../../vendor/three.module.js?v=a57a173';
+import * as THREE from '../../vendor/three.module.js?v=6782550';
 
 const ATTRS = ['position', 'normal', 'uv', 'color'];
 

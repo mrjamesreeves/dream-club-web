@@ -1,20 +1,21 @@
-import * as THREE from '../vendor/three.module.js?v=a57a173';
-import { createTextures } from './engine/textures.js?v=a57a173';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=a57a173';
-import { PostPass } from './engine/post.js?v=a57a173';
-import { DreamAudio } from './engine/audio.js?v=a57a173';
-import { Player } from './engine/player.js?v=a57a173';
-import { Dialog } from './engine/dialog.js?v=a57a173';
-import { Inventory } from './engine/inventory.js?v=a57a173';
-import { SceneBuilder } from './scene/build.js?v=a57a173';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=a57a173';
-import { Events } from './scene/events.js?v=a57a173';
-import { disposeTree } from './engine/merge.js?v=a57a173';
-import { assembleMuseum } from './museum.js?v=a57a173';
-import { PBR } from './engine/pbr.js?v=a57a173';
-import { checkPaths } from './engine/pathcheck.js?v=a57a173';
-import { Portrait } from './engine/portrait.js?v=a57a173';
-import { Voice, voiceFor } from './engine/voice.js?v=a57a173';
+import * as THREE from '../vendor/three.module.js?v=6782550';
+import { createTextures } from './engine/textures.js?v=6782550';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=6782550';
+import { PostPass } from './engine/post.js?v=6782550';
+import { DreamAudio } from './engine/audio.js?v=6782550';
+import { Player } from './engine/player.js?v=6782550';
+import { Dialog } from './engine/dialog.js?v=6782550';
+import { Inventory } from './engine/inventory.js?v=6782550';
+import { SceneBuilder } from './scene/build.js?v=6782550';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=6782550';
+import { Events } from './scene/events.js?v=6782550';
+import { disposeTree } from './engine/merge.js?v=6782550';
+import { assembleMuseum } from './museum.js?v=6782550';
+import { PBR } from './engine/pbr.js?v=6782550';
+import { setPBRMode } from './engine/ps1material.js?v=6782550';
+import { checkPaths } from './engine/pathcheck.js?v=6782550';
+import { Portrait } from './engine/portrait.js?v=6782550';
+import { Voice, voiceFor } from './engine/voice.js?v=6782550';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -330,8 +331,25 @@ class Game {
       this.world = null;
     }
     this.env.pointLights.length = 0;
+    setPBRMode(def.render && def.render.pbr);
     const builder = new SceneBuilder({ env: this.env, T: this.T, audio: this.audio, pbr: def.render && def.render.pbr });
     builder.build(def);
+    if (def.render && def.render.pbr) {
+      // Everything built casts and receives shadows, and geometry that carries
+      // a vertex shade gets a material that reads it.
+      const shaded = new Map();
+      builder.group.traverse((m) => {
+        if (!m.isMesh || !m.material || Array.isArray(m.material)) return;
+        const mat = m.material;
+        if (!mat.userData.standard && !mat.isMeshStandardMaterial) return;
+        if (m.geometry.attributes.color && !mat.vertexColors) {
+          let v = shaded.get(mat);
+          if (!v) { v = mat.clone(); v.vertexColors = true; v.uniforms = mat.uniforms; v.userData.standard = true; shaded.set(mat, v); }
+          m.material = v;
+        }
+        if (!mat.transparent) { m.castShadow = true; m.receiveShadow = true; }
+      });
+    }
     this.world = builder;
     this.syncVoiceSwitch();
     this.occluders = null;

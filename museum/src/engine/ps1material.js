@@ -1,6 +1,6 @@
 // PS1-style material: vertex snapping, affine texture mapping, Gouraud lighting
 // (ambient + one directional + up to 4 nearest point lights), per-vertex fog.
-import * as THREE from '../../vendor/three.module.js?v=a57a173';
+import * as THREE from '../../vendor/three.module.js?v=6782550';
 
 export const MAX_POINT_LIGHTS = 4;
 
@@ -160,7 +160,45 @@ export function applyEnvironmentConfig(env, cfg = {}) {
   env.uAffine.value = cfg.affine === false ? 0 : 1;
 }
 
+// While a scene renders physically, every material the builders ask for
+// comes back as a three.js standard material instead (see pbr.js). Things
+// that only make sense in the PS1 shader (billboards, the sky) keep it.
+let PBR_MODE = false;
+const pbrMaps = new Map();
+export function setPBRMode(on) { PBR_MODE = !!on; }
+function pbrMap(map, texScale) {
+  if (!map) return null;
+  const key = `${map.uuid}|${texScale}`;
+  let t = pbrMaps.get(key);
+  if (!t) { t = map.clone(); t.colorSpace = THREE.SRGBColorSpace; if (texScale && texScale !== 1) t.repeat.set(texScale, texScale); t.needsUpdate = true; pbrMaps.set(key, t); }
+  return t;
+}
+function createStandardMaterial(opts) {
+  const common = { map: pbrMap(opts.map, opts.worldUV ? 1 : (opts.texScale ?? 1)), color: new THREE.Color(opts.color || '#ffffff'), fog: true, vertexColors: false };
+  if (opts.transparent) common.transparent = true;
+  if (opts.opacity !== undefined) common.opacity = opts.opacity;
+  if (opts.alphaTest) common.alphaTest = opts.alphaTest;
+  if (opts.side) common.side = opts.side;
+  if (opts.depthWrite !== undefined) common.depthWrite = opts.depthWrite;
+  if (opts.blending) common.blending = opts.blending;
+  const mat = opts.unlit ? new THREE.MeshBasicMaterial(common) : new THREE.MeshStandardMaterial({ ...common, roughness: 0.9, metalness: 0 });
+  // The PS1 code pokes uniforms on its materials (a colour, a scrolling
+  // offset, light slots). Give the standard material the same handles.
+  mat.uniforms = {
+    uColor: { value: mat.color }, uMap: { value: mat.map }, uOpacity: { value: mat.opacity },
+    uUvOffset: { value: mat.map ? mat.map.offset : new THREE.Vector2() }, uTexScale: { value: opts.texScale ?? 1 },
+    uRim: { value: new THREE.Color(opts.rim || '#ffd9a0') }, uRimK: { value: 0 }, uIntensity: { value: 1 },
+    uPointPos: { value: Array.from({ length: MAX_POINT_LIGHTS }, () => new THREE.Vector3()) },
+    uPointColor: { value: Array.from({ length: MAX_POINT_LIGHTS }, () => new THREE.Color(0, 0, 0)) },
+    uPointRange: { value: new Array(MAX_POINT_LIGHTS).fill(0) },
+  };
+  mat.userData.ps1 = false;
+  mat.userData.standard = true;
+  return mat;
+}
+
 export function createPS1Material(env, opts = {}) {
+  if (PBR_MODE && !opts.billboard && opts.fog !== false) return createStandardMaterial(opts);
   const uniforms = {
     uResolution: env.uResolution,
     uJitter: env.uJitter,

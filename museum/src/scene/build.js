@@ -1,17 +1,17 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=a57a173';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=a57a173';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=a57a173';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=a57a173';
-import { mulberry } from '../engine/textures.js?v=a57a173';
-import { AmbientParticles } from '../engine/particles.js?v=a57a173';
-import { makeSignTexture } from '../engine/signs.js?v=a57a173';
-import { PropMethods } from './props.js?v=a57a173';
-import { buildShapes } from '../engine/shapes.js?v=a57a173';
-import { mergeStatic } from '../engine/merge.js?v=a57a173';
-import { bakeWorldUV } from '../engine/pbr.js?v=a57a173';
-import { voiceFor } from '../engine/voice.js?v=a57a173';
+import * as THREE from '../../vendor/three.module.js?v=6782550';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=6782550';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=6782550';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=6782550';
+import { mulberry } from '../engine/textures.js?v=6782550';
+import { AmbientParticles } from '../engine/particles.js?v=6782550';
+import { makeSignTexture } from '../engine/signs.js?v=6782550';
+import { PropMethods } from './props.js?v=6782550';
+import { buildShapes } from '../engine/shapes.js?v=6782550';
+import { mergeStatic } from '../engine/merge.js?v=6782550';
+import { bakeWorldUV } from '../engine/pbr.js?v=6782550';
+import { voiceFor } from '../engine/voice.js?v=6782550';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';
@@ -43,7 +43,6 @@ export class SceneBuilder {
   mat(opts) {
     const { T, env } = this.ctx;
     const map = T[opts.tex] || T.concrete;
-    if (this.pbr) return this.pbrMat(map, opts);
     return createPS1Material(env, { map, texScale: opts.texScale ?? 2, worldUV: opts.worldUV !== false, color: opts.color, unlit: opts.unlit, ...opts.extra });
   }
 
@@ -541,7 +540,7 @@ export class SceneBuilder {
       const hex = '#' + c.getHexString();
       const f = new THREE.Vector3(0, 0, 1).applyAxisAngle(new THREE.Vector3(0, 1, 0), mesh.rotation.y);
       const l = this.addLight({ pos: [o.pos[0] + f.x * 1.2, o.pos[1] - 0.3, o.pos[2] + f.z * 1.2], color: hex, intensity: o.intensity ?? 0.9, range: o.range ?? 7, flicker: o.flicker ? 'neonBad' : 'neon' });
-      if (mat.uniforms) l.emissive.push({ material: mat, base: new THREE.Color(1, 1, 1) });
+      if (mat.userData.ps1) l.emissive.push({ material: mat, base: new THREE.Color(1, 1, 1) });
       this.addHalo([o.pos[0] + f.x * 0.15, o.pos[1], o.pos[2] + f.z * 0.15], hex, Math.max(w, h) * 1.2, l, 0.4);
     }
     return mesh;
@@ -768,7 +767,7 @@ export class SceneBuilder {
     // Static objects get their nearest lights once.
     for (const s of this.staticMaterials) {
       const mats = Array.isArray(s.material) ? s.material : [s.material];
-      for (const m of mats) if (m.uniforms) assignLights(this.ctx.env, m, s.position);
+      for (const m of mats) if (m.userData.ps1) assignLights(this.ctx.env, m, s.position);
     }
     // Lights are known now, so meshes lit alike can be merged. The sky and
     // particles are added after this, so they stay separate.
