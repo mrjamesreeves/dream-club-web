@@ -21,8 +21,8 @@
       "destination": "/symbol-share.html"
     },
     {
-      "source": "/dreams",
-      "destination": "/dreams.html"
+      "source": "/areax",
+      "destination": "/areax.html"
     },
     {
       "source": "/play/:scene([a-z0-9-]+)",

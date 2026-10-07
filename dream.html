@@ -113,7 +113,7 @@
 <body>
   <iframe id="game" allow="pointer-lock; fullscreen; autoplay" title="Dream Game"></iframe>
 
-  <a class="exit" href="/dreams" id="exit">&larr;&nbsp; Dreams</a>
+  <a class="exit" href="/areax" id="exit">&larr;&nbsp; Area X</a>
 
   <div class="how" id="how">
     <div class="card" id="card">
@@ -129,7 +129,7 @@
       // where there are no rewrites).
       var m = location.pathname.match(/^\/play\/([a-z0-9-]+)\/?$/);
       var scene = (m && m[1]) || new URLSearchParams(location.search).get('scene');
-      if (!scene) { location.replace('/dreams'); return; }
+      if (!scene) { location.replace('/areax'); return; }
 
       document.getElementById('game').src = '/play/?scene=' + encodeURIComponent(scene);
 
