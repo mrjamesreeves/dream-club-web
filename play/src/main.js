@@ -1,19 +1,19 @@
-import * as THREE from '../vendor/three.module.js?v=9fadaff';
-import { createTextures } from './engine/textures.js?v=9fadaff';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=9fadaff';
-import { PostPass } from './engine/post.js?v=9fadaff';
-import { DreamAudio } from './engine/audio.js?v=9fadaff';
-import { Player } from './engine/player.js?v=9fadaff';
-import { Dialog } from './engine/dialog.js?v=9fadaff';
-import { Inventory } from './engine/inventory.js?v=9fadaff';
-import { SceneBuilder } from './scene/build.js?v=9fadaff';
-import { updateBehavior } from './scene/behaviors.js?v=9fadaff';
-import { Events } from './scene/events.js?v=9fadaff';
-import { disposeTree } from './engine/merge.js?v=9fadaff';
-import { assembleMuseum } from './museum.js?v=9fadaff';
-import { checkPaths } from './engine/pathcheck.js?v=9fadaff';
-import { Portrait } from './engine/portrait.js?v=9fadaff';
-import { Voice } from './engine/voice.js?v=9fadaff';
+import * as THREE from '../vendor/three.module.js?v=395730b';
+import { createTextures } from './engine/textures.js?v=395730b';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=395730b';
+import { PostPass } from './engine/post.js?v=395730b';
+import { DreamAudio } from './engine/audio.js?v=395730b';
+import { Player } from './engine/player.js?v=395730b';
+import { Dialog } from './engine/dialog.js?v=395730b';
+import { Inventory } from './engine/inventory.js?v=395730b';
+import { SceneBuilder } from './scene/build.js?v=395730b';
+import { updateBehavior } from './scene/behaviors.js?v=395730b';
+import { Events } from './scene/events.js?v=395730b';
+import { disposeTree } from './engine/merge.js?v=395730b';
+import { assembleMuseum } from './museum.js?v=395730b';
+import { checkPaths } from './engine/pathcheck.js?v=395730b';
+import { Portrait } from './engine/portrait.js?v=395730b';
+import { Voice } from './engine/voice.js?v=395730b';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -66,7 +66,10 @@ class Game {
     this.watchAudio();
     this.dialog = new Dialog(this.audio);
     this.dialog.voice = new Voice(this.audio);
-    this.dialog.voiceOf = (who) => { const e = this.entities.get(who); return e ? e.voice : null; };
+    // A voice style for everyone, to hear the dreams one way or another:
+    // ?voice=letters on the URL, or window.DREAM_VOICE_STYLE from a build.
+    this.voiceStyle = window.DREAM_VOICE_STYLE || new URLSearchParams(location.search).get('voice') || null;
+    this.dialog.voiceOf = (who) => { const e = this.entities.get(who); if (!e) return null; return this.voiceStyle ? { ...e.voice, style: this.voiceStyle } : e.voice; };
     this.player = new Player(this.camera, this.canvas);
     this.post = new PostPass(this.renderer, { height: 216 });
     this.inventory = new Inventory(this.T, this.env.uResolution);

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Dream Game</title>
+  <link rel="icon" href="/img/icon.png">
+  <link rel="apple-touch-icon" href="/img/icon.png">
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@500;600&display=swap">
+
+  <style>
+    /* A thin Dream Club frame round Olly's game. The game itself is the
+       vendored build at /play/ and is never edited here, so a sync can't
+       undo any of this. */
+    :root {
+      --bright: #C2CCBA;
+      --muted: #7F847B;
+      --serif: "ibm-plex-serif", Georgia, serif;
+      --sans: "Source Sans 3", "ibm-plex-sans", -apple-system, sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; background: #000; overflow: hidden; }
+    iframe {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      border: 0;
+      background: #000;
+    }
+
+    /* The way out, kept small and in the one corner the game leaves alone
+       (its slots sit top-right, its hint top-centre, its dialogue low). */
+    .exit {
+      position: fixed;
+      top: max(12px, env(safe-area-inset-top));
+      left: max(12px, env(safe-area-inset-left));
+      z-index: 2;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--bright);
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 9px 13px 9px 11px;
+      border-radius: 999px;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
+    .exit:hover { opacity: 1; }
+
+    /* One card, once: how to move. It fades on its own, or on a click. */
+    .how {
+      position: fixed;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      /* Low on the screen: the game paints the dream's title across the
+         centre for its first seconds, and the two shouldn't fight. */
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: max(9vh, env(safe-area-inset-bottom));
+      pointer-events: none;
+      transition: opacity 0.9s ease;
+    }
+    .how.gone { opacity: 0; }
+    .how .card {
+      pointer-events: auto;
+      cursor: pointer;
+      max-width: 340px;
+      margin: 24px;
+      padding: 26px 30px 24px;
+      background: rgba(0, 0, 0, 0.82);
+      border-radius: 6px;
+      text-align: center;
+    }
+    .how .eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .how p {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--bright);
+    }
+    .how p + p { margin-top: 10px; }
+    .how b { font-family: var(--sans); font-weight: 600; letter-spacing: 1px; color: #fff; }
+    .how .go {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="game" allow="pointer-lock; fullscreen; autoplay" title="Dream Game"></iframe>
+
+  <a class="exit" href="/dreams" id="exit">&larr;&nbsp; Dreams</a>
+
+  <div class="how" id="how">
+    <div class="card" id="card">
+      <p class="eyebrow" id="eyebrow">Area X</p>
+      <div id="howText"></div>
+      <p class="go" id="go">Click to begin</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // /play/<id> in production; ?scene=<id> works too (and locally,
+      // where there are no rewrites).
+      var m = location.pathname.match(/^\/play\/([a-z0-9-]+)\/?$/);
+      var scene = (m && m[1]) || new URLSearchParams(location.search).get('scene');
+      if (!scene) { location.replace('/dreams'); return; }
+
+      document.getElementById('game').src = '/play/?scene=' + encodeURIComponent(scene);
+
+      // The title, from the same list the menu uses.
+      fetch('/play/manifest.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (dreams) {
+        var d = dreams.find(function (x) { return x.id === scene; });
+        if (d) document.title = d.title + ' — Dream Game';
+      }).catch(function () {});
+
+      var touch = window.matchMedia('(pointer: coarse)').matches;
+      document.getElementById('howText').innerHTML = touch
+        ? '<p>Drag the <b>left</b> half of the screen to walk, the <b>right</b> half to look.</p><p><b>Tap</b> to talk or go on.</p>'
+        : '<p><b>Arrow keys</b> or <b>W A S D</b> to walk, <b>mouse</b> to look.</p><p><b>E</b> to talk or go on. <b>Esc</b> frees the mouse.</p>';
+      document.getElementById('go').textContent = touch ? 'Tap to begin' : 'Click to begin';
+
+      var how = document.getElementById('how');
+      function dismiss() { how.classList.add('gone'); setTimeout(function () { how.remove(); }, 1000); }
+      document.getElementById('card').addEventListener('click', dismiss);
+      setTimeout(dismiss, 9000);
+    })();
+  </script>
+</body>
+</html>

@@ -41,6 +41,22 @@ python3 "$SRC/tools/build_artifact.py" "$OUT" "$STAMP"
 find "$OUT" -maxdepth 1 -name '*.html' ! -name 'index.html' -delete
 printf '%s\n' "$STAMP" > "$OUT/VERSION"
 
+# The menu at /dreams reads this: the dreams in play order, with titles.
+python3 - "$OUT" <<'PY'
+import json, os, sys
+out = sys.argv[1]
+order = json.load(open(os.path.join(out, 'scenes', 'index.json')))
+items = []
+for sid in order:
+    try:
+        title = json.load(open(os.path.join(out, 'scenes', f'{sid}.json'))).get('title', sid)
+    except Exception:
+        title = sid
+    items.append({'id': sid, 'title': title})
+json.dump(items, open(os.path.join(out, 'manifest.json'), 'w'), indent=1)
+print('manifest:', len(items), 'dreams')
+PY
+
 if [ "$MODE" = "--build" ]; then
   echo "built play/ at $STAMP (nothing committed)"
   exit 0

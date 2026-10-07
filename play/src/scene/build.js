@@ -1,16 +1,16 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=9fadaff';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=9fadaff';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=9fadaff';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=9fadaff';
-import { mulberry } from '../engine/textures.js?v=9fadaff';
-import { AmbientParticles } from '../engine/particles.js?v=9fadaff';
-import { makeSignTexture } from '../engine/signs.js?v=9fadaff';
-import { PropMethods } from './props.js?v=9fadaff';
-import { buildShapes } from '../engine/shapes.js?v=9fadaff';
-import { mergeStatic } from '../engine/merge.js?v=9fadaff';
-import { voiceFor } from '../engine/voice.js?v=9fadaff';
+import * as THREE from '../../vendor/three.module.js?v=395730b';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=395730b';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=395730b';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=395730b';
+import { mulberry } from '../engine/textures.js?v=395730b';
+import { AmbientParticles } from '../engine/particles.js?v=395730b';
+import { makeSignTexture } from '../engine/signs.js?v=395730b';
+import { PropMethods } from './props.js?v=395730b';
+import { buildShapes } from '../engine/shapes.js?v=395730b';
+import { mergeStatic } from '../engine/merge.js?v=395730b';
+import { voiceFor } from '../engine/voice.js?v=395730b';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';

@@ -19,6 +19,14 @@
     {
       "source": "/s/:slug",
       "destination": "/symbol-share.html"
+    },
+    {
+      "source": "/dreams",
+      "destination": "/dreams.html"
+    },
+    {
+      "source": "/play/:scene([a-z0-9-]+)",
+      "destination": "/dream.html"
     }
   ],
   "headers": [
@@ -50,11 +58,6 @@
     {
       "source": "/play",
       "destination": "/play/",
-      "permanent": false
-    },
-    {
-      "source": "/play/:scene([a-z0-9-]+)",
-      "destination": "/play/?scene=:scene",
       "permanent": false
     }
   ]

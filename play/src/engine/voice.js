@@ -4,7 +4,7 @@
 //   mumble   syllables of the line, synthesized: a buzzing source shaped by
 //            formant filters for the vowel, a burst of noise for the
 //            consonant in front (the Banjo-Kazooie, Animal Crossing manner)
-//   letters  one short tone per letter, pitched by the letter
+//   letters  one clean chirp per letter, each letter on a note of its own
 //   speech   the browser's own text to speech, pitched and paced to match
 // The lines are not meant to be understood from the sound; the words are
 // on the screen. The voice says who is talking and how they feel.
@@ -114,9 +114,10 @@ export class Voice {
     if (!v) return 0;
     if (v.style === 'speech') return this.speakReal(text, v);
     if (!this.ready) return 0;
+    if (v.style === 'letters') return this.speakLetters(text, v);
     const ctx = this.audio.ctx, t0 = ctx.currentTime + 0.02;
     const vol = (v.volume ?? 1) * 0.75;
-    const syls = v.style === 'letters' ? this.letterSyllables(text, v) : syllabify(text, v.speed);
+    const syls = syllabify(text, v.speed);
     if (!syls.length) return 0;
 
     // Source: a buzz, rasped a little, with a slow wobble.
@@ -197,26 +198,64 @@ export class Voice {
     return end - ctx.currentTime;
   }
 
-  // One tone per letter: the vowel sound of the nearest vowel, pitched by
-  // the letter itself, so a word always sounds the same.
-  letterSyllables(text, v) {
-    const out = [];
-    const base = 1 / ((v.speed ?? 8) * 2.4);
+  // One chirp per letter, in the Animal Crossing manner: each letter has a
+  // note of its own, so a word always sings the same tune; a clean tone,
+  // quick, a little above the character's pitch. Vowels ring, consonants
+  // click or hiss, and the line runs at about the typewriter's pace.
+  speakLetters(text, v) {
+    const ctx = this.audio.ctx, t0 = ctx.currentTime + 0.02;
+    const vol = (v.volume ?? 1) * 0.55;
+    const base = (v.pitch ?? 140) * 1.3, size = v.size ?? 1, melody = v.melody ?? 0.5;
+    const step = 1 / ((v.speed ?? 8) * 2.6);
+    const osc = ctx.createOscillator(); osc.type = 'square';
+    const lfo = ctx.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 6; const lfoGain = ctx.createGain(); lfoGain.gain.value = 3 + (v.wobble ?? 0) * 25; lfo.connect(lfoGain); lfoGain.connect(osc.detune);
+    const tone = ctx.createGain(); tone.gain.value = 0;
+    const mouth = ctx.createBiquadFilter(); mouth.type = 'bandpass'; mouth.Q.value = 2.2;
+    const body = ctx.createBiquadFilter(); body.type = 'lowpass'; body.frequency.value = 3200 / size; body.Q.value = 0.8;
+    const out = ctx.createGain(); out.gain.value = vol;
+    osc.connect(tone); tone.connect(mouth); mouth.connect(body); body.connect(out);
+    if ((v.nasal ?? 0) > 0.01) { const nf = ctx.createBiquadFilter(); nf.type = 'lowpass'; nf.frequency.value = 400; const ng = ctx.createGain(); ng.gain.value = 0.5 * v.nasal; tone.connect(nf); nf.connect(ng); ng.connect(out); }
+    const noise = ctx.createBufferSource(); noise.buffer = this.audio.noise; noise.loop = true;
+    const hiss = ctx.createBiquadFilter(); hiss.type = 'bandpass'; hiss.frequency.value = 4200 / size; hiss.Q.value = 1.5;
+    const hissGain = ctx.createGain(); hissGain.gain.value = 0;
+    noise.connect(hiss); hiss.connect(hissGain); hissGain.connect(out);
+    out.connect(this.audio.master);
+    const semis = (n) => Math.pow(2, n / 12);
+    // Each letter's note: spread across an octave, fixed per letter.
+    const NOTE = {}; 'etaoinshrdlucmfwypvbgkjqxz'.split('').forEach((c, i) => { NOTE[c] = ((i * 5) % 12) - 6; });
     const letters = String(text).toLowerCase();
-    let lastVowel = 'a';
+    let t = t0, lastVowel = 'a', sentenceStart = t0, count = 0;
     for (let i = 0; i < letters.length; i++) {
       const c = letters[i];
-      if (/[aeiouy]/.test(c)) lastVowel = c;
       if (!/[a-z]/.test(c)) {
-        if (out.length && /[.!?]/.test(c)) { out[out.length - 1].gap += base * 5; out[out.length - 1].stop = true; out[out.length - 1].question = c === '?'; out[out.length - 1].last = true; }
-        else if (out.length && c === ',') out[out.length - 1].gap += base * 3;
-        else if (out.length && c === ' ') out[out.length - 1].gap += base * 1.2;
+        if (c === ' ') t += step * 1.2;
+        else if (/[,;:]/.test(c)) t += step * 3;
+        else if (/[.!?]/.test(c)) { t += step * 5; sentenceStart = t; count = 0; }
         continue;
       }
-      const code = c.charCodeAt(0) - 97;
-      out.push({ text: c, onset: /[sfhzv]/.test(c) ? 'f' : /[ptkbdg]/.test(c) ? 'p' : '', vowel: lastVowel, dur: base * 0.85, gap: base * 0.15, accent: ((code * 7) % 12 - 6) * 0.25, word: 0, last: false });
+      const vowel = /[aeiouy]/.test(c);
+      if (vowel) lastVowel = c;
+      const question = /\?/.test(letters.slice(i, letters.indexOf(' ', i) < 0 ? undefined : letters.indexOf(' ', i) + 1));
+      const f0 = base * semis((NOTE[c] ?? 0) * (0.35 + melody * 0.5) - count * 0.08 * melody + (question ? 2.5 : 0));
+      const dur = step * (vowel ? 0.9 : 0.55);
+      if (/[sfhzvxc]/.test(c) && !vowel) {
+        hissGain.gain.setValueAtTime(0.0001, t); hissGain.gain.exponentialRampToValueAtTime(0.18, t + 0.004); hissGain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      } else {
+        osc.frequency.setValueAtTime(f0, t);
+        mouth.frequency.setValueAtTime((VOWELS[lastVowel] || VOWELS.a)[vowel ? 0 : 1] * 1.1 / size, t);
+        tone.gain.setValueAtTime(0.0001, t);
+        tone.gain.exponentialRampToValueAtTime(vowel ? 1 : 0.6, t + 0.005);
+        tone.gain.setValueAtTime(vowel ? 1 : 0.6, t + dur * 0.6);
+        tone.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      }
+      t += step; count++;
     }
-    return out;
+    osc.start(t0); lfo.start(t0); noise.start(t0);
+    const end = t + 0.1;
+    osc.stop(end); lfo.stop(end); noise.stop(end);
+    this.current = { gains: [tone, hissGain, out], nodes: [osc, lfo, noise], timer: 0 };
+    this.until = end;
+    return end - ctx.currentTime;
   }
 
   // The browser's own speech, pitched and paced from the same numbers.

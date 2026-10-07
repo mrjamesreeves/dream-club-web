@@ -2,14 +2,14 @@
 // one of their lines, tune the numbers, copy the result into the generator.
 // The head in the stage is the character's own, mouth moving while the
 // voice goes. Laid out for a phone first.
-import * as THREE from '../vendor/three.module.js?v=9fadaff';
-import { createEnvironment, createPS1Material, assignLightsToObject, applyEnvironmentConfig } from './engine/ps1material.js?v=9fadaff';
-import { createTextures } from './engine/textures.js?v=9fadaff';
-import { PostPass } from './engine/post.js?v=9fadaff';
-import { buildHumanoid } from './scene/characters.js?v=9fadaff';
-import { createLight, updateLights } from './engine/lights.js?v=9fadaff';
-import { DreamAudio } from './engine/audio.js?v=9fadaff';
-import { Voice, voiceFor, VOICE_FIELDS } from './engine/voice.js?v=9fadaff';
+import * as THREE from '../vendor/three.module.js?v=395730b';
+import { createEnvironment, createPS1Material, assignLightsToObject, applyEnvironmentConfig } from './engine/ps1material.js?v=395730b';
+import { createTextures } from './engine/textures.js?v=395730b';
+import { PostPass } from './engine/post.js?v=395730b';
+import { buildHumanoid } from './scene/characters.js?v=395730b';
+import { createLight, updateLights } from './engine/lights.js?v=395730b';
+import { DreamAudio } from './engine/audio.js?v=395730b';
+import { Voice, voiceFor, VOICE_FIELDS } from './engine/voice.js?v=395730b';
 
 const $ = (id) => document.getElementById(id);
 const VERSION = window.DREAM_VERSION || '';

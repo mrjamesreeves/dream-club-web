@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Dream Game — Area X</title>
+  <meta name="description" content="Walk into a dream. Twelve dreams from the Area X circle, built by hand.">
+  <link rel="icon" href="/img/icon.png">
+  <link rel="apple-touch-icon" href="/img/icon.png">
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap">
+
+  <style>
+    :root {
+      /* The Club's tints: this is a circle's room. */
+      --bright: #C2CCBA;
+      --muted: #7F847B;
+      --body: #ccc;
+      --serif: "ibm-plex-serif", Georgia, serif;
+      --sans: "Source Sans 3", "ibm-plex-sans", -apple-system, sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: var(--body);
+      font-family: var(--sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      padding: 64px 24px 96px;
+    }
+    main { max-width: 560px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 4.2px;
+      text-transform: uppercase;
+      line-height: 1.3;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .lede {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--bright);
+      max-width: 34em;
+      margin-bottom: 44px;
+    }
+
+    ol { list-style: none; }
+    li a {
+      display: grid;
+      grid-template-columns: 2.2em 1fr;
+      align-items: baseline;
+      gap: 6px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      color: var(--bright);
+      transition: color 0.15s ease;
+    }
+    li:last-child a { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    li a:hover { color: #fff; }
+    .n {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .t {
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 2.25px;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .how {
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-top: 40px;
+    }
+    .how b { color: var(--bright); font-weight: 400; }
+
+    footer {
+      margin-top: 64px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--bright); text-decoration: none; }
+    footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .dark { font-family: var(--serif); color: var(--muted); font-style: italic; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Area X</p>
+    <h1>Dream Game</h1>
+    <p class="lede">Twelve dreams from the circle, built by hand. Pick one and walk in.</p>
+
+    <ol id="dreams"><li class="dark">The hall is dark&hellip;</li></ol>
+
+    <p class="how" id="how"></p>
+
+    <footer><a href="/">thedream.club</a></footer>
+  </main>
+
+  <script>
+    (async function () {
+      var list = document.getElementById('dreams');
+      try {
+        var res = await fetch('/play/manifest.json', { cache: 'no-cache' });
+        var dreams = await res.json();
+        list.innerHTML = '';
+        dreams.forEach(function (d, i) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '/play/' + d.id;
+          var n = document.createElement('span'); n.className = 'n'; n.textContent = String(i + 1);
+          var t = document.createElement('span'); t.className = 't'; t.textContent = d.title;
+          a.appendChild(n); a.appendChild(t); li.appendChild(a); list.appendChild(li);
+        });
+      } catch (e) {
+        list.innerHTML = '<li class="dark">The hall is dark. Try again in a moment.</li>';
+      }
+      var touch = window.matchMedia('(pointer: coarse)').matches;
+      document.getElementById('how').innerHTML = touch
+        ? 'On a phone: <b>drag the left half</b> of the screen to walk, <b>the right half</b> to look, and <b>tap</b> to talk or go on. A dream ends by fading to white.'
+        : '<b>Arrow keys</b> or <b>W A S D</b> to walk, <b>mouse</b> to look, <b>E</b> to talk or go on, <b>Esc</b> to free the mouse. A dream ends by fading to white.';
+    })();
+  </script>
+  <!-- analytics: page views + referrers only, no cookies -->
+  <script defer src="https://numbers.jamesreeves.co/numbers.js" data-site="dream"></script>
+</body>
+</html>
