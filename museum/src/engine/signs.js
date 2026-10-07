@@ -1,6 +1,6 @@
 // Neon sign textures: words from two signs spliced together, each half in its
 // own typeface and colour, drawn small so the letters stay chunky.
-import * as THREE from '../../vendor/three.module.js?v=6b6dcd0';
+import * as THREE from '../../vendor/three.module.js?v=31477ec';
 
 const FONTS = {
   sans: 'bold 30px "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif',

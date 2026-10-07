@@ -3,9 +3,9 @@
 // forehead, closed at the crown, with one small texture: the face photograph
 // (or painted face) projected flat onto the front and stretched round to the
 // ears, hair and skin painted on the back half. Around 180 triangles.
-import * as THREE from '../../vendor/three.module.js?v=6b6dcd0';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=6b6dcd0';
-import { headAtlas } from '../engine/faces.js?v=6b6dcd0';
+import * as THREE from '../../vendor/three.module.js?v=31477ec';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=31477ec';
+import { headAtlas } from '../engine/faces.js?v=31477ec';
 
 // Rings from chin to crown: height (head centre at 0), half width, depth in
 // front of centre, depth behind. The head is 0.25 tall, 0.21 wide, 0.22 deep.

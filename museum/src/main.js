@@ -1,19 +1,19 @@
-import * as THREE from '../vendor/three.module.js?v=6b6dcd0';
-import { createTextures } from './engine/textures.js?v=6b6dcd0';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=6b6dcd0';
-import { PostPass } from './engine/post.js?v=6b6dcd0';
-import { DreamAudio } from './engine/audio.js?v=6b6dcd0';
-import { Player } from './engine/player.js?v=6b6dcd0';
-import { Dialog } from './engine/dialog.js?v=6b6dcd0';
-import { Inventory } from './engine/inventory.js?v=6b6dcd0';
-import { SceneBuilder } from './scene/build.js?v=6b6dcd0';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=6b6dcd0';
-import { Events } from './scene/events.js?v=6b6dcd0';
-import { disposeTree } from './engine/merge.js?v=6b6dcd0';
-import { assembleMuseum } from './museum.js?v=6b6dcd0';
-import { checkPaths } from './engine/pathcheck.js?v=6b6dcd0';
-import { Portrait } from './engine/portrait.js?v=6b6dcd0';
-import { Voice, voiceFor } from './engine/voice.js?v=6b6dcd0';
+import * as THREE from '../vendor/three.module.js?v=31477ec';
+import { createTextures } from './engine/textures.js?v=31477ec';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=31477ec';
+import { PostPass } from './engine/post.js?v=31477ec';
+import { DreamAudio } from './engine/audio.js?v=31477ec';
+import { Player } from './engine/player.js?v=31477ec';
+import { Dialog } from './engine/dialog.js?v=31477ec';
+import { Inventory } from './engine/inventory.js?v=31477ec';
+import { SceneBuilder } from './scene/build.js?v=31477ec';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=31477ec';
+import { Events } from './scene/events.js?v=31477ec';
+import { disposeTree } from './engine/merge.js?v=31477ec';
+import { assembleMuseum } from './museum.js?v=31477ec';
+import { checkPaths } from './engine/pathcheck.js?v=31477ec';
+import { Portrait } from './engine/portrait.js?v=31477ec';
+import { Voice, voiceFor } from './engine/voice.js?v=31477ec';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -1226,7 +1226,7 @@ class Game {
     const dt = Math.min(0.05, (now - this.lastFrame) / 1000);
     this.lastFrame = now;
     if (this.world && !this.contextLost) this.update(dt);
-    const inv = this.started && !this.hub;
+    const inv = this.started && !this.hub && !(this.def && this.def.noInventory);
     if (!this.contextLost && this.world) { this.inventory.shown = inv; this.updatePortrait(dt); }
     if (this.world && !this.contextLost) this.renderMirrors();
     this.post.render(this.scene, this.camera, this.time, inv ? this.inventory : null, this.world && !this.contextLost ? this.portrait : null);

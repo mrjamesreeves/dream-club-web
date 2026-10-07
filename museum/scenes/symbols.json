@@ -1,0 +1,5300 @@
+{
+ "name": "symbols",
+ "title": "MUSEUM OF SYMBOLS",
+ "hall": 40,
+ "ceiling": 9,
+ "noInventory": true,
+ "environment": {
+  "fogColor": "#07080b",
+  "ambient": "#121216",
+  "skyColor": "#15161a",
+  "sunDir": [
+   0.2,
+   0.9,
+   0.3
+  ],
+  "sunColor": "#1a1a20",
+  "fogNear": 8,
+  "fogFar": 90,
+  "fogHeight": 0.4,
+  "fogHeightRange": 8,
+  "fogHeightStrength": 0.2,
+  "jitter": 1
+ },
+ "sky": {
+  "top": "#000000",
+  "horizon": "#000000",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 260,
+   "alpha": 0.32,
+   "color": "#b0a890",
+   "box": [
+    36,
+    8,
+    36
+   ]
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "indoor": [
+  [
+   -21.0,
+   -21.0,
+   21.0,
+   21.0
+  ]
+ ],
+ "player": {
+  "pos": [
+   0,
+   0,
+   4.5
+  ],
+  "yaw": 0,
+  "speed": 2.6
+ },
+ "ambience": [
+  {
+   "sound": "hum",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.6,
+   "gain": 0.3
+  },
+  {
+   "sound": "wind",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.4,
+   "gain": 0.2
+  }
+ ],
+ "names": {
+  "museum": "MUSEUM",
+  "cruise ship": "CRUISE SHIP",
+  "crowd": "CROWD",
+  "animals": "ANIMALS",
+  "dead parents": "DEAD PARENTS",
+  "father": "FATHER",
+  "witness": "WITNESS",
+  "women": "WOMEN",
+  "reverb": "REVERB",
+  "television": "TELEVISION",
+  "teeth": "TEETH",
+  "airplane": "AIRPLANE",
+  "fire": "FIRE",
+  "screen": "SCREEN",
+  "technology": "TECHNOLOGY",
+  "death": "DEATH",
+  "art": "ART",
+  "love": "LOVE",
+  "travel": "TRAVEL",
+  "airport": "AIRPORT",
+  "anima": "ANIMA",
+  "artificial intelligence": "ARTIFICIAL INTELLIGENCE",
+  "baroque": "BAROQUE",
+  "beast": "BEAST",
+  "birth": "BIRTH",
+  "body": "BODY",
+  "body horror": "BODY HORROR",
+  "border": "BORDER",
+  "cameras": "CAMERAS",
+  "cattle": "CATTLE",
+  "child": "CHILD",
+  "childhood": "CHILDHOOD",
+  "conductor": "CONDUCTOR",
+  "costume": "COSTUME",
+  "crocodile": "CROCODILE",
+  "crossing": "CROSSING",
+  "debt": "DEBT",
+  "dirt": "DIRT",
+  "disease": "DISEASE",
+  "doctor": "DOCTOR",
+  "dogs": "DOGS",
+  "driving": "DRIVING",
+  "face": "FACE",
+  "film": "FILM",
+  "flight": "FLIGHT",
+  "food": "FOOD",
+  "game": "GAME",
+  "giant": "GIANT",
+  "god": "GOD",
+  "guilt": "GUILT",
+  "hammers": "HAMMERS",
+  "house": "HOUSE",
+  "illness": "ILLNESS",
+  "journey": "JOURNEY",
+  "knife": "KNIFE",
+  "library": "LIBRARY",
+  "luggage": "LUGGAGE",
+  "map": "MAP",
+  "meat": "MEAT",
+  "men": "MEN",
+  "mirror": "MIRROR",
+  "monsters": "MONSTERS",
+  "painting": "PAINTING",
+  "pajamas": "PAJAMAS",
+  "parking garage": "PARKING GARAGE",
+  "poison": "POISON",
+  "pregnancy": "PREGNANCY",
+  "price": "PRICE",
+  "pursuit": "PURSUIT",
+  "room": "ROOM",
+  "sandwiches": "SANDWICHES",
+  "scientist": "SCIENTIST",
+  "sea": "SEA",
+  "sex": "SEX",
+  "shark": "SHARK",
+  "silo": "SILO",
+  "table": "TABLE",
+  "tape": "TAPE",
+  "theater": "THEATER",
+  "time": "TIME",
+  "toilet": "TOILET",
+  "train": "TRAIN",
+  "vessel": "VESSEL",
+  "vomit": "VOMIT",
+  "water": "WATER",
+  "womb": "WOMB",
+  "writing": "WRITING",
+  "journal": "THE JOURNAL"
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    40,
+    40
+   ],
+   "tex": "parquet",
+   "texScale": 2,
+   "shade": 0.55,
+   "seg": 6,
+   "surface": "wood"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.5,
+    -20.0
+   ],
+   "size": [
+    41,
+    9,
+    1
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.5,
+    20.0
+   ],
+   "size": [
+    41,
+    9,
+    1
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.0,
+    4.5,
+    0
+   ],
+   "size": [
+    1,
+    9,
+    41
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    20.0,
+    4.5,
+    0
+   ],
+   "size": [
+    1,
+    9,
+    41
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    9.1,
+    0
+   ],
+   "size": [
+    41,
+    0.2,
+    41
+   ],
+   "tex": "ceiling",
+   "texScale": 4,
+   "shade": 0.25,
+   "collide": false,
+   "walkable": false,
+   "seg": 8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    8.6,
+    -19.4
+   ],
+   "size": [
+    40,
+    0.8,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.5,
+    -19.4
+   ],
+   "size": [
+    40,
+    1.0,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    8.6,
+    19.4
+   ],
+   "size": [
+    40,
+    0.8,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.5,
+    19.4
+   ],
+   "size": [
+    40,
+    1.0,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.4,
+    8.6,
+    0
+   ],
+   "size": [
+    0.5,
+    0.8,
+    40
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.4,
+    0.5,
+    0
+   ],
+   "size": [
+    0.5,
+    1.0,
+    40
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    19.4,
+    8.6,
+    0
+   ],
+   "size": [
+    0.5,
+    0.8,
+    40
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    19.4,
+    0.5,
+    0
+   ],
+   "size": [
+    0.5,
+    1.0,
+    40
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -7,
+    0,
+    -7
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7,
+    0.2,
+    -7
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7,
+    8.75,
+    -7
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -7,
+    0,
+    7
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7,
+    0.2,
+    7
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7,
+    8.75,
+    7
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    7,
+    0,
+    -7
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    7,
+    0.2,
+    -7
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7,
+    8.75,
+    -7
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    7,
+    0,
+    7
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    7,
+    0.2,
+    7
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    7,
+    8.75,
+    7
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -14,
+    0,
+    -14
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -14,
+    0.2,
+    -14
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -14,
+    8.75,
+    -14
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -14,
+    0,
+    14
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -14,
+    0.2,
+    14
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -14,
+    8.75,
+    14
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    14,
+    0,
+    -14
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    0.2,
+    -14
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    8.75,
+    -14
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    14,
+    0,
+    14
+   ],
+   "radius": 0.5,
+   "height": 9,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    0.2,
+    14
+   ],
+   "size": [
+    1.5,
+    0.4,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    14,
+    8.75,
+    14
+   ],
+   "size": [
+    1.5,
+    0.5,
+    1.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    14,
+    7.5,
+    14
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -14,
+    7.5,
+    14
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    14,
+    7.5,
+    -14
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -14,
+    7.5,
+    -14
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    7.5,
+    14
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    7.5,
+    -14
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    14,
+    7.5,
+    0
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -14,
+    7.5,
+    0
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 24,
+   "flicker": "soft"
+  },
+  {
+   "type": "sign",
+   "pos": [
+    0.0,
+    7.0,
+    -19.44
+   ],
+   "size": [
+    10,
+    2.5
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#b4ada2",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PLACES",
+     "font": "light",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -5.0,
+    0.15,
+    -16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "museum",
+   "pos": [
+    -5.0,
+    1.4000000000000001,
+    -16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "museum",
+   "verb": "read",
+   "examineAt": [
+    -5.0,
+    1.6,
+    -16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "museum",
+     "text": "Vast silent halls where your past is archived behind glass."
+    },
+    {
+     "who": "museum",
+     "text": "Museums in dreams house the self's accumulated evidence——what has been preserved, labeled, kept behind glass."
+    },
+    {
+     "who": "museum",
+     "text": "In older oneiric literature they align with the memory palace, that Renaissance mnemonic architecture where knowledge lives in rooms."
+    },
+    {
+     "who": "museum",
+     "text": "Folklore rarely touches museums directly, but temples of relics carry the same logic: the sacred object removed from use."
+    },
+    {
+     "who": "museum",
+     "text": "Three appearances suggests the dreamer is circling something classified——not lost, merely catalogued and unreachable."
+    },
+    {
+     "who": "museum",
+     "text": "Dreamed 3 times: DIRT PAINT (Mar 2026), CHAMPAGNE CONFESSION (Jul 2026), CROCODILE EYE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -5.0,
+    1.9,
+    -16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "MUSEUM",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:museum",
+   "pos": [
+    -5.0,
+    9,
+    -16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    5.0,
+    0.15,
+    -16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "cruise ship",
+   "pos": [
+    5.0,
+    1.4000000000000001,
+    -16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "cruise ship",
+   "verb": "read",
+   "examineAt": [
+    5.0,
+    1.6,
+    -16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "cruise ship",
+     "text": "A vast floating world adrift, where something lurks below the decks."
+    },
+    {
+     "who": "cruise ship",
+     "text": "The cruise ship carries scale and suspension: a city placed on water, going somewhere slowly."
+    },
+    {
+     "who": "cruise ship",
+     "text": "In older maritime lore the great vessel belongs to liminal crossings, the space between departure and arrival where ordinary time does not apply."
+    },
+    {
+     "who": "cruise ship",
+     "text": "Dream literature notes it as a floating world with its own rules."
+    },
+    {
+     "who": "cruise ship",
+     "text": "Its recurrence may be assembling a question about captivity inside pleasure, or momentum without real choice."
+    },
+    {
+     "who": "cruise ship",
+     "text": "Dreamed twice: OCEANIC DETERRITORIAL DRIFT (Apr 2026), THE COSTUME BENEATH (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    5.0,
+    1.9,
+    -16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CRUISE SHIP",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:cruise ship",
+   "pos": [
+    5.0,
+    9,
+    -16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "sign",
+   "pos": [
+    19.44,
+    7.0,
+    0.0
+   ],
+   "size": [
+    10,
+    2.5
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#b4ada2",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PEOPLE",
+     "font": "light",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    16.6,
+    0.15,
+    -10.714285714285715
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "crowd",
+   "pos": [
+    16.6,
+    1.4000000000000001,
+    -10.714285714285715
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "crowd",
+   "verb": "read",
+   "examineAt": [
+    16.3,
+    1.6,
+    -10.714285714285715
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "crowd",
+     "text": "Faceless masses press close, indifferent or suddenly, terrifyingly aware of you."
+    },
+    {
+     "who": "crowd",
+     "text": "The crowd in dreams carries the weight of the self dissolved. Folklore names it a test: to enter the crowd is to lose the thread of one's own name."
+    },
+    {
+     "who": "crowd",
+     "text": "Jung called it the shadow of belonging, the pull toward the collective that threatens the individual. Five appearances suggest something is pressing."
+    },
+    {
+     "who": "crowd",
+     "text": "The individual stands at an edge."
+    },
+    {
+     "who": "crowd",
+     "text": "Dreamed 5 times: THE FAILING MASTER (Mar 2026), CHAMPAGNE CONFESSION (Jul 2026), THE COMMUNAL PURGE (Aug 2026), THE COSTUME BENEATH (Aug 2026), and 1 more."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    16.330000000000002,
+    1.9,
+    -10.714285714285715
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CROWD",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:crowd",
+   "pos": [
+    16.6,
+    9,
+    -10.714285714285715
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    16.6,
+    0.15,
+    -6.428571428571429
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "animals",
+   "pos": [
+    16.6,
+    1.4000000000000001,
+    -6.428571428571429
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "animals",
+   "verb": "read",
+   "examineAt": [
+    16.3,
+    1.6,
+    -6.428571428571429
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "animals",
+     "text": "They watch you knowingly, speak without words, or lead you somewhere necessary."
+    },
+    {
+     "who": "animals",
+     "text": "Animals in dream literature carry the instinctual life, the parts of the self that predate language."
+    },
+    {
+     "who": "animals",
+     "text": "Folklore assigns them as messengers, guides, or omens, each species freighted with specific meaning."
+    },
+    {
+     "who": "animals",
+     "text": "Jung called them shadows of the body's own knowing."
+    },
+    {
+     "who": "animals",
+     "text": "Three appearances suggest a pattern forming, something below the threshold of conscious thought pressing upward, asking to be recognized."
+    },
+    {
+     "who": "animals",
+     "text": "Dreamed 3 times: HAMMERHEAD (Jan 2026), HUNDREDS OF DOGS (Aug 2026), CROCODILE EYE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    16.330000000000002,
+    1.9,
+    -6.428571428571429
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "ANIMALS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:animals",
+   "pos": [
+    16.6,
+    9,
+    -6.428571428571429
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    16.6,
+    0.15,
+    -2.1428571428571423
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "dead parents",
+   "pos": [
+    16.6,
+    1.4000000000000001,
+    -2.1428571428571423
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "dead parents",
+   "verb": "read",
+   "examineAt": [
+    16.3,
+    1.6,
+    -2.1428571428571423
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "dead parents",
+     "text": "They return calm or urgent, carrying messages the waking world forgot."
+    },
+    {
+     "who": "dead parents",
+     "text": "Dreamed 3 times: PARKING GARAGE FATHER (Jan 2026), OCEANIC DETERRITORIAL DRIFT (Apr 2026), HUNDREDS OF DOGS (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    16.330000000000002,
+    1.9,
+    -2.1428571428571423
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DEAD PARENTS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:dead parents",
+   "pos": [
+    16.6,
+    9,
+    -2.1428571428571423
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    16.6,
+    0.15,
+    2.1428571428571423
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "father",
+   "pos": [
+    16.6,
+    1.4000000000000001,
+    2.1428571428571423
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "father",
+   "verb": "read",
+   "examineAt": [
+    16.3,
+    1.6,
+    2.1428571428571423
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "father",
+     "text": "He stands distant or towering, silent with everything he never said."
+    },
+    {
+     "who": "father",
+     "text": "Dreamed twice: PARKING GARAGE FATHER (Jan 2026), ENDLESS REBOOT FAILURE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    16.330000000000002,
+    1.9,
+    2.1428571428571423
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "FATHER",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:father",
+   "pos": [
+    16.6,
+    9,
+    2.1428571428571423
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    16.6,
+    0.15,
+    6.428571428571427
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "witness",
+   "pos": [
+    16.6,
+    1.4000000000000001,
+    6.428571428571427
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "witness",
+   "verb": "read",
+   "examineAt": [
+    16.3,
+    1.6,
+    6.428571428571427
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "witness",
+     "text": "Someone watches from the edge, neither helping nor leaving."
+    },
+    {
+     "who": "witness",
+     "text": "Dreamed twice: BABY FACE (Aug 2026), THE VACATED BOOTH (Sep 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    16.330000000000002,
+    1.9,
+    6.428571428571427
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "WITNESS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:witness",
+   "pos": [
+    16.6,
+    9,
+    6.428571428571427
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    16.6,
+    0.15,
+    10.714285714285715
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "women",
+   "pos": [
+    16.6,
+    1.4000000000000001,
+    10.714285714285715
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "women",
+   "verb": "read",
+   "examineAt": [
+    16.3,
+    1.6,
+    10.714285714285715
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "women",
+     "text": "They appear as guides, strangers, or mirrors of something unresolved in you."
+    },
+    {
+     "who": "women",
+     "text": "Dreamed twice: THE VACUUM LADY (Jan 2026), BABY FACE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    16.330000000000002,
+    1.9,
+    10.714285714285715
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "WOMEN",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:women",
+   "pos": [
+    16.6,
+    9,
+    10.714285714285715
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "sign",
+   "pos": [
+    0.0,
+    7.0,
+    19.44
+   ],
+   "size": [
+    10,
+    2.5
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#b4ada2",
+   "backing": false,
+   "parts": [
+    {
+     "text": "THINGS",
+     "font": "light",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    11.25,
+    0.15,
+    16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "reverb",
+   "pos": [
+    11.25,
+    1.4000000000000001,
+    16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "reverb",
+   "verb": "read",
+   "examineAt": [
+    11.25,
+    1.6,
+    16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "reverb",
+     "text": "Your voice or a sound echoes endlessly through hollow dreamspace."
+    },
+    {
+     "who": "reverb",
+     "text": "Reverb in dreams—sound that outlasts its source, that fills a space after the source has gone—tends to carry the residue of something said or done whose consequences have not finished arriving."
+    },
+    {
+     "who": "reverb",
+     "text": "In acoustic mythology, echo belonged to the dead and the lovesick; in dream literature, distorted repetition signals the unconscious testing whether a message has landed."
+    },
+    {
+     "who": "reverb",
+     "text": "Ten appearances suggests not a warning but an accumulating pressure: the original event still ringing."
+    },
+    {
+     "who": "reverb",
+     "text": "Dreamed 10 times: TANDOORI PERFUME FINGER (Jan 2026), PARKING GARAGE FATHER (Jan 2026), THE VACUUM LADY (Jan 2026), HAMMERHEAD (Jan 2026), and 6 more."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    11.25,
+    1.9,
+    16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "REVERB",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:reverb",
+   "pos": [
+    11.25,
+    9,
+    16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.5,
+    0.15,
+    16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "television",
+   "pos": [
+    7.5,
+    1.4000000000000001,
+    16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "television",
+   "verb": "read",
+   "examineAt": [
+    7.5,
+    1.6,
+    16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "television",
+     "text": "The screen shows something meant only for you, urgent and flickering."
+    },
+    {
+     "who": "television",
+     "text": "The television in dreams carries older associations than its invention warrants—it maps onto the oracle, the scrying mirror, the eye that sees without being seen."
+    },
+    {
+     "who": "television",
+     "text": "Dream literature links screens to passive reception of truths the waking mind refuses to generate on its own."
+    },
+    {
+     "who": "television",
+     "text": "When it recurs four times, something is broadcasting: unintegrated knowledge, staged memory, or a version of the self performing for an audience that may not exist."
+    },
+    {
+     "who": "television",
+     "text": "Dreamed 4 times: TANDOORI PERFUME FINGER (Jan 2026), DEVIL DISHWASHER (Jan 2026), ENDLESS REBOOT FAILURE (Aug 2026), CURSED VHS (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    7.5,
+    1.9,
+    16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TELEVISION",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:television",
+   "pos": [
+    7.5,
+    9,
+    16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.75,
+    0.15,
+    16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "teeth",
+   "pos": [
+    3.75,
+    1.4000000000000001,
+    16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "teeth",
+   "verb": "read",
+   "examineAt": [
+    3.75,
+    1.6,
+    16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "teeth",
+     "text": "They loosen, crumble, or fall into your palm without warning."
+    },
+    {
+     "who": "teeth",
+     "text": "Dreamed 3 times: THE FAILING MASTER (Mar 2026), KOREAN AIRPORT TEETH (Aug 2026), CROCODILE EYE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    3.75,
+    1.9,
+    16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TEETH",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:teeth",
+   "pos": [
+    3.75,
+    9,
+    16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    0.15,
+    16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "airplane",
+   "pos": [
+    0.0,
+    1.4000000000000001,
+    16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "airplane",
+   "verb": "read",
+   "examineAt": [
+    0.0,
+    1.6,
+    16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "airplane",
+     "text": "You rise or plummet through sky, trusting nothing but thin metal."
+    },
+    {
+     "who": "airplane",
+     "text": "Dreamed twice: THE COSTUME BENEATH (Aug 2026), KOREAN AIRPORT TEETH (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    0.0,
+    1.9,
+    16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "AIRPLANE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:airplane",
+   "pos": [
+    0.0,
+    9,
+    16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.75,
+    0.15,
+    16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "fire",
+   "pos": [
+    -3.75,
+    1.4000000000000001,
+    16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "fire",
+   "verb": "read",
+   "examineAt": [
+    -3.75,
+    1.6,
+    16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "fire",
+     "text": "It spreads with terrible beauty, consuming what you meant to save."
+    },
+    {
+     "who": "fire",
+     "text": "Dreamed twice: HAMMERHEAD (Jan 2026), LIBRARY BIRD BAG (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -3.75,
+    1.9,
+    16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "FIRE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:fire",
+   "pos": [
+    -3.75,
+    9,
+    16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.5,
+    0.15,
+    16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "screen",
+   "pos": [
+    -7.5,
+    1.4000000000000001,
+    16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "screen",
+   "verb": "read",
+   "examineAt": [
+    -7.5,
+    1.6,
+    16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "screen",
+     "text": "You watch yourself from behind glass, present and unreachable at once."
+    },
+    {
+     "who": "screen",
+     "text": "Dreamed twice: ENDLESS REBOOT FAILURE (Aug 2026), CROCODILE EYE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -7.5,
+    1.9,
+    16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "SCREEN",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:screen",
+   "pos": [
+    -7.5,
+    9,
+    16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.25,
+    0.15,
+    16.6
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "technology",
+   "pos": [
+    -11.25,
+    1.4000000000000001,
+    16.6
+   ],
+   "size": [
+    1.5,
+    2.2,
+    0.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "technology",
+   "verb": "read",
+   "examineAt": [
+    -11.25,
+    1.6,
+    16.3
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "technology",
+     "text": "Devices fail at the crucial moment, or reveal something they should not."
+    },
+    {
+     "who": "technology",
+     "text": "Dreamed twice: THE FAILING MASTER (Mar 2026), ENDLESS REBOOT FAILURE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -11.25,
+    1.9,
+    16.330000000000002
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TECHNOLOGY",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:technology",
+   "pos": [
+    -11.25,
+    9,
+    16.6
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -19.44,
+    7.0,
+    0.0
+   ],
+   "size": [
+    10,
+    2.5
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#b4ada2",
+   "backing": false,
+   "parts": [
+    {
+     "text": "IDEAS",
+     "font": "light",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -16.6,
+    0.15,
+    9.0
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "death",
+   "pos": [
+    -16.6,
+    1.4000000000000001,
+    9.0
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "death",
+   "verb": "read",
+   "examineAt": [
+    -16.3,
+    1.6,
+    9.0
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "death",
+     "text": "It hovers at the edge, rarely arriving, always reminding you it will."
+    },
+    {
+     "who": "death",
+     "text": "Dreamed 6 times: TANDOORI PERFUME FINGER (Jan 2026), BORROWED TIME GRIEF (Jul 2026), CHAMPAGNE CONFESSION (Jul 2026), HUNDREDS OF DOGS (Aug 2026), and 2 more."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -16.330000000000002,
+    1.9,
+    9.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DEATH",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:death",
+   "pos": [
+    -16.6,
+    9,
+    9.0
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    -16.6,
+    0.15,
+    3.0
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "art",
+   "pos": [
+    -16.6,
+    1.4000000000000001,
+    3.0
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "art",
+   "verb": "read",
+   "examineAt": [
+    -16.3,
+    1.6,
+    3.0
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "art",
+     "text": "Creative force surfaces as unfinished work or strange beauty you cannot name."
+    },
+    {
+     "who": "art",
+     "text": "Dreamed 4 times: DEVIL DISHWASHER (Jan 2026), DIRT PAINT (Mar 2026), BAROQUE SKY ASSEMBLAGE (Apr 2026), CROCODILE EYE (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -16.330000000000002,
+    1.9,
+    3.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "ART",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:art",
+   "pos": [
+    -16.6,
+    9,
+    3.0
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    -16.6,
+    0.15,
+    -3.0
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "love",
+   "pos": [
+    -16.6,
+    1.4000000000000001,
+    -3.0
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "love",
+   "verb": "read",
+   "examineAt": [
+    -16.3,
+    1.6,
+    -3.0
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "love",
+     "text": "It fills the dream like light, then vanishes before you can hold it."
+    },
+    {
+     "who": "love",
+     "text": "Dreamed 3 times: BORROWED TIME GRIEF (Jul 2026), THIRTY YEARS OF MONSTERS (Jul 2026), CURSED VHS (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -16.330000000000002,
+    1.9,
+    -3.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "LOVE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:love",
+   "pos": [
+    -16.6,
+    9,
+    -3.0
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "box",
+   "pos": [
+    -16.6,
+    0.15,
+    -9.0
+   ],
+   "size": [
+    2.2,
+    0.3,
+    2.2
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.85,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "travel",
+   "pos": [
+    -16.6,
+    1.4000000000000001,
+    -9.0
+   ],
+   "size": [
+    0.5,
+    2.2,
+    1.5
+   ],
+   "tex": "marble",
+   "texScale": 1,
+   "shade": 0.7,
+   "walkable": false,
+   "name": "travel",
+   "verb": "read",
+   "examineAt": [
+    -16.3,
+    1.6,
+    -9.0
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "travel",
+     "text": "Endless movement toward a destination that keeps shifting just ahead."
+    },
+    {
+     "who": "travel",
+     "text": "Dreamed 3 times: OCEANIC DETERRITORIAL DRIFT (Apr 2026), THE COSTUME BENEATH (Aug 2026), KOREAN AIRPORT TEETH (Aug 2026)."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -16.330000000000002,
+    1.9,
+    -9.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#e0dacd",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TRAVEL",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ]
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:travel",
+   "pos": [
+    -16.6,
+    9,
+    -9.0
+   ],
+   "drop": 5.4,
+   "intensity": 1.9,
+   "range": 7.5,
+   "color": "#ffd9a0",
+   "glowSize": 0.9,
+   "glowStrength": 0.45
+  },
+  {
+   "type": "sign",
+   "id": "f:airport",
+   "pos": [
+    -13.333333333333334,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "AIRPORT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "airport",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "airport",
+     "text": "Dreamed once in KOREAN AIRPORT TEETH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:anima",
+   "pos": [
+    -11.666666666666666,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "ANIMA",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "anima",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "anima",
+     "text": "Dreamed once in THE VACUUM LADY. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:artificial intelligence",
+   "pos": [
+    -10.0,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    2.6,
+    0.65
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "ARTIFICIAL INTELLIGENCE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "artificial intelligence",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "artificial intelligence",
+     "text": "Dreamed once in THE FAILING MASTER. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:baroque",
+   "pos": [
+    -8.333333333333332,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BAROQUE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "baroque",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "baroque",
+     "text": "Dreamed once in BAROQUE SKY ASSEMBLAGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:beast",
+   "pos": [
+    -6.666666666666666,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BEAST",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "beast",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "beast",
+     "text": "Dreamed once in CROCODILE EYE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:birth",
+   "pos": [
+    -5.0,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BIRTH",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "birth",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "birth",
+     "text": "Dreamed once in BABY FACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:body",
+   "pos": [
+    -3.333333333333334,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BODY",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "body",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "body",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:body horror",
+   "pos": [
+    -1.666666666666666,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    2.04,
+    0.51
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BODY HORROR",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "body horror",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "body horror",
+     "text": "Dreamed once in THE GAME. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:border",
+   "pos": [
+    0.0,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BORDER",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "border",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "border",
+     "text": "Dreamed once in LIBRARY BIRD BAG. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:cameras",
+   "pos": [
+    1.6666666666666679,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CAMERAS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "cameras",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "cameras",
+     "text": "Dreamed once in KOREAN AIRPORT TEETH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:cattle",
+   "pos": [
+    3.333333333333332,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CATTLE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "cattle",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "cattle",
+     "text": "Dreamed once in THE MEAT PLACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:child",
+   "pos": [
+    5.0,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CHILD",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "child",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "child",
+     "text": "Dreamed once in MOUNTAIN MAN. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:childhood",
+   "pos": [
+    6.666666666666668,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.7600000000000002,
+    0.44000000000000006
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CHILDHOOD",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "childhood",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "childhood",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:conductor",
+   "pos": [
+    8.333333333333332,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    1.7600000000000002,
+    0.44000000000000006
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CONDUCTOR",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "conductor",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "conductor",
+     "text": "Dreamed once in OLLY THE CONDUCTOR. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:costume",
+   "pos": [
+    10.0,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "COSTUME",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "costume",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "costume",
+     "text": "Dreamed once in THE COSTUME BENEATH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:crocodile",
+   "pos": [
+    11.666666666666668,
+    1.85,
+    -19.44
+   ],
+   "size": [
+    1.7600000000000002,
+    0.44000000000000006
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CROCODILE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "crocodile",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "crocodile",
+     "text": "Dreamed once in CROCODILE EYE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:crossing",
+   "pos": [
+    13.333333333333332,
+    1.25,
+    -19.44
+   ],
+   "size": [
+    1.62,
+    0.405
+   ],
+   "yaw": 0,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CROSSING",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "crossing",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "crossing",
+     "text": "Dreamed once in OLLY THE CONDUCTOR. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:debt",
+   "pos": [
+    19.44,
+    1.25,
+    -13.333333333333334
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DEBT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "debt",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "debt",
+     "text": "Dreamed once in THIRTY YEARS OF MONSTERS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:dirt",
+   "pos": [
+    19.44,
+    1.85,
+    -11.666666666666666
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DIRT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "dirt",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "dirt",
+     "text": "Dreamed once in DIRT PAINT. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:disease",
+   "pos": [
+    19.44,
+    1.25,
+    -10.0
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DISEASE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "disease",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "disease",
+     "text": "Dreamed once in DEVIL DISHWASHER. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:doctor",
+   "pos": [
+    19.44,
+    1.85,
+    -8.333333333333332
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DOCTOR",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "doctor",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "doctor",
+     "text": "Dreamed once in DEVIL DISHWASHER. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:dogs",
+   "pos": [
+    19.44,
+    1.25,
+    -6.666666666666666
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DOGS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "dogs",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "dogs",
+     "text": "Dreamed once in HUNDREDS OF DOGS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:driving",
+   "pos": [
+    19.44,
+    1.85,
+    -5.0
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "DRIVING",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "driving",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "driving",
+     "text": "Dreamed once in HUNDREDS OF DOGS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:face",
+   "pos": [
+    19.44,
+    1.25,
+    -3.333333333333334
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "FACE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "face",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "face",
+     "text": "Dreamed once in BABY FACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:film",
+   "pos": [
+    19.44,
+    1.85,
+    -1.666666666666666
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "FILM",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "film",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "film",
+     "text": "Dreamed once in CURSED VHS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:flight",
+   "pos": [
+    19.44,
+    1.25,
+    0.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "FLIGHT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "flight",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "flight",
+     "text": "Dreamed once in KOREAN AIRPORT TEETH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:food",
+   "pos": [
+    19.44,
+    1.85,
+    1.6666666666666679
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "FOOD",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "food",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "food",
+     "text": "Dreamed once in A SANDWICH STORY. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:game",
+   "pos": [
+    19.44,
+    1.25,
+    3.333333333333332
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "GAME",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "game",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "game",
+     "text": "Dreamed once in THE GAME. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:giant",
+   "pos": [
+    19.44,
+    1.85,
+    5.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "GIANT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "giant",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "giant",
+     "text": "Dreamed once in MOUNTAIN MAN. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:god",
+   "pos": [
+    19.44,
+    1.25,
+    6.666666666666668
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "GOD",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "god",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "god",
+     "text": "Dreamed once in DEVIL DISHWASHER. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:guilt",
+   "pos": [
+    19.44,
+    1.85,
+    8.333333333333332
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "GUILT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "guilt",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "guilt",
+     "text": "Dreamed once in CHAMPAGNE CONFESSION. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:hammers",
+   "pos": [
+    19.44,
+    1.25,
+    10.0
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "HAMMERS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "hammers",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "hammers",
+     "text": "Dreamed once in HAMMERHEAD. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:house",
+   "pos": [
+    19.44,
+    1.85,
+    11.666666666666668
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "HOUSE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "house",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "house",
+     "text": "Dreamed once in THE GAME. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:illness",
+   "pos": [
+    19.44,
+    1.25,
+    13.333333333333332
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 270,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "ILLNESS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "illness",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "illness",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:journey",
+   "pos": [
+    13.333333333333334,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "JOURNEY",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "journey",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "journey",
+     "text": "Dreamed once in THE COSTUME BENEATH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:knife",
+   "pos": [
+    11.666666666666666,
+    1.85,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "KNIFE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "knife",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "knife",
+     "text": "Dreamed once in CROCODILE EYE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:library",
+   "pos": [
+    10.0,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "LIBRARY",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "library",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "library",
+     "text": "Dreamed once in A SANDWICH STORY. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:luggage",
+   "pos": [
+    8.333333333333332,
+    1.85,
+    19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "LUGGAGE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "luggage",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "luggage",
+     "text": "Dreamed once in THE COSTUME BENEATH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:map",
+   "pos": [
+    6.666666666666666,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "MAP",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "map",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "map",
+     "text": "Dreamed once in CROCODILE EYE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:meat",
+   "pos": [
+    5.0,
+    1.85,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "MEAT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "meat",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "meat",
+     "text": "Dreamed once in TANDOORI PERFUME FINGER. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:men",
+   "pos": [
+    3.333333333333334,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "MEN",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "men",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "men",
+     "text": "Dreamed once in MOUNTAIN MAN. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:mirror",
+   "pos": [
+    1.666666666666666,
+    1.85,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "MIRROR",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "mirror",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "mirror",
+     "text": "Dreamed once in THIRTY YEARS OF MONSTERS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:monsters",
+   "pos": [
+    0.0,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.62,
+    0.405
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "MONSTERS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "monsters",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "monsters",
+     "text": "Dreamed once in THIRTY YEARS OF MONSTERS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:painting",
+   "pos": [
+    -1.6666666666666679,
+    1.85,
+    19.44
+   ],
+   "size": [
+    1.62,
+    0.405
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PAINTING",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "painting",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "painting",
+     "text": "Dreamed once in DEVIL DISHWASHER. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:pajamas",
+   "pos": [
+    -3.333333333333332,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PAJAMAS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "pajamas",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "pajamas",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:parking garage",
+   "pos": [
+    -5.0,
+    1.85,
+    19.44
+   ],
+   "size": [
+    2.46,
+    0.615
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PARKING GARAGE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "parking garage",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "parking garage",
+     "text": "Dreamed once in PARKING GARAGE FATHER. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:poison",
+   "pos": [
+    -6.666666666666668,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "POISON",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "poison",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "poison",
+     "text": "Dreamed once in THE VACATED BOOTH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:pregnancy",
+   "pos": [
+    -8.333333333333332,
+    1.85,
+    19.44
+   ],
+   "size": [
+    1.7600000000000002,
+    0.44000000000000006
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PREGNANCY",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "pregnancy",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "pregnancy",
+     "text": "Dreamed once in BABY FACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:price",
+   "pos": [
+    -10.0,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PRICE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "price",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "price",
+     "text": "Dreamed once in A SANDWICH STORY. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:pursuit",
+   "pos": [
+    -11.666666666666668,
+    1.85,
+    19.44
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "PURSUIT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "pursuit",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "pursuit",
+     "text": "Dreamed once in BORROWED TIME GRIEF. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:room",
+   "pos": [
+    -13.333333333333332,
+    1.25,
+    19.44
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 180,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "ROOM",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "room",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "room",
+     "text": "Dreamed once in THE VACUUM LADY. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:sandwiches",
+   "pos": [
+    -19.44,
+    1.25,
+    13.333333333333334
+   ],
+   "size": [
+    1.9000000000000001,
+    0.47500000000000003
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "SANDWICHES",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "sandwiches",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "sandwiches",
+     "text": "Dreamed once in A SANDWICH STORY. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:scientist",
+   "pos": [
+    -19.44,
+    1.85,
+    11.666666666666666
+   ],
+   "size": [
+    1.7600000000000002,
+    0.44000000000000006
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "SCIENTIST",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "scientist",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "scientist",
+     "text": "Dreamed once in CROCODILE EYE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:sea",
+   "pos": [
+    -19.44,
+    1.25,
+    10.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "SEA",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "sea",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "sea",
+     "text": "Dreamed once in MOUNTAIN MAN. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:sex",
+   "pos": [
+    -19.44,
+    1.85,
+    8.333333333333332
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "SEX",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "sex",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "sex",
+     "text": "Dreamed once in BAROQUE SKY ASSEMBLAGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:shark",
+   "pos": [
+    -19.44,
+    1.25,
+    6.666666666666666
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "SHARK",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "shark",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "shark",
+     "text": "Dreamed once in HAMMERHEAD. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:silo",
+   "pos": [
+    -19.44,
+    1.85,
+    5.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "SILO",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "silo",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "silo",
+     "text": "Dreamed once in THE MEAT PLACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:table",
+   "pos": [
+    -19.44,
+    1.25,
+    3.333333333333334
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TABLE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "table",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "table",
+     "text": "Dreamed once in THE VACATED BOOTH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:tape",
+   "pos": [
+    -19.44,
+    1.85,
+    1.666666666666666
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TAPE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "tape",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "tape",
+     "text": "Dreamed once in CURSED VHS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:theater",
+   "pos": [
+    -19.44,
+    1.25,
+    0.0
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "THEATER",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "theater",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "theater",
+     "text": "Dreamed once in LIBRARY BIRD BAG. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:time",
+   "pos": [
+    -19.44,
+    1.85,
+    -1.6666666666666679
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TIME",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "time",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "time",
+     "text": "Dreamed once in THIRTY YEARS OF MONSTERS. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:toilet",
+   "pos": [
+    -19.44,
+    1.25,
+    -3.333333333333332
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TOILET",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "toilet",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "toilet",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:train",
+   "pos": [
+    -19.44,
+    1.85,
+    -5.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TRAIN",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "train",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "train",
+     "text": "Dreamed once in OLLY THE CONDUCTOR. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:vessel",
+   "pos": [
+    -19.44,
+    1.25,
+    -6.666666666666668
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "VESSEL",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "vessel",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "vessel",
+     "text": "Dreamed once in THE COSTUME BENEATH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:vomit",
+   "pos": [
+    -19.44,
+    1.85,
+    -8.333333333333332
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "VOMIT",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "vomit",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "vomit",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:water",
+   "pos": [
+    -19.44,
+    1.25,
+    -10.0
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "WATER",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "water",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "water",
+     "text": "Dreamed once in CHAMPAGNE CONFESSION. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:womb",
+   "pos": [
+    -19.44,
+    1.85,
+    -11.666666666666668
+   ],
+   "size": [
+    1.4,
+    0.35
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "WOMB",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "womb",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "womb",
+     "text": "Dreamed once in BABY FACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:writing",
+   "pos": [
+    -19.44,
+    1.25,
+    -13.333333333333332
+   ],
+   "size": [
+    1.48,
+    0.37
+   ],
+   "yaw": 90,
+   "faded": true,
+   "fadeColor": "#7a7268",
+   "backing": false,
+   "parts": [
+    {
+     "text": "WRITING",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "writing",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "writing",
+     "text": "Dreamed once in BABY FACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0.012,
+    0
+   ],
+   "size": [
+    5,
+    5
+   ],
+   "tex": "carpet",
+   "texScale": 1.5,
+   "shade": 0.8
+  },
+  {
+   "type": "roundTable",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "radius": 0.8,
+   "height": 0.76,
+   "tex": "mahogany"
+  },
+  {
+   "type": "tableLamp",
+   "id": "lamp",
+   "pos": [
+    0.35,
+    0.76,
+    -0.3
+   ],
+   "color": "#ffd090",
+   "intensity": 1.4,
+   "range": 9,
+   "flicker": "candle",
+   "glowSize": 1.7
+  },
+  {
+   "type": "item",
+   "id": "journal",
+   "item": "book",
+   "pickup": false,
+   "pos": [
+    -0.25,
+    0.76,
+    0.15
+   ],
+   "yaw": 8,
+   "scale": 0.9,
+   "name": "the journal",
+   "verb": "open",
+   "examineRadius": 0.3,
+   "examine": [
+    {
+     "who": "journal",
+     "text": "27 dreams. 87 symbols. 19 have earned a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1.5,
+    0
+   ],
+   "size": [
+    36,
+    4,
+    36
+   ],
+   "count": 40,
+   "scale": [
+    6,
+    12
+   ],
+   "alpha": 0.05,
+   "color": "#3a3e48",
+   "seed": 11
+  }
+ ],
+ "events": []
+}
