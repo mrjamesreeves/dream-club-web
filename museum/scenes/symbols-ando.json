@@ -4385,6 +4385,32 @@
    "then": []
   },
   {
+   "type": "television",
+   "id": "tv:body horror",
+   "pos": [
+    5.29,
+    0,
+    50.24999999999999
+   ],
+   "yaw": 270,
+   "film": "/watch/game.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    4.99,
+    0.3,
+    50.24999999999999
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:body horror"
+    }
+   ]
+  },
+  {
    "type": "sign",
    "pos": [
     6.99,
@@ -4629,6 +4655,32 @@
    "id": "house#2",
    "collide": false,
    "walkable": false
+  },
+  {
+   "type": "television",
+   "id": "tv:house",
+   "pos": [
+    -5.29,
+    0,
+    24.25
+   ],
+   "yaw": 90,
+   "film": "/watch/game.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    -4.99,
+    0.3,
+    24.25
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:house"
+    }
+   ]
   },
   {
    "type": "sign",
@@ -5574,6 +5626,32 @@
     }
    ],
    "then": []
+  },
+  {
+   "type": "television",
+   "id": "tv:game",
+   "pos": [
+    4.5200000000000005,
+    0,
+    20.25
+   ],
+   "yaw": 270,
+   "film": "/watch/game.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    4.220000000000001,
+    0.3,
+    20.25
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:game"
+    }
+   ]
   },
   {
    "type": "sign",
