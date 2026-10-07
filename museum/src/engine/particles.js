@@ -1,8 +1,8 @@
 // Ambient particles that belong to every dream: dust motes hanging in the air,
 // scraps and petals drifting past, the odd glint. They follow the camera and
 // wrap around a box so the air is never empty.
-import * as THREE from '../../vendor/three.module.js?v=d8a02e0';
-import { mulberry } from './textures.js?v=d8a02e0';
+import * as THREE from '../../vendor/three.module.js?v=69c8391';
+import { mulberry } from './textures.js?v=69c8391';
 
 const dustVert = /* glsl */ `
 attribute float aSize;

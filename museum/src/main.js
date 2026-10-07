@@ -1,21 +1,21 @@
-import * as THREE from '../vendor/three.module.js?v=d8a02e0';
-import { createTextures } from './engine/textures.js?v=d8a02e0';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=d8a02e0';
-import { PostPass } from './engine/post.js?v=d8a02e0';
-import { DreamAudio } from './engine/audio.js?v=d8a02e0';
-import { Player } from './engine/player.js?v=d8a02e0';
-import { Dialog } from './engine/dialog.js?v=d8a02e0';
-import { Inventory } from './engine/inventory.js?v=d8a02e0';
-import { SceneBuilder } from './scene/build.js?v=d8a02e0';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=d8a02e0';
-import { Events } from './scene/events.js?v=d8a02e0';
-import { disposeTree } from './engine/merge.js?v=d8a02e0';
-import { assembleMuseum } from './museum.js?v=d8a02e0';
-import { PBR } from './engine/pbr.js?v=d8a02e0';
-import { setPBRMode } from './engine/ps1material.js?v=d8a02e0';
-import { checkPaths } from './engine/pathcheck.js?v=d8a02e0';
-import { Portrait } from './engine/portrait.js?v=d8a02e0';
-import { Voice, voiceFor } from './engine/voice.js?v=d8a02e0';
+import * as THREE from '../vendor/three.module.js?v=69c8391';
+import { createTextures } from './engine/textures.js?v=69c8391';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=69c8391';
+import { PostPass } from './engine/post.js?v=69c8391';
+import { DreamAudio } from './engine/audio.js?v=69c8391';
+import { Player } from './engine/player.js?v=69c8391';
+import { Dialog } from './engine/dialog.js?v=69c8391';
+import { Inventory } from './engine/inventory.js?v=69c8391';
+import { SceneBuilder } from './scene/build.js?v=69c8391';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=69c8391';
+import { Events } from './scene/events.js?v=69c8391';
+import { disposeTree } from './engine/merge.js?v=69c8391';
+import { assembleMuseum } from './museum.js?v=69c8391';
+import { PBR } from './engine/pbr.js?v=69c8391';
+import { setPBRMode } from './engine/ps1material.js?v=69c8391';
+import { checkPaths } from './engine/pathcheck.js?v=69c8391';
+import { Portrait } from './engine/portrait.js?v=69c8391';
+import { Voice, voiceFor } from './engine/voice.js?v=69c8391';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -407,6 +407,7 @@ class Game {
   // A title across the whole screen, slowly growing, then gone.
   showCard(text, hold = 4.2) {
     if (!text) return;
+    this.cardShown = text;
     const card = this.ui.card;
     this.ui.cardText.textContent = text;
     card.classList.toggle('long', text.length > 16);
@@ -523,7 +524,8 @@ class Game {
     this.setVeil(1);
     if (this.audio.master) this.audio.master.gain.setTargetAtTime(0.9, this.audio.ctx.currentTime, 0.4);
     const def = this.def;
-    setTimeout(() => { if (this.def === def) this.showCard(def.title); }, 1900);
+    const card = def.card || {};
+    if (!(card.once && this.cardShown === def.title)) setTimeout(() => { if (this.def === def) this.showCard(def.title, card.seconds); }, 1900);
     const hint = this.player.isTouch ? (def.hintTouch || '') : (def.hint || '');
     if (hint) setTimeout(() => { if (this.def === def) this.dialog.showHint(hint, 8); }, 6000);
     if (def.music && this.audio.ready && def.music !== this.currentMusic) { this.currentMusic = def.music; this.audio.music(def.music); }
@@ -710,7 +712,9 @@ class Game {
     const S = new THREE.Vector3(); tv.screen.getWorldPosition(S);
     const N = new THREE.Vector3(0, 0, 1).applyQuaternion(tv.group.getWorldQuaternion(new THREE.Quaternion()));
     const fov = 30;
-    const dist = (tv.height / 2) / Math.tan(THREE.MathUtils.degToRad(fov / 2)) / 0.92;
+    const tanV = Math.tan(THREE.MathUtils.degToRad(fov / 2));
+    const aspect = window.innerWidth / window.innerHeight;
+    const dist = Math.min(tv.height / (2 * tanV), tv.width / (2 * aspect * tanV)) * 0.985;
     const to = { pos: S.clone().addScaledVector(N, dist), eye: S.y, yaw: Math.atan2(-(-N.x), -(-N.z)), pitch: 0, fov };
     to.pos.y = 0;
     const from = { pos: pl.position.clone(), eye: pl.eyeHeight, yaw: pl.yaw, pitch: pl.pitch, fov: this.fovTarget ?? 72 };
@@ -727,7 +731,13 @@ class Game {
       v.src = tv.film; v.crossOrigin = 'anonymous'; v.playsInline = true; v.preload = 'auto';
       v.addEventListener('ended', () => { if (this.watching && this.watching.tv === tv) this.stopWatching(); });
       // The screen only leaves the snow once the film has a frame to show.
-      v.addEventListener('playing', () => { if (tv.playing) { tv.mat.map = tv.videoTex; tv.mat.needsUpdate = true; } });
+      v.addEventListener('playing', () => {
+        if (!tv.playing) return;
+        const r = (v.videoWidth / v.videoHeight) / (tv.width / tv.height);
+        const t = tv.videoTex; t.repeat.set(1, 1); t.offset.set(0, 0);
+        if (r > 1) { t.repeat.x = 1 / r; t.offset.x = (1 - 1 / r) / 2; } else if (r < 1) { t.repeat.y = r; t.offset.y = (1 - r) / 2; }
+        tv.mat.map = t; tv.mat.needsUpdate = true;
+      });
       v.addEventListener('error', () => { tv.playing = false; tv.mat.map = tv.snow; tv.mat.needsUpdate = true; });
       tv.video = v;
       tv.videoTex = new THREE.VideoTexture(v); tv.videoTex.colorSpace = THREE.SRGBColorSpace; tv.videoTex.minFilter = THREE.LinearFilter; tv.videoTex.magFilter = THREE.LinearFilter;
@@ -1355,7 +1365,7 @@ const params = new URLSearchParams(location.search);
     await game.loadScene('museum');
   }
   game.loop();
-  game.showCard(requested && requested !== 'museum' ? game.def.title : 'Dream Game', 6);
+  game.showCard(requested && requested !== 'museum' ? game.def.title : 'Dream Game', (game.def.card && game.def.card.seconds) || 6);
 })().catch((err) => {
   console.error(err);
   game.showStall(String(err.message || err), () => location.reload());

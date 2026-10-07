@@ -1,11 +1,11 @@
 // Furnishings and small things for interiors: food, decorations, fixtures.
 // Added to SceneBuilder as methods. Small meshes share materials per area so
 // a busy room does not cost a material per plate.
-import * as THREE from '../../vendor/three.module.js?v=d8a02e0';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=d8a02e0';
-import { createLight, makeHalo } from '../engine/lights.js?v=d8a02e0';
-import { makeArt } from '../engine/art.js?v=d8a02e0';
-import { mergeStatic } from '../engine/merge.js?v=d8a02e0';
+import * as THREE from '../../vendor/three.module.js?v=69c8391';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=69c8391';
+import { createLight, makeHalo } from '../engine/lights.js?v=69c8391';
+import { makeArt } from '../engine/art.js?v=69c8391';
+import { mergeStatic } from '../engine/merge.js?v=69c8391';
 
 const rad = THREE.MathUtils.degToRad;
 const cylGeo = (r0, r1, h, sides = 8) => setVertexShade(new THREE.CylinderGeometry(r0, r1, h, sides), 1);
@@ -294,7 +294,7 @@ export const PropMethods = {
   // screen that shows snow until a film plays on it (see Game.watchTelevision).
   addTelevision(o) {
     const [x, y, z] = o.pos; const yaw = rad(o.yaw ?? 0);
-    const W = o.width ?? 0.62, H = o.height ?? 0.5, D = o.depth ?? 0.5;
+    const W = o.width ?? 0.68, H = o.height ?? 0.48, D = o.depth ?? 0.5;
     const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = yaw; this.group.add(g);
     const body = this.decoMat(o.tex || 'woodDark', o.color || '#6a5a48', o.pos, { texScale: 1 });
     const dark = this.decoMat('black', '#1a1a1c', o.pos, { texScale: 1 });
@@ -304,7 +304,7 @@ export const PropMethods = {
     const bezel = new THREE.Mesh(boxGeo(W - 0.06, H - 0.08, 0.02), dark); bezel.position.set(-0.05, H / 2 + 0.04, D / 2 + 0.005); g.add(bezel);
     for (let i = 0; i < 3; i++) { const k = new THREE.Mesh(boxGeo(0.035, 0.035, 0.02), dark); k.position.set(W / 2 - 0.06, H * 0.78 - i * 0.09, D / 2 + 0.01); g.add(k); }
     // The screen: a canvas of snow, redrawn a few times a second.
-    const sw = W - 0.2, sh = H - 0.16;
+    const sw = W - 0.2, sh = sw * 9 / 16;
     const canvas = document.createElement('canvas'); canvas.width = 96; canvas.height = 72;
     const ctx = canvas.getContext('2d');
     const snow = new THREE.CanvasTexture(canvas); snow.magFilter = THREE.NearestFilter; snow.minFilter = THREE.NearestFilter; snow.generateMipmaps = false; snow.colorSpace = THREE.SRGBColorSpace;

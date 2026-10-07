@@ -1,6 +1,10 @@
 {
  "name": "symbols-ando",
- "title": "MUSEUM OF SYMBOLS",
+ "title": "MUSEUM OF DREAMS",
+ "card": {
+  "once": true,
+  "seconds": 3
+ },
  "noInventory": true,
  "dialog": {
   "fonts": [

@@ -2,11 +2,11 @@
 // three.js standard materials, a sun with shadow maps, hemisphere and ambient
 // light, scene fog, and a bloom + tone-mapping pass. Dreams that do not ask
 // keep the PS1 path untouched.
-import * as THREE from '../../vendor/three.module.js?v=d8a02e0';
-import { EffectComposer } from '../../vendor/postprocessing/EffectComposer.js?v=d8a02e0';
-import { RenderPass } from '../../vendor/postprocessing/RenderPass.js?v=d8a02e0';
-import { UnrealBloomPass } from '../../vendor/postprocessing/UnrealBloomPass.js?v=d8a02e0';
-import { OutputPass } from '../../vendor/postprocessing/OutputPass.js?v=d8a02e0';
+import * as THREE from '../../vendor/three.module.js?v=69c8391';
+import { EffectComposer } from '../../vendor/postprocessing/EffectComposer.js?v=69c8391';
+import { RenderPass } from '../../vendor/postprocessing/RenderPass.js?v=69c8391';
+import { UnrealBloomPass } from '../../vendor/postprocessing/UnrealBloomPass.js?v=69c8391';
+import { OutputPass } from '../../vendor/postprocessing/OutputPass.js?v=69c8391';
 
 export class PBR {
   constructor(renderer, scene, camera) {
