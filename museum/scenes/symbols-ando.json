@@ -2,6 +2,39 @@
  "name": "symbols-ando",
  "title": "MUSEUM OF SYMBOLS",
  "noInventory": true,
+ "dialog": {
+  "fonts": [
+   "Source Sans 3:wght@400;600",
+   "IBM Plex Serif:ital,wght@0,400;0,500;1,400"
+  ],
+  "bg": "rgba(250, 250, 248, 0.96)",
+  "color": "#1a1b1c",
+  "border": "none",
+  "radius": "2px",
+  "shadow": "0 10px 28px rgba(0, 0, 0, 0.28), 0 2px 6px rgba(0, 0, 0, 0.18)",
+  "font": "'IBM Plex Serif', Georgia, serif",
+  "size": "17px",
+  "leading": "1.5",
+  "tracking": "0",
+  "pixel": "auto",
+  "who-font": "'Source Sans 3', 'Helvetica Neue', sans-serif",
+  "who-size": "12px",
+  "who-weight": "600",
+  "who-tracking": "0.28em",
+  "who-color": "#6b6e72",
+  "who-gap": "10px",
+  "more": "#9a9da1",
+  "left": "max(24px, 6vw)",
+  "bottom": "max(24px, 7vh)",
+  "transform": "none",
+  "width": "min(520px, 80vw)",
+  "padding": "18px 22px 20px",
+  "thought-bg": "rgba(250, 250, 248, 0.96)",
+  "thought-border": "none",
+  "thought-shadow": "0 10px 28px rgba(0, 0, 0, 0.28)",
+  "thought-color": "#55585c",
+  "thought-more": "#9a9da1"
+ },
  "render": {
   "height": 1080,
   "quantize": false,
@@ -126,14 +159,6 @@
   "artificial intelligence": "ARTIFICIAL INTELLIGENCE",
   "baroque": "BAROQUE",
   "beast": "BEAST",
-  "birth": "BIRTH",
-  "body": "BODY",
-  "cameras": "CAMERAS",
-  "cattle": "CATTLE",
-  "child": "CHILD",
-  "childhood": "CHILDHOOD",
-  "costume": "COSTUME",
-  "crocodile": "CROCODILE",
   "debt": "DEBT",
   "dirt": "DIRT",
   "disease": "DISEASE",
@@ -179,6 +204,14 @@
   "water": "WATER",
   "womb": "WOMB",
   "writing": "WRITING",
+  "birth": "BIRTH",
+  "body": "BODY",
+  "cameras": "CAMERAS",
+  "cattle": "CATTLE",
+  "child": "CHILD",
+  "childhood": "CHILDHOOD",
+  "costume": "COSTUME",
+  "crocodile": "CROCODILE",
   "journal": "THE JOURNAL"
  },
  "objects": [
@@ -3282,7 +3315,7 @@
    "name": "witness",
    "verb": "read",
    "examineRange": 3.6,
-   "scale": 2.2,
+   "scale": 4.4,
    "yaw": 270,
    "examineAt": [
     4.5200000000000005,
@@ -3318,12 +3351,12 @@
    "type": "sign",
    "pos": [
     5.59,
-    2.6,
+    3.15,
     7.428571428571427
    ],
    "size": [
-    2.4,
-    0.6
+    1.76,
+    0.44
    ],
    "yaw": 270,
    "faded": true,
@@ -3561,12 +3594,12 @@
    "type": "sign",
    "pos": [
     6.99,
-    3.6,
+    4.05,
     -16.25
    ],
    "size": [
-    3.2,
-    0.8
+    2.24,
+    0.56
    ],
    "yaw": 270,
    "faded": true,
@@ -3743,12 +3776,12 @@
    "type": "sign",
    "pos": [
     10.790000000000001,
-    3.6,
+    4.05,
     37.4
    ],
    "size": [
-    3.2,
-    0.8
+    2.24,
+    0.56
    ],
    "yaw": 270,
    "faded": true,
@@ -3866,7 +3899,7 @@
   {
    "type": "box",
    "pos": [
-    -7.38,
+    -6.8,
     0.1,
     46.4
    ],
@@ -4081,21 +4114,21 @@
    ],
    "pickup": false,
    "examineAt": [
-    -7.38,
+    -6.8,
     0.7,
     46.4
    ],
    "examineRadius": 1.4,
    "id": "train",
    "pos": [
-    -7.38,
+    -6.8,
     0.2,
     46.4
    ],
    "name": "train",
    "verb": "read",
    "examineRange": 5.5,
-   "scale": 0.6,
+   "scale": 0.3,
    "yaw": 270,
    "examine": [
     {
@@ -4121,12 +4154,12 @@
    "type": "sign",
    "pos": [
     -10.790000000000001,
-    3.6,
+    4.05,
     46.4
    ],
    "size": [
-    3.2,
-    0.8
+    2.24,
+    0.56
    ],
    "yaw": 90,
    "faded": true,
@@ -4299,12 +4332,12 @@
    "type": "sign",
    "pos": [
     6.99,
-    3.6,
+    4.05,
     48.3
    ],
    "size": [
-    3.2,
-    0.8
+    2.24,
+    0.56
    ],
    "yaw": 270,
    "faded": true,
@@ -4545,12 +4578,12 @@
    "type": "sign",
    "pos": [
     -6.99,
-    3.6,
+    4.05,
     22.3
    ],
    "size": [
-    3.2,
-    0.8
+    2.24,
+    0.56
    ],
    "yaw": 90,
    "faded": true,
@@ -4753,12 +4786,12 @@
    "type": "sign",
    "pos": [
     6.99,
-    3.6,
+    4.05,
     -35.2
    ],
    "size": [
-    3.2,
-    0.8
+    2.24,
+    0.56
    ],
    "yaw": 270,
    "faded": true,
@@ -4904,7 +4937,7 @@
    "name": "border",
    "verb": "read",
    "examineRange": 3.6,
-   "scale": 5,
+   "scale": 10.0,
    "yaw": 270,
    "examineAt": [
     4.5200000000000005,
@@ -4936,12 +4969,12 @@
    "type": "sign",
    "pos": [
     5.59,
-    2.6,
+    3.15,
     30.700000000000003
    ],
    "size": [
-    2.4,
-    0.6
+    1.76,
+    0.44
    ],
    "yaw": 270,
    "faded": true,
@@ -5122,12 +5155,12 @@
    "type": "sign",
    "pos": [
     -5.59,
-    2.6,
+    3.15,
     39.7
    ],
    "size": [
-    2.4,
-    0.6
+    1.76,
+    0.44
    ],
    "yaw": 90,
    "faded": true,
@@ -5307,12 +5340,12 @@
    "type": "sign",
    "pos": [
     -5.59,
-    2.6,
+    3.15,
     31.700000000000003
    ],
    "size": [
-    2.4,
-    0.6
+    1.76,
+    0.44
    ],
    "yaw": 90,
    "faded": true,
@@ -5458,7 +5491,7 @@
    "name": "game",
    "verb": "read",
    "examineRange": 3.6,
-   "scale": 2.2,
+   "scale": 4.4,
    "yaw": 270,
    "examineAt": [
     4.5200000000000005,
@@ -5490,12 +5523,12 @@
    "type": "sign",
    "pos": [
     5.59,
-    2.6,
+    3.15,
     19.2
    ],
    "size": [
-    2.4,
-    0.6
+    1.76,
+    0.44
    ],
    "yaw": 270,
    "faded": true,
@@ -5640,7 +5673,7 @@
    "name": "poison",
    "verb": "read",
    "examineRange": 3.6,
-   "scale": 3,
+   "scale": 6.0,
    "yaw": 270,
    "examineAt": [
     4.5200000000000005,
@@ -5672,12 +5705,12 @@
    "type": "sign",
    "pos": [
     5.59,
-    2.6,
+    3.15,
     -6.3
    ],
    "size": [
-    2.4,
-    0.6
+    1.76,
+    0.44
    ],
    "yaw": 270,
    "faded": true,
@@ -6242,12 +6275,12 @@
    "id": "f:airport",
    "pos": [
     3.18,
-    1.0,
-    45.25
+    1.35,
+    44.1
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6279,12 +6312,12 @@
    "id": "f:anima",
    "pos": [
     3.18,
-    1.5,
-    44.3
+    1.35,
+    27.900000000000002
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6315,15 +6348,15 @@
    "type": "sign",
    "id": "f:artificial intelligence",
    "pos": [
-    3.18,
-    1.0,
-    43.35
+    -3.18,
+    1.35,
+    36.900000000000006
    ],
    "size": [
-    2.2,
-    0.55
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -6352,15 +6385,15 @@
    "type": "sign",
    "id": "f:baroque",
    "pos": [
-    3.18,
-    1.5,
-    42.4
+    -3.18,
+    1.35,
+    35.1
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -6389,15 +6422,15 @@
    "type": "sign",
    "id": "f:beast",
    "pos": [
-    3.18,
-    1.0,
-    32.85
+    -3.18,
+    1.35,
+    27.900000000000002
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -6424,311 +6457,15 @@
   },
   {
    "type": "sign",
-   "id": "f:birth",
-   "pos": [
-    3.18,
-    1.5,
-    28.900000000000002
-   ],
-   "size": [
-    1.2,
-    0.3
-   ],
-   "yaw": 270,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "BIRTH",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "birth",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "birth",
-     "text": "Dreamed once in BABY FACE. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
-   "id": "f:body",
-   "pos": [
-    3.18,
-    1.0,
-    27.950000000000003
-   ],
-   "size": [
-    1.2,
-    0.3
-   ],
-   "yaw": 270,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "BODY",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "body",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "body",
-     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
-   "id": "f:cameras",
-   "pos": [
-    -3.18,
-    1.0,
-    38.057142857142864
-   ],
-   "size": [
-    1.31,
-    0.3275
-   ],
-   "yaw": 90,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "CAMERAS",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "cameras",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "cameras",
-     "text": "Dreamed once in KOREAN AIRPORT TEETH. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
-   "id": "f:cattle",
-   "pos": [
-    -3.18,
-    1.5,
-    36.714285714285715
-   ],
-   "size": [
-    1.2,
-    0.3
-   ],
-   "yaw": 90,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "CATTLE",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "cattle",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "cattle",
-     "text": "Dreamed once in THE MEAT PLACE. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
-   "id": "f:child",
-   "pos": [
-    -3.18,
-    1.0,
-    35.371428571428574
-   ],
-   "size": [
-    1.2,
-    0.3
-   ],
-   "yaw": 90,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "CHILD",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "child",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "child",
-     "text": "Dreamed once in MOUNTAIN MAN. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
-   "id": "f:childhood",
-   "pos": [
-    -3.18,
-    1.5,
-    34.02857142857143
-   ],
-   "size": [
-    1.5699999999999998,
-    0.39249999999999996
-   ],
-   "yaw": 90,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "CHILDHOOD",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "childhood",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "childhood",
-     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
-   "id": "f:costume",
-   "pos": [
-    -3.18,
-    1.0,
-    29.685714285714287
-   ],
-   "size": [
-    1.31,
-    0.3275
-   ],
-   "yaw": 90,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "COSTUME",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "costume",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "costume",
-     "text": "Dreamed once in THE COSTUME BENEATH. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
-   "id": "f:crocodile",
-   "pos": [
-    -3.18,
-    1.5,
-    28.34285714285714
-   ],
-   "size": [
-    1.5699999999999998,
-    0.39249999999999996
-   ],
-   "yaw": 90,
-   "faded": true,
-   "intact": true,
-   "hires": true,
-   "fadeColor": "#2a2c2e",
-   "backing": false,
-   "parts": [
-    {
-     "text": "CROCODILE",
-     "font": "sans",
-     "color": "#e8e4dc"
-    }
-   ],
-   "name": "crocodile",
-   "verb": "read",
-   "examineRadius": 0.5,
-   "examineRange": 2.6,
-   "examine": [
-    {
-     "who": "crocodile",
-     "text": "Dreamed once in CROCODILE EYE. Not yet a card."
-    }
-   ],
-   "then": []
-  },
-  {
-   "type": "sign",
    "id": "f:debt",
    "pos": [
     3.18,
-    1.0,
-    23.0
+    1.35,
+    22.500000000000004
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6760,12 +6497,12 @@
    "id": "f:dirt",
    "pos": [
     3.18,
-    1.5,
-    21.0
+    1.35,
+    15.299999999999999
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6797,12 +6534,12 @@
    "id": "f:disease",
    "pos": [
     3.18,
-    1.0,
-    16.0
+    1.35,
+    13.5
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6834,12 +6571,12 @@
    "id": "f:doctor",
    "pos": [
     3.18,
-    1.5,
-    14.0
+    1.35,
+    11.7
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6871,12 +6608,12 @@
    "id": "f:dogs",
    "pos": [
     3.18,
-    1.0,
-    12.0
+    1.35,
+    4.5
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6908,12 +6645,12 @@
    "id": "f:driving",
    "pos": [
     3.18,
-    1.5,
-    10.0
+    1.35,
+    2.7
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -6944,15 +6681,15 @@
    "type": "sign",
    "id": "f:face",
    "pos": [
-    3.18,
-    1.0,
-    5.0
+    -3.18,
+    1.35,
+    18.900000000000002
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -6981,15 +6718,15 @@
    "type": "sign",
    "id": "f:film",
    "pos": [
-    3.18,
-    1.5,
-    3.0
+    -3.18,
+    1.35,
+    17.1
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -7019,12 +6756,12 @@
    "id": "f:flight",
    "pos": [
     -3.18,
-    1.0,
-    17.800000000000004
+    1.35,
+    15.299999999999999
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7056,12 +6793,12 @@
    "id": "f:food",
    "pos": [
     -3.18,
-    1.5,
-    15.400000000000002
+    1.35,
+    13.5
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7093,12 +6830,12 @@
    "id": "f:giant",
    "pos": [
     -3.18,
-    1.0,
-    13.000000000000002
+    1.35,
+    11.7
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7130,12 +6867,12 @@
    "id": "f:god",
    "pos": [
     -3.18,
-    1.5,
-    10.600000000000001
+    1.35,
+    8.1
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7167,12 +6904,12 @@
    "id": "f:guilt",
    "pos": [
     -3.18,
-    1.0,
-    8.200000000000001
+    1.35,
+    6.3
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7204,12 +6941,12 @@
    "id": "f:hammers",
    "pos": [
     -3.18,
-    1.5,
-    5.800000000000001
+    1.35,
+    4.5
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7241,12 +6978,12 @@
    "id": "f:illness",
    "pos": [
     -3.18,
-    1.0,
-    3.3999999999999986
+    1.35,
+    2.7
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7278,12 +7015,12 @@
    "id": "f:journey",
    "pos": [
     3.18,
-    1.0,
-    -2.8000000000000003
+    1.35,
+    -2.7
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7315,12 +7052,12 @@
    "id": "f:knife",
    "pos": [
     3.18,
-    1.5,
-    -4.6000000000000005
+    1.35,
+    -9.9
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7352,12 +7089,12 @@
    "id": "f:library",
    "pos": [
     3.18,
-    1.0,
-    -9.400000000000002
+    1.35,
+    -11.700000000000001
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7389,12 +7126,12 @@
    "id": "f:luggage",
    "pos": [
     3.18,
-    1.5,
-    -11.200000000000001
+    1.35,
+    -20.7
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7426,12 +7163,12 @@
    "id": "f:map",
    "pos": [
     3.18,
-    1.0,
-    -13.000000000000002
+    1.35,
+    -22.5
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7462,15 +7199,15 @@
    "type": "sign",
    "id": "f:meat",
    "pos": [
-    3.18,
-    1.5,
-    -19.6
+    -3.18,
+    1.35,
+    -2.7
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -7499,15 +7236,15 @@
    "type": "sign",
    "id": "f:men",
    "pos": [
-    3.18,
-    1.0,
-    -21.4
+    -3.18,
+    1.35,
+    -4.5
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -7536,15 +7273,15 @@
    "type": "sign",
    "id": "f:mirror",
    "pos": [
-    3.18,
-    1.5,
-    -23.2
+    -3.18,
+    1.35,
+    -6.300000000000001
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -7574,8 +7311,8 @@
    "id": "f:monsters",
    "pos": [
     -3.18,
-    1.0,
-    -3.6666666666666665
+    1.35,
+    -9.9
    ],
    "size": [
     1.44,
@@ -7611,8 +7348,8 @@
    "id": "f:painting",
    "pos": [
     -3.18,
-    1.5,
-    -6.333333333333333
+    1.35,
+    -11.700000000000001
    ],
    "size": [
     1.44,
@@ -7648,12 +7385,12 @@
    "id": "f:pajamas",
    "pos": [
     -3.18,
-    1.0,
-    -9.0
+    1.35,
+    -13.5
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7685,12 +7422,12 @@
    "id": "f:parking garage",
    "pos": [
     -3.18,
-    1.5,
-    -11.666666666666666
+    1.35,
+    -15.3
    ],
    "size": [
-    2.2,
-    0.55
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7722,12 +7459,12 @@
    "id": "f:pregnancy",
    "pos": [
     -3.18,
-    1.0,
-    -14.333333333333334
+    1.35,
+    -17.099999999999998
    ],
    "size": [
-    1.5699999999999998,
-    0.39249999999999996
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7759,12 +7496,12 @@
    "id": "f:price",
    "pos": [
     -3.18,
-    1.5,
-    -17.0
+    1.35,
+    -18.9
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7796,12 +7533,12 @@
    "id": "f:pursuit",
    "pos": [
     -3.18,
-    1.0,
-    -19.666666666666668
+    1.35,
+    -20.7
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7833,12 +7570,12 @@
    "id": "f:room",
    "pos": [
     -3.18,
-    1.5,
-    -22.333333333333332
+    1.35,
+    -22.5
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -7870,12 +7607,12 @@
    "id": "f:sandwiches",
    "pos": [
     3.18,
-    1.0,
-    -29.4
+    1.35,
+    -27.9
    ],
    "size": [
-    1.7000000000000002,
-    0.42500000000000004
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7907,12 +7644,12 @@
    "id": "f:scientist",
    "pos": [
     3.18,
-    1.5,
-    -31.8
+    1.35,
+    -31.5
    ],
    "size": [
-    1.5699999999999998,
-    0.39249999999999996
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7944,12 +7681,12 @@
    "id": "f:sea",
    "pos": [
     3.18,
-    1.0,
-    -39.0
+    1.35,
+    -38.7
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -7981,12 +7718,12 @@
    "id": "f:sex",
    "pos": [
     3.18,
-    1.5,
-    -41.4
+    1.35,
+    -42.3
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -8018,12 +7755,12 @@
    "id": "f:shark",
    "pos": [
     3.18,
-    1.0,
-    -43.8
+    1.35,
+    -45.9
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -8055,12 +7792,12 @@
    "id": "f:silo",
    "pos": [
     3.18,
-    1.5,
-    -46.2
+    1.35,
+    -47.7
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 270,
    "faded": true,
@@ -8091,15 +7828,15 @@
    "type": "sign",
    "id": "f:tape",
    "pos": [
-    3.18,
-    1.0,
-    -48.6
+    -3.18,
+    1.35,
+    -27.9
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
-   "yaw": 270,
+   "yaw": 90,
    "faded": true,
    "intact": true,
    "hires": true,
@@ -8129,12 +7866,12 @@
    "id": "f:time",
    "pos": [
     -3.18,
-    1.0,
-    -30.0
+    1.35,
+    -31.5
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -8166,12 +7903,12 @@
    "id": "f:toilet",
    "pos": [
     -3.18,
-    1.5,
-    -33.0
+    1.35,
+    -35.1
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -8203,12 +7940,12 @@
    "id": "f:vessel",
    "pos": [
     -3.18,
-    1.0,
-    -36.0
+    1.35,
+    -36.9
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -8240,12 +7977,12 @@
    "id": "f:vomit",
    "pos": [
     -3.18,
-    1.5,
-    -39.0
+    1.35,
+    -40.5
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -8277,12 +8014,12 @@
    "id": "f:water",
    "pos": [
     -3.18,
-    1.0,
-    -42.0
+    1.35,
+    -44.1
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -8314,12 +8051,12 @@
    "id": "f:womb",
    "pos": [
     -3.18,
-    1.5,
-    -45.0
+    1.35,
+    -45.9
    ],
    "size": [
-    1.2,
-    0.3
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -8351,12 +8088,12 @@
    "id": "f:writing",
    "pos": [
     -3.18,
-    1.0,
-    -48.0
+    1.35,
+    -49.5
    ],
    "size": [
-    1.31,
-    0.3275
+    1.44,
+    0.36
    ],
    "yaw": 90,
    "faded": true,
@@ -8379,6 +8116,302 @@
     {
      "who": "writing",
      "text": "Dreamed once in BABY FACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:birth",
+   "pos": [
+    3.18,
+    1.35,
+    9.9
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 270,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BIRTH",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "birth",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "birth",
+     "text": "Dreamed once in BABY FACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:body",
+   "pos": [
+    -3.18,
+    1.35,
+    9.9
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 90,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BODY",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "body",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "body",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:cameras",
+   "pos": [
+    -3.18,
+    1.35,
+    -8.1
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 90,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CAMERAS",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "cameras",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "cameras",
+     "text": "Dreamed once in KOREAN AIRPORT TEETH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:cattle",
+   "pos": [
+    3.18,
+    1.35,
+    -29.7
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 270,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CATTLE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "cattle",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "cattle",
+     "text": "Dreamed once in THE MEAT PLACE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:child",
+   "pos": [
+    3.18,
+    1.35,
+    -40.5
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 270,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CHILD",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "child",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "child",
+     "text": "Dreamed once in MOUNTAIN MAN. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:childhood",
+   "pos": [
+    3.18,
+    1.35,
+    -44.1
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 270,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CHILDHOOD",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "childhood",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "childhood",
+     "text": "Dreamed once in THE COMMUNAL PURGE. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:costume",
+   "pos": [
+    3.18,
+    1.35,
+    -49.5
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 270,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "COSTUME",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "costume",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "costume",
+     "text": "Dreamed once in THE COSTUME BENEATH. Not yet a card."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "sign",
+   "id": "f:crocodile",
+   "pos": [
+    -3.18,
+    1.35,
+    -29.7
+   ],
+   "size": [
+    1.44,
+    0.36
+   ],
+   "yaw": 90,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#2a2c2e",
+   "backing": false,
+   "parts": [
+    {
+     "text": "CROCODILE",
+     "font": "sans",
+     "color": "#e8e4dc"
+    }
+   ],
+   "name": "crocodile",
+   "verb": "read",
+   "examineRadius": 0.5,
+   "examineRange": 2.6,
+   "examine": [
+    {
+     "who": "crocodile",
+     "text": "Dreamed once in CROCODILE EYE. Not yet a card."
     }
    ],
    "then": []

@@ -2,7 +2,7 @@
 // fallback where pointer lock is unavailable. Touch: left half of the screen
 // is an invisible stick for walking, right half drags to look, a tap
 // interacts, a long press listens. Collision is AABB walls + floor raycast.
-import * as THREE from '../../vendor/three.module.js?v=6782550';
+import * as THREE from '../../vendor/three.module.js?v=41d35b4';
 const DOWN = new THREE.Vector3(0, -1, 0);
 
 const KEYS = { w: 'f', s: 'b', a: 'l', d: 'r', arrowup: 'f', arrowdown: 'b', arrowleft: 'l', arrowright: 'r' };

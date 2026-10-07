@@ -21,6 +21,23 @@ export class Dialog {
     this.voicing = false;   // this line is voiced, so no blips
   }
 
+  // The look of the box, from a scene's "dialog" block: CSS variables on the
+  // element (see index.html for the names, without the dlg- prefix), and
+  // web fonts to fetch from Google Fonts. No block puts the PS1 box back.
+  setStyle(style) {
+    const el = this.box;
+    for (const name of Array.from(el.style)) if (name.startsWith('--dlg-')) el.style.removeProperty(name);
+    if (!style) return;
+    for (const [k, v] of Object.entries(style)) if (k !== 'fonts') el.style.setProperty('--dlg-' + k, String(v));
+    if (style.fonts && style.fonts.length) {
+      const id = 'dlg-fonts';
+      const href = 'https://fonts.googleapis.com/css2?' + style.fonts.map((f) => 'family=' + encodeURIComponent(f).replace(/%20/g, '+').replace(/%3A/g, ':').replace(/%40/g, '@').replace(/%2C/g, ',').replace(/%3B/g, ';')).join('&') + '&display=swap';
+      let link = document.getElementById(id);
+      if (!link) { link = document.createElement('link'); link.id = id; link.rel = 'stylesheet'; document.head.appendChild(link); }
+      if (link.href !== href) link.href = href;
+    }
+  }
+
   // True while the speaker's voice is still going.
   speaking() { return !!(this.voicing && this.voice && this.voice.active()); }
 

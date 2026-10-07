@@ -30,17 +30,18 @@
   @keyframes blink { to { visibility: hidden; } }
 
   #dialog {
-    position: absolute; left: 50%; bottom: 7vh; transform: translateX(-50%);
-    width: min(680px, 86vw); padding: 14px 18px 16px;
-    background: rgba(6, 10, 12, 0.82); border: 2px solid #4d5f62; box-shadow: 0 0 0 2px #0b1012, 0 0 0 3px #2a3639;
-    font-size: 15px; line-height: 1.5; letter-spacing: 0.04em; image-rendering: pixelated;
+    position: absolute; left: var(--dlg-left, 50%); bottom: var(--dlg-bottom, 7vh); transform: var(--dlg-transform, translateX(-50%));
+    width: var(--dlg-width, min(680px, 86vw)); padding: var(--dlg-padding, 14px 18px 16px);
+    background: var(--dlg-bg, rgba(6, 10, 12, 0.82)); border: var(--dlg-border, 2px solid #4d5f62); box-shadow: var(--dlg-shadow, 0 0 0 2px #0b1012, 0 0 0 3px #2a3639);
+    border-radius: var(--dlg-radius, 0);
+    font-family: var(--dlg-font, "Courier New", Courier, monospace); font-size: var(--dlg-size, 15px); line-height: var(--dlg-leading, 1.5); letter-spacing: var(--dlg-tracking, 0.04em); image-rendering: var(--dlg-pixel, pixelated);
   }
-  #dialog .who { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #8aa3a0; margin-bottom: 6px; }
-  #dialog .text { min-height: 3em; color: #d9e2df; white-space: pre-wrap; }
-  #dialog.thought { border-color: #4a4560; box-shadow: 0 0 0 2px #0b1012, 0 0 0 3px #2a2638; background: rgba(10, 9, 16, 0.78); }
-  #dialog.thought .text { color: #b4a8d8; font-style: italic; }
-  #dialog.thought .more { color: #7a7096; }
-  #dialog .more { position: absolute; right: 14px; bottom: 6px; font-size: 11px; color: #6c8280; animation: blink 1.2s steps(2, start) infinite; }
+  #dialog .who { font-family: var(--dlg-who-font, inherit); font-size: var(--dlg-who-size, 11px); font-weight: var(--dlg-who-weight, normal); letter-spacing: var(--dlg-who-tracking, 0.3em); text-transform: uppercase; color: var(--dlg-who-color, #8aa3a0); margin-bottom: var(--dlg-who-gap, 6px); }
+  #dialog .text { min-height: 3em; color: var(--dlg-color, #d9e2df); white-space: pre-wrap; }
+  #dialog.thought { border-color: var(--dlg-thought-border, #4a4560); box-shadow: var(--dlg-thought-shadow, 0 0 0 2px #0b1012, 0 0 0 3px #2a2638); background: var(--dlg-thought-bg, rgba(10, 9, 16, 0.78)); }
+  #dialog.thought .text { color: var(--dlg-thought-color, #b4a8d8); font-style: italic; }
+  #dialog.thought .more { color: var(--dlg-thought-more, #7a7096); }
+  #dialog .more { position: absolute; right: 14px; bottom: 6px; font-size: 11px; color: var(--dlg-more, #6c8280); animation: blink 1.2s steps(2, start) infinite; }
 
   #prompt { position: absolute; left: 50%; top: 58%; transform: translateX(-50%); font-size: 12px; letter-spacing: 0.25em; color: #c3cfcc; text-shadow: 0 0 6px #000; }
   #hint { position: absolute; left: 50%; top: 4vh; transform: translateX(-50%); font-size: 11px; letter-spacing: 0.25em; color: #7f9593; text-shadow: 0 0 6px #000; transition: opacity 1.5s; }
@@ -89,8 +90,8 @@
     <p class="back" id="chooser-back">back</p>
   </div>
 </div>
-<script>window.DREAM_VERSION = "6782550";</script>
-<script type="module" src="./src/main.js?v=6782550"></script>
+<script>window.DREAM_VERSION = "41d35b4";</script>
+<script type="module" src="./src/main.js?v=41d35b4"></script>
 
 
 </body></html>
