@@ -1,21 +1,21 @@
-import * as THREE from '../vendor/three.module.js?v=41d35b4';
-import { createTextures } from './engine/textures.js?v=41d35b4';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=41d35b4';
-import { PostPass } from './engine/post.js?v=41d35b4';
-import { DreamAudio } from './engine/audio.js?v=41d35b4';
-import { Player } from './engine/player.js?v=41d35b4';
-import { Dialog } from './engine/dialog.js?v=41d35b4';
-import { Inventory } from './engine/inventory.js?v=41d35b4';
-import { SceneBuilder } from './scene/build.js?v=41d35b4';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=41d35b4';
-import { Events } from './scene/events.js?v=41d35b4';
-import { disposeTree } from './engine/merge.js?v=41d35b4';
-import { assembleMuseum } from './museum.js?v=41d35b4';
-import { PBR } from './engine/pbr.js?v=41d35b4';
-import { setPBRMode } from './engine/ps1material.js?v=41d35b4';
-import { checkPaths } from './engine/pathcheck.js?v=41d35b4';
-import { Portrait } from './engine/portrait.js?v=41d35b4';
-import { Voice, voiceFor } from './engine/voice.js?v=41d35b4';
+import * as THREE from '../vendor/three.module.js?v=d8a02e0';
+import { createTextures } from './engine/textures.js?v=d8a02e0';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=d8a02e0';
+import { PostPass } from './engine/post.js?v=d8a02e0';
+import { DreamAudio } from './engine/audio.js?v=d8a02e0';
+import { Player } from './engine/player.js?v=d8a02e0';
+import { Dialog } from './engine/dialog.js?v=d8a02e0';
+import { Inventory } from './engine/inventory.js?v=d8a02e0';
+import { SceneBuilder } from './scene/build.js?v=d8a02e0';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=d8a02e0';
+import { Events } from './scene/events.js?v=d8a02e0';
+import { disposeTree } from './engine/merge.js?v=d8a02e0';
+import { assembleMuseum } from './museum.js?v=d8a02e0';
+import { PBR } from './engine/pbr.js?v=d8a02e0';
+import { setPBRMode } from './engine/ps1material.js?v=d8a02e0';
+import { checkPaths } from './engine/pathcheck.js?v=d8a02e0';
+import { Portrait } from './engine/portrait.js?v=d8a02e0';
+import { Voice, voiceFor } from './engine/voice.js?v=d8a02e0';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -364,6 +364,7 @@ class Game {
     this.fovTarget = null;
     this.ambienceGain = {};
     this.focusState = null;
+    this.watching = null;
     this.player.lookLock = false;
     if (def.player && def.player.seat) this.player.seat(def.player.pos, def.player.yaw ?? 0, def.player.seat.range ?? 180, def.player.seat.eye ?? 1.15);
     else this.player.stand();
@@ -699,6 +700,77 @@ class Game {
   // The game takes the camera and turns it toward something the player has to
   // see: { id } a person, { object } a named object, or { pos } a point.
   // Holds until `release`, or for `seconds` if given.
+  // Watching a film on a television: the view goes down to the screen and
+  // closes in until the snow fills it, the film plays there, and when it ends
+  // (or the viewer taps) the view comes back to where it stood.
+  watchTelevision(id) {
+    const tv = (this.world.televisions || []).find((t) => t.id === id);
+    if (!tv || this.watching) return;
+    const pl = this.player;
+    const S = new THREE.Vector3(); tv.screen.getWorldPosition(S);
+    const N = new THREE.Vector3(0, 0, 1).applyQuaternion(tv.group.getWorldQuaternion(new THREE.Quaternion()));
+    const fov = 30;
+    const dist = (tv.height / 2) / Math.tan(THREE.MathUtils.degToRad(fov / 2)) / 0.92;
+    const to = { pos: S.clone().addScaledVector(N, dist), eye: S.y, yaw: Math.atan2(-(-N.x), -(-N.z)), pitch: 0, fov };
+    to.pos.y = 0;
+    const from = { pos: pl.position.clone(), eye: pl.eyeHeight, yaw: pl.yaw, pitch: pl.pitch, fov: this.fovTarget ?? 72 };
+    this.watching = { tv, phase: 'in', t: 0, seconds: 1.6, from, to };
+    pl.lookLock = true; pl.keys.clear();
+    pl.seated = { yaw: pl.yaw, range: 0 };
+    if (this.audio.master) this.audio.master.gain.setTargetAtTime(0.12, this.audio.ctx.currentTime, 0.6);
+  }
+
+  startFilm(tv) {
+    if (!tv.film) return;
+    if (!tv.video) {
+      const v = document.createElement('video');
+      v.src = tv.film; v.crossOrigin = 'anonymous'; v.playsInline = true; v.preload = 'auto';
+      v.addEventListener('ended', () => { if (this.watching && this.watching.tv === tv) this.stopWatching(); });
+      // The screen only leaves the snow once the film has a frame to show.
+      v.addEventListener('playing', () => { if (tv.playing) { tv.mat.map = tv.videoTex; tv.mat.needsUpdate = true; } });
+      v.addEventListener('error', () => { tv.playing = false; tv.mat.map = tv.snow; tv.mat.needsUpdate = true; });
+      tv.video = v;
+      tv.videoTex = new THREE.VideoTexture(v); tv.videoTex.colorSpace = THREE.SRGBColorSpace; tv.videoTex.minFilter = THREE.LinearFilter; tv.videoTex.magFilter = THREE.LinearFilter;
+    }
+    tv.playing = true;
+    tv.video.currentTime = 0;
+    const p = tv.video.play();
+    if (p && p.catch) p.catch(() => { tv.playing = false; });
+  }
+
+  stopWatching() {
+    const w = this.watching;
+    if (!w || w.phase === 'out') return;
+    const tv = w.tv;
+    if (tv.video) { tv.video.pause(); }
+    tv.playing = false; tv.mat.map = tv.snow; tv.mat.needsUpdate = true;
+    w.phase = 'out'; w.t = 0; w.seconds = 1.4;
+    if (this.audio.master) this.audio.master.gain.setTargetAtTime(0.9, this.audio.ctx.currentTime, 0.6);
+  }
+
+  updateWatching(dt) {
+    const w = this.watching;
+    if (!w) return;
+    const pl = this.player;
+    const ease = (k) => k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+    if (w.phase === 'in' || w.phase === 'out') {
+      w.t += dt;
+      const k = ease(Math.min(1, w.t / w.seconds));
+      const a = w.phase === 'in' ? w.from : w.to, b = w.phase === 'in' ? w.to : w.from;
+      pl.position.lerpVectors(a.pos, b.pos, k);
+      pl.eyeHeight = a.eye + (b.eye - a.eye) * k;
+      let dy = b.yaw - a.yaw; dy = Math.atan2(Math.sin(dy), Math.cos(dy));
+      pl.yaw = a.yaw + dy * k; pl.pitch = a.pitch + (b.pitch - a.pitch) * k;
+      this.fovTarget = a.fov + (b.fov - a.fov) * k;
+      pl.seated.yaw = pl.yaw;
+      pl.placeCamera();
+      if (w.t >= w.seconds) {
+        if (w.phase === 'in') { w.phase = 'on'; this.startFilm(w.tv); }
+        else { this.watching = null; pl.stand(); pl.lookLock = false; this.fovTarget = null; pl.position.copy(w.from.pos); pl.yaw = w.from.yaw; pl.pitch = w.from.pitch; pl.placeCamera(); }
+      }
+    }
+  }
+
   focus(spec) {
     this.focusState = { ...spec, until: spec.seconds ? this.time + spec.seconds : null };
     this.player.lookLock = true;
@@ -734,6 +806,7 @@ class Game {
   }
 
   updateFocus(dt) {
+    this.updateWatching(dt);
     const f = this.focusState;
     if (!f) return;
     if (f.until && this.time >= f.until) { this.releaseFocus(); return; }
@@ -943,6 +1016,7 @@ class Game {
       if (item) { this.useItem(item); return; }
     }
     if (this.dialog.open) { this.dialog.advance(); return; }
+    if (this.watching) { if (this.watching.phase === 'on') this.stopWatching(); return; }
     if (this.ending || this.talking || !this.player.active) return;
     const target = this.findTarget(x, y);
     if (!target) return;
@@ -1220,7 +1294,7 @@ class Game {
     this.audio.tick(dt);
     this.inventory.update(dt);
 
-    const target = (this.started && !this.ending && !this.dialog.open && !this.talking && this.player.active) ? this.findTarget() : null;
+    const target = (this.started && !this.ending && !this.dialog.open && !this.talking && this.player.active && !this.watching) ? this.findTarget() : null;
     this.updateReticle(target);
 
     let veil = 0;

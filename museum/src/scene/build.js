@@ -1,17 +1,17 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=41d35b4';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=41d35b4';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=41d35b4';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=41d35b4';
-import { mulberry } from '../engine/textures.js?v=41d35b4';
-import { AmbientParticles } from '../engine/particles.js?v=41d35b4';
-import { makeSignTexture } from '../engine/signs.js?v=41d35b4';
-import { PropMethods } from './props.js?v=41d35b4';
-import { buildShapes } from '../engine/shapes.js?v=41d35b4';
-import { mergeStatic } from '../engine/merge.js?v=41d35b4';
-import { bakeWorldUV } from '../engine/pbr.js?v=41d35b4';
-import { voiceFor } from '../engine/voice.js?v=41d35b4';
+import * as THREE from '../../vendor/three.module.js?v=d8a02e0';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=d8a02e0';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=d8a02e0';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=d8a02e0';
+import { mulberry } from '../engine/textures.js?v=d8a02e0';
+import { AmbientParticles } from '../engine/particles.js?v=d8a02e0';
+import { makeSignTexture } from '../engine/signs.js?v=d8a02e0';
+import { PropMethods } from './props.js?v=d8a02e0';
+import { buildShapes } from '../engine/shapes.js?v=d8a02e0';
+import { mergeStatic } from '../engine/merge.js?v=d8a02e0';
+import { bakeWorldUV } from '../engine/pbr.js?v=d8a02e0';
+import { voiceFor } from '../engine/voice.js?v=d8a02e0';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';
@@ -19,6 +19,7 @@ const DIRS = { '+x': [1, 0], '-x': [-1, 0], '+z': [0, 1], '-z': [0, -1] };
 
 export class SceneBuilder {
   constructor(ctx) {
+    this.televisions = [];
     this.pbr = !!ctx.pbr;
     this.pbrPoint = (ctx.pbr && ctx.pbr.point) || 30;
     this.pbrTex = new Map();
@@ -714,6 +715,7 @@ export class SceneBuilder {
         case 'oven': this.addOven(o); break;
         case 'panel': this.addPanel(o); break;
         case 'screen': this.addScreen(o); break;
+        case 'television': this.addTelevision(o); break;
         case 'arch': this.addArch(o); break;
         case 'ceilingFan': this.addCeilingFan(o); break;
         case 'jukebox': this.addJukebox(o); break;
@@ -788,6 +790,7 @@ export class SceneBuilder {
   update(dt, time, camera, indoor = false) {
     updateLights(this.lights, time, camera, this.ctx.audio);
     this.updateProps(dt, time);
+    for (const tv of this.televisions) if (!tv.playing && time - tv.last > 0.07) { tv.last = time; this.drawSnow(tv); }
     const cp = camera.position;
     for (const s of this.staticMaterials) if (s.position.distanceToSquared(cp) < 6400) refreshLightColors(s.material);
     for (const s of this.scrollers) {

@@ -1,11 +1,11 @@
 // Furnishings and small things for interiors: food, decorations, fixtures.
 // Added to SceneBuilder as methods. Small meshes share materials per area so
 // a busy room does not cost a material per plate.
-import * as THREE from '../../vendor/three.module.js?v=41d35b4';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=41d35b4';
-import { createLight, makeHalo } from '../engine/lights.js?v=41d35b4';
-import { makeArt } from '../engine/art.js?v=41d35b4';
-import { mergeStatic } from '../engine/merge.js?v=41d35b4';
+import * as THREE from '../../vendor/three.module.js?v=d8a02e0';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=d8a02e0';
+import { createLight, makeHalo } from '../engine/lights.js?v=d8a02e0';
+import { makeArt } from '../engine/art.js?v=d8a02e0';
+import { mergeStatic } from '../engine/merge.js?v=d8a02e0';
 
 const rad = THREE.MathUtils.degToRad;
 const cylGeo = (r0, r1, h, sides = 8) => setVertexShade(new THREE.CylinderGeometry(r0, r1, h, sides), 1);
@@ -290,6 +290,43 @@ export const PropMethods = {
   },
 
   // Folding screen: panels in a zigzag.
+  // An old television on the floor: a boxy set with a slightly curved-looking
+  // screen that shows snow until a film plays on it (see Game.watchTelevision).
+  addTelevision(o) {
+    const [x, y, z] = o.pos; const yaw = rad(o.yaw ?? 0);
+    const W = o.width ?? 0.62, H = o.height ?? 0.5, D = o.depth ?? 0.5;
+    const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = yaw; this.group.add(g);
+    const body = this.decoMat(o.tex || 'woodDark', o.color || '#6a5a48', o.pos, { texScale: 1 });
+    const dark = this.decoMat('black', '#1a1a1c', o.pos, { texScale: 1 });
+    const shell = new THREE.Mesh(boxGeo(W, H, D), body); shell.position.set(0, H / 2 + 0.04, 0); g.add(shell);
+    // Four stubby feet, a bezel, the knobs down the right side.
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) { const f = new THREE.Mesh(boxGeo(0.05, 0.04, 0.05), dark); f.position.set(sx * (W / 2 - 0.06), 0.02, sz * (D / 2 - 0.06)); g.add(f); }
+    const bezel = new THREE.Mesh(boxGeo(W - 0.06, H - 0.08, 0.02), dark); bezel.position.set(-0.05, H / 2 + 0.04, D / 2 + 0.005); g.add(bezel);
+    for (let i = 0; i < 3; i++) { const k = new THREE.Mesh(boxGeo(0.035, 0.035, 0.02), dark); k.position.set(W / 2 - 0.06, H * 0.78 - i * 0.09, D / 2 + 0.01); g.add(k); }
+    // The screen: a canvas of snow, redrawn a few times a second.
+    const sw = W - 0.2, sh = H - 0.16;
+    const canvas = document.createElement('canvas'); canvas.width = 96; canvas.height = 72;
+    const ctx = canvas.getContext('2d');
+    const snow = new THREE.CanvasTexture(canvas); snow.magFilter = THREE.NearestFilter; snow.minFilter = THREE.NearestFilter; snow.generateMipmaps = false; snow.colorSpace = THREE.SRGBColorSpace;
+    const mat = new THREE.MeshBasicMaterial({ map: snow, toneMapped: false, fog: true });
+    const screen = new THREE.Mesh(new THREE.PlaneGeometry(sw, sh), mat); screen.position.set(-0.05, H / 2 + 0.04, D / 2 + 0.02); g.add(screen);
+    const tv = { id: o.id, group: g, screen, mat, snow, canvas, ctx, film: o.film, width: sw, height: sh, last: -1, playing: false, video: null, videoTex: null };
+    this.televisions.push(tv);
+    this.drawSnow(tv);
+    return g;
+  },
+
+  drawSnow(tv) {
+    const { ctx, canvas } = tv;
+    const img = ctx.createImageData(canvas.width, canvas.height); const d = img.data;
+    for (let i = 0; i < d.length; i += 4) { const v = 40 + Math.random() * 190; d[i] = v; d[i + 1] = v; d[i + 2] = v + 6; d[i + 3] = 255; }
+    // A faint rolling bar, the way a bad set does.
+    const bar = ((performance.now() / 900) % 1) * canvas.height;
+    for (let y = 0; y < canvas.height; y++) { const k = Math.abs(y - bar) < 5 ? 0.6 : 1; if (k < 1) for (let x = 0; x < canvas.width; x++) { const i = (y * canvas.width + x) * 4; d[i] *= k; d[i + 1] *= k; d[i + 2] *= k; } }
+    ctx.putImageData(img, 0, 0);
+    tv.snow.needsUpdate = true;
+  },
+
   addScreen(o) {
     const [x, y, z] = o.pos; const n = o.panels ?? 4, pw = 0.5, ph = o.height ?? 1.7;
     const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = rad(o.yaw ?? 0); this.group.add(g);
