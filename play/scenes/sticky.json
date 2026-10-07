@@ -1,0 +1,5564 @@
+{
+ "title": "STICKY PLATES, CRITICAL DISTANCE",
+ "hint": "e to talk",
+ "hintTouch": "tap to talk",
+ "render": {
+  "height": 216
+ },
+ "environment": {
+  "fogColor": "#1a1612",
+  "ambient": "#2a241e",
+  "skyColor": "#30281e",
+  "sunDir": [
+   0.1,
+   0.8,
+   0.2
+  ],
+  "sunColor": "#4a4036",
+  "fogNear": 4,
+  "fogFar": 70,
+  "fogHeight": 0.5,
+  "fogHeightRange": 3,
+  "fogHeightStrength": 0.1
+ },
+ "sky": {
+  "top": "#080604",
+  "horizon": "#2a2030",
+  "moonSize": 3,
+  "stars": 90,
+  "moonDir": [
+   -0.7,
+   0.35,
+   -0.2
+  ]
+ },
+ "particles": {
+  "dust": {
+   "count": 200,
+   "alpha": 0.35
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "player": {
+  "pos": [
+   0,
+   6.0,
+   2.3
+  ],
+  "yaw": 0,
+  "pitch": 0,
+  "speed": 1.8
+ },
+ "ambience": [
+  {
+   "sound": "hum",
+   "box": [
+    -3,
+    3.0,
+    3,
+    9.0
+   ],
+   "range": 3,
+   "gain": 0.4
+  },
+  {
+   "sound": "murmur",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 5,
+   "gain": 0.25
+  },
+  {
+   "sound": "hum",
+   "box": [
+    294,
+    -5,
+    306,
+    5
+   ],
+   "range": 3,
+   "gain": 0.7
+  }
+ ],
+ "indoor": [
+  [
+   -3.4,
+   -3.4,
+   3.4,
+   3.4
+  ],
+  [
+   293.6,
+   -5.4,
+   306.4,
+   5.4
+  ]
+ ],
+ "items": {
+  "plates": {
+   "name": "the plates",
+   "model": "plates",
+   "examine": [
+    "A stack of plates, balanced. I can feel every one of them.",
+    "They're sticky."
+   ],
+   "uses": [
+    {
+     "when": {
+      "near": {
+       "id": "trash",
+       "radius": 2.0
+      }
+     },
+     "consume": true,
+     "do": [
+      {
+       "sfx": "scrape"
+      },
+      {
+       "set": "stained"
+      },
+      {
+       "light": {
+        "id": "trashGuide",
+        "intensity": 0
+       }
+      },
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "I scrape the napkins and the bits into the bin, quietly, so as not to put her off."
+        },
+        {
+         "who": "you",
+         "text": "The top plate has stuck to my jumper. Sweet chilli."
+        },
+        {
+         "who": "you",
+         "text": "I peel it off. It pulls at the wool."
+        },
+        {
+         "who": "you",
+         "text": "A dark, sticky mark on my sweater. It'll stay."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "useText": [
+    "I can't put them down here.",
+    "They're sticking together."
+   ]
+  }
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    6.0,
+    0
+   ],
+   "size": [
+    6.4,
+    6.4
+   ],
+   "tex": "vinyl",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    8.55,
+    0
+   ],
+   "size": [
+    6.8,
+    0.1,
+    6.8
+   ],
+   "tex": "plasterDirty",
+   "texScale": 2,
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.4,
+    7.25,
+    0
+   ],
+   "size": [
+    0.4,
+    2.5,
+    6.8
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.4,
+    7.25,
+    -2.575
+   ],
+   "size": [
+    0.4,
+    2.5,
+    1.65
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.4,
+    6.45,
+    -1.0
+   ],
+   "size": [
+    0.4,
+    0.9,
+    1.5
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.4,
+    8.3,
+    -1.0
+   ],
+   "size": [
+    0.4,
+    0.4,
+    1.5
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.4,
+    7.25,
+    1.575
+   ],
+   "size": [
+    0.4,
+    2.5,
+    3.65
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    7.25,
+    -3.4
+   ],
+   "size": [
+    6.8,
+    2.5,
+    0.4
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.5,
+    7.25,
+    3.4
+   ],
+   "size": [
+    3.8,
+    2.5,
+    0.4
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.6,
+    7.25,
+    3.4
+   ],
+   "size": [
+    1.6,
+    2.5,
+    0.4
+   ],
+   "tex": "plasterYellow",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.3,
+    8.25,
+    3.4
+   ],
+   "size": [
+    1.0,
+    0.5,
+    0.4
+   ],
+   "tex": "plasterYellow",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "window",
+   "pos": [
+    -3.4,
+    7.5,
+    -1.0
+   ],
+   "size": [
+    1.5,
+    1.2
+   ],
+   "axis": "x",
+   "mullions": [
+    2,
+    2
+   ],
+   "inside": 1,
+   "frame": "woodDark",
+   "depth": 0.12,
+   "name": "the window",
+   "examineAt": [
+    -3.3,
+    7.5,
+    -1.0
+   ],
+   "examineRadius": 0.7,
+   "examineRange": 5,
+   "examine": [
+    "Other windows. Other dinners.",
+    "The street is a long way down. Nobody's in it."
+   ]
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -14,
+    0,
+    0
+   ],
+   "size": [
+    22,
+    60
+   ],
+   "tex": "asphalt",
+   "texScale": 4,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -4.6,
+    0.12,
+    0
+   ],
+   "size": [
+    3.0,
+    60
+   ],
+   "tex": "pavement",
+   "texScale": 2,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    -5.0,
+    0,
+    -9
+   ],
+   "color": "#ffc070",
+   "intensity": 1.2,
+   "range": 9
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    -5.0,
+    0,
+    -1
+   ],
+   "color": "#ffc070",
+   "intensity": 1.2,
+   "range": 9
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    -5.0,
+    0,
+    7
+   ],
+   "color": "#ffc070",
+   "intensity": 1.2,
+   "range": 9
+  },
+  {
+   "type": "box",
+   "pos": [
+    -25.278841320914097,
+    6.0,
+    -16
+   ],
+   "size": [
+    10,
+    12,
+    9
+   ],
+   "tex": "brick",
+   "color": "#443c30",
+   "texScale": 3,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    1.6,
+    -19.3
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    1.6,
+    -16.900000000000002
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    1.6,
+    -14.5
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.238841320914098,
+    1.4,
+    -14.529493852196715
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    4.6,
+    -19.3
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    4.6,
+    -16.900000000000002
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.238841320914098,
+    4.4,
+    -16.60571753640318
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    4.6,
+    -14.5
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.238841320914098,
+    4.4,
+    -14.33401410724749
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    7.6,
+    -19.3
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.238841320914098,
+    7.4,
+    -19.48566425415553
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    7.6,
+    -16.900000000000002
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    7.6,
+    -14.5
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    10.6,
+    -19.3
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    10.6,
+    -16.900000000000002
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.258841320914097,
+    10.6,
+    -14.5
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.238841320914098,
+    10.4,
+    -14.449725001479909
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -25.486595064936232,
+    7.5,
+    -5
+   ],
+   "size": [
+    10,
+    15,
+    8
+   ],
+   "tex": "brick",
+   "color": "#4a3a34",
+   "texScale": 3,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    1.6,
+    -7.8
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    1.6,
+    -5.4
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    1.6,
+    -3.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    4.6,
+    -7.8
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    4.6,
+    -5.4
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    4.6,
+    -3.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    7.6,
+    -7.8
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    7.6,
+    -5.4
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    7.6,
+    -3.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    10.6,
+    -7.8
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    10.6,
+    -5.4
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    10.6,
+    -3.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.446595064936233,
+    10.4,
+    -3.1752687625137725
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    13.6,
+    -7.8
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    13.6,
+    -5.4
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.466595064936232,
+    13.6,
+    -3.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -25.8017175554318,
+    5.5,
+    5
+   ],
+   "size": [
+    10,
+    11,
+    10
+   ],
+   "tex": "brick",
+   "color": "#3a3438",
+   "texScale": 3,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    1.6,
+    1.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    1.6,
+    3.5999999999999996
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7617175554318,
+    1.4,
+    3.5637436431071614
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    1.6,
+    6.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    1.6,
+    8.399999999999999
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    4.6,
+    1.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    4.6,
+    3.5999999999999996
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    4.6,
+    6.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    4.6,
+    8.399999999999999
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7617175554318,
+    4.4,
+    8.409737148571482
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    7.6,
+    1.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7617175554318,
+    7.4,
+    1.2285598375516462
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    7.6,
+    3.5999999999999996
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    7.6,
+    6.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7617175554318,
+    7.4,
+    5.805922184637619
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.7817175554318,
+    7.6,
+    8.399999999999999
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -24.58177675948002,
+    8.5,
+    15
+   ],
+   "size": [
+    10,
+    17,
+    8
+   ],
+   "tex": "brick",
+   "color": "#443c30",
+   "texScale": 3,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    1.6,
+    12.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    1.6,
+    14.6
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.541776759480022,
+    1.4,
+    14.607615102149964
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    1.6,
+    17.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    4.6,
+    12.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    4.6,
+    14.6
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.541776759480022,
+    4.4,
+    14.714442671307726
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    4.6,
+    17.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    7.6,
+    12.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    7.6,
+    14.6
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.541776759480022,
+    7.4,
+    14.7519347575018
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    7.6,
+    17.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    10.6,
+    12.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    10.6,
+    14.6
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    10.6,
+    17.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    13.6,
+    12.2
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    13.6,
+    14.6
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#f0d8a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.541776759480022,
+    13.4,
+    14.832522301071428
+   ],
+   "size": [
+    0.04,
+    0.6,
+    0.3
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -19.561776759480022,
+    13.6,
+    17.0
+   ],
+   "size": [
+    0.06,
+    1.3,
+    1.0
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#14161c",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "ceilingFan",
+   "pos": [
+    0,
+    8.5,
+    0
+   ]
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    8.5,
+    0.6
+   ],
+   "color": "#ffd8a0",
+   "intensity": 0.7,
+   "range": 5,
+   "flicker": "candle"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.5,
+    8.2,
+    -2.6
+   ],
+   "size": [
+    4.0,
+    0.02,
+    0.02
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.3,
+    7.85,
+    -2.6
+   ],
+   "size": [
+    0.5,
+    0.7,
+    0.04
+   ],
+   "tex": "shirt",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "name": "the washing",
+   "examine": "Washing, drying over the table. Everyone's sleeves."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.4,
+    7.85,
+    -2.6
+   ],
+   "size": [
+    0.5,
+    0.7,
+    0.04
+   ],
+   "tex": "dress",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "name": "the washing",
+   "examine": "Washing, drying over the table. Everyone's sleeves."
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.5,
+    7.85,
+    -2.6
+   ],
+   "size": [
+    0.5,
+    0.7,
+    0.04
+   ],
+   "tex": "shirtWhite",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "name": "the washing",
+   "examine": "Washing, drying over the table. Everyone's sleeves."
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.4000000000000001,
+    7.85,
+    -2.6
+   ],
+   "size": [
+    0.5,
+    0.7,
+    0.04
+   ],
+   "tex": "coat",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "name": "the washing",
+   "examine": "Washing, drying over the table. Everyone's sleeves."
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.3,
+    7.85,
+    -2.6
+   ],
+   "size": [
+    0.5,
+    0.7,
+    0.04
+   ],
+   "tex": "gingham",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "name": "the washing",
+   "examine": "Washing, drying over the table. Everyone's sleeves."
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.9,
+    7.5,
+    -2.9
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.4
+   ],
+   "tex": "woodDark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.9,
+    7.62,
+    -3.0
+   ],
+   "size": [
+    0.4,
+    0.22,
+    0.1
+   ],
+   "tex": "lacquer",
+   "color": "#8a2020",
+   "collide": false,
+   "walkable": false,
+   "name": "the shrine",
+   "examine": "A shelf with a photograph and two oranges. The incense is still going."
+  },
+  {
+   "type": "food",
+   "pos": [
+    2.75,
+    7.52,
+    -2.85
+   ],
+   "kind": "candle"
+  },
+  {
+   "type": "light",
+   "pos": [
+    2.9,
+    7.7,
+    -2.8
+   ],
+   "color": "#ff8040",
+   "intensity": 0.3,
+   "range": 2,
+   "flicker": "candle"
+  },
+  {
+   "type": "panel",
+   "pos": [
+    1.0,
+    7.7,
+    -3.19
+   ],
+   "size": [
+    0.6,
+    0.8
+   ],
+   "art": "photo",
+   "frameTex": "woodDark",
+   "name": "the calendar",
+   "examine": "A calendar. Every day on it has been crossed off, including the ones that haven't happened."
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -2.0,
+    7.5,
+    -3.19
+   ],
+   "size": [
+    0.5,
+    0.4
+   ],
+   "art": "pizza",
+   "frame": false,
+   "name": "the drawing",
+   "examine": "A child's drawing of the family. There's one more person in it than at the table."
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.6,
+    6.45,
+    1.6
+   ],
+   "size": [
+    1.2,
+    0.9,
+    0.6
+   ],
+   "tex": "plaster",
+   "color": "#d8d4c8",
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.6,
+    6.92,
+    1.6
+   ],
+   "size": [
+    1.3,
+    0.04,
+    0.7
+   ],
+   "tex": "marble",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.0,
+    6.9399999999999995,
+    1.75
+   ],
+   "radius": 0.15,
+   "height": 0.2,
+   "tex": "white",
+   "sides": 10,
+   "collide": false,
+   "id": "cooker",
+   "name": "the rice cooker",
+   "examine": "The rice cooker. Its light says KEEP WARM. It always has."
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.0,
+    7.14,
+    1.75
+   ],
+   "radius": 0.16,
+   "height": 0.04,
+   "tex": "chrome",
+   "sides": 10,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.85,
+    7.0,
+    1.75
+   ],
+   "size": [
+    0.03,
+    0.02,
+    0.02
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ff6030",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.8,
+    6.85,
+    2.9
+   ],
+   "size": [
+    0.7,
+    1.7,
+    0.6
+   ],
+   "tex": "metal",
+   "texScale": 0.8,
+   "walkable": false,
+   "name": "the fridge",
+   "examine": "A fridge with every school report on it, held up by magnets from places nobody's been."
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -2.6,
+    6.0,
+    2.6
+   ],
+   "radius": 0.18,
+   "height": 0.3,
+   "tex": "plastic",
+   "color": "#30a060",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -2.6,
+    6.3,
+    2.6
+   ],
+   "radius": 0.18,
+   "height": 0.3,
+   "tex": "plastic",
+   "color": "#3060c0",
+   "sides": 8,
+   "collide": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -2.6,
+    6.6,
+    2.6
+   ],
+   "radius": 0.18,
+   "height": 0.3,
+   "tex": "plastic",
+   "color": "#3060c0",
+   "sides": 8,
+   "collide": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.4,
+    7.0,
+    -2.2
+   ],
+   "size": [
+    0.6,
+    0.5,
+    0.5
+   ],
+   "tex": "plastic",
+   "color": "#2a2a2e",
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.4,
+    7.0,
+    -1.94
+   ],
+   "size": [
+    0.5,
+    0.38,
+    0.02
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#8aa0c0",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false,
+   "id": "tv",
+   "name": "the television",
+   "examine": "The television's on with the sound down. Someone on it is also having dinner."
+  },
+  {
+   "type": "light",
+   "pos": [
+    -2.0,
+    7.2,
+    -1.6
+   ],
+   "color": "#8aa0ff",
+   "intensity": 0.3,
+   "range": 2.5,
+   "flicker": "dying"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.4,
+    6.35,
+    -2.2
+   ],
+   "size": [
+    0.7,
+    0.7,
+    0.5
+   ],
+   "tex": "woodDark",
+   "walkable": false
+  },
+  {
+   "type": "roundTable",
+   "pos": [
+    0,
+    6.0,
+    0
+   ],
+   "radius": 0.8,
+   "cloth": "#f0e8d8",
+   "clothTex": "gingham"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0,
+    6.76,
+    0
+   ],
+   "kind": "steamer",
+   "id": "steamer",
+   "name": "the dumplings",
+   "examine": [
+    "Dumplings. The steamer is never empty.",
+    "We ate so many. We eat more."
+   ]
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.35,
+    6.76,
+    0.2
+   ],
+   "kind": "steamer"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.3,
+    6.76,
+    0.25
+   ],
+   "kind": "steamer"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.1,
+    6.76,
+    -0.4
+   ],
+   "kind": "teapot"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.45,
+    6.76,
+    -0.3
+   ],
+   "kind": "bowl"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.5,
+    6.76,
+    -0.25
+   ],
+   "kind": "bowl"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.2,
+    6.76,
+    0.5
+   ],
+   "kind": "plate"
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.5,
+    6.76,
+    0.0
+   ],
+   "kind": "cup"
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.45,
+    6.76,
+    0.45
+   ],
+   "kind": "cup"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    0,
+    6.0,
+    -1.3
+   ],
+   "yaw": 0
+  },
+  {
+   "type": "character",
+   "id": "grandma",
+   "name": "the grandmother",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#cfc9bf",
+     "age": 0.85,
+     "seed": 49,
+     "browWeight": 0.4,
+     "browArch": 0.12,
+     "mood": "sad",
+     "lipstick": "#8a2a3a"
+    },
+    "hair": "hairWhite",
+    "top": "shirt",
+    "bottom": "black",
+    "hairStyle": "up"
+   },
+   "pos": [
+    0,
+    6.0,
+    -1.3
+   ],
+   "yaw": 0,
+   "talkRadius": 2.4,
+   "scale": null,
+   "behavior": {
+    "name": "dine",
+    "yaw": 0,
+    "seatHeight": 0.44,
+    "period": 5.5
+   },
+   "dialog": [
+    {
+     "if": {
+      "has": "plates"
+     },
+     "variants": [
+      [
+       {
+        "who": "grandma",
+        "text": "Careful on the stairs."
+       }
+      ],
+      [
+       {
+        "who": "grandma",
+        "text": "You really can carry them. Look at that."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "stained"
+     },
+     "lines": [
+      {
+       "who": "grandma",
+       "text": "Your jumper."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "grandma",
+        "text": "Eat. Eat."
+       }
+      ],
+      [
+       {
+        "who": "grandma",
+        "text": "Another one. Go on."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "chair",
+   "pos": [
+    1.3,
+    6.0,
+    0
+   ],
+   "yaw": 270
+  },
+  {
+   "type": "character",
+   "id": "father",
+   "name": "the father",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#161214",
+     "age": 0.5,
+     "seed": 974,
+     "browWeight": 0.65,
+     "browArch": 0.34,
+     "mood": "stern"
+    },
+    "hair": "hairBlack",
+    "top": "floral",
+    "bottom": "trousers",
+    "hairStyle": "short"
+   },
+   "pos": [
+    1.3,
+    6.0,
+    0
+   ],
+   "yaw": 270,
+   "talkRadius": 2.4,
+   "scale": null,
+   "behavior": {
+    "name": "dine",
+    "yaw": 270,
+    "seatHeight": 0.44,
+    "period": 5.5
+   },
+   "dialog": [
+    {
+     "if": {
+      "has": "plates"
+     },
+     "variants": [
+      [
+       {
+        "who": "father",
+        "text": "Careful on the stairs."
+       }
+      ],
+      [
+       {
+        "who": "father",
+        "text": "You really can carry them. Look at that."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "stained"
+     },
+     "lines": [
+      {
+       "who": "father",
+       "text": "Your jumper."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "father",
+        "text": "More tea? There's always more tea."
+       }
+      ],
+      [
+       {
+        "who": "father",
+        "text": "Another one. Go on."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "chair",
+   "pos": [
+    0,
+    6.0,
+    1.3
+   ],
+   "yaw": 180
+  },
+  {
+   "type": "character",
+   "id": "mother",
+   "name": "the mother",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#161214",
+     "age": 0.45,
+     "seed": 533,
+     "browWeight": 0.81,
+     "browArch": 0.58,
+     "mood": "flat",
+     "lipstick": "#c04050"
+    },
+    "hair": "hairBlack",
+    "top": "floral",
+    "bottom": "trousers",
+    "hairStyle": "long"
+   },
+   "pos": [
+    0,
+    6.0,
+    1.3
+   ],
+   "yaw": 180,
+   "talkRadius": 2.4,
+   "scale": null,
+   "behavior": {
+    "name": "dine",
+    "yaw": 180,
+    "seatHeight": 0.44,
+    "period": 5.5
+   },
+   "dialog": [
+    {
+     "if": {
+      "has": "plates"
+     },
+     "variants": [
+      [
+       {
+        "who": "mother",
+        "text": "Careful on the stairs."
+       }
+      ],
+      [
+       {
+        "who": "mother",
+        "text": "You really can carry them. Look at that."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "stained"
+     },
+     "lines": [
+      {
+       "who": "mother",
+       "text": "Your jumper."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "mother",
+        "text": "You've had enough? Nobody's had enough."
+       }
+      ],
+      [
+       {
+        "who": "mother",
+        "text": "Another one. Go on."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "chair",
+   "pos": [
+    -1.3,
+    6.0,
+    0
+   ],
+   "yaw": 90
+  },
+  {
+   "type": "character",
+   "id": "daughter",
+   "name": "the daughter",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#161214",
+     "age": 0.08,
+     "seed": 176,
+     "browWeight": 0.54,
+     "browArch": 0.1,
+     "mood": "flat",
+     "lipstick": "#a02838"
+    },
+    "hair": "hairBlack",
+    "top": "shirt",
+    "bottom": "suit",
+    "hairStyle": "bob"
+   },
+   "pos": [
+    -1.3,
+    6.0,
+    0
+   ],
+   "yaw": 90,
+   "talkRadius": 2.4,
+   "scale": 0.8,
+   "behavior": {
+    "name": "dine",
+    "yaw": 90,
+    "seatHeight": 0.44,
+    "period": 5.5
+   },
+   "dialog": [
+    {
+     "if": {
+      "has": "plates"
+     },
+     "variants": [
+      [
+       {
+        "who": "daughter",
+        "text": "Careful on the stairs."
+       }
+      ],
+      [
+       {
+        "who": "daughter",
+        "text": "You really can carry them. Look at that."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "stained"
+     },
+     "lines": [
+      {
+       "who": "daughter",
+       "text": "Your jumper."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "daughter",
+        "text": "Are you going to carry them? All of them?"
+       }
+      ],
+      [
+       {
+        "who": "daughter",
+        "text": "Another one. Go on."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "item",
+   "id": "platesItem",
+   "item": "plates",
+   "pos": [
+    2.35,
+    6.9399999999999995,
+    1.4
+   ],
+   "yaw": 20,
+   "scale": 1.5,
+   "name": "the plates"
+  },
+  {
+   "type": "guide",
+   "id": "platesGuide",
+   "pos": [
+    2.35,
+    8.3,
+    1.4
+   ],
+   "intensity": 1.3,
+   "range": 3.5,
+   "floor": 6.9399999999999995,
+   "shaft": {
+    "radius": 0.5
+   }
+  },
+  {
+   "type": "guide",
+   "id": "doorGuide",
+   "pos": [
+    1.3,
+    8.3,
+    3.0
+   ],
+   "intensity": 1.4,
+   "range": 4,
+   "floor": 6.0,
+   "shaft": {
+    "radius": 0.6
+   },
+   "off": true
+  },
+  {
+   "type": "plane",
+   "pos": [
+    1.3,
+    6.0,
+    4.6
+   ],
+   "size": [
+    2.4,
+    2.4
+   ],
+   "tex": "concrete",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.3,
+    7.25,
+    5.9
+   ],
+   "size": [
+    2.6,
+    2.5,
+    0.2
+   ],
+   "tex": "plasterDirty",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.6,
+    7.25,
+    4.6
+   ],
+   "size": [
+    0.2,
+    2.5,
+    2.6
+   ],
+   "tex": "plasterDirty",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.3,
+    8.55,
+    4.6
+   ],
+   "size": [
+    2.8,
+    0.1,
+    2.8
+   ],
+   "tex": "plasterDirty",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    1.3,
+    8.5,
+    4.6
+   ],
+   "color": "#d8e0c0",
+   "intensity": 0.8,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "stairs",
+   "pos": [
+    -2.46,
+    4.0,
+    4.6
+   ],
+   "dir": "+x",
+   "steps": 8,
+   "rise": 0.25,
+   "run": 0.32,
+   "width": 1.6,
+   "tex": "concrete",
+   "solid": true
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -3.4,
+    4.0,
+    4.6
+   ],
+   "size": [
+    1.9,
+    1.9
+   ],
+   "tex": "concrete"
+  },
+  {
+   "type": "stairs",
+   "pos": [
+    -3.4,
+    2.0,
+    8.06
+   ],
+   "dir": "-z",
+   "steps": 8,
+   "rise": 0.25,
+   "run": 0.32,
+   "width": 1.6,
+   "tex": "concrete",
+   "solid": true
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -3.4,
+    2.0,
+    8.9
+   ],
+   "size": [
+    1.9,
+    1.9
+   ],
+   "tex": "concrete"
+  },
+  {
+   "type": "stairs",
+   "pos": [
+    -0.5,
+    0.0,
+    8.9
+   ],
+   "dir": "-x",
+   "steps": 8,
+   "rise": 0.25,
+   "run": 0.32,
+   "width": 1.6,
+   "tex": "concrete",
+   "solid": true
+  },
+  {
+   "type": "plane",
+   "pos": [
+    1.3,
+    0,
+    8.9
+   ],
+   "size": [
+    3.6,
+    2.4
+   ],
+   "tex": "concrete"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.4,
+    3.0,
+    6.8
+   ],
+   "size": [
+    0.2,
+    7.0,
+    6.4
+   ],
+   "tex": "plasterDirty",
+   "texScale": 3,
+   "seg": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.5,
+    3.0,
+    10.1
+   ],
+   "size": [
+    7.8,
+    7.0,
+    0.2
+   ],
+   "tex": "plasterDirty",
+   "texScale": 3,
+   "seg": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.3,
+    3.0,
+    6.8
+   ],
+   "size": [
+    0.2,
+    7.0,
+    6.4
+   ],
+   "tex": "plasterDirty",
+   "texScale": 3,
+   "seg": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.0,
+    3.0,
+    3.4
+   ],
+   "size": [
+    4.8,
+    7.0,
+    0.2
+   ],
+   "tex": "plasterDirty",
+   "texScale": 3,
+   "seg": 4
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    -3.4,
+    5.6,
+    4.6
+   ],
+   "color": "#d8e0c0",
+   "intensity": 0.9,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    -3.4,
+    3.6,
+    8.9
+   ],
+   "color": "#d8e0c0",
+   "intensity": 0.9,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    1.3,
+    1.8,
+    8.9
+   ],
+   "color": "#d8e0c0",
+   "intensity": 0.9,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    -1.2,
+    5.0,
+    4.6
+   ],
+   "color": "#d8e0c0",
+   "intensity": 0.9,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    -3.4,
+    3.0,
+    6.8
+   ],
+   "color": "#d8e0c0",
+   "intensity": 0.9,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "collider",
+   "pos": [
+    1.3,
+    1.0,
+    7.6
+   ],
+   "size": [
+    3.6,
+    2,
+    0.2
+   ]
+  },
+  {
+   "type": "plane",
+   "pos": [
+    300,
+    0,
+    0
+   ],
+   "size": [
+    12,
+    10
+   ],
+   "tex": "carpet",
+   "color": "#4a4a5a",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    300,
+    2.85,
+    0
+   ],
+   "size": [
+    12.4,
+    0.1,
+    10.4
+   ],
+   "tex": "ceiling",
+   "texScale": 3,
+   "shade": 0.7,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    306.2,
+    1.4,
+    0
+   ],
+   "size": [
+    0.4,
+    2.8,
+    10.4
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    1.4,
+    -4.775
+   ],
+   "size": [
+    0.4,
+    2.8,
+    0.85
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    0.4,
+    -3.5
+   ],
+   "size": [
+    0.4,
+    0.8,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    2.55,
+    -3.5
+   ],
+   "size": [
+    0.4,
+    0.5,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    1.4,
+    -2.4
+   ],
+   "size": [
+    0.4,
+    2.8,
+    0.5
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    0.4,
+    -1.3
+   ],
+   "size": [
+    0.4,
+    0.8,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    2.55,
+    -1.3
+   ],
+   "size": [
+    0.4,
+    0.5,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    1.4,
+    -0.2
+   ],
+   "size": [
+    0.4,
+    2.8,
+    0.5
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    0.4,
+    0.9
+   ],
+   "size": [
+    0.4,
+    0.8,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    2.55,
+    0.9
+   ],
+   "size": [
+    0.4,
+    0.5,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    1.4,
+    2.0
+   ],
+   "size": [
+    0.4,
+    2.8,
+    0.5
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    0.4,
+    3.1
+   ],
+   "size": [
+    0.4,
+    0.8,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    2.55,
+    3.1
+   ],
+   "size": [
+    0.4,
+    0.5,
+    1.7
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    293.8,
+    1.4,
+    4.575
+   ],
+   "size": [
+    0.4,
+    2.8,
+    1.25
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "plane",
+   "pos": [
+    291.6,
+    0,
+    0
+   ],
+   "size": [
+    4.0,
+    40
+   ],
+   "tex": "pavement",
+   "texScale": 2,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "plane",
+   "pos": [
+    282,
+    -0.01,
+    0
+   ],
+   "size": [
+    16,
+    40
+   ],
+   "tex": "asphalt",
+   "texScale": 4,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    292.4,
+    0,
+    -6
+   ],
+   "color": "#ffc070",
+   "intensity": 1.3,
+   "range": 9
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    292.4,
+    0,
+    2
+   ],
+   "color": "#ffc070",
+   "intensity": 1.3,
+   "range": 9
+  },
+  {
+   "type": "box",
+   "pos": [
+    268,
+    7,
+    0
+   ],
+   "size": [
+    12,
+    14,
+    44
+   ],
+   "tex": "brick",
+   "color": "#3e3632",
+   "texScale": 3,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    -20
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    -17
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    -14
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#e8d0a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    -11
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    -8
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#e8d0a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    -5
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    -2
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    1
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    4
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    7
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#e8d0a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    10
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    13
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    16
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    1.8,
+    19
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    -20
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    -17
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    -14
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    -11
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    -8
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    -5
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    -2
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    1
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    4
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    7
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    10
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    13
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    16
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    5.0,
+    19
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    -20
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#e8d0a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    -17
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#e8d0a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    -14
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    -11
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    -8
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": true,
+   "color": "#e8d0a0",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    -5
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    -2
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    1
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    4
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    7
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    10
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    13
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    16
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    8.200000000000001,
+    19
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    -20
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    -17
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    -14
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    -11
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    -8
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    -5
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    -2
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    1
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    4
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    7
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    10
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    13
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    16
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    274.03,
+    11.400000000000002,
+    19
+   ],
+   "size": [
+    0.06,
+    1.4,
+    1.1
+   ],
+   "tex": "white",
+   "unlit": false,
+   "color": "#101216",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "plane",
+   "pos": [
+    291.6,
+    0.02,
+    0
+   ],
+   "size": [
+    0.1,
+    0.1
+   ],
+   "tex": "pavement",
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    300,
+    1.4,
+    -5.2
+   ],
+   "size": [
+    12.4,
+    2.8,
+    0.4
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    297.5,
+    1.4,
+    5.2
+   ],
+   "size": [
+    7.4,
+    2.8,
+    0.4
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    304.5,
+    1.4,
+    5.2
+   ],
+   "size": [
+    3.4,
+    2.8,
+    0.4
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "texScale": 2
+  },
+  {
+   "type": "box",
+   "pos": [
+    301.9,
+    2.4,
+    5.2
+   ],
+   "size": [
+    1.4,
+    0.8,
+    0.4
+   ],
+   "tex": "plaster",
+   "color": "#c8c0a8",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    301.9,
+    1.0,
+    5.3
+   ],
+   "size": [
+    1.4,
+    2.0,
+    0.2
+   ]
+  },
+  {
+   "type": "plane",
+   "pos": [
+    302,
+    0,
+    8.0
+   ],
+   "size": [
+    14,
+    5.2
+   ],
+   "tex": "pavement",
+   "texScale": 2,
+   "walkable": false,
+   "seg": 4
+  },
+  {
+   "type": "lamp",
+   "pos": [
+    304.5,
+    0,
+    7.6
+   ],
+   "color": "#ffc070",
+   "intensity": 1.2,
+   "range": 8
+  },
+  {
+   "type": "box",
+   "pos": [
+    302,
+    5,
+    14
+   ],
+   "size": [
+    30,
+    10,
+    6
+   ],
+   "tex": "brick",
+   "color": "#3a3230",
+   "texScale": 3,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "window",
+   "pos": [
+    301.9,
+    1.0,
+    5.4
+   ],
+   "size": [
+    1.3,
+    2.0
+   ],
+   "axis": "z",
+   "mullions": [
+    1,
+    3
+   ],
+   "frame": "metal",
+   "sill": false,
+   "collide": false,
+   "glassColor": "#a0b4c0",
+   "opacity": 0.2,
+   "name": "the street door",
+   "examine": "Frosted glass. The street outside is the wrong street."
+  },
+  {
+   "type": "sign",
+   "pos": [
+    301.9,
+    2.0,
+    5.37
+   ],
+   "size": [
+    1.1,
+    0.3
+   ],
+   "yaw": 180,
+   "parts": [
+    {
+     "text": "& SONS",
+     "font": "serif",
+     "color": "#303030"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#e8e4d8",
+   "backing": false,
+   "name": "the sign",
+   "examine": "The company name on the door, backwards from in here. My grandfather, my father, his brother. And sons."
+  },
+  {
+   "type": "window",
+   "pos": [
+    293.8,
+    1.55,
+    -3.5
+   ],
+   "size": [
+    1.7,
+    1.5
+   ],
+   "axis": "x",
+   "mullions": [
+    2,
+    1
+   ],
+   "inside": 1,
+   "frame": "metal",
+   "blind": 0.55,
+   "blindTex": "stripe",
+   "blindColor": "#d0cab8",
+   "depth": 0.12,
+   "name": "the window",
+   "examineAt": [
+    293.9,
+    1.55,
+    -3.5
+   ],
+   "examineRadius": 0.8,
+   "examineRange": 5,
+   "examine": [
+    "The street. A lamp, the block opposite, nobody.",
+    "The blinds were always like that. Nobody ever straightened them."
+   ]
+  },
+  {
+   "type": "window",
+   "pos": [
+    293.8,
+    1.55,
+    -1.2999999999999998
+   ],
+   "size": [
+    1.7,
+    1.5
+   ],
+   "axis": "x",
+   "mullions": [
+    2,
+    1
+   ],
+   "inside": 1,
+   "frame": "metal",
+   "blind": 0.35,
+   "blindTex": "stripe",
+   "blindColor": "#d0cab8",
+   "depth": 0.12,
+   "name": "the window",
+   "examineAt": [
+    293.9,
+    1.55,
+    -1.2999999999999998
+   ],
+   "examineRadius": 0.8,
+   "examineRange": 5,
+   "examine": [
+    "The street. A lamp, the block opposite, nobody.",
+    "The blinds were always like that. Nobody ever straightened them."
+   ]
+  },
+  {
+   "type": "window",
+   "pos": [
+    293.8,
+    1.55,
+    0.9000000000000004
+   ],
+   "size": [
+    1.7,
+    1.5
+   ],
+   "axis": "x",
+   "mullions": [
+    2,
+    1
+   ],
+   "inside": 1,
+   "frame": "metal",
+   "blind": 0.7,
+   "blindTex": "stripe",
+   "blindColor": "#d0cab8",
+   "depth": 0.12,
+   "name": "the window",
+   "examineAt": [
+    293.9,
+    1.55,
+    0.9000000000000004
+   ],
+   "examineRadius": 0.8,
+   "examineRange": 5,
+   "examine": [
+    "The street. A lamp, the block opposite, nobody.",
+    "The blinds were always like that. Nobody ever straightened them."
+   ]
+  },
+  {
+   "type": "window",
+   "pos": [
+    293.8,
+    1.55,
+    3.1000000000000005
+   ],
+   "size": [
+    1.7,
+    1.5
+   ],
+   "axis": "x",
+   "mullions": [
+    2,
+    1
+   ],
+   "inside": 1,
+   "frame": "metal",
+   "blind": 0.45,
+   "blindTex": "stripe",
+   "blindColor": "#d0cab8",
+   "depth": 0.12,
+   "name": "the window",
+   "examineAt": [
+    293.9,
+    1.55,
+    3.1000000000000005
+   ],
+   "examineRadius": 0.8,
+   "examineRange": 5,
+   "examine": [
+    "The street. A lamp, the block opposite, nobody.",
+    "The blinds were always like that. Nobody ever straightened them."
+   ]
+  },
+  {
+   "type": "light",
+   "pos": [
+    294.8,
+    1.6,
+    -1
+   ],
+   "color": "#9ab0d0",
+   "intensity": 0.35,
+   "range": 5,
+   "flicker": "soft"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    297,
+    2.8,
+    -3
+   ],
+   "color": "#e8ecd8",
+   "intensity": 0.55,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    297,
+    2.8,
+    1
+   ],
+   "color": "#e8ecd8",
+   "intensity": 0.55,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    303,
+    2.8,
+    -3
+   ],
+   "color": "#e8ecd8",
+   "intensity": 0.55,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    303,
+    2.8,
+    1
+   ],
+   "color": "#e8ecd8",
+   "intensity": 0.55,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    300,
+    2.8,
+    4
+   ],
+   "color": "#e8ecd8",
+   "intensity": 0.55,
+   "range": 6,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "box",
+   "pos": [
+    303.5,
+    0.55,
+    2.5
+   ],
+   "size": [
+    3.0,
+    1.1,
+    0.8
+   ],
+   "tex": "woodDark",
+   "texScale": 1,
+   "walkable": false,
+   "name": "the reception desk",
+   "examine": "The reception desk. The visitors' book is open at a page of my handwriting, aged eight."
+  },
+  {
+   "type": "box",
+   "pos": [
+    303.5,
+    1.12,
+    2.5
+   ],
+   "size": [
+    3.1,
+    0.05,
+    0.9
+   ],
+   "tex": "lacquer",
+   "color": "#6a4a30",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    302.6,
+    1.22,
+    2.5
+   ],
+   "size": [
+    0.3,
+    0.14,
+    0.2
+   ],
+   "tex": "plastic",
+   "color": "#e8e0d0",
+   "collide": false,
+   "walkable": false,
+   "name": "the telephone",
+   "examine": "A telephone with a cord. It rings once every few minutes and stops before anyone can get to it."
+  },
+  {
+   "type": "table",
+   "pos": [
+    296.5,
+    0,
+    -3.2
+   ],
+   "size": [
+    1.6,
+    0.8
+   ],
+   "tex": "woodDark"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    296.5,
+    0,
+    -4.0
+   ],
+   "yaw": 180
+  },
+  {
+   "type": "box",
+   "pos": [
+    296.2,
+    0.9,
+    -3.2
+   ],
+   "size": [
+    0.4,
+    0.26,
+    0.36
+   ],
+   "tex": "plastic",
+   "color": "#d8d4c8",
+   "collide": false,
+   "walkable": false,
+   "name": "the typewriter",
+   "examine": "A typewriter with a page in it. The page says the same word all the way down."
+  },
+  {
+   "type": "box",
+   "pos": [
+    296.9,
+    0.78,
+    -3.1
+   ],
+   "size": [
+    0.3,
+    0.05,
+    0.4
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    297.05,
+    0.75,
+    -3.45
+   ],
+   "color": "#f0d090",
+   "intensity": 0.4,
+   "range": 2.5
+  },
+  {
+   "type": "table",
+   "pos": [
+    299.5,
+    0,
+    -3.2
+   ],
+   "size": [
+    1.6,
+    0.8
+   ],
+   "tex": "woodDark"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    299.5,
+    0,
+    -4.0
+   ],
+   "yaw": 180
+  },
+  {
+   "type": "box",
+   "pos": [
+    299.2,
+    0.9,
+    -3.2
+   ],
+   "size": [
+    0.4,
+    0.26,
+    0.36
+   ],
+   "tex": "plastic",
+   "color": "#d8d4c8",
+   "collide": false,
+   "walkable": false,
+   "name": "the typewriter",
+   "examine": "A typewriter with a page in it. The page says the same word all the way down."
+  },
+  {
+   "type": "box",
+   "pos": [
+    299.9,
+    0.78,
+    -3.1
+   ],
+   "size": [
+    0.3,
+    0.05,
+    0.4
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    300.05,
+    0.75,
+    -3.45
+   ],
+   "color": "#f0d090",
+   "intensity": 0.4,
+   "range": 2.5
+  },
+  {
+   "type": "table",
+   "pos": [
+    302.5,
+    0,
+    -3.2
+   ],
+   "size": [
+    1.6,
+    0.8
+   ],
+   "tex": "woodDark"
+  },
+  {
+   "type": "chair",
+   "pos": [
+    302.5,
+    0,
+    -4.0
+   ],
+   "yaw": 180
+  },
+  {
+   "type": "box",
+   "pos": [
+    302.2,
+    0.9,
+    -3.2
+   ],
+   "size": [
+    0.4,
+    0.26,
+    0.36
+   ],
+   "tex": "plastic",
+   "color": "#d8d4c8",
+   "collide": false,
+   "walkable": false,
+   "name": "the typewriter",
+   "examine": "A typewriter with a page in it. The page says the same word all the way down."
+  },
+  {
+   "type": "box",
+   "pos": [
+    302.9,
+    0.78,
+    -3.1
+   ],
+   "size": [
+    0.3,
+    0.05,
+    0.4
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    303.05,
+    0.75,
+    -3.45
+   ],
+   "color": "#f0d090",
+   "intensity": 0.4,
+   "range": 2.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    294.4,
+    0.7,
+    2.0
+   ],
+   "size": [
+    0.6,
+    1.4,
+    0.55
+   ],
+   "tex": "metal",
+   "texScale": 0.6,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    294.4,
+    0.7,
+    2.7
+   ],
+   "size": [
+    0.6,
+    1.4,
+    0.55
+   ],
+   "tex": "metal",
+   "texScale": 0.6,
+   "walkable": false,
+   "name": "the filing cabinets",
+   "examine": "Filing cabinets. A to Z, and a drawer after Z with my name on it."
+  },
+  {
+   "type": "box",
+   "pos": [
+    294.4,
+    0.7,
+    3.4
+   ],
+   "size": [
+    0.6,
+    1.4,
+    0.55
+   ],
+   "tex": "metal",
+   "texScale": 0.6,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    295.5,
+    0,
+    4.4
+   ],
+   "radius": 0.2,
+   "height": 1.0,
+   "tex": "plastic",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    295.5,
+    1.0,
+    4.4
+   ],
+   "radius": 0.18,
+   "height": 0.5,
+   "tex": "white",
+   "color": "#bcd8e8",
+   "sides": 8,
+   "collide": false,
+   "name": "the water cooler",
+   "examine": "The water cooler. A bubble goes up it now and then, like a thought."
+  },
+  {
+   "type": "plant",
+   "pos": [
+    305.4,
+    0,
+    4.3
+   ],
+   "kind": "leafy",
+   "potColor": "#8a4a30"
+  },
+  {
+   "type": "box",
+   "pos": [
+    303,
+    2.2,
+    -5.17
+   ],
+   "size": [
+    0.5,
+    0.5,
+    0.04
+   ],
+   "tex": "white",
+   "collide": false,
+   "walkable": false,
+   "name": "the clock",
+   "examine": "The clock. It's eight in the evening and quarter past four at once."
+  },
+  {
+   "type": "box",
+   "pos": [
+    303,
+    2.2,
+    -5.14
+   ],
+   "size": [
+    0.02,
+    0.18,
+    0.02
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    298,
+    1.8,
+    -5.17
+   ],
+   "size": [
+    1.4,
+    0.9
+   ],
+   "art": "map",
+   "frameTex": "woodDark",
+   "name": "the notice board",
+   "examine": "A notice board. Memos from a year that didn't have this many months."
+  },
+  {
+   "type": "box",
+   "pos": [
+    300.2,
+    0.02,
+    4.2
+   ],
+   "size": [
+    1.4,
+    0.04,
+    1.0
+   ],
+   "tex": "carpet",
+   "color": "#2a2a3a",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "id": "trash",
+   "pos": [
+    300.2,
+    0,
+    4.2
+   ],
+   "radius": 0.42,
+   "height": 0.9,
+   "tex": "metal",
+   "sides": 10,
+   "collide": true,
+   "name": "the bin",
+   "examine": [
+    "A big bin. The office kind, with a bag in it.",
+    "Half full of other people's dinners."
+   ]
+  },
+  {
+   "type": "guide",
+   "id": "trashGuide",
+   "pos": [
+    300.2,
+    2.6,
+    4.2
+   ],
+   "intensity": 1.6,
+   "range": 4.5,
+   "shaft": {
+    "radius": 0.7
+   }
+  },
+  {
+   "type": "table",
+   "pos": [
+    298.0,
+    0,
+    3.0
+   ],
+   "size": [
+    1.6,
+    0.8
+   ],
+   "tex": "woodDark"
+  },
+  {
+   "type": "character",
+   "id": "singer",
+   "name": "the woman with the guitar",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#d0a890",
+    "face": {
+     "skin": "#d0a890",
+     "hair": "#161214",
+     "age": 0.26,
+     "seed": 404,
+     "browWeight": 0.45,
+     "browArch": 0.8,
+     "lipstick": "#a03040",
+     "mood": "flat",
+     "eyes": "#2a2626"
+    },
+    "hair": "hairBlack",
+    "hairStyle": "long",
+    "top": "floral",
+    "bottom": "trousers",
+    "prop": "guitar"
+   },
+   "pos": [
+    298.0,
+    0,
+    3.0
+   ],
+   "yaw": 180,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "sit",
+    "yaw": 180,
+    "seatHeight": 0.76,
+    "facePlayer": false,
+    "gesture": "guitar"
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stained",
+      "not": "judged"
+     },
+     "lines": [
+      {
+       "who": "singer",
+       "text": "Hang on, I've nearly got the bridge."
+      },
+      {
+       "text": "\u00abDoorstop.\u00bb You hold the door for me. \u00abDoorstop.\u00bb You hold the door, you see.",
+       "garbled": true,
+       "who": "singer"
+      },
+      {
+       "who": "singer",
+       "text": "What do you think? It's for Bladerunner. The musical."
+      }
+     ]
+    },
+    {
+     "if": {
+      "flag": "judged"
+     },
+     "variants": [
+      [
+       {
+        "who": "singer",
+        "text": "Too many doors? There's a lot of doors in Bladerunner. Think about it."
+       }
+      ],
+      [
+       {
+        "who": "singer",
+        "text": "Replicant, doorstop. It's nearly a rhyme."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "singer",
+        "text": "Sorry, I'm rehearsing. Don't mind me."
+       },
+       {
+        "who": "singer",
+        "text": "It's for Bladerunner. The musical. I'm writing it."
+       }
+      ],
+      [
+       {
+        "who": "singer",
+        "text": "Go round me. I'll keep it down."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "light",
+   "pos": [
+    298.0,
+    2.0,
+    3.6
+   ],
+   "color": "#ffd0a0",
+   "intensity": 0.5,
+   "range": 3.5,
+   "flicker": "candle"
+  }
+ ],
+ "events": [
+  {
+   "id": "intro",
+   "when": {
+    "start": true
+   },
+   "do": [
+    {
+     "rim": {
+      "id": "mother",
+      "k": 0.4
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "Dinner with a family. Dumplings, in steamers, in stacks."
+      },
+      {
+       "who": "you",
+       "text": "We ate so many."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "full",
+   "when": {
+    "since": {
+     "flag": "talked:mother",
+     "seconds": 2
+    },
+    "not": "offered"
+   },
+   "do": [
+    {
+     "set": "offered"
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I want to give something back."
+      },
+      {
+       "who": "you",
+       "text": "The plates."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "carry",
+   "when": {
+    "has": "plates",
+    "not": "carrying"
+   },
+   "do": [
+    {
+     "set": "carrying"
+    },
+    {
+     "light": {
+      "id": "platesGuide",
+      "intensity": 0
+     }
+    },
+    {
+     "light": {
+      "id": "doorGuide",
+      "intensity": 1.4
+     }
+    },
+    {
+     "rim": {
+      "id": "mother",
+      "k": 0
+     }
+    },
+    {
+     "react": {
+      "id": [
+       "mother",
+       "grandma",
+       "daughter"
+      ],
+      "gesture": "startled",
+      "seconds": 3
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "mother",
+       "text": "Not all of them. Not down the stairs."
+      },
+      {
+       "who": "you",
+       "text": "I really can carry them."
+      },
+      {
+       "who": "you",
+       "text": "I'm good at this. I didn't know I was good at this."
+      },
+      {
+       "who": "daughter",
+       "text": "He is, look."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sticky",
+   "when": {
+    "has": "plates",
+    "enter": {
+     "pos": [
+      -3.4,
+      8.9
+     ],
+     "radius": 1.4,
+     "maxY": 2.5
+    },
+    "not": "noticed"
+   },
+   "do": [
+    {
+     "set": "noticed"
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "The plates are sticky. Every one of them."
+      },
+      {
+       "who": "you",
+       "text": "Sweet chilli, plum, something darker."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "office",
+   "when": {
+    "has": "plates",
+    "enter": {
+     "pos": [
+      1.3,
+      8.9
+     ],
+     "radius": 1.6,
+     "maxY": 0.6
+    },
+    "not": "office"
+   },
+   "do": [
+    {
+     "set": "office"
+    },
+    {
+     "flash": 1.4
+    },
+    {
+     "teleport": {
+      "pos": [
+       295.2,
+       0,
+       -1.5
+      ],
+      "yaw": 210,
+      "flash": 1.8
+     }
+    },
+    {
+     "wait": 1.5
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "The building has become my father's office."
+      },
+      {
+       "who": "you",
+       "text": "The company he owned with his brother and my grandfather. I come here in dreams. It stands in for places."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hearHer",
+   "when": {
+    "flag": "office",
+    "enter": {
+     "pos": [
+      299,
+      2.5
+     ],
+     "radius": 3.2
+    },
+    "not": "heard"
+   },
+   "do": [
+    {
+     "set": "heard"
+    },
+    {
+     "rim": {
+      "id": "singer",
+      "k": 0.5
+     }
+    },
+    {
+     "focus": {
+      "id": "singer",
+      "seconds": 4,
+      "speed": 2.5
+     }
+    },
+    {
+     "say": [
+      {
+       "text": "\u00abDoorstop\u00bb, you hold the door for me...",
+       "garbled": true,
+       "who": "singer"
+      }
+     ]
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "A woman, late twenties, on a desk, with a guitar."
+      },
+      {
+       "who": "you",
+       "text": "She's good. She's very pretty, and she's good."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "doorstop",
+   "when": {
+    "flag": "stained",
+    "near": {
+     "id": "singer",
+     "radius": 4
+    },
+    "not": "judged"
+   },
+   "do": [
+    {
+     "set": "judged"
+    },
+    {
+     "focus": {
+      "id": "singer",
+      "seconds": 7,
+      "speed": 2.5
+     }
+    },
+    {
+     "say": [
+      {
+       "text": "\u00abDoorstop.\u00bb Hold the door for me, \u00abdoorstop.\u00bb",
+       "garbled": true,
+       "who": "singer"
+      },
+      {
+       "text": "Hold it open and I'll see. \u00abDoorstop.\u00bb",
+       "garbled": true,
+       "who": "singer"
+      }
+     ]
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "Doorstop, with doorstop."
+      },
+      {
+       "who": "you",
+       "text": "That's lazy."
+      },
+      {
+       "who": "you",
+       "text": "And it's too much about doors. About what doors do. For Bladerunner."
+      },
+      {
+       "who": "you",
+       "text": "I don't say anything. There's sauce on my jumper."
+      }
+     ]
+    },
+    {
+     "ending": {
+      "seconds": 10
+     }
+    },
+    {
+     "say": [
+      {
+       "text": "\u00abDoorstop...\u00bb",
+       "garbled": true,
+       "who": "singer"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

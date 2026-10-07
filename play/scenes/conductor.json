@@ -1,0 +1,7043 @@
+{
+ "title": "OLLY THE CONDUCTOR",
+ "hint": "e to talk",
+ "hintTouch": "tap to talk",
+ "render": {
+  "height": 216
+ },
+ "environment": {
+  "fogColor": "#1a1e26",
+  "ambient": "#161a22",
+  "skyColor": "#202836",
+  "sunDir": [
+   0.2,
+   0.6,
+   0.3
+  ],
+  "sunColor": "#404a5a",
+  "fogNear": 3,
+  "fogFar": 90,
+  "fogHeight": 0.5,
+  "fogHeightRange": 4,
+  "fogHeightStrength": 0.25
+ },
+ "sky": {
+  "top": "#080a10",
+  "moonSize": 5,
+  "stars": 50,
+  "moonDir": [
+   -0.5,
+   0.5,
+   -0.5
+  ]
+ },
+ "particles": {
+  "dust": {
+   "count": 220,
+   "alpha": 0.35
+  },
+  "floaters": {
+   "count": 10
+  }
+ },
+ "player": {
+  "pos": [
+   0,
+   0,
+   -5
+  ],
+  "yaw": 0,
+  "pitch": 0,
+  "speed": 2.0
+ },
+ "ride": {
+  "axis": "z",
+  "length": 260,
+  "far": 30,
+  "speed": 12,
+  "rate": 0.5,
+  "rail": true
+ },
+ "ambience": [
+  {
+   "sound": "wind",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 100,
+   "base": 0.4
+  },
+  {
+   "sound": "murmur",
+   "box": [
+    -1.5,
+    -12,
+    1.5,
+    12
+   ],
+   "range": 3,
+   "gain": 0.3
+  }
+ ],
+ "indoor": [
+  [
+   -1.6,
+   -15.6,
+   1.6,
+   12.2
+  ]
+ ],
+ "items": {
+  "train": {
+   "name": "another train"
+  },
+  "bigtrain": {
+   "name": "the train"
+  }
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    -7.9
+   ],
+   "size": [
+    2.9,
+    15.0
+   ],
+   "tex": "carpet",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.62,
+    -7.9
+   ],
+   "size": [
+    3.1,
+    0.1,
+    15.0
+   ],
+   "tex": "cream",
+   "texScale": 2,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    0.45,
+    -7.9
+   ],
+   "size": [
+    0.12,
+    0.9,
+    15.0
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    2.25,
+    -7.9
+   ],
+   "size": [
+    0.12,
+    0.74,
+    15.0
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    -1.5,
+    1.2,
+    -7.9
+   ],
+   "size": [
+    0.1,
+    2.4,
+    15.0
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    -15.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    -12.5
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    -9.600000000000001
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    -6.700000000000001
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    -3.8000000000000007
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    -0.9000000000000004
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    0.45,
+    -7.9
+   ],
+   "size": [
+    0.12,
+    0.9,
+    15.0
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    2.25,
+    -7.9
+   ],
+   "size": [
+    0.12,
+    0.74,
+    15.0
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    1.5,
+    1.2,
+    -7.9
+   ],
+   "size": [
+    0.1,
+    2.4,
+    15.0
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    -15.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    -12.5
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    -9.600000000000001
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    -6.700000000000001
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    -3.8000000000000007
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    -0.9000000000000004
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    6.2
+   ],
+   "size": [
+    2.9,
+    11.6
+   ],
+   "tex": "steel",
+   "texScale": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.62,
+    6.2
+   ],
+   "size": [
+    3.1,
+    0.1,
+    11.6
+   ],
+   "tex": "steel",
+   "texScale": 2,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    0.45,
+    6.2
+   ],
+   "size": [
+    0.12,
+    0.9,
+    11.6
+   ],
+   "tex": "graffiti",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    2.25,
+    6.2
+   ],
+   "size": [
+    0.12,
+    0.74,
+    11.6
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    -1.5,
+    1.2,
+    6.2
+   ],
+   "size": [
+    0.1,
+    2.4,
+    11.6
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    0.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    2.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    4.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    6.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    8.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.45,
+    1.4,
+    10.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    0.45,
+    6.2
+   ],
+   "size": [
+    0.12,
+    0.9,
+    11.6
+   ],
+   "tex": "graffiti",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    2.25,
+    6.2
+   ],
+   "size": [
+    0.12,
+    0.74,
+    11.6
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    1.5,
+    1.2,
+    6.2
+   ],
+   "size": [
+    0.1,
+    2.4,
+    11.6
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    0.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    2.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    4.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    6.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    8.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.45,
+    1.4,
+    10.4
+   ],
+   "size": [
+    0.12,
+    1.0,
+    0.2
+   ],
+   "tex": "graffiti",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.95,
+    1.3,
+    -0.4
+   ],
+   "size": [
+    1.0,
+    2.6,
+    0.12
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.95,
+    1.3,
+    -0.4
+   ],
+   "size": [
+    1.0,
+    2.6,
+    0.12
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.4,
+    -0.4
+   ],
+   "size": [
+    0.9,
+    0.4,
+    0.12
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.95,
+    1.3,
+    0.4
+   ],
+   "size": [
+    1.0,
+    2.6,
+    0.12
+   ],
+   "tex": "steel",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.95,
+    1.3,
+    0.4
+   ],
+   "size": [
+    1.0,
+    2.6,
+    0.12
+   ],
+   "tex": "steel",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.4,
+    0.4
+   ],
+   "size": [
+    0.9,
+    0.4,
+    0.12
+   ],
+   "tex": "steel",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    1.0,
+    0.8
+   ],
+   "tex": "metal",
+   "texScale": 0.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.3,
+    1.3,
+    -12.4
+   ],
+   "size": [
+    0.3,
+    2.6,
+    0.14
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.7,
+    2.35,
+    -12.4
+   ],
+   "size": [
+    0.9,
+    0.5,
+    0.14
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.7,
+    1.05,
+    -12.38
+   ],
+   "size": [
+    0.9,
+    2.1,
+    0.06
+   ],
+   "tex": "woodDark",
+   "id": "door",
+   "name": "the door",
+   "collide": false,
+   "walkable": false,
+   "examineAt": [
+    -0.7,
+    1.2,
+    -12.3
+   ],
+   "examineRadius": 0.5,
+   "verb": "bang on",
+   "examine": [],
+   "then": [
+    {
+     "sfx": "thud"
+    },
+    {
+     "wait": 0.35
+    },
+    {
+     "sfx": "thud"
+    },
+    {
+     "wait": 0.3
+    },
+    {
+     "sfx": "thud"
+    },
+    {
+     "set": "knocked"
+    },
+    {
+     "wait": 0.4
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I bang on it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "collider",
+   "pos": [
+    -0.7,
+    1.3,
+    -12.4
+   ],
+   "size": [
+    0.9,
+    2.6,
+    0.14
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.33,
+    1.0,
+    -12.360000000000001
+   ],
+   "size": [
+    0.1,
+    0.03,
+    0.04
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.1,
+    1.3,
+    -12.4
+   ],
+   "size": [
+    0.3,
+    2.6,
+    0.14
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.55,
+    0.55,
+    -12.4
+   ],
+   "size": [
+    1.0,
+    1.1,
+    0.14
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.55,
+    2.3,
+    -12.4
+   ],
+   "size": [
+    1.0,
+    0.6,
+    0.14
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    0.55,
+    1.55,
+    -12.4
+   ],
+   "size": [
+    1.0,
+    0.9,
+    0.14
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.05,
+    1.55,
+    -12.4
+   ],
+   "size": [
+    0.04,
+    0.9,
+    0.18
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.05,
+    1.55,
+    -12.4
+   ],
+   "size": [
+    0.04,
+    0.9,
+    0.18
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.55,
+    1.1,
+    -12.4
+   ],
+   "size": [
+    1.04,
+    0.04,
+    0.18
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.55,
+    2.0,
+    -12.4
+   ],
+   "size": [
+    1.04,
+    0.04,
+    0.18
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.25,
+    1.3,
+    -12.4
+   ],
+   "size": [
+    0.4,
+    2.6,
+    0.14
+   ],
+   "tex": "mahogany",
+   "texScale": 1
+  },
+  {
+   "type": "panel",
+   "id": "poster",
+   "pos": [
+    -1.0,
+    1.9,
+    -12.32
+   ],
+   "size": [
+    0.4,
+    0.5
+   ],
+   "art": "paris",
+   "frameTex": "brass",
+   "name": "the picture",
+   "examine": "A poster. ORIENT EXPRESS. Under it, in pencil: and back."
+  },
+  {
+   "type": "panel",
+   "id": "routeMap",
+   "pos": [
+    1.25,
+    1.9,
+    -12.32
+   ],
+   "size": [
+    0.34,
+    0.45
+   ],
+   "art": "map",
+   "frameTex": "brass",
+   "name": "the route",
+   "examine": [
+    "A map of the line. It crosses itself.",
+    "Every other train is on it too."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.5,
+    -15.4
+   ],
+   "size": [
+    3.1,
+    1.0,
+    0.16
+   ],
+   "tex": "steel",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.35,
+    -15.4
+   ],
+   "size": [
+    3.1,
+    0.5,
+    0.16
+   ],
+   "tex": "steel",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.35,
+    1.55,
+    -15.4
+   ],
+   "size": [
+    0.4,
+    1.1,
+    0.16
+   ],
+   "tex": "steel",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.35,
+    1.55,
+    -15.4
+   ],
+   "size": [
+    0.4,
+    1.1,
+    0.16
+   ],
+   "tex": "steel",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "collider",
+   "pos": [
+    0,
+    1.55,
+    -15.4
+   ],
+   "size": [
+    2.9,
+    1.1,
+    0.16
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.55,
+    -14.9
+   ],
+   "size": [
+    2.4,
+    1.1,
+    0.5
+   ],
+   "tex": "metal",
+   "texScale": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.12,
+    -14.95
+   ],
+   "size": [
+    2.4,
+    0.06,
+    0.6
+   ],
+   "tex": "steel",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.8,
+    1.0,
+    -14.66
+   ],
+   "size": [
+    0.16,
+    0.12,
+    0.02
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#80e0a0",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.5,
+    1.0,
+    -14.66
+   ],
+   "size": [
+    0.16,
+    0.12,
+    0.02
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ffd080",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.2,
+    1.0,
+    -14.66
+   ],
+   "size": [
+    0.16,
+    0.12,
+    0.02
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#80e0a0",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.2,
+    1.0,
+    -14.66
+   ],
+   "size": [
+    0.16,
+    0.12,
+    0.02
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ff8060",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.5,
+    1.0,
+    -14.66
+   ],
+   "size": [
+    0.16,
+    0.12,
+    0.02
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#80e0a0",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.8,
+    1.0,
+    -14.66
+   ],
+   "size": [
+    0.16,
+    0.12,
+    0.02
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ffd080",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.35,
+    1.3,
+    -14.7
+   ],
+   "size": [
+    0.04,
+    0.4,
+    0.04
+   ],
+   "tex": "chrome",
+   "rot": [
+    -35,
+    0,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.4,
+    1.25,
+    -14.66
+   ],
+   "size": [
+    0.28,
+    0.28,
+    0.03
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#60c0a0",
+   "texScale": 0.5,
+   "collide": false,
+   "walkable": false,
+   "name": "the speedometer",
+   "examine": "The needle says nothing. Then it says everything."
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    1.6,
+    -14.4
+   ],
+   "color": "#80e0b0",
+   "intensity": 0.45,
+   "range": 3.5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.95,
+    0.22,
+    -13.5
+   ],
+   "size": [
+    0.6,
+    0.44,
+    0.6
+   ],
+   "tex": "velvet",
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.25,
+    0.65,
+    -13.5
+   ],
+   "size": [
+    0.08,
+    0.5,
+    0.6
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.25,
+    1.9,
+    -13.2
+   ],
+   "size": [
+    0.04,
+    0.1,
+    0.04
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.2,
+    1.78,
+    -13.2
+   ],
+   "size": [
+    0.22,
+    0.08,
+    0.24
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.0,
+    0.23,
+    -10.2
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.33,
+    0.75,
+    -10.2
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.05,
+    0.72,
+    -8.75
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.6
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.35,
+    0.36,
+    -8.75
+   ],
+   "size": [
+    0.06,
+    0.72,
+    0.06
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    -1.15,
+    0.72,
+    -8.75
+   ],
+   "color": "#f0c070",
+   "intensity": 0.55,
+   "range": 3.2
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.95,
+    0.74,
+    -8.899999999999999
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.0,
+    0.23,
+    -10.2
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.33,
+    0.75,
+    -10.2
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.05,
+    0.72,
+    -8.75
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.6
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.35,
+    0.36,
+    -8.75
+   ],
+   "size": [
+    0.06,
+    0.72,
+    0.06
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    1.15,
+    0.72,
+    -8.75
+   ],
+   "color": "#f0c070",
+   "intensity": 0.55,
+   "range": 3.2
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.95,
+    0.74,
+    -8.899999999999999
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -1.38,
+    1.5,
+    -9.5
+   ],
+   "yaw": -90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "drape",
+   "pos": [
+    1.38,
+    1.5,
+    -9.5
+   ],
+   "yaw": 90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.0,
+    0.23,
+    -7.2
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.33,
+    0.75,
+    -7.2
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.05,
+    0.72,
+    -5.75
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.6
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.35,
+    0.36,
+    -5.75
+   ],
+   "size": [
+    0.06,
+    0.72,
+    0.06
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    -1.15,
+    0.72,
+    -5.75
+   ],
+   "color": "#f0c070",
+   "intensity": 0.55,
+   "range": 3.2
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.95,
+    0.74,
+    -5.9
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.0,
+    0.23,
+    -7.2
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.33,
+    0.75,
+    -7.2
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.05,
+    0.72,
+    -5.75
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.6
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.35,
+    0.36,
+    -5.75
+   ],
+   "size": [
+    0.06,
+    0.72,
+    0.06
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    1.15,
+    0.72,
+    -5.75
+   ],
+   "color": "#f0c070",
+   "intensity": 0.55,
+   "range": 3.2
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.95,
+    0.74,
+    -5.9
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -1.38,
+    1.5,
+    -6.5
+   ],
+   "yaw": -90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "drape",
+   "pos": [
+    1.38,
+    1.5,
+    -6.5
+   ],
+   "yaw": 90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.0,
+    0.23,
+    -4.2
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.33,
+    0.75,
+    -4.2
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.05,
+    0.72,
+    -2.75
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.6
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.35,
+    0.36,
+    -2.75
+   ],
+   "size": [
+    0.06,
+    0.72,
+    0.06
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    -1.15,
+    0.72,
+    -2.75
+   ],
+   "color": "#f0c070",
+   "intensity": 0.55,
+   "range": 3.2
+  },
+  {
+   "type": "food",
+   "pos": [
+    -0.95,
+    0.74,
+    -2.9000000000000004
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.0,
+    0.23,
+    -4.2
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.33,
+    0.75,
+    -4.2
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.05,
+    0.72,
+    -2.75
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.6
+   ],
+   "tex": "mahogany",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.35,
+    0.36,
+    -2.75
+   ],
+   "size": [
+    0.06,
+    0.72,
+    0.06
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    1.15,
+    0.72,
+    -2.75
+   ],
+   "color": "#f0c070",
+   "intensity": 0.55,
+   "range": 3.2
+  },
+  {
+   "type": "food",
+   "pos": [
+    0.95,
+    0.74,
+    -2.9000000000000004
+   ],
+   "kind": "wine"
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -1.38,
+    1.5,
+    -3.5
+   ],
+   "yaw": -90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "drape",
+   "pos": [
+    1.38,
+    1.5,
+    -3.5
+   ],
+   "yaw": 90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.0,
+    0.23,
+    -1.6
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.33,
+    0.75,
+    -1.6
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.0,
+    0.23,
+    -1.6
+   ],
+   "size": [
+    0.75,
+    0.46,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.33,
+    0.75,
+    -1.6
+   ],
+   "size": [
+    0.1,
+    0.6,
+    1.1
+   ],
+   "tex": "velvet",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -1.38,
+    1.5,
+    -0.9000000000000001
+   ],
+   "yaw": -90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "drape",
+   "pos": [
+    1.38,
+    1.5,
+    -0.9000000000000001
+   ],
+   "yaw": 90,
+   "size": [
+    0.5,
+    1.1
+   ],
+   "tex": "curtain",
+   "folds": 4
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.1,
+    2.2,
+    -6
+   ],
+   "size": [
+    0.5,
+    0.04,
+    11
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "suitcase09",
+   "pos": [
+    -1.1,
+    2.3,
+    -9
+   ],
+   "size": [
+    0.4,
+    0.2,
+    0.6
+   ],
+   "tex": "coat",
+   "collide": false,
+   "walkable": false,
+   "name": "a suitcase",
+   "examine": "A suitcase. The label is my handwriting."
+  },
+  {
+   "type": "box",
+   "id": "suitcase03",
+   "pos": [
+    -1.1,
+    2.3,
+    -3
+   ],
+   "size": [
+    0.4,
+    0.2,
+    0.6
+   ],
+   "tex": "coat",
+   "collide": false,
+   "walkable": false,
+   "name": "a suitcase",
+   "examine": "A suitcase. The label is my handwriting."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.1,
+    2.3,
+    -6.5
+   ],
+   "size": [
+    0.3,
+    0.14,
+    0.4
+   ],
+   "tex": "coat",
+   "color": "#6a5a4a",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.1,
+    2.2,
+    -6
+   ],
+   "size": [
+    0.5,
+    0.04,
+    11
+   ],
+   "tex": "brass",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "suitcase29",
+   "pos": [
+    1.1,
+    2.3,
+    -9
+   ],
+   "size": [
+    0.4,
+    0.2,
+    0.6
+   ],
+   "tex": "coat",
+   "collide": false,
+   "walkable": false,
+   "name": "a suitcase",
+   "examine": "A suitcase. The label is my handwriting."
+  },
+  {
+   "type": "box",
+   "id": "suitcase23",
+   "pos": [
+    1.1,
+    2.3,
+    -3
+   ],
+   "size": [
+    0.4,
+    0.2,
+    0.6
+   ],
+   "tex": "coat",
+   "collide": false,
+   "walkable": false,
+   "name": "a suitcase",
+   "examine": "A suitcase. The label is my handwriting."
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.1,
+    2.3,
+    -6.5
+   ],
+   "size": [
+    0.3,
+    0.14,
+    0.4
+   ],
+   "tex": "coat",
+   "color": "#6a5a4a",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    2.6,
+    -11.5
+   ],
+   "color": "#f0d0a0",
+   "intensity": 0.5,
+   "range": 5,
+   "flicker": "candle"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    2.6,
+    -8.5
+   ],
+   "color": "#f0d0a0",
+   "intensity": 0.5,
+   "range": 5,
+   "flicker": "candle"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    2.6,
+    -5.5
+   ],
+   "color": "#f0d0a0",
+   "intensity": 0.5,
+   "range": 5,
+   "flicker": "candle"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    2.6,
+    -2.0
+   ],
+   "color": "#f0d0a0",
+   "intensity": 0.5,
+   "range": 5,
+   "flicker": "candle"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.9,
+    -0.47
+   ],
+   "size": [
+    0.9,
+    0.32,
+    0.03
+   ],
+   "tex": "menuBoard",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "name": "the timetable",
+   "examine": [
+    "DEPARTS: now. ARRIVES: now.",
+    "Every station is the same station, with a different name."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.0,
+    0.75,
+    -1.1
+   ],
+   "size": [
+    0.3,
+    0.02,
+    0.4
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false,
+   "name": "a newspaper",
+   "examine": "Today's paper. The date is the day I was born."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.05,
+    0.22,
+    6.2
+   ],
+   "size": [
+    0.55,
+    0.44,
+    10.4
+   ],
+   "tex": "plastic",
+   "color": "#d08030",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.33,
+    0.7,
+    6.2
+   ],
+   "size": [
+    0.08,
+    0.5,
+    10.4
+   ],
+   "tex": "plastic",
+   "color": "#d08030",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -1.38,
+    2.0,
+    2.5
+   ],
+   "yaw": 90,
+   "size": [
+    1.4,
+    0.5
+   ],
+   "art": "venice",
+   "frame": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -1.38,
+    2.0,
+    6.0
+   ],
+   "yaw": 90,
+   "size": [
+    1.4,
+    0.5
+   ],
+   "art": "venice",
+   "frame": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    -1.38,
+    2.0,
+    9.5
+   ],
+   "yaw": 90,
+   "size": [
+    1.4,
+    0.5
+   ],
+   "art": "pizza",
+   "frame": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.05,
+    0.22,
+    6.2
+   ],
+   "size": [
+    0.55,
+    0.44,
+    10.4
+   ],
+   "tex": "plastic",
+   "color": "#d08030",
+   "collide": true,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.33,
+    0.7,
+    6.2
+   ],
+   "size": [
+    0.08,
+    0.5,
+    10.4
+   ],
+   "tex": "plastic",
+   "color": "#d08030",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    1.38,
+    2.0,
+    2.5
+   ],
+   "yaw": -90,
+   "size": [
+    1.4,
+    0.5
+   ],
+   "art": "pizza",
+   "frame": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    1.38,
+    2.0,
+    6.0
+   ],
+   "yaw": -90,
+   "size": [
+    1.4,
+    0.5
+   ],
+   "art": "photo",
+   "frame": false
+  },
+  {
+   "type": "panel",
+   "pos": [
+    1.38,
+    2.0,
+    9.5
+   ],
+   "yaw": -90,
+   "size": [
+    1.4,
+    0.5
+   ],
+   "art": "photo",
+   "frame": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    2.0
+   ],
+   "radius": 0.025,
+   "height": 2.6,
+   "tex": "chrome",
+   "sides": 6
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    5.0
+   ],
+   "radius": 0.025,
+   "height": 2.6,
+   "tex": "chrome",
+   "sides": 6
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    8.0
+   ],
+   "radius": 0.025,
+   "height": 2.6,
+   "tex": "chrome",
+   "sides": 6
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    11.0
+   ],
+   "radius": 0.025,
+   "height": 2.6,
+   "tex": "chrome",
+   "sides": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    1.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    1.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    2.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    2.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    3.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    3.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    4.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    4.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    5.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    5.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    6.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    6.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    7.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    7.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    8.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    8.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    9.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    9.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    10.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    10.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6,
+    2.1,
+    11.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    2.1,
+    11.3
+   ],
+   "size": [
+    0.03,
+    0.5,
+    0.03
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    2.6,
+    2.2
+   ],
+   "color": "#cfe8e0",
+   "intensity": 0.55,
+   "range": 5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    2.6,
+    6.2
+   ],
+   "color": "#cfe8e0",
+   "intensity": 0.55,
+   "range": 5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "pos": [
+    0,
+    2.6,
+    10.2
+   ],
+   "color": "#cfe8e0",
+   "intensity": 0.55,
+   "range": 5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.3,
+    12
+   ],
+   "size": [
+    3.1,
+    2.6,
+    0.16
+   ],
+   "tex": "steel",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.5,
+    11.92
+   ],
+   "size": [
+    1.2,
+    0.9,
+    0.05
+   ],
+   "tex": "cityLights",
+   "color": "#405060",
+   "unlit": true,
+   "texScale": 0.4,
+   "collide": false,
+   "walkable": false,
+   "name": "the back window",
+   "examine": "The track behind us, going the other way."
+  },
+  {
+   "type": "panel",
+   "id": "notice",
+   "pos": [
+    0.6,
+    1.9,
+    11.9
+   ],
+   "size": [
+    0.6,
+    0.5
+   ],
+   "art": "noswim",
+   "frameTex": "metal",
+   "name": "the notice",
+   "examine": "NO LEANING. NO DRIVER."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.9,
+    0.46,
+    9.0
+   ],
+   "size": [
+    0.3,
+    0.04,
+    0.3
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.9,
+    0.47,
+    3.2
+   ],
+   "size": [
+    0.22,
+    0.06,
+    0.16
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false,
+   "name": "a bag",
+   "examine": "Someone's bag. It's ticking, slowly, like a watch."
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1.2,
+    6
+   ],
+   "size": [
+    2.8,
+    1.5,
+    11
+   ],
+   "count": 6,
+   "scale": [
+    2,
+    4
+   ],
+   "alpha": 0.04,
+   "color": "#6a7a80",
+   "seed": 2
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    -0.5,
+    -100
+   ],
+   "size": [
+    12,
+    300
+   ],
+   "tex": "track",
+   "texScale": 2,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 4
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -46,
+    -0.6,
+    -100
+   ],
+   "size": [
+    80,
+    300
+   ],
+   "tex": "dark",
+   "texScale": 20,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 10
+  },
+  {
+   "type": "plane",
+   "pos": [
+    46,
+    -0.6,
+    -100
+   ],
+   "size": [
+    80,
+    300
+   ],
+   "tex": "dark",
+   "texScale": 20,
+   "rideScroll": "z",
+   "walkable": false,
+   "seg": 10
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    30
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    30
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    30
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    10
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    10
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    10
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.9,
+    3.2,
+    10.4
+   ],
+   "size": [
+    0.3,
+    0.3,
+    0.2
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ff6040",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -10
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -10
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -10
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -30
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -30
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -30
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -50
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -50
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -50
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.9,
+    3.2,
+    -49.6
+   ],
+   "size": [
+    0.3,
+    0.3,
+    0.2
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ff6040",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -70
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -70
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -70
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -90
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -90
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -90
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -110
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -110
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -110
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.9,
+    3.2,
+    -109.6
+   ],
+   "size": [
+    0.3,
+    0.3,
+    0.2
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ff6040",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -130
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -130
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -130
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -150
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -150
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -150
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -170
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -170
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -170
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.9,
+    3.2,
+    -169.6
+   ],
+   "size": [
+    0.3,
+    0.3,
+    0.2
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#ff6040",
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -190
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -190
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -190
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.8,
+    1.5,
+    -210
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.8,
+    1.5,
+    -210
+   ],
+   "size": [
+    0.4,
+    4.2,
+    0.4
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.7,
+    -210
+   ],
+   "size": [
+    8,
+    0.3,
+    0.3
+   ],
+   "tex": "steel",
+   "texScale": 1,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -53.151466405967334,
+    13.486111148937052,
+    12.628676018040071
+   ],
+   "size": [
+    7.381438779380235,
+    28.972222297874104,
+    12.50684208817665
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    22.41220521366966,
+    3.0461882547427077,
+    -63.58539067581408
+   ],
+   "size": [
+    12.229753390571716,
+    8.092376509485415,
+    10.271746126989378
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -24.37752383066449,
+    12.144720423233386,
+    1.3103771131729296
+   ],
+   "size": [
+    11.577843461042892,
+    26.28944084646677,
+    13.209213461735306
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18.59284970623549,
+    10.488742685887093,
+    -188.36517151699897
+   ],
+   "size": [
+    7.696295722909784,
+    22.977485371774186,
+    8.631009212121029
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18.366509814090335,
+    2.951973550039015,
+    -99.92199312980513
+   ],
+   "size": [
+    12.252546118747436,
+    7.90394710007803,
+    10.303790448501456
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -26.50849268182278,
+    13.036752183919013,
+    -143.03797157093035
+   ],
+   "size": [
+    13.801470227329734,
+    28.073504367838026,
+    8.811307664922047
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -52.096622338763304,
+    6.848864086066918,
+    -180.6605700645227
+   ],
+   "size": [
+    10.660135563961678,
+    15.697728172133836,
+    10.844736548123862
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -24.081323089767352,
+    10.857793760747574,
+    -102.79510874068308
+   ],
+   "size": [
+    12.148086357346553,
+    23.71558752149515,
+    9.074623883533029
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -16.402696719820547,
+    10.950041475121829,
+    -144.4424568881011
+   ],
+   "size": [
+    12.081259071189194,
+    23.900082950243657,
+    9.462446517819028
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    59.33884950864811,
+    10.259282543260568,
+    -215.33078660319057
+   ],
+   "size": [
+    6.44764880243849,
+    22.518565086521136,
+    9.772135545170094
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -20.78085006563971,
+    2.206037090138122,
+    -118.10556861664719
+   ],
+   "size": [
+    9.88416867943166,
+    6.412074180276244,
+    8.82359587691207
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    40.47683529580162,
+    7.777079297283445,
+    3.8284550125154553
+   ],
+   "size": [
+    12.085028459351363,
+    17.55415859456689,
+    12.047784382394703
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -46.245987552237246,
+    9.998686128050757,
+    -42.37552868517729
+   ],
+   "size": [
+    9.730119056311583,
+    21.997372256101514,
+    12.912452661410487
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    18.74314086625629,
+    4.872531973856189,
+    -202.35560532854825
+   ],
+   "size": [
+    7.6794600946860525,
+    11.745063947712378,
+    12.700968449470942
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -21.555442190626515,
+    13.499051678232933,
+    13.47543527830078
+   ],
+   "size": [
+    7.866780380631592,
+    28.998103356465865,
+    10.012093172646695
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    58.47868137919204,
+    10.786778473953131,
+    -129.90496356139633
+   ],
+   "size": [
+    9.338534801573775,
+    23.573556947906262,
+    10.05112309860024
+   ],
+   "tex": "cityLights",
+   "unlit": true,
+   "color": "#404850",
+   "texScale": 3,
+   "scroll": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1,
+    -80
+   ],
+   "size": [
+    60,
+    3,
+    200
+   ],
+   "count": 30,
+   "scale": [
+    6,
+    12
+   ],
+   "alpha": 0.07,
+   "seed": 8
+  },
+  {
+   "type": "item",
+   "id": "train1",
+   "item": "train",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    -5.2,
+    -0.5,
+    -200
+   ],
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      2.6,
+      3.2,
+      30
+     ],
+     "tex": "steel",
+     "pos": [
+      0,
+      1.6,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -7.2
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -2.4000000000000004
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      2.3999999999999986
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      7.199999999999999
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.3,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.2,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.0,
+      0.8,
+      0.1
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      2.3,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      -0.95,
+      0.6,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0.95,
+      0.6,
+      -15.05
+     ]
+    }
+   ],
+   "name": "another train",
+   "examine": "Another train. Nobody driving that one either."
+  },
+  {
+   "type": "item",
+   "id": "train2",
+   "item": "train",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    5.2,
+    -0.5,
+    -200
+   ],
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      2.6,
+      3.2,
+      30
+     ],
+     "tex": "steel",
+     "pos": [
+      0,
+      1.6,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -7.2
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -2.4000000000000004
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      2.3999999999999986
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      7.199999999999999
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.3,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.2,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.0,
+      0.8,
+      0.1
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      2.3,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      -0.95,
+      0.6,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0.95,
+      0.6,
+      -15.05
+     ]
+    }
+   ],
+   "name": "another train",
+   "examine": "Another train. Nobody driving that one either."
+  },
+  {
+   "type": "item",
+   "id": "train3",
+   "item": "train",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    -5.2,
+    -0.5,
+    -200
+   ],
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      2.6,
+      3.2,
+      30
+     ],
+     "tex": "steel",
+     "pos": [
+      0,
+      1.6,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -7.2
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -2.4000000000000004
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      2.3999999999999986
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      7.199999999999999
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.3,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.2,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.0,
+      0.8,
+      0.1
+     ],
+     "color": "#ffe8b0",
+     "unlit": true,
+     "pos": [
+      0,
+      2.3,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      -0.95,
+      0.6,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0.95,
+      0.6,
+      -15.05
+     ]
+    }
+   ],
+   "name": "another train",
+   "examine": "Another train. Nobody driving that one either."
+  },
+  {
+   "type": "item",
+   "id": "bigtrain",
+   "item": "bigtrain",
+   "pickup": false,
+   "hidden": true,
+   "pos": [
+    -120,
+    -0.5,
+    -6
+   ],
+   "yaw": 270,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      2.6,
+      3.2,
+      30
+     ],
+     "tex": "steel",
+     "pos": [
+      0,
+      1.6,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -7.2
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -2.4000000000000004
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      2.3999999999999986
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      7.199999999999999
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      16.799999999999997
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      21.6
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.3,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.2,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.0,
+      0.8,
+      0.1
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      2.3,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      -0.95,
+      0.6,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0.95,
+      0.6,
+      -15.05
+     ]
+    }
+   ],
+   "name": "the train",
+   "examine": [
+    "It's stopped. Its headlights fill the window.",
+    "There's nobody in its cab either."
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend1",
+   "name": "a friend",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#161214",
+     "age": 0.4,
+     "seed": 283,
+     "browWeight": 0.47,
+     "browArch": 0.87,
+     "mood": "flat",
+     "lipstick": "#a02838"
+    },
+    "hair": "hairBlack",
+    "top": "suit",
+    "bottom": "suit",
+    "hairStyle": "up",
+    "skirt": true
+   },
+   "pos": [
+    -1.0,
+    0,
+    -10.2
+   ],
+   "yaw": 90,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "sit",
+    "yaw": 90,
+    "seatHeight": 0.46,
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend1",
+        "text": "Olly! Start the train!"
+       }
+      ],
+      [
+       {
+        "who": "friend1",
+        "text": "He doesn't know what he's doing."
+       }
+      ],
+      [
+       {
+        "who": "friend1",
+        "text": "Look at him. He's asleep."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend1",
+        "text": "We're all safe. That's what he'll say."
+       }
+      ],
+      [
+       {
+        "who": "friend1",
+        "text": "I'm never getting on a train with him again."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "friend1",
+        "text": "Olly says he's a conductor. Did you know that?"
+       }
+      ],
+      [
+       {
+        "who": "friend1",
+        "text": "We're all safe, right? That's what he'll say."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend2",
+   "name": "a friend",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.56,
+     "seed": 696,
+     "browWeight": 0.35,
+     "browArch": 0.43,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "shirtWhite",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    1.0,
+    0,
+    -7.2
+   ],
+   "yaw": 270,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "sit",
+    "yaw": 270,
+    "seatHeight": 0.46,
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend2",
+        "text": "Olly! Start the train!"
+       }
+      ],
+      [
+       {
+        "who": "friend2",
+        "text": "He doesn't know what he's doing."
+       }
+      ],
+      [
+       {
+        "who": "friend2",
+        "text": "Look at him. He's asleep."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend2",
+        "text": "We're all safe. That's what he'll say."
+       }
+      ],
+      [
+       {
+        "who": "friend2",
+        "text": "I'm never getting on a train with him again."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "friend2",
+        "text": "Where's he taking us?"
+       }
+      ],
+      [
+       {
+        "who": "friend2",
+        "text": "We're all safe, right? That's what he'll say."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend3",
+   "name": "a friend",
+   "look": {
+    "skin": "skinDeep",
+    "skinColor": "#7a4e34",
+    "face": {
+     "skin": "#7a4e34",
+     "hair": "#cfc9bf",
+     "age": 0.75,
+     "seed": 849,
+     "browWeight": 0.69,
+     "browArch": 0.85,
+     "mood": "flat"
+    },
+    "hair": "hairWhite",
+    "top": "suit",
+    "bottom": "suit",
+    "hairStyle": "bob",
+    "skirt": true
+   },
+   "pos": [
+    -1.0,
+    0,
+    -4.2
+   ],
+   "yaw": 90,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "sit",
+    "yaw": 90,
+    "seatHeight": 0.46,
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend3",
+        "text": "Olly! Start the train!"
+       }
+      ],
+      [
+       {
+        "who": "friend3",
+        "text": "He doesn't know what he's doing."
+       }
+      ],
+      [
+       {
+        "who": "friend3",
+        "text": "Look at him. He's asleep."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend3",
+        "text": "We're all safe. That's what he'll say."
+       }
+      ],
+      [
+       {
+        "who": "friend3",
+        "text": "I'm never getting on a train with him again."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "friend3",
+        "text": "I like this car better. The other one smells of 1974."
+       }
+      ],
+      [
+       {
+        "who": "friend3",
+        "text": "We're all safe, right? That's what he'll say."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend4",
+   "name": "a friend",
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#dcc6b4",
+    "face": {
+     "skin": "#dcc6b4",
+     "hair": "#cfc9bf",
+     "age": 0.66,
+     "seed": 698,
+     "browWeight": 0.59,
+     "browArch": 0.75,
+     "mood": "stern"
+    },
+    "hair": "hairWhite",
+    "top": "shirtWhite",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    1.0,
+    0,
+    -1.6
+   ],
+   "yaw": 270,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "sit",
+    "yaw": 270,
+    "seatHeight": 0.46,
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend4",
+        "text": "Olly! Start the train!"
+       }
+      ],
+      [
+       {
+        "who": "friend4",
+        "text": "He doesn't know what he's doing."
+       }
+      ],
+      [
+       {
+        "who": "friend4",
+        "text": "Look at him. He's asleep."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend4",
+        "text": "We're all safe. That's what he'll say."
+       }
+      ],
+      [
+       {
+        "who": "friend4",
+        "text": "I'm never getting on a train with him again."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "friend4",
+        "text": "Did you see the other trains? Hundreds."
+       }
+      ],
+      [
+       {
+        "who": "friend4",
+        "text": "We're all safe, right? That's what he'll say."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend5",
+   "name": "a friend",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#cfc9bf",
+     "age": 0.79,
+     "seed": 149,
+     "browWeight": 0.38,
+     "browArch": 0.93,
+     "mood": "flat",
+     "stubble": true
+    },
+    "hair": "hairWhite",
+    "top": "suit",
+    "bottom": "suit",
+    "hairStyle": "short"
+   },
+   "pos": [
+    1.0,
+    0,
+    -10.2
+   ],
+   "yaw": 270,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "sit",
+    "yaw": 270,
+    "seatHeight": 0.46,
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend5",
+        "text": "Olly! Start the train!"
+       }
+      ],
+      [
+       {
+        "who": "friend5",
+        "text": "He doesn't know what he's doing."
+       }
+      ],
+      [
+       {
+        "who": "friend5",
+        "text": "Look at him. He's asleep."
+       }
+      ]
+     ]
+    },
+    {
+     "if": {
+      "flag": "moving"
+     },
+     "variants": [
+      [
+       {
+        "who": "friend5",
+        "text": "We're all safe. That's what he'll say."
+       }
+      ],
+      [
+       {
+        "who": "friend5",
+        "text": "I'm never getting on a train with him again."
+       }
+      ]
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "friend5",
+        "text": "Nobody told me we were going anywhere."
+       }
+      ],
+      [
+       {
+        "who": "friend5",
+        "text": "We're all safe, right? That's what he'll say."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend6",
+   "name": "a friend",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.54,
+     "seed": 165,
+     "browWeight": 0.69,
+     "browArch": 0.34,
+     "mood": "stern"
+    },
+    "hair": "hairDark",
+    "top": "tweed",
+    "bottom": "black",
+    "hairStyle": "long"
+   },
+   "pos": [
+    -0.6,
+    0,
+    3.2
+   ],
+   "yaw": 160,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "stand",
+    "yaw": 160,
+    "gesture": "strap"
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "friend6",
+        "text": "There's nobody driving our train!"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend7",
+   "name": "a friend",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#161214",
+     "age": 0.07,
+     "seed": 755,
+     "browWeight": 0.81,
+     "browArch": 0.05,
+     "mood": "flat"
+    },
+    "hair": "hairBlack",
+    "top": "tweed",
+    "bottom": "trousers",
+    "hairStyle": "short"
+   },
+   "pos": [
+    0.7,
+    0,
+    7.4
+   ],
+   "yaw": 200,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "stand",
+    "yaw": 200,
+    "gesture": "pole"
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "friend7",
+        "text": "Hold on to something."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "friend8",
+   "name": "a friend",
+   "look": {
+    "skin": "skinDeep",
+    "skinColor": "#7a4e34",
+    "face": {
+     "skin": "#7a4e34",
+     "hair": "#2a221e",
+     "age": 0.0,
+     "seed": 130,
+     "browWeight": 0.32,
+     "browArch": 0.78,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "shirt",
+    "bottom": "suit",
+    "hairStyle": "long"
+   },
+   "pos": [
+    -0.8,
+    0,
+    10.2
+   ],
+   "yaw": 20,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "stand",
+    "yaw": 20,
+    "gesture": "armsCrossed"
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "who": "friend8",
+        "text": "I saw the front. There's nobody there."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "sleeper",
+   "name": "a stranger",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#4a3222",
+     "age": 0.06,
+     "seed": 748,
+     "browWeight": 0.53,
+     "browArch": 0.71,
+     "mood": "flat"
+    },
+    "hair": "hairBrown",
+    "top": "coat",
+    "bottom": "suit",
+    "hairStyle": "short"
+   },
+   "pos": [
+    -1.0,
+    0,
+    9.0
+   ],
+   "yaw": 90,
+   "talkRadius": 2.4,
+   "behavior": {
+    "name": "sit",
+    "yaw": 90,
+    "seatHeight": 0.44,
+    "facePlayer": false,
+    "gesture": "sleep"
+   },
+   "dialog": [
+    {
+     "variants": [
+      [
+       {
+        "text": "Mm. \u00abIs this\u00bb Fulton Street?",
+        "garbled": true,
+        "who": "sleeper"
+       },
+       {
+        "who": "you",
+        "text": "I don't know."
+       }
+      ],
+      [
+       {
+        "text": "\u00abWake me\u00bb at the end.",
+        "garbled": true,
+        "who": "sleeper"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "reader",
+   "name": "a stranger",
+   "look": {
+    "skin": "skinTan",
+    "skinColor": "#b07850",
+    "face": {
+     "skin": "#b07850",
+     "hair": "#2a221e",
+     "age": 0.28,
+     "seed": 195,
+     "browWeight": 0.59,
+     "browArch": 0.44,
+     "mood": "stern"
+    },
+    "hair": "hairDark",
+    "top": "tweed",
+    "bottom": "black",
+    "hairStyle": "short"
+   },
+   "pos": [
+    -1.0,
+    0,
+    -1.6
+   ],
+   "yaw": 90,
+   "talkRadius": 2.4,
+   "behavior": {
+    "name": "sit",
+    "yaw": 90,
+    "seatHeight": 0.46,
+    "facePlayer": false,
+    "gesture": "read"
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "lines": [
+      {
+       "who": "reader",
+       "text": "They always stop here."
+      },
+      {
+       "who": "reader",
+       "text": "Then they go."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "reader",
+        "text": "It says here the line was closed in 1974."
+       },
+       {
+        "who": "reader",
+        "text": "It says it every day."
+       }
+      ],
+      [
+       {
+        "who": "reader",
+        "text": "Shh."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "steward",
+   "name": "the steward",
+   "look": {
+    "skin": "skin",
+    "skinColor": "#c69a78",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#4a3222",
+     "age": 0.18,
+     "seed": 672,
+     "browWeight": 0.9,
+     "browArch": 0.31,
+     "mood": "flat",
+     "stubble": true
+    },
+    "hair": "hairBrown",
+    "top": "suit",
+    "bottom": "trousers",
+    "hairStyle": "short",
+    "prop": "tray"
+   },
+   "pos": [
+    0,
+    0,
+    -11.5
+   ],
+   "yaw": 0,
+   "talkRadius": 2.6,
+   "behavior": {
+    "name": "patrol",
+    "route": [
+     [
+      0,
+      -11.3,
+      0,
+      2
+     ],
+     [
+      0,
+      -3,
+      180,
+      3
+     ],
+     [
+      0,
+      -8,
+      90,
+      2
+     ]
+    ],
+    "speed": 0.7,
+    "carry": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "lines": [
+      {
+       "who": "steward",
+       "text": "A short delay, sir. The driver is resting."
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "steward",
+        "text": "Tea, sir? We only have tea."
+       }
+      ],
+      [
+       {
+        "who": "steward",
+        "text": "We arrive when we arrive, sir."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "character",
+   "id": "olly",
+   "name": "Olly",
+   "look": {
+    "skin": "skin",
+    "face": {
+     "skin": "#c69a78",
+     "hair": "#2a221e",
+     "age": 0.4,
+     "seed": 101,
+     "browWeight": 0.6,
+     "browArch": 0.5,
+     "stubble": true,
+     "mood": "flat"
+    },
+    "hair": "hairDark",
+    "top": "corduroy",
+    "bottom": "trousers",
+    "cap": true,
+    "capTex": "black"
+   },
+   "pos": [
+    0.5,
+    0,
+    -8.6
+   ],
+   "yaw": 160,
+   "talkRadius": 3.0,
+   "behavior": {
+    "name": "idle",
+    "facePlayer": true
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "conductor"
+     },
+     "lines": [
+      {
+       "who": "olly",
+       "text": "Don't worry. I'm a conductor."
+      },
+      {
+       "who": "you",
+       "text": "Since when?"
+      },
+      {
+       "who": "olly",
+       "text": "Don't worry."
+      }
+     ],
+     "then": [
+      {
+       "set": "conductor"
+      },
+      {
+       "behavior": {
+        "id": "olly",
+        "name": "walkTo",
+        "path": [
+         [
+          -0.7,
+          -9
+         ],
+         [
+          -0.7,
+          -11.6
+         ]
+        ],
+        "speed": 1.2,
+        "then": "hide"
+       }
+      },
+      {
+       "wait": 3.4
+      },
+      {
+       "sfx": "confirm"
+      },
+      {
+       "move": {
+        "id": "olly",
+        "pos": [
+         0.3,
+         0,
+         -14.1
+        ],
+        "yaw": 180
+       }
+      },
+      {
+       "show": "olly"
+      },
+      {
+       "behavior": {
+        "id": "olly",
+        "name": "stand",
+        "yaw": 180,
+        "gesture": "drive",
+        "noticeRadius": 0
+       }
+      },
+      {
+       "wait": 0.8
+      },
+      {
+       "sfx": "trainHorn",
+       "intensity": 0.5
+      },
+      {
+       "ride": {
+        "speed": 10,
+        "rate": 0.4
+       }
+      },
+      {
+       "wait": 1.0
+      },
+      {
+       "set": "relaxed"
+      },
+      {
+       "say": [
+        {
+         "who": "friend1",
+         "text": "See? A conductor."
+        },
+        {
+         "who": "you",
+         "text": "Smooth."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "if": {
+      "flag": "stopped",
+      "not": "moving"
+     },
+     "lines": [
+      {
+       "who": "you",
+       "text": "Olly!"
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "olly",
+        "text": "We're all safe. Right?"
+       }
+      ],
+      [
+       {
+        "who": "olly",
+        "text": "It drives itself, mostly."
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "intro",
+   "when": {
+    "start": true
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "Trains, everywhere. And all my friends on this one."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scared",
+   "when": {
+    "enter": {
+     "pos": [
+      0,
+      5
+     ],
+     "radius": 3.5
+    },
+    "not": "scared"
+   },
+   "do": [
+    {
+     "set": "scared"
+    },
+    {
+     "tween": {
+      "id": "train1",
+      "path": [
+       [
+        -5.2,
+        -0.5,
+        -200
+       ],
+       [
+        -5.2,
+        -0.5,
+        60
+       ]
+      ],
+      "seconds": 3.0
+     }
+    },
+    {
+     "focus": {
+      "object": "train1",
+      "seconds": 2.6,
+      "speed": 4
+     }
+    },
+    {
+     "sfx": "trainHorn",
+     "intensity": 0.7
+    },
+    {
+     "react": {
+      "id": [
+       "friend6",
+       "friend7",
+       "friend8",
+       "friend4",
+       "sleeper"
+      ],
+      "gesture": "startled",
+      "seconds": 2.5
+     }
+    },
+    {
+     "wait": 1.0
+    },
+    {
+     "say": [
+      {
+       "who": "friend6",
+       "text": "There's nobody driving our train!"
+      },
+      {
+       "who": "friend7",
+       "text": "What?"
+      },
+      {
+       "who": "friend6",
+       "text": "Nobody's driving!"
+      },
+      {
+       "who": "you",
+       "text": "Nobody's driving."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ollyNear",
+   "when": {
+    "flag": "scared",
+    "near": {
+     "id": "olly",
+     "radius": 2.4
+    },
+    "not": "conductor"
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "olly",
+       "text": "Don't worry. I'm a conductor."
+      }
+     ]
+    },
+    {
+     "set": "conductor"
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "walkTo",
+      "path": [
+       [
+        -0.7,
+        -9
+       ],
+       [
+        -0.7,
+        -11.6
+       ]
+      ],
+      "speed": 1.2,
+      "then": "hide"
+     }
+    },
+    {
+     "wait": 3.4
+    },
+    {
+     "sfx": "confirm"
+    },
+    {
+     "move": {
+      "id": "olly",
+      "pos": [
+       0.3,
+       0,
+       -14.1
+      ],
+      "yaw": 180
+     }
+    },
+    {
+     "show": "olly"
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "stand",
+      "yaw": 180,
+      "gesture": "drive",
+      "noticeRadius": 0
+     }
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "sfx": "trainHorn",
+     "intensity": 0.5
+    },
+    {
+     "ride": {
+      "speed": 10,
+      "rate": 0.4
+     }
+    },
+    {
+     "wait": 1.0
+    },
+    {
+     "set": "relaxed"
+    },
+    {
+     "say": [
+      {
+       "who": "friend1",
+       "text": "See? A conductor."
+      },
+      {
+       "who": "you",
+       "text": "Smooth."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sharp",
+   "when": {
+    "since": {
+     "flag": "relaxed",
+     "seconds": 9
+    },
+    "enter": {
+     "pos": [
+      0,
+      -6
+     ],
+     "radius": 7
+    },
+    "not": "sharp"
+   },
+   "do": [
+    {
+     "set": "sharp"
+    },
+    {
+     "swerve": {
+      "amount": 1.4,
+      "seconds": 2.2,
+      "sound": false
+     }
+    },
+    {
+     "ride": {
+      "speed": 19,
+      "rate": 0.8
+     }
+    },
+    {
+     "fov": 82
+    },
+    {
+     "react": {
+      "id": [
+       "friend1",
+       "friend2",
+       "friend3",
+       "friend4",
+       "friend5",
+       "reader",
+       "friend6",
+       "friend7",
+       "friend8"
+      ],
+      "gesture": "brace",
+      "seconds": 7
+     }
+    },
+    {
+     "tween": {
+      "id": "train2",
+      "path": [
+       [
+        5.2,
+        -0.5,
+        -200
+       ],
+       [
+        5.2,
+        -0.5,
+        60
+       ]
+      ],
+      "seconds": 2.2
+     }
+    },
+    {
+     "sfx": "trainHorn",
+     "intensity": 0.6
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "tween": {
+      "id": "train3",
+      "path": [
+       [
+        -5.2,
+        -0.5,
+        60
+       ],
+       [
+        -5.2,
+        -0.5,
+        -200
+       ]
+      ],
+      "seconds": 2.6
+     }
+    },
+    {
+     "swerve": {
+      "amount": -1.2,
+      "seconds": 2.0,
+      "sound": false
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "friend2",
+       "text": "Where's he taking us?"
+      },
+      {
+       "who": "friend4",
+       "text": "Hold on!"
+      }
+     ]
+    },
+    {
+     "wait": 1.0
+    },
+    {
+     "swerve": {
+      "amount": 1.0,
+      "seconds": 2.4,
+      "sound": false
+     }
+    },
+    {
+     "fov": 72
+    }
+   ]
+  },
+  {
+   "id": "crossing",
+   "when": {
+    "since": {
+     "flag": "sharp",
+     "seconds": 9
+    },
+    "enter": {
+     "pos": [
+      0,
+      -6
+     ],
+     "radius": 8
+    },
+    "not": "stopped"
+   },
+   "do": [
+    {
+     "set": "stopped"
+    },
+    {
+     "clear": "knocked"
+    },
+    {
+     "sfx": "screech"
+    },
+    {
+     "ride": {
+      "speed": 0,
+      "rate": 1.6
+     }
+    },
+    {
+     "swerve": {
+      "amount": -0.5,
+      "seconds": 1.4,
+      "sound": false
+     }
+    },
+    {
+     "react": {
+      "id": [
+       "friend1",
+       "friend2",
+       "friend3",
+       "friend4",
+       "friend5",
+       "reader",
+       "friend6",
+       "friend7",
+       "friend8"
+      ],
+      "gesture": "brace",
+      "seconds": 3
+     }
+    },
+    {
+     "wait": 1.8
+    },
+    {
+     "move": {
+      "id": "olly",
+      "pos": [
+       0.95,
+       0,
+       -13.5
+      ],
+      "yaw": 270
+     }
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "sit",
+      "yaw": 270,
+      "seatHeight": 0.44,
+      "facePlayer": false,
+      "gesture": "sleep"
+     }
+    },
+    {
+     "show": "bigtrain"
+    },
+    {
+     "tween": {
+      "id": "bigtrain",
+      "path": [
+       [
+        -120,
+        -0.5,
+        -6
+       ],
+       [
+        -18,
+        -0.5,
+        -6
+       ]
+      ],
+      "seconds": 11,
+      "ease": "out"
+     }
+    },
+    {
+     "sfx": "trainHorn"
+    },
+    {
+     "focus": {
+      "pos": [
+       -20,
+       1.5,
+       -6
+      ],
+      "seconds": 6,
+      "speed": 3
+     }
+    },
+    {
+     "wait": 3.0
+    },
+    {
+     "react": {
+      "id": [
+       "friend1",
+       "friend3",
+       "friend5"
+      ],
+      "gesture": "startled",
+      "seconds": 4
+     }
+    },
+    {
+     "wait": 3.0
+    },
+    {
+     "sfx": "trainHorn",
+     "intensity": 0.8
+    },
+    {
+     "react": {
+      "id": [
+       "friend2",
+       "friend4"
+      ],
+      "gesture": "panic",
+      "seconds": 5
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "friend3",
+       "text": "Olly!"
+      },
+      {
+       "who": "friend1",
+       "text": "Start the train!"
+      },
+      {
+       "who": "friend4",
+       "text": "You don't know what you're doing!"
+      },
+      {
+       "who": "you",
+       "text": "Olly. Olly!"
+      }
+     ]
+    },
+    {
+     "hint": "the door"
+    }
+   ]
+  },
+  {
+   "id": "napSeen",
+   "when": {
+    "flag": "stopped",
+    "facing": {
+     "pos": [
+      0.9,
+      1.3,
+      -13.5
+     ],
+     "angle": 9,
+     "within": 5
+    },
+    "not": [
+     "moving",
+     "napSeen"
+    ]
+   },
+   "do": [
+    {
+     "set": "napSeen"
+    },
+    {
+     "focus": {
+      "pos": [
+       0.95,
+       1.2,
+       -13.5
+      ],
+      "seconds": 3,
+      "speed": 3
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "He's asleep."
+      },
+      {
+       "who": "you",
+       "text": "He's actually asleep."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "knock",
+   "when": {
+    "flags": [
+     "stopped",
+     "knocked"
+    ],
+    "not": "moving"
+   },
+   "do": [
+    {
+     "wait": 0.6
+    },
+    {
+     "say": [
+      {
+       "who": "olly",
+       "text": "...Mm?"
+      }
+     ]
+    },
+    {
+     "set": "moving"
+    },
+    {
+     "react": {
+      "id": "olly",
+      "gesture": "startled",
+      "seconds": 1.6
+     }
+    },
+    {
+     "wait": 1.4
+    },
+    {
+     "move": {
+      "id": "olly",
+      "pos": [
+       0.3,
+       0,
+       -14.1
+      ],
+      "yaw": 180
+     }
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "stand",
+      "yaw": 180,
+      "gesture": "drive",
+      "noticeRadius": 0
+     }
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "sfx": "trainHorn"
+    },
+    {
+     "ride": {
+      "speed": 14,
+      "rate": 2.0
+     }
+    },
+    {
+     "swerve": {
+      "amount": 0.9,
+      "seconds": 1.6,
+      "sound": false
+     }
+    },
+    {
+     "react": {
+      "id": [
+       "friend1",
+       "friend2",
+       "friend3",
+       "friend4",
+       "friend5",
+       "reader",
+       "friend6",
+       "friend7",
+       "friend8"
+      ],
+      "gesture": "brace",
+      "seconds": 3
+     }
+    },
+    {
+     "tween": {
+      "id": "bigtrain",
+      "path": [
+       [
+        -18,
+        -0.5,
+        -6
+       ],
+       [
+        -18,
+        -0.5,
+        60
+       ]
+      ],
+      "seconds": 2.0,
+      "from": "here",
+      "then": "hide"
+     }
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "react": {
+      "id": [
+       "friend1",
+       "friend2",
+       "friend3",
+       "friend4",
+       "friend5",
+       "reader"
+      ],
+      "gesture": "cheer",
+      "seconds": 3
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "friend2",
+       "text": "Go, go, go!"
+      },
+      {
+       "who": "you",
+       "text": "We're moving. Just."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "go",
+   "when": {
+    "since": {
+     "flag": "stopped",
+     "seconds": 28
+    },
+    "near": {
+     "id": "door",
+     "radius": 9
+    },
+    "not": "moving"
+   },
+   "do": [
+    {
+     "set": "moving"
+    },
+    {
+     "react": {
+      "id": "olly",
+      "gesture": "startled",
+      "seconds": 1.6
+     }
+    },
+    {
+     "wait": 1.4
+    },
+    {
+     "move": {
+      "id": "olly",
+      "pos": [
+       0.3,
+       0,
+       -14.1
+      ],
+      "yaw": 180
+     }
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "stand",
+      "yaw": 180,
+      "gesture": "drive",
+      "noticeRadius": 0
+     }
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "sfx": "trainHorn"
+    },
+    {
+     "ride": {
+      "speed": 14,
+      "rate": 2.0
+     }
+    },
+    {
+     "swerve": {
+      "amount": 0.9,
+      "seconds": 1.6,
+      "sound": false
+     }
+    },
+    {
+     "react": {
+      "id": [
+       "friend1",
+       "friend2",
+       "friend3",
+       "friend4",
+       "friend5",
+       "reader",
+       "friend6",
+       "friend7",
+       "friend8"
+      ],
+      "gesture": "brace",
+      "seconds": 3
+     }
+    },
+    {
+     "tween": {
+      "id": "bigtrain",
+      "path": [
+       [
+        -18,
+        -0.5,
+        -6
+       ],
+       [
+        -18,
+        -0.5,
+        60
+       ]
+      ],
+      "seconds": 2.0,
+      "from": "here",
+      "then": "hide"
+     }
+    },
+    {
+     "wait": 0.8
+    },
+    {
+     "react": {
+      "id": [
+       "friend1",
+       "friend2",
+       "friend3",
+       "friend4",
+       "friend5",
+       "reader"
+      ],
+      "gesture": "cheer",
+      "seconds": 3
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "friend2",
+       "text": "Go, go, go!"
+      },
+      {
+       "who": "you",
+       "text": "We're moving. Just."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "olly2",
+   "when": {
+    "since": {
+     "flag": "moving",
+     "seconds": 5
+    },
+    "facing": {
+     "pos": [
+      0.3,
+      1.5,
+      -14.1
+     ],
+     "angle": 14,
+     "within": 5
+    },
+    "not": "back"
+   },
+   "do": [
+    {
+     "set": "back"
+    },
+    {
+     "focus": {
+      "pos": [
+       0.3,
+       1.5,
+       -14.1
+      ],
+      "seconds": 10,
+      "speed": 3
+     }
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "stand",
+      "yaw": 0,
+      "gesture": "shrug",
+      "noticeRadius": 0
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "olly",
+       "text": "Sorry. I stopped to take a nap."
+      },
+      {
+       "who": "you",
+       "text": "You should have told somebody."
+      },
+      {
+       "who": "olly",
+       "text": "We're all safe, though."
+      },
+      {
+       "who": "olly",
+       "text": "Right?"
+      }
+     ]
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "stand",
+      "yaw": 180,
+      "gesture": "drive",
+      "noticeRadius": 0
+     }
+    },
+    {
+     "ending": {
+      "seconds": 10
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "Right."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "olly2b",
+   "when": {
+    "since": {
+     "flag": "moving",
+     "seconds": 24
+    },
+    "near": {
+     "id": "door",
+     "radius": 9
+    },
+    "not": "back"
+   },
+   "do": [
+    {
+     "set": "back"
+    },
+    {
+     "focus": {
+      "pos": [
+       0.3,
+       1.5,
+       -14.1
+      ],
+      "seconds": 10,
+      "speed": 3
+     }
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "stand",
+      "yaw": 0,
+      "gesture": "shrug",
+      "noticeRadius": 0
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "olly",
+       "text": "Sorry. I stopped to take a nap."
+      },
+      {
+       "who": "you",
+       "text": "You should have told somebody."
+      },
+      {
+       "who": "olly",
+       "text": "We're all safe, though."
+      },
+      {
+       "who": "olly",
+       "text": "Right?"
+      }
+     ]
+    },
+    {
+     "behavior": {
+      "id": "olly",
+      "name": "stand",
+      "yaw": 180,
+      "gesture": "drive",
+      "noticeRadius": 0
+     }
+    },
+    {
+     "ending": {
+      "seconds": 10
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "Right."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

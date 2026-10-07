@@ -46,6 +46,16 @@
       "source": "/dreaming",
       "destination": "/dream-index",
       "permanent": true
+    },
+    {
+      "source": "/play",
+      "destination": "/play/",
+      "permanent": false
+    },
+    {
+      "source": "/play/:scene([a-z0-9-]+)",
+      "destination": "/play/?scene=:scene",
+      "permanent": false
     }
   ]
 }

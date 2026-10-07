@@ -1,0 +1,2044 @@
+{
+ "name": "museum",
+ "hub": true,
+ "title": "",
+ "hall": 84,
+ "ceiling": 12,
+ "environment": {
+  "fogColor": "#07080b",
+  "ambient": "#121216",
+  "skyColor": "#15161a",
+  "sunDir": [
+   0.2,
+   0.9,
+   0.3
+  ],
+  "sunColor": "#1a1a20",
+  "fogNear": 8,
+  "fogFar": 120,
+  "fogHeight": 0.4,
+  "fogHeightRange": 8,
+  "fogHeightStrength": 0.2,
+  "jitter": 1
+ },
+ "sky": {
+  "top": "#000000",
+  "horizon": "#000000",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 340,
+   "alpha": 0.32,
+   "color": "#b0a890",
+   "box": [
+    60,
+    10,
+    60
+   ]
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "indoor": [
+  [
+   -43.0,
+   -43.0,
+   43.0,
+   43.0
+  ]
+ ],
+ "player": {
+  "pos": [
+   0,
+   0,
+   8.5
+  ],
+  "yaw": 0,
+  "speed": 2.6
+ },
+ "ambience": [
+  {
+   "sound": "hum",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.6,
+   "gain": 0.3
+  },
+  {
+   "sound": "drip",
+   "pos": [
+    -24,
+    24
+   ],
+   "range": 16,
+   "gain": 0.5
+  },
+  {
+   "sound": "wind",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.4,
+   "gain": 0.2
+  }
+ ],
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    84,
+    84
+   ],
+   "tex": "parquet",
+   "texScale": 2,
+   "shade": 0.55,
+   "seg": 6,
+   "surface": "wood"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    6.0,
+    -42.0
+   ],
+   "size": [
+    85,
+    12,
+    1
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    6.0,
+    42.0
+   ],
+   "size": [
+    85,
+    12,
+    1
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -42.0,
+    6.0,
+    0
+   ],
+   "size": [
+    1,
+    12,
+    85
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    42.0,
+    6.0,
+    0
+   ],
+   "size": [
+    1,
+    12,
+    85
+   ],
+   "tex": "plaster",
+   "color": "#8c8780",
+   "texScale": 3,
+   "shade": 0.6,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    12.1,
+    0
+   ],
+   "size": [
+    85,
+    0.2,
+    85
+   ],
+   "tex": "ceiling",
+   "texScale": 4,
+   "shade": 0.25,
+   "collide": false,
+   "walkable": false,
+   "seg": 8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    11.6,
+    -41.4
+   ],
+   "size": [
+    84,
+    0.8,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.5,
+    -41.4
+   ],
+   "size": [
+    84,
+    1.0,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    11.6,
+    41.4
+   ],
+   "size": [
+    84,
+    0.8,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.5,
+    41.4
+   ],
+   "size": [
+    84,
+    1.0,
+    0.5
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -41.4,
+    11.6,
+    0
+   ],
+   "size": [
+    0.5,
+    0.8,
+    84
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    -41.4,
+    0.5,
+    0
+   ],
+   "size": [
+    0.5,
+    1.0,
+    84
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    41.4,
+    11.6,
+    0
+   ],
+   "size": [
+    0.5,
+    0.8,
+    84
+   ],
+   "tex": "marble",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "box",
+   "pos": [
+    41.4,
+    0.5,
+    0
+   ],
+   "size": [
+    0.5,
+    1.0,
+    84
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false,
+   "seg": 6
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -9,
+    0,
+    -9
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9,
+    0.2,
+    -9
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9,
+    11.75,
+    -9
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -9,
+    0,
+    9
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9,
+    0.2,
+    9
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9,
+    11.75,
+    9
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    9,
+    0,
+    -9
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    9,
+    0.2,
+    -9
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    9,
+    11.75,
+    -9
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    9,
+    0,
+    9
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    9,
+    0.2,
+    9
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    9,
+    11.75,
+    9
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -18,
+    0,
+    -18
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    0.2,
+    -18
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    11.75,
+    -18
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -18,
+    0,
+    18
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    0.2,
+    18
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    11.75,
+    18
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    18,
+    0,
+    -18
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    18,
+    0.2,
+    -18
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    18,
+    11.75,
+    -18
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    18,
+    0,
+    18
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    18,
+    0.2,
+    18
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    18,
+    11.75,
+    18
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    18
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.2,
+    18
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    11.75,
+    18
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    -18
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.2,
+    -18
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    11.75,
+    -18
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    18,
+    0,
+    0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    18,
+    0.2,
+    0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    18,
+    11.75,
+    0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -18,
+    0,
+    0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    0.2,
+    0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -18,
+    11.75,
+    0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -30,
+    0,
+    -30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    0.2,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    11.75,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -30,
+    0,
+    30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    0.2,
+    30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    11.75,
+    30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    30,
+    0,
+    -30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    0.2,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    11.75,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    30,
+    0,
+    30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    0.2,
+    30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    11.75,
+    30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.2,
+    30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    11.75,
+    30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0,
+    0,
+    -30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.2,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    11.75,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    30,
+    0,
+    0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    0.2,
+    0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    11.75,
+    0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -30,
+    0,
+    0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    0.2,
+    0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    11.75,
+    0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -30,
+    0,
+    -10.0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    0.2,
+    -10.0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    11.75,
+    -10.0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -30,
+    0,
+    10.0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    0.2,
+    10.0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -30,
+    11.75,
+    10.0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    30,
+    0,
+    -10.0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    0.2,
+    -10.0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    11.75,
+    -10.0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    30,
+    0,
+    10.0
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    0.2,
+    10.0
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    30,
+    11.75,
+    10.0
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -10.0,
+    0,
+    -30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.0,
+    0.2,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.0,
+    11.75,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -10.0,
+    0,
+    30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.0,
+    0.2,
+    30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.0,
+    11.75,
+    30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    10.0,
+    0,
+    -30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.0,
+    0.2,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.0,
+    11.75,
+    -30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    10.0,
+    0,
+    30
+   ],
+   "radius": 0.55,
+   "height": 12,
+   "tex": "marble",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.0,
+    0.2,
+    30
+   ],
+   "size": [
+    1.6,
+    0.4,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.0,
+    11.75,
+    30
+   ],
+   "size": [
+    1.6,
+    0.5,
+    1.6
+   ],
+   "tex": "marble",
+   "shade": 0.6,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    18,
+    10.5,
+    18
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -18,
+    10.5,
+    18
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    18,
+    10.5,
+    -18
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -18,
+    10.5,
+    -18
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    10.5,
+    18
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    10.5,
+    -18
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    18,
+    10.5,
+    0
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -18,
+    10.5,
+    0
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    30,
+    10.5,
+    30
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -30,
+    10.5,
+    30
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    30,
+    10.5,
+    -30
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -30,
+    10.5,
+    -30
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    10.5,
+    32
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    10.5,
+    -32
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    32,
+    10.5,
+    0
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "light",
+   "pos": [
+    -32,
+    10.5,
+    0
+   ],
+   "color": "#3c4a66",
+   "intensity": 0.5,
+   "range": 28,
+   "flicker": "soft"
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0.012,
+    0
+   ],
+   "size": [
+    6,
+    6
+   ],
+   "tex": "carpet",
+   "texScale": 1.5,
+   "shade": 0.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.25,
+    0
+   ],
+   "size": [
+    1.7,
+    0.5,
+    2.3
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "bed",
+   "pos": [
+    0,
+    0.62,
+    0.05
+   ],
+   "size": [
+    1.56,
+    0.26,
+    2.1
+   ],
+   "tex": "cream",
+   "texScale": 1,
+   "walkable": false,
+   "name": "the bed",
+   "verb": "get into",
+   "examineAt": [
+    0,
+    0.7,
+    0.1
+   ],
+   "examineRadius": 1.1,
+   "examineRange": 3.8,
+   "examine": [],
+   "then": [
+    {
+     "sleep": true
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.78,
+    0.4
+   ],
+   "size": [
+    1.6,
+    0.1,
+    1.4
+   ],
+   "tex": "velvet",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.8,
+    -0.78
+   ],
+   "size": [
+    0.7,
+    0.14,
+    0.42
+   ],
+   "tex": "white",
+   "color": "#e8e4dc",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.95,
+    -1.2
+   ],
+   "size": [
+    1.8,
+    1.4,
+    0.12
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "table",
+   "pos": [
+    1.45,
+    0,
+    -0.75
+   ],
+   "size": [
+    0.6,
+    0.5
+   ],
+   "height": 0.62,
+   "tex": "mahogany"
+  },
+  {
+   "type": "tableLamp",
+   "id": "bedLamp",
+   "pos": [
+    1.52,
+    0.62,
+    -0.85
+   ],
+   "color": "#ffd090",
+   "intensity": 1.4,
+   "range": 10,
+   "flicker": "candle",
+   "glowSize": 1.7
+  },
+  {
+   "type": "item",
+   "id": "journal",
+   "item": "book",
+   "pickup": false,
+   "pos": [
+    1.32,
+    0.62,
+    -0.6
+   ],
+   "yaw": 12,
+   "scale": 0.8,
+   "name": "the journal",
+   "verb": "open",
+   "examineRadius": 0.3,
+   "examine": [],
+   "then": [
+    {
+     "chooser": true
+    }
+   ]
+  },
+  {
+   "type": "item",
+   "id": "glass",
+   "item": "water",
+   "pickup": false,
+   "pos": [
+    1.66,
+    0.62,
+    -0.58
+   ],
+   "name": "the glass",
+   "examineRadius": 0.2,
+   "examine": "Water. Just water."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.2,
+    0.3,
+    0.9
+   ],
+   "size": [
+    0.4,
+    0.6,
+    0.4
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false,
+   "name": "the chair",
+   "examine": "A chair, for sitting by the bed. Nobody has."
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1.5,
+    0
+   ],
+   "size": [
+    80,
+    4,
+    80
+   ],
+   "count": 60,
+   "scale": [
+    6,
+    12
+   ],
+   "alpha": 0.05,
+   "color": "#3a3e48",
+   "seed": 11
+  }
+ ],
+ "events": []
+}

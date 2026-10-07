@@ -1,0 +1,2500 @@
+{
+ "title": "THE MEAT MAN EMERGES",
+ "hint": "e to look",
+ "hintTouch": "tap things",
+ "render": {
+  "height": 216
+ },
+ "environment": {
+  "fogColor": "#1c1a18",
+  "ambient": "#262420",
+  "skyColor": "#2a2824",
+  "sunDir": [
+   0.1,
+   0.8,
+   0.2
+  ],
+  "sunColor": "#4a4840",
+  "fogNear": 4,
+  "fogFar": 24,
+  "fogHeight": 0.5,
+  "fogHeightRange": 3,
+  "fogHeightStrength": 0.1
+ },
+ "sky": {
+  "top": "#060606",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 200,
+   "alpha": 0.35
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "player": {
+  "pos": [
+   0.6,
+   0,
+   1.8
+  ],
+  "yaw": 0,
+  "pitch": 0,
+  "speed": 1.8
+ },
+ "ambience": [
+  {
+   "sound": "hum",
+   "box": [
+    -4,
+    -8,
+    4,
+    3
+   ],
+   "range": 3,
+   "gain": 0.8
+  },
+  {
+   "sound": "music",
+   "style": "radio",
+   "pos": [
+    3.4,
+    -4.5
+   ],
+   "range": 7,
+   "gain": 0.5
+  },
+  {
+   "sound": "drip",
+   "pos": [
+    0,
+    -7.5
+   ],
+   "range": 4,
+   "gain": 0.5
+  }
+ ],
+ "indoor": [
+  [
+   -4.2,
+   -8.2,
+   4.2,
+   3.2
+  ]
+ ],
+ "items": {
+  "ticket": {
+   "name": "the ticket",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.06,
+      0.002,
+      0.04
+     ],
+     "color": "#f0e8d0"
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.03,
+      0.003,
+      0.012
+     ],
+     "color": "#c02020",
+     "pos": [
+      0,
+      0.001,
+      0
+     ]
+    }
+   ],
+   "examine": "47. In red.",
+   "useText": [
+    "47. I hold it up. Nobody calls it."
+   ]
+  },
+  "scales": {
+   "name": "the scales"
+  },
+  "till": {
+   "name": "the till"
+  },
+  "radio": {
+   "name": "the radio"
+  }
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    -2.5
+   ],
+   "size": [
+    8,
+    11
+   ],
+   "tex": "deliTile",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.05,
+    -2.5
+   ],
+   "size": [
+    8.4,
+    0.1,
+    11.4
+   ],
+   "tex": "ceiling",
+   "texScale": 2,
+   "shade": 0.8,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -4.2,
+    1.5,
+    -2.5
+   ],
+   "size": [
+    0.4,
+    3,
+    11.4
+   ],
+   "tex": "subwayTile",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    4.2,
+    1.5,
+    -2.5
+   ],
+   "size": [
+    0.4,
+    3,
+    11.4
+   ],
+   "tex": "subwayTile",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.5,
+    -8.2
+   ],
+   "size": [
+    8.4,
+    3,
+    0.4
+   ],
+   "tex": "subwayTile",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.6,
+    1.5,
+    3.2
+   ],
+   "size": [
+    3.2,
+    3,
+    0.4
+   ],
+   "tex": "subwayTile",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.6,
+    1.5,
+    3.2
+   ],
+   "size": [
+    3.2,
+    3,
+    0.4
+   ],
+   "tex": "subwayTile",
+   "texScale": 1
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.7,
+    3.2
+   ],
+   "size": [
+    2.0,
+    0.6,
+    0.4
+   ],
+   "tex": "subwayTile",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.2,
+    3.25
+   ],
+   "size": [
+    1.9,
+    2.4,
+    0.1
+   ],
+   "tex": "black",
+   "shade": 0.5,
+   "collide": true,
+   "walkable": false,
+   "name": "the door",
+   "examine": [
+    "The door. Locked, from the inside, by me.",
+    "Outside it's raining up."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.6,
+    1.7,
+    3.0
+   ],
+   "size": [
+    2.4,
+    1.4,
+    0.1
+   ],
+   "tex": "black",
+   "shade": 0.4,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.6,
+    1.7,
+    3.0
+   ],
+   "size": [
+    2.4,
+    1.4,
+    0.1
+   ],
+   "tex": "black",
+   "shade": 0.4,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "id": "pastramiSign",
+   "pos": [
+    0,
+    2.75,
+    2.95
+   ],
+   "size": [
+    3.6,
+    0.7
+   ],
+   "yaw": 180,
+   "parts": [
+    {
+     "text": "PASTRAMI",
+     "font": "black",
+     "color": "#ff4040"
+    }
+   ],
+   "intensity": 0.8,
+   "range": 6,
+   "backing": false,
+   "name": "the sign",
+   "examine": "PASTRAMI. Just the one word. It's enough."
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.5,
+    -4.5
+   ],
+   "size": [
+    7.2,
+    1.0,
+    0.9
+   ],
+   "tex": "subwayTile",
+   "texScale": 0.8,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.02,
+    -4.5
+   ],
+   "size": [
+    7.3,
+    0.05,
+    1.0
+   ],
+   "tex": "marble",
+   "walkable": false,
+   "collide": false,
+   "name": "the counter",
+   "examine": [
+    "Cold marble. Worn where elbows go."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.75,
+    -4.1
+   ],
+   "size": [
+    7.2,
+    0.04,
+    0.04
+   ],
+   "tex": "chrome",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.55,
+    1.4,
+    -4.1
+   ],
+   "size": [
+    0.04,
+    0.7,
+    0.04
+   ],
+   "tex": "chrome",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.4,
+    -4.1
+   ],
+   "size": [
+    0.04,
+    0.7,
+    0.04
+   ],
+   "tex": "chrome",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.55,
+    1.4,
+    -4.1
+   ],
+   "size": [
+    0.04,
+    0.7,
+    0.04
+   ],
+   "tex": "chrome",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "food",
+   "id": "meat0",
+   "pos": [
+    -3.1,
+    1.05,
+    -4.55
+   ],
+   "kind": "pastrami",
+   "yaw": 4,
+   "name": "the meat",
+   "examine": "Pastrami. It's warm."
+  },
+  {
+   "type": "food",
+   "id": "meat1",
+   "pos": [
+    -2.22,
+    1.05,
+    -4.55
+   ],
+   "kind": "tray",
+   "yaw": -12,
+   "name": "the meat",
+   "examine": "Pastrami."
+  },
+  {
+   "type": "food",
+   "id": "meat2",
+   "pos": [
+    -1.34,
+    1.05,
+    -4.55
+   ],
+   "kind": "pastrami",
+   "yaw": -17,
+   "name": "the meat",
+   "examine": "Pastrami. It's warm."
+  },
+  {
+   "type": "food",
+   "id": "meat3",
+   "pos": [
+    -0.45999999999999996,
+    1.05,
+    -4.55
+   ],
+   "kind": "pickles",
+   "yaw": -5,
+   "name": "the meat",
+   "examine": "Pastrami. It's warm."
+  },
+  {
+   "type": "food",
+   "id": "meat4",
+   "pos": [
+    0.41999999999999993,
+    1.05,
+    -4.55
+   ],
+   "kind": "tray",
+   "yaw": -5,
+   "name": "the meat",
+   "examine": "Pastrami, sliced thin. A hundred slices."
+  },
+  {
+   "type": "food",
+   "id": "meat5",
+   "pos": [
+    1.3000000000000003,
+    1.05,
+    -4.55
+   ],
+   "kind": "sandwich",
+   "yaw": 19,
+   "name": "the meat",
+   "examine": "Pastrami."
+  },
+  {
+   "type": "food",
+   "id": "meat6",
+   "pos": [
+    2.18,
+    1.05,
+    -4.55
+   ],
+   "kind": "pastrami",
+   "yaw": 16,
+   "name": "the meat",
+   "examine": "More pastrami."
+  },
+  {
+   "type": "food",
+   "id": "meat7",
+   "pos": [
+    3.06,
+    1.05,
+    -4.55
+   ],
+   "kind": "tray",
+   "yaw": 0,
+   "name": "the meat",
+   "examine": "Pastrami, sliced thin. A hundred slices."
+  },
+  {
+   "type": "item",
+   "id": "scales",
+   "item": "scales",
+   "pickup": false,
+   "pos": [
+    2.6,
+    1.05,
+    -4.3
+   ],
+   "name": "the scales",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.06,
+      0.26
+     ],
+     "tex": "chrome"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.03,
+      0.03,
+      0.3,
+      6
+     ],
+     "tex": "chrome",
+     "pos": [
+      -0.1,
+      0.18,
+      -0.08
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.14,
+      0.14,
+      0.02,
+      10
+     ],
+     "tex": "chrome",
+     "pos": [
+      0.04,
+      0.36,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.14,
+      0.14,
+      0.02
+     ],
+     "color": "#f0e8d0",
+     "pos": [
+      -0.1,
+      0.3,
+      -0.07
+     ]
+    }
+   ],
+   "examine": "Scales. The needle rests on PASTRAMI."
+  },
+  {
+   "type": "item",
+   "id": "till",
+   "item": "till",
+   "pickup": false,
+   "pos": [
+    -3.0,
+    1.05,
+    -4.2
+   ],
+   "name": "the till",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.3,
+      0.36
+     ],
+     "tex": "plastic",
+     "pos": [
+      0,
+      0.15,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.1,
+      0.02
+     ],
+     "color": "#60ff80",
+     "unlit": true,
+     "pos": [
+      0,
+      0.33,
+      0.1
+     ],
+     "rot": [
+      -30,
+      0,
+      0
+     ]
+    }
+   ],
+   "examine": "The till says 0.00. It's been saying it all night."
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    1.8,
+    0,
+    -3.2
+   ],
+   "radius": 0.03,
+   "height": 1.2,
+   "tex": "chrome",
+   "sides": 6
+  },
+  {
+   "type": "item",
+   "id": "ticketRoll",
+   "item": "ticket",
+   "pos": [
+    1.8,
+    1.2,
+    -3.2
+   ],
+   "name": "the ticket machine",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.16,
+      0.14,
+      0.12
+     ],
+     "color": "#c02020",
+     "pos": [
+      0,
+      0.07,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.04,
+      0.05,
+      0.01
+     ],
+     "color": "#f0e8d0",
+     "pos": [
+      0,
+      0.03,
+      0.065
+     ]
+    }
+   ],
+   "examine": [
+    "TAKE A NUMBER."
+   ]
+  },
+  {
+   "type": "sign",
+   "id": "now46",
+   "pos": [
+    0,
+    2.3,
+    -8.0
+   ],
+   "size": [
+    1.6,
+    0.6
+   ],
+   "yaw": 0,
+   "parts": [
+    {
+     "text": "NOW SERVING ",
+     "font": "mono",
+     "color": "#ff5040"
+    },
+    {
+     "text": "46",
+     "font": "black",
+     "color": "#ff5040"
+    }
+   ],
+   "intensity": 0.5,
+   "range": 5,
+   "examineRange": 7,
+   "name": "the number",
+   "examine": "Now serving 46. Nobody's 46."
+  },
+  {
+   "type": "sign",
+   "id": "now47",
+   "hidden": true,
+   "pos": [
+    0,
+    2.3,
+    -8.0
+   ],
+   "size": [
+    1.6,
+    0.6
+   ],
+   "yaw": 0,
+   "parts": [
+    {
+     "text": "NOW SERVING ",
+     "font": "mono",
+     "color": "#ff5040"
+    },
+    {
+     "text": "47",
+     "font": "black",
+     "color": "#ff5040"
+    }
+   ],
+   "intensity": 0.5,
+   "range": 5,
+   "backing": false
+  },
+  {
+   "type": "box",
+   "id": "menuBoard",
+   "pos": [
+    -2.2,
+    2.3,
+    -8.0
+   ],
+   "size": [
+    2.8,
+    1.0,
+    0.05
+   ],
+   "tex": "menuBoard",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false,
+   "name": "the menu",
+   "examineRange": 7,
+   "examine": [
+    "PASTRAMI. PASTRAMI ON RYE. PASTRAMI, PLAIN.",
+    "The prices are all the same number."
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.9,
+    1.1,
+    -7.0
+   ],
+   "size": [
+    0.26,
+    2.2,
+    0.02
+   ],
+   "tex": "white",
+   "color": "#d8e4e4",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.6000000000000001,
+    1.1,
+    -7.0
+   ],
+   "size": [
+    0.26,
+    2.2,
+    0.02
+   ],
+   "tex": "white",
+   "color": "#d8e4e4",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.30000000000000004,
+    1.1,
+    -7.0
+   ],
+   "size": [
+    0.26,
+    2.2,
+    0.02
+   ],
+   "tex": "white",
+   "color": "#d8e4e4",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.1102230246251565e-16,
+    1.1,
+    -7.0
+   ],
+   "size": [
+    0.26,
+    2.2,
+    0.02
+   ],
+   "tex": "white",
+   "color": "#d8e4e4",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.29999999999999993,
+    1.1,
+    -7.0
+   ],
+   "size": [
+    0.26,
+    2.2,
+    0.02
+   ],
+   "tex": "white",
+   "color": "#d8e4e4",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.6,
+    1.1,
+    -7.0
+   ],
+   "size": [
+    0.26,
+    2.2,
+    0.02
+   ],
+   "tex": "white",
+   "color": "#d8e4e4",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.8999999999999998,
+    1.1,
+    -7.0
+   ],
+   "size": [
+    0.26,
+    2.2,
+    0.02
+   ],
+   "tex": "white",
+   "color": "#d8e4e4",
+   "shade": 0.5,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    2.6,
+    -7.0
+   ],
+   "size": [
+    2.4,
+    0.8,
+    0.1
+   ],
+   "tex": "subwayTile",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.1,
+    1.5,
+    -7.0
+   ],
+   "size": [
+    1.6,
+    3,
+    0.1
+   ],
+   "tex": "subwayTile",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.1,
+    1.5,
+    -7.0
+   ],
+   "size": [
+    1.6,
+    3,
+    0.1
+   ],
+   "tex": "subwayTile",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    1.5,
+    -7.4
+   ],
+   "size": [
+    2.4,
+    3,
+    0.05
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false,
+   "shade": 0.3
+  },
+  {
+   "type": "collider",
+   "pos": [
+    0,
+    1.0,
+    -7.05
+   ],
+   "size": [
+    8,
+    2,
+    0.1
+   ]
+  },
+  {
+   "type": "cylinder",
+   "id": "salami0",
+   "pos": [
+    -2.5,
+    2.25,
+    -5.8
+   ],
+   "radius": 0.06,
+   "height": 0.8,
+   "tex": "salami",
+   "sides": 6,
+   "name": "the salami",
+   "examine": "Salami, hanging. Still turning, slightly. There's no draught."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.5,
+    2.95,
+    -5.8
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.02
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "id": "salami1",
+   "pos": [
+    -1.5,
+    2.25,
+    -5.8
+   ],
+   "radius": 0.06,
+   "height": 0.8,
+   "tex": "salami",
+   "sides": 6,
+   "name": "the salami",
+   "examine": "Salami, hanging. Still turning, slightly. There's no draught."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.5,
+    2.95,
+    -5.8
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.02
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "id": "salami2",
+   "pos": [
+    -0.5,
+    2.25,
+    -5.8
+   ],
+   "radius": 0.06,
+   "height": 0.8,
+   "tex": "salami",
+   "sides": 6,
+   "name": "the salami",
+   "examine": "Salami, hanging. Still turning, slightly. There's no draught."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -0.5,
+    2.95,
+    -5.8
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.02
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "id": "salami3",
+   "pos": [
+    0.5,
+    2.25,
+    -5.8
+   ],
+   "radius": 0.06,
+   "height": 0.8,
+   "tex": "salami",
+   "sides": 6,
+   "name": "the salami",
+   "examine": "Salami, hanging. Still turning, slightly. There's no draught."
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.5,
+    2.95,
+    -5.8
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.02
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "id": "salami4",
+   "pos": [
+    1.5,
+    2.25,
+    -5.8
+   ],
+   "radius": 0.06,
+   "height": 0.8,
+   "tex": "salami",
+   "sides": 6,
+   "name": "the salami",
+   "examine": "Salami, hanging. Still turning, slightly. There's no draught."
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.5,
+    2.95,
+    -5.8
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.02
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "id": "salami5",
+   "pos": [
+    2.5,
+    2.25,
+    -5.8
+   ],
+   "radius": 0.06,
+   "height": 0.8,
+   "tex": "salami",
+   "sides": 6,
+   "name": "the salami",
+   "examine": "Salami, hanging. Still turning, slightly. There's no draught."
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.5,
+    2.95,
+    -5.8
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.02
+   ],
+   "tex": "dark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "ceilingFan",
+   "pos": [
+    0,
+    3.0,
+    -1.5
+   ]
+  },
+  {
+   "type": "item",
+   "id": "radio",
+   "item": "radio",
+   "pickup": false,
+   "pos": [
+    3.4,
+    1.05,
+    -4.5
+   ],
+   "name": "the radio",
+   "yaw": 300,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.3,
+      0.18,
+      0.12
+     ],
+     "tex": "wood"
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.12,
+      0.08,
+      0.01
+     ],
+     "tex": "grille",
+     "pos": [
+      -0.06,
+      0,
+      0.065
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.1,
+      0.03,
+      0.01
+     ],
+     "color": "#ffd060",
+     "unlit": true,
+     "pos": [
+      0.07,
+      0.02,
+      0.065
+     ]
+    }
+   ],
+   "examine": "The radio. A tune from a long way off. Everyone's listening to it somewhere."
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -3.0,
+    0,
+    0.5
+   ],
+   "radius": 0.18,
+   "height": 0.7,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -3.0,
+    0.7,
+    0.5
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -3.0,
+    0,
+    1.6
+   ],
+   "radius": 0.18,
+   "height": 0.7,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -3.0,
+    0.7,
+    1.6
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.0,
+    0,
+    1.0
+   ],
+   "radius": 0.18,
+   "height": 0.7,
+   "tex": "chrome",
+   "sides": 8,
+   "collide": true
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.0,
+    0.7,
+    1.0
+   ],
+   "radius": 0.22,
+   "height": 0.06,
+   "tex": "velvet",
+   "sides": 8
+  },
+  {
+   "type": "table",
+   "pos": [
+    -3.0,
+    0,
+    1.0
+   ],
+   "size": [
+    0.7,
+    1.6
+   ],
+   "tex": "marble",
+   "pedestal": true
+  },
+  {
+   "type": "food",
+   "pos": [
+    -3.0,
+    0.76,
+    0.8
+   ],
+   "kind": "sandwich",
+   "name": "a sandwich",
+   "examine": "Half a sandwich. The other half is somewhere."
+  },
+  {
+   "type": "food",
+   "pos": [
+    -2.8,
+    0.76,
+    1.4
+   ],
+   "kind": "glass"
+  },
+  {
+   "type": "ceilingLight",
+   "id": "tube0",
+   "pos": [
+    0,
+    3.0,
+    -6.5
+   ],
+   "color": "#e8f0e0",
+   "intensity": 0.5,
+   "range": 5.5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "id": "tube1",
+   "pos": [
+    0,
+    3.0,
+    -3.5
+   ],
+   "color": "#e8f0e0",
+   "intensity": 0.5,
+   "range": 5.5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "id": "tube2",
+   "pos": [
+    0,
+    3.0,
+    0
+   ],
+   "color": "#e8f0e0",
+   "intensity": 0.35,
+   "range": 5.5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "ceilingLight",
+   "id": "tube3",
+   "pos": [
+    0,
+    3.0,
+    2.4
+   ],
+   "color": "#e8f0e0",
+   "intensity": 0.35,
+   "range": 5.5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "light",
+   "pos": [
+    0,
+    1.6,
+    -6.4
+   ],
+   "color": "#ffb060",
+   "intensity": 0.5,
+   "range": 4,
+   "flicker": "candle"
+  },
+  {
+   "type": "guide",
+   "id": "ticketSpot",
+   "pos": [
+    1.8,
+    2.7,
+    -3.2
+   ],
+   "intensity": 1.6,
+   "range": 4,
+   "shaft": {
+    "radius": 0.6
+   }
+  },
+  {
+   "type": "guide",
+   "id": "curtainSpot",
+   "pos": [
+    0,
+    2.7,
+    -6.2
+   ],
+   "intensity": 2.2,
+   "range": 6,
+   "shaft": {
+    "radius": 1.4
+   },
+   "off": true
+  },
+  {
+   "type": "light",
+   "id": "faceLight",
+   "pos": [
+    0,
+    0.7,
+    -4.6
+   ],
+   "color": "#ffe8d0",
+   "intensity": 1.2,
+   "range": 3.5,
+   "flicker": "candle",
+   "off": true
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.2,
+    1.2,
+    -4.4
+   ],
+   "size": [
+    0.5,
+    0.3,
+    0.4
+   ],
+   "tex": "chrome",
+   "collide": false,
+   "walkable": false,
+   "name": "the slicer",
+   "examine": "The slicer. Its blade is still going round. Nothing's on it."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.05,
+    1.3,
+    -4.3
+   ],
+   "size": [
+    0.02,
+    0.36,
+    0.36
+   ],
+   "tex": "chrome",
+   "rot": [
+    0,
+    0,
+    45
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.6,
+    1.72,
+    -7.4
+   ],
+   "size": [
+    0.4,
+    0.16,
+    0.2
+   ],
+   "tex": "wood",
+   "collide": false,
+   "walkable": false,
+   "name": "the rye",
+   "examineRange": 5.5,
+   "examine": "Rye loaves on the shelf. Each one's been cut once."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.6,
+    1.72,
+    -7.08
+   ],
+   "size": [
+    0.4,
+    0.16,
+    0.2
+   ],
+   "tex": "wood",
+   "collide": false,
+   "walkable": false,
+   "name": "the rye",
+   "examineRange": 5.5,
+   "examine": "Rye loaves on the shelf. Each one's been cut once."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.6,
+    1.72,
+    -6.760000000000001
+   ],
+   "size": [
+    0.4,
+    0.16,
+    0.2
+   ],
+   "tex": "wood",
+   "collide": false,
+   "walkable": false,
+   "name": "the rye",
+   "examineRange": 5.5,
+   "examine": "Rye loaves on the shelf. Each one's been cut once."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.6,
+    1.72,
+    -6.44
+   ],
+   "size": [
+    0.4,
+    0.16,
+    0.2
+   ],
+   "tex": "wood",
+   "collide": false,
+   "walkable": false,
+   "name": "the rye",
+   "examineRange": 5.5,
+   "examine": "Rye loaves on the shelf. Each one's been cut once."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.6,
+    1.62,
+    -7.0
+   ],
+   "size": [
+    0.6,
+    0.04,
+    1.6
+   ],
+   "tex": "woodDark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.4,
+    0,
+    -6.2
+   ],
+   "radius": 0.32,
+   "height": 0.8,
+   "tex": "woodDark",
+   "sides": 10,
+   "collide": true,
+   "name": "the barrel",
+   "examine": "A pickle barrel. Something in the brine is knocking to get out."
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.4,
+    0.82,
+    -6.2
+   ],
+   "size": [
+    0.6,
+    0.04,
+    0.6
+   ],
+   "tex": "woodDark",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.55,
+    1.0,
+    -1.0
+   ],
+   "size": [
+    0.9,
+    2.0,
+    1.4
+   ],
+   "tex": "metal",
+   "texScale": 0.8,
+   "walkable": false,
+   "name": "the fridge",
+   "examine": "A fridge full of the same thing. It hums the song the radio is playing."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.08,
+    1.1,
+    -1.0
+   ],
+   "size": [
+    0.04,
+    1.4,
+    1.2
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#9ab0b8",
+   "texScale": 0.4,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -2.6,
+    1.2,
+    -1.0
+   ],
+   "color": "#a0c8d8",
+   "intensity": 0.35,
+   "range": 2.5,
+   "flicker": "fluorescent"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.95,
+    2.4,
+    2.0
+   ],
+   "size": [
+    0.04,
+    0.44,
+    0.44
+   ],
+   "tex": "white",
+   "collide": false,
+   "walkable": false,
+   "name": "the clock",
+   "examine": "The clock. Both hands on the 7. They've been there a while."
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.9,
+    2.4,
+    2.0
+   ],
+   "size": [
+    0.02,
+    0.16,
+    0.02
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -3.9,
+    2.46,
+    2.06
+   ],
+   "size": [
+    0.02,
+    0.1,
+    0.02
+   ],
+   "tex": "black",
+   "rot": [
+    -40,
+    0,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.9,
+    2.5,
+    -2.0
+   ],
+   "size": [
+    0.1,
+    0.3,
+    0.5
+   ],
+   "tex": "lamp",
+   "unlit": true,
+   "color": "#6080ff",
+   "texScale": 0.3,
+   "collide": false,
+   "walkable": false,
+   "name": "the fly zapper",
+   "examine": "A fly zapper. Nothing to zap. It zaps anyway."
+  },
+  {
+   "type": "light",
+   "pos": [
+    3.6,
+    2.4,
+    -2.0
+   ],
+   "color": "#6080ff",
+   "intensity": 0.4,
+   "range": 3,
+   "flicker": "neonBad"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.7,
+    0,
+    2.6
+   ],
+   "radius": 0.02,
+   "height": 1.4,
+   "tex": "wood",
+   "sides": 5,
+   "collide": false
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    3.6,
+    0,
+    2.5
+   ],
+   "radius": 0.18,
+   "height": 0.3,
+   "tex": "metal",
+   "sides": 8,
+   "collide": false,
+   "name": "the bucket",
+   "examine": "A mop and bucket. The water in it is red. Beetroot, I decide."
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.95,
+    1.5,
+    0.4
+   ],
+   "size": [
+    0.12,
+    0.5,
+    0.3
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false,
+   "name": "the payphone",
+   "examine": "A payphone. The receiver's off the hook. Someone on it is breathing."
+  },
+  {
+   "type": "box",
+   "pos": [
+    3.88,
+    1.4,
+    0.25
+   ],
+   "size": [
+    0.04,
+    0.2,
+    0.06
+   ],
+   "tex": "chrome",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -2.0,
+    1.78,
+    -4.08
+   ],
+   "size": [
+    0.6,
+    0.14
+   ],
+   "yaw": 0,
+   "parts": [
+    {
+     "text": "PASTRAMI 4.50",
+     "font": "mono",
+     "color": "#202020"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#f0ead8",
+   "backing": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    0.6,
+    1.78,
+    -4.08
+   ],
+   "size": [
+    0.6,
+    0.14
+   ],
+   "yaw": 0,
+   "parts": [
+    {
+     "text": "PASTRAMI 4.50",
+     "font": "mono",
+     "color": "#202020"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#f0ead8",
+   "backing": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    2.2,
+    1.78,
+    -4.08
+   ],
+   "size": [
+    0.6,
+    0.14
+   ],
+   "yaw": 0,
+   "parts": [
+    {
+     "text": "PASTRAMI 4.50",
+     "font": "mono",
+     "color": "#202020"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#f0ead8",
+   "backing": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    1.8,
+    1.6,
+    -3.3
+   ],
+   "size": [
+    0.9,
+    0.22
+   ],
+   "yaw": 0,
+   "parts": [
+    {
+     "text": "TAKE A NUMBER",
+     "font": "sans",
+     "color": "#202020"
+    }
+   ],
+   "faded": true,
+   "fadeColor": "#f0ead8"
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -2.6,
+    2.75,
+    2.95
+   ],
+   "size": [
+    0.9,
+    0.3
+   ],
+   "yaw": 180,
+   "parts": [
+    {
+     "text": "EXIT",
+     "font": "sans",
+     "color": "#40ff80"
+    }
+   ],
+   "intensity": 0.3,
+   "range": 3,
+   "backing": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.0,
+    1.08,
+    -4.1
+   ],
+   "size": [
+    0.2,
+    0.06,
+    0.12
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.26,
+    1.08,
+    -4.1
+   ],
+   "size": [
+    0.2,
+    0.06,
+    0.12
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    2.52,
+    1.08,
+    -4.1
+   ],
+   "size": [
+    0.2,
+    0.06,
+    0.12
+   ],
+   "tex": "cream",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -2.6,
+    0.76,
+    1.1
+   ],
+   "size": [
+    0.1,
+    0.08,
+    0.1
+   ],
+   "tex": "chrome",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "mist",
+   "pos": [
+    0,
+    1.2,
+    -2.5
+   ],
+   "size": [
+    8,
+    2,
+    11
+   ],
+   "count": 10,
+   "scale": [
+    3,
+    6
+   ],
+   "alpha": 0.04,
+   "color": "#8a8070",
+   "seed": 3
+  },
+  {
+   "type": "character",
+   "id": "victor",
+   "name": "Victor Pastrami",
+   "hidden": true,
+   "scale": 1.38,
+   "look": {
+    "skin": "skinPale",
+    "skinColor": "#e4b0a8",
+    "face": {
+     "skin": "#e4b0a8",
+     "hair": "#3a2a24",
+     "age": 0.6,
+     "seed": 1965,
+     "browWeight": 1.0,
+     "browArch": 0.95,
+     "wideEyes": true,
+     "stubble": true,
+     "mood": "flat",
+     "eyes": "#d0d8e0",
+     "lipstick": "#a04040",
+     "tired": true
+    },
+    "hair": "hairBlack",
+    "hairStyle": "bald",
+    "top": "white",
+    "bottom": "black",
+    "shirtFront": "meat",
+    "cap": true,
+    "capTex": "shirtWhite",
+    "prop": "cleaver"
+   },
+   "pos": [
+    0,
+    0,
+    -7.6
+   ],
+   "yaw": 0,
+   "talkRadius": 3.2,
+   "behavior": {
+    "name": "none"
+   },
+   "dialog": [
+    {
+     "if": {
+      "not": "introduced"
+     },
+     "lines": [
+      {
+       "who": "victor",
+       "text": "Victor."
+      },
+      {
+       "who": "victor",
+       "text": "Victor Pastrami."
+      }
+     ],
+     "set": "introduced",
+     "then": [
+      {
+       "behavior": {
+        "id": "victor",
+        "name": "reach",
+        "yaw": 0,
+        "target": {
+         "id": "player"
+        },
+        "lean": 0.35
+       }
+      },
+      {
+       "wait": 1.3
+      },
+      {
+       "ending": {
+        "seconds": 8
+       }
+      },
+      {
+       "say": [
+        {
+         "who": "you",
+         "text": "I take his hand. It's warm."
+        },
+        {
+         "who": "victor",
+         "text": "Next."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "variants": [
+      [
+       {
+        "who": "victor",
+        "text": "Pastrami. What else."
+       }
+      ],
+      [
+       {
+        "who": "victor",
+        "text": "Next."
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "intro",
+   "when": {
+    "start": true
+   },
+   "do": [
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I dreamt of a man named Victor Pastrami."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ticket",
+   "when": {
+    "has": "ticket",
+    "not": "called"
+   },
+   "do": [
+    {
+     "set": "gotTicket"
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "47."
+      }
+     ]
+    },
+    {
+     "light": {
+      "id": "ticketSpot",
+      "intensity": 0
+     }
+    },
+    {
+     "wait": 4
+    },
+    {
+     "set": "called"
+    },
+    {
+     "sfx": "ding"
+    },
+    {
+     "hide": "now46"
+    },
+    {
+     "show": "now47"
+    },
+    {
+     "focus": {
+      "object": "now47",
+      "seconds": 1.6
+     }
+    },
+    {
+     "light": {
+      "id": "tube0",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "tube1",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "tube2",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "tube3",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "curtainSpot",
+      "intensity": 2.2
+     }
+    },
+    {
+     "light": {
+      "id": "faceLight",
+      "intensity": 1.2
+     }
+    },
+    {
+     "wait": 1.4
+    },
+    {
+     "sfx": "stir"
+    },
+    {
+     "show": "victor"
+    },
+    {
+     "rim": {
+      "id": "victor",
+      "k": 0.7,
+      "color": "#ffc0a0"
+     }
+    },
+    {
+     "focus": {
+      "id": "victor"
+     }
+    },
+    {
+     "behavior": {
+      "id": "victor",
+      "name": "walkTo",
+      "path": [
+       [
+        0,
+        -6.6
+       ],
+       [
+        0,
+        -5.3
+       ]
+      ],
+      "speed": 0.7,
+      "then": {
+       "name": "stand",
+       "yaw": 0,
+       "noticeRadius": 9,
+       "gesture": "none"
+      }
+     }
+    },
+    {
+     "wait": 3.6
+    },
+    {
+     "say": [
+      {
+       "who": "victor",
+       "text": "Victor."
+      },
+      {
+       "who": "victor",
+       "text": "Victor Pastrami."
+      }
+     ]
+    },
+    {
+     "set": "introduced"
+    },
+    {
+     "behavior": {
+      "id": "victor",
+      "name": "reach",
+      "yaw": 0,
+      "target": {
+       "id": "player"
+      },
+      "lean": 0.35
+     }
+    },
+    {
+     "wait": 1.3
+    },
+    {
+     "ending": {
+      "seconds": 8
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I take his hand. It's warm."
+      },
+      {
+       "who": "victor",
+       "text": "Next."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "counter",
+   "when": {
+    "since": {
+     "flag": "examined:ticketRoll",
+     "seconds": 30
+    },
+    "enter": {
+     "pos": [
+      0,
+      -3.6
+     ],
+     "radius": 1.6
+    },
+    "not": "called"
+   },
+   "do": [
+    {
+     "set": "called"
+    },
+    {
+     "sfx": "ding"
+    },
+    {
+     "hide": "now46"
+    },
+    {
+     "show": "now47"
+    },
+    {
+     "focus": {
+      "object": "now47",
+      "seconds": 1.6
+     }
+    },
+    {
+     "light": {
+      "id": "tube0",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "tube1",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "tube2",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "tube3",
+      "intensity": 0.12
+     }
+    },
+    {
+     "light": {
+      "id": "curtainSpot",
+      "intensity": 2.2
+     }
+    },
+    {
+     "light": {
+      "id": "faceLight",
+      "intensity": 1.2
+     }
+    },
+    {
+     "wait": 1.4
+    },
+    {
+     "sfx": "stir"
+    },
+    {
+     "show": "victor"
+    },
+    {
+     "rim": {
+      "id": "victor",
+      "k": 0.7,
+      "color": "#ffc0a0"
+     }
+    },
+    {
+     "focus": {
+      "id": "victor"
+     }
+    },
+    {
+     "behavior": {
+      "id": "victor",
+      "name": "walkTo",
+      "path": [
+       [
+        0,
+        -6.6
+       ],
+       [
+        0,
+        -5.3
+       ]
+      ],
+      "speed": 0.7,
+      "then": {
+       "name": "stand",
+       "yaw": 0,
+       "noticeRadius": 9,
+       "gesture": "none"
+      }
+     }
+    },
+    {
+     "wait": 3.6
+    },
+    {
+     "say": [
+      {
+       "who": "victor",
+       "text": "Victor."
+      },
+      {
+       "who": "victor",
+       "text": "Victor Pastrami."
+      }
+     ]
+    },
+    {
+     "set": "introduced"
+    },
+    {
+     "behavior": {
+      "id": "victor",
+      "name": "reach",
+      "yaw": 0,
+      "target": {
+       "id": "player"
+      },
+      "lean": 0.35
+     }
+    },
+    {
+     "wait": 1.3
+    },
+    {
+     "ending": {
+      "seconds": 8
+     }
+    },
+    {
+     "say": [
+      {
+       "who": "you",
+       "text": "I take his hand. It's warm."
+      },
+      {
+       "who": "victor",
+       "text": "Next."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
