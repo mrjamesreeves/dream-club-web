@@ -1,7 +1,7 @@
 // Point lights that flicker, and the halos and lit fixtures tied to them.
 // Each light has a profile: a constant wobble plus occasional stutters where
 // it drops out and buzzes, the way old sodium lamps and tubes do.
-import * as THREE from '../../vendor/three.module.js?v=970753f';
+import * as THREE from '../../vendor/three.module.js?v=dccac0a';
 
 const PROFILES = {
   soft:        { wobble: 0.07, speed: 0.8, every: [14, 30], len: [0.15, 0.4], low: 0.55 },

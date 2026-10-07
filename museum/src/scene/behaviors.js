@@ -1,6 +1,6 @@
 // Declarative per-entity behaviors. Each is a function (entity, dt, ctx) that
 // moves the entity's group and fills the pose state used by its rig.
-import * as THREE from '../../vendor/three.module.js?v=970753f';
+import * as THREE from '../../vendor/three.module.js?v=dccac0a';
 
 const _v = new THREE.Vector3();
 

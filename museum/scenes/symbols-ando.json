@@ -5587,9 +5587,198 @@
   },
   {
    "type": "item",
-   "item": "invite",
-   "model": "card",
+   "item": "finger",
    "pickup": false,
+   "model": [
+    {
+     "shape": "cyl",
+     "size": [
+      0.0105,
+      0.0118,
+      0.03,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.0115,
+      -0.026
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0118,
+      0.0118,
+      0.004,
+      7
+     ],
+     "tex": "skinPale",
+     "color": "#b89888",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.0115,
+      -0.01
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0092,
+      0.0105,
+      0.026,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.0105,
+      0.004
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0106,
+      0.0106,
+      0.004,
+      7
+     ],
+     "tex": "skinPale",
+     "color": "#b89888",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.0105,
+      0.018
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0078,
+      0.0092,
+      0.022,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.0095,
+      0.03
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0078,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0,
+      0.0095,
+      0.041
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0095,
+      0.0016,
+      0.013
+     ],
+     "color": "#e6d6c8",
+     "pos": [
+      0,
+      0.0168,
+      0.036
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0112,
+      0.0112,
+      0.0025,
+      7
+     ],
+     "color": "#7a1818",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.0115,
+      -0.0415
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0032,
+      0.0032,
+      0.003,
+      6
+     ],
+     "color": "#efe7da",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.0115,
+      -0.042
+     ]
+    },
+    {
+     "shape": "plane",
+     "size": [
+      0.034,
+      0.024
+     ],
+     "color": "#4e0e0e",
+     "rot": [
+      -90,
+      0,
+      0
+     ],
+     "pos": [
+      0.004,
+      0.0006,
+      -0.038
+     ]
+    }
+   ],
    "id": "game",
    "pos": [
     4.5200000000000005,
@@ -5599,8 +5788,8 @@
    "name": "game",
    "verb": "read",
    "examineRange": 3.6,
-   "scale": 4.4,
-   "yaw": 270,
+   "scale": 9,
+   "yaw": 340,
    "examineAt": [
     4.5200000000000005,
     1.2,
@@ -5614,15 +5803,15 @@
     },
     {
      "who": "game",
-     "text": "From the dream THE GAME: the invitation."
+     "text": "From the dream THE GAME: the finger."
     },
     {
      "who": "game",
-     "text": "THE GAME. YOU ARE INVITED."
+     "text": "Chopped off at the knuckle. There was a sizzling sound."
     },
     {
      "who": "game",
-     "text": "The rich and famous play it all the time. An invitation into a house with rules nobody explains: the dream's own card, addressed to him."
+     "text": "The president tossed it in his mouth. Said it tasted like bacon."
     }
    ],
    "then": []

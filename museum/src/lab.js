@@ -1,13 +1,13 @@
 // The character lab: the humanoid builder's options side by side, in the
 // game's own renderer, so a head shape, a face treatment, a hairstyle or a
 // garment can be judged before it goes into a dream. Open lab.html.
-import * as THREE from '../vendor/three.module.js?v=970753f';
-import { createEnvironment, createPS1Material, assignLightsToObject, applyEnvironmentConfig } from './engine/ps1material.js?v=970753f';
-import { createTextures } from './engine/textures.js?v=970753f';
-import { PostPass } from './engine/post.js?v=970753f';
-import { FACE_PRESETS, paintFace, stylizeFace, photoFace } from './engine/faces.js?v=970753f';
-import { buildHumanoid } from './scene/characters.js?v=970753f';
-import { createLight, updateLights } from './engine/lights.js?v=970753f';
+import * as THREE from '../vendor/three.module.js?v=dccac0a';
+import { createEnvironment, createPS1Material, assignLightsToObject, applyEnvironmentConfig } from './engine/ps1material.js?v=dccac0a';
+import { createTextures } from './engine/textures.js?v=dccac0a';
+import { PostPass } from './engine/post.js?v=dccac0a';
+import { FACE_PRESETS, paintFace, stylizeFace, photoFace } from './engine/faces.js?v=dccac0a';
+import { buildHumanoid } from './scene/characters.js?v=dccac0a';
+import { createLight, updateLights } from './engine/lights.js?v=dccac0a';
 
 const canvas = document.getElementById('view');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: false });

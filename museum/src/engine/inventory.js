@@ -2,9 +2,9 @@
 // same low-resolution frame as the world, sitting in a numbered slot at the
 // top right. Slots 1-3 are always shown, numbered left to right; an item keeps
 // its slot until it is used up. Tap or click a slot, or press its number.
-import * as THREE from '../../vendor/three.module.js?v=970753f';
-import { createEnvironment, createPS1Material, setVertexShade } from './ps1material.js?v=970753f';
-import { buildShapes } from './shapes.js?v=970753f';
+import * as THREE from '../../vendor/three.module.js?v=dccac0a';
+import { createEnvironment, createPS1Material, setVertexShade } from './ps1material.js?v=dccac0a';
+import { buildShapes } from './shapes.js?v=dccac0a';
 
 const box = (w, h, d, mat, shade = 1) => new THREE.Mesh(setVertexShade(new THREE.BoxGeometry(w, h, d), shade), mat);
 const cyl = (r0, r1, h, sides, mat) => new THREE.Mesh(setVertexShade(new THREE.CylinderGeometry(r0, r1, h, sides), 1), mat);
