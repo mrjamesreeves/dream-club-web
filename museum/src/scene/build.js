@@ -1,16 +1,16 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=31477ec';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=31477ec';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=31477ec';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=31477ec';
-import { mulberry } from '../engine/textures.js?v=31477ec';
-import { AmbientParticles } from '../engine/particles.js?v=31477ec';
-import { makeSignTexture } from '../engine/signs.js?v=31477ec';
-import { PropMethods } from './props.js?v=31477ec';
-import { buildShapes } from '../engine/shapes.js?v=31477ec';
-import { mergeStatic } from '../engine/merge.js?v=31477ec';
-import { voiceFor } from '../engine/voice.js?v=31477ec';
+import * as THREE from '../../vendor/three.module.js?v=33de1a2';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=33de1a2';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=33de1a2';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=33de1a2';
+import { mulberry } from '../engine/textures.js?v=33de1a2';
+import { AmbientParticles } from '../engine/particles.js?v=33de1a2';
+import { makeSignTexture } from '../engine/signs.js?v=33de1a2';
+import { PropMethods } from './props.js?v=33de1a2';
+import { buildShapes } from '../engine/shapes.js?v=33de1a2';
+import { mergeStatic } from '../engine/merge.js?v=33de1a2';
+import { voiceFor } from '../engine/voice.js?v=33de1a2';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';
@@ -488,7 +488,7 @@ export class SceneBuilder {
   addSign(o) {
     const { env } = this.ctx;
     const [w, h] = o.size || [3, 0.8];
-    const tex = makeSignTexture(o.parts || [{ text: o.text || 'OPEN', font: 'sans', color: '#ff4060' }], { dead: o.dead || o.faded, faded: o.faded, width: 256, height: 64 });
+    const tex = makeSignTexture(o.parts || [{ text: o.text || 'OPEN', font: 'sans', color: '#ff4060' }], { dead: (o.dead || o.faded) && !o.intact, faded: o.faded, width: o.hires ? 1024 : 256, height: o.hires ? 256 : 64 });
     const mat = createPS1Material(env, { map: tex, unlit: true, worldUV: false, texScale: 1, alphaTest: 0.5, transparent: true, depthWrite: false, color: o.faded ? (o.fadeColor || '#8a867e') : '#ffffff' });
     const geo = setVertexShade(new THREE.PlaneGeometry(w, h), 1);
     const mesh = new THREE.Mesh(geo, mat);

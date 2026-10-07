@@ -1,12 +1,13 @@
 // PS1-style material: vertex snapping, affine texture mapping, Gouraud lighting
 // (ambient + one directional + up to 4 nearest point lights), per-vertex fog.
-import * as THREE from '../../vendor/three.module.js?v=31477ec';
+import * as THREE from '../../vendor/three.module.js?v=33de1a2';
 
 export const MAX_POINT_LIGHTS = 4;
 
 const vertexShader = /* glsl */ `
 uniform vec2 uResolution;
 uniform float uJitter;
+uniform float uAffine;
 uniform float uTexScale;
 uniform float uWorldUV;
 uniform vec2 uUvOffset;
@@ -95,7 +96,7 @@ void main() {
     texUv = uv * uTexScale;
   }
   texUv += uUvOffset;
-  vUvW = vec3(texUv * cp.w, cp.w);
+  vUvW = uAffine > 0.5 ? vec3(texUv * cp.w, cp.w) : vec3(texUv, 1.0);
   gl_Position = cp;
 }
 `;
@@ -127,6 +128,7 @@ export function createEnvironment() {
   const env = {
     uResolution: { value: new THREE.Vector2(320, 240) },
     uJitter: { value: 1.0 },
+    uAffine: { value: 1.0 },
     uAmbient: { value: new THREE.Color('#1b2328') },
     uSunDir: { value: new THREE.Vector3(0.3, 0.6, 0.4).normalize() },
     uSunColor: { value: new THREE.Color('#7f98a0') },
@@ -155,12 +157,14 @@ export function applyEnvironmentConfig(env, cfg = {}) {
   if (cfg.fogHeightRange !== undefined) env.uFogHeightRange.value = cfg.fogHeightRange;
   if (cfg.fogHeightStrength !== undefined) env.uFogHeightStrength.value = cfg.fogHeightStrength;
   if (cfg.jitter !== undefined) env.uJitter.value = cfg.jitter;
+  env.uAffine.value = cfg.affine === false ? 0 : 1;
 }
 
 export function createPS1Material(env, opts = {}) {
   const uniforms = {
     uResolution: env.uResolution,
     uJitter: env.uJitter,
+    uAffine: env.uAffine,
     uAmbient: env.uAmbient,
     uSunDir: env.uSunDir,
     uSunColor: env.uSunColor,

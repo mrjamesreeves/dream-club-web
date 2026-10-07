@@ -1,19 +1,19 @@
-import * as THREE from '../vendor/three.module.js?v=31477ec';
-import { createTextures } from './engine/textures.js?v=31477ec';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=31477ec';
-import { PostPass } from './engine/post.js?v=31477ec';
-import { DreamAudio } from './engine/audio.js?v=31477ec';
-import { Player } from './engine/player.js?v=31477ec';
-import { Dialog } from './engine/dialog.js?v=31477ec';
-import { Inventory } from './engine/inventory.js?v=31477ec';
-import { SceneBuilder } from './scene/build.js?v=31477ec';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=31477ec';
-import { Events } from './scene/events.js?v=31477ec';
-import { disposeTree } from './engine/merge.js?v=31477ec';
-import { assembleMuseum } from './museum.js?v=31477ec';
-import { checkPaths } from './engine/pathcheck.js?v=31477ec';
-import { Portrait } from './engine/portrait.js?v=31477ec';
-import { Voice, voiceFor } from './engine/voice.js?v=31477ec';
+import * as THREE from '../vendor/three.module.js?v=33de1a2';
+import { createTextures } from './engine/textures.js?v=33de1a2';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=33de1a2';
+import { PostPass } from './engine/post.js?v=33de1a2';
+import { DreamAudio } from './engine/audio.js?v=33de1a2';
+import { Player } from './engine/player.js?v=33de1a2';
+import { Dialog } from './engine/dialog.js?v=33de1a2';
+import { Inventory } from './engine/inventory.js?v=33de1a2';
+import { SceneBuilder } from './scene/build.js?v=33de1a2';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=33de1a2';
+import { Events } from './scene/events.js?v=33de1a2';
+import { disposeTree } from './engine/merge.js?v=33de1a2';
+import { assembleMuseum } from './museum.js?v=33de1a2';
+import { checkPaths } from './engine/pathcheck.js?v=33de1a2';
+import { Portrait } from './engine/portrait.js?v=33de1a2';
+import { Voice, voiceFor } from './engine/voice.js?v=33de1a2';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -317,6 +317,7 @@ class Game {
     applyEnvironmentConfig(this.env, def.environment || {});
     this.renderer.setClearColor(this.env.uFogColor.value);
     if (def.render?.height) { this.post.height = def.render.height; this.resize(); }
+    this.post.setLook(def.render || {});
 
     if (this.world) {
       this.scene.remove(this.world.group);

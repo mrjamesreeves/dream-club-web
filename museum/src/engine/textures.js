@@ -1,7 +1,7 @@
 // Procedural low-resolution textures. Everything is generated on a 2D canvas at
 // 16-64px, quantized to a 15-bit style palette and sampled with nearest filtering.
-import * as THREE from '../../vendor/three.module.js?v=31477ec';
-import { paintFace, FACE_PRESETS } from './faces.js?v=31477ec';
+import * as THREE from '../../vendor/three.module.js?v=33de1a2';
+import { paintFace, FACE_PRESETS } from './faces.js?v=33de1a2';
 
 export function mulberry(seed) {
   let a = seed >>> 0;
@@ -57,14 +57,16 @@ function make(size, painter, opts = {}) {
     for (let x = 0; x < canvas.width; x++) {
       const [r, g, b, a = 255] = painter(x, y);
       const i = (y * canvas.width + x) * 4;
-      d[i] = q5(r); d[i + 1] = q5(g); d[i + 2] = q5(b); d[i + 3] = clamp255(a);
+      if (opts.smooth) { d[i] = clamp255(r); d[i + 1] = clamp255(g); d[i + 2] = clamp255(b); }
+      else { d[i] = q5(r); d[i + 1] = q5(g); d[i + 2] = q5(b); }
+      d[i + 3] = clamp255(a);
     }
   }
   ctx.putImageData(img, 0, 0);
   const tex = new THREE.CanvasTexture(canvas);
-  tex.magFilter = THREE.NearestFilter;
-  tex.minFilter = THREE.NearestFilter;
-  tex.generateMipmaps = false;
+  tex.magFilter = opts.smooth ? THREE.LinearFilter : THREE.NearestFilter;
+  tex.minFilter = opts.smooth ? THREE.LinearMipmapLinearFilter : THREE.NearestFilter;
+  tex.generateMipmaps = !!opts.smooth;
   tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
   tex.colorSpace = THREE.NoColorSpace;
   tex.needsUpdate = true;
@@ -446,5 +448,28 @@ export function createTextures() {
   // Shoes: dark leather with a paler sole and a toe cap.
   T.shoe = make(16, (x, y) => (y >= 14 ? [60, 52, 44] : y <= 4 ? [34, 30, 28] : [24, 22, 22]));
   T.belt = make(16, (x, y) => ((x >= 6 && x <= 9 && y >= 5 && y <= 10) ? [180, 150, 70] : [40, 32, 28]));
+
+  // Board-formed concrete, Tadao Ando's: a 256px tile is 1.8m square, two
+  // panels high, each panel with its six cone tie holes, seams between.
+  {
+    const na = fbm(256, rand, 4, 3), nb = fbm(256, rand, 5, 12), ns = fbm(256, rand, 3, 2);
+    const holes = [];
+    for (const py of [0, 128]) for (const hx of [43, 128, 213]) for (const hy of [40, 88]) holes.push([hx, py + hy]);
+    const concrete = (x, y, { seams = true, base = 150 } = {}) => {
+      let v = base + (na(x, y) - 0.5) * 30 + (nb(x, y) - 0.5) * 10 + (ns(x, 3) - 0.5) * 10;
+      // Water streaks run down from the holes and seams.
+      v += (ns(x, 0) - 0.5) * 6;
+      if (seams && (y % 128 < 2 || x < 2)) v -= 26;
+      if (seams) for (const [hx, hy] of holes) {
+        const d = Math.hypot(x - hx, y - hy);
+        if (d < 2.6) v = 70 + d * 14;
+        else if (d < 3.6) v += 8;
+      }
+      return [v + 3, v + 1, v - 2];
+    };
+    T.ando = make(256, (x, y) => concrete(x, y), { smooth: true });
+    T.andoSmooth = make(256, (x, y) => concrete(x, y, { seams: false, base: 156 }), { smooth: true });
+    T.concretePale = make(256, (x, y) => { const v = 132 + (na(x, y) - 0.5) * 14 + (nb(x, y) - 0.5) * 6; return [v + 2, v + 1, v]; }, { smooth: true });
+  }
   return T;
 }

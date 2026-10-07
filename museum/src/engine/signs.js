@@ -1,6 +1,6 @@
 // Neon sign textures: words from two signs spliced together, each half in its
 // own typeface and colour, drawn small so the letters stay chunky.
-import * as THREE from '../../vendor/three.module.js?v=31477ec';
+import * as THREE from '../../vendor/three.module.js?v=33de1a2';
 
 const FONTS = {
   sans: 'bold 30px "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif',
@@ -20,7 +20,8 @@ export function makeSignTexture(parts, { dead = false, faded = false, width = 25
   // Measure at base size, then scale to fit.
   let total = 0;
   const widths = parts.map((p) => { ctx.font = FONTS[p.font] || FONTS.sans; const w = ctx.measureText(p.text).width + 6; total += w; return w; });
-  const scale = Math.min(1, (width - 16) / total);
+  // Bigger canvases (hires signs) draw the same letters bigger.
+  const scale = Math.min(1, (256 - 16) / total) * (width / 256);
   let x = (width - total * scale) / 2;
   const seed = parts.map((p) => p.text).join('').length;
   let r = seed * 7 + 3;

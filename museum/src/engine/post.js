@@ -1,6 +1,6 @@
 // Low-resolution render target + full-screen pass: 15-bit colour quantization
 // with ordered dithering, a little grain, a vignette and a fade for scene ends.
-import * as THREE from '../../vendor/three.module.js?v=31477ec';
+import * as THREE from '../../vendor/three.module.js?v=33de1a2';
 
 const vert = /* glsl */ `
 out vec2 vUv;
@@ -15,6 +15,8 @@ uniform float uTime;
 uniform float uFade;
 uniform vec3 uFadeColor;
 uniform float uGrain;
+uniform float uQuant;
+uniform float uVignette;
 in vec2 vUv;
 out vec4 fragColor;
 
@@ -31,9 +33,9 @@ void main() {
   int by = int(mod(px.y, 4.0));
   float d = (float(bayer[by * 4 + bx]) / 16.0 - 0.5) / 31.0;
   c += (hash(px + fract(uTime * 7.1)) - 0.5) * uGrain;
-  c = floor((c + d) * 31.0 + 0.5) / 31.0;
+  if (uQuant > 0.5) c = floor((c + d) * 31.0 + 0.5) / 31.0;
   float vig = 1.0 - smoothstep(0.55, 1.25, length((vUv - 0.5) * vec2(1.6, 1.2)));
-  c *= mix(0.72, 1.0, vig);
+  c *= mix(1.0, mix(0.72, 1.0, vig), uVignette);
   c = mix(c, uFadeColor, uFade);
   fragColor = vec4(c, 1.0);
 }
@@ -57,6 +59,8 @@ export class PostPass {
       uFade: { value: 0 },
       uFadeColor: { value: new THREE.Color('#4f6268') },
       uGrain: { value: 0.035 },
+      uQuant: { value: 1 },
+      uVignette: { value: 1 },
     };
     const mat = new THREE.ShaderMaterial({
       uniforms: this.uniforms,
@@ -81,6 +85,14 @@ export class PostPass {
     this.target.setSize(w, h);
     this.uniforms.uRes.value.set(w, h);
     this.renderer.setSize(screenW, screenH, false);
+  }
+
+  // The look of a scene: quantize (15-bit colour + dither), grain, vignette.
+  // Absent keys go back to the PS1 defaults.
+  setLook(r = {}) {
+    this.uniforms.uQuant.value = r.quantize === false || r.quantize === 0 ? 0 : 1;
+    this.uniforms.uGrain.value = r.grain !== undefined ? r.grain : 0.035;
+    this.uniforms.uVignette.value = r.vignette !== undefined ? r.vignette : 1;
   }
 
   render(scene, camera, time, overlay, portrait) {
