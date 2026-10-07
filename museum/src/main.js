@@ -1,20 +1,20 @@
-import * as THREE from '../vendor/three.module.js?v=436ab43';
-import { createTextures } from './engine/textures.js?v=436ab43';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=436ab43';
-import { PostPass } from './engine/post.js?v=436ab43';
-import { DreamAudio } from './engine/audio.js?v=436ab43';
-import { Player } from './engine/player.js?v=436ab43';
-import { Dialog } from './engine/dialog.js?v=436ab43';
-import { Inventory } from './engine/inventory.js?v=436ab43';
-import { SceneBuilder } from './scene/build.js?v=436ab43';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=436ab43';
-import { Events } from './scene/events.js?v=436ab43';
-import { disposeTree } from './engine/merge.js?v=436ab43';
-import { assembleMuseum } from './museum.js?v=436ab43';
-import { PBR } from './engine/pbr.js?v=436ab43';
-import { checkPaths } from './engine/pathcheck.js?v=436ab43';
-import { Portrait } from './engine/portrait.js?v=436ab43';
-import { Voice, voiceFor } from './engine/voice.js?v=436ab43';
+import * as THREE from '../vendor/three.module.js?v=a57a173';
+import { createTextures } from './engine/textures.js?v=a57a173';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=a57a173';
+import { PostPass } from './engine/post.js?v=a57a173';
+import { DreamAudio } from './engine/audio.js?v=a57a173';
+import { Player } from './engine/player.js?v=a57a173';
+import { Dialog } from './engine/dialog.js?v=a57a173';
+import { Inventory } from './engine/inventory.js?v=a57a173';
+import { SceneBuilder } from './scene/build.js?v=a57a173';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=a57a173';
+import { Events } from './scene/events.js?v=a57a173';
+import { disposeTree } from './engine/merge.js?v=a57a173';
+import { assembleMuseum } from './museum.js?v=a57a173';
+import { PBR } from './engine/pbr.js?v=a57a173';
+import { checkPaths } from './engine/pathcheck.js?v=a57a173';
+import { Portrait } from './engine/portrait.js?v=a57a173';
+import { Voice, voiceFor } from './engine/voice.js?v=a57a173';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that

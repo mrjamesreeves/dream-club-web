@@ -2,7 +2,7 @@
 // clone shares the live face material (blinks, glances, the moving mouth),
 // drawn small over the scene at the top-left corner of the dialogue box.
 // Nothing is drawn behind it; the clone sits in its own overlay scene.
-import * as THREE from '../../vendor/three.module.js?v=436ab43';
+import * as THREE from '../../vendor/three.module.js?v=a57a173';
 
 export class Portrait {
   constructor() {
