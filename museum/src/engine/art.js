@@ -1,6 +1,6 @@
 // Small painted pictures for walls: posters, menus, mirrors, scrolls.
 // Drawn on a tiny canvas and sampled with nearest filtering.
-import * as THREE from '../../vendor/three.module.js?v=dccac0a';
+import * as THREE from '../../vendor/three.module.js?v=76ba8c9';
 
 const cache = new Map();
 

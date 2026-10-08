@@ -4,10 +4,10 @@ import {
 	Timer,
 	Vector2,
 	WebGLRenderTarget
-} from '../three.module.js?v=dccac0a';
-import { CopyShader } from '../shaders/CopyShader.js?v=dccac0a';
-import { ShaderPass } from './ShaderPass.js?v=dccac0a';
-import { ClearMaskPass, MaskPass } from './MaskPass.js?v=dccac0a';
+} from '../three.module.js?v=76ba8c9';
+import { CopyShader } from '../shaders/CopyShader.js?v=76ba8c9';
+import { ShaderPass } from './ShaderPass.js?v=76ba8c9';
+import { ClearMaskPass, MaskPass } from './MaskPass.js?v=76ba8c9';
 
 /**
  * Used to implement post-processing effects in three.js.
