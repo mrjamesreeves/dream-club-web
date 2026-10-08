@@ -1,21 +1,21 @@
-import * as THREE from '../vendor/three.module.js?v=76ba8c9';
-import { createTextures } from './engine/textures.js?v=76ba8c9';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=76ba8c9';
-import { PostPass } from './engine/post.js?v=76ba8c9';
-import { DreamAudio } from './engine/audio.js?v=76ba8c9';
-import { Player } from './engine/player.js?v=76ba8c9';
-import { Dialog } from './engine/dialog.js?v=76ba8c9';
-import { Inventory } from './engine/inventory.js?v=76ba8c9';
-import { SceneBuilder } from './scene/build.js?v=76ba8c9';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=76ba8c9';
-import { Events } from './scene/events.js?v=76ba8c9';
-import { disposeTree } from './engine/merge.js?v=76ba8c9';
-import { assembleMuseum } from './museum.js?v=76ba8c9';
-import { PBR } from './engine/pbr.js?v=76ba8c9';
-import { setPBRMode } from './engine/ps1material.js?v=76ba8c9';
-import { checkPaths } from './engine/pathcheck.js?v=76ba8c9';
-import { Portrait } from './engine/portrait.js?v=76ba8c9';
-import { Voice, voiceFor } from './engine/voice.js?v=76ba8c9';
+import * as THREE from '../vendor/three.module.js?v=43c83b1';
+import { createTextures } from './engine/textures.js?v=43c83b1';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=43c83b1';
+import { PostPass } from './engine/post.js?v=43c83b1';
+import { DreamAudio } from './engine/audio.js?v=43c83b1';
+import { Player } from './engine/player.js?v=43c83b1';
+import { Dialog } from './engine/dialog.js?v=43c83b1';
+import { Inventory } from './engine/inventory.js?v=43c83b1';
+import { SceneBuilder } from './scene/build.js?v=43c83b1';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=43c83b1';
+import { Events } from './scene/events.js?v=43c83b1';
+import { disposeTree } from './engine/merge.js?v=43c83b1';
+import { assembleMuseum } from './museum.js?v=43c83b1';
+import { PBR } from './engine/pbr.js?v=43c83b1';
+import { setPBRMode } from './engine/ps1material.js?v=43c83b1';
+import { checkPaths } from './engine/pathcheck.js?v=43c83b1';
+import { Portrait } from './engine/portrait.js?v=43c83b1';
+import { Voice, voiceFor } from './engine/voice.js?v=43c83b1';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -370,6 +370,7 @@ class Game {
     else this.player.stand();
     this.scene.add(builder.group);
     if (def.render && def.render.pbr) this.pbr.configure(def); else this.pbr.clear();
+    for (const tv of builder.televisions || []) { this.prepareFilm(tv); if (tv.video) tv.video.preload = 'metadata'; }
     this.entities = builder.entities;
     this.names = { you: '', ...builder.names, ...(def.names || {}) };
     this.player.colliders = builder.colliders;
@@ -719,14 +720,22 @@ class Game {
     to.pos.y = 0;
     const from = { pos: pl.position.clone(), eye: pl.eyeHeight, yaw: pl.yaw, pitch: pl.pitch, fov: this.fovTarget ?? 72 };
     this.watching = { tv, phase: 'in', t: 0, seconds: 1.6, from, to };
+    // Browsers only let sound start inside the click itself, so the film is
+    // started here, silently, and the zoom catches up with it.
+    this.prepareFilm(tv);
+    if (tv.video) {
+      tv.video.preload = 'auto'; tv.video.currentTime = 0; tv.video.volume = 0;
+      const p = tv.video.play();
+      if (p && p.catch) p.catch(() => {});
+    }
     pl.lookLock = true; pl.keys.clear();
     pl.seated = { yaw: pl.yaw, range: 0 };
     if (this.audio.master) this.audio.master.gain.setTargetAtTime(0.12, this.audio.ctx.currentTime, 0.6);
   }
 
-  startFilm(tv) {
-    if (!tv.film) return;
-    if (!tv.video) {
+  prepareFilm(tv) {
+    if (!tv.film || tv.video) return;
+    {
       const v = document.createElement('video');
       v.src = tv.film; v.crossOrigin = 'anonymous'; v.playsInline = true; v.preload = 'auto';
       v.addEventListener('ended', () => { if (this.watching && this.watching.tv === tv) this.stopWatching(); });
@@ -741,11 +750,20 @@ class Game {
       v.addEventListener('error', () => { tv.playing = false; tv.mat.map = tv.snow; tv.mat.needsUpdate = true; });
       tv.video = v;
       tv.videoTex = new THREE.VideoTexture(v); tv.videoTex.colorSpace = THREE.SRGBColorSpace; tv.videoTex.minFilter = THREE.LinearFilter; tv.videoTex.magFilter = THREE.LinearFilter;
+      // If play was refused or the file was still loading, try again once it can.
+      v.addEventListener('canplay', () => { if (tv.playing && v.paused) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } });
     }
+  }
+
+  startFilm(tv) {
+    if (!tv.film) return;
+    this.prepareFilm(tv);
+    const v = tv.video;
     tv.playing = true;
-    tv.video.currentTime = 0;
-    const p = tv.video.play();
-    if (p && p.catch) p.catch(() => { tv.playing = false; });
+    v.volume = 1;
+    if (v.currentTime > 1.2 || v.paused) { v.currentTime = 0; }
+    if (v.paused) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    if (!v.paused && v.readyState >= 3) { tv.mat.map = tv.videoTex; tv.mat.needsUpdate = true; }
   }
 
   stopWatching() {
