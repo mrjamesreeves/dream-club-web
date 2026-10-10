@@ -1,7 +1,7 @@
 // Procedural low-resolution textures. Everything is generated on a 2D canvas at
 // 16-64px, quantized to a 15-bit style palette and sampled with nearest filtering.
-import * as THREE from '../../vendor/three.module.js?v=24e2c73';
-import { paintFace, FACE_PRESETS } from './faces.js?v=24e2c73';
+import * as THREE from '../../vendor/three.module.js?v=82e941e';
+import { paintFace, FACE_PRESETS } from './faces.js?v=82e941e';
 
 export function mulberry(seed) {
   let a = seed >>> 0;
@@ -471,5 +471,8 @@ export function createTextures() {
     T.andoSmooth = make(256, (x, y) => concrete(x, y, { seams: false, base: 156 }), { smooth: true });
     T.concretePale = make(256, (x, y) => { const v = 132 + (na(x, y) - 0.5) * 14 + (nb(x, y) - 0.5) * 6; return [v + 2, v + 1, v]; }, { smooth: true });
   }
+
+  // A chevron floor, black and cream, the zigzag of a certain red room.
+  T.chevron = make(64, (x, y) => { const k = ((x + (y < 32 ? y : 63 - y)) >> 4) & 1; return k ? [214, 206, 188] : [22, 20, 20]; }, { smooth: false });
   return T;
 }

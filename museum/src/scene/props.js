@@ -1,11 +1,11 @@
 // Furnishings and small things for interiors: food, decorations, fixtures.
 // Added to SceneBuilder as methods. Small meshes share materials per area so
 // a busy room does not cost a material per plate.
-import * as THREE from '../../vendor/three.module.js?v=24e2c73';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=24e2c73';
-import { createLight, makeHalo } from '../engine/lights.js?v=24e2c73';
-import { makeArt } from '../engine/art.js?v=24e2c73';
-import { mergeStatic } from '../engine/merge.js?v=24e2c73';
+import * as THREE from '../../vendor/three.module.js?v=82e941e';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=82e941e';
+import { createLight, makeHalo } from '../engine/lights.js?v=82e941e';
+import { makeArt } from '../engine/art.js?v=82e941e';
+import { mergeStatic } from '../engine/merge.js?v=82e941e';
 
 const rad = THREE.MathUtils.degToRad;
 const cylGeo = (r0, r1, h, sides = 8) => setVertexShade(new THREE.CylinderGeometry(r0, r1, h, sides), 1);
@@ -318,6 +318,13 @@ export const PropMethods = {
 
   drawSnow(tv) {
     const { ctx, canvas } = tv;
+    if (tv.blipUntil && performance.now() < tv.blipUntil && tv.blipImg) {
+      ctx.drawImage(tv.blipImg, 0, 0, canvas.width, canvas.height);
+      // torn by the snow: a few bands of noise across it
+      const img = ctx.getImageData(0, 0, canvas.width, canvas.height); const d = img.data;
+      for (let y = 0; y < canvas.height; y++) { if (Math.random() > 0.35) continue; for (let x = 0; x < canvas.width; x++) { const i = (y * canvas.width + x) * 4; const v = 40 + Math.random() * 190; d[i] = v; d[i + 1] = v; d[i + 2] = v + 6; } }
+      ctx.putImageData(img, 0, 0); tv.snow.needsUpdate = true; return;
+    }
     const img = ctx.createImageData(canvas.width, canvas.height); const d = img.data;
     for (let i = 0; i < d.length; i += 4) { const v = 40 + Math.random() * 190; d[i] = v; d[i + 1] = v; d[i + 2] = v + 6; d[i + 3] = 255; }
     // A faint rolling bar, the way a bad set does.
@@ -371,6 +378,28 @@ export const PropMethods = {
       b.mesh.visible = on; if (b.light) b.light.intensity = on ? (cfg.light ?? 60) : 0;
       b.on += dt;
       if (b.on >= Math.abs(step)) { b.seq.shift(); b.on = 0; }
+    }
+  },
+
+  // A cutout: a photograph of a thing, cut from its background, hung in the
+  // air as a paper-thin print. It turns slowly, so it goes edge-on and
+  // vanishes for a moment every revolution, and it breathes a little.
+  addCutout(o) {
+    const [x, y, z] = o.pos; const [w, h] = o.size || [1, 1];
+    const mat = createPS1Material(this.ctx.env, { map: this.ctx.T.black, unlit: true, worldUV: false, texScale: 1, alphaTest: 0.12, transparent: true, side: THREE.DoubleSide, fog: o.fog !== false });
+    const m = this.put(setVertexShade(new THREE.PlaneGeometry(w, h), 1), mat, x, y, z, [0, rad(o.yaw ?? 0), 0]);
+    m.visible = false;
+    new THREE.TextureLoader().load(o.image, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.minFilter = THREE.LinearMipmapLinearFilter; t.generateMipmaps = true; t.anisotropy = 4; const cm = m.material; if (cm.userData.ps1) cm.uniforms.uMap.value = t; else { cm.map = t; cm.needsUpdate = true; } m.visible = true; });
+    this.cutouts.push({ mesh: m, base: y, spin: rad(o.spin ?? 8), bob: o.bob ?? 0.05, breathe: o.breathe ?? 0.0, phase: Math.random() * 6.28, rate: 0.5 + Math.random() * 0.4, dir: Math.random() < 0.5 ? -1 : 1 });
+    if (o.name) this.objectsById.set(o.id, { meshes: [m], examinable: null, pos: [x, y, z] });
+    return m;
+  },
+
+  updateCutouts(dt, time) {
+    for (const c of this.cutouts) {
+      c.mesh.rotation.y += c.spin * c.dir * dt;
+      c.mesh.position.y = c.base + Math.sin(time * c.rate + c.phase) * c.bob;
+      if (c.breathe) { const k = 1 + Math.sin(time * 1.1 + c.phase) * c.breathe; c.mesh.scale.set(k, 1 / Math.sqrt(k), 1); }
     }
   },
 
@@ -701,6 +730,7 @@ export const PropMethods = {
 
   updateProps(dt, time) {
     this.updateBlips(dt);
+    this.updateCutouts(dt, time);
     this.updateMachines(dt, time);
     if (this.swayers) for (const s of this.swayers) s.obj.rotation.x = (s.base || 0) + Math.sin(time * 1.3 + s.phase) * s.amp;
     if (this.fountains) for (const f of this.fountains) f.update(dt);

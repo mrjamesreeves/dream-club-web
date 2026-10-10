@@ -1,17 +1,17 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=24e2c73';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=24e2c73';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=24e2c73';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=24e2c73';
-import { mulberry } from '../engine/textures.js?v=24e2c73';
-import { AmbientParticles } from '../engine/particles.js?v=24e2c73';
-import { makeSignTexture } from '../engine/signs.js?v=24e2c73';
-import { PropMethods } from './props.js?v=24e2c73';
-import { buildShapes } from '../engine/shapes.js?v=24e2c73';
-import { mergeStatic } from '../engine/merge.js?v=24e2c73';
-import { bakeWorldUV } from '../engine/pbr.js?v=24e2c73';
-import { voiceFor } from '../engine/voice.js?v=24e2c73';
+import * as THREE from '../../vendor/three.module.js?v=82e941e';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=82e941e';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=82e941e';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=82e941e';
+import { mulberry } from '../engine/textures.js?v=82e941e';
+import { AmbientParticles } from '../engine/particles.js?v=82e941e';
+import { makeSignTexture } from '../engine/signs.js?v=82e941e';
+import { PropMethods } from './props.js?v=82e941e';
+import { buildShapes } from '../engine/shapes.js?v=82e941e';
+import { mergeStatic } from '../engine/merge.js?v=82e941e';
+import { bakeWorldUV } from '../engine/pbr.js?v=82e941e';
+import { voiceFor } from '../engine/voice.js?v=82e941e';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';
@@ -19,6 +19,7 @@ const DIRS = { '+x': [1, 0], '-x': [-1, 0], '+z': [0, 1], '-z': [0, -1] };
 
 export class SceneBuilder {
   constructor(ctx) {
+    this.cutouts = [];
     this.blips = [];
     this.televisions = [];
     this.pbr = !!ctx.pbr;
@@ -719,6 +720,7 @@ export class SceneBuilder {
         case 'screen': this.addScreen(o); break;
         case 'television': this.addTelevision(o); break;
         case 'blip': this.addBlip(o); break;
+        case 'cutout': this.addCutout(o); break;
         case 'arch': this.addArch(o); break;
         case 'ceilingFan': this.addCeilingFan(o); break;
         case 'jukebox': this.addJukebox(o); break;
@@ -794,6 +796,17 @@ export class SceneBuilder {
     updateLights(this.lights, time, camera, this.ctx.audio);
     this.updateProps(dt, time);
     for (const tv of this.televisions) if (!tv.playing && time - tv.last > 0.07) { tv.last = time; this.drawSnow(tv); }
+    // The sets break through to a picture now and then, like the walls.
+    if (this.blipConfig && this.blipConfig.tv !== false && this.televisions.length) {
+      if (this.tvBlipWait === undefined) this.tvBlipWait = 4 + Math.random() * 10;
+      this.tvBlipWait -= dt;
+      if (this.tvBlipWait <= 0) {
+        this.tvBlipWait = 8 + Math.random() * 18;
+        const tv = this.televisions[Math.floor(Math.random() * this.televisions.length)];
+        const imgs = this.blipConfig.images || [];
+        if (imgs.length && !tv.playing) { const im = new Image(); im.onload = () => { tv.blipImg = im; tv.blipUntil = performance.now() + 120 + Math.random() * 300; }; im.src = imgs[Math.floor(Math.random() * imgs.length)]; }
+      }
+    }
     const cp = camera.position;
     for (const s of this.staticMaterials) if (s.position.distanceToSquared(cp) < 6400) refreshLightColors(s.material);
     for (const s of this.scrollers) {

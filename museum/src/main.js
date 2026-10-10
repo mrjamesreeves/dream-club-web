@@ -1,21 +1,21 @@
-import * as THREE from '../vendor/three.module.js?v=24e2c73';
-import { createTextures } from './engine/textures.js?v=24e2c73';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=24e2c73';
-import { PostPass } from './engine/post.js?v=24e2c73';
-import { DreamAudio } from './engine/audio.js?v=24e2c73';
-import { Player } from './engine/player.js?v=24e2c73';
-import { Dialog } from './engine/dialog.js?v=24e2c73';
-import { Inventory } from './engine/inventory.js?v=24e2c73';
-import { SceneBuilder } from './scene/build.js?v=24e2c73';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=24e2c73';
-import { Events } from './scene/events.js?v=24e2c73';
-import { disposeTree } from './engine/merge.js?v=24e2c73';
-import { assembleMuseum } from './museum.js?v=24e2c73';
-import { PBR } from './engine/pbr.js?v=24e2c73';
-import { setPBRMode } from './engine/ps1material.js?v=24e2c73';
-import { checkPaths } from './engine/pathcheck.js?v=24e2c73';
-import { Portrait } from './engine/portrait.js?v=24e2c73';
-import { Voice, voiceFor } from './engine/voice.js?v=24e2c73';
+import * as THREE from '../vendor/three.module.js?v=82e941e';
+import { createTextures } from './engine/textures.js?v=82e941e';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=82e941e';
+import { PostPass } from './engine/post.js?v=82e941e';
+import { DreamAudio } from './engine/audio.js?v=82e941e';
+import { Player } from './engine/player.js?v=82e941e';
+import { Dialog } from './engine/dialog.js?v=82e941e';
+import { Inventory } from './engine/inventory.js?v=82e941e';
+import { SceneBuilder } from './scene/build.js?v=82e941e';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=82e941e';
+import { Events } from './scene/events.js?v=82e941e';
+import { disposeTree } from './engine/merge.js?v=82e941e';
+import { assembleMuseum } from './museum.js?v=82e941e';
+import { PBR } from './engine/pbr.js?v=82e941e';
+import { setPBRMode } from './engine/ps1material.js?v=82e941e';
+import { checkPaths } from './engine/pathcheck.js?v=82e941e';
+import { Portrait } from './engine/portrait.js?v=82e941e';
+import { Voice, voiceFor } from './engine/voice.js?v=82e941e';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that

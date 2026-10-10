@@ -1,0 +1,1742 @@
+{
+ "name": "red",
+ "title": "MUSEUM OF DREAMS",
+ "card": {
+  "once": true,
+  "seconds": 3
+ },
+ "noInventory": true,
+ "dialog": {
+  "fonts": [
+   "Source Sans 3:wght@400;600",
+   "IBM Plex Serif:ital,wght@0,400;0,500;1,400"
+  ],
+  "bg": "rgba(250, 250, 248, 0.96)",
+  "color": "#1a1b1c",
+  "border": "none",
+  "radius": "2px",
+  "shadow": "0 10px 28px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3)",
+  "font": "'IBM Plex Serif', Georgia, serif",
+  "size": "17px",
+  "leading": "1.5",
+  "tracking": "0",
+  "pixel": "auto",
+  "who-font": "'Source Sans 3', 'Helvetica Neue', sans-serif",
+  "who-size": "12px",
+  "who-weight": "600",
+  "who-tracking": "0.28em",
+  "who-color": "#6b6e72",
+  "who-gap": "10px",
+  "more": "#9a9da1",
+  "left": "max(24px, 6vw)",
+  "bottom": "max(24px, 7vh)",
+  "transform": "none",
+  "width": "min(520px, 80vw)",
+  "padding": "18px 22px 20px",
+  "thought-bg": "rgba(250, 250, 248, 0.96)",
+  "thought-border": "none",
+  "thought-shadow": "0 10px 28px rgba(0, 0, 0, 0.45)",
+  "thought-color": "#55585c",
+  "thought-more": "#9a9da1"
+ },
+ "blips": {
+  "images": [
+   "./assets/blips/booth-couple.jpg",
+   "./assets/blips/booth-needle.jpg",
+   "./assets/blips/booth-door.jpg",
+   "./assets/blips/booth-empty.jpg",
+   "./assets/blips/booth-medics.jpg",
+   "./assets/blips/mice-b.jpg",
+   "./assets/blips/president.jpg",
+   "./assets/blips/Limbs-1.jpg",
+   "./assets/blips/Limbs-2.jpg"
+  ],
+  "first": [
+   3,
+   8
+  ],
+  "every": [
+   6,
+   16
+  ],
+  "flash": [
+   0.12,
+   0.55
+  ],
+  "light": 40
+ },
+ "render": {
+  "height": 1080,
+  "quantize": false,
+  "grain": 0.016,
+  "vignette": 0.8,
+  "pbr": {
+   "exposure": 1.0,
+   "sun": 0.0,
+   "hemi": 0.05,
+   "skyColor": "#4a2a2a",
+   "groundColor": "#0d0b09",
+   "ambient": 0.03,
+   "point": 4,
+   "envIntensity": 0.2,
+   "bloom": {
+    "strength": 0.35,
+    "radius": 0.8,
+    "threshold": 0.9
+   },
+   "shadows": false
+  }
+ },
+ "environment": {
+  "fogColor": "#060404",
+  "ambient": "#100c0c",
+  "skyColor": "#1a1010",
+  "sunDir": [
+   0.2,
+   0.9,
+   0.3
+  ],
+  "sunColor": "#000000",
+  "fogNear": 9,
+  "fogFar": 34,
+  "fogHeight": 0,
+  "fogHeightRange": 8,
+  "fogHeightStrength": 0,
+  "jitter": 0,
+  "affine": false
+ },
+ "sky": {
+  "top": "#000000",
+  "horizon": "#000000",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 260,
+   "alpha": 0.2,
+   "color": "#c0a0a0",
+   "box": [
+    30,
+    7,
+    30
+   ]
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "indoor": [
+  [
+   -33.0,
+   -33.0,
+   33.0,
+   33.0
+  ]
+ ],
+ "player": {
+  "pos": [
+   0,
+   0,
+   4.5
+  ],
+  "yaw": 0,
+  "speed": 2.4
+ },
+ "ambience": [
+  {
+   "sound": "hum",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.6,
+   "gain": 0.35
+  },
+  {
+   "sound": "wind",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.3,
+   "gain": 0.12
+  }
+ ],
+ "names": {
+  "bed": "THE BED",
+  "journal": "THE JOURNAL",
+  "body horror": "BODY HORROR",
+  "poison": "POISON"
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    64.0,
+    64.0
+   ],
+   "tex": "woodDark",
+   "color": "#1c1816",
+   "texScale": 1.2,
+   "shade": 1,
+   "seg": 2.5,
+   "surface": "wood"
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0.01,
+    0
+   ],
+   "size": [
+    21.5,
+    21.5
+   ],
+   "tex": "chevron",
+   "texScale": 2.4,
+   "shade": 1,
+   "seg": 2,
+   "unique": true,
+   "extra": {
+    "roughness": 0.3,
+    "envMapIntensity": 0.9
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.5,
+    -32.0
+   ],
+   "size": [
+    65.0,
+    9.0,
+    1
+   ],
+   "tex": "plasterDirty",
+   "color": "#2a2624",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.5,
+    32.0
+   ],
+   "size": [
+    65.0,
+    9.0,
+    1
+   ],
+   "tex": "plasterDirty",
+   "color": "#2a2624",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -32.0,
+    4.5,
+    0
+   ],
+   "size": [
+    1,
+    9.0,
+    65.0
+   ],
+   "tex": "plasterDirty",
+   "color": "#2a2624",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    32.0,
+    4.5,
+    0
+   ],
+   "size": [
+    1,
+    9.0,
+    65.0
+   ],
+   "tex": "plasterDirty",
+   "color": "#2a2624",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "drape",
+   "pos": [
+    0.0,
+    3.2,
+    -15.5
+   ],
+   "yaw": 0.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    2.4247342081235783,
+    3.2,
+    -15.309169279224635
+   ],
+   "yaw": 351.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    4.789763412811685,
+    3.2,
+    -14.74137600257488
+   ],
+   "yaw": 342.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    7.0368527459629755,
+    3.2,
+    -13.810601124919703
+   ],
+   "yaw": 333.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    9.110671410533334,
+    3.2,
+    -12.539763412811686
+   ],
+   "yaw": 324.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    10.960155108391486,
+    3.2,
+    -10.960155108391488
+   ],
+   "yaw": 315.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    12.539763412811686,
+    3.2,
+    -9.110671410533334
+   ],
+   "yaw": 306.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    13.810601124919703,
+    3.2,
+    -7.036852745962976
+   ],
+   "yaw": 297.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    14.74137600257488,
+    3.2,
+    -4.789763412811686
+   ],
+   "yaw": 288.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    15.309169279224635,
+    3.2,
+    -2.424734208123579
+   ],
+   "yaw": 279.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    15.5,
+    3.2,
+    -9.491012693391988e-16
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    15.309169279224635,
+    3.2,
+    2.4247342081235743
+   ],
+   "yaw": 261.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    14.741376002574881,
+    3.2,
+    4.789763412811684
+   ],
+   "yaw": 252.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    13.810601124919703,
+    3.2,
+    7.036852745962975
+   ],
+   "yaw": 243.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    12.539763412811686,
+    3.2,
+    9.110671410533332
+   ],
+   "yaw": 234.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    10.960155108391488,
+    3.2,
+    10.960155108391486
+   ],
+   "yaw": 225.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    9.110671410533335,
+    3.2,
+    12.539763412811684
+   ],
+   "yaw": 216.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    7.036852745962976,
+    3.2,
+    13.810601124919701
+   ],
+   "yaw": 207.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    4.789763412811686,
+    3.2,
+    14.74137600257488
+   ],
+   "yaw": 198.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    2.42473420812358,
+    3.2,
+    15.309169279224633
+   ],
+   "yaw": 189.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    1.8982025386783976e-15,
+    3.2,
+    15.5
+   ],
+   "yaw": 180.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -2.424734208123576,
+    3.2,
+    15.309169279224635
+   ],
+   "yaw": 171.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -4.789763412811677,
+    3.2,
+    14.741376002574883
+   ],
+   "yaw": 162.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -7.036852745962974,
+    3.2,
+    13.810601124919703
+   ],
+   "yaw": 153.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -9.110671410533332,
+    3.2,
+    12.539763412811686
+   ],
+   "yaw": 144.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -10.960155108391486,
+    3.2,
+    10.96015510839149
+   ],
+   "yaw": 135.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -12.539763412811684,
+    3.2,
+    9.110671410533335
+   ],
+   "yaw": 126.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -13.810601124919701,
+    3.2,
+    7.036852745962978
+   ],
+   "yaw": 117.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -14.74137600257488,
+    3.2,
+    4.789763412811687
+   ],
+   "yaw": 108.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -15.309169279224633,
+    3.2,
+    2.424734208123581
+   ],
+   "yaw": 99.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -15.5,
+    3.2,
+    2.847303808017596e-15
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -15.309169279224635,
+    3.2,
+    -2.4247342081235757
+   ],
+   "yaw": 81.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -14.741376002574881,
+    3.2,
+    -4.789763412811682
+   ],
+   "yaw": 72.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -13.810601124919703,
+    3.2,
+    -7.036852745962973
+   ],
+   "yaw": 63.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -12.539763412811688,
+    3.2,
+    -9.11067141053333
+   ],
+   "yaw": 54.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -10.96015510839149,
+    3.2,
+    -10.960155108391485
+   ],
+   "yaw": 45.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -9.110671410533337,
+    3.2,
+    -12.539763412811684
+   ],
+   "yaw": 36.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -7.036852745962978,
+    3.2,
+    -13.810601124919701
+   ],
+   "yaw": 27.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -4.789763412811689,
+    3.2,
+    -14.74137600257488
+   ],
+   "yaw": 18.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "drape",
+   "pos": [
+    -2.4247342081235823,
+    3.2,
+    -15.309169279224633
+   ],
+   "yaw": 9.0,
+   "size": [
+    2.0,
+    6.4
+   ],
+   "color": "#6a0f1c",
+   "folds": 7,
+   "depth": 0.1
+  },
+  {
+   "type": "blip",
+   "pos": [
+    3.946990437813441,
+    2.6,
+    -14.730368850908292
+   ],
+   "yaw": 345.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    10.783378413094848,
+    2.6,
+    -10.78337841309485
+   ],
+   "yaw": 315.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    14.730368850908292,
+    2.6,
+    -3.946990437813441
+   ],
+   "yaw": 285.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    14.730368850908292,
+    2.6,
+    3.9469904378134397
+   ],
+   "yaw": 255.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    10.78337841309485,
+    2.6,
+    10.783378413094848
+   ],
+   "yaw": 225.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    3.9469904378134455,
+    2.6,
+    14.73036885090829
+   ],
+   "yaw": 195.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -3.946990437813442,
+    2.6,
+    14.730368850908292
+   ],
+   "yaw": 165.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -10.783378413094844,
+    2.6,
+    10.783378413094855
+   ],
+   "yaw": 135.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -14.730368850908292,
+    2.6,
+    3.9469904378134397
+   ],
+   "yaw": 105.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -14.730368850908294,
+    2.6,
+    -3.9469904378134344
+   ],
+   "yaw": 75.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -10.783378413094852,
+    2.6,
+    -10.783378413094846
+   ],
+   "yaw": 45.0,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -3.946990437813454,
+    2.6,
+    -14.730368850908288
+   ],
+   "yaw": 15.000000000000057,
+   "size": [
+    4.6,
+    2.6
+   ],
+   "range": 12
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.25,
+    0
+   ],
+   "size": [
+    1.7,
+    0.5,
+    2.3
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "bed",
+   "pos": [
+    0,
+    0.62,
+    0.05
+   ],
+   "size": [
+    1.56,
+    0.26,
+    2.1
+   ],
+   "tex": "cream",
+   "texScale": 1,
+   "walkable": false,
+   "name": "the bed",
+   "verb": "look at",
+   "examineAt": [
+    0,
+    0.7,
+    0.1
+   ],
+   "examineRadius": 1.1,
+   "examineRange": 3.8,
+   "examine": [
+    {
+     "who": "bed",
+     "text": "27 dreams so far. Two of them are kept here."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.78,
+    0.4
+   ],
+   "size": [
+    1.6,
+    0.1,
+    1.4
+   ],
+   "tex": "velvet",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.8,
+    -0.78
+   ],
+   "size": [
+    0.7,
+    0.14,
+    0.42
+   ],
+   "tex": "white",
+   "color": "#e8e4dc",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.95,
+    -1.2
+   ],
+   "size": [
+    1.8,
+    1.4,
+    0.12
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "table",
+   "pos": [
+    1.45,
+    0,
+    -0.75
+   ],
+   "size": [
+    0.6,
+    0.5
+   ],
+   "height": 0.62,
+   "tex": "mahogany"
+  },
+  {
+   "type": "tableLamp",
+   "id": "bedLamp",
+   "pos": [
+    1.52,
+    0.62,
+    -0.85
+   ],
+   "color": "#ffd090",
+   "intensity": 1.3,
+   "range": 9,
+   "flicker": "neonBad",
+   "glowSize": 0.45
+  },
+  {
+   "type": "item",
+   "id": "journal",
+   "item": "book",
+   "pickup": false,
+   "pos": [
+    1.32,
+    0.62,
+    -0.6
+   ],
+   "yaw": 12,
+   "scale": 0.8,
+   "name": "the journal",
+   "verb": "open",
+   "examineRadius": 0.3,
+   "examine": [
+    {
+     "who": "journal",
+     "text": "The journal. A dream goes from here to there."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0.0,
+    0.0,
+    -10.0
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    0.0,
+    3.4,
+    -10.0
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    4.999999999999999,
+    0.0,
+    -8.660254037844387
+   ],
+   "radius": 1.0,
+   "height": 0.35,
+   "sides": 28,
+   "tex": "black",
+   "color": "#0c0c0c",
+   "collide": true,
+   "unique": true,
+   "extra": {
+    "roughness": 0.25,
+    "envMapIntensity": 0.8
+   }
+  },
+  {
+   "type": "cutout",
+   "id": "body horror",
+   "image": "./assets/relics/hand-a.png",
+   "pos": [
+    4.999999999999999,
+    1.65,
+    -8.660254037844387
+   ],
+   "size": [
+    1.45,
+    1.9
+   ],
+   "yaw": 150.0,
+   "spin": 6,
+   "bob": 0.04,
+   "breathe": 0.025,
+   "name": "body horror"
+  },
+  {
+   "type": "spot",
+   "id": "body horror:read",
+   "pos": [
+    4.999999999999999,
+    1.65,
+    -8.660254037844387
+   ],
+   "name": "body horror",
+   "verb": "read",
+   "examineAt": [
+    4.999999999999999,
+    1.65,
+    -8.660254037844387
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.5,
+   "examine": [
+    {
+     "who": "body horror",
+     "text": "BODY HORROR"
+    },
+    {
+     "who": "body horror",
+     "text": "From the dream THE GAME."
+    },
+    {
+     "who": "body horror",
+     "text": "Six fingers. The president chopped the sixth one off."
+    },
+    {
+     "who": "body horror",
+     "text": "The longer the game went on, the more body parts we grew."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:game",
+   "pos": [
+    4.999999999999999,
+    9.0,
+    -8.660254037844387
+   ],
+   "drop": 5.1499999999999995,
+   "intensity": 1.6,
+   "range": 7,
+   "color": "#dfe8f2",
+   "glowSize": 0.2,
+   "glowStrength": 0.25,
+   "pool": false,
+   "flicker": "neonBad"
+  },
+  {
+   "type": "television",
+   "id": "tv:game",
+   "pos": [
+    7.25166604983954,
+    0,
+    -7.3602540378443875
+   ],
+   "yaw": 135.4257838019613,
+   "film": "/watch/game.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    7.25166604983954,
+    0.3,
+    -7.3602540378443875
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:game"
+    }
+   ]
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    8.660254037844386,
+    0.0,
+    -5.000000000000001
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    8.660254037844386,
+    3.4,
+    -5.000000000000001
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    10.0,
+    0.0,
+    -6.123233995736766e-16
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    10.0,
+    3.4,
+    -6.123233995736766e-16
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    8.660254037844387,
+    0.0,
+    4.999999999999998
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    8.660254037844387,
+    3.4,
+    4.999999999999998
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    4.999999999999999,
+    0.0,
+    8.660254037844387
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    4.999999999999999,
+    3.4,
+    8.660254037844387
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    1.2246467991473533e-15,
+    0.0,
+    10.0
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    1.2246467991473533e-15,
+    3.4,
+    10.0
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -5.000000000000001,
+    0.0,
+    8.660254037844386
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -5.000000000000001,
+    3.4,
+    8.660254037844386
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -8.660254037844384,
+    0.0,
+    5.000000000000004
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -8.660254037844384,
+    3.4,
+    5.000000000000004
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -10.0,
+    0.0,
+    1.8369701987210296e-15
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -10.0,
+    3.4,
+    1.8369701987210296e-15
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -8.660254037844386,
+    0.0,
+    -5.000000000000001
+   ],
+   "radius": 1.6,
+   "height": 0.03,
+   "sides": 28,
+   "tex": "black",
+   "color": "#101010",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -8.660254037844386,
+    3.4,
+    -5.000000000000001
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.14,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -5.000000000000004,
+    0.0,
+    -8.660254037844384
+   ],
+   "radius": 1.0,
+   "height": 0.35,
+   "sides": 28,
+   "tex": "black",
+   "color": "#0c0c0c",
+   "collide": true,
+   "unique": true,
+   "extra": {
+    "roughness": 0.25,
+    "envMapIntensity": 0.8
+   }
+  },
+  {
+   "type": "cutout",
+   "id": "poison",
+   "image": "./assets/relics/needle.png",
+   "pos": [
+    -5.000000000000004,
+    1.75,
+    -8.660254037844384
+   ],
+   "size": [
+    1.9,
+    1.9
+   ],
+   "yaw": 210.00000000000003,
+   "spin": 9,
+   "bob": 0.04,
+   "breathe": 0.0,
+   "name": "poison"
+  },
+  {
+   "type": "spot",
+   "id": "poison:read",
+   "pos": [
+    -5.000000000000004,
+    1.75,
+    -8.660254037844384
+   ],
+   "name": "poison",
+   "verb": "read",
+   "examineAt": [
+    -5.000000000000004,
+    1.75,
+    -8.660254037844384
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.5,
+   "examine": [
+    {
+     "who": "poison",
+     "text": "POISON"
+    },
+    {
+     "who": "poison",
+     "text": "From the dream THE VACATED BOOTH."
+    },
+    {
+     "who": "poison",
+     "text": "Very thin. Hardly there."
+    },
+    {
+     "who": "poison",
+     "text": "She climbed across the table and put it in his throat. Then she ran off into the night."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:booth",
+   "pos": [
+    -5.000000000000004,
+    9.0,
+    -8.660254037844384
+   ],
+   "drop": 5.05,
+   "intensity": 1.6,
+   "range": 7,
+   "color": "#dfe8f2",
+   "glowSize": 0.2,
+   "glowStrength": 0.25,
+   "pool": false,
+   "flicker": "neonBad"
+  },
+  {
+   "type": "television",
+   "id": "tv:booth",
+   "pos": [
+    -2.7483339501604647,
+    0,
+    -9.960254037844384
+   ],
+   "yaw": 195.4257838019613,
+   "film": "/watch/booth.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    -2.7483339501604647,
+    0.3,
+    -9.960254037844384
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:booth"
+    }
+   ]
+  }
+ ],
+ "events": []
+}
