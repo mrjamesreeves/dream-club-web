@@ -1,6 +1,6 @@
 // PS1-style material: vertex snapping, affine texture mapping, Gouraud lighting
 // (ambient + one directional + up to 4 nearest point lights), per-vertex fog.
-import * as THREE from '../../vendor/three.module.js?v=a948b8d';
+import * as THREE from '../../vendor/three.module.js?v=24e2c73';
 
 export const MAX_POINT_LIGHTS = 4;
 

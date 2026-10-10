@@ -1,11 +1,11 @@
 // Furnishings and small things for interiors: food, decorations, fixtures.
 // Added to SceneBuilder as methods. Small meshes share materials per area so
 // a busy room does not cost a material per plate.
-import * as THREE from '../../vendor/three.module.js?v=a948b8d';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=a948b8d';
-import { createLight, makeHalo } from '../engine/lights.js?v=a948b8d';
-import { makeArt } from '../engine/art.js?v=a948b8d';
-import { mergeStatic } from '../engine/merge.js?v=a948b8d';
+import * as THREE from '../../vendor/three.module.js?v=24e2c73';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=24e2c73';
+import { createLight, makeHalo } from '../engine/lights.js?v=24e2c73';
+import { makeArt } from '../engine/art.js?v=24e2c73';
+import { mergeStatic } from '../engine/merge.js?v=24e2c73';
 
 const rad = THREE.MathUtils.degToRad;
 const cylGeo = (r0, r1, h, sides = 8) => setVertexShade(new THREE.CylinderGeometry(r0, r1, h, sides), 1);
@@ -325,6 +325,53 @@ export const PropMethods = {
     for (let y = 0; y < canvas.height; y++) { const k = Math.abs(y - bar) < 5 ? 0.6 : 1; if (k < 1) for (let x = 0; x < canvas.width; x++) { const i = (y * canvas.width + x) * 4; d[i] *= k; d[i + 1] *= k; d[i + 2] *= k; } }
     ctx.putImageData(img, 0, 0);
     tv.snow.needsUpdate = true;
+  },
+
+  // A blip: a place on a wall where, now and then, a photograph flashes for a
+  // few frames and the wall lights up around it. Which picture, where and when
+  // is chosen as the museum runs, so no two visits are the same.
+  addBlip(o) {
+    const [x, y, z] = o.pos; const [w, h] = o.size || [3.2, 1.8];
+    const mat = createPS1Material(this.ctx.env, { map: this.ctx.T.black, unlit: true, worldUV: false, texScale: 1, fog: false });
+    const m = this.put(setVertexShade(new THREE.PlaneGeometry(w, h), 1), mat, x, y, z, [0, rad(o.yaw ?? 0), 0]);
+    m.visible = false;
+    const f = new THREE.Vector3(0, 0, 1).applyAxisAngle(new THREE.Vector3(0, 1, 0), rad(o.yaw ?? 0));
+    let light = null;
+    if (this.pbr) { light = new THREE.PointLight('#dfe6ea', 0, (o.range ?? 16), 2); light.position.set(x + f.x * 1.2, y, z + f.z * 1.2); this.group.add(light); }
+    this.blips.push({ mesh: m, mat, light, on: 0, seq: [], tex: null });
+    return m;
+  },
+
+  flashBlip(i, src) {
+    const b = this.blips[i]; if (!b) return;
+    const cfg = this.blipConfig || {};
+    const [f0, f1] = cfg.flash || [0.1, 0.45];
+    // Flicker: a short burst, a gap, a longer hold, sometimes a third stutter.
+    const seq = [Math.random() * 0.08 + 0.04, -0.05, f0 + Math.random() * (f1 - f0)];
+    if (Math.random() < 0.5) seq.push(-0.04, 0.06 + Math.random() * 0.1);
+    const show = () => { b.seq = seq; b.on = 0; };
+    if (src && src !== b.src) {
+      new THREE.TextureLoader().load(src, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.minFilter = THREE.LinearFilter; b.mat.uniforms.uMap.value = t; b.src = src; show(); });
+    } else show();
+  },
+
+  updateBlips(dt) {
+    const cfg = this.blipConfig; if (!cfg || !this.blips.length) return;
+    if (this.blipWait === undefined) { const [a, bb] = cfg.first || [2, 6]; this.blipWait = a + Math.random() * (bb - a); }
+    this.blipWait -= dt;
+    if (this.blipWait <= 0) {
+      const [a, bb] = cfg.every || [6, 18]; this.blipWait = a + Math.random() * (bb - a);
+      const i = Math.floor(Math.random() * this.blips.length);
+      const imgs = cfg.images || []; const src = imgs.length ? imgs[Math.floor(Math.random() * imgs.length)] : null;
+      this.flashBlip(i, src);
+    }
+    for (const b of this.blips) {
+      if (!b.seq.length) { b.mesh.visible = false; if (b.light) b.light.intensity = 0; continue; }
+      const step = b.seq[0]; const on = step > 0;
+      b.mesh.visible = on; if (b.light) b.light.intensity = on ? (cfg.light ?? 60) : 0;
+      b.on += dt;
+      if (b.on >= Math.abs(step)) { b.seq.shift(); b.on = 0; }
+    }
   },
 
   addScreen(o) {
@@ -653,6 +700,7 @@ export const PropMethods = {
   },
 
   updateProps(dt, time) {
+    this.updateBlips(dt);
     this.updateMachines(dt, time);
     if (this.swayers) for (const s of this.swayers) s.obj.rotation.x = (s.base || 0) + Math.sin(time * 1.3 + s.phase) * s.amp;
     if (this.fountains) for (const f of this.fountains) f.update(dt);

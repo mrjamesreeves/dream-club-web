@@ -1,0 +1,2177 @@
+{
+ "name": "field",
+ "title": "MUSEUM OF DREAMS",
+ "card": {
+  "once": true,
+  "seconds": 3
+ },
+ "noInventory": true,
+ "dialog": {
+  "fonts": [
+   "Source Sans 3:wght@400;600",
+   "IBM Plex Serif:ital,wght@0,400;0,500;1,400"
+  ],
+  "bg": "rgba(250, 250, 248, 0.96)",
+  "color": "#1a1b1c",
+  "border": "none",
+  "radius": "2px",
+  "shadow": "0 10px 28px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3)",
+  "font": "'IBM Plex Serif', Georgia, serif",
+  "size": "17px",
+  "leading": "1.5",
+  "tracking": "0",
+  "pixel": "auto",
+  "who-font": "'Source Sans 3', 'Helvetica Neue', sans-serif",
+  "who-size": "12px",
+  "who-weight": "600",
+  "who-tracking": "0.28em",
+  "who-color": "#6b6e72",
+  "who-gap": "10px",
+  "more": "#9a9da1",
+  "left": "max(24px, 6vw)",
+  "bottom": "max(24px, 7vh)",
+  "transform": "none",
+  "width": "min(520px, 80vw)",
+  "padding": "18px 22px 20px",
+  "thought-bg": "rgba(250, 250, 248, 0.96)",
+  "thought-border": "none",
+  "thought-shadow": "0 10px 28px rgba(0, 0, 0, 0.45)",
+  "thought-color": "#55585c",
+  "thought-more": "#9a9da1"
+ },
+ "blips": {
+  "images": [
+   "./assets/blips/booth-couple.jpg",
+   "./assets/blips/booth-needle.jpg",
+   "./assets/blips/booth-door.jpg",
+   "./assets/blips/booth-empty.jpg",
+   "./assets/blips/booth-medics.jpg",
+   "./assets/blips/mice-b.jpg",
+   "./assets/blips/president.jpg",
+   "./assets/blips/Limbs-1.jpg",
+   "./assets/blips/Limbs-2.jpg"
+  ],
+  "first": [
+   3,
+   8
+  ],
+  "every": [
+   7,
+   20
+  ],
+  "flash": [
+   0.12,
+   0.55
+  ],
+  "light": 110
+ },
+ "render": {
+  "height": 1080,
+  "quantize": false,
+  "grain": 0.014,
+  "vignette": 0.75,
+  "pbr": {
+   "exposure": 1.0,
+   "sun": 0.0,
+   "hemi": 0.03,
+   "skyColor": "#3a3630",
+   "groundColor": "#0d0b09",
+   "ambient": 0.03,
+   "point": 4,
+   "envIntensity": 0.15,
+   "bloom": {
+    "strength": 0.3,
+    "radius": 0.75,
+    "threshold": 0.95
+   },
+   "shadows": false
+  }
+ },
+ "environment": {
+  "fogColor": "#050504",
+  "ambient": "#0e0d0b",
+  "skyColor": "#15130f",
+  "sunDir": [
+   0.2,
+   0.9,
+   0.3
+  ],
+  "sunColor": "#000000",
+  "fogNear": 10,
+  "fogFar": 40,
+  "fogHeight": 0,
+  "fogHeightRange": 8,
+  "fogHeightStrength": 0,
+  "jitter": 0,
+  "affine": false
+ },
+ "sky": {
+  "top": "#000000",
+  "horizon": "#000000",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 320,
+   "alpha": 0.22,
+   "color": "#b0a890",
+   "box": [
+    40,
+    7,
+    40
+   ]
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "indoor": [
+  [
+   -33.0,
+   -33.0,
+   33.0,
+   33.0
+  ]
+ ],
+ "player": {
+  "pos": [
+   0,
+   0,
+   4.5
+  ],
+  "yaw": 0,
+  "speed": 2.6
+ },
+ "ambience": [
+  {
+   "sound": "hum",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.5,
+   "gain": 0.25
+  },
+  {
+   "sound": "wind",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.3,
+   "gain": 0.15
+  }
+ ],
+ "names": {
+  "bed": "THE BED",
+  "journal": "THE JOURNAL",
+  "table": "TABLE",
+  "house": "HOUSE",
+  "body horror": "BODY HORROR"
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    64.0,
+    64.0
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "texScale": 1.2,
+   "shade": 1,
+   "seg": 2.5,
+   "surface": "wood"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.5,
+    -32.0
+   ],
+   "size": [
+    65.0,
+    9.0,
+    1
+   ],
+   "tex": "plasterDirty",
+   "color": "#2e2a26",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    4.5,
+    32.0
+   ],
+   "size": [
+    65.0,
+    9.0,
+    1
+   ],
+   "tex": "plasterDirty",
+   "color": "#2e2a26",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    -32.0,
+    4.5,
+    0
+   ],
+   "size": [
+    1,
+    9.0,
+    65.0
+   ],
+   "tex": "plasterDirty",
+   "color": "#2e2a26",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "box",
+   "pos": [
+    32.0,
+    4.5,
+    0
+   ],
+   "size": [
+    1,
+    9.0,
+    65.0
+   ],
+   "tex": "plasterDirty",
+   "color": "#2e2a26",
+   "texScale": 3,
+   "shade": 1,
+   "seg": 3
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -19.2,
+    3.2,
+    -31.48
+   ],
+   "yaw": 0,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    3.2,
+    4.4,
+    -31.48
+   ],
+   "yaw": 0,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    20.48,
+    3.2,
+    -31.48
+   ],
+   "yaw": 0,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -19.2,
+    3.2,
+    31.48
+   ],
+   "yaw": 180,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    3.2,
+    4.4,
+    31.48
+   ],
+   "yaw": 180,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    20.48,
+    3.2,
+    31.48
+   ],
+   "yaw": 180,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -31.48,
+    3.2,
+    -19.2
+   ],
+   "yaw": 90,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -31.48,
+    4.4,
+    3.2
+   ],
+   "yaw": 90,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    -31.48,
+    3.2,
+    20.48
+   ],
+   "yaw": 90,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    31.48,
+    3.2,
+    -19.2
+   ],
+   "yaw": 270,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    31.48,
+    4.4,
+    3.2
+   ],
+   "yaw": 270,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "blip",
+   "pos": [
+    31.48,
+    3.2,
+    20.48
+   ],
+   "yaw": 270,
+   "size": [
+    11,
+    6.2
+   ],
+   "range": 26
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0.012,
+    0
+   ],
+   "size": [
+    6,
+    6
+   ],
+   "tex": "carpet",
+   "texScale": 1.5,
+   "shade": 0.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.25,
+    0
+   ],
+   "size": [
+    1.7,
+    0.5,
+    2.3
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "bed",
+   "pos": [
+    0,
+    0.62,
+    0.05
+   ],
+   "size": [
+    1.56,
+    0.26,
+    2.1
+   ],
+   "tex": "cream",
+   "texScale": 1,
+   "walkable": false,
+   "name": "the bed",
+   "verb": "look at",
+   "examineAt": [
+    0,
+    0.7,
+    0.1
+   ],
+   "examineRadius": 1.1,
+   "examineRange": 3.8,
+   "examine": [
+    {
+     "who": "bed",
+     "text": "27 dreams so far. Two of them are kept here."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.78,
+    0.4
+   ],
+   "size": [
+    1.6,
+    0.1,
+    1.4
+   ],
+   "tex": "velvet",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.8,
+    -0.78
+   ],
+   "size": [
+    0.7,
+    0.14,
+    0.42
+   ],
+   "tex": "white",
+   "color": "#e8e4dc",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.95,
+    -1.2
+   ],
+   "size": [
+    1.8,
+    1.4,
+    0.12
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "table",
+   "pos": [
+    1.45,
+    0,
+    -0.75
+   ],
+   "size": [
+    0.6,
+    0.5
+   ],
+   "height": 0.62,
+   "tex": "mahogany"
+  },
+  {
+   "type": "tableLamp",
+   "id": "bedLamp",
+   "pos": [
+    1.52,
+    0.62,
+    -0.85
+   ],
+   "color": "#ffd090",
+   "intensity": 1.3,
+   "range": 9,
+   "flicker": "candle",
+   "glowSize": 0.45
+  },
+  {
+   "type": "item",
+   "id": "journal",
+   "item": "book",
+   "pickup": false,
+   "pos": [
+    1.32,
+    0.62,
+    -0.6
+   ],
+   "yaw": 12,
+   "scale": 0.8,
+   "name": "the journal",
+   "verb": "open",
+   "examineRadius": 0.3,
+   "examine": [
+    {
+     "who": "journal",
+     "text": "The journal. A dream goes from here to there."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    0.0,
+    0.0,
+    -11.0
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    0.0,
+    3.4,
+    -11.0
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    9.526279441628825,
+    0.0,
+    -5.500000000000001
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    9.526279441628825,
+    3.4,
+    -5.500000000000001
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    11.0,
+    0.0,
+    -6.735557395310443e-16
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    11.0,
+    3.4,
+    -6.735557395310443e-16
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    9.526279441628827,
+    0.0,
+    5.499999999999998
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    9.526279441628827,
+    3.4,
+    5.499999999999998
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    5.499999999999999,
+    0.0,
+    9.526279441628827
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    5.499999999999999,
+    3.4,
+    9.526279441628827
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    1.3471114790620886e-15,
+    0.0,
+    11.0
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    1.3471114790620886e-15,
+    3.4,
+    11.0
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -5.500000000000001,
+    0.0,
+    9.526279441628825
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -5.500000000000001,
+    3.4,
+    9.526279441628825
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -9.526279441628823,
+    0.0,
+    5.500000000000005
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -9.526279441628823,
+    3.4,
+    5.500000000000005
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -11.0,
+    0.0,
+    2.0206672185931327e-15
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -11.0,
+    3.4,
+    2.0206672185931327e-15
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "cylinder",
+   "pos": [
+    -9.526279441628825,
+    0.0,
+    -5.500000000000001
+   ],
+   "radius": 2.1,
+   "height": 0.025,
+   "sides": 28,
+   "tex": "white",
+   "color": "#25221e",
+   "collide": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -9.526279441628825,
+    3.4,
+    -5.500000000000001
+   ],
+   "color": "#8ea0b8",
+   "intensity": 0.16,
+   "range": 5.5,
+   "flicker": "soft"
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -5.500000000000005,
+    0.02,
+    -9.526279441628823
+   ],
+   "size": [
+    6.5,
+    5.5
+   ],
+   "tex": "carpet",
+   "color": "#7a2a2a",
+   "texScale": 1.2,
+   "shade": 1,
+   "unique": true,
+   "rot": [
+    0,
+    210,
+    0
+   ]
+  },
+  {
+   "type": "plane",
+   "pos": [
+    -5.500000000000005,
+    0.015,
+    -9.526279441628823
+   ],
+   "size": [
+    7.3,
+    6.3
+   ],
+   "tex": "parquet",
+   "texScale": 1.5,
+   "shade": 1,
+   "unique": true,
+   "rot": [
+    0,
+    210,
+    0
+   ]
+  },
+  {
+   "type": "booth",
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.9,
+   "id": "table",
+   "pos": [
+    -5.500000000000005,
+    0.02,
+    -9.526279441628823
+   ],
+   "yaw": 90,
+   "name": "table",
+   "verb": "read",
+   "examineAt": [
+    -5.500000000000005,
+    0.8,
+    -9.526279441628823
+   ],
+   "examineRadius": 1.2,
+   "examineRange": 5,
+   "examine": [
+    {
+     "who": "table",
+     "text": "Dreamed once: THE VACATED BOOTH (Sep 2026)."
+    },
+    {
+     "who": "table",
+     "text": "From the dream THE VACATED BOOTH: the booth."
+    },
+    {
+     "who": "table",
+     "text": "Deep red. The leather still warm."
+    },
+    {
+     "who": "table",
+     "text": "The vessel of the parents. He wanted the booth because it held two who could not stand each other, which is still a kind of holding."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "food",
+   "kind": "whisky",
+   "pos": [
+    -5.250000000000005,
+    0.78,
+    -9.626279441628823
+   ],
+   "scale": 1.6
+  },
+  {
+   "type": "chandelier",
+   "intensity": 0.75,
+   "range": 7,
+   "examineRadius": 0.8,
+   "examineRange": 5,
+   "pos": [
+    -5.500000000000005,
+    3.4,
+    -9.526279441628823
+   ],
+   "id": "chandelier"
+  },
+  {
+   "type": "box",
+   "pos": [
+    -5.500000000000005,
+    6.2,
+    -9.526279441628823
+   ],
+   "size": [
+    0.05,
+    5.6,
+    0.05
+   ],
+   "tex": "black",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:booth",
+   "pos": [
+    -5.500000000000005,
+    9.0,
+    -9.526279441628823
+   ],
+   "drop": 3.0,
+   "intensity": 1.4,
+   "range": 10,
+   "color": "#ffd9a8",
+   "glowSize": 0.22,
+   "glowStrength": 0.2,
+   "pool": false
+  },
+  {
+   "type": "television",
+   "id": "tv:booth",
+   "pos": [
+    -2.555513627132915,
+    0,
+    -11.226279441628824
+   ],
+   "yaw": 193,
+   "film": "/watch/booth.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    -2.555513627132915,
+    0.3,
+    -11.226279441628824
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:booth"
+    }
+   ]
+  },
+  {
+   "type": "plane",
+   "pos": [
+    5.499999999999999,
+    0.015,
+    -9.526279441628827
+   ],
+   "size": [
+    7.5,
+    5.0
+   ],
+   "tex": "parquet",
+   "texScale": 1.2,
+   "shade": 1,
+   "unique": true,
+   "rot": [
+    0,
+    150,
+    0
+   ]
+  },
+  {
+   "type": "plane",
+   "pos": [
+    5.499999999999999,
+    0.02,
+    -9.526279441628827
+   ],
+   "size": [
+    1.4,
+    4.6
+   ],
+   "tex": "carpet",
+   "color": "#5a2a2a",
+   "texScale": 1,
+   "shade": 1,
+   "unique": true,
+   "rot": [
+    0,
+    150,
+    0
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.699999999999999,
+    1.75,
+    -11.604740410711479
+   ],
+   "size": [
+    7.5,
+    3.5,
+    0.3
+   ],
+   "tex": "wallpaper",
+   "texScale": 1,
+   "shade": 1,
+   "rot": [
+    0,
+    150,
+    0
+   ],
+   "seg": 1.5
+  },
+  {
+   "type": "box",
+   "pos": [
+    6.614999999999999,
+    0.5,
+    -11.457516092068124
+   ],
+   "size": [
+    7.5,
+    1.0,
+    0.04
+   ],
+   "tex": "mahogany",
+   "color": "#3a2418",
+   "collide": false,
+   "walkable": false,
+   "rot": [
+    0,
+    150,
+    0
+   ]
+  },
+  {
+   "type": "box",
+   "size": [
+    1.1,
+    2.2,
+    0.1
+   ],
+   "tex": "mahogany",
+   "id": "house",
+   "pos": [
+    8.332050807568876,
+    1.1,
+    -10.43153532995459
+   ],
+   "rot": [
+    0,
+    150,
+    0
+   ],
+   "name": "house",
+   "verb": "read",
+   "examineAt": [
+    8.282050807568876,
+    1.2,
+    -10.344932789576147
+   ],
+   "examineRadius": 0.9,
+   "examineRange": 4.5,
+   "examine": [
+    {
+     "who": "house",
+     "text": "Dreamed once: THE GAME (Sep 2026)."
+    },
+    {
+     "who": "house",
+     "text": "From the dream THE GAME: the front door."
+    },
+    {
+     "who": "house",
+     "text": "It opens onto the night."
+    },
+    {
+     "who": "house",
+     "text": "The object is to get out. Everyone counts their fingers. Ten. Ten. Eleven."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "panel",
+   "size": [
+    0.7,
+    0.9
+   ],
+   "art": "venice",
+   "frameTex": "gold",
+   "pos": [
+    5.229359353944897,
+    1.9,
+    -12.257516092068125
+   ],
+   "yaw": 150
+  },
+  {
+   "type": "tableLamp",
+   "pos": [
+    3.7537187078897953,
+    1.7,
+    -12.901631519386925
+   ],
+   "color": "#ffc27a",
+   "intensity": 0.7,
+   "range": 6,
+   "flicker": "candle",
+   "glowSize": 0.3
+  },
+  {
+   "type": "item",
+   "item": "hand",
+   "pickup": false,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.082,
+      0.024,
+      0.09
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0,
+      0.012,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.07,
+      0.018,
+      0.03
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0,
+      0.009,
+      -0.058
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.008,
+      0.0076,
+      0.030239999999999996,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.011,
+      0.0601
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.0076,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.011,
+      0.0752
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.00688,
+      0.02376,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.0095,
+      0.0871
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.00688,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.008,
+      0.099
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.0057599999999999995,
+      0.018,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.0075,
+      0.108
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0058,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.03,
+      0.0065,
+      0.117
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0104,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.03,
+      0.0125,
+      0.111
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0088,
+      0.00836,
+      0.0336,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.011,
+      0.0618
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.00836,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.011,
+      0.0786
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.007568,
+      0.026400000000000003,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.0095,
+      0.0918
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.007568,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.008,
+      0.105
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.0063360000000000005,
+      0.02,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.0075,
+      0.115
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0063,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.01,
+      0.0065,
+      0.125
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0114,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.01,
+      0.0125,
+      0.119
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0088,
+      0.00836,
+      0.031079999999999997,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.011,
+      0.0605
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.00836,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.011,
+      0.0761
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.007568,
+      0.02442,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.0095,
+      0.0883
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.007568,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.008,
+      0.1005
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.0063360000000000005,
+      0.0185,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.0075,
+      0.1097
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0063,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.01,
+      0.0065,
+      0.119
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0114,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.01,
+      0.0125,
+      0.113
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.008,
+      0.0076,
+      0.02436,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.011,
+      0.0572
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.0076,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.011,
+      0.0694
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.00688,
+      0.01914,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.0095,
+      0.0789
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.00688,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.008,
+      0.0885
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.0057599999999999995,
+      0.0145,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.0075,
+      0.0958
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0058,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.03,
+      0.0065,
+      0.103
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0104,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.03,
+      0.0125,
+      0.097
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0098,
+      0.0092,
+      0.04,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      -38
+     ],
+     "pos": [
+      -0.052,
+      0.012,
+      -0.012
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0092,
+      0.0092,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      -38
+     ],
+     "pos": [
+      -0.066,
+      0.012,
+      0.006
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0092,
+      0.0078,
+      0.032,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      -38
+     ],
+     "pos": [
+      -0.076,
+      0.011,
+      0.02
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0078,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.086,
+      0.01,
+      0.033
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.012,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.084,
+      0.0165,
+      0.03
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.031,
+      0.031,
+      0.0025,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.009,
+      -0.0735
+     ],
+     "color": "#7a1818"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.006,
+      0.006,
+      0.003,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.01,
+      -0.074
+     ],
+     "color": "#efe7da"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.005,
+      0.005,
+      0.003,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.009,
+      0.009,
+      -0.074
+     ],
+     "color": "#efe7da"
+    },
+    {
+     "shape": "plane",
+     "size": [
+      0.09,
+      0.06
+     ],
+     "color": "#4e0e0e",
+     "rot": [
+      -90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.0006,
+      -0.085
+     ]
+    }
+   ],
+   "id": "body horror",
+   "pos": [
+    5.299999999999999,
+    0.03,
+    -9.179869280115051
+   ],
+   "yaw": 260,
+   "scale": 3.2,
+   "name": "body horror",
+   "verb": "read",
+   "examineAt": [
+    5.299999999999999,
+    0.2,
+    -9.179869280115051
+   ],
+   "examineRadius": 0.7,
+   "examineRange": 4.2,
+   "examine": [
+    {
+     "who": "body horror",
+     "text": "Dreamed once: THE GAME (Sep 2026)."
+    },
+    {
+     "who": "body horror",
+     "text": "From the dream THE GAME: the hand."
+    },
+    {
+     "who": "body horror",
+     "text": "Five fingers. Then six. The president chopped the sixth one off."
+    },
+    {
+     "who": "body horror",
+     "text": "The longer the game went on, the more body parts we grew."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    6.365212803863973,
+    0.02,
+    -8.321955490556345
+   ],
+   "yaw": 333,
+   "id": "mouse0",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    5.92734447209958,
+    0.02,
+    -10.415874309940468
+   ],
+   "yaw": 48,
+   "id": "mouse1",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    6.955912530416689,
+    0.02,
+    -8.970914013663421
+   ],
+   "yaw": 259,
+   "id": "mouse2",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    6.603390288426278,
+    0.02,
+    -8.864841025749056
+   ],
+   "yaw": 214,
+   "id": "mouse3",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    6.363589753220589,
+    0.02,
+    -8.972786173041753
+   ],
+   "yaw": 217,
+   "id": "mouse4",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    4.5775158673402085,
+    0.02,
+    -9.928599951839928
+   ],
+   "yaw": 114,
+   "id": "mouse5",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    3.7353815908048187,
+    0.02,
+    -10.540114903930265
+   ],
+   "yaw": 31,
+   "id": "mouse6",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    3.9555978069331994,
+    0.02,
+    -8.354225545823299
+   ],
+   "yaw": 113,
+   "id": "mouse7",
+   "name": ""
+  },
+  {
+   "type": "creature",
+   "model": "dog",
+   "look": {
+    "kind": "mouse"
+   },
+   "scale": 0.6,
+   "behavior": {
+    "name": "none"
+   },
+   "silent": true,
+   "pos": [
+    6.119805059769097,
+    0.02,
+    -10.290347631359829
+   ],
+   "yaw": 148,
+   "id": "mouse8",
+   "name": ""
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:game",
+   "pos": [
+    5.499999999999999,
+    9.0,
+    -9.526279441628827
+   ],
+   "drop": 4.2,
+   "intensity": 1.3,
+   "range": 10,
+   "color": "#e8e2d0",
+   "glowSize": 0.22,
+   "glowStrength": 0.2,
+   "pool": false
+  },
+  {
+   "type": "television",
+   "id": "tv:game",
+   "pos": [
+    2.3823085463760196,
+    0,
+    -11.326279441628827
+   ],
+   "yaw": 168,
+   "film": "/watch/game.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    2.3823085463760196,
+    0.3,
+    -11.326279441628827
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:game"
+    }
+   ]
+  }
+ ],
+ "events": []
+}
