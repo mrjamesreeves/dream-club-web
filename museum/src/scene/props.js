@@ -1,11 +1,11 @@
 // Furnishings and small things for interiors: food, decorations, fixtures.
 // Added to SceneBuilder as methods. Small meshes share materials per area so
 // a busy room does not cost a material per plate.
-import * as THREE from '../../vendor/three.module.js?v=82e941e';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=82e941e';
-import { createLight, makeHalo } from '../engine/lights.js?v=82e941e';
-import { makeArt } from '../engine/art.js?v=82e941e';
-import { mergeStatic } from '../engine/merge.js?v=82e941e';
+import * as THREE from '../../vendor/three.module.js?v=d26125f';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=d26125f';
+import { createLight, makeHalo } from '../engine/lights.js?v=d26125f';
+import { makeArt } from '../engine/art.js?v=d26125f';
+import { mergeStatic } from '../engine/merge.js?v=d26125f';
 
 const rad = THREE.MathUtils.degToRad;
 const cylGeo = (r0, r1, h, sides = 8) => setVertexShade(new THREE.CylinderGeometry(r0, r1, h, sides), 1);

@@ -1,12 +1,12 @@
 // Low-poly PS1 figures: a jointed humanoid rig, the lone arm, and the amalgam.
 // Limbs are tapered 5-sided cylinders hung from joint groups so they bend.
-import * as THREE from '../../vendor/three.module.js?v=82e941e';
-import { applyGesture } from './gestures.js?v=82e941e';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=82e941e';
-import { paintFace, stylizeFace, wrapHead, FACE_PRESETS } from '../engine/faces.js?v=82e941e';
-import { buildSculptedHead } from './heads.js?v=82e941e';
-import { headAtlas } from '../engine/faces.js?v=82e941e';
-import { mergeStatic } from '../engine/merge.js?v=82e941e';
+import * as THREE from '../../vendor/three.module.js?v=d26125f';
+import { applyGesture } from './gestures.js?v=d26125f';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=d26125f';
+import { paintFace, stylizeFace, wrapHead, FACE_PRESETS } from '../engine/faces.js?v=d26125f';
+import { buildSculptedHead } from './heads.js?v=d26125f';
+import { headAtlas } from '../engine/faces.js?v=d26125f';
+import { mergeStatic } from '../engine/merge.js?v=d26125f';
 
 function box(w, h, d, mats, shade = 1) {
   return new THREE.Mesh(setVertexShade(new THREE.BoxGeometry(w, h, d), shade), mats);

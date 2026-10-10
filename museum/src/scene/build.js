@@ -1,17 +1,17 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=82e941e';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=82e941e';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=82e941e';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=82e941e';
-import { mulberry } from '../engine/textures.js?v=82e941e';
-import { AmbientParticles } from '../engine/particles.js?v=82e941e';
-import { makeSignTexture } from '../engine/signs.js?v=82e941e';
-import { PropMethods } from './props.js?v=82e941e';
-import { buildShapes } from '../engine/shapes.js?v=82e941e';
-import { mergeStatic } from '../engine/merge.js?v=82e941e';
-import { bakeWorldUV } from '../engine/pbr.js?v=82e941e';
-import { voiceFor } from '../engine/voice.js?v=82e941e';
+import * as THREE from '../../vendor/three.module.js?v=d26125f';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=d26125f';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=d26125f';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=d26125f';
+import { mulberry } from '../engine/textures.js?v=d26125f';
+import { AmbientParticles } from '../engine/particles.js?v=d26125f';
+import { makeSignTexture } from '../engine/signs.js?v=d26125f';
+import { PropMethods } from './props.js?v=d26125f';
+import { buildShapes } from '../engine/shapes.js?v=d26125f';
+import { mergeStatic } from '../engine/merge.js?v=d26125f';
+import { bakeWorldUV } from '../engine/pbr.js?v=d26125f';
+import { voiceFor } from '../engine/voice.js?v=d26125f';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';

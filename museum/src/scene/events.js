@@ -1,7 +1,7 @@
 // Scripted events: a list of { id, when: {conditions}, do: [actions], once }.
 // Conditions are checked every frame; actions run in order (dialogue awaits).
-import * as THREE from '../../vendor/three.module.js?v=82e941e';
-import { setRim } from '../engine/ps1material.js?v=82e941e';
+import * as THREE from '../../vendor/three.module.js?v=d26125f';
+import { setRim } from '../engine/ps1material.js?v=d26125f';
 
 const _a = new THREE.Vector3();
 
