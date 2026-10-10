@@ -1,6 +1,6 @@
 // Low-resolution render target + full-screen pass: 15-bit colour quantization
 // with ordered dithering, a little grain, a vignette and a fade for scene ends.
-import * as THREE from '../../vendor/three.module.js?v=43c83b1';
+import * as THREE from '../../vendor/three.module.js?v=a948b8d';
 
 const vert = /* glsl */ `
 out vec2 vUv;

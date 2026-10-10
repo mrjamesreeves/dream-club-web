@@ -2,11 +2,12 @@
 // three.js standard materials, a sun with shadow maps, hemisphere and ambient
 // light, scene fog, and a bloom + tone-mapping pass. Dreams that do not ask
 // keep the PS1 path untouched.
-import * as THREE from '../../vendor/three.module.js?v=43c83b1';
-import { EffectComposer } from '../../vendor/postprocessing/EffectComposer.js?v=43c83b1';
-import { RenderPass } from '../../vendor/postprocessing/RenderPass.js?v=43c83b1';
-import { UnrealBloomPass } from '../../vendor/postprocessing/UnrealBloomPass.js?v=43c83b1';
-import { OutputPass } from '../../vendor/postprocessing/OutputPass.js?v=43c83b1';
+import * as THREE from '../../vendor/three.module.js?v=a948b8d';
+import { EffectComposer } from '../../vendor/postprocessing/EffectComposer.js?v=a948b8d';
+import { RenderPass } from '../../vendor/postprocessing/RenderPass.js?v=a948b8d';
+import { UnrealBloomPass } from '../../vendor/postprocessing/UnrealBloomPass.js?v=a948b8d';
+import { OutputPass } from '../../vendor/postprocessing/OutputPass.js?v=a948b8d';
+import { RoomEnvironment } from '../../vendor/environments/RoomEnvironment.js?v=a948b8d';
 
 export class PBR {
   constructor(renderer, scene, camera) {
@@ -56,6 +57,12 @@ export class PBR {
     this.rig.add(sun, sun.target, hemi, amb);
     this.scene.add(this.rig);
     this.scene.fog = p.fog === false ? null : new THREE.Fog(e.fogColor || '#888888', e.fogNear ?? 10, e.fogFar ?? 100);
+    // Reflections: a neutral room, so glass and metal have something to show.
+    if (p.environment !== false) {
+      if (!this.envMap) { const pm = new THREE.PMREMGenerator(R); this.envMap = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose(); }
+      this.scene.environment = this.envMap;
+      this.scene.environmentIntensity = p.envIntensity ?? 0.3;
+    } else this.scene.environment = null;
   }
 
   clearRig() {
@@ -68,6 +75,7 @@ export class PBR {
     this.clearRig();
     this.scene.remove(this.rig);
     this.scene.fog = null;
+    this.scene.environment = null;
     const R = this.renderer;
     R.outputColorSpace = THREE.LinearSRGBColorSpace;
     R.toneMapping = THREE.NoToneMapping;

@@ -1,6 +1,6 @@
 // PS1-style material: vertex snapping, affine texture mapping, Gouraud lighting
 // (ambient + one directional + up to 4 nearest point lights), per-vertex fog.
-import * as THREE from '../../vendor/three.module.js?v=43c83b1';
+import * as THREE from '../../vendor/three.module.js?v=a948b8d';
 
 export const MAX_POINT_LIGHTS = 4;
 
@@ -181,7 +181,7 @@ function createStandardMaterial(opts) {
   if (opts.side) common.side = opts.side;
   if (opts.depthWrite !== undefined) common.depthWrite = opts.depthWrite;
   if (opts.blending) common.blending = opts.blending;
-  const mat = opts.unlit ? new THREE.MeshBasicMaterial(common) : new THREE.MeshStandardMaterial({ ...common, roughness: 0.9, metalness: 0 });
+  const mat = opts.unlit ? new THREE.MeshBasicMaterial(common) : new THREE.MeshStandardMaterial({ ...common, roughness: opts.roughness ?? 0.9, metalness: opts.metalness ?? 0, envMapIntensity: opts.envMapIntensity ?? 1 });
   // The PS1 code pokes uniforms on its materials (a colour, a scrolling
   // offset, light slots). Give the standard material the same handles.
   mat.uniforms = {

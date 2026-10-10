@@ -1,0 +1,2711 @@
+{
+ "name": "hall",
+ "title": "MUSEUM OF DREAMS",
+ "card": {
+  "once": true,
+  "seconds": 3
+ },
+ "noInventory": true,
+ "dialog": {
+  "fonts": [
+   "Source Sans 3:wght@400;600",
+   "IBM Plex Serif:ital,wght@0,400;0,500;1,400"
+  ],
+  "bg": "rgba(250, 250, 248, 0.96)",
+  "color": "#1a1b1c",
+  "border": "none",
+  "radius": "2px",
+  "shadow": "0 10px 28px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3)",
+  "font": "'IBM Plex Serif', Georgia, serif",
+  "size": "17px",
+  "leading": "1.5",
+  "tracking": "0",
+  "pixel": "auto",
+  "who-font": "'Source Sans 3', 'Helvetica Neue', sans-serif",
+  "who-size": "12px",
+  "who-weight": "600",
+  "who-tracking": "0.28em",
+  "who-color": "#6b6e72",
+  "who-gap": "10px",
+  "more": "#9a9da1",
+  "left": "max(24px, 6vw)",
+  "bottom": "max(24px, 7vh)",
+  "transform": "none",
+  "width": "min(520px, 80vw)",
+  "padding": "18px 22px 20px",
+  "thought-bg": "rgba(250, 250, 248, 0.96)",
+  "thought-border": "none",
+  "thought-shadow": "0 10px 28px rgba(0, 0, 0, 0.45)",
+  "thought-color": "#55585c",
+  "thought-more": "#9a9da1"
+ },
+ "render": {
+  "height": 1080,
+  "quantize": false,
+  "grain": 0.012,
+  "vignette": 0.7,
+  "pbr": {
+   "exposure": 1.0,
+   "sun": 0.0,
+   "hemi": 0.2,
+   "skyColor": "#5a5248",
+   "groundColor": "#1a1612",
+   "ambient": 0.05,
+   "point": 4,
+   "envIntensity": 0.25,
+   "bloom": {
+    "strength": 0.25,
+    "radius": 0.7,
+    "threshold": 1.0
+   },
+   "shadows": false
+  }
+ },
+ "environment": {
+  "fogColor": "#0a0908",
+  "ambient": "#15130f",
+  "skyColor": "#201c18",
+  "sunDir": [
+   0.2,
+   0.9,
+   0.3
+  ],
+  "sunColor": "#000000",
+  "fogNear": 14,
+  "fogFar": 60,
+  "fogHeight": 0,
+  "fogHeightRange": 8,
+  "fogHeightStrength": 0,
+  "jitter": 0,
+  "affine": false
+ },
+ "sky": {
+  "top": "#000000",
+  "horizon": "#000000",
+  "moon": false,
+  "stars": 0
+ },
+ "particles": {
+  "dust": {
+   "count": 220,
+   "alpha": 0.25,
+   "color": "#b0a890",
+   "box": [
+    20,
+    6,
+    20
+   ]
+  },
+  "floaters": {
+   "count": 0
+  }
+ },
+ "indoor": [
+  [
+   -12.0,
+   -12.0,
+   12.0,
+   12.0
+  ]
+ ],
+ "player": {
+  "pos": [
+   0,
+   0,
+   6.5
+  ],
+  "yaw": 0,
+  "speed": 2.4
+ },
+ "ambience": [
+  {
+   "sound": "hum",
+   "pos": [
+    0,
+    0
+   ],
+   "range": 200,
+   "base": 0.5,
+   "gain": 0.25
+  }
+ ],
+ "names": {
+  "bed": "THE BED",
+  "journal": "THE JOURNAL",
+  "table": "TABLE",
+  "body horror": "BODY HORROR",
+  "train": "TRAIN",
+  "theater": "THEATER"
+ },
+ "objects": [
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "size": [
+    22.0,
+    22.0
+   ],
+   "tex": "woodDark",
+   "texScale": 1.2,
+   "shade": 1,
+   "seg": 1.8,
+   "surface": "wood"
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.5,
+    -11.0
+   ],
+   "size": [
+    23.0,
+    7.0,
+    1
+   ],
+   "tex": "plasterDirty",
+   "color": "#3a3632",
+   "texScale": 2.5,
+   "shade": 1,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    3.5,
+    11.0
+   ],
+   "size": [
+    23.0,
+    7.0,
+    1
+   ],
+   "tex": "plasterDirty",
+   "color": "#3a3632",
+   "texScale": 2.5,
+   "shade": 1,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    -11.0,
+    3.5,
+    0
+   ],
+   "size": [
+    1,
+    7.0,
+    23.0
+   ],
+   "tex": "plasterDirty",
+   "color": "#3a3632",
+   "texScale": 2.5,
+   "shade": 1,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    11.0,
+    3.5,
+    0
+   ],
+   "size": [
+    1,
+    7.0,
+    23.0
+   ],
+   "tex": "plasterDirty",
+   "color": "#3a3632",
+   "texScale": 2.5,
+   "shade": 1,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    7.3,
+    0
+   ],
+   "size": [
+    23.0,
+    0.6,
+    23.0
+   ],
+   "tex": "black",
+   "color": "#141311",
+   "unlit": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    6.7,
+    -10.45
+   ],
+   "size": [
+    22.0,
+    0.6,
+    0.4
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.45,
+    -10.45
+   ],
+   "size": [
+    22.0,
+    0.9,
+    0.4
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    6.7,
+    10.45
+   ],
+   "size": [
+    22.0,
+    0.6,
+    0.4
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.45,
+    10.45
+   ],
+   "size": [
+    22.0,
+    0.9,
+    0.4
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.45,
+    6.7,
+    0
+   ],
+   "size": [
+    0.4,
+    0.6,
+    22.0
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    -10.45,
+    0.45,
+    0
+   ],
+   "size": [
+    0.4,
+    0.9,
+    22.0
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.45,
+    6.7,
+    0
+   ],
+   "size": [
+    0.4,
+    0.6,
+    22.0
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    10.45,
+    0.45,
+    0
+   ],
+   "size": [
+    0.4,
+    0.9,
+    22.0
+   ],
+   "tex": "woodDark",
+   "color": "#2a2420",
+   "collide": false,
+   "walkable": false,
+   "seg": 1.8
+  },
+  {
+   "type": "plane",
+   "pos": [
+    0,
+    0.012,
+    0
+   ],
+   "size": [
+    6,
+    6
+   ],
+   "tex": "carpet",
+   "texScale": 1.5,
+   "shade": 0.8
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.25,
+    0
+   ],
+   "size": [
+    1.7,
+    0.5,
+    2.3
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "id": "bed",
+   "pos": [
+    0,
+    0.62,
+    0.05
+   ],
+   "size": [
+    1.56,
+    0.26,
+    2.1
+   ],
+   "tex": "cream",
+   "texScale": 1,
+   "walkable": false,
+   "name": "the bed",
+   "verb": "look at",
+   "examineAt": [
+    0,
+    0.7,
+    0.1
+   ],
+   "examineRadius": 1.1,
+   "examineRange": 3.8,
+   "examine": [
+    {
+     "who": "bed",
+     "text": "27 dreams so far. Four of them have left something behind."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.78,
+    0.4
+   ],
+   "size": [
+    1.6,
+    0.1,
+    1.4
+   ],
+   "tex": "velvet",
+   "texScale": 1,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.8,
+    -0.78
+   ],
+   "size": [
+    0.7,
+    0.14,
+    0.42
+   ],
+   "tex": "white",
+   "color": "#e8e4dc",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0,
+    0.95,
+    -1.2
+   ],
+   "size": [
+    1.8,
+    1.4,
+    0.12
+   ],
+   "tex": "mahogany",
+   "texScale": 1,
+   "walkable": false
+  },
+  {
+   "type": "table",
+   "pos": [
+    1.45,
+    0,
+    -0.75
+   ],
+   "size": [
+    0.6,
+    0.5
+   ],
+   "height": 0.62,
+   "tex": "mahogany"
+  },
+  {
+   "type": "tableLamp",
+   "id": "bedLamp",
+   "pos": [
+    1.52,
+    0.62,
+    -0.85
+   ],
+   "color": "#ffd090",
+   "intensity": 1.0,
+   "range": 7,
+   "flicker": "candle",
+   "glowSize": 0.45
+  },
+  {
+   "type": "item",
+   "id": "journal",
+   "item": "book",
+   "pickup": false,
+   "pos": [
+    1.32,
+    0.62,
+    -0.6
+   ],
+   "yaw": 12,
+   "scale": 0.8,
+   "name": "the journal",
+   "verb": "open",
+   "examineRadius": 0.3,
+   "examine": [
+    {
+     "who": "journal",
+     "text": "The journal. Every one of these came out of it."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    0.45,
+    -7.9
+   ],
+   "size": [
+    3.6,
+    0.9,
+    2.2
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "texScale": 1,
+   "shade": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    0.9,
+    -7.9
+   ],
+   "size": [
+    3.66,
+    0.03,
+    2.2600000000000002
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    2.0,
+    -7.9
+   ],
+   "size": [
+    3.6,
+    2.2,
+    2.2
+   ],
+   "tex": "white",
+   "color": "#eaf1f5",
+   "collide": false,
+   "walkable": false,
+   "seg": 1,
+   "unique": true,
+   "extra": {
+    "transparent": true,
+    "opacity": 0.03,
+    "depthWrite": false,
+    "side": 2,
+    "roughness": 0.03,
+    "metalness": 0.0,
+    "envMapIntensity": 1.6
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.8,
+    2.0,
+    -9.0
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.8,
+    2.0,
+    -6.800000000000001
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.8,
+    2.0,
+    -9.0
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.8,
+    2.0,
+    -6.800000000000001
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    3.13,
+    -7.9
+   ],
+   "size": [
+    3.66,
+    0.06,
+    2.2600000000000002
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    0.0,
+    2.95,
+    -7.9
+   ],
+   "color": "#fff1dc",
+   "intensity": 0.2,
+   "range": 5.0,
+   "flicker": "none"
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:booth",
+   "pos": [
+    0.0,
+    7.0,
+    -7.9
+   ],
+   "drop": 2.9999999999999996,
+   "intensity": 1.3,
+   "range": 8,
+   "color": "#ffe2bd",
+   "glowSize": 0.22,
+   "glowStrength": 0.2,
+   "pool": false
+  },
+  {
+   "type": "booth",
+   "tex": "dress",
+   "length": 2.2,
+   "lampIntensity": 0.9,
+   "id": "table",
+   "pos": [
+    0.0,
+    0.93,
+    -7.9
+   ],
+   "name": "table",
+   "verb": "read",
+   "examineRange": 4.2,
+   "examineRadius": 1.2,
+   "examineAt": [
+    0.0,
+    1.4,
+    -7.9
+   ],
+   "collide": false,
+   "walkable": false,
+   "yaw": 90,
+   "examine": [
+    {
+     "who": "table",
+     "text": "TABLE. Not yet in the codex."
+    },
+    {
+     "who": "table",
+     "text": "From the dream THE VACATED BOOTH: the booth."
+    },
+    {
+     "who": "table",
+     "text": "Deep red. The leather still warm."
+    },
+    {
+     "who": "table",
+     "text": "The vessel of the parents. He wanted the booth because it held two who could not stand each other, which is still a kind of holding."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    0.58,
+    -6.799
+   ],
+   "size": [
+    0.9,
+    0.2,
+    0.02
+   ],
+   "tex": "gold",
+   "color": "#8a7248",
+   "unlit": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    0.0,
+    0.58,
+    -6.787000000000001
+   ],
+   "size": [
+    0.8,
+    0.2
+   ],
+   "yaw": 0,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#1b1a18",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TABLE",
+     "font": "light",
+     "color": "#f0e8d8"
+    }
+   ]
+  },
+  {
+   "type": "television",
+   "id": "tv:booth",
+   "pos": [
+    2.4,
+    0,
+    -7.9
+   ],
+   "yaw": 0,
+   "film": "/watch/booth.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    2.4,
+    0.3,
+    -7.9
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:booth"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.3,
+    0.45,
+    0.0
+   ],
+   "size": [
+    1.4,
+    0.9,
+    2.0
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "texScale": 1,
+   "shade": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.3,
+    0.9,
+    0.0
+   ],
+   "size": [
+    1.46,
+    0.03,
+    2.06
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.3,
+    1.7000000000000002,
+    0.0
+   ],
+   "size": [
+    1.4,
+    1.6,
+    2.0
+   ],
+   "tex": "white",
+   "color": "#eaf1f5",
+   "collide": false,
+   "walkable": false,
+   "seg": 1,
+   "unique": true,
+   "extra": {
+    "transparent": true,
+    "opacity": 0.03,
+    "depthWrite": false,
+    "side": 2,
+    "roughness": 0.03,
+    "metalness": 0.0,
+    "envMapIntensity": 1.6
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.6000000000000005,
+    1.7000000000000002,
+    -1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.6000000000000005,
+    1.7000000000000002,
+    1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    9.0,
+    1.7000000000000002,
+    -1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    9.0,
+    1.7000000000000002,
+    1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    8.3,
+    2.53,
+    0.0
+   ],
+   "size": [
+    1.46,
+    0.06,
+    2.06
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    8.3,
+    2.35,
+    0.0
+   ],
+   "color": "#fff1dc",
+   "intensity": 0.22,
+   "range": 3.6,
+   "flicker": "none"
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:game",
+   "pos": [
+    8.3,
+    7.0,
+    0.0
+   ],
+   "drop": 3.6,
+   "intensity": 1.3,
+   "range": 8,
+   "color": "#ffe2bd",
+   "glowSize": 0.22,
+   "glowStrength": 0.2,
+   "pool": false
+  },
+  {
+   "type": "item",
+   "item": "hand",
+   "pickup": false,
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      0.082,
+      0.024,
+      0.09
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0,
+      0.012,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.07,
+      0.018,
+      0.03
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0,
+      0.009,
+      -0.058
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.008,
+      0.0076,
+      0.030239999999999996,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.011,
+      0.0601
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.0076,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.011,
+      0.0752
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.00688,
+      0.02376,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.0095,
+      0.0871
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.00688,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.008,
+      0.099
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.0057599999999999995,
+      0.018,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      -0.03,
+      0.0075,
+      0.108
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0058,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.03,
+      0.0065,
+      0.117
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0104,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.03,
+      0.0125,
+      0.111
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0088,
+      0.00836,
+      0.0336,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.011,
+      0.0618
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.00836,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.011,
+      0.0786
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.007568,
+      0.026400000000000003,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.0095,
+      0.0918
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.007568,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.008,
+      0.105
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.0063360000000000005,
+      0.02,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.0075,
+      0.115
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0063,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.01,
+      0.0065,
+      0.125
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0114,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.01,
+      0.0125,
+      0.119
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0088,
+      0.00836,
+      0.031079999999999997,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.011,
+      0.0605
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.00836,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.011,
+      0.0761
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00836,
+      0.007568,
+      0.02442,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.0095,
+      0.0883
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.007568,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.008,
+      0.1005
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.007568,
+      0.0063360000000000005,
+      0.0185,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.0075,
+      0.1097
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0063,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.01,
+      0.0065,
+      0.119
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0114,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.01,
+      0.0125,
+      0.113
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.008,
+      0.0076,
+      0.02436,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.011,
+      0.0572
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.0076,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.011,
+      0.0694
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0076,
+      0.00688,
+      0.01914,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      84,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.0095,
+      0.0789
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.00688,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.008,
+      0.0885
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.00688,
+      0.0057599999999999995,
+      0.0145,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      78,
+      0,
+      0
+     ],
+     "pos": [
+      0.03,
+      0.0075,
+      0.0958
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0058,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.03,
+      0.0065,
+      0.103
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.0104,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      0.03,
+      0.0125,
+      0.097
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0098,
+      0.0092,
+      0.04,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      -38
+     ],
+     "pos": [
+      -0.052,
+      0.012,
+      -0.012
+     ]
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0092,
+      0.0092,
+      0.0035,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      -38
+     ],
+     "pos": [
+      -0.066,
+      0.012,
+      0.006
+     ],
+     "color": "#b89888"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.0092,
+      0.0078,
+      0.032,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      -38
+     ],
+     "pos": [
+      -0.076,
+      0.011,
+      0.02
+     ]
+    },
+    {
+     "shape": "sphere",
+     "size": [
+      0.0078,
+      7,
+      5
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.086,
+      0.01,
+      0.033
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.012,
+      0.0014,
+      0.011
+     ],
+     "tex": "skinPale",
+     "pos": [
+      -0.084,
+      0.0165,
+      0.03
+     ],
+     "color": "#e6d6c8"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.031,
+      0.031,
+      0.0025,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0,
+      0.009,
+      -0.0735
+     ],
+     "color": "#7a1818"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.006,
+      0.006,
+      0.003,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      -0.01,
+      0.01,
+      -0.074
+     ],
+     "color": "#efe7da"
+    },
+    {
+     "shape": "cyl",
+     "size": [
+      0.005,
+      0.005,
+      0.003,
+      7
+     ],
+     "tex": "skinPale",
+     "rot": [
+      90,
+      0,
+      0
+     ],
+     "pos": [
+      0.009,
+      0.009,
+      -0.074
+     ],
+     "color": "#efe7da"
+    },
+    {
+     "shape": "plane",
+     "size": [
+      0.09,
+      0.06
+     ],
+     "color": "#4e0e0e",
+     "rot": [
+      -90,
+      0,
+      0
+     ],
+     "pos": [
+      0.01,
+      0.0006,
+      -0.085
+     ]
+    }
+   ],
+   "id": "body horror",
+   "pos": [
+    8.3,
+    0.93,
+    0.0
+   ],
+   "name": "body horror",
+   "verb": "read",
+   "examineRange": 4.2,
+   "examineRadius": 0.8,
+   "examineAt": [
+    8.3,
+    1.4,
+    0.0
+   ],
+   "collide": false,
+   "walkable": false,
+   "scale": 4.2,
+   "yaw": 340,
+   "examine": [
+    {
+     "who": "body horror",
+     "text": "BODY HORROR. Not yet in the codex."
+    },
+    {
+     "who": "body horror",
+     "text": "From the dream THE GAME: the hand."
+    },
+    {
+     "who": "body horror",
+     "text": "Five fingers. Then six. The president chopped the sixth one off."
+    },
+    {
+     "who": "body horror",
+     "text": "The longer the game went on, the more body parts we grew."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    7.599000000000001,
+    0.58,
+    0.0
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.9
+   ],
+   "tex": "gold",
+   "color": "#8a7248",
+   "unlit": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    7.5870000000000015,
+    0.58,
+    0.0
+   ],
+   "size": [
+    0.8,
+    0.2
+   ],
+   "yaw": 270,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#1b1a18",
+   "backing": false,
+   "parts": [
+    {
+     "text": "BODY HORROR",
+     "font": "light",
+     "color": "#f0e8d8"
+    }
+   ]
+  },
+  {
+   "type": "television",
+   "id": "tv:game",
+   "pos": [
+    8.3,
+    0,
+    1.6
+   ],
+   "yaw": 270,
+   "film": "/watch/game.mp4",
+   "name": "the television",
+   "verb": "watch",
+   "examineAt": [
+    8.0,
+    0.3,
+    1.6
+   ],
+   "examineRadius": 0.4,
+   "examineRange": 4.0,
+   "examine": [],
+   "then": [
+    {
+     "watch": "tv:game"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    0.45,
+    7.9
+   ],
+   "size": [
+    3.6,
+    0.9,
+    2.2
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "texScale": 1,
+   "shade": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    0.9,
+    7.9
+   ],
+   "size": [
+    3.66,
+    0.03,
+    2.2600000000000002
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    2.0,
+    7.9
+   ],
+   "size": [
+    3.6,
+    2.2,
+    2.2
+   ],
+   "tex": "white",
+   "color": "#eaf1f5",
+   "collide": false,
+   "walkable": false,
+   "seg": 1,
+   "unique": true,
+   "extra": {
+    "transparent": true,
+    "opacity": 0.03,
+    "depthWrite": false,
+    "side": 2,
+    "roughness": 0.03,
+    "metalness": 0.0,
+    "envMapIntensity": 1.6
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.8,
+    2.0,
+    6.800000000000001
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -1.8,
+    2.0,
+    9.0
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.8,
+    2.0,
+    6.800000000000001
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    1.8,
+    2.0,
+    9.0
+   ],
+   "size": [
+    0.03,
+    2.2,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    3.13,
+    7.9
+   ],
+   "size": [
+    3.66,
+    0.06,
+    2.2600000000000002
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    0.0,
+    2.95,
+    7.9
+   ],
+   "color": "#fff1dc",
+   "intensity": 0.2,
+   "range": 5.0,
+   "flicker": "none"
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:conductor",
+   "pos": [
+    0.0,
+    7.0,
+    7.9
+   ],
+   "drop": 2.9999999999999996,
+   "intensity": 1.3,
+   "range": 8,
+   "color": "#ffe2bd",
+   "glowSize": 0.22,
+   "glowStrength": 0.2,
+   "pool": false
+  },
+  {
+   "type": "item",
+   "item": "bigtrain",
+   "model": [
+    {
+     "shape": "box",
+     "size": [
+      2.6,
+      3.2,
+      30
+     ],
+     "tex": "steel",
+     "pos": [
+      0,
+      1.6,
+      0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -7.2
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      -2.4000000000000004
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      2.3999999999999986
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      7.199999999999999
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      12.0
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      16.799999999999997
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.7,
+      0.9,
+      2.2
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.9,
+      21.6
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.3,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0,
+      1.2,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      2.0,
+      0.8,
+      0.1
+     ],
+     "color": "#fff0c0",
+     "unlit": true,
+     "pos": [
+      0,
+      2.3,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      -0.95,
+      0.6,
+      -15.05
+     ]
+    },
+    {
+     "shape": "box",
+     "size": [
+      0.4,
+      0.4,
+      0.1
+     ],
+     "color": "#fffaf0",
+     "unlit": true,
+     "pos": [
+      0.95,
+      0.6,
+      -15.05
+     ]
+    }
+   ],
+   "pickup": false,
+   "examineAt": [
+    0.0,
+    1.4,
+    7.9
+   ],
+   "examineRadius": 1.2,
+   "id": "train",
+   "pos": [
+    0.0,
+    0.93,
+    7.9
+   ],
+   "name": "train",
+   "verb": "read",
+   "examineRange": 4.2,
+   "collide": false,
+   "walkable": false,
+   "scale": 0.1,
+   "yaw": 270,
+   "examine": [
+    {
+     "who": "train",
+     "text": "TRAIN. Not yet in the codex."
+    },
+    {
+     "who": "train",
+     "text": "From the dream OLLY THE CONDUCTOR: the train."
+    },
+    {
+     "who": "train",
+     "text": "Its headlights were the whole window."
+    },
+    {
+     "who": "train",
+     "text": "The great train: the collective, arriving slowly, with all the time in the world. Nobody drives it. Nobody has to."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    0.0,
+    0.58,
+    6.799
+   ],
+   "size": [
+    0.9,
+    0.2,
+    0.02
+   ],
+   "tex": "gold",
+   "color": "#8a7248",
+   "unlit": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    0.0,
+    0.58,
+    6.787000000000001
+   ],
+   "size": [
+    0.8,
+    0.2
+   ],
+   "yaw": 180,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#1b1a18",
+   "backing": false,
+   "parts": [
+    {
+     "text": "TRAIN",
+     "font": "light",
+     "color": "#f0e8d8"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.3,
+    0.45,
+    0.0
+   ],
+   "size": [
+    1.4,
+    0.9,
+    2.0
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "texScale": 1,
+   "shade": 1,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.3,
+    0.9,
+    0.0
+   ],
+   "size": [
+    1.46,
+    0.03,
+    2.06
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.3,
+    1.7000000000000002,
+    0.0
+   ],
+   "size": [
+    1.4,
+    1.6,
+    2.0
+   ],
+   "tex": "white",
+   "color": "#eaf1f5",
+   "collide": false,
+   "walkable": false,
+   "seg": 1,
+   "unique": true,
+   "extra": {
+    "transparent": true,
+    "opacity": 0.03,
+    "depthWrite": false,
+    "side": 2,
+    "roughness": 0.03,
+    "metalness": 0.0,
+    "envMapIntensity": 1.6
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9.0,
+    1.7000000000000002,
+    -1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -9.0,
+    1.7000000000000002,
+    1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.6000000000000005,
+    1.7000000000000002,
+    -1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.6000000000000005,
+    1.7000000000000002,
+    1.0
+   ],
+   "size": [
+    0.03,
+    1.6,
+    0.03
+   ],
+   "tex": "gold",
+   "color": "#c9a86a",
+   "collide": false,
+   "walkable": false,
+   "unique": true,
+   "extra": {
+    "roughness": 0.35,
+    "metalness": 0.85
+   }
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.3,
+    2.53,
+    0.0
+   ],
+   "size": [
+    1.46,
+    0.06,
+    2.06
+   ],
+   "tex": "woodDark",
+   "color": "#2b211b",
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "light",
+   "pos": [
+    -8.3,
+    2.35,
+    0.0
+   ],
+   "color": "#fff1dc",
+   "intensity": 0.22,
+   "range": 3.6,
+   "flicker": "none"
+  },
+  {
+   "type": "spotlight",
+   "id": "xl:library",
+   "pos": [
+    -8.3,
+    7.0,
+    0.0
+   ],
+   "drop": 3.6,
+   "intensity": 1.3,
+   "range": 8,
+   "color": "#ffe2bd",
+   "glowSize": 0.22,
+   "glowStrength": 0.2,
+   "pool": false
+  },
+  {
+   "type": "box",
+   "size": [
+    1.3,
+    0.75,
+    0.04
+   ],
+   "tex": "skyMovie",
+   "unlit": true,
+   "texScale": 1,
+   "id": "theater",
+   "pos": [
+    -8.3,
+    1.35,
+    0.0
+   ],
+   "name": "theater",
+   "verb": "read",
+   "examineRange": 4.2,
+   "examineRadius": 0.8,
+   "examineAt": [
+    -8.3,
+    1.4,
+    0.0
+   ],
+   "collide": false,
+   "walkable": false,
+   "rot": [
+    0,
+    90,
+    0
+   ],
+   "examine": [
+    {
+     "who": "theater",
+     "text": "THEATER. Not yet in the codex."
+    },
+    {
+     "who": "theater",
+     "text": "From the dream LIBRARY BIRD BAG: the screen."
+    },
+    {
+     "who": "theater",
+     "text": "A film of the sky. Nothing happens in it."
+    },
+    {
+     "who": "theater",
+     "text": "The enormous nothing he came to see. Clouds. The self projected at full size, with no plot."
+    }
+   ],
+   "then": []
+  },
+  {
+   "type": "box",
+   "pos": [
+    -8.33,
+    1.35,
+    -1.8369701987210296e-18
+   ],
+   "size": [
+    1.4,
+    0.85,
+    0.03
+   ],
+   "tex": "black",
+   "id": "theater#0",
+   "rot": [
+    0,
+    90,
+    0
+   ],
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "box",
+   "pos": [
+    -7.599000000000001,
+    0.58,
+    0.0
+   ],
+   "size": [
+    0.02,
+    0.2,
+    0.9
+   ],
+   "tex": "gold",
+   "color": "#8a7248",
+   "unlit": true,
+   "collide": false,
+   "walkable": false
+  },
+  {
+   "type": "sign",
+   "pos": [
+    -7.5870000000000015,
+    0.58,
+    0.0
+   ],
+   "size": [
+    0.8,
+    0.2
+   ],
+   "yaw": 90,
+   "faded": true,
+   "intact": true,
+   "hires": true,
+   "fadeColor": "#1b1a18",
+   "backing": false,
+   "parts": [
+    {
+     "text": "THEATER",
+     "font": "light",
+     "color": "#f0e8d8"
+    }
+   ]
+  }
+ ],
+ "events": []
+}
