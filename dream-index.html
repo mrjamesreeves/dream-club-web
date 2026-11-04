@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   <title>The Dream Index: What the World Is Dreaming About</title>
   <meta name="description" content="The most common symbols in Dream Club journals around the world.">
   <link rel="icon" href="img/icon.png">
@@ -15,76 +15,86 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap">
 
   <style>
+    /* The home page's ink-on-white, with the map and the cards on
+       its grey ground. */
     :root {
-      --bg: linear-gradient(180deg, #000 0%, #222 100%);
-      /* The app's Dreams tints: bright for titles/active, muted for meta. */
-      --accent: #BDC8D2;
-      --muted: #586772;
-      --body: #ccc;
+      --ink: #111;
+      --mid: #666;
       --dim: #999;
-      --card: #131313;
-      --land: #3B3B3B;
+      --rule: #999;
+      --land: #dcdcdc;
+      --serif: "ibm-plex-serif", Georgia, serif;
       --sans: "Source Sans 3", "ibm-plex-sans", -apple-system, sans-serif;
+      --plex-sans: "ibm-plex-sans", -apple-system, sans-serif;
+      --display: "richmond-display", "ibm-plex-serif", Georgia, serif;
+      --text-serif: "richmond-text", "ibm-plex-serif", Georgia, serif;
+      --gutter: 62px;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: var(--bg);
-      color: var(--body);
-      font-family: "ibm-plex-sans", -apple-system, sans-serif;
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--sans);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
     }
     .wrap {
-      max-width: 1180px;
+      max-width: 1288px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding-left: 24px;
+      padding-right: 24px;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    a { color: inherit; text-decoration: none; }
 
-    /* ---------------- Header card ---------------- */
-    .hero-card {
-      max-width: 1180px;
-      margin: 26px auto 0;
-      border-radius: 16px;
-      text-align: center;
-      padding: 42px 24px 26px;
+    /* ---------------- Masthead ---------------- */
+    .masthead { padding-top: 72px; }
+    .moon-block { display: flex; align-items: center; height: 72px; width: fit-content; }
+    .moon-block img {
+      width: 70px;
+      height: 67px;
+      margin-left: -7px;
+      object-fit: cover;
+      filter: invert(1);
+      mix-blend-mode: multiply;
     }
-    @media (max-width: 700px) { .hero-card { margin-top: 0; border-radius: 0; } }
-    .moon-link { display: block; text-decoration: none; }
-    .moon-link:hover { text-decoration: none; }
-    .moon { width: 72px; height: auto; display: block; margin: 0 auto 8px; }
-    .eyebrow.accent { color: var(--accent); }
-    .eyebrow {
-      font-size: 9px;
-      letter-spacing: 1.89px;
-      text-transform: uppercase;
+    .moon-labels {
+      display: flex;
+      flex-direction: column;
+      margin-left: 13px;
+      font-size: 10px;
       font-weight: 500;
-      color: var(--muted);
-      padding-bottom: 5px;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .moon-name { color: var(--dim); }
+    .moon-dreamers { color: var(--ink); min-height: 14px; }
+    .brand {
+      font-family: var(--display);
+      font-size: 44px;
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 2px 0 36px;
     }
     h1 {
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: clamp(22px, 5vw, 32px);
-      letter-spacing: 0.26em;
-      text-indent: 0.26em;
-      text-transform: uppercase;
-      color: #fff;
-      margin-top: 14px;
+      font-family: var(--text-serif);
+      font-weight: 400;
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1.3;
+      color: var(--ink);
     }
     .lede {
-      font-family: "ibm-plex-serif", Georgia, serif;
-      font-size: 17px;
-      color: var(--accent);
+      font-size: 20px;
+      color: var(--mid);
       max-width: 34em;
-      margin: 10px auto 0;
+      margin-top: 4px;
     }
     .windows {
       display: flex;
-      justify-content: center;
-      gap: 26px;
+      flex-wrap: wrap;
+      gap: 24px;
       margin-top: 30px;
     }
     .windows button {
@@ -96,33 +106,32 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       font-weight: 500;
-      color: var(--muted);
-      padding: 6px 2px;
+      color: var(--dim);
+      padding: 6px 0;
       border-bottom: 1px solid transparent;
     }
     .windows button[aria-pressed="true"] {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
+      color: var(--ink);
+      border-bottom-color: rgba(17, 17, 17, 0.8);
     }
 
     /* ---------------- Hero: global list + map ---------------- */
     .hero-grid {
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 56px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+      gap: var(--gutter);
       align-items: center;
-      padding-top: 44px;
+      padding-top: 52px;
     }
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
     }
     .section-title {
-      font-family: var(--sans);
-      font-weight: 600;
-      font-size: 16px;
-      letter-spacing: 3.2px;
-      text-transform: uppercase;
-      color: var(--accent);
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.4;
+      color: var(--ink);
       margin-bottom: 10px;
     }
     .list { padding-bottom: 6px; }
@@ -130,32 +139,28 @@
       display: flex;
       align-items: baseline;
       gap: 10px;
-      padding: 6px 0;
+      padding: 8px 0 7.5px;
+      border-top: 0.5px solid var(--rule);
     }
     .row .rank {
-      font-family: var(--sans);
       font-size: 12px;
-      color: var(--muted);
+      color: var(--dim);
       width: 22px;
       flex: 0 0 auto;
+      font-variant-numeric: tabular-nums;
     }
     .row .name {
-      font-family: "ibm-plex-serif", Georgia, serif;
-      font-size: 17px;
+      font-family: var(--serif);
+      font-size: 20px;
       text-transform: capitalize;
-      color: var(--body);
+      color: var(--ink);
       white-space: nowrap;
     }
-    .list .row:nth-child(1) .name, .list .row:nth-child(2) .name, .list .row:nth-child(3) .name { color: #fff; }
-    .row .leader {
-      flex: 1;
-      border-bottom: 1px dotted rgba(255, 255, 255, 0.25);
-      transform: translateY(-4px);
-    }
+    .row .leader { flex: 1; }
     .row .count {
-      font-family: var(--sans);
-      font-size: 13px;
-      color: var(--muted);
+      font-size: 14px;
+      color: var(--mid);
+      font-variant-numeric: tabular-nums;
     }
 
     /* ---------------- Map ---------------- */
@@ -163,27 +168,28 @@
     #dream-map { width: 100%; height: auto; display: block; }
     #dream-map path {
       fill: var(--land);
-      stroke: #000;
+      stroke: #fff;
       stroke-width: 0.5;
     }
     #dream-map path.active {
-      fill: var(--accent);
+      fill: var(--ink);
       cursor: pointer;
       transition: fill 0.15s ease;
     }
-    #dream-map path.active:hover { fill: #D6DEE5; }
+    #dream-map path.active:hover { fill: #444; }
     #dream-map circle.map-dot {
-      fill: #0E0E0E;
-      stroke: rgba(255, 255, 255, 0.35);
+      fill: #fff;
+      stroke: var(--ink);
       stroke-width: 1;
       cursor: pointer;
     }
-    #dream-map circle.map-dot:hover { stroke: #fff; }
+    #dream-map circle.map-dot:hover { fill: var(--ink); }
     #map-pop {
       position: absolute;
-      background: #161616;
-      border: 1px solid rgba(189, 200, 210, 0.4);
-      border-radius: 8px;
+      background: #fff;
+      border: 0.5px solid var(--rule);
+      border-radius: 6px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
       padding: 9px 14px 10px;
       pointer-events: none;
       transform: translate(-50%, calc(-100% - 12px));
@@ -191,98 +197,124 @@
       z-index: 5;
     }
     #map-pop .pop-name {
-      font-family: var(--sans);
       font-weight: 600;
       font-size: 12px;
       letter-spacing: 1.8px;
       text-transform: uppercase;
-      color: #fff;
+      color: var(--ink);
     }
     #map-pop .pop-count {
-      font-size: 9px;
-      letter-spacing: 1.89px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       font-weight: 500;
-      color: var(--accent);
+      color: var(--mid);
       margin-top: 2px;
     }
 
-    /* ---------------- Card rows ---------------- */
+    /* ---------------- The grey ground: card rows + footer ---------------- */
+    .lower {
+      position: relative;
+      background: linear-gradient(180deg, #f6f6f6 0%, #e3e3e3 100%);
+      margin-top: 72px;
+      padding: 60px 0 96px;
+      overflow: hidden;
+    }
+    .lower > .wrap { position: relative; z-index: 1; }
     .row-label {
-      font-size: 9px;
-      letter-spacing: 1.89px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       font-weight: 500;
-      color: var(--muted);
-      margin: 52px 0 14px;
+      color: var(--dim);
+      margin: 40px 0 12px;
     }
+    .lower section:first-child .row-label { margin-top: 0; }
     .card-row {
       display: flex;
       gap: 16px;
       overflow-x: auto;
       padding: 4px 2px 14px;
       scrollbar-width: thin;
-      scrollbar-color: #333 transparent;
+      scrollbar-color: #bbb transparent;
     }
     .card {
-      background: var(--card);
-      border-radius: 12px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
       border: 1px solid transparent;
-      padding: 20px 22px 16px;
+      padding: 20px 24px 14px;
       min-width: 255px;
       flex: 0 0 auto;
-      transition: background 0.25s ease, border-color 0.25s ease;
+      transition: border-color 0.25s ease;
     }
-    .card.lit {
-      background: #1C1C1C;
-      border-color: rgba(189, 200, 210, 0.55);
-    }
+    .card.lit { border-color: var(--ink); }
     .card h3 {
-      font-family: var(--sans);
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 2.8px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--ink);
+      margin-bottom: 6px;
       white-space: nowrap;
     }
-    .card .row { padding: 4px 0; gap: 8px; }
+    .card .row { padding: 5px 0 4.5px; gap: 8px; border-top-color: #ddd; }
     .card .row .rank { font-size: 11px; width: 16px; }
     .card .row .name { font-size: 16px; }
-    .card .row .count { font-size: 14px; }
-    .card .row:nth-child(n) .name { color: var(--body); }
-    .card .row:nth-child(2) .name { color: #fff; }
+    .card .row .count { font-size: 13px; }
 
     .filling {
-      text-align: center;
-      font-family: "ibm-plex-serif", Georgia, serif;
       font-style: italic;
       font-size: 16px;
-      color: var(--dim);
-      padding: 70px 0;
+      color: var(--mid);
+      padding: 40px 0;
+    }
+
+    /* The drawing in the corner, darkened into the grey. */
+    .corner {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: min(560px, 70vw);
+      mix-blend-mode: darken;
+      pointer-events: none;
+      z-index: 0;
     }
 
     footer {
-      padding: 80px 24px 60px;
+      position: relative;
+      z-index: 1;
+      padding: 80px 24px 0;
       text-align: center;
-      font-size: 13px;
-      color: var(--dim);
+      font-size: 16px;
+      color: var(--mid);
+    }
+    footer a { text-decoration: underline; text-decoration-thickness: 0.5px; text-underline-offset: 3px; }
+
+    @media (max-width: 600px) {
+      .masthead { padding-top: 56px; }
+      .brand { margin-bottom: 28px; }
+      .lede { font-size: 17px; }
+      .lower { margin-top: 48px; padding: 44px 0 56vw; }
+      .corner { width: 92vw; }
     }
   </style>
 </head>
 <body>
 
-  <div class="hero-card">
-    <a class="moon-link" href="/" aria-label="Dream Club home">
-      <img class="moon" id="moon-img" src="/img/moons/waxing-gibbous.jpg" alt="">
-      <p class="eyebrow" id="moon-name">Waxing Gibbous</p>
-      <p class="eyebrow accent" id="moon-meta">&nbsp;</p>
-    </a>
+  <header class="masthead wrap">
+    <div class="moon-block">
+      <img id="moon-img" src="/img/moons/waxing-gibbous.jpg" alt="" width="70" height="67">
+      <span class="moon-labels">
+        <span class="moon-name" id="moon-name">Waxing Gibbous</span>
+        <span class="moon-dreamers" id="moon-dreamers">&nbsp;</span>
+      </span>
+    </div>
+    <div class="brand"><a href="/">Dream Club</a></div>
     <h1>The Dream Index</h1>
     <p class="lede">The most common symbols in Dream Club journals around the world.</p>
     <nav class="windows" aria-label="Time window" id="windows"></nav>
-  </div>
+  </header>
 
   <main class="wrap">
     <div class="hero-grid">
@@ -301,23 +333,29 @@
       </div>
     </div>
 
-    <section id="country-section" hidden>
-      <div class="row-label">Countries</div>
-      <div class="card-row" id="country-cards"></div>
-    </section>
-    <section id="region-section" hidden>
-      <div class="row-label">Regions</div>
-      <div class="card-row" id="region-cards"></div>
-    </section>
-    <section id="city-section" hidden>
-      <div class="row-label">Cities</div>
-      <div class="card-row" id="city-cards"></div>
-    </section>
   </main>
 
-  <footer>
-    Calculated anonymously. No names, no accounts. <a href="/privacy">How this works &rarr;</a>
-  </footer>
+  <div class="lower">
+    <div class="wrap">
+      <section id="country-section" hidden>
+        <div class="row-label">Countries</div>
+        <div class="card-row" id="country-cards"></div>
+      </section>
+      <section id="region-section" hidden>
+        <div class="row-label">Regions</div>
+        <div class="card-row" id="region-cards"></div>
+      </section>
+      <section id="city-section" hidden>
+        <div class="row-label">Cities</div>
+        <div class="card-row" id="city-cards"></div>
+      </section>
+
+      <footer>
+        Calculated anonymously. No names, no accounts. <a href="/privacy">How this works &rarr;</a>
+      </footer>
+    </div>
+    <img class="corner" src="/img/Bottom%20Left%20Corner.webp" alt="" aria-hidden="true" loading="lazy" width="742" height="501">
+  </div>
 
   <script>
     const SUPABASE_URL = "https://opkalkbjecbnnavxnmdb.supabase.co";
