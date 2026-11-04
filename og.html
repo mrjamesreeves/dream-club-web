@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dream Club share card</title>
+  <!-- The 1200×630 share card, rendered to img/share.jpg by headless
+       Chrome (see tools/render-share-card.sh). Not linked from the site. -->
+  <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; background: #fff; }
+    body { position: relative; font-family: "Source Sans 3", sans-serif; color: #111; -webkit-font-smoothing: antialiased; }
+    .ground {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 300px;
+      background: linear-gradient(180deg, #fff 0%, #ececec 100%);
+    }
+    .corner { position: absolute; left: -40px; bottom: -30px; width: 560px; mix-blend-mode: darken; opacity: 0.9; }
+    .text { position: absolute; left: 84px; top: 150px; }
+    .moon { display: flex; align-items: center; height: 72px; margin-left: -6px; }
+    .moon img { width: 70px; height: 67px; object-fit: cover; mix-blend-mode: multiply; }
+    .moon span {
+      margin-left: 3px; font-size: 10px; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #999; line-height: 1.4;
+    }
+    h1 { font-family: "richmond-display", Georgia, serif; font-weight: 400; font-size: 118px; line-height: 1.08; letter-spacing: 0; }
+    p { font-size: 40px; color: #666; margin-top: 4px; }
+    .phones { position: absolute; left: 700px; top: 92px; display: flex; gap: 22px; }
+    .phones img {
+      width: 232px; height: auto; border-radius: 10.56%;
+      box-shadow: 0 2.5px 1.8px rgba(0,0,0,0.15);
+    }
+    .phones img + img { margin-top: 56px; }
+  </style>
+</head>
+<body>
+  <div class="ground"></div>
+  <img class="corner" src="img/Bottom%20Left%20Corner.webp" alt="">
+  <div class="text">
+    <div class="moon"><img src="img/moons/light/waxing-gibbous.png" alt=""><span>For iPhone &amp; Mac</span></div>
+    <h1>Dream Club</h1>
+    <p>A dignified home for your dreams.</p>
+  </div>
+  <div class="phones">
+    <img src="img/Hero%20L.webp" alt="">
+    <img src="img/Hero%20R.webp" alt="">
+  </div>
+</body>
+</html>

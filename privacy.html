@@ -3,117 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   <title>Privacy Policy — Dream Club</title>
   <meta name="description" content="How Dream Club handles your dreams and your data.">
 
+  <link rel="icon" href="/img/icon.png">
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    .moon-home {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-      text-decoration: none;
-      margin-bottom: 18px;
+    /* The home page's ink-on-white, at reading size. */
+    :root {
+      --ink: #111;
+      --mid: #666;
+      --dim: #999;
+      --rule: #999;
+      --serif: "ibm-plex-serif", Georgia, serif;
+      --sans: "Source Sans 3", "ibm-plex-sans", -apple-system, sans-serif;
+      --display: "richmond-display", "ibm-plex-serif", Georgia, serif;
+      --text-serif: "richmond-text", "ibm-plex-serif", Georgia, serif;
     }
-    .moon-home .moon { width: 56px; height: auto; }
-    .moon-name {
-      display: block;
-      font-size: 9px;
-      letter-spacing: 1.89px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--muted);
-      padding-bottom: 5px;
-    }
-    .moon-accent { color: var(--accent); }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --bg: #000;
-      --fg: #fff;
-      --dim: rgba(255,255,255,0.7);
-      --dimmer: rgba(255,255,255,0.45);
-      --hairline: rgba(255,255,255,0.15);
-      /* The app's Dreams tints. */
-      --accent: #BDC8D2;
-      --muted: #586772;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Source Sans 3', system-ui, sans-serif;
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
-      line-height: 1.65;
-      padding: 64px 24px 96px;
+      line-height: 1.55;
+      padding: 72px 24px 96px;
     }
 
     main { max-width: 640px; margin: 0 auto; }
 
-    .brand {
-      font-weight: 600;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 24px;
+    /* The masthead, smaller: moon and labels, then the wordmark. */
+    .moon-block { display: flex; align-items: center; height: 72px; width: fit-content; }
+    .moon-block img {
+      width: 70px;
+      height: 67px;
+      margin-left: -7px;
+      object-fit: cover;
+      mix-blend-mode: multiply;
     }
-    .brand a { color: inherit; text-decoration: none; }
+    .moon-labels {
+      display: flex;
+      flex-direction: column;
+      margin-left: 3px;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .moon-name { color: var(--dim); }
+    .moon-dreamers { color: var(--ink); min-height: 14px; text-decoration: none; }
+    .moon-dreamers:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 0.5px; }
+
+    .brand {
+      font-family: var(--display);
+      font-size: 44px;
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 2px 0 36px;
+    }
+    .brand a { color: inherit; text-decoration: none; border: 0; }
 
     h1 {
-      font-weight: 600;
-      font-size: 24px;
-      letter-spacing: 4.8px;
-      text-transform: uppercase;
+      font-family: var(--text-serif);
+      font-weight: 400;
+      font-size: 34px;
       line-height: 1.3;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .effective {
-      font-size: 13px;
-      color: var(--dimmer);
-      margin-bottom: 40px;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--mid);
+      margin-bottom: 36px;
     }
 
     h2 {
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 2.8px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 44px 0 12px;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--ink);
+      margin: 40px 0 10px;
     }
 
-    p { font-family: 'IBM Plex Serif', Georgia, serif; color: var(--dim); font-size: 16px; margin-bottom: 14px; }
+    p { font-size: 17px; color: var(--ink); margin-bottom: 14px; }
 
-    ul { font-family: 'IBM Plex Serif', Georgia, serif; color: var(--dim); font-size: 16px; margin: 0 0 14px 22px; }
+    ul { font-size: 17px; color: var(--ink); margin: 0 0 14px 22px; }
     li { margin-bottom: 8px; }
 
-    strong { color: var(--fg); font-weight: 600; }
+    strong { font-weight: 600; }
 
-    a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--hairline); }
-    a:hover { border-bottom-color: var(--accent); }
+    a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 0.5px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 1px; }
 
     .divider {
-      width: 32px; height: 1px;
-      background: var(--hairline);
+      width: 50px; height: 0.5px;
+      background: var(--rule);
       margin: 40px 0;
     }
   </style>
 </head>
 <body>
   <main>
-    <a class="moon-home" href="/" aria-label="Dream Club home">
-      <img class="moon" id="moon-img" src="/img/moons/waxing-gibbous.jpg" alt="">
-      <span class="moon-name" id="moon-name">Waxing Gibbous</span>
-      <span class="moon-name moon-accent" id="moon-meta">&nbsp;</span>
-    </a>
+    <div class="moon-block">
+      <img id="moon-img" data-light src="/img/moons/light/waxing-crescent.png" alt="" width="70" height="67">
+      <span class="moon-labels">
+        <span class="moon-name" id="moon-name">Waxing Crescent</span>
+        <a class="moon-dreamers" id="moon-dreamers" href="/dream-index" aria-label="The Dream Index">&nbsp;</a>
+      </span>
+    </div>
     <div class="brand"><a href="/">Dream Club</a></div>
     <h1>Privacy Policy</h1>
     <p class="effective">Effective July 2026</p>

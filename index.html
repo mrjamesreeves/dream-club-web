@@ -11,10 +11,13 @@
 
   <meta property="og:title" content="Dream Club">
   <meta property="og:description" content="A dignified home for your dreams.">
-  <meta property="og:image" content="https://thedream.club/img/product/dcmac1.webp">
+  <meta property="og:image" content="https://thedream.club/img/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedream.club">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://thedream.club/img/share.jpg">
 
   <!-- Adobe Fonts kit nbb6llm: IBM Plex Sans + IBM Plex Serif, Richmond
        Display for the wordmark, Richmond Text for the intro and the one
@@ -91,9 +94,7 @@
       align-items: center;
       height: 96px;
       width: fit-content;
-      text-decoration: none;
     }
-    .moon-block:hover { text-decoration: none; }
     /* The app's light-mode moon: a white disc on a transparent
        ground, multiplied so its shadow sits in the paper. */
     .moon-block img {
@@ -116,7 +117,8 @@
       white-space: nowrap;
     }
     .moon-name { color: var(--dim); }
-    .moon-dreamers { color: var(--ink); min-height: 14px; }
+    .moon-dreamers { color: var(--ink); min-height: 14px; text-decoration: none; }
+    .moon-dreamers:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 0.5px; }
 
     .wordmark {
       font-family: var(--display);
@@ -337,13 +339,14 @@
 
   <!-- ---------------- Masthead ---------------- -->
   <header class="masthead wrap">
-    <a class="moon-block" href="/" aria-label="Dream Club home">
+    <div class="moon-block">
       <img id="moon-img" data-light src="img/moons/light/waxing-crescent.png" alt="" width="93" height="89">
       <span class="moon-labels">
         <span class="moon-name" id="moon-name">Waxing Crescent</span>
-        <span class="moon-dreamers" id="moon-dreamers">&nbsp;</span>
+        <!-- The headcount is a quiet door to the Dream Index. -->
+        <a class="moon-dreamers" id="moon-dreamers" href="/dream-index" aria-label="The Dream Index">&nbsp;</a>
       </span>
-    </a>
+    </div>
     <h1 class="wordmark">Dream Club</h1>
     <p class="tagline">A dignified home for your dreams.</p>
   </header>
@@ -376,7 +379,7 @@
       <li>Analyze your dreams through three lenses: Jungian, Lacanian, and Deleuzian.</li>
       <li>Share a dream with a circle of friends and receive synchronicity alerts.</li>
       <li>A companion desktop app for organizing, searching, and editing.</li>
-      <li>No ads. No subscriptions. No accounts. Your dreams stay on your device.</li>
+      <li>No subscriptions. No accounts.</li>
     </ul>
   </section>
 
@@ -387,7 +390,7 @@
         <article class="box">
           <div class="box-img"><img src="img/1 Journal.webp" alt="The journal on iPhone: a season strip over the list of dreams" loading="lazy" width="590" height="250"></div>
           <h3>Journal</h3>
-          <p>An archive of your dreaming life. Every dream stays on your device and in your iCloud&mdash;synced across your devices, safe through reinstalls, readable only by you unless you choose to share it.</p>
+          <p>An archive of your dreaming life with seasonal reports. Every dream stays on your device and in your iCloud&mdash;synced across your devices, safe through reinstalls, readable only by you unless you choose to share it.</p>
         </article>
 
         <article class="box">
@@ -404,7 +407,7 @@
         <article class="box">
           <div class="box-img"><img src="img/3 Themes.webp" alt="The symbol codex on iPhone: Television, Animals, Teeth" loading="lazy" width="590" height="250"></div>
           <h3>Symbols</h3>
-          <p>Every dream&rsquo;s key images&mdash;fire, staircases, teeth&mdash;become part of a personal codex of symbols and themes. A mythology will surface.</p>
+          <p>Every dream&rsquo;s key images&mdash;fire, staircases, teeth&mdash;become part of a personal codex of people, places, and ideas. A mythology will surface.</p>
         </article>
 
         <article class="box">
