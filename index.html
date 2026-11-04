@@ -16,10 +16,9 @@
   <meta property="og:url" content="https://thedream.club">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Adobe Fonts kit nbb6llm: IBM Plex Sans + IBM Plex Serif, and
-       (once added to the kit) Richmond Display for the wordmark and
-       Richmond Text for the one serif heading. Until Richmond is in
-       the kit both fall back to Plex Serif. -->
+  <!-- Adobe Fonts kit nbb6llm: IBM Plex Sans + IBM Plex Serif, Richmond
+       Display for the wordmark, Richmond Text for the intro and the one
+       serif heading. -->
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
   <!-- Source Sans 3 (the app's sans) from Google Fonts. -->
@@ -142,13 +141,14 @@
     .phone {
       width: 284px;
       max-width: calc(50% - 11px);
-      border-radius: 13%;
+      /* 30px on the 284-wide export, kept in proportion as it scales. */
+      border-radius: 10.56%;
       box-shadow: 0 2.5px 1.8px rgba(0, 0, 0, 0.15);
     }
 
     .hero-text {
       padding-top: 158px;
-      font-family: var(--serif);
+      font-family: var(--text-serif);
       font-size: 28px;
       line-height: 1.34;
       color: var(--ink);
@@ -288,7 +288,11 @@
       line-height: 1.4;
       color: var(--ink);
     }
-    .site-footer .credits a { text-decoration: underline; text-underline-offset: 2px; }
+    .site-footer .credits a {
+      text-decoration: underline;
+      text-decoration-thickness: 0.5px;
+      text-underline-offset: 3px;
+    }
     .site-footer .links {
       margin-top: 6px;
       font-weight: 600;
