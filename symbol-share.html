@@ -3,69 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   <title>Dream Symbols</title>
   <meta name="description" content="Top symbols from a Dream Club journal.">
   <link rel="icon" href="/img/icon.png">
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
   <style>
+    /* The home page's ink-on-white, at reading size (as privacy). */
     :root {
-      --bg: linear-gradient(180deg, #000 0%, #222 100%);
-      --accent: #8AB7C8;
-      --body: #ccc;
+      --ink: #111;
+      --mid: #666;
       --dim: #999;
-      --measure: 520px;
+      --rule: #999;
+      --serif: "ibm-plex-serif", Georgia, serif;
+      --sans: "Source Sans 3", "ibm-plex-sans", -apple-system, sans-serif;
+      --plex-sans: "ibm-plex-sans", -apple-system, sans-serif;
+      --display: "richmond-display", "ibm-plex-serif", Georgia, serif;
+      --text-serif: "richmond-text", "ibm-plex-serif", Georgia, serif;
+      --measure: 560px;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: var(--bg);
-      color: var(--body);
-      font-family: "ibm-plex-sans", -apple-system, sans-serif;
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--sans);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
+      padding: 72px 24px 96px;
     }
-    .wrap {
-      max-width: calc(var(--measure) + 48px);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .wrap { max-width: var(--measure); margin: 0 auto; }
+    a { color: inherit; text-decoration: none; }
 
-    header { text-align: center; padding: 43px 24px 0; }
-    .moon-link { display: block; text-decoration: none; }
-    .moon-link:hover { text-decoration: none; }
-    .moon { width: 72px; height: auto; display: block; margin: 0 auto 8px; }
-    .eyebrow.accent { color: var(--accent); }
-    .eyebrow {
-      font-size: 9px;
-      letter-spacing: 1.89px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: #979797;
-      padding-bottom: 5px;
+    /* The masthead, smaller: moon and labels, then the wordmark. */
+    .moon-block { display: flex; align-items: center; height: 72px; width: fit-content; }
+    .moon-block img {
+      width: 70px;
+      height: 67px;
+      margin-left: -7px;
+      object-fit: cover;
+      mix-blend-mode: multiply;
     }
+    .moon-labels {
+      display: flex;
+      flex-direction: column;
+      margin-left: 3px;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .moon-name { color: var(--dim); }
+    .moon-dreamers { color: var(--ink); min-height: 14px; }
+    .moon-dreamers:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 0.5px; }
+    .brand {
+      font-family: var(--display);
+      font-size: 44px;
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 2px 0 36px;
+    }
+
     h1 {
-      font-family: "playfair-display", Georgia, serif;
+      font-family: var(--text-serif);
       font-weight: 400;
-      font-size: clamp(2rem, 6vw, 40px);
-      color: #fff;
-      margin-top: 30px;
-      margin-bottom: 30px;
+      font-size: 34px;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
     .lede {
-      font-family: "ibm-plex-serif", Georgia, serif;
-      font-size: 16px;
-      color: var(--dim);
-      max-width: 30em;
-      margin: 10px auto 0;
+      font-size: 14px;
+      color: var(--mid);
+      margin-bottom: 28px;
     }
 
-    main { padding-top: 34px; padding-bottom: 90px; }
     .list { padding: 0 0 20px; }
     .row {
       display: flex;
@@ -74,84 +94,91 @@
       padding: 7px 0;
     }
     .row .rank {
-      font-family: "playfair-display", Georgia, serif;
-      font-size: 15px;
+      font-family: var(--serif);
+      font-size: 14px;
       color: var(--dim);
       width: 26px;
       flex: 0 0 auto;
     }
+    .row .rank:empty { display: none; }
     .row .name {
-      font-family: "playfair-display", Georgia, serif;
+      font-family: var(--serif);
       font-size: 20px;
-      color: var(--body);
+      color: var(--ink);
       text-transform: capitalize;
       white-space: nowrap;
     }
-    .row:nth-child(1) .name, .row:nth-child(2) .name, .row:nth-child(3) .name { color: #fff; }
     .row .leader {
       flex: 1;
-      border-bottom: 1px dotted rgba(255, 255, 255, 0.25);
-      transform: translateY(-4px);
+      border-bottom: 1px dotted rgba(17, 17, 17, 0.3);
+      transform: translateY(-5px);
     }
     .row .count {
-      font-family: "playfair-display", Georgia, serif;
-      font-size: 18px;
-      color: var(--dim);
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--mid);
     }
 
     .group-label {
-      font-size: 11px;
-      letter-spacing: 2.6px;
-      text-transform: uppercase;
+      font-size: 10px;
       font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       color: var(--dim);
-      padding: 34px 0 10px;
+      padding: 30px 0 6px;
+      border-bottom: 0.5px solid var(--rule);
+      margin-bottom: 4px;
     }
     .group-label:first-child { padding-top: 6px; }
 
     .filling {
-      text-align: center;
-      font-family: "ibm-plex-serif", Georgia, serif;
+      font-family: var(--sans);
       font-style: italic;
       font-size: 16px;
-      color: var(--dim);
-      padding: 70px 0;
+      color: var(--mid);
+      padding: 40px 0;
     }
 
-    .cta {
-      text-align: center;
-      padding: 34px 0 10px;
-    }
+    .cta { padding: 34px 0 10px; }
     .cta a {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 1.89px;
-      text-transform: uppercase;
-      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      padding: 0 28px;
+      background: var(--ink);
       color: #fff;
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      padding: 11px 26px;
+      border-radius: 5px;
+      font-family: var(--plex-sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.14px;
+      transition: opacity 0.2s ease;
     }
-    .cta a:hover { text-decoration: none; background: rgba(138, 183, 200, 0.12); }
-
-    footer {
-      padding: 80px 24px 60px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--dim);
+    .cta a:hover { opacity: 0.85; text-decoration: none; }
+    .cta .fineprint {
+      font-style: italic;
+      font-size: 12px;
+      line-height: 1.2;
+      color: var(--mid);
+      max-width: 260px;
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <a class="moon-link" href="/" aria-label="Dream Club home">
-      <img class="moon" id="moon-img" src="/img/moons/waxing-gibbous.jpg" alt="">
-      <p class="eyebrow" id="moon-name">Waxing Gibbous</p>
-      <p class="eyebrow accent" id="moon-meta">&nbsp;</p>
-    </a>
+  <header class="wrap">
+    <div class="moon-block">
+      <img id="moon-img" data-light src="/img/moons/light/waxing-crescent.png" alt="" width="70" height="67">
+      <span class="moon-labels">
+        <span class="moon-name" id="moon-name">Waxing Crescent</span>
+        <a class="moon-dreamers" id="moon-dreamers" href="/dream-index" aria-label="The Dream Index">&nbsp;</a>
+      </span>
+    </div>
+    <div class="brand"><a href="/">Dream Club</a></div>
     <h1 id="title">Dream Symbols</h1>
+    <p class="lede">The most common symbols in one dreamer&rsquo;s journal.</p>
   </header>
 
   <main class="wrap">
@@ -160,6 +187,7 @@
     </div>
     <div class="cta" id="cta" hidden>
       <a href="/">Join Dream Club</a>
+      <p class="fineprint">A private dream journal for iPhone and Mac. Free for 30 days.</p>
     </div>
   </main>
 
