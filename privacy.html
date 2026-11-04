@@ -42,6 +42,7 @@
 
     /* The masthead, smaller: moon and labels, then the wordmark. */
     .moon-block { display: flex; align-items: center; height: 72px; width: fit-content; }
+    .moon-block a { display: block; }
     .moon-block img {
       width: 70px;
       height: 67px;
@@ -65,21 +66,14 @@
     .moon-dreamers { color: var(--ink); min-height: 14px; text-decoration: none; }
     .moon-dreamers:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 0.5px; }
 
-    .brand {
-      font-family: var(--display);
-      font-size: 44px;
-      line-height: 1.1;
-      color: var(--ink);
-      margin: 2px 0 36px;
-    }
-    .brand a { color: inherit; text-decoration: none; border: 0; }
-
+    /* The page's one header, in the wordmark's face; the moon is
+       the way home. */
     h1 {
-      font-family: var(--text-serif);
+      font-family: var(--display);
       font-weight: 400;
-      font-size: 34px;
-      line-height: 1.3;
-      margin-bottom: 6px;
+      font-size: clamp(40px, 5vw, 56px);
+      line-height: 1.12;
+      margin: 2px 0 8px;
     }
 
     .effective {
@@ -118,13 +112,12 @@
 <body>
   <main>
     <div class="moon-block">
-      <img id="moon-img" src="/img/moons/waxing-gibbous.jpg" alt="" width="70" height="67">
+      <a href="/" aria-label="Dream Club home"><img id="moon-img" src="/img/moons/waxing-gibbous.jpg" alt="" width="70" height="67"></a>
       <span class="moon-labels">
         <span class="moon-name" id="moon-name">Waxing Crescent</span>
         <a class="moon-dreamers" id="moon-dreamers" href="/dream-index" aria-label="The Dream Index">&nbsp;</a>
       </span>
     </div>
-    <div class="brand"><a href="/">Dream Club</a></div>
     <h1>Privacy Policy</h1>
     <p class="effective">Effective July 2026</p>
 

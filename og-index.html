@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dream Index share card</title>
+  <!-- The 1200×630 share card for the Dream Index, rendered to
+       img/share-index.jpg by tools/render-share-card.sh. -->
+  <link rel="stylesheet" href="https://use.typekit.net/nbb6llm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; background: #fff; }
+    body { position: relative; font-family: "Source Sans 3", sans-serif; color: #111; -webkit-font-smoothing: antialiased; }
+    .ground { position: absolute; left: 0; right: 0; bottom: 0; height: 260px; background: linear-gradient(180deg, #fff 0%, #ececec 100%); }
+    .corner { position: absolute; left: -40px; bottom: -30px; width: 520px; mix-blend-mode: darken; opacity: 0.9; }
+    .text { position: absolute; left: 84px; top: 118px; width: 520px; }
+    .moon { display: flex; align-items: center; height: 72px; margin-left: -6px; }
+    .moon img { width: 70px; height: 67px; object-fit: cover; filter: invert(1); mix-blend-mode: multiply; }
+    .moon span { margin-left: 13px; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #999; line-height: 1.4; }
+    h1 { font-family: "richmond-display", Georgia, serif; font-weight: 400; font-size: 92px; line-height: 1.08; }
+    p { font-size: 30px; line-height: 1.3; color: #666; margin-top: 10px; }
+    .list { position: absolute; left: 700px; top: 118px; width: 416px; }
+    .label { font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: #999; margin-bottom: 10px; }
+    .row { display: flex; align-items: baseline; gap: 12px; padding: 9px 0 8px; border-top: 0.5px solid #999; }
+    .row .rank { font-size: 13px; color: #999; width: 22px; }
+    .row .name { font-family: "ibm-plex-serif", Georgia, serif; font-size: 24px; }
+    .row .leader { flex: 1; }
+    .row .count { font-size: 15px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="ground"></div>
+  <img class="corner" src="img/Bottom%20Left%20Corner.webp" alt="">
+  <div class="text">
+    <div class="moon"><img src="img/moons/waxing-gibbous.jpg" alt=""><span>Dream Club</span></div>
+    <h1>The Dream Index</h1>
+    <p>What the world is dreaming about.</p>
+  </div>
+  <div class="list">
+    <div class="label">Global</div>
+    <div id="rows"></div>
+  </div>
+  <script>
+    // The live top eight, so the card is true on the day it's rendered.
+    fetch("https://opkalkbjecbnnavxnmdb.supabase.co/rest/v1/rpc/symbol_stats", {
+      method: "POST",
+      headers: { apikey: "sb_publishable_2cxTEoh2ZkVcMSb0e9JIDg_CK05bW4f", authorization: "Bearer sb_publishable_2cxTEoh2ZkVcMSb0e9JIDg_CK05bW4f", "content-type": "application/json" },
+      body: JSON.stringify({ max_rows: 8 }),
+    }).then((r) => r.json()).then((rows) => {
+      const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+      document.getElementById("rows").innerHTML = rows.slice(0, 8).map((row, i) =>
+        `<div class="row"><span class="rank">${i + 1}</span><span class="name">${cap(row.symbol)}</span><span class="leader"></span><span class="count">${row.occurrences}</span></div>`).join("");
+      document.body.dataset.ready = "1";
+    });
+  </script>
+</body>
+</html>
