@@ -120,20 +120,22 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
       gap: var(--gutter);
-      align-items: center;
+      align-items: start;
       padding-top: 52px;
     }
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; gap: 36px; }
     }
-    .section-title {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 1.4;
-      color: var(--ink);
-      margin-bottom: 10px;
+    /* The section labels, one voice: Global, Countries, Regions, Cities. */
+    .section-title, .row-label {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--dim);
     }
+    .section-title { margin-bottom: 12px; }
     .list { padding-bottom: 6px; }
     .row {
       display: flex;
@@ -221,22 +223,13 @@
       overflow: hidden;
     }
     .lower > .wrap { position: relative; z-index: 1; }
-    .row-label {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--dim);
-      margin: 40px 0 12px;
-    }
+    .row-label { margin: 44px 0 14px; }
     .lower section:first-child .row-label { margin-top: 0; }
     .card-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
       gap: 16px;
-      overflow-x: auto;
-      padding: 4px 2px 14px;
-      scrollbar-width: thin;
-      scrollbar-color: #bbb transparent;
+      padding: 4px 0 6px;
     }
     .card {
       background: #fff;
@@ -244,8 +237,7 @@
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
       border: 1px solid transparent;
       padding: 20px 24px 14px;
-      min-width: 255px;
-      flex: 0 0 auto;
+      min-width: 0;
       transition: border-color 0.25s ease;
     }
     .card.lit { border-color: var(--ink); }
@@ -256,7 +248,6 @@
       line-height: 1.4;
       color: var(--ink);
       margin-bottom: 6px;
-      white-space: nowrap;
     }
     .card .row { padding: 5px 0 4.5px; gap: 8px; border-top-color: #ddd; }
     .card .row .rank { font-size: 11px; width: 16px; }
