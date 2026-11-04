@@ -95,20 +95,22 @@
       height: 96px;
       width: fit-content;
     }
-    /* The app's light-mode moon: a white disc on a transparent
-       ground, multiplied so its shadow sits in the paper. */
+    /* The NASA moon in negative, as in the comp: the black sky
+       inverts to white and multiplies away, the lit side prints as
+       dark craters on the paper. */
     .moon-block img {
       width: 93px;
       height: 89px;
       margin-left: -9px;
       margin-top: 1px;
       object-fit: cover;
+      filter: invert(1);
       mix-blend-mode: multiply;
     }
     .moon-labels {
       display: flex;
       flex-direction: column;
-      margin-left: 4px;
+      margin-left: 14px;
       font-size: 10px;
       font-weight: 500;
       line-height: 1.4;
@@ -340,7 +342,7 @@
   <!-- ---------------- Masthead ---------------- -->
   <header class="masthead wrap">
     <div class="moon-block">
-      <img id="moon-img" data-light src="img/moons/light/waxing-crescent.png" alt="" width="93" height="89">
+      <img id="moon-img" src="img/moons/waxing-gibbous.jpg" alt="" width="93" height="89">
       <span class="moon-labels">
         <span class="moon-name" id="moon-name">Waxing Crescent</span>
         <!-- The headcount is a quiet door to the Dream Index. -->

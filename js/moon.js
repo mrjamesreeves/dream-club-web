@@ -4,25 +4,24 @@
 (function () {
   const SYNODIC = 29.53058867;
   const REF_NEW_MOON = Date.UTC(2000, 0, 6, 18, 14); // known new moon
-  // [upper bound, name, dark-page file, light-page slug]. The light
-  // set (img/moons/light/<slug>.png) is the app's light-mode moon:
-  // white disc, grey shadow, transparent ground, for white pages.
+  // One NASA set for every page; the white pages show it in
+  // negative through CSS (filter: invert) rather than a second set.
   const PHASES = [
-    [0.034, 'New Moon',        'new.webp',                 'new'],
-    [0.216, 'Waxing Crescent', 'waxing-crescent.jpg',      'waxing-crescent'],
-    [0.284, 'First Quarter',   'first-quarter.jpg',        'first-quarter'],
-    [0.466, 'Waxing Gibbous',  'waxing-gibbous.jpg',       'waxing-gibbous'],
-    [0.534, 'Full Moon',       'full.webp',                'full'],
-    [0.716, 'Waning Gibbous',  'waning-gibbous.jpg.webp',  'waning-gibbous'],
-    [0.784, 'Last Quarter',    'third-quarter.jpg.webp',   'last-quarter'],
-    [0.966, 'Waning Crescent', 'waning-crescent.jpg.webp', 'waning-crescent'],
-    [1.001, 'New Moon',        'new.webp',                 'new'],
+    [0.034, 'New Moon',        'new.webp'],
+    [0.216, 'Waxing Crescent', 'waxing-crescent.jpg'],
+    [0.284, 'First Quarter',   'first-quarter.jpg'],
+    [0.466, 'Waxing Gibbous',  'waxing-gibbous.jpg'],
+    [0.534, 'Full Moon',       'full.webp'],
+    [0.716, 'Waning Gibbous',  'waning-gibbous.jpg.webp'],
+    [0.784, 'Last Quarter',    'third-quarter.jpg.webp'],
+    [0.966, 'Waning Crescent', 'waning-crescent.jpg.webp'],
+    [1.001, 'New Moon',        'new.webp'],
   ];
 
   const now = new Date();
   const age = (((now - REF_NEW_MOON) / 86400000) % SYNODIC + SYNODIC) % SYNODIC;
   const normalized = age / SYNODIC;
-  const [, name, file, slug] = PHASES.find(([limit]) => normalized < limit);
+  const [, name, file] = PHASES.find(([limit]) => normalized < limit);
 
   // Meteorological season, matching the Dream Index nav labels.
   function seasonLabel(d) {
@@ -37,9 +36,8 @@
   const img = document.getElementById('moon-img');
   const nameEl = document.getElementById('moon-name');
   const metaEl = document.getElementById('moon-meta');
-  // A page on white marks its moon data-light and gets the light set.
   const dreamersEl = document.getElementById('moon-dreamers');
-  if (img) img.src = img.dataset.light != null ? '/img/moons/light/' + slug + '.png' : '/img/moons/' + file;
+  if (img) img.src = '/img/moons/' + file;
   if (nameEl) nameEl.textContent = name;
   if (metaEl) metaEl.textContent = seasonLabel(now);
 
