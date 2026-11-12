@@ -68,6 +68,11 @@
       "source": "/museum",
       "destination": "/museum/?scene=tide",
       "permanent": false
+    },
+    {
+      "source": "/gallery",
+      "destination": "/museum/gallery.html",
+      "permanent": false
     }
   ]
 }

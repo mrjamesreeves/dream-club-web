@@ -41,7 +41,7 @@ FULL="$(git -C "$SRC" rev-parse HEAD)"
 python3 "$SRC/tools/build_artifact.py" "$OUT" "$STAMP"
 # Every page but index.html is a fragment for the claude.ai artifact host
 # (the game itself, and the character/voice labs), not a web page.
-find "$OUT" -maxdepth 1 -name '*.html' ! -name 'index.html' -delete
+find "$OUT" -maxdepth 1 -name '*.html' ! -name 'index.html' ! -name 'gallery.html' -delete
 printf '%s\n' "$STAMP" > "$OUT/VERSION"
 
 # The menu at /dreams reads this: the dreams in play order, with titles.
