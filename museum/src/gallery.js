@@ -14,7 +14,7 @@
 // Tap a print and the camera glides to it; tap again to step back. Arrows
 // or ← → move along the wall. The reading (the codex summary) is behind a
 // tap on the name, never on the wall.
-import * as THREE from '../vendor/three.module.js?v=975bb43';
+import * as THREE from '../vendor/three.module.js?v=68d7dbb';
 
 const STORAGE = 'https://opkalkbjecbnnavxnmdb.supabase.co/storage/v1/object/public/dream-images/';
 const REST = 'https://opkalkbjecbnnavxnmdb.supabase.co/rest/v1/';
@@ -324,7 +324,13 @@ window.gallery = {
 
 // Fonts for the wall lettering must be in before the signs are drawn.
 async function fonts() {
-  try { await document.fonts.load('600 30px "Source Sans 3"'); } catch (e) { /* the fallback face will do */ }
+  try {
+    // The faces come from a stylesheet; until it has arrived there is
+    // nothing for fonts.load to wait on, so wait for the sheet first.
+    const link = document.querySelector('link[href*="fonts.googleapis"]');
+    if (link && !link.sheet) await new Promise((r) => { link.addEventListener('load', r, { once: true }); link.addEventListener('error', r, { once: true }); setTimeout(r, 4000); });
+    await Promise.race([Promise.all([document.fonts.load('600 30px "Source Sans 3"'), document.fonts.load('400 15px "IBM Plex Serif"')]), new Promise((r) => setTimeout(r, 4000))]);
+  } catch (e) { /* the fallback face will do */ }
 }
 
 (async () => {

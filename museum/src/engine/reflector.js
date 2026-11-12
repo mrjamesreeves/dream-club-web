@@ -4,7 +4,7 @@
 // and a low-resolution target so the water reads soft rather than sharp.
 // With `lit`, the plane is a standard lit surface instead (it takes light
 // and shadows like a floor) with the reflection folded into its colour.
-import * as THREE from '../../vendor/three.module.js?v=975bb43';
+import * as THREE from '../../vendor/three.module.js?v=68d7dbb';
 
 export class Reflector extends THREE.Mesh {
   constructor(geometry, { color = '#000000', strength = 0.4, scale = 0.4, clipBias = 0.003, lit = false, roughness = 0.2 } = {}) {

@@ -1,18 +1,18 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=975bb43';
-import { Reflector } from '../engine/reflector.js?v=975bb43';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=975bb43';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=975bb43';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=975bb43';
-import { mulberry } from '../engine/textures.js?v=975bb43';
-import { AmbientParticles } from '../engine/particles.js?v=975bb43';
-import { makeSignTexture } from '../engine/signs.js?v=975bb43';
-import { PropMethods } from './props.js?v=975bb43';
-import { buildShapes } from '../engine/shapes.js?v=975bb43';
-import { mergeStatic } from '../engine/merge.js?v=975bb43';
-import { bakeWorldUV } from '../engine/pbr.js?v=975bb43';
-import { voiceFor } from '../engine/voice.js?v=975bb43';
+import * as THREE from '../../vendor/three.module.js?v=68d7dbb';
+import { Reflector } from '../engine/reflector.js?v=68d7dbb';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=68d7dbb';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=68d7dbb';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=68d7dbb';
+import { mulberry } from '../engine/textures.js?v=68d7dbb';
+import { AmbientParticles } from '../engine/particles.js?v=68d7dbb';
+import { makeSignTexture } from '../engine/signs.js?v=68d7dbb';
+import { PropMethods } from './props.js?v=68d7dbb';
+import { buildShapes } from '../engine/shapes.js?v=68d7dbb';
+import { mergeStatic } from '../engine/merge.js?v=68d7dbb';
+import { bakeWorldUV } from '../engine/pbr.js?v=68d7dbb';
+import { voiceFor } from '../engine/voice.js?v=68d7dbb';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';

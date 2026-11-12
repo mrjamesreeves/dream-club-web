@@ -1,7 +1,7 @@
 // Procedural low-resolution textures. Everything is generated on a 2D canvas at
 // 16-64px, quantized to a 15-bit style palette and sampled with nearest filtering.
-import * as THREE from '../../vendor/three.module.js?v=975bb43';
-import { paintFace, FACE_PRESETS } from './faces.js?v=975bb43';
+import * as THREE from '../../vendor/three.module.js?v=68d7dbb';
+import { paintFace, FACE_PRESETS } from './faces.js?v=68d7dbb';
 
 export function mulberry(seed) {
   let a = seed >>> 0;
