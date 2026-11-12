@@ -1,11 +1,11 @@
 // Furnishings and small things for interiors: food, decorations, fixtures.
 // Added to SceneBuilder as methods. Small meshes share materials per area so
 // a busy room does not cost a material per plate.
-import * as THREE from '../../vendor/three.module.js?v=d26125f';
-import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=d26125f';
-import { createLight, makeHalo } from '../engine/lights.js?v=d26125f';
-import { makeArt } from '../engine/art.js?v=d26125f';
-import { mergeStatic } from '../engine/merge.js?v=d26125f';
+import * as THREE from '../../vendor/three.module.js?v=975bb43';
+import { createPS1Material, setVertexShade } from '../engine/ps1material.js?v=975bb43';
+import { createLight, makeHalo } from '../engine/lights.js?v=975bb43';
+import { makeArt } from '../engine/art.js?v=975bb43';
+import { mergeStatic } from '../engine/merge.js?v=975bb43';
 
 const rad = THREE.MathUtils.degToRad;
 const cylGeo = (r0, r1, h, sides = 8) => setVertexShade(new THREE.CylinderGeometry(r0, r1, h, sides), 1);
@@ -384,12 +384,44 @@ export const PropMethods = {
   // A cutout: a photograph of a thing, cut from its background, hung in the
   // air as a paper-thin print. It turns slowly, so it goes edge-on and
   // vanishes for a moment every revolution, and it breathes a little.
+  // A framed print on a wall: the image at its own proportion, hung
+  // o.size[1] high on a pale mat behind a thin dark frame. Faces +z before
+  // yaw, like a sign. The frame is built once the picture is in, since the
+  // picture decides the width.
+  addPrint(o) {
+    const [x, y, z] = o.pos; const H = (o.size && o.size[1]) || 1.2;
+    const g = new THREE.Group(); g.position.set(x, y, z); g.rotation.y = rad(o.yaw ?? 0); this.group.add(g);
+    const frameMat = this.decoMat('black', o.frameColor || '#161616', o.pos, { texScale: 1 });
+    const matMat = this.decoMat('white', o.matColor || '#f3f1ec', o.pos, { texScale: 1 });
+    const imgMat = this.ctx.pbr
+      ? new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.75, metalness: 0, fog: true })
+      : createPS1Material(this.ctx.env, { map: this.ctx.T.white, unlit: true, worldUV: false, texScale: 1 });
+    const hang = (aspect) => {
+      while (g.children.length) g.remove(g.children[0]);
+      const W = H * aspect, m = o.mat ?? 0.06, f = o.frame ?? 0.03, d = 0.035;
+      const board = new THREE.Mesh(boxGeo(W + 2 * m, H + 2 * m, d), matMat); board.position.z = d / 2; g.add(board);
+      const img = new THREE.Mesh(new THREE.PlaneGeometry(W, H), imgMat); img.position.z = d + 0.002; g.add(img);
+      for (const [px, py, sw, sh] of [[0, H / 2 + m + f / 2, W + 2 * (m + f), f], [0, -(H / 2 + m) - f / 2, W + 2 * (m + f), f], [-(W / 2 + m) - f / 2, 0, f, H + 2 * m], [W / 2 + m + f / 2, 0, f, H + 2 * m]]) {
+        const b = new THREE.Mesh(boxGeo(sw, sh, d + 0.01), frameMat); b.position.set(px, py, (d + 0.01) / 2); g.add(b);
+      }
+      if (this.ctx.pbr) g.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
+    };
+    hang(o.aspect || (o.size && o.size[1] ? o.size[0] / o.size[1] : 0.8));
+    if (o.image) new THREE.TextureLoader().load(o.image, (t) => {
+      t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; t.generateMipmaps = true; t.minFilter = THREE.LinearMipmapLinearFilter;
+      if (imgMat.userData.ps1) imgMat.uniforms.uMap.value = t; else { imgMat.map = t; imgMat.needsUpdate = true; }
+      hang(t.image.width / t.image.height);
+    });
+    if (o.id) this.objectsById.set(o.id, { meshes: [g], examinable: null, pos: [x, y, z] });
+    return g;
+  },
+
   addCutout(o) {
     const [x, y, z] = o.pos; const [w, h] = o.size || [1, 1];
     const mat = createPS1Material(this.ctx.env, { map: this.ctx.T.black, unlit: true, worldUV: false, texScale: 1, alphaTest: 0.12, transparent: true, side: THREE.DoubleSide, fog: o.fog !== false });
     const m = this.put(setVertexShade(new THREE.PlaneGeometry(w, h), 1), mat, x, y, z, [0, rad(o.yaw ?? 0), 0]);
     m.visible = false;
-    new THREE.TextureLoader().load(o.image, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.minFilter = THREE.LinearMipmapLinearFilter; t.generateMipmaps = true; t.anisotropy = 4; const cm = m.material; if (cm.userData.ps1) cm.uniforms.uMap.value = t; else { cm.map = t; cm.needsUpdate = true; } m.visible = true; });
+    new THREE.TextureLoader().load(o.image, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.minFilter = THREE.LinearMipmapLinearFilter; t.generateMipmaps = true; t.anisotropy = 4; const cm = m.material; if (cm.userData.ps1) cm.uniforms.uMap.value = t; else { cm.map = t; cm.needsUpdate = true; m.castShadow = true; } m.visible = true; });
     this.cutouts.push({ mesh: m, base: y, spin: rad(o.spin ?? 8), bob: o.bob ?? 0.05, breathe: o.breathe ?? 0.0, phase: Math.random() * 6.28, rate: 0.5 + Math.random() * 0.4, dir: Math.random() < 0.5 ? -1 : 1 });
     if (o.name) this.objectsById.set(o.id, { meshes: [m], examinable: null, pos: [x, y, z] });
     return m;

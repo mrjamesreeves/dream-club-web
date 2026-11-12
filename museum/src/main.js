@@ -1,21 +1,21 @@
-import * as THREE from '../vendor/three.module.js?v=d26125f';
-import { createTextures } from './engine/textures.js?v=d26125f';
-import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=d26125f';
-import { PostPass } from './engine/post.js?v=d26125f';
-import { DreamAudio } from './engine/audio.js?v=d26125f';
-import { Player } from './engine/player.js?v=d26125f';
-import { Dialog } from './engine/dialog.js?v=d26125f';
-import { Inventory } from './engine/inventory.js?v=d26125f';
-import { SceneBuilder } from './scene/build.js?v=d26125f';
-import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=d26125f';
-import { Events } from './scene/events.js?v=d26125f';
-import { disposeTree } from './engine/merge.js?v=d26125f';
-import { assembleMuseum } from './museum.js?v=d26125f';
-import { PBR } from './engine/pbr.js?v=d26125f';
-import { setPBRMode } from './engine/ps1material.js?v=d26125f';
-import { checkPaths } from './engine/pathcheck.js?v=d26125f';
-import { Portrait } from './engine/portrait.js?v=d26125f';
-import { Voice, voiceFor } from './engine/voice.js?v=d26125f';
+import * as THREE from '../vendor/three.module.js?v=975bb43';
+import { createTextures } from './engine/textures.js?v=975bb43';
+import { createEnvironment, applyEnvironmentConfig, assignLightsToObject } from './engine/ps1material.js?v=975bb43';
+import { PostPass } from './engine/post.js?v=975bb43';
+import { DreamAudio } from './engine/audio.js?v=975bb43';
+import { Player } from './engine/player.js?v=975bb43';
+import { Dialog } from './engine/dialog.js?v=975bb43';
+import { Inventory } from './engine/inventory.js?v=975bb43';
+import { SceneBuilder } from './scene/build.js?v=975bb43';
+import { updateBehavior, bodyBlocked } from './scene/behaviors.js?v=975bb43';
+import { Events } from './scene/events.js?v=975bb43';
+import { disposeTree } from './engine/merge.js?v=975bb43';
+import { assembleMuseum } from './museum.js?v=975bb43';
+import { PBR } from './engine/pbr.js?v=975bb43';
+import { setPBRMode } from './engine/ps1material.js?v=975bb43';
+import { checkPaths } from './engine/pathcheck.js?v=975bb43';
+import { Portrait } from './engine/portrait.js?v=975bb43';
+import { Voice, voiceFor } from './engine/voice.js?v=975bb43';
 
 
 // Scene files are fetched with the build's version stamp (so a browser that
@@ -313,7 +313,11 @@ class Game {
 
   async loadScene(nameOrJson) {
     let def = nameOrJson;
-    if (typeof def === 'string') def = await fetchJSON(`./scenes/${def}.json`, `the dream "${def}"`);
+    // A scene can be built on the page instead of fetched (the gallery
+    // builds its room from whatever symbols it is handed).
+    const gen = typeof def === 'string' && window.DREAM_GENERATORS && window.DREAM_GENERATORS[def];
+    if (gen) def = await gen();
+    else if (typeof def === 'string') def = await fetchJSON(`./scenes/${def}.json`, `the dream "${def}"`);
     this.sceneName = typeof nameOrJson === 'string' ? nameOrJson : (def.name || '');
     this.hub = !!def.hub;
     if (this.hub) def = assembleMuseum(def, this.exhibits || {}, this.sequence);
@@ -1044,6 +1048,7 @@ class Game {
       if (item) { this.useItem(item); return; }
     }
     if (this.dialog.open) { this.dialog.advance(); return; }
+    if (this.visiting) { if (this.onVisitTap) this.onVisitTap(x, y); return; }
     if (this.watching) { if (this.watching.phase === 'on') this.stopWatching(); return; }
     if (this.ending || this.talking || !this.player.active) return;
     const target = this.findTarget(x, y);
@@ -1352,6 +1357,7 @@ class Game {
     const dt = Math.min(0.05, (now - this.lastFrame) / 1000);
     this.lastFrame = now;
     if (this.world && !this.contextLost) this.update(dt);
+    if (this.frameHook) this.frameHook(dt);
     const inv = this.started && !this.hub && !(this.def && this.def.noInventory);
     if (!this.contextLost && this.world) { this.inventory.shown = inv; this.updatePortrait(dt); }
     if (this.world && !this.contextLost) this.renderMirrors();
@@ -1369,7 +1375,7 @@ const params = new URLSearchParams(location.search);
   // ?all lights every exhibit (for looking at the museum while making dreams).
   if (params.has('all')) { for (const e of game.exhibits.exhibits || []) game.collected.add(e.id); game.night = []; }
   // ?scene=name starts straight into that dream; otherwise the museum first.
-  const requested = params.get('scene');
+  const requested = params.get('scene') || window.DREAM_SCENE || null;
   if (requested && requested !== 'museum') {
     const i = game.sequence.indexOf(requested);
     game.sceneIndex = i >= 0 ? i : 0;

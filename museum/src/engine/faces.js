@@ -1,8 +1,8 @@
 // Pixel face painter. Produces a 32x40 texture for the front of a head box:
 // shaded skin, eye sockets, lids, irises, brows, nose, lips, cheeks, age lines.
 // Everything is parametric so dream characters can be described, not drawn.
-import * as THREE from '../../vendor/three.module.js?v=d26125f';
-import { mulberry } from './textures.js?v=d26125f';
+import * as THREE from '../../vendor/three.module.js?v=975bb43';
+import { mulberry } from './textures.js?v=975bb43';
 
 const W = 32, H = 40;
 

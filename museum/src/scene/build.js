@@ -1,17 +1,18 @@
 // Turns a scene description (JSON) into Three.js objects, colliders, walkable
 // surfaces, lights, mist, and entities (characters and creatures).
-import * as THREE from '../../vendor/three.module.js?v=d26125f';
-import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=d26125f';
-import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=d26125f';
-import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=d26125f';
-import { mulberry } from '../engine/textures.js?v=d26125f';
-import { AmbientParticles } from '../engine/particles.js?v=d26125f';
-import { makeSignTexture } from '../engine/signs.js?v=d26125f';
-import { PropMethods } from './props.js?v=d26125f';
-import { buildShapes } from '../engine/shapes.js?v=d26125f';
-import { mergeStatic } from '../engine/merge.js?v=d26125f';
-import { bakeWorldUV } from '../engine/pbr.js?v=d26125f';
-import { voiceFor } from '../engine/voice.js?v=d26125f';
+import * as THREE from '../../vendor/three.module.js?v=975bb43';
+import { Reflector } from '../engine/reflector.js?v=975bb43';
+import { createPS1Material, setVertexShade, assignLights, assignLightsToObject, refreshLightColors } from '../engine/ps1material.js?v=975bb43';
+import { createLight, updateLights, makeHalo, makePool, makeShaft } from '../engine/lights.js?v=975bb43';
+import { buildHumanoid, buildArm, buildAmalgam, buildDog } from './characters.js?v=975bb43';
+import { mulberry } from '../engine/textures.js?v=975bb43';
+import { AmbientParticles } from '../engine/particles.js?v=975bb43';
+import { makeSignTexture } from '../engine/signs.js?v=975bb43';
+import { PropMethods } from './props.js?v=975bb43';
+import { buildShapes } from '../engine/shapes.js?v=975bb43';
+import { mergeStatic } from '../engine/merge.js?v=975bb43';
+import { bakeWorldUV } from '../engine/pbr.js?v=975bb43';
+import { voiceFor } from '../engine/voice.js?v=975bb43';
 
 // The one colour that means "this way" in every dream.
 export const GUIDE_COLOR = '#ffd9a0';
@@ -112,6 +113,18 @@ export class SceneBuilder {
     const geo = setVertexShade(new THREE.PlaneGeometry(w, d, segs(w), segs(d)), o.shade ?? 1);
     geo.rotateX(-Math.PI / 2);
     if (this.pbr) bakeWorldUV(geo, o.pos, o.texScale ?? 2);
+    // A reflecting plane under the physically based pass: a dark mirror.
+    if (this.pbr && o.reflect) {
+      // The mirror needs its tilt on the mesh, not baked into the geometry,
+      // so it knows which way it faces.
+      const mirror = new Reflector(new THREE.PlaneGeometry(w, d), { color: o.color || '#000000', strength: o.reflect === true ? 0.4 : o.reflect, scale: o.reflectScale ?? 0.4, lit: !!o.lit, roughness: o.extra?.roughness ?? 0.2 });
+      mirror.rotation.x = -Math.PI / 2;
+      mirror.position.fromArray(o.pos);
+      mirror.userData.surface = o.surface || (o.lit ? 'concrete' : 'water');
+      this.group.add(mirror);
+      if (o.walkable !== false) this.walkables.push(mirror);
+      return mirror;
+    }
     const mesh = new THREE.Mesh(geo, o.unique ? this.mat(o) : this.sharedMat(o));
     mesh.position.fromArray(o.pos);
     if (this.pbr) mesh.receiveShadow = true;
@@ -198,7 +211,7 @@ export class SceneBuilder {
     l.owner = o.owner || (this.building && this.building.id) || null;
     this.ctx.env.pointLights.push(l);
     this.lights.push(l);
-    if (this.pbr && !l.off) {
+    if (this.pbr && !l.off && !o.noPoint) {
       const pl = new THREE.PointLight(o.color || '#e0a050', (o.intensity ?? 1) * this.pbrPoint, (o.range ?? 8) * 1.3, 2);
       pl.position.fromArray(o.pos);
       this.group.add(pl);
@@ -501,8 +514,36 @@ export class SceneBuilder {
     this.addBox({ pos: [x, sy + 0.1, z], size: [0.3, 0.2, 0.3], tex: 'metal', texScale: 0.3, collide: false, walkable: false, shade: 0.6 });
     const shade = this.addBox({ pos: [x, sy - 0.02, z], size: [0.26, 0.04, 0.26], tex: 'lamp', unlit: true, collide: false, walkable: false, texScale: 0.3 });
     shade.material.uniforms.uColor.value.set(color);
-    const l = this.addLight({ id: o.id, pos: [x, sy - 0.25, z], color, intensity: o.intensity ?? 1.1, range: o.range ?? 6, flicker: o.flicker || 'soft', off: o.off });
+    const l = this.addLight({ id: o.id, pos: [x, sy - 0.25, z], color, intensity: o.intensity ?? 1.1, range: o.range ?? 6, flicker: o.flicker || 'soft', off: o.off, noPoint: !!(this.pbr && o.shadows) });
     this.emissive(l, shade);
+    // Under the physically based pass a real spot can throw shadows, and a
+    // faint cone can stand in the dust below the fixture.
+    if (this.pbr && (o.shadows || o.cone)) {
+      const floor = o.floor ?? 0, h = Math.max(0.5, sy - 0.25 - floor), rr = (o.poolSize ?? (o.range ?? 6) * 0.7) / 2;
+      const angle = Math.min(1.2, Math.atan2(rr, h));
+      if (o.shadows) {
+        // Offset a little so a hung print throws a slanted shadow instead of a line.
+        const [ox, oz] = o.shadowOffset || [0, 0];
+        const sp = new THREE.SpotLight(color, (o.intensity ?? 1.1) * this.pbrPoint * 2.2, (o.range ?? 6) * 1.8, Math.min(1.25, angle + 0.25), 0.55, 1.1);
+        sp.position.set(x + ox, sy - 0.25, z + oz); sp.target.position.set(x, floor, z);
+        sp.castShadow = true; sp.shadow.mapSize.set(1024, 1024); sp.shadow.bias = -0.0005; sp.shadow.normalBias = 0.02; sp.shadow.radius = 3;
+        sp.shadow.camera.near = 0.3; sp.shadow.camera.far = h + 4;
+        this.group.add(sp, sp.target);
+      }
+      if (o.cone) {
+        const geo = new THREE.ConeGeometry(rr * 0.9, h, 32, 1, true);
+        geo.translate(0, -h / 2, 0);
+        const mat = new THREE.ShaderMaterial({
+          uniforms: { color: { value: new THREE.Color(color) }, strength: { value: o.coneStrength ?? 0.18 } },
+          vertexShader: `varying float vT; varying vec3 vN; varying vec3 vV; void main(){ vT = uv.y; vec4 mv = modelViewMatrix * vec4(position,1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }`,
+          fragmentShader: `uniform vec3 color; uniform float strength; varying float vT; varying vec3 vN; varying vec3 vV; void main(){ float rim = 1.0 - abs(dot(normalize(vN), normalize(vV))); float a = pow(vT, 1.4) * (1.0 - 0.75 * rim) * strength; gl_FragColor = vec4(color, a); }`,
+          transparent: true, depthWrite: false, blending: THREE.NormalBlending, side: THREE.DoubleSide, fog: false, toneMapped: false,
+        });
+        const cone = new THREE.Mesh(geo, mat);
+        cone.position.set(x, sy - 0.25, z); cone.renderOrder = 4;
+        this.group.add(cone);
+      }
+    }
     this.addHalo([x, sy - 0.1, z], color, o.glowSize ?? 1.3, l, o.glowStrength ?? 0.5);
     // The pool of light on the floor, so a lit place reads from across a room.
     if (o.pool !== false) {
@@ -518,7 +559,7 @@ export class SceneBuilder {
   addSign(o) {
     const { env } = this.ctx;
     const [w, h] = o.size || [3, 0.8];
-    const tex = makeSignTexture(o.parts || [{ text: o.text || 'OPEN', font: 'sans', color: '#ff4060' }], { dead: (o.dead || o.faded) && !o.intact, faded: o.faded, width: o.hires ? 1024 : 256, height: o.hires ? 256 : 64 });
+    const tex = makeSignTexture(o.parts || [{ text: o.text || 'OPEN', font: 'sans', color: '#ff4060' }], { dead: (o.dead || o.faded) && !o.intact, faded: o.faded, width: o.hires ? 1024 : 256, height: o.hires ? 256 : 64, smooth: !!o.smooth, textScale: o.textScale ?? 1 });
     if (this.pbr) { tex.colorSpace = THREE.SRGBColorSpace; tex.needsUpdate = true; }
     const mat = this.pbr
       ? (o.faded ? new THREE.MeshStandardMaterial({ map: tex, transparent: true, alphaTest: 0.5, depthWrite: false, fog: true, color: o.fadeColor || '#8a867e', roughness: 1, metalness: 0 })
@@ -727,6 +768,7 @@ export class SceneBuilder {
         case 'aquarium': this.addAquarium(o); break;
         case 'luckyCat': this.addLuckyCat(o); break;
         case 'sign': this.addSign(o); break;
+        case 'print': this.addPrint(o); break;
         case 'character':
         case 'creature': this.addEntity(o); break;
         case 'item': this.addItem(o); break;

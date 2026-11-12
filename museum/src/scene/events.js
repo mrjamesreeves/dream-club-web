@@ -1,7 +1,7 @@
 // Scripted events: a list of { id, when: {conditions}, do: [actions], once }.
 // Conditions are checked every frame; actions run in order (dialogue awaits).
-import * as THREE from '../../vendor/three.module.js?v=d26125f';
-import { setRim } from '../engine/ps1material.js?v=d26125f';
+import * as THREE from '../../vendor/three.module.js?v=975bb43';
+import { setRim } from '../engine/ps1material.js?v=975bb43';
 
 const _a = new THREE.Vector3();
 
@@ -138,6 +138,7 @@ export class Events {
     if (a.ride !== undefined) g.setRide(a.ride);
     if (a.focus) g.focus(a.focus);
     if (a.watch) g.watchTelevision(a.watch);
+    if (a.visit && g.onVisit) g.onVisit(a.visit);
     if (a.release) g.releaseFocus();
     if (a.ambience) for (const [k, v] of Object.entries(a.ambience)) g.ambienceGain[k] = v;
     // The light and the fog of the dream change: a window onto a long view, a flight.

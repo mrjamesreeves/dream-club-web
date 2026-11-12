@@ -1,6 +1,6 @@
 // Neon sign textures: words from two signs spliced together, each half in its
 // own typeface and colour, drawn small so the letters stay chunky.
-import * as THREE from '../../vendor/three.module.js?v=d26125f';
+import * as THREE from '../../vendor/three.module.js?v=975bb43';
 
 const FONTS = {
   sans: 'bold 30px "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif',
@@ -9,9 +9,11 @@ const FONTS = {
   mono: 'bold 28px "Courier New", Courier, monospace',
   black: '900 30px Impact, "Arial Black", sans-serif',
   light: '300 30px "Helvetica Neue", Arial, sans-serif',
+  // Gallery lettering: tracked caps, the label face of the Dream Club apps.
+  caps: '600 30px "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif',
 };
 
-export function makeSignTexture(parts, { dead = false, faded = false, width = 256, height = 64 } = {}) {
+export function makeSignTexture(parts, { dead = false, faded = false, width = 256, height = 64, smooth = false, textScale = 1 } = {}) {
   const canvas = document.createElement('canvas');
   canvas.width = width; canvas.height = height;
   const ctx = canvas.getContext('2d');
@@ -19,9 +21,11 @@ export function makeSignTexture(parts, { dead = false, faded = false, width = 25
   ctx.textBaseline = 'middle';
   // Measure at base size, then scale to fit.
   let total = 0;
-  const widths = parts.map((p) => { ctx.font = FONTS[p.font] || FONTS.sans; const w = ctx.measureText(p.text).width + 6; total += w; return w; });
+  const widths = parts.map((p) => { ctx.font = FONTS[p.font] || FONTS.sans; const w = ctx.measureText(p.text).width + 6 + (p.tracking || 0) * p.text.length; total += w; return w; });
   // Bigger canvases (hires signs) draw the same letters bigger.
-  const scale = Math.min(1, (256 - 16) / total) * (width / 256);
+  // textScale under 1 leaves the letters small in the middle of the sign
+  // (a wall label), instead of filling it edge to edge (a shop sign).
+  const scale = Math.min(1, (256 - 16) / total) * (width / 256) * textScale;
   let x = (width - total * scale) / 2;
   const seed = parts.map((p) => p.text).join('').length;
   let r = seed * 7 + 3;
@@ -48,18 +52,22 @@ export function makeSignTexture(parts, { dead = false, faded = false, width = 25
         ctx.fillStyle = missing ? '#1a1718' : color;
         ctx.fillText(ch, lx, 0);
       }
-      lx += w;
+      lx += w + (p.tracking || 0);
     }
     ctx.restore();
     x += widths[i] * scale;
   });
   // Quantize alpha to keep the edges crisp after nearest sampling.
-  const img = ctx.getImageData(0, 0, width, height);
-  for (let i = 3; i < img.data.length; i += 4) img.data[i] = img.data[i] > 90 ? 255 : 0;
-  ctx.putImageData(img, 0, 0);
+  // A smooth sign (gallery lettering) keeps its antialiasing and mipmaps.
+  if (!smooth) {
+    const img = ctx.getImageData(0, 0, width, height);
+    for (let i = 3; i < img.data.length; i += 4) img.data[i] = img.data[i] > 90 ? 255 : 0;
+    ctx.putImageData(img, 0, 0);
+  }
   const tex = new THREE.CanvasTexture(canvas);
-  tex.magFilter = THREE.NearestFilter; tex.minFilter = THREE.NearestFilter;
-  tex.generateMipmaps = false; tex.colorSpace = THREE.NoColorSpace;
+  tex.magFilter = smooth ? THREE.LinearFilter : THREE.NearestFilter; tex.minFilter = smooth ? THREE.LinearMipmapLinearFilter : THREE.NearestFilter;
+  tex.generateMipmaps = smooth; tex.colorSpace = THREE.NoColorSpace;
+  if (smooth) tex.anisotropy = 4;
   tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
   tex.needsUpdate = true;
   return tex;

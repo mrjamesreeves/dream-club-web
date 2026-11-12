@@ -1,7 +1,7 @@
 // Procedural low-resolution textures. Everything is generated on a 2D canvas at
 // 16-64px, quantized to a 15-bit style palette and sampled with nearest filtering.
-import * as THREE from '../../vendor/three.module.js?v=d26125f';
-import { paintFace, FACE_PRESETS } from './faces.js?v=d26125f';
+import * as THREE from '../../vendor/three.module.js?v=975bb43';
+import { paintFace, FACE_PRESETS } from './faces.js?v=975bb43';
 
 export function mulberry(seed) {
   let a = seed >>> 0;
@@ -469,6 +469,7 @@ export function createTextures() {
     };
     T.ando = make(256, (x, y) => concrete(x, y), { smooth: true });
     T.andoSmooth = make(256, (x, y) => concrete(x, y, { seams: false, base: 156 }), { smooth: true });
+    T.stone = make(256, (x, y) => { const v = 176 + (na(x, y) - 0.5) * 22 + (nb(x, y) - 0.5) * 10 + (Math.random() - 0.5) * 6; return [v + 4, v + 1, v - 6]; }, { smooth: true });
     T.concretePale = make(256, (x, y) => { const v = 132 + (na(x, y) - 0.5) * 14 + (nb(x, y) - 0.5) * 6; return [v + 2, v + 1, v]; }, { smooth: true });
   }
 
